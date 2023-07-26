@@ -1,0 +1,11 @@
+# In _config.yml
+title: Notes for CBE710 
+author: Reid van Lehn, Matt Gebbie, Rose Cersonsky 
+# logo: logo.png
+execute:
+  execute_notebooks: force
+
+# Add a bibtex file so that we can create citations
+bibtex_bibfiles: "references.bib"
+parse:
+   myst_url_schemes: [mailto, http, https]
