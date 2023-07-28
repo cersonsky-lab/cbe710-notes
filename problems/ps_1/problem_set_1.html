@@ -1,0 +1,733 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>— Problem Set 1 — &#8212; Notes for CBE710</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'problems/ps_1/problem_set_1';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Canonical Ensemble Continued" href="../../lecture_files/Lecture4.html" />
+    <link rel="prev" title="The Canonical Ensemble" href="../../lecture_files/Lecture3.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Notes for CBE710</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Class introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Mechanics</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture1.html">Overview and review of thermodynamics</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture2.html">The Microcanonical Ensemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture3.html">The Canonical Ensemble</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">— Problem Set 1 —</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture4.html">Canonical Ensemble Continued</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture5.html">Generalized Ensembles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture6.html">The Ideal Gas Partition Function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture7.html">The Langmuir Isotherm and Ising Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture8.html">The Ising Model and Mean-Field Theory</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Molecular Simulation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture9.html">Fluctuations and an Introduction to Molecular Simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture10.html">Monte Carlo Simulations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture11.html">Monte Carlo and Intro to Molecular Dynamics Simulations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture12.html">MD Thermostats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture13.html">The Structure of Classical Fluids</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture14.html">The Potential of Mean Force</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture15.html">Free energy perturbation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture16.html">Postulates of thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture17.html">Heat Engines and Possible Processes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture18.html">Entropy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture19.html">The Fundamental Relation of Thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture20.html">Legendre Transforms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture21.html">Conditions of equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture22.html">Equilibrium in single-component systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture23.html">Phase Diagrams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture24.html">Fugacity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture25.html">Ideal mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture26.html">Non-ideal mixtures</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/problems/ps_1/problem_set_1.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>— Problem Set 1 —</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="problem-set-1">
+<h1>— Problem Set 1 —<a class="headerlink" href="#problem-set-1" title="Permalink to this headline">#</a></h1>
+<p><strong>Question 1: Polymer dimensions</strong></p>
+<p>Ideal polymer chains are often described as undergoing <em>random walks</em> on
+a lattice. Like ideal gases, the monomers in an ideal polymer chain do
+not interact with each other; that is, the segments of the chain do not
+exclude volume and can overlap. Consider a <strong>one-dimensional</strong> ideal
+polymer chain composed of <span class="math notranslate nohighlight">\(N\)</span> independent segments.</p>
+<p>One end of the chain is placed at the origin. A single chain conformation can then be
+generated by iteratively placing a single segment of the chain a
+distance <span class="math notranslate nohighlight">\(b\)</span> in either the positive or negative <span class="math notranslate nohighlight">\(x\)</span> dimension from the
+current chain end - <em>i.e.</em>, the chain elongates by taking “steps” along
+the one-dimensional coordinate. The end-to-end distance of the chain,
+<span class="math notranslate nohighlight">\(x\)</span>, is the distance between the origin and the end of the last segment
+placed.</p>
+<p><img alt="image" src="../../_images/pset_1_random_walk_fig.png" />
+Figure 1 shows an example for <span class="math notranslate nohighlight">\(N = 8\)</span> in which the end-to-end distance is after all 8 steps are taken.</p>
+<p><strong>(a)</strong> For a one-dimensional ideal chain with <span class="math notranslate nohighlight">\(N\)</span> segments and segment
+size <span class="math notranslate nohighlight">\(b\)</span>, calculate the probability, <span class="math notranslate nohighlight">\(p(x)\)</span>, that the end-to-end
+distance of the polymer is equal to <span class="math notranslate nohighlight">\(x\)</span>. Assume that there is an <strong>equal
+likelihood</strong> of taking a step in either the positive or negative
+direction for each chain segment.</p>
+<details>
+  <summary>Hints</summary>
+  First compute the probability that we take n steps to the right.
+</details>
+<p><strong>(b)</strong> For the chain described in part <strong>a</strong>, show that in the large
+<span class="math notranslate nohighlight">\(N\)</span> limit the probability distribution <span class="math notranslate nohighlight">\(p(x)\)</span> can be approximated by:</p>
+<div class="math notranslate nohighlight">
+\[p(x) = \frac{1}{\sqrt{2\pi Nb^2}}  \exp \left ( -\frac{x^2}{2Nb^2}\right )\]</div>
+<details>
+  <summary>Hints</summary>
+    Define the quantity $x/Nb \equiv a$, where $a \ll 1$ in the large $N$ limit, and write a series expansion for $\ln(1-a)$ when appropriate.
+</details>
+<p>In the large <span class="math notranslate nohighlight">\(N\)</span> limit, we can simplify the result from part <strong>a</strong> by
+taking the logarithm of <span class="math notranslate nohighlight">\(p(x)\)</span> and using Stirling’s relation:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\ln p(x)  &amp;= -N\ln 2 + N \ln N - (N + x/b)/2 \ln (N + x/b)/2 - (N- x/b)/2 \ln(N-x/b)/2 \\
+&amp;=  N \ln N - (N + x/b)/2 \ln (N + x/b) - (N- x/b)/2 \ln(N-x/b) \\
+&amp;= N \ln N - N(1 + x/Nb)/2 \ln N (1+x/Nb) - N(1-x/Nb)/2 \ln N(1-x/Nb) 
+\end{aligned}\end{split}\]</div>
+<p>To simplify these expressions a bit we’ll define <span class="math notranslate nohighlight">\(x/Nb \equiv a\)</span> and
+collect terms:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\ln p(x)  &amp;= \frac{N}{2} \left [2 \ln N - (1+a) \ln N - (1+a) \ln (1+a) - (1-a) \ln N - (1-a) \ln (1-a) \right ] \\
+&amp;= -\frac{N}{2} \left [(1+a) \ln (1+a) + (1-a) \ln (1-a) \right ] 
+\end{aligned}\end{split}\]</div>
+<p>Next, we can use the Taylor expansion
+<span class="math notranslate nohighlight">\(\ln (1-a) = -a - \frac{1}{2}a^2 \dots\)</span> to simplify this expression.
+Since <span class="math notranslate nohighlight">\(a \ll 1\)</span>, we will truncate the expansion at second order:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\ln p(x)  &amp;= -\frac{N}{2} \left [(1+a) \left ( a - \frac{1}{2} a^2 \right ) + (1-a) \left ( -a - \frac{1}{2} a^2 \right ) \right ] \\
+&amp;=   -\frac{N}{2} \left [ a - \frac{1}{2} a^2 + a^2 - \frac{1}{2} a^3 - a -\frac{1}{2} a^2 + a^2 + \frac{1}{2} a^3 \right ] \\
+&amp;= -\frac{Na^2}{2} \\  
+&amp;= -\frac{x^2}{2Nb^2}\\ 
+\therefore p(x)  &amp;= C\exp \left ( -\frac{x^2}{2Nb^2}\right )
+\end{aligned}\end{split}\]</div>
+<p>We leave the constant <span class="math notranslate nohighlight">\(C\)</span> to recognize that the probability distribution
+is not properly normalized, since Stirling’s approximation is inexact.
+To normalize this probability, we can use the relation that
+<span class="math notranslate nohighlight">\(\int_{-\infty}^{\infty} p(x)  dx = 1\)</span> and evaluate the Gaussian
+integral:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\int_{-\infty}^{\infty} C\exp \left ( -\frac{x^2}{2Nb^2}\right )dx &amp;= 1 \\
+C \sqrt{2\pi Nb^2} &amp;= 1 \\
+C &amp;= \frac{1}{\sqrt{2\pi Nb^2}} \\
+\therefore  p(x)  &amp;= \frac{1}{\sqrt{2\pi Nb^2}}  \exp \left ( -\frac{x^2}{2Nb^2}\right )
+\end{aligned}\end{split}\]</div>
+<p><strong>(c)</strong> Show that the entropy of an ideal one-dimensional chain in the
+large <span class="math notranslate nohighlight">\(N\)</span> limit is given by:</p>
+<div class="math notranslate nohighlight">
+\[S(N, x) = -\frac{k_Bx^2}{2Nb^2} + S(N)\]</div>
+<p>where <span class="math notranslate nohighlight">\(S(N)\)</span> is a constant that is not dependent on <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>As noted in part <strong>a</strong>, the probability of obtaining a final position
+<span class="math notranslate nohighlight">\(x\)</span> can be written as: $<span class="math notranslate nohighlight">\(p(x)  = \frac{\Omega(N, x)}{\Omega(N)}\)</span>$</p>
+<p>We can thus use this relation and our expression for <span class="math notranslate nohighlight">\(p(x)\)</span> in the large
+<span class="math notranslate nohighlight">\(N\)</span> limit to find the entropy:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+S(N, x) &amp;= k_B \ln \Omega(N, x) \\
+&amp;= k_B \ln \left [ p(x) \Omega(N)\right ] \\
+&amp;= k_B \ln \left [   \frac{1}{\sqrt{2\pi Nb^2}}  \exp \left ( -\frac{x^2}{2Nb^2}\right ) \Omega(N) \right ]\\
+&amp;= k_B \ln  \left [ \exp \left ( -\frac{x^2}{2Nb^2}\right )  \right ] + k_B  \ln  \left [ \frac{1}{\sqrt{2\pi Nb^2}}  \Omega(N)  \right ] \\
+&amp;= -\frac{k_B x^2}{2Nb^2} + S(N)
+\end{aligned}\end{split}\]</div>
+<p>In the last line we collect the terms that are not a function of <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p><strong>Question 2: Magnetization of a paramagnet</strong></p>
+<p>Consider a system of <span class="math notranslate nohighlight">\(N\)</span> distinguishable, non-interacting atoms with
+magnetic dipole moments (spins) in a magnetic field <span class="math notranslate nohighlight">\(H\)</span> at constant
+temperature. Each spin <span class="math notranslate nohighlight">\(s_i\)</span> has a magnetic moment <span class="math notranslate nohighlight">\(\mu\)</span> and can be in
+one of two states: parallel to the field (<span class="math notranslate nohighlight">\(s_i = 1\)</span>) or anti-parallel to
+the field (<span class="math notranslate nohighlight">\(s_i = -1\)</span>). The energy of each microstate is due only to
+interactions between the spins and the magnetic field, and is given by:</p>
+<div class="math notranslate nohighlight">
+\[E = -\sum_{i=1}^N s_i \mu H\]</div>
+<p>The magnetization of the material is defined as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+M = \sum_i^N s_i \mu = -\frac{E}{H}
+\end{aligned}\]</div>
+<p>This model is commonly used to describe paramagnetic materials. In this
+problem, we will derive an expression for the ensemble-average
+magnetization of a paramagnet in a magnetic field.</p>
+<p><strong>(a)</strong> Assuming that the paramagnet has a fixed energy <span class="math notranslate nohighlight">\(E\)</span>, write an
+expression for the entropy as a function of the number of spins aligned
+with the field, <span class="math notranslate nohighlight">\(N_+\)</span>, and the total number of spins, <span class="math notranslate nohighlight">\(N\)</span>.</p>
+<p>We can first define <span class="math notranslate nohighlight">\(N_+\)</span> as the number of spins for which <span class="math notranslate nohighlight">\(s_i = 1\)</span>,
+<span class="math notranslate nohighlight">\(N_-\)</span> is the number fo which <span class="math notranslate nohighlight">\(s_i = -1\)</span>, and <span class="math notranslate nohighlight">\(N_+ + N_- = N\)</span>. Using
+these definitions we can then write for the energy:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    E &amp;= -\mu H \sum_i^N s_i\\
+    &amp;= -\mu H  [N_+ (1) + N_-(-1) ]\\
+    &amp;= -\mu H (2N_+ - N) 
+    
+\end{aligned}\end{split}\]</div>
+<p>We can write the degeneracy of this particular energy level as:</p>
+<div class="math notranslate nohighlight">
+\[\Omega(E) = \frac{N!}{N_+!(N-N_+)!}\]</div>
+<p>Note that this expression assumes that spins are distinguishable but the
+order within each group of spins does not matter, which is a reasonable
+treatment of spins on a lattice since each lattice position is uniquely
+distinguishable but spins cannot interchange positions. Using the
+Boltzmann expression for the entropy:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    S &amp;= k_B \ln \Omega(E) \\
+    &amp;= k_B \ln \left [ \frac{N!}{N_+!(N-N_+)!} \right ] \\
+    &amp;= k_B \left [ N \ln N - N_+ \ln N_+ - (N-N_+)\ln(N-N_+) \right ]
+    
+\end{aligned}\end{split}\]</div>
+<p><strong>(b)</strong> Derive an expression for <span class="math notranslate nohighlight">\(N_+\)</span> as a function of the number of
+spins <span class="math notranslate nohighlight">\(N\)</span>, the magnetic field strength <span class="math notranslate nohighlight">\(H\)</span>, the magnetic moment <span class="math notranslate nohighlight">\(\mu\)</span>,
+and the temperature <span class="math notranslate nohighlight">\(T\)</span> (or as a function of <span class="math notranslate nohighlight">\(\beta \equiv 1/k_B T\)</span>).</p>
+<p>To obtain a temperature dependence, we can relate the entropy to the
+energy via the relation
+<span class="math notranslate nohighlight">\(\left ( \frac{\partial S}{\partial E} \right )_{N, V} = 1/T\)</span> to
+identify an expression for <span class="math notranslate nohighlight">\(N_+\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    \frac{1}{T} &amp;= \left ( \frac{\partial S}{\partial E} \right )_{N, V} \\
+    &amp;=  \left ( \frac{\partial S}{\partial E} \right )_{N, V} \\
+    &amp;= \left ( \frac{\partial S}{\partial N_+} \right )_{N, V} \left ( \frac{\partial N_+}{\partial E} \right )_{N, V} 
+    
+\end{aligned}\end{split}\]</div>
+<p>We can obtain these derivatives from prior expressions:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    E &amp;= -\mu H (2N_+ - N) \\
+    \therefore \left ( \frac{\partial N_+}{\partial E} \right )_{N, V} &amp;= -\frac{1}{2H\mu}\\
+    S &amp;=  k_B \left [ N \ln N - N_+ \ln N_+ - (N-N_+)\ln(N-N_+) \right ] \\
+    \therefore \left ( \frac{\partial S}{\partial N_+} \right )_{N, V} &amp;= - k_B \ln \left ( \frac{N_+}{N-N_+} \right )
+    
+\end{aligned}\end{split}\]</div>
+<p>Combining these expressions with the expression for the temperature
+gives:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    \frac{1}{T} &amp;=k_B \ln \left ( \frac{N_+}{N-N_+} \right ) \frac{1}{2 H \mu} \\
+    2\beta H\mu &amp;= \ln \left ( \frac{N_+}{N-N_+} \right ) \\
+    -\ln \left ( \frac{1}{\frac{N}{N_+} - 1} \right ) &amp;= -2\beta H \mu \\
+    \ln \left ( \frac{N}{N_+} - 1 \right ) &amp;= -2\beta H \mu \\
+    \frac{N}{N_+} &amp;= 1 + \exp(-2\beta H \mu) \\
+    N_+ &amp;= \frac{N}{1+\exp(-2\beta H \mu)}
+    
+\end{aligned}\end{split}\]</div>
+<p><strong>(c)</strong> Show that the magnetization of a paramagnet is given by:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+M = N\mu \tanh (\beta \mu H) 
+\end{aligned}\]</div>
+<p>We can write for the magnetization using the definition in the problem
+statement:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    M &amp;= -\frac{E}{H}\\
+    &amp;= \mu(2N_+ - N) 
+    
+\end{aligned}\end{split}\]</div>
+<p>We can now substitute in our expression for <span class="math notranslate nohighlight">\(N_+\)</span> from the previous
+part:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    M &amp;= \mu \left ( \frac{2N}{1+\exp(-2\beta H \mu)} - N \right ) \\
+    &amp;= \mu \left ( \frac{2N}{1+\exp(-2\beta H \mu)} - \frac{N[1+\exp(-2\beta H \mu)]}{1+\exp(-2\beta H \mu)} \right ) \\
+    &amp;= \mu \left ( \frac{N - N \exp(-2\beta H \mu)}{1+\exp(-2\beta H \mu)} \right ) \\
+    &amp;= N \mu \left ( \frac{1 - \exp(-2\beta H \mu)}{1+\exp(-2\beta H \mu)} \right )\\
+    &amp;= N\mu \left ( \frac{\exp(\beta H \mu) - \exp(-\beta H \mu)}{\exp(\beta H \mu)+\exp(-\beta H \mu)} \right ) \\
+    &amp;= N\mu \tanh (\beta \mu H) 
+    
+\end{aligned}\end{split}\]</div>
+<p>This agrees with the result in the problem statement. Hence, we have
+shown that we derive an expression for the magnetization of a paramagnet
+using the equations of the microcanonical ensemble.</p>
+<p><strong>Question 3: Mixing entropy</strong></p>
+<p>Consider two different ideal fluids containing <span class="math notranslate nohighlight">\(N_1\)</span> and <span class="math notranslate nohighlight">\(N_2\)</span>
+molecules, respectively, for a total of <span class="math notranslate nohighlight">\(N\)</span> molecules. All molecules
+exclude the same molar volume and are assumed to interact weakly with
+each other and with themselves, such that the potential energy of the
+system is negligible. The two fluids are initially completely demixed
+due to an impermeable partition; the partition is then removed and the
+fluids are allowed to mix at constant volume as illustrated in Figure 2.
+Assume also that the molecules of each fluid are <strong>indistinguishable</strong>
+from the molecules of the same fluid.</p>
+<figure>
+<img src="pset_1_mixing_entropy_fig.png" />
+<figcaption>Diagram illustrating mixing of two initially demixed
+fluids.</figcaption>
+</figure>
+<p><strong>(a)</strong> Assume that the two fluids occupy a fictitious lattice that
+spans the available volume. Each molecule occupies a single lattice site
+and all lattice sites are occupied; thus, there are are <span class="math notranslate nohighlight">\(N_1\)</span> lattice
+sites occupied by molecule 1 and <span class="math notranslate nohighlight">\(N_2\)</span> lattice sites occupied by
+molecule 2. Using this approximation, calculate <span class="math notranslate nohighlight">\(\Omega(N_1, N_2)\)</span>,
+which is defined as the number of microstates for the mixture of fluids.</p>
+<p>Using this approximation, we recognize that there are a total of
+<span class="math notranslate nohighlight">\(N = N_1 + N_2\)</span> sites on our fictitious lattice, identical arrangements
+of the fluids are indistinguishable (although the fluids themselves are
+distinguishable from each other), and thus the degeneracy is:</p>
+<div class="math notranslate nohighlight">
+\[\Omega(N_1, N_2) = \frac{N!}{N_1!N_2!}\]</div>
+<p><strong>(b)</strong> Derive an expression for the entropy change associated with
+mixing the two ideal fluids in terms of the mole fractions,
+<span class="math notranslate nohighlight">\(x_1 = N_1/N\)</span> and <span class="math notranslate nohighlight">\(x_2 = N_2/N\)</span>, of the two components. That is,
+determine an expression for:</p>
+<div class="math notranslate nohighlight">
+\[\Delta S_{\textrm{mix}} = S_{\textrm{mixed}} - S_{\textrm{demixed}}\]</div>
+<p>We can calculate the entropy of the mixed state immediately by invoking
+Stirling’s approximation for the factorials above and using the
+Boltzmann expression for the entropy:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+S_{\textrm{mixed}} &amp;= k_B \ln \Omega(N_1, N_2)  \\
+&amp;= k_B \left ( \ln N! - \ln N_1! - \ln N_2! \right ) \\
+&amp;= k_B \left ( N \ln N - N - N_1 \ln N_1 + N_1 - N_2 \ln N_2 + N_2 \right ) \\
+&amp;= k_B \left ( (N_1 + N_2) \ln N - N_1 \ln N_1 - N_2 \ln N_2 \right )  \\
+&amp;= -k_B \left ( N_1 \ln N_1/N + N_2 \ln N_2/N \right ) \\
+&amp;= -k_B N \left ( x_1 \ln x_1 + x_2 \ln x_2 \right )
+\end{aligned}\end{split}\]</div>
+<p>The entropy change associated with mixing is defined as
+<span class="math notranslate nohighlight">\(\Delta S_{\textrm{mix}} = S_{\textrm{mixed}} - S_{\textrm{demixed}}\)</span>.
+However, in the initial configuration of the system, with both fluids
+completely separate, all configurations of each fluid are
+indistinguishable since the molecules in each of the fluids separately
+are indistinguishable. There is only a single unique configuration in
+the initial state and hence the entropy of the initial state is
+approximately 0. The entropy of mixing is thus:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\Delta S_{\textrm{mix}} &amp;= S_{\textrm{mix}} \\
+&amp;= -k_B N \left ( x_1 \ln x_1 + x_2 \ln x_2 \right )
+\end{aligned}\end{split}\]</div>
+<p><strong>(c)</strong> Is the lattice model assumption reasonable for molecules
+occupying a continuous set of positions (rather than discrete points)?
+Why or why not?</p>
+<p>The lattice model assumption transforms a <em>continuous</em> set of particle
+positions to a <em>discrete</em> set in order to estimate the degeneracy. This
+approximation is reasonable because we are effectively assuming that
+each molecule has some set of configurations accessible within each
+lattice point (i.e. within the space associated with a lattice), but
+this set of configurations is identical for every molecule and therefore
+will be the same in both the demixed and mixed state, such that taking
+the difference between these states (in part <strong>b</strong>) removes this large
+internal set of configurations from the expression for the degeneracy.</p>
+<p><strong>Question 4: Stirling’s approximation</strong></p>
+<p>Write a Python program that calculates the percent error of Stirling’s
+approximation as a function of <span class="math notranslate nohighlight">\(N\)</span>, where Stirling’s approximation is
+defined as:</p>
+<div class="math notranslate nohighlight">
+\[\ln N! \approx N \ln N - N\]</div>
+<p>Include with your solution a copy of your Python code (including
+comments as necessary), a plot of <span class="math notranslate nohighlight">\(\ln N!\)</span> and Stirling’s approximation
+as a function of <span class="math notranslate nohighlight">\(N\)</span> up to <span class="math notranslate nohighlight">\(N=100\)</span>, and a plot of the error of
+Stirling’s approximation as a function of <span class="math notranslate nohighlight">\(N\)</span> up to <span class="math notranslate nohighlight">\(N=100\)</span>. Your grade
+for this problem will be based in part on the readability of your code
+and plots in addition to the accuracy of the solution.</p>
+<p><strong>Note: this problem is intended to provide you with practice in Python
+programming prior to the assignment of the simulation project.</strong></p>
+<p>The two requested plots are provided below. Corresponding code is
+available on the Canvas website.</p>
+<p><img alt="Comparison of Stirling's approximation vs.  as a function of." src="../../_images/pset_1_plot_stirling.png" />{width=”55%”}</p>
+<p><img alt="Relative error of Stirling's approximation vs. , which approacheszero as  exceeds." src="../../_images/pset_1_plot_stirling_error.png" />{width=”55%”}</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./problems/ps_1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../../lecture_files/Lecture3.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">The Canonical Ensemble</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../lecture_files/Lecture4.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Canonical Ensemble Continued</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Reid van Lehn, Matt Gebbie, Rose Cersonsky
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
