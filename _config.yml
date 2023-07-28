@@ -9,3 +9,4 @@ execute:
 bibtex_bibfiles: "references.bib"
 parse:
    myst_url_schemes: [mailto, http, https]
+
