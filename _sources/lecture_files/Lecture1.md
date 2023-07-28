@@ -1,4 +1,4 @@
-# Overview and review of thermodynamics
+# Overview
 
 ## Additional Readings for the Enthusiast
 
@@ -93,8 +93,8 @@ F = - k_B T \ln Z(N,V,T)
 Equation {eq}`canonical_partition` is the **canonical [partition
 function](https://en.wikipedia.org/wiki/Partition_function_(statistical_mechanics))**,
 one of the key equations that we will discuss. In this
-equation, $E_i$ is the energy of a particular microstate - or set of
-spatial positions of all particles - of the system and the summation
+equation, $E_i$ is the energy of a particular microstate - or a specific
+configuration of all particles - of the system and the summation
 accounts for **all possible microstates** of the system. The number of
 microstates can be enormously large. The partition function illustrates
 that statistical mechanics deals with particle-specific quantities
@@ -111,21 +111,25 @@ feature of our studies.
 ### Quantum mechanics
 
 While statistical mechanics provides a microscopic framework that
-thermodynamics does not, this framework still depends on molecular
-parameters, such as particle-specific energy levels ($E_i$ in the
+thermodynamics does not, this framework still depends on parameters
+that describe the behavior and energetics of the atoms and molecules,
+such as particle-specific energy levels ($E_i$ in the
 partition function above). In principle, this information can be
 obtained from quantum mechanics. Quantum mechanics defines the set of
-possible states, and relative energy levels of these states, for a
+possible states for a specific particle,
+and relative energy levels of these states, for a
 single particle; however, it provides no information on the likelihood
-that a particle is found in any such state. For example, consider an
-ideal particle confined within a one-dimensional box with length $L$ by
-two walls. The potential energy of the particle is zero for any position
-within the box and infinite elsewhere.
+that a particle is found in any such state.
 
-![image](figs/fig_1_1.png){width="60%"}
+For example, consider [an ideal particle confined within a one-dimensional box](https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Physical_Chemistry_(LibreTexts)/03%3A_The_Schrodinger_Equation_and_a_Particle_in_a_Box) with length $L$ by
+two walls. We'll say that the potential energy of the particle is zero for any position within the box and infinite elsewhere.
 
-Quantum mechanics provides the following description of the energy
-levels accessible to a single particle associated with its single
+![image](figs/fig_1_1.png)
+
+When the box is sufficiently small, quantum mechanics gives an understanding
+of _where_ the particle could be found in this box, because not all positions
+or energies are equally likely. QM provides the following description of the energy
+levels accessible to a single particle that has a single
 translational degree of freedom within this box:
 
 
@@ -140,29 +144,34 @@ $h$ is Planck's constant, $m$ is the mass of the particle, and $L$ is
 the size of the box. We can plot these discrete energy levels (which
 depend quadratically on $n$) as follows:
 
-![image](figs/fig_1_2.png){width="100%"}
+![image](figs/fig_1_2.png)
 
 The key point to illustrate is that quantum mechanics provides this set
 of states and energies which can be used to describe the molecular
 properties of a single molecule, and then can be used in conjunction
 with tools from statistical mechanics to calculate macroscopic
-properties. In this course, we will not use quantum mechanics to define
+properties.
+
+**In this course, we will not use quantum mechanics to define
 the set of possible $E_i$, but the connection is something to keep in
-mind.
+mind.**
 
-![image](figs/fig_1_3.png){width="100%"}
-
-To summarize, thermodynamics provides macroscopic relationships between
+To summarize,
+- **Thermodynamics** provides macroscopic relationships between
 the properties of a system but requires specific materials parameters as
-input. Statistical mechanics can link macroscopic thermodynamic
+input.
+- **Statistical mechanics** can link macroscopic thermodynamic
 observables to the microscopic properties of a material but requires a
-description of system energies. Quantum mechanics can provide the set of
+description of system energies.
+- **Quantum mechanics** can provide the set of
 energies accessible to a system but cannot tell us the likelihood with
-which such energies are obtained. In this course we will focus on the
+which such energies are obtained.
+
+In this course we will focus on the
 former two topics, but it is all three in conjunction that enable the
 analysis of real systems.
 
-## Review of thermodynamics
+# Review of thermodynamics
 
 We will begin this course by focusing largely on statistical mechanics.
 It is assumed that most students have taken thermodynamics at the
@@ -171,7 +180,7 @@ that will be re-visited later in the course. We will first briefly
 review thermodynamic concepts that will prove necessary for studying
 statistical mechanics.
 
-### Description of the system
+## Description of the system
 
 We define the **system** as the part of the universe that we seek to
 study. A system is defined by its contents (i.e., the system could
@@ -201,7 +210,7 @@ boundaries are described by the following terms
 
 ![image](figs/fig_1_4.png){width="100%"}
 
-### Thermodynamic variables
+## Thermodynamic variables
 
 We will define two different types of thermodynamic variables.
 **Extensive** variables depend on the size or amount of material in the
@@ -229,7 +238,7 @@ extensive variables have doubled, but the intensive variables are
 unchanged. If we define the density as a specific property $\rho=N/V$,
 it is also unchanged upon doubling the system size.
 
-### Work and heat
+## Work and heat
 
 The mechanical work, $W$, is the product of an intensive generalized
 force, $f$, and an extensive generalized displacement, $\Delta x$:
@@ -321,7 +330,7 @@ the pressure is constant).
 
 ![image](figs/fig_1_5.png){width="100%"}
 
-### Entropy
+## Entropy
 
 The second law of thermodynamics defines another state function called
 the **entropy**, $S$. Entropy is conceptually equivalent to the amount
@@ -353,7 +362,7 @@ Note that by this definition the entropy change of an isolated system
 (for which $dQ = 0$ for all processes since no heat can exchange with
 the universe) is always greater than or equal to zero.
 
-### The fundamental relation of thermodynamics
+## The fundamental relation of thermodynamics
 
 For a system undergoing a reversible process, we can write a combined
 first and second law of thermodynamics (assuming a one-component system)

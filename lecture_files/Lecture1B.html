@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Overview &#8212; Notes for CBE710</title>
+    <title>Overview and review of thermodynamics &#8212; Notes for CBE710</title>
   
   
   
@@ -62,11 +62,9 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture_files/Lecture1';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture_files/Lecture1B';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="The Microcanonical Ensemble" href="Lecture2.html" />
-    <link rel="prev" title="Class introduction" href="../intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -152,9 +150,8 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Mechanics</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Overview</a></li>
-
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Lecture1.html">Overview and review of thermodynamics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Lecture2.html">The Microcanonical Ensemble</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Lecture3.html">The Canonical Ensemble</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../problems/ps_1/problem_set_1.html">— Problem Set 1 —</a></li>
@@ -241,7 +238,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/lecture_files/Lecture1.md" target="_blank"
+      <li><a href="../_sources/lecture_files/Lecture1B.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -251,7 +248,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -323,7 +320,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Overview</h1>
+    <h1>Overview and review of thermodynamics</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -333,7 +330,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Overview</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-readings-for-the-enthusiast">Additional Readings for the Enthusiast</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-and-questions-for-today-s-lecture">Goals and questions for today’s lecture</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-up-and-down">What is up and down?</a></li>
@@ -344,17 +340,6 @@ document.write(`
 </ul>
 </li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#review-of-thermodynamics">Review of thermodynamics</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description-of-the-system">Description of the system</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thermodynamic-variables">Thermodynamic variables</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#work-and-heat">Work and heat</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entropy">Entropy</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-fundamental-relation-of-thermodynamics">The fundamental relation of thermodynamics</a></li>
-</ul>
-</li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -365,11 +350,11 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="overview">
-<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="overview-and-review-of-thermodynamics">
+<h1>Overview and review of thermodynamics<a class="headerlink" href="#overview-and-review-of-thermodynamics" title="Permalink to this headline">#</a></h1>
 <section id="additional-readings-for-the-enthusiast">
 <h2>Additional Readings for the Enthusiast<a class="headerlink" href="#additional-readings-for-the-enthusiast" title="Permalink to this headline">#</a></h2>
-<p><span id="id1">Chandler [<a class="reference internal" href="#id3" title="David Chandler. Introduction to Modern Statistical Mechanics. Oxford University Press, New York, 1st edition edition, September 1987. ISBN 978-0-19-504277-1. URL: http://pcossgroup.xmu.edu.cn/old/users/xlu/group/courses/apc/imsm_chandler.pdf.">1</a>]</span>, Chapter 1</p>
+<p><span id="id1">Chandler [<a class="reference internal" href="Lecture1.html#id3" title="David Chandler. Introduction to Modern Statistical Mechanics. Oxford University Press, New York, 1st edition edition, September 1987. ISBN 978-0-19-504277-1. URL: http://pcossgroup.xmu.edu.cn/old/users/xlu/group/courses/apc/imsm_chandler.pdf.">1</a>]</span>, Chapter 1</p>
 </section>
 <section id="goals-and-questions-for-today-s-lecture">
 <h2>Goals and questions for today’s lecture<a class="headerlink" href="#goals-and-questions-for-today-s-lecture" title="Permalink to this headline">#</a></h2>
@@ -412,8 +397,8 @@ Finally, thermodynamics is based on a set of postulates which are empirically kn
 rigorously proven.
 Here is an example of a thermodynamic relation:</p>
 <div class="math notranslate nohighlight" id="equation-cv-cp">
-<span class="eqno">(1)<a class="headerlink" href="#equation-cv-cp" title="Permalink to this equation">#</a></span>\[C_P - C_V = \left [ P + \left ( \frac{\partial E}{\partial V}  \right)_T \right ] \left ( \frac{\partial V}{\partial T}  \right)_P\]</div>
-<p>Equation <a class="reference internal" href="#equation-cv-cp">(1)</a> relates the difference in the <a class="reference external" href="https://en.wikipedia.org/wiki/Heat_capacity">heat capacity</a>
+<span class="eqno">()<a class="headerlink" href="#equation-cv-cp" title="Permalink to this equation">#</a></span>\[C_P - C_V = \left [ P + \left ( \frac{\partial E}{\partial V}  \right)_T \right ] \left ( \frac{\partial V}{\partial T}  \right)_P\]</div>
+<p>Equation <a class="reference internal" href="#equation-cv-cp">()</a> relates the difference in the <a class="reference external" href="https://en.wikipedia.org/wiki/Heat_capacity">heat capacity</a>
 at constant pressure (<span class="math notranslate nohighlight">\(C_P\)</span>) and the heat capacity at constant volume (<span class="math notranslate nohighlight">\(C_V\)</span>) to the pressure (<span class="math notranslate nohighlight">\(P\)</span>),
 partial derivative of the internal energy <span class="math notranslate nohighlight">\(E\)</span> with respect to volume at constant
 temperature, and partial derivative of the volume with respect to temperature (<span class="math notranslate nohighlight">\(T\)</span>)
@@ -445,10 +430,10 @@ thermodynamics and statistical mechanics will be highlighted throughout
 the course. Here are examples of equations that we will see frequently
 throughout this course:</p>
 <div class="math notranslate nohighlight" id="equation-canonical-partition">
-<span class="eqno">(2)<a class="headerlink" href="#equation-canonical-partition" title="Permalink to this equation">#</a></span>\[Z(N,V,T) = \sum_i^{\textrm{states}} \exp\left (-\frac{E_i(N, V)}{k_B T}\right)\]</div>
+<span class="eqno">()<a class="headerlink" href="#equation-canonical-partition" title="Permalink to this equation">#</a></span>\[Z(N,V,T) = \sum_i^{\textrm{states}} \exp\left (-\frac{E_i(N, V)}{k_B T}\right)\]</div>
 <div class="math notranslate nohighlight" id="equation-thermo-connection">
-<span class="eqno">(3)<a class="headerlink" href="#equation-thermo-connection" title="Permalink to this equation">#</a></span>\[F = - k_B T \ln Z(N,V,T)\]</div>
-<p>Equation <a class="reference internal" href="#equation-canonical-partition">(2)</a> is the <strong>canonical <a class="reference external" href="https://en.wikipedia.org/wiki/Partition_function_(statistical_mechanics)">partition
+<span class="eqno">()<a class="headerlink" href="#equation-thermo-connection" title="Permalink to this equation">#</a></span>\[F = - k_B T \ln Z(N,V,T)\]</div>
+<p>Equation <a class="reference internal" href="#equation-canonical-partition">()</a> is the <strong>canonical <a class="reference external" href="https://en.wikipedia.org/wiki/Partition_function_(statistical_mechanics)">partition
 function</a></strong>,
 one of the key equations that we will discuss. In this
 equation, <span class="math notranslate nohighlight">\(E_i\)</span> is the energy of a particular microstate - or a specific
@@ -459,7 +444,7 @@ that statistical mechanics deals with particle-specific quantities
 (i.e., energies), but takes into account the incredibly large number of
 particles and possible particle positions that contribute to the
 macroscopic behavior of a system. Equation
-<a class="reference internal" href="#equation-thermo-connection">(3)</a> illustrates the connection between
+<a class="reference internal" href="#equation-thermo-connection">()</a> illustrates the connection between
 thermodynamics and statistical mechanics by writing the Helmholtz free
 energy - a macroscopic system parameter - as a function of the canonical
 partition function - a microscopic system parameter. This connection
@@ -486,243 +471,41 @@ of <em>where</em> the particle could be found in this box, because not all posit
 or energies are equally likely. QM provides the following description of the energy
 levels accessible to a single particle that has a single
 translational degree of freedom within this box:</p>
-<div class="math notranslate nohighlight" id="equation-partbox1d">
-<span class="eqno">(4)<a class="headerlink" href="#equation-partbox1d" title="Permalink to this equation">#</a></span>\[\epsilon_n = \frac{h^2 n^2}{8mL^2}  \quad n = 1,2, \dots\]</div>
-<p>Here, <span class="math notranslate nohighlight">\(n\)</span> is a subscript denoting each individual microstate accessible
-to the single particle system, <span class="math notranslate nohighlight">\(\epsilon\)</span> is the corresponding energy,
-<span class="math notranslate nohighlight">\(h\)</span> is Planck’s constant, <span class="math notranslate nohighlight">\(m\)</span> is the mass of the particle, and <span class="math notranslate nohighlight">\(L\)</span> is
-the size of the box. We can plot these discrete energy levels (which
-depend quadratically on <span class="math notranslate nohighlight">\(n\)</span>) as follows:</p>
-<p><img alt="image" src="../_images/fig_1_2.png" /></p>
-<p>The key point to illustrate is that quantum mechanics provides this set
-of states and energies which can be used to describe the molecular
-properties of a single molecule, and then can be used in conjunction
-with tools from statistical mechanics to calculate macroscopic
-properties.</p>
-<p><strong>In this course, we will not use quantum mechanics to define
-the set of possible <span class="math notranslate nohighlight">\(E_i\)</span>, but the connection is something to keep in
-mind.</strong></p>
-<p>To summarize,</p>
-<ul class="simple">
-<li><p><strong>Thermodynamics</strong> provides macroscopic relationships between
-the properties of a system but requires specific materials parameters as
-input.</p></li>
-<li><p><strong>Statistical mechanics</strong> can link macroscopic thermodynamic
-observables to the microscopic properties of a material but requires a
-description of system energies.</p></li>
-<li><p><strong>Quantum mechanics</strong> can provide the set of
-energies accessible to a system but cannot tell us the likelihood with
-which such energies are obtained.</p></li>
-</ul>
-<p>In this course we will focus on the
-former two topics, but it is all three in conjunction that enable the
-analysis of real systems.</p>
-</section>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="review-of-thermodynamics">
-<h1>Review of thermodynamics<a class="headerlink" href="#review-of-thermodynamics" title="Permalink to this headline">#</a></h1>
-<p>We will begin this course by focusing largely on statistical mechanics.
-It is assumed that most students have taken thermodynamics at the
-undergraduate level, and thus will be familiar with some basic concepts
-that will be re-visited later in the course. We will first briefly
-review thermodynamic concepts that will prove necessary for studying
-statistical mechanics.</p>
-<section id="description-of-the-system">
-<h2>Description of the system<a class="headerlink" href="#description-of-the-system" title="Permalink to this headline">#</a></h2>
-<p>We define the <strong>system</strong> as the part of the universe that we seek to
-study. A system is defined by its contents (i.e., the system could
-contain 10 mol of a gas) and its <strong>boundaries/walls</strong>. The properties of
-the system boundaries define the possible interactions with the
-surrounding world. The part of the universe in contact with the system
-is called the <strong>surroundings</strong> or the <strong>environment</strong>. Systems and their
-boundaries are described by the following terms</p>
-<ul class="simple">
-<li><p><strong>Closed</strong> - mass does not flow into or out of a closed system (the
-boundaries are impermeable).</p></li>
-<li><p><strong>Open</strong> - mass can flow into or out of an open system (the
-boundaries are permeable).</p></li>
-<li><p><strong>Rigid</strong> - the volume of the system is constant.</p></li>
-<li><p><strong>Movable</strong> - the volume of the system can change.</p></li>
-<li><p><strong>Adiabatic/Insulated</strong> - adiabatic/insulated boundaries prevent the
-transfer of heat/energy.</p></li>
-<li><p><strong>Diathermal</strong> - diathermal boundaries allow the transfer of
-heat/energy.</p></li>
-<li><p><strong>Isolated</strong> - an isolated system is closed, rigid, and adiabatic.</p></li>
-</ul>
-<p><img alt="image" src="../_images/fig_1_4.png" />{width=”100%”}</p>
-</section>
-<section id="thermodynamic-variables">
-<h2>Thermodynamic variables<a class="headerlink" href="#thermodynamic-variables" title="Permalink to this headline">#</a></h2>
-<p>We will define two different types of thermodynamic variables.
-<strong>Extensive</strong> variables depend on the size or amount of material in the
-system. If a system is formed from two subsystems, the extensive
-properties of the combined system are equal to the sum of the extensive
-properties of the subsystems. For example, the volume and internal
-energy are extensive variables. <strong>Intensive</strong> variables do not increase
-as the size or amount of the system increases. For example, the
-temperature and pressure are <em>always</em> intensive variables. The ratio of
-extensive variables (typically an extensive variable divided by the
-amount of material) also defines an intensive variable - for example,
-the molar volume is an intensive variable. Variables defined by dividing
-an extensive variable by the number of particles are sometimes called
-<strong>specific properties</strong>, although we will not frequently use that
-nomenclature. Conversely, multiplying always intensive variables
-(temperature and pressure) by the amount of material does not yield a
-meaningful extensive parameter. We will further discuss the definition
-of always intensive variables in the material below.</p>
-<p>Combining the above, we can consider a gas with <span class="math notranslate nohighlight">\(N\)</span> particles in a
-volume <span class="math notranslate nohighlight">\(V\)</span>, temperature <span class="math notranslate nohighlight">\(T\)</span>, and pressure <span class="math notranslate nohighlight">\(P\)</span>. If this system were
-duplicated and combined, the result would be a gas with <span class="math notranslate nohighlight">\(2N\)</span> particles
-in a volume <span class="math notranslate nohighlight">\(2V\)</span> still at a temperature <span class="math notranslate nohighlight">\(T\)</span> and pressure <span class="math notranslate nohighlight">\(P\)</span> - the
-extensive variables have doubled, but the intensive variables are
-unchanged. If we define the density as a specific property <span class="math notranslate nohighlight">\(\rho=N/V\)</span>,
-it is also unchanged upon doubling the system size.</p>
-</section>
-<section id="work-and-heat">
-<h2>Work and heat<a class="headerlink" href="#work-and-heat" title="Permalink to this headline">#</a></h2>
-<p>The mechanical work, <span class="math notranslate nohighlight">\(W\)</span>, is the product of an intensive generalized
-force, <span class="math notranslate nohighlight">\(f\)</span>, and an extensive generalized displacement, <span class="math notranslate nohighlight">\(\Delta x\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[W = f \Delta x\]</div>
-<p>We will define the work as positive if the work is done <em>on</em> the system
-by the environment. In differential form, this can be written:</p>
-<div class="math notranslate nohighlight" id="equation-pvwork">
-<span class="eqno">(5)<a class="headerlink" href="#equation-pvwork" title="Permalink to this equation">#</a></span>\[\begin{split}dW &amp;= fdx \\
-W &amp;= \int_A^B fdx\end{split}\]</div>
-<p>Here, <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> indicate the initial and final thermodynamic states
-connected by some process. Thermodynamic states are defined by the
-values of thermodynamic variables - each state would have a
-corresponding volume, temperature, pressure, number of particles, etc.
-The process is defined by a specific path through intermediate states
-(or non-equilibrium states) as we will discuss again shortly. The most
-common example of work we will see is pressure-volume work, or the work
-done due to an expansion or compression of a system. For
-expansion-contraction work, the generalized force, <span class="math notranslate nohighlight">\(f\)</span> is equal to the
-negative pressure, <span class="math notranslate nohighlight">\(-P\)</span> (by convention) and the generalized displacement
-is equal to the change in the volume, <span class="math notranslate nohighlight">\(V\)</span>:</p>
-<div class="math notranslate nohighlight" id="equation-pvwork-differential">
-<span class="eqno">(6)<a class="headerlink" href="#equation-pvwork-differential" title="Permalink to this equation">#</a></span>\[dW = -PdV\]</div>
-<p>An increase in the system’s volume is associated with work being done in
-the surroundings. Other examples of work include chemical work, where a
-chemical potential <span class="math notranslate nohighlight">\(\mu\)</span> is multiplied by a change in the number of
-molecules in a system <span class="math notranslate nohighlight">\(dN\)</span>; surface deformation work, where a stress
-<span class="math notranslate nohighlight">\(\sigma\)</span> is multiplied by a change in area <span class="math notranslate nohighlight">\(dA\)</span>; elongational work,
-where a tension <span class="math notranslate nohighlight">\(\tau\)</span> is multiplied by a change in length <span class="math notranslate nohighlight">\(dL\)</span>; or
-magnetic work, where a magnetic field <span class="math notranslate nohighlight">\(H\)</span> is multiplied by a change in
-magnetization <span class="math notranslate nohighlight">\(dM\)</span>, as summarized below. The differential parameter here
-is always extensive, while the prefactor is always intensive. These
-pairs of intensive-extensive variables are referred to as <strong>conjugate
-variables</strong>. Some of you may not have extensively discussed the chemical
-potential. Still, it is a quantity conceptually identical to the
-fugacity (and used in its definition) as we will discuss much later in
-the course.</p>
-<p><strong>Type of Work</strong>       <strong>Equation</strong>    <strong>Intensive Property</strong>    <strong>Extensive Property</strong></p>
-<hr class="docutils" />
-<p>Chemical                 <span class="math notranslate nohighlight">\(\mu dN\)</span>     chemical potential <span class="math notranslate nohighlight">\(\mu\)</span>    number of molecules
-in a system <span class="math notranslate nohighlight">\(N\)</span>
-Surface Deformation    <span class="math notranslate nohighlight">\(\sigma dA\)</span>        stress <span class="math notranslate nohighlight">\(\sigma\)</span>               area <span class="math notranslate nohighlight">\(A\)</span>
-Elongation              <span class="math notranslate nohighlight">\(\tau dL\)</span>          tension <span class="math notranslate nohighlight">\(\tau\)</span>              length <span class="math notranslate nohighlight">\(L\)</span>
-Magnetic                  <span class="math notranslate nohighlight">\(H dM\)</span>         magnetic field <span class="math notranslate nohighlight">\(H\)</span>        magnetization <span class="math notranslate nohighlight">\(M\)</span></p>
-<p>The heat absorbed by (added to) the system from its surroundings during
-a change from state <span class="math notranslate nohighlight">\(A\)</span> to state <span class="math notranslate nohighlight">\(B\)</span> is</p>
-<div class="math notranslate nohighlight" id="equation-heat">
-<span class="eqno">(7)<a class="headerlink" href="#equation-heat" title="Permalink to this equation">#</a></span>\[Q = \int_A^B dQ\]</div>
-<p>Both work and heat (equations <a class="reference internal" href="#equation-pvwork">(5)</a> and <a class="reference internal" href="#equation-heat">(7)</a>)
-rely on integrals that depend on the exact path taken
-between state <span class="math notranslate nohighlight">\(A\)</span> and state <span class="math notranslate nohighlight">\(B\)</span>. However, the difference in the internal
-energy, <span class="math notranslate nohighlight">\(E\)</span>, between state <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> does not depend on the path. <span class="math notranslate nohighlight">\(E\)</span>
-is thus called a <strong>state function</strong> because it is a property of each
-state and not the path between them. We can write the change in <span class="math notranslate nohighlight">\(E\)</span>
-between states <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(\Delta E\)</span>, for a system undergoing a change
-in volume as:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-\Delta E = E_B - E_A &amp;= Q + W \\
-&amp;= \int_A^B dQ - \int_A^B PdV
-\end{aligned}\end{split}\]</div>
-<p>This equation is the <strong>first law of thermodynamics</strong> and defines the
-conservation of energy. Note that since each path passes through
-intermediate states which may vary in pressure, <span class="math notranslate nohighlight">\(P\)</span> is within the
-integral above as its value will depend on the specific path taken. The
-same change in energy will be obtained for any arbitrary path, though,
-so we are free to calculate the change in energy along the path that is
-most convenient for a given calculation (<em>e.g.</em>, along a path for which
-the pressure is constant).</p>
-<p><img alt="image" src="../_images/fig_1_5.png" />{width=”100%”}</p>
-</section>
-<section id="entropy">
-<h2>Entropy<a class="headerlink" href="#entropy" title="Permalink to this headline">#</a></h2>
-<p>The second law of thermodynamics defines another state function called
-the <strong>entropy</strong>, <span class="math notranslate nohighlight">\(S\)</span>. Entropy is conceptually equivalent to the amount
-of uncertainty pertaining to any given macrostates (more on this later).
-The combined entropy of a system and its surroundings (<em>i.e.</em>, the
-universe) always increases in an irreversible process and remains
-constant in a reversible process; it never decreases. The entropy of the
-system can decrease as long as there is a corresponding increase in the
-entropy of the surroundings such that the total entropy of the universe
-is constant or increases. The change in entropy between states <span class="math notranslate nohighlight">\(A\)</span> and
-<span class="math notranslate nohighlight">\(B\)</span> is <span class="math notranslate nohighlight">\(\Delta S = \int_A^B dS = \int_A^B  \frac{dQ_{\mathrm{rev}}}{T}\)</span>,
-therefore:</p>
-<div class="math notranslate nohighlight" id="equation-entropychange">
-<span class="eqno">(8)<a class="headerlink" href="#equation-entropychange" title="Permalink to this equation">#</a></span>\[    dQ_{\mathrm{rev}} = TdS\]</div>
-<p>The subscript on <span class="math notranslate nohighlight">\(dQ\)</span> indicates that the change in entropy is defined
-along a <em>reversible</em> path from <span class="math notranslate nohighlight">\(A\)</span> to <span class="math notranslate nohighlight">\(B\)</span>. For irreversible processes,
-the second law of thermodynamics states</p>
-<div class="math notranslate nohighlight" id="equation-entropychange-nonrev">
-<span class="eqno">(9)<a class="headerlink" href="#equation-entropychange-nonrev" title="Permalink to this equation">#</a></span>\[\Delta S &gt; \int_A^B  \frac{dQ}{T}\]</div>
-<p>Note that by this definition the entropy change of an isolated system
-(for which <span class="math notranslate nohighlight">\(dQ = 0\)</span> for all processes since no heat can exchange with
-the universe) is always greater than or equal to zero.</p>
-</section>
-<section id="the-fundamental-relation-of-thermodynamics">
-<h2>The fundamental relation of thermodynamics<a class="headerlink" href="#the-fundamental-relation-of-thermodynamics" title="Permalink to this headline">#</a></h2>
-<p>For a system undergoing a reversible process, we can write a combined
-first and second law of thermodynamics (assuming a one-component system)
-by combining equations
-<a class="reference internal" href="#equation-pvwork-differential">(6)</a> and
-<a class="reference internal" href="#equation-entropychange">(8)</a>:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-dE &amp;= dQ + dW \\
-&amp;= TdS - PdV \label{combo_first_second}
-\end{aligned}\end{split}\]</div>
-<p>This expression is also called the <strong>fundamental relation</strong> of
-thermodynamics in the <strong>energy representation</strong>. We can write an
-equivalent expression in terms of the entropy:</p>
-<div class="math notranslate nohighlight">
-\[dS = \frac{1}{T} dE + \frac{P}{T} dV\]</div>
-<p>This is called the fundamental relation in the entropy representation.
-We can also write an <strong>exact differential</strong> of <span class="math notranslate nohighlight">\(dE\)</span> to obtain
-expressions for intensive variables:</p>
-<div class="math notranslate nohighlight">
-\[dE = \left( \frac{\partial E}{\partial S}\right)_V dS + \left( \frac{\partial E}{\partial V}\right)_S dV\]</div>
-<p>Comparing this expression with the fundamental relation in the energy
-representation yields:</p>
-<div class="math notranslate nohighlight" id="equation-de-ds">
-<span class="eqno">(10)<a class="headerlink" href="#equation-de-ds" title="Permalink to this equation">#</a></span>\[\left( \frac{\partial E}{\partial S}\right)_V = T\]</div>
-<p>and</p>
-<div class="math notranslate nohighlight" id="equation-de-dv">
-<span class="eqno">(11)<a class="headerlink" href="#equation-de-dv" title="Permalink to this equation">#</a></span>\[\left( \frac{\partial E}{\partial V}\right)_S = -P\]</div>
-<p>The subscripts indicate that the partial derivative is taken with the
-subscripted variable held constant; in other words, Equation <a class="reference internal" href="#equation-de-ds">(10)</a>
-states that the temperature is defined as the partial derivative of the internal
-energy with respect to entropy at constant volume. Using these
-relations, we find that for each pair of conjugate variables that
-appears in the fundamental relation, the variable that is always
-intensive can be expressed as a partial derivative of either the energy
-or the entropy with respect to its conjugate extensive variable and with
-all other extensive variables held constant.</p>
-<div class="docutils container" id="id2">
-<dl class="citation">
-<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>David Chandler. <em>Introduction to Modern Statistical Mechanics</em>. Oxford University Press, New York, 1st edition edition, September 1987. ISBN 978-0-19-504277-1. URL: <a class="reference external" href="http://pcossgroup.xmu.edu.cn/old/users/xlu/group/courses/apc/imsm_chandler.pdf">http://pcossgroup.xmu.edu.cn/old/users/xlu/group/courses/apc/imsm_chandler.pdf</a>.</p>
-</dd>
-<dt class="label" id="id4"><span class="brackets">2</span></dt>
-<dd><p>Donald A. McQuarrie. <em>Statistical mechanics</em>. University Science Books, Sausalito, Calif, 2000. ISBN 978-1-891389-15-3. URL: <a class="reference external" href="https://vuquangnguyen2016.files.wordpress.com/2017/12/339279795-donald-a-mcquarrie-statistical-mechanics-bookzz-org.pdf">https://vuquangnguyen2016.files.wordpress.com/2017/12/339279795-donald-a-mcquarrie-statistical-mechanics-bookzz-org.pdf</a>.</p>
-</dd>
-</dl>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+<span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span>
+    <span class="n">value</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span>
+    <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="nb">max</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Test:&#39;</span><span class="p">,</span>
+    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">continuous_update</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;horizontal&#39;</span><span class="p">,</span>
+    <span class="n">readout</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">readout_format</span><span class="o">=</span><span class="s1">&#39;d&#39;</span>
+<span class="p">)</span>
+</pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;matplotlib&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 </section>
 
@@ -757,24 +540,6 @@ all other extensive variables held constant.</p>
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="../intro.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Class introduction</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="Lecture2.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">The Microcanonical Ensemble</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div></div>
   
 </div>
@@ -793,7 +558,6 @@ all other extensive variables held constant.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Overview</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-readings-for-the-enthusiast">Additional Readings for the Enthusiast</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-and-questions-for-today-s-lecture">Goals and questions for today’s lecture</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-up-and-down">What is up and down?</a></li>
@@ -804,17 +568,6 @@ all other extensive variables held constant.</p>
 </ul>
 </li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#review-of-thermodynamics">Review of thermodynamics</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description-of-the-system">Description of the system</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thermodynamic-variables">Thermodynamic variables</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#work-and-heat">Work and heat</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entropy">Entropy</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-fundamental-relation-of-thermodynamics">The fundamental relation of thermodynamics</a></li>
-</ul>
-</li>
-</ul>
-
   </nav></div>
 
 </div></div>
