@@ -1,0 +1,795 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>The Langmuir Isotherm and Ising Model &#8212; Notes for CBE710</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture_files/Lecture7';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="The Ising Model and Mean-Field Theory" href="Lecture8.html" />
+    <link rel="prev" title="The Ideal Gas Partition Function" href="Lecture6.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Notes for CBE710</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Class introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Mechanics</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Lecture1.html">Overview and review of thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture2.html">The Microcanonical Ensemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture3.html">The Canonical Ensemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/ps_1/problem_set_1.html">— Problem Set 1 —</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture4.html">Canonical Ensemble Continued</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture5.html">Generalized Ensembles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture6.html">The Ideal Gas Partition Function</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">The Langmuir Isotherm and Ising Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture8.html">The Ising Model and Mean-Field Theory</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Molecular Simulation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Lecture9.html">Fluctuations and an Introduction to Molecular Simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture10.html">Monte Carlo Simulations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture11.html">Monte Carlo and Intro to Molecular Dynamics Simulations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture12.html">MD Thermostats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture13.html">The Structure of Classical Fluids</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture14.html">The Potential of Mean Force</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Lecture15.html">Free energy perturbation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture16.html">Postulates of thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture17.html">Heat Engines and Possible Processes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture18.html">Entropy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture19.html">The Fundamental Relation of Thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture20.html">Legendre Transforms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture21.html">Conditions of equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture22.html">Equilibrium in single-component systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture23.html">Phase Diagrams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture24.html">Fugacity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture25.html">Ideal mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture26.html">Non-ideal mixtures</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/lecture_files/Lecture7.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>The Langmuir Isotherm and Ising Model</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-readings-for-the-enthusiast">Additional Readings for the Enthusiast</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topics-in-this-lecture">Topics in this lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements">Announcements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ideal-gas-partition-function-in-the-classical-limit">Ideal gas partition function in the classical limit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-langmuir-adsorption-isotherm">The Langmuir adsorption isotherm</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="the-langmuir-isotherm-and-ising-model">
+<h1>The Langmuir Isotherm and Ising Model<a class="headerlink" href="#the-langmuir-isotherm-and-ising-model" title="Permalink to this headline">#</a></h1>
+<section id="additional-readings-for-the-enthusiast">
+<h2>Additional Readings for the Enthusiast<a class="headerlink" href="#additional-readings-for-the-enthusiast" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>- Ch. 4.6, 4.7, 5.1</p></li>
+</ul>
+</section>
+<section id="topics-in-this-lecture">
+<h2>Topics in this lecture<a class="headerlink" href="#topics-in-this-lecture" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>The ideal gas partition function in the classical limit</p></li>
+<li><p>The Langmuir adsorption isotherm</p></li>
+<li><p>The Ising model</p></li>
+</ul>
+</section>
+<section id="announcements">
+<h2>Announcements<a class="headerlink" href="#announcements" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Pset 2 due today</p></li>
+<li><p>Pset 3 assigned, due next Thursday</p></li>
+<li><p>Exam 1 on Thursday, October 10</p></li>
+</ul>
+</section>
+<section id="ideal-gas-partition-function-in-the-classical-limit">
+<h2>Ideal gas partition function in the classical limit<a class="headerlink" href="#ideal-gas-partition-function-in-the-classical-limit" title="Permalink to this headline">#</a></h2>
+<p>In the last lecture, we described the factorization of the partition
+function for independent, identical subsystems, and defined the
+following approach for studying these systems:</p>
+<ul class="simple">
+<li><p>Determine a single-particle energy and corresponding single-particle
+partition function</p></li>
+<li><p>Write a partition function for the entire system using the
+single-particle partition function</p></li>
+<li><p>Derive thermodynamic quantities via derivatives of the partition
+function</p></li>
+</ul>
+<p>We then used this approach to start analyzing the behavior of a
+monatomic ideal gas. Starting from the expression for the energy of a
+quantum particle in a box and then assuming that energies were
+continuous to solve for the degeneracy for each state, we arrived at the
+following single-particle partition function:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+z &amp;= \frac{\pi}{4}  \left( \frac{8m}{h^2}\right )^{3/2} V  \sum_{\nu}^\infty \epsilon_{\nu}^{1/2}   e^{-\beta\epsilon_{\nu} } d\epsilon_{\nu}
+\end{aligned}\]</div>
+<p>Here, recall that <span class="math notranslate nohighlight">\(h\)</span> is Planck’s constant, <span class="math notranslate nohighlight">\(V\)</span> is the physical volume
+of the system, and <span class="math notranslate nohighlight">\(m\)</span> is the mass of the particle. We then made an
+important assumption: if the difference between consecutive terms in the
+sum is small (<em>i.e.</em>, energy levels are nearly the same), then we can
+accurately approximate the sum by a continuous integral. This assumption
+is equivalent to the method for deriving Stirling’s approximation, and
+transforms a sum over discrete states to an integral over a continuum of
+states. This assumption is also referred to as assuming that the system
+is at the <strong>classical limit</strong>: quantum mechanics is defined by discrete
+states whereas the classical limit is defined by continuous states
+because the difference in energy between states is extremely small. In
+the classical limit, the ideal gas partition function becomes:</p>
+<div class="math notranslate nohighlight">
+\[z = \frac{\pi}{4}  \left( \frac{8m}{h^2}\right )^{3/2} V \int_0^\infty   \epsilon_{\nu}^{1/2}  e^{-\beta \epsilon_{\nu} } d\epsilon_{\nu}\]</div>
+<p>We can analytically solve this expression by defining
+<span class="math notranslate nohighlight">\(u = \beta\epsilon_{\nu}\)</span> and recognizing the standard integral
+<span class="math notranslate nohighlight">\(\int_0^\infty u^{1/2}e^{-u} du = \sqrt{\pi}/2\)</span>. Simplifying yields our
+final expression for the single-particle partition function for the
+ideal gas:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+z &amp;= \frac{\pi}{4}  \left( \frac{8m}{h^2}\right )^{3/2} V \int_0^\infty   \epsilon_{\nu}^{1/2}  e^{-\beta\epsilon_{\nu} } d\epsilon_{\nu} \\
+&amp;=  \frac{\pi}{4}  \left( \frac{8m}{h^2}\right )^{3/2} V (k_BT)^{3/2} \int_0^\infty u^{1/2} e^{-u} du \\
+&amp;= \frac{\pi}{4}  \left( \frac{8 m k_BT}{h^2}\right )^{3/2} V \left ( \frac{\pi^{1/2}}{2} \right ) \\
+&amp;= \left( \frac{2\pi m k_BT}{h^2}\right )^{3/2} V
+\end{aligned}\end{split}\]</div>
+<p>We can then write the full partition function of the system, remembering
+that the particles are indistinguishable, using the result for the
+factorization of the partition function:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+Z &amp;= \frac{z^N}{N!} \\ 
+&amp;= \frac{1}{N!} \left( \frac{2\pi m k_BT}{h^2}\right )^{3N/2} V^N \\
+&amp;= \frac{1}{N!} \left ( \frac{V}{\lambda^3} \right )^N
+\end{aligned}\end{split}\]</div>
+<p>In the last line, we define:</p>
+<div class="math notranslate nohighlight">
+\[\lambda = \sqrt{\frac{h^2}{2\pi m k_BT}}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\lambda\)</span> is the <strong>thermal de Broglie wavelength</strong> which has units
+of length and is a function of <span class="math notranslate nohighlight">\(T\)</span>; this simplifies our notation and
+defines a characteristic length scale for treating a gas classically -
+if <span class="math notranslate nohighlight">\(V \gg \lambda^3\)</span>, which we will generally assume to be the case,
+then the classical limit is reasonable.</p>
+<p>We have now performed the first two steps in our approach by identifying
+an expression for the energy of a microstate of our system and
+calculating the corresponding partition function (in the classical
+limit) from the single-particle partition function. We can next derive
+thermodynamic relationships using the connection between the canonical
+partition function and the Helmholtz free energy. Let us first calculate
+the ensemble-average pressure of an ideal gas:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\langle P \rangle &amp;= P = -\left ( \frac{\partial F }{\partial V}\right )_{N,T} \\
+&amp;= k_B T \left ( \frac{\partial \ln Z }{\partial V}\right )_{N,T} \\
+\ln Z &amp;=  N\ln V + \ln \left [ \frac{1}{N!} \left( \frac{2\pi m k_BT}{h^2}\right )^{3N/2} \right ] \\
+P &amp;= N k_B T   \frac{1}{V} \\
+\therefore PV &amp;= N k_B T
+\end{aligned}\end{split}\]</div>
+<p>This expression for the pressure is the familiar ideal gas equation of
+state, derived <strong>solely</strong> from statistical mechanics. Note that <span class="math notranslate nohighlight">\(R\)</span>, the
+ideal gas constant, is related to <span class="math notranslate nohighlight">\(k_B\)</span> by a constant factor of
+Avogadro’s constant, <span class="math notranslate nohighlight">\(N_A\)</span>, or <span class="math notranslate nohighlight">\(R = N_A k_B\)</span>. Basically, this is just a
+unit conversion. The only input to obtain this relationship is an energy
+function from quantum mechanics - therefore this is entirely a
+first-principles derivation that does not rely on empirical
+measurements. In the third line we divided the partition function into a
+term that is a function of <span class="math notranslate nohighlight">\(V\)</span> and one that is not; the second term does
+not contribute to the expression for <span class="math notranslate nohighlight">\(P\)</span>.</p>
+<p>We can next calculate the average energy of an ideal gas. Recall that we
+can relate the energy to the canonical partition function (from a
+previous lecture) via:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+E &amp;= - \left ( \frac{\partial \ln Z}{\partial \beta}\right )_{N,V} \\
+&amp;= k_B T^2 \left ( \frac{\partial \ln Z}{\partial T}\right)_{N,V}
+\end{aligned}\end{split}\]</div>
+<p>We apply this definition by writing out the partition function and
+separate into the temperature-dependent and temperature-independent
+terms:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\ln Z &amp;=  \ln \left [ \frac{1}{N!} \left( \frac{2\pi m k_BT}{h^2}\right )^{3N/2} V^N \right ] \\
+&amp;= \frac{3N}{2} \ln T + \ln \left [ \frac{1}{N!} \left( \frac{2\pi m k_B}{h^2}\right )^{3N/2} V^N \right ]
+\end{aligned}\end{split}\]</div>
+<p>Taking the derivative gives:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+E &amp;= k_B T^2 \frac{3N}{2T} \\
+&amp;= \frac{3 N k_BT}{2}
+\end{aligned}\end{split}\]</div>
+<p>This again is a familiar expression - the internal energy of an ideal
+gas depends only on the temperature, and we obtain the same prefactors
+as in thermodynamics. We can now easily also calculate the heat capacity
+at constant volume, <span class="math notranslate nohighlight">\(C_V\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+C_V &amp;= \left ( \frac{\partial  E  }{\partial T}\right )_{N,V} \\
+&amp;= \frac{3 }{2}N k_B
+\end{aligned}\end{split}\]</div>
+<p>These last two results are manifestations of the <strong>equipartition
+theorem</strong>, which states that any degree of freedom that appears
+quadratically in the energy of a system contributes <span class="math notranslate nohighlight">\(1/2 k_BT\)</span> to the
+internal energy and contributes <span class="math notranslate nohighlight">\(1/2 k_B\)</span> to the heat capacity in the
+classical limit. Here, there are 3 translational degrees of freedom
+corresponding to the three quantum numbers that each contribute a
+quadratic energy term (the kinetic energy) for each of the <span class="math notranslate nohighlight">\(N\)</span> atoms,
+leading to <span class="math notranslate nohighlight">\(3/2 N k_B\)</span> for the heat capacity as we found.</p>
+<p>Finally, we can compute the chemical potential of an ideal gas using the
+ideal gas partition function:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\mu &amp;= \left ( \frac{\partial F }{\partial N}\right )_{T,V} \\
+&amp;= -k_B T \left ( \frac{\partial \ln Z }{\partial N}\right )_{T,V} \\
+\ln Z &amp;= \ln \left ( \frac{z^N}{N!}\right ) \\
+&amp;= N \ln z - \ln N! \\
+&amp;= N \ln  \left [\left( \frac{2\pi m k_BT}{h^2}\right )^{3/2} V \right ] - N \ln N + N \\
+\mu &amp;= -k_B T \left [ \ln \left( \frac{2\pi m k_BT}{h^2}\right )^{3/2} V  - \ln N  \right ] \\
+&amp;= -k_B T \ln \left( \frac{2\pi m k_BT}{h^2}\right )^{3/2} + k_B T \ln \frac{N}{V} \\
+&amp;= \mu_0(T) + k_B T \ln \rho
+\end{aligned}\end{split}\]</div>
+<p>The last formula expresses the chemical potential in terms of a first
+term, which is temperature dependent but concentration (<span class="math notranslate nohighlight">\(\rho\)</span>)
+independent, and then a second concentration-dependent term. This form
+for the chemical potential is again exactly what is observed for ideal
+gases in classical thermodynamics.</p>
+</section>
+<section id="the-langmuir-adsorption-isotherm">
+<h2>The Langmuir adsorption isotherm<a class="headerlink" href="#the-langmuir-adsorption-isotherm" title="Permalink to this headline">#</a></h2>
+<p>The previous approach shows that statistical mechanics can reproduce
+classical thermodynamic relationships from first-principles. We will now
+test a second example of the three-step approach for studying
+independent particles by deriving the <strong>Langmuir adsorption isotherm</strong>.</p>
+<p>Consider a system of <span class="math notranslate nohighlight">\(N\)</span> ideal gas particles that can adsorb onto a
+surface. Physically, this system could represent the adsorption of
+reactants onto a catalytic surface, for example. We define the number of
+adsorbed particles as <span class="math notranslate nohighlight">\(N_a\)</span> and the remaining number of free gas
+particles as <span class="math notranslate nohighlight">\(N-N_a\)</span>. Particles adsorb favorably with an energy of
+<span class="math notranslate nohighlight">\(-\epsilon_a\)</span> per particle. To simplify our treatment, we assume all
+particles adsorb onto a lattice of discrete with <span class="math notranslate nohighlight">\(N_s\)</span> possible binding
+sites, of which <span class="math notranslate nohighlight">\(N_a\)</span> are occupied assuming that only a single particle
+can bind to each site (with <span class="math notranslate nohighlight">\(N_s &gt; N_a\)</span>, allowing for all particles to
+adsorb). All binding sites are assumed to be independent; that is, the
+arrangement of particles does not affect the energy of the system. The
+quantity we will determine is the fraction of the surface that is
+occupied as a function of the pressure of the surrounding gas, <span class="math notranslate nohighlight">\(f_a(P)\)</span>.</p>
+<p><img alt="image" src="../_images/fig_7_1.png" />{width=”60%”}</p>
+<p>We next have to consider what ensemble to use to solve this problem. We
+can think of particles adsorbed to the surface and particles free in the
+bulk as two distinct sets of particles such that particles are free to
+exchange between the surface and bulk. The number of particles adsorbed
+to the surface, <span class="math notranslate nohighlight">\(N_a\)</span>, is thus allowed to vary. <span class="math notranslate nohighlight">\(\langle N_A \rangle\)</span>
+will be determined at equilibrium which is reached when each particle
+adsorbed to the surface has a constant chemical potential, <span class="math notranslate nohighlight">\(\mu_a\)</span>, that
+is equal to the chemical potential of each particle in the bulk,
+<span class="math notranslate nohighlight">\(\mu_b\)</span>. Since the number of particles can vary on the surface, the
+natural ensemble to consider is the grand canonical ensemble because the
+natural variables of the ensemble, <span class="math notranslate nohighlight">\(\mu V T\)</span>, are the same variables
+that are constant at equilibrium. We thus treat the surface as the
+system.</p>
+<p>The surface has <span class="math notranslate nohighlight">\(N_s\)</span> potential binding sites; each binding site is
+either occupied or not, with the number of occupied sites (<span class="math notranslate nohighlight">\(N_a\)</span>)
+fluctuating. We aim to find an expression for <span class="math notranslate nohighlight">\(f_a = \frac{N_a}{N_s}\)</span>.
+Since <span class="math notranslate nohighlight">\(N_a\)</span> can vary, we really seek the ensemble average value of
+<span class="math notranslate nohighlight">\(N_a\)</span>, so that <span class="math notranslate nohighlight">\(f_a = \frac{\langle N_a \rangle}{N_s}\)</span>. Since each
+binding site is independent and identical, we can factorize the
+partition function by treating each site as a subsystem that is either
+occupied or unoccupied, meaning that a single particle is adsorbed to
+the site or not. Since the sites are spatially distinct, each subsystem
+is distinguishable. We then write the grand canonical ensemble partition
+function for the whole surface as:</p>
+<div class="math notranslate nohighlight">
+\[\Xi_s = \xi_s^{N_s}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\xi_s\)</span> is the single-site grand canonical partition function
+given as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\xi_s = \sum_{j}e^{-E_j \beta}e^{\mu_a N_j \beta}
+\end{aligned}\]</div>
+<p>For a single site, there are only two possible values of <span class="math notranslate nohighlight">\(N_j\)</span>: either
+the site is occupied, for which <span class="math notranslate nohighlight">\(N_j = 1\)</span>, or the site is unoccupied,
+for which <span class="math notranslate nohighlight">\(N_j = 0\)</span>. Similarly, there are only two possible energies: if
+<span class="math notranslate nohighlight">\(N_j = 1\)</span>, <span class="math notranslate nohighlight">\(E_j = -\epsilon_a\)</span>, and if <span class="math notranslate nohighlight">\(N_j = 0\)</span>, <span class="math notranslate nohighlight">\(E_j = 0\)</span>. Therefore
+the single-site partition function is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\xi_s &amp;= e^{0 \beta}e^{0 \beta} + e^{-\epsilon_a \beta}e^{\mu_a \beta} \\
+&amp;= 1 + e^{\epsilon_a \beta}e^{\mu_a \beta} \\
+\Xi_s &amp;= \xi_s^{N_s}\\
+&amp;= \left ( 1 + e^{\epsilon_a \beta}e^{\mu_a \beta} \right )^{N_s}
+\end{aligned}\end{split}\]</div>
+<p>Note that we do not include a factor of <span class="math notranslate nohighlight">\(1/N_s!\)</span> for the partition
+function, because here we write the partition function for lattice
+<em>sites</em>, which themselves are distinguishable (as opposed to the
+particles adsorbing onto them). Next, we write an expression for the
+grand potential:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\Sigma_G &amp;= - k_B T \ln \Xi_s \\
+&amp;= - N_s k_B T \ln \left ( 1 + e^{\epsilon_a \beta}e^{\mu_a \beta} \right )
+\end{aligned}\end{split}\]</div>
+<p>We need to relate this thermodynamic potential to the quantity of
+interest, <span class="math notranslate nohighlight">\(\langle N_a \rangle\)</span>. Recall that we can write an expression
+for <span class="math notranslate nohighlight">\(\Sigma_G\)</span>, which is a function of the natural variables
+<span class="math notranslate nohighlight">\(\mu_a V T\)</span>, as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\Sigma_G (\mu_a, V, T) &amp;= E(N, V, S) - TS - \mu_a N_a \\
+d\Sigma_G &amp;= dE - TdS - SdT - \mu_a d N_a - N_a d \mu_a \\
+&amp;= TdS - PdV + \mu_a dN_a - TdS - SdT - \mu_a d N_a - N_a d \mu_a \\
+&amp;= -S dT - PdV - N_a d \mu_a
+\end{aligned}\end{split}\]</div>
+<p>Therefore, we recognize that
+<span class="math notranslate nohighlight">\(\left ( \frac{\partial \Sigma_G}{\partial \mu_a} \right )_{V,T} = - N_a\)</span>,
+so:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+N_a  &amp;= -\left ( \frac{\partial \Sigma_G}{\partial \mu_a} \right )_{V,T} \\
+&amp;= \frac{ N_s e^{\epsilon_a \beta}e^{\mu_a \beta}}{ 1 + e^{\epsilon_a \beta}e^{\mu_a \beta} }\\
+f_a &amp;= \frac{ N_a }{N_s} \\
+&amp;= \frac{ e^{\epsilon_a \beta}e^{\mu_a \beta}}{ 1 + e^{\epsilon_a \beta}e^{\mu_a \beta}}
+\end{aligned}\end{split}\]</div>
+<p>We now have an expression in terms of the chemical potential of the
+particles adsorbed to the bulk, but we’d like an expression in terms of
+the pressure of the bulk gas. At equilibrium, we know that
+<span class="math notranslate nohighlight">\(\mu_a = \mu_b\)</span>, so we can calculate the chemical potential for
+particles in the bulk and relate this to the pressure. Since the gas
+molecules are ideal, non-interacting particles, these particles are
+described as an ideal gas. As a result, we can substitute in the
+expression for the chemical potential derived from the ideal gas
+(canonical) partition function defined earlier and use this for the
+chemical potential of particles in the bulk:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\mu_b &amp;=  -k_B T \ln \left( \frac{2\pi m k_BT}{h^2}\right )^{3/2} + k_B T \ln \frac{N-N_a}{V} \\
+&amp;= -k_B T \ln \left [ \frac{V}{(N-N_a)\lambda^3}\right ]
+\end{aligned}\end{split}\]</div>
+<p>Note that we use <span class="math notranslate nohighlight">\(\lambda\)</span> (the thermal de Broglie wavelength) to
+simplify the notation. We use the ideal gas equation of state
+(<span class="math notranslate nohighlight">\(V = \frac{(N-N_a) k_B T}{P}\)</span>) to obtain a pressure dependence:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\mu_b &amp;= -k_B T \ln \left [ \frac{(N-N_a)k_B T}{P(N-N_a)\lambda^3}\right ] \\
+&amp;= k_B T \ln \left ( \frac{P\lambda^3}{k_B T}\right )
+\end{aligned}\end{split}\]</div>
+<p>Finally, we now require the condition <span class="math notranslate nohighlight">\(\mu_a = \mu_b\)</span> to find an
+expression for <span class="math notranslate nohighlight">\(f_a\)</span>. Substituting in the expression for <span class="math notranslate nohighlight">\(\mu_b\)</span> to our
+prior expression for <span class="math notranslate nohighlight">\(f_a\)</span> yields:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+f_a &amp;=  \frac{ \left ( \frac{P\lambda^3}{k_BT}\right )e^{\epsilon_a \beta}}{1 +  \left ( \frac{P\lambda^3}{k_BT}\right ) e^{\epsilon_a \beta}} \\
+&amp;= \frac{P / P_0}{1 +  P / P_0}
+\end{aligned}\end{split}\]</div>
+<p>Here, we define
+<span class="math notranslate nohighlight">\(P_0 = \left ( \frac{k_B T}{\lambda^3}\right )e^{-\epsilon_a / k_BT}\)</span> as
+a constant (equal to the pressure for which <span class="math notranslate nohighlight">\(f_a = 0.5\)</span>) that does not
+depend on <span class="math notranslate nohighlight">\(f_a\)</span> or on <span class="math notranslate nohighlight">\(P\)</span>. This expression is our goal - we relate the
+pressure to the fraction of occupied sites, <span class="math notranslate nohighlight">\(f_a\)</span>. We can rearrange this
+to equivalently write:</p>
+<div class="math notranslate nohighlight">
+\[f_a = \frac{P}{P + P_0}\]</div>
+<p>This last expression is referred to as the <strong>Langmuir adsorption
+isotherm</strong>. It shows that as the pressure of the system increases, the
+surface coverage increases until eventually plateauing. Similar isotherm
+behavior is observed in a number of experimental systems. Note also that
+by solving for the value <span class="math notranslate nohighlight">\(P_0\)</span>, which is equivalent to the pressure
+where the surface is half-occupied, we can find a value for <span class="math notranslate nohighlight">\(\epsilon_a\)</span>
+or the binding energy if the thermal de Broglie wavelength is known.
+Thus, statistical mechanics provides a valuable connection between
+microscopic and macroscopic observables relevant to surface occupancy.</p>
+<p><img alt="image" src="../_images/fig_7_2.png" />{width=”50%”}</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lecture_files"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Lecture6.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">The Ideal Gas Partition Function</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Lecture8.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">The Ising Model and Mean-Field Theory</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-readings-for-the-enthusiast">Additional Readings for the Enthusiast</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topics-in-this-lecture">Topics in this lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements">Announcements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ideal-gas-partition-function-in-the-classical-limit">Ideal gas partition function in the classical limit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-langmuir-adsorption-isotherm">The Langmuir adsorption isotherm</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Reid van Lehn, Matt Gebbie, Rose Cersonsky
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

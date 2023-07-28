@@ -1,0 +1,871 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>The Potential of Mean Force &#8212; Notes for CBE710</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture_files/Lecture14';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Free energy perturbation" href="Lecture15.html" />
+    <link rel="prev" title="The Structure of Classical Fluids" href="Lecture13.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Notes for CBE710</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Class introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Mechanics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Lecture1.html">Overview and review of thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture2.html">The Microcanonical Ensemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture3.html">The Canonical Ensemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/ps_1/problem_set_1.html">— Problem Set 1 —</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture4.html">Canonical Ensemble Continued</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture5.html">Generalized Ensembles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture6.html">The Ideal Gas Partition Function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture7.html">The Langmuir Isotherm and Ising Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture8.html">The Ising Model and Mean-Field Theory</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Molecular Simulation</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Lecture9.html">Fluctuations and an Introduction to Molecular Simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture10.html">Monte Carlo Simulations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture11.html">Monte Carlo and Intro to Molecular Dynamics Simulations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture12.html">MD Thermostats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture13.html">The Structure of Classical Fluids</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">The Potential of Mean Force</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Lecture15.html">Free energy perturbation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture16.html">Postulates of thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture17.html">Heat Engines and Possible Processes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture18.html">Entropy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture19.html">The Fundamental Relation of Thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture20.html">Legendre Transforms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture21.html">Conditions of equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture22.html">Equilibrium in single-component systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture23.html">Phase Diagrams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture24.html">Fugacity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture25.html">Ideal mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture26.html">Non-ideal mixtures</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/lecture_files/Lecture14.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>The Potential of Mean Force</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recommended-textbooks">Recommended textbooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topics-in-this-lecture">Topics in this lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-g-r">Calculating <span class="math notranslate nohighlight">\(g(r)\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-reversible-work-theorem">The Reversible Work Theorem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-potential-of-mean-force-for-an-arbitrary-process">The potential of mean force for an arbitrary process</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#umbrella-sampling">Umbrella sampling</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="the-potential-of-mean-force">
+<h1>The Potential of Mean Force<a class="headerlink" href="#the-potential-of-mean-force" title="Permalink to this headline">#</a></h1>
+<section id="recommended-textbooks">
+<h2>Recommended textbooks<a class="headerlink" href="#recommended-textbooks" title="Permalink to this headline">#</a></h2>
+<p>, Frenkel and Smit Ch. 7</p>
+</section>
+<section id="topics-in-this-lecture">
+<h2>Topics in this lecture<a class="headerlink" href="#topics-in-this-lecture" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Reversible work theorem</p></li>
+<li><p>Potential of mean force</p></li>
+<li><p>Umbrella sampling</p></li>
+</ul>
+</section>
+<section id="calculating-g-r">
+<h2>Calculating <span class="math notranslate nohighlight">\(g(r)\)</span><a class="headerlink" href="#calculating-g-r" title="Permalink to this headline">#</a></h2>
+<p>In the last lecture, we discussed the radial distribution function but
+ran out of time before presenting an algorithm for calculating it. In
+principle, <span class="math notranslate nohighlight">\(g(r)\)</span> is a continuous quantity, but we can calculate <span class="math notranslate nohighlight">\(g(r)\)</span>
+by populating a histogram of pairwise distances and normalizing
+appropriately. We divide the distance, <span class="math notranslate nohighlight">\(r\)</span>, into a set of bins of width
+<span class="math notranslate nohighlight">\(dr\)</span> that discretizes the distance coordinate. We can number the bins
+such that bin <span class="math notranslate nohighlight">\(i\)</span> refers to the set of distances between <span class="math notranslate nohighlight">\(dr \times i\)</span>
+and <span class="math notranslate nohighlight">\(dr \times (i+1)\)</span>. Each bin then refers to a volume of space given
+by <span class="math notranslate nohighlight">\(\frac{4\pi}{3}dr^3[(i+1)^3 - (i^3)]\)</span>.</p>
+<p>Recalling that our definition of <span class="math notranslate nohighlight">\(g(r)\)</span> is the average density of
+particles a given distance <span class="math notranslate nohighlight">\(r\)</span> apart divided by the overall density, we
+can write the following algorithm:</p>
+<ol class="arabic simple">
+<li><p>During a converged simulation, periodically iterate over all
+particles. For each particle, calculate the distance <span class="math notranslate nohighlight">\(r\)</span> to every
+other particle.</p></li>
+<li><p>For each distance, calculate the corresponding index of the bin in
+the histogram; that is, calculate <span class="math notranslate nohighlight">\(r/dr\)</span> and round to an integer (or
+round down, depending on how you define your bins). Increase the
+value of this bin by 1.</p></li>
+<li><p>Repeat steps 1 and 2 a number of times during a simulation (i.e.,
+every time you save the energy after convergence).</p></li>
+<li><p>Normalize the histogram at the end of the simulation. This requires
+dividing each bin by the number of samples (to time average), the
+number of particles in the system (since we iterate over all
+particles each timestep), and the volume of the bin (to get a
+density). Finally, divide all bins by the bulk density (<span class="math notranslate nohighlight">\(N/V\)</span>) to
+get <span class="math notranslate nohighlight">\(g(r)\)</span>.</p></li>
+</ol>
+<p>Symbolically, this procedure can be written as:</p>
+<div class="math notranslate nohighlight">
+\[g(r) =  \frac{\tilde{p}(\textbf{r}_1=0, r)}{\rho} = \frac{1}{\rho} \frac{1}{N} \frac{1}{V(r)} \left \langle \sum_i^N \sum_{j\ne i}^N \delta (r-r_{ij}) \right \rangle\]</div>
+<p>The function <span class="math notranslate nohighlight">\(\delta(r-r_{ij})\)</span> is a delta function that returns 1 if
+the distance is within the small binwidth of <span class="math notranslate nohighlight">\(dr\)</span> around the desired
+distance <span class="math notranslate nohighlight">\(r\)</span>; this is captured by incrementing bins in our histogram.
+The ensemble-average of this sum is equal to averaging over the number
+of samples (i.e., time-averaging). The term <span class="math notranslate nohighlight">\(1/V(r)\)</span> normalizes each bin
+by its volume to get an average density per bin. The term <span class="math notranslate nohighlight">\(1/N\)</span>
+normalizes the sum by the number of particles, since we iterate over all
+particles each time we sample. Finally, <span class="math notranslate nohighlight">\(1/\rho\)</span> normalizes <span class="math notranslate nohighlight">\(g(r)\)</span> by
+the bulk density as desired. Calculating this for each value of <span class="math notranslate nohighlight">\(r\)</span>
+would yield a complete <span class="math notranslate nohighlight">\(g(r)\)</span> curve.</p>
+</section>
+<section id="the-reversible-work-theorem">
+<h2>The Reversible Work Theorem<a class="headerlink" href="#the-reversible-work-theorem" title="Permalink to this headline">#</a></h2>
+<p>The radial distribution function provides unique structural information
+regarding the preferred distribution of particles in a system (<em>i.e.</em>,
+it provides information on fluid structure). Since this structure
+emerges from the interplay of energetic interactions between particles
+and the entropy associated with particular particle configurations, it
+would be expected that the fluid structure contains information about
+the underlying system thermodynamics. Indeed, it can be shown that the
+radial distribution function itself can be related directly to the
+average, or mean, force experienced by particles that give rise to this
+structure. Conceptually, you can consider the case of an ideal gas, for
+which <span class="math notranslate nohighlight">\(g(r) = 1\)</span> for all values of <span class="math notranslate nohighlight">\(r\)</span>. For this system, we expect that
+all values of <span class="math notranslate nohighlight">\(r\)</span> are equally probable and the mean force experienced by
+a particle is the same everywhere. For a liquid, however, <span class="math notranslate nohighlight">\(g(r) &gt; 1\)</span> for
+some values of <span class="math notranslate nohighlight">\(r\)</span>, implying that on average particles will experience
+forces that drive them toward certain values of <span class="math notranslate nohighlight">\(r\)</span> that are preferred.
+In the following, we will use the tools of statistical mechanics to draw
+a direct correspondence between <span class="math notranslate nohighlight">\(g(r)\)</span> and the mean force experienced by
+each particle, which we can then relate to fundamental thermodynamic
+quantities. The main takeaway is that characterizing fluid structure
+alone yields insight into the thermodynamics of the system which emerges
+from our simulation approach.</p>
+<p><img alt="image" src="../_images/fig_14_1.png" />{width=”40%”}</p>
+<p>Let us consider the force acting between a pair of particles separated
+by a distance <span class="math notranslate nohighlight">\(r\)</span>, which is defined as the negative derivative of the
+potential energy of the entire system with respect to the distance
+between the two particles, <span class="math notranslate nohighlight">\(-dE(\textbf{r}^N)/dr\)</span>. In a fluid, this
+force will depend not just on the direct interactions between the pair
+of particles, but also on the positions of all other particles due to
+interactions with the intervening medium; for example, the electrostatic
+force between two charged particles depends on all other particles that
+influence the dielectric constant. To compute the mean force between the
+pair of particles, we can thus calculate the ensemble-average force that
+arises if the two specific particles are fixed at positions
+<span class="math notranslate nohighlight">\(\textbf{r}_1\)</span> and <span class="math notranslate nohighlight">\(\textbf{r}_2\)</span>, corresponding to a distance <span class="math notranslate nohighlight">\(r\)</span>, and
+we integrate over all configurations of the other fluid particles
+(assuming a homogeneous, isotropic system) in a similar manner as we did
+last lecture when computing the reduced configurational distribution. We
+can write this ensemble as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+-\left \langle \frac{d E(\textbf{r}^N)}{dr} \right \rangle_{r} &amp;= - \int d\textbf{r}_3 \dots \int d\textbf{r}_N \frac{d E(\textbf{r}^N)}{dr} p_r(\textbf{r}^N)
+\end{aligned}\]</div>
+<p>This is the typical expression for an ensemble average in the continuum
+limit, but we use the subscript <span class="math notranslate nohighlight">\(r\)</span> on the ensemble-average force to
+emphasize that it is computed for a specific distance <span class="math notranslate nohighlight">\(r\)</span> between
+particles <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(2\)</span>. Similarly, the probability has a subscript <span class="math notranslate nohighlight">\(r\)</span> to
+indicate that it refers to the probability of a given state assuming
+that the distance <span class="math notranslate nohighlight">\(r\)</span> between particles <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(2\)</span> is fixed. This
+probability is then given as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+p_r(\textbf{r}^N) = \frac{e^{-\beta E(\textbf{r}^N)}}{\int d\textbf{r}_3 \dots \int d\textbf{r}_N \exp \left [-\beta E(\textbf{r}^N)\right]}
+\end{aligned}\]</div>
+<p>where the denominator is effectively a reduced partition function in
+which we fix the positions of particles 1 and 2. We can now simplify the
+expression for the ensemble-average force as follows:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+-\left \langle \frac{d E(\textbf{r}^N)}{dr} \right \rangle_{r} &amp;= -\frac{\int d\textbf{r}_3 \dots \int d\textbf{r}_N   \frac{d E(\textbf{r}^N)}{d r} \exp \left [-\beta E(\textbf{r}^N)\right]}{\int d\textbf{r}_3 \dots \int d\textbf{r}_N \exp \left [-\beta E(\textbf{r}^N)\right]} \\\label{13.28}
+&amp;=\frac{k_BT \left [ \frac{d }{d r} \int d\textbf{r}_3 \dots \int d\textbf{r}_N  \exp \left [-\beta E(\textbf{r}^N)\right] \right ]}{\int d\textbf{r}_3 \dots \int d\textbf{r}_N \exp \left [-\beta E(\textbf{r}^N)\right]} \\
+&amp;= k_B T \frac{d }{d r} \ln \int d\textbf{r}_3 \dots \int d\textbf{r}_N \exp \left [-\beta E(\textbf{r}^N)\right] 
+\end{aligned}\end{split}\]</div>
+<p>These three equations are essentially just the chain rule in reverse.
+Next, we recognize that we can add arbitrary constants that are not a
+function of <span class="math notranslate nohighlight">\(r\)</span> to this logarithm, since upon differentiation they will
+be 0. In this case, the partition function (<span class="math notranslate nohighlight">\(Z\)</span>), number of particles
+(<span class="math notranslate nohighlight">\(N\)</span>), and system number density (<span class="math notranslate nohighlight">\(\rho\)</span>) are constant with respect to
+variations in the distance between the two tagged particles. We can
+write:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+-\left \langle \frac{d E(\textbf{r}^N)}{dr} \right \rangle_{r} &amp;=  k_BT \frac{d}{dr} \ln \frac{N(N-1)}{\rho^2 Z} + k_B T \frac{d }{d r} \ln \int d\textbf{r}_3 \dots \int d\textbf{r}_N \exp \left [-\beta E(\textbf{r}^N)\right] \\
+&amp;= k_B T \frac{d }{d r} \ln \frac{N(N-1)}{\rho^2 Z}\int d\textbf{r}_3 \dots \int d\textbf{r}_N \exp \left [-\beta E(\textbf{r}^N)\right] \\
+&amp;= k_BT \frac{d }{d r} \ln g(r) 
+\end{aligned}\end{split}\]</div>
+<p>Therefore, we find that the derivative with respect to the distance of
+<span class="math notranslate nohighlight">\(k_BT \ln g(r)\)</span> gives the ensemble-average force acting between
+particles 1 and 2 computed across the equilibrium distribution of all
+other particles, or the <strong>mean force</strong>. As expected, this implies that
+the radial distribution function contains information regarding the
+effective forces that arise between particles in condensed, fluid
+phases, that would not arise due to pair interactions alone!</p>
+<p>Another interesting relationship can be obtained if we further relate
+the mean force to the work done during a process involving a change in
+<span class="math notranslate nohighlight">\(r\)</span>. Recalling back to thermodynamics (Lecture 1), we can in general
+define any change in work as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+W &amp;= \int f dx 
+\end{aligned}\]</div>
+<p>where <span class="math notranslate nohighlight">\(W\)</span> is the work, <span class="math notranslate nohighlight">\(f\)</span> is the generalized force, and <span class="math notranslate nohighlight">\(x\)</span> is the
+generalized displacement. Let’s consider now the work done by bringing
+two particles, for which <span class="math notranslate nohighlight">\(g(r)\)</span> is known, from some initial finite
+distance <span class="math notranslate nohighlight">\(r\)</span> to infinite separation. Since the ensemble-average mean
+force is equivalent to the thermodynamically defined force by
+ergodicity, the work done during this process is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+W(r) &amp;= \int_r^{\infty} -\left \langle \frac{d E(\textbf{r}^N)}{dr} \right \rangle_{r}  dr  
+\end{aligned}\]</div>
+<p>Here, we write <span class="math notranslate nohighlight">\(W(r)\)</span> to indicate that it is the work for separating
+particles from an initial distance <span class="math notranslate nohighlight">\(r\)</span>. Because we are assuming the
+system is at constant <span class="math notranslate nohighlight">\(NVT\)</span>, we can relate this work directly to the
+change in the Helmholtz free energy - recall that the Helmholtz free
+energy is defined by:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+F &amp;= E - TS \\
+dF &amp;= -SdT + dW 
+\end{aligned}\end{split}\]</div>
+<p>where I have left <span class="math notranslate nohighlight">\(dW\)</span> as the generalized work term rather than using
+<span class="math notranslate nohighlight">\(-PdV\)</span> work. At constant temperature, <span class="math notranslate nohighlight">\(-SdT = 0\)</span> and <span class="math notranslate nohighlight">\(dF = dW\)</span>. We can
+thus write:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\Delta F(r) &amp;= \int_r^{\infty} -\left \langle \frac{d E(\textbf{r}^N)}{dr} \right \rangle_{r}  dr
+\end{aligned}\]</div>
+<p>In other words, we can directly relate the ensemble-average force
+computed between particles to the change in the free energy of the
+system as we move those particles relative to each other. Evaluating the
+integral yields:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\Delta F(r) &amp;= \int_r^{\infty} -\left \langle \frac{d E(\textbf{r}^N)}{dr} \right \rangle_{r}  dr \\
+&amp;= k_B T  \int^{\infty}_{r}  \frac{d }{d r} \ln g(r)  dr \\
+&amp;= k_B T \ln g(\infty) - k_B T \ln g(r) \\
+&amp;= - k_BT \ln g(r) \\
+\therefore g(r) &amp;= e^{-\beta \Delta F(r)}
+\end{aligned}\end{split}\]</div>
+<p>The integral is simplified by the fact that <span class="math notranslate nohighlight">\(g(\infty)\)</span> is normalized
+to 1. The final result relates the radial distribution function directly
+to the change in the Helmholtz free energy associated with moving two
+particles from a fixed distance <span class="math notranslate nohighlight">\(r\)</span> to infinite separation - this
+relationship is also called the <strong>reversible work theorem</strong> to recognize
+that the change in the free energy during a process is equal to the
+reversible work during that process. We also could have integrated
+between any two other limits of integration to find the change in the
+free energy between two particular values of <span class="math notranslate nohighlight">\(r\)</span> from <span class="math notranslate nohighlight">\(g(r)\)</span>. This
+relationship is the first approach we have presented that can be used to
+compute a free energy change, as opposed to an energy change or change
+in other observables, from a molecular simulation. Given that
+<span class="math notranslate nohighlight">\(\Delta F(r)\)</span> is a thermodynamic potential that is related to the
+average (or mean) force exerted on particles 1 and 2 due to all other
+solvent configurations, this quantity is also called a <strong>potential of
+mean force</strong> and generally tells us the free energy change associated
+with some process; in this specific case, the potential of mean force is
+the free energy change associated with bringing the two particles to
+some distance <span class="math notranslate nohighlight">\(r\)</span> from initial positions at infinity.</p>
+<p>In practice, the most common use of the reversible work theorem is in
+the parameterization of new coarse-grained potentials from atomistic
+input. For example, the procedure of <em>Boltzmann inversion</em> involves
+calculating a pairwise radial distribution function between two atoms in
+an isotropic system, using the radial distribution function to calculate
+a potential of mean force that averages over all other particle
+coordinates, then reproducing this potential of mean force at
+coarse-grained resolution using an effective potential, allowing all
+other particles to be removed from the simulation. Such an approach is
+reasonable, although one has to be careful to recognize that the
+derivation above is only exact in a completely isotropic system, while
+most systems with multiple types of atoms will require more specialized
+techniques. It is also possible to use the reversible work theorem
+directly to calculate free energy surfaces for a system, but the
+challenge is in sampling low-probability states; we will illustrate how
+to solve this challenge in the next lecture.</p>
+</section>
+<section id="the-potential-of-mean-force-for-an-arbitrary-process">
+<h2>The potential of mean force for an arbitrary process<a class="headerlink" href="#the-potential-of-mean-force-for-an-arbitrary-process" title="Permalink to this headline">#</a></h2>
+<p>The reversible work theorem is the first approach that we have defined
+so far that allows us to compute actual free energies, which is useful
+because the free energy is what is typically minimized at equilibrium.
+We specifically computed the potential of mean force, or the change in
+the system free energy associated with a particular process - in this
+case, the process was moving two particles relative to each other.
+However, we can generalize this concept to calculate the potential of
+mean force (i.e., free energy change) associated with any choice of
+molecular process, even though we still have no means of actually
+computing the partition function, <span class="math notranslate nohighlight">\(Z\)</span>. In the following two lectures, we
+will give brief overviews of methods that yield the change in the free
+energy associated with a specific process that are commonly used in the
+simulation literature.</p>
+<p>First, we need a means of defining a process. To do so, we will define a
+particular <strong>collective variable</strong>, <span class="math notranslate nohighlight">\(x(\mathbf{r}^N )\)</span>, as the
+<strong>reaction coordinate</strong> describing the process of interest. A collective
+variable is a function of multiple particle coordinates; example
+collective variables of interest might be the surface area of a bilayer,
+the pressure of the system, the relative position of two molecules, etc.
+The reaction coordinate is the particular collective variable which
+changes during the process we are interested in - for example, the
+reaction coordinate for particle association described above would be
+defined as the distance between the two particles. Note that many
+possible microstates of the system will correspond to the same value of
+the reaction coordinate, since two particles can be at the same relative
+distance from each other for many possible positions of all other
+particles. We can now ask what the likelihood of obtaining a particular
+value of the reaction coordinate is.</p>
+<p>At equilibrium in a canonical ensemble, the probability of finding the
+system assuming a configuration with a particular value of the reaction
+coordinate <span class="math notranslate nohighlight">\(x(\mathbf{r}^N )= x'\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[\label{app_a_partition_function_eq}
+p(x') = \frac{\int d\mathbf{r}^N \exp \left [ -\beta  E(\mathbf{r}^N)\right  ]  \delta(x(\mathbf{r}^N) - x')}{Z}\]</div>
+<p>Here, the integral in the numerator runs over all possible
+configurations of the system and the delta function selects states for
+which <span class="math notranslate nohighlight">\(x(\mathbf{r}^N) = x'\)</span>. That is, all degrees of freedom are
+integrated out except for configurations with the desired value of the
+reaction coordinate, which is again similar in spirit to how we
+integrated out degrees of freedom of all particle positions when
+calculating the radial distribution function. We can recognize that the
+form of the numerator in eq.
+<span class="xref myst">[app_a_partition_function_eq]</span>{reference-type=”eqref”
+reference=”app_a_partition_function_eq”} effectively defines a new
+partition function that describes the statistical properties of the
+system for <span class="math notranslate nohighlight">\(x(\mathbf{r}^N) = x'\)</span>, or the subset of the full phase space
+consistent with one particular value of the reaction coordinate. We can
+thus write:</p>
+<div class="math notranslate nohighlight">
+\[\label{app_a_pmf_partition_function}
+p(x') = \frac{Z(x')}{Z}\]</div>
+<p>In other words, the numerator of eq.
+<span class="xref myst">[app_a_partition_function_eq]</span>{reference-type=”eqref”
+reference=”app_a_partition_function_eq”} is a new partition function,
+<span class="math notranslate nohighlight">\(Z(x')\)</span>, describing the projection of the total phase space onto a
+region that is restricted to one particular value of the reaction
+coordinate (again, similar to the denominator in the definition of <span class="math notranslate nohighlight">\(p_r\)</span>
+in the discussion of the reversible work theorem above). Now we can
+calculate the Helmholtz free energy, <span class="math notranslate nohighlight">\(F(x')\)</span>, associated with the new
+partition function:</p>
+<div class="math notranslate nohighlight">
+\[F(x') = -k_BT \ln Z(x') = -k_B T \ln \left [ p(x')  \right ] - k_B T \ln Z\]</div>
+<p>Although we do not know the value of <span class="math notranslate nohighlight">\(Z\)</span>, as long as we only take
+<em>differences</em> in the free energy for different values of the reaction
+coordinate, the second term will drop out - the partition function of
+the entire system is constant independent of what region of phase space
+(specified by <span class="math notranslate nohighlight">\(x'\)</span>) we study. The difference in the free energy as a
+function of the reaction coordinate is exactly equal to the potential of
+mean force (PMF) defined from the reversible work theorem, but now
+generalized to any reaction corodinate of interest. We can write the
+difference in the PMF between any two arbitrary states as:</p>
+<div class="math notranslate nohighlight">
+\[F(x_1) - F(x_0) = -kT \ln \left [ \frac{p(x_1)}{p(x_0)} \right ]\]</div>
+<p>where <span class="math notranslate nohighlight">\(x_0\)</span> and <span class="math notranslate nohighlight">\(x_1\)</span> are two values of the reaction coordinate of
+interest and the PMF is the free energy change associated with moving
+the system from a region of phase space associated with <span class="math notranslate nohighlight">\(x_0\)</span> to one
+associated with <span class="math notranslate nohighlight">\(x_1\)</span>. So, note some important conceptual items here:</p>
+<ul class="simple">
+<li><p>We can think of free energy changes in terms of relative
+probabilities associated with subsets of microstates.</p></li>
+<li><p>We can describe a <strong>free energy landscape</strong> for a system based on
+the relative probabilities that certain microstates (those specified
+by low free energy values of a reaction coordinate) will be
+obtained.</p></li>
+<li><p>The potential of mean force is the projection of a free energy
+landscape onto a particular reaction coordinate.</p></li>
+</ul>
+<p><img alt="image" src="../_images/fig_14_2.png" />{width=”100%”}</p>
+<p>These unifying concepts are often used to describe various phenomena.
+For example, this language is often used to describe reaction
+equilibria, or the likelihood of observing reactants, transition states,
+and products in a reacting system. We can also use similar language to
+describe biological processes - for example, protein folding is
+described as a system reaching a local free energy minimum, or in other
+words a set of highly probable configurations consistent with a folded
+state.</p>
+</section>
+<section id="umbrella-sampling">
+<h2>Umbrella sampling<a class="headerlink" href="#umbrella-sampling" title="Permalink to this headline">#</a></h2>
+<p>The PMF is a very useful quantity for calculating equilibrium free
+energy changes associated with processes that involve a well-defined
+reaction coordinate. To calculate the PMF, however, the probability
+associated with a specific value of the reaction coordinate, <span class="math notranslate nohighlight">\(p(x')\)</span>,
+must be determined. In principle, this probability distribution could be
+calculated by simply generating system configurations within the entire
+accessible phase space (using either standard molecular dynamics with
+correct thermostatting or via Monte Carlo sampling, for example) and
+calculating how frequently the desired values of the reaction coordinate
+are observed. However, this brute force approach is very unlikely to
+sample states efficiently, as the vast majority of simulation time would
+be spent computing configurations for the high-probability values of
+<span class="math notranslate nohighlight">\(x'\)</span>. Worse, if any value of the reaction coordinate exists in a region
+of phase space that is nearly inaccessible (<em>i.e.</em>, the reaction
+coordinate sits at the top of a free energy barrier), then it is likely
+that the value may never be determined via a brute force approach, and
+therefore the free energy cannot be accurately sampled.</p>
+<p><img alt="image" src="../_images/fig_14_3.png" />{width=”100%”}</p>
+<p>One solution to overcome the sampling problem and facilitate the
+calculation of the probability densities of interest (and thus the PMF)
+is to apply a <strong>bias</strong> to the system dynamics - that is, apply
+unphysical forces that will enforce sampling of desired values of
+reaction coordinate. In one popular technique, known as <strong>umbrella
+sampling</strong>, a set of weight functions are defined and added to the
+system potential energy function. Typically, each function is
+implemented in an independent simulation. We define
+<span class="math notranslate nohighlight">\(w_i(x) \equiv w_i[x(\mathbf{r}^N)]\)</span> as the weight function applied in
+the <span class="math notranslate nohighlight">\(i\)</span>th simulation; conventionally, the weight function is harmonic
+(although other functional forms are reasonable) such that the <span class="math notranslate nohighlight">\(i\)</span>th
+function is defined by:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+w_i(x) &amp;= \frac{1}{2} k (x - x_i)^2
+\end{aligned}\]</div>
+<p>where <span class="math notranslate nohighlight">\(k\)</span> is the spring constant and <span class="math notranslate nohighlight">\(x_i\)</span> is the value about which the
+system is restrained. The potential energy function of the system is
+then given by <span class="math notranslate nohighlight">\(E(\mathbf{r}^N) + w_i(x)\)</span>, such that the weight function
+significantly increases the energy of any configurations with values of
+the reaction coordinate that differ significantly from the restrained
+value <span class="math notranslate nohighlight">\(x_i\)</span>. In other words, we effectively add a fictitious force (a
+spring force) that is not meant to model a physical force in the system,
+but rather is added solely to force the system to sample a particular
+value of the reaction coordinate. Conceptually, the idea behind this is
+to effectively “flatten” the free energy landscape by forcing the system
+to explore a local region near <span class="math notranslate nohighlight">\(x_i\)</span>, thus allowing the sampling of
+values of <span class="math notranslate nohighlight">\(x_i\)</span> that would not be explored in an unbiased simulation.</p>
+<p><img alt="image" src="../_images/fig_14_4.png" />{width=”100%”}</p>
+<p>We can now write the <strong>biased</strong> probability of finding the system at a
+particular value of the reaction coordinate <span class="math notranslate nohighlight">\(x(\mathbf{r}^n) = x'\)</span> for
+the <span class="math notranslate nohighlight">\(i\)</span>th simulation using the modified potential energy function:</p>
+<div class="math notranslate nohighlight">
+\[p_{\textrm{bias},i}(x') = \frac{\int d \mathbf{r}^N e^{ -\beta [E(\mathbf{r}^N)+w_i(x)]} \delta(x(\mathbf{r}^N) - x')}{\int d \mathbf{r}^N  e^{ -\beta [E(\mathbf{r}^N)+w_i(x)]} }\]</div>
+<p>The delta function selects only values of <span class="math notranslate nohighlight">\(x(\mathbf{r}^N) = x'\)</span>, so if
+<span class="math notranslate nohighlight">\(x' \approx x_i\)</span>, then <span class="math notranslate nohighlight">\(p_{\textrm{bias},i}(x')\)</span> will be large;
+otherwise, the weight function will lead to large values of the total
+energy and thus negligible values of <span class="math notranslate nohighlight">\(p_{\textrm{bias},i}(x')\)</span>. We can
+sample this probability distribution directly in a simulation by adding
+the weight function to the system dynamics (<em>i.e.</em>, adding a spring
+force to relevant particles) to increase sampling of the value <span class="math notranslate nohighlight">\(x'=x_i\)</span>.
+However, we need to sample the <strong>unbiased</strong> probability to calculate the
+potential of mean force, so we need to relate <span class="math notranslate nohighlight">\(p_{\textrm{bias},i}(x')\)</span>
+to <span class="math notranslate nohighlight">\(p(x')\)</span>. Relating the biased probability distribution to the unbiased
+probability distribution will be the focus of the next lecture.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lecture_files"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Lecture13.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">The Structure of Classical Fluids</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Lecture15.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Free energy perturbation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recommended-textbooks">Recommended textbooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topics-in-this-lecture">Topics in this lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-g-r">Calculating <span class="math notranslate nohighlight">\(g(r)\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-reversible-work-theorem">The Reversible Work Theorem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-potential-of-mean-force-for-an-arbitrary-process">The potential of mean force for an arbitrary process</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#umbrella-sampling">Umbrella sampling</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Reid van Lehn, Matt Gebbie, Rose Cersonsky
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

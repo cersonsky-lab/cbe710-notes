@@ -1,0 +1,911 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Generalized Ensembles &#8212; Notes for CBE710</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture_files/Lecture5';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="The Ideal Gas Partition Function" href="Lecture6.html" />
+    <link rel="prev" title="Canonical Ensemble Continued" href="Lecture4.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Notes for CBE710</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Class introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Mechanics</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Lecture1.html">Overview and review of thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture2.html">The Microcanonical Ensemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture3.html">The Canonical Ensemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/ps_1/problem_set_1.html">— Problem Set 1 —</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture4.html">Canonical Ensemble Continued</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Generalized Ensembles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture6.html">The Ideal Gas Partition Function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture7.html">The Langmuir Isotherm and Ising Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture8.html">The Ising Model and Mean-Field Theory</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Molecular Simulation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Lecture9.html">Fluctuations and an Introduction to Molecular Simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture10.html">Monte Carlo Simulations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture11.html">Monte Carlo and Intro to Molecular Dynamics Simulations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture12.html">MD Thermostats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture13.html">The Structure of Classical Fluids</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture14.html">The Potential of Mean Force</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Lecture15.html">Free energy perturbation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture16.html">Postulates of thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture17.html">Heat Engines and Possible Processes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture18.html">Entropy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture19.html">The Fundamental Relation of Thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture20.html">Legendre Transforms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture21.html">Conditions of equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture22.html">Equilibrium in single-component systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture23.html">Phase Diagrams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture24.html">Fugacity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture25.html">Ideal mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture26.html">Non-ideal mixtures</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/lecture_files/Lecture5.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Generalized Ensembles</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-readings-for-the-enthusiast">Additional Readings for the Enthusiast</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topics-in-this-lecture">Topics in this lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements">Announcements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Generalized ensembles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminary-notes-natural-variables">Preliminary notes: natural variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derivation-of-the-generalized-ensemble">Derivation of the generalized ensemble</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thermodynamic-connection-for-the-generalized-ensemble">Thermodynamic connection for the generalized ensemble</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recipe-for-the-generalized-ensemble">Recipe for the generalized ensemble</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-the-grand-canonical-ensemble">Example: the grand canonical ensemble</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-the-isobaric-isothermal-ensemble">Example: the isobaric-isothermal ensemble</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="generalized-ensembles">
+<h1>Generalized Ensembles<a class="headerlink" href="#generalized-ensembles" title="Permalink to this headline">#</a></h1>
+<section id="additional-readings-for-the-enthusiast">
+<h2>Additional Readings for the Enthusiast<a class="headerlink" href="#additional-readings-for-the-enthusiast" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>- Ch 3.5</p></li>
+</ul>
+</section>
+<section id="topics-in-this-lecture">
+<h2>Topics in this lecture<a class="headerlink" href="#topics-in-this-lecture" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Generalized ensembles</p></li>
+<li><p>Gibbs entropy</p></li>
+<li><p>Recipe for the generalized ensemble</p></li>
+</ul>
+</section>
+<section id="announcements">
+<h2>Announcements<a class="headerlink" href="#announcements" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Pset 1 due today, Pset 2 assigned today.</p></li>
+<li><p>Final exam: Tuesday, December 17, 10 AM - 12 PM</p></li>
+<li><p>Make up lecture: Wednesday, November 6, 1 PM - 2:15 PM</p></li>
+</ul>
+</section>
+<section id="id1">
+<h2>Generalized ensembles<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<section id="preliminary-notes-natural-variables">
+<h3>Preliminary notes: natural variables<a class="headerlink" href="#preliminary-notes-natural-variables" title="Permalink to this headline">#</a></h3>
+<p>In the preceding three lectures, we presented derivations to describe
+the microcanonical (<span class="math notranslate nohighlight">\(NVE\)</span>) and canonical (<span class="math notranslate nohighlight">\(NVT\)</span>) ensembles. In each
+case, we found a relationship for a normalizing constant for the
+probability that could be equated to a thermodynamic potential. What
+should also be noticed, however, is that the thermodynamic potential
+corresponding to each statistical ensemble is exactly the potential that
+has the same natural variables as the parameters held constant for each
+microstate of the corresponding ensemble. Recall that we can write as
+the fundamental relation for the entropy and its relationship to the
+microcanonical ensemble:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+dS &amp;= \frac{1}{T} dE + \frac{P}{T} dV - \frac{\mu}{T} dN \\
+S &amp;= k_B \ln \Omega (N,V,E)
+\end{aligned}\end{split}\]</div>
+<p>From inspection, we see that <span class="math notranslate nohighlight">\(NVE\)</span> are the natural variables of the
+entropy, and these are the same parameters held constant for each
+microstate of the microcanonical ensemble. Similarly, we can write for
+the Helmholtz free energy:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+dF &amp;= -SdT - PdV + \mu dN \\
+F &amp;= -k_B T \ln Z(N,V,T)
+\end{aligned}\end{split}\]</div>
+<p>Again, we see that <span class="math notranslate nohighlight">\(NVT\)</span> are the natural variables of the Helmholtz free
+energy, and these are the same parameters held constant for microstate
+of the canonical ensemble. These observations suggest that there may be
+some general recipe for relating the normalizing constant of a
+statistical ensemble to a thermodynamic potential with corresponding
+natural variables.</p>
+<p>Based on this reasoning, we might like to have statistical ensembles to
+solve a problem where some other variable is held constant. This leads
+to the idea of deriving a <strong>generalized ensemble</strong> - that is, a
+statistical ensemble appropriate for any system that permits the
+exchange of some extensive variable with the environment. For example,
+consider the adsorption of a gas to a surface; equilibrium is
+established when the chemical potential of the gas in the bulk is equal
+to the chemical potential of the gas at the surface, and hence it would
+be intuitive to use a statistical ensemble in which the chemical
+potential (rather than the number of particles) is fixed in each
+microstate. While our example to date (polymer adsorption) has
+demonstrated that we can solve a particular problem using any
+statistical ensemble, it is also apparent that solutions can be obtained
+more easily if we choose an appropriate ensemble. Typically, it will be
+easier to solve problems if we choose an ensemble with the same natural
+variables as the variables that are constant for the system of interest.
+It is thus convenient to derive a generalized ensemble appropriate for
+any given set of natural varables.</p>
+</section>
+<section id="derivation-of-the-generalized-ensemble">
+<h3>Derivation of the generalized ensemble<a class="headerlink" href="#derivation-of-the-generalized-ensemble" title="Permalink to this headline">#</a></h3>
+<p>First, let us consider again the derivation of the canonical ensemble
+presented in the previous lecture. We considered a single system
+embedded within a bath; the total combined system had fixed <span class="math notranslate nohighlight">\(NVE\)</span>, but
+the energy of the system of interest was allowed to exchange with the
+energy of the bath such that the system of interest and bath were
+instead at fixed temperature. Here, will consider the same system, but
+now we assume that in addition to exchanging energy with the environment
+the system can also exchange some extensive property <span class="math notranslate nohighlight">\(X\)</span> with the bath
+with the associated work given by <span class="math notranslate nohighlight">\(fdX\)</span>. This notation matches the
+generalized definition of work from Lecture 1. At equilibrium, the
+temperature of the bath is equal to the temperature of the system and in
+addition the generalized force, <span class="math notranslate nohighlight">\(f\)</span>, is the same for the system and the
+bath since intensive variables are equal at equilibrium. For example,
+<span class="math notranslate nohighlight">\(f\)</span> might be the chemical potential, <span class="math notranslate nohighlight">\(\mu\)</span>, and <span class="math notranslate nohighlight">\(X\)</span> might be the number
+of particles, <span class="math notranslate nohighlight">\(N\)</span>, in which case <span class="math notranslate nohighlight">\(fdX = \mu dN\)</span> would be chemical work.
+Alternatively, <span class="math notranslate nohighlight">\(f\)</span> might be the negative pressure, <span class="math notranslate nohighlight">\(-P\)</span>, and <span class="math notranslate nohighlight">\(X\)</span> might
+be the volume, <span class="math notranslate nohighlight">\(V\)</span>, in which case <span class="math notranslate nohighlight">\(fdX = -P dV\)</span> would be
+expansion-contraction work. Both forms of work will lead to similar
+partition functions, motivating the derivation of a generalized
+ensemble.</p>
+<p><img alt="image" src="../_images/fig_4_1.png" />{width=”100%”}</p>
+<p>We can now follow the same derivation performed previously for the
+canonical ensemble to obtain a partition function for this generalized
+system in which <span class="math notranslate nohighlight">\(E\)</span> and <span class="math notranslate nohighlight">\(X\)</span> can exchange between the system and bath. We
+first write constraints reflecting the exchange of material between the
+system and bath, recognizing again that the combined system is isolated
+and described by the microcanonical ensemble:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+E_S + E_B &amp;= E_T = \text{constant} \\
+X_S + X_B &amp;= X_T = \text{constant}
+\end{aligned}\end{split}\]</div>
+<p>The probability that the system samples a particular microstate with
+<span class="math notranslate nohighlight">\(E_j\)</span> and <span class="math notranslate nohighlight">\(X_j\)</span> (ignoring other mechanical variables, such as the
+volume, <span class="math notranslate nohighlight">\(V\)</span>) is written as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+p_j(E_j, X_j) &amp;= \frac{\Omega_B(E_T-E_j, X_T-X_j)}{C_1}
+\end{aligned}\]</div>
+<p>As in the derivation of the canonical ensemble, this expression states
+that the probability of finding the system in a particular microstate
+<span class="math notranslate nohighlight">\(j\)</span> is proportional to the number of microstates that the bath can
+sample when the system is in microstate <span class="math notranslate nohighlight">\(j\)</span> with <span class="math notranslate nohighlight">\(C_1\)</span> as a
+normalization factor. We now consider the subset of bath states in which
+the bath energy and value of <span class="math notranslate nohighlight">\(X\)</span> are fixed to the values <span class="math notranslate nohighlight">\(E_T-E_j\)</span> and
+<span class="math notranslate nohighlight">\(X_T-X_j\)</span> respectively, so this subset of states is a microcanonical
+ensemble. We now take the logarithm of both sides:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\ln p_j(E_j, X_j) &amp;=  \ln \Omega_B(E_T-E_j, X_T-X_j) - \ln C_1
+\end{aligned}\]</div>
+<p>Again assuming that <span class="math notranslate nohighlight">\(E_B \gg E_j\)</span> and <span class="math notranslate nohighlight">\(X_B \gg X_j\)</span>, we expand
+<span class="math notranslate nohighlight">\(\ln \Omega_B(E_T-E_j, X_T-X_j)\)</span> as a Taylor series around the point
+where <span class="math notranslate nohighlight">\(E_T-E_j = E_T\)</span> and <span class="math notranslate nohighlight">\(X_T - X_j = X_T\)</span> (hence we Taylor expand in 2
+variables, and ignore second-order and higher terms):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+%f(x, y) &amp;= f(a, b) + \frac{\partial f(x,y)}{\partial x}(x-a) + \frac{\partial f(x,y)}{\partial y}(y-b)  + \dots \\
+\ln \Omega_B(E_T-E_j, X_T-X_j)  &amp;\approx \ln \Omega_B(E_T, X_T)  - E_j \left ( \frac{\partial \ln \Omega_B(E_T-E_j, X_T-X_j)}{\partial (E_T-E_j)} \right )_{X,V}    \\\nonumber
+&amp; \quad - X_j \left ( \frac{\partial \ln \Omega_B(E_T-E_j, X_T-X_j)}{\partial (X_T-X_j)} \right )_{E,V}
+\\&amp;= \ln \Omega_B(E_T,X_T)  - \frac{E_j}{k_B} \left ( \frac{\partial S_B}{\partial E_B} \right )_{X,V} - \frac{X_j}{k_B} \left ( \frac{\partial S_B}{\partial X_B} \right )_{E,V} 
+\end{aligned}\end{split}\]</div>
+<p>We have substituted in expressions for the entropy of the bath
+microcanonical ensemble (for the given values of the system energy and
+number of particles). So far the equations should all look familiar. We
+can now write the fundamental relation in the entropy representation
+while adding the generic work term <span class="math notranslate nohighlight">\(fdX\)</span> to obtain expressions for the
+two partial derivatives:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+dE &amp;= TdS - PdV + f dX \\
+dS &amp;= \frac{1}{T} dE + \frac{P}{T} dV - \frac{f}{T} dX \label{general_entropy}\\ 
+&amp;= \left ( \frac{\partial S}{\partial E} \right )_{X,V} dE + \left ( \frac{\partial S}{\partial V} \right )_{E, X} dV + \left ( \frac{\partial S}{\partial X} \right )_{E, V} dX
+\end{aligned}\end{split}\]</div>
+<p>We thus see that:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\left ( \frac{\partial S_B}{\partial E_B} \right )_{X,V} &amp;= \frac{1}{T_B} \\
+\left ( \frac{\partial S_B}{\partial X_B} \right )_{E,V} &amp;= -\frac{f_B}{T_B}
+\end{aligned}\end{split}\]</div>
+<p>Substituting these relationships into the derivation above and letting
+<span class="math notranslate nohighlight">\(T_B = T_S = T\)</span> and <span class="math notranslate nohighlight">\(f_B =f_S= f\)</span> by the conditions of equilibrium
+gives:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\ln \Omega_B(E_T-E_j, X_T-X_j) &amp;=  \ln \Omega_B(E_T, X_T) - \frac{E_j}{k_B T} + \frac{f X_j}{k_BT}
+\end{aligned}\]</div>
+<p>Substituting back into the original expression for the probability
+yields:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\ln p_j(E_j, X_j) &amp;=  \ln \Omega_B(E_T-E_j, X_T-X_j) - \ln C_1 \\
+&amp;=  \ln \Omega_B(E_T, X_T) - \frac{E_j}{k_B T} + \frac{f X_j}{k_BT} - \ln C_1\\
+\therefore  p_j &amp;= C_2 \exp \left ( -\frac{E_j}{k_BT} \right )\exp \left ( \frac{f X_j}{k_BT} \right )
+\end{aligned}\end{split}\]</div>
+<p>We now invoke the normalization condition <span class="math notranslate nohighlight">\(\sum p_j = 1\)</span> to finalize the
+derivation:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+p_j(E_j, X_j) = \frac{\exp \left ( -\frac{E_j}{k_BT} \right )\exp \left ( \frac{f X_j}{k_BT} \right )}{\sum_{j}^{\textrm{microstates}} \exp \left ( -\frac{E_j}{k_BT} \right )\exp \left ( \frac{fX_j}{k_BT} \right )}
+\end{aligned}\]</div>
+<p>The partition function for the generalized ensemble, which we will give
+the symbol <span class="math notranslate nohighlight">\(\Phi\)</span> is thus:</p>
+<div class="math notranslate nohighlight">
+\[\Phi  = \sum_{j}^{\textrm{microstates}} \exp \left ( -\frac{E_j}{k_BT} \right )\exp \left ( \frac{f X_j}{k_BT} \right ) \label{general_partition}\]</div>
+<p>This general partition function looks quite similar to the canonical
+partition function except that there is now the new work term appears in
+the exponential. Note one subtlety, here - we include in this derivation
+terms for both the internal energy, <span class="math notranslate nohighlight">\(E\)</span>, and various work terms. When
+defining a problem, you might think to include a work term as part of
+the energy, which would lead to overcounting. Thus, when using the
+general ensemble approach, it is important that contributions to the
+internal energy (<em>e.g.</em>, translational degrees of freedom for particles)
+do not also include work terms (e.g., expansion-contraction work) that
+are separately included in the partition function.</p>
+<p>There are some subtleties, however, that should be noted. First, the sum
+runs over all <em>possible</em> states in the ensemble. There could be many
+particular states for which the energy <span class="math notranslate nohighlight">\(E_j\)</span> is equal to some fixed
+value while the number of particles <span class="math notranslate nohighlight">\(N_j\)</span> varies; that is, in general
+<span class="math notranslate nohighlight">\(E\)</span> and <span class="math notranslate nohighlight">\(N\)</span> may be independent of each other. We can thus write a
+completely equivalent form of the grand canonical partition function as:</p>
+</section>
+</section>
+<section id="thermodynamic-connection-for-the-generalized-ensemble">
+<h2>Thermodynamic connection for the generalized ensemble<a class="headerlink" href="#thermodynamic-connection-for-the-generalized-ensemble" title="Permalink to this headline">#</a></h2>
+<p>Having established an expression for the generalized ensemble partition
+function, we can now derive a relationship between a thermodynamic
+potential and this generalized partition function, just as we have a
+relationship between the Helmholtz free energy and the canonical
+partition function. Doing so requires a new definition of the entropy,
+referred to as the <strong>Gibbs entropy</strong>:</p>
+<div class="math notranslate nohighlight">
+\[S = -k_B \sum_j p_j \ln p_j\]</div>
+<p>You will shows this expression’s equivalence to the Boltzmann definition
+of the entropy on Problem Set 2. We now have the expressions:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+p_j(E_j, X_j) &amp;= \frac{\exp \left ( -\beta E_j \right )\exp \left ( \beta f X_j \right )}{\Phi} \label{general_probability}\\
+\Phi  &amp;= \sum_{j}^{\textrm{microstates}} \exp \left ( -\beta E_j \right )\exp \left ( \beta f X_j \right ) \\
+S &amp;= -k_B \sum_{j} p_j \ln p_j
+\end{aligned}\end{split}\]</div>
+<p>which we will use to derive a thermodynamic connection. Using the Gibbs
+entropy formula and the expression for the probability of a microstate,
+we can write:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+S &amp;= -k_B \sum_j p_j \ln p_j \\
+&amp;= -k_B \sum p_j \ln \left ( \frac{\exp \left [ -\frac{E_j}{k_B T} \right ] \exp \left [ \frac{f X_j}{k_B T} \right ]}{\Phi} \right ) \\
+&amp;= -k_B \sum p_j \left ( - \frac{E_j}{k_BT} + \frac{f X_j}{k_BT} - \ln \Phi \right ) \\
+&amp;= \sum p_j \left ( \frac{E_j}{T} \right )  - \sum p_j \left (\frac{f X_j}{T} \right )+  \sum p_j k_B \ln \Phi \\
+&amp;= \frac{1}{T} \sum p_j E_j - \frac{f}{T} \sum p_j X_j + k_B \ln \Phi \sum p_j
+\end{aligned}\end{split}\]</div>
+<p>Here, we recognize that <span class="math notranslate nohighlight">\(\sum p_j E_j = \langle E \rangle\)</span>,
+<span class="math notranslate nohighlight">\(\sum p_j X_j = \langle X \rangle\)</span>, <span class="math notranslate nohighlight">\(\sum p_j = 1\)</span> due to the
+normalization of state probabilities, and <span class="math notranslate nohighlight">\(\ln \Phi\)</span> has no <span class="math notranslate nohighlight">\(j\)</span>
+dependence, so we can write:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+S &amp;= \frac{\langle E \rangle}{T} - \frac{f \langle X \rangle}{T} + k_B \ln \Phi \\
+TS &amp;= \langle E \rangle -  f \langle X \rangle + k_B T \ln \Phi \\
+&amp;\therefore E - f X - TS = -k_B T \ln \Phi
+\end{aligned}\end{split}\]</div>
+<p>Thus,the generalized ensemble with partition function
+<span class="math notranslate nohighlight">\(\Phi = \sum_{j} \exp \left [ -\frac{E_j}{k_B T} \right ]  \exp \left [ \frac{f X_j}{k_B T} \right ]\)</span>
+is related to thermodynamic variables via
+<span class="math notranslate nohighlight">\(-k_B T \ln \Phi =   E - TS - f X\)</span>. As a first consistency check, we can
+see that if <span class="math notranslate nohighlight">\(f = 0\)</span>, the equation correctly reduces to
+<span class="math notranslate nohighlight">\(-k_B T \ln Z = E - TS = F\)</span> which is the correct thermodynamic link
+between the canonical partition function and the Helmholtz free energy
+(<span class="math notranslate nohighlight">\(F = E - TS\)</span>). We will use <span class="math notranslate nohighlight">\(\Sigma\)</span> to refer to this new “free energy”
+that we have defined: <span class="math notranslate nohighlight">\(\Sigma = E - TS - fX\)</span>.</p>
+<p>Let’s just check the self-consistency of this result by writing out
+thermodynamic relations. For example, writing out the total derivative
+of <span class="math notranslate nohighlight">\(\Sigma\)</span> and substituting in the fundamental equation gives:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+d\Sigma &amp;= dE - f dX - Xdf - TdS - SdT \\
+&amp;= (f dX -TdS - PdV) - f dX - Xdf - TdS - SdT \\
+&amp;= - Xdf - SdT - P dV \\
+&amp;= \left ( \frac{\partial \Sigma}{\partial f}\right )_{V, T} dX + \left ( \frac{\partial \Sigma}{\partial T}\right )_{X, V} dT + \left ( \frac{\partial \Sigma}{\partial V}\right )_{X, T} dV \\
+\therefore X &amp;= -\left ( \frac{\partial \Sigma}{\partial f}\right )_{V, T}
+\end{aligned}\end{split}\]</div>
+<p>We can use this relationship to check that the thermodynamic connection
+between <span class="math notranslate nohighlight">\(\Phi\)</span> and <span class="math notranslate nohighlight">\(\Sigma\)</span> is accurate:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+X &amp;= -\left ( \frac{\partial \Sigma}{\partial f}\right )_{V, T} \\
+&amp;= k_B T \left (\frac{\partial \ln \Phi}{\partial f} \right )_{V, T} \\
+&amp;= \frac{k_B T}{\Phi} \left ( \frac{\partial \Phi}{\partial f} \right )_{V, T} \\
+&amp;= \frac{k_B T}{\Phi} \left [\frac{\partial}{\partial f} \left ( \sum_{j} \exp \left [ -\frac{E_j}{k_B T} \right ]  \exp \left [ \frac{f X_j}{k_B T} \right ] \right ) \right ]_{V,T} \\
+&amp;= \frac{k_B T}{\Phi} \sum_{j} \frac{X_j}{k_B T} \exp \left [ -\frac{E_j}{k_B T} \right ]  \exp \left [ \frac{f X_j}{k_B T} \right ] \\
+&amp;= \sum_{j} X_j \left ( \frac{\exp \left [ -\frac{E_j}{k_B T} \right ]  \exp \left [ \frac{f X_j}{k_B T} \right ]}{\Phi} \right )\\
+&amp;= \sum_j X_j p_j \\
+&amp;= \langle X \rangle
+\end{aligned}\end{split}\]</div>
+<p>Thus, this checks out - we correctly find that the ensemble average is
+equal to the thermodynamic parameter via the relationship between <span class="math notranslate nohighlight">\(\Phi\)</span>
+and <span class="math notranslate nohighlight">\(\Sigma\)</span>.</p>
+</section>
+<section id="recipe-for-the-generalized-ensemble">
+<h2>Recipe for the generalized ensemble<a class="headerlink" href="#recipe-for-the-generalized-ensemble" title="Permalink to this headline">#</a></h2>
+<p>In the previous section, the thermodynamic potential that corresponds to
+the log of the generalized enseble partion function is exactly that
+potential for which the thermodynamic variables conjugate to <span class="math notranslate nohighlight">\(E\)</span> and <span class="math notranslate nohighlight">\(X\)</span>
+are held constant (i.e., the <span class="math notranslate nohighlight">\(VTf\)</span> ensemble in this generalized case).
+We have assumed these variables as constant from the beginning of this
+derivation, but it is apparent that these are the <strong>natural variables</strong>
+of the thermodynamic potential corresponding to <span class="math notranslate nohighlight">\(E-TS - fX = \Sigma\)</span> by
+taking the derivative:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+d\Sigma &amp;= dE - TdS - SdT - fdX - Xdf \\
+&amp;= TdS - PdV + fdX - TdS - SdT - fdX - Xdf \\
+&amp;=  -PdV - SdT - Xdf
+\end{aligned}\end{split}\]</div>
+<p>Therefore, the thermodynamic potential <span class="math notranslate nohighlight">\(\Sigma\)</span> is at an extremum when
+<span class="math notranslate nohighlight">\(V\)</span>, <span class="math notranslate nohighlight">\(T\)</span>, and <span class="math notranslate nohighlight">\(f\)</span> are constant, which defines them as the set of natural
+variables for this potential and this partition function. To emphasize
+this point, we can also write the thermodynamic connection as:</p>
+<div class="math notranslate nohighlight">
+\[-k_B T \ln \Phi(V, T, f) = \Sigma(V, T, f)\]</div>
+<p>where <span class="math notranslate nohighlight">\(\Sigma(V, T, f)\)</span> is the generalized thermodynamic potential that
+is a function of the natural variables <span class="math notranslate nohighlight">\(VTf\)</span>.</p>
+<p>This observation suggests a general recipe for deriving a generalized
+ensemble:</p>
+<ul class="simple">
+<li><p>Determine the natural variables of the system (e.g., <span class="math notranslate nohighlight">\(\mu\)</span>, <span class="math notranslate nohighlight">\(V\)</span>,
+<span class="math notranslate nohighlight">\(T\)</span>) as the variables that are either fixed due to the constraints
+of the system boundaries or are constant due to conditions of
+equilibrium (i.e., intensive variables conjugate to extensive
+variables that can exchange with the environment).</p></li>
+<li><p>Write a general partition function (<span class="math notranslate nohighlight">\(\Phi\)</span>) of the form in Eq.
+<span class="xref myst">[general_partition]</span>{reference-type=”ref”
+reference=”general_partition”}, including all work terms that
+correspond to extensive variables that can exchange with the
+environment.</p></li>
+<li><p>For each extensive variable that is able to exchange with the
+environment, substract the product of the extensive variable and its
+conjugate variable from the internal energy <span class="math notranslate nohighlight">\(E\)</span> to obtain a
+thermodynamic potential with the correct natural variables</p></li>
+<li><p>Equate <span class="math notranslate nohighlight">\(-k_BT \ln \Phi\)</span> to the thermodynamic potential (<span class="math notranslate nohighlight">\(\Sigma\)</span>)
+that is a function of the same natural variables.</p></li>
+<li><p>Derive other thermodynamic variables via appropriate derivatives of
+<span class="math notranslate nohighlight">\(\Sigma\)</span>.</p></li>
+</ul>
+<p>The one caveat here is that for a system that can exchange energy with
+the environment, we treat the extensive variable as the entropy, <span class="math notranslate nohighlight">\(S\)</span>,
+and substract <span class="math notranslate nohighlight">\(TS\)</span> from the internal energy, leading to the canonical
+ensemble. This is due to the equivalence of the energy and entropy
+representations of the fundamental equation. The other caveat, as noted
+above, is to ensure that you do not include work terms in the expression
+for the energy of the system itself - that would be double counting
+energies.</p>
+<section id="example-the-grand-canonical-ensemble">
+<h3>Example: the grand canonical ensemble<a class="headerlink" href="#example-the-grand-canonical-ensemble" title="Permalink to this headline">#</a></h3>
+<p>As a test of the generalized ensemble approach, we can derive the grand
+canonical ensemble, in which the energy and number of particles of a
+system are allowed to vary while the volume and temperature are held
+constant. Since <span class="math notranslate nohighlight">\(N\)</span> (conjugate to <span class="math notranslate nohighlight">\(\mu\)</span>) and <span class="math notranslate nohighlight">\(E\)</span> (conjugate to <span class="math notranslate nohighlight">\(1/T\)</span>)
+can exchange with the environment and <span class="math notranslate nohighlight">\(V\)</span> is fixed due to the
+constraints of the system boundaries, the natural variables at
+equilibrium are <span class="math notranslate nohighlight">\(\mu\)</span>, <span class="math notranslate nohighlight">\(V\)</span> and <span class="math notranslate nohighlight">\(T\)</span>. Here, <span class="math notranslate nohighlight">\(\mu dN\)</span> is the work term that
+corresponds to <span class="math notranslate nohighlight">\(fdX\)</span> in the generalized ensemble, so we have that
+<span class="math notranslate nohighlight">\(f = \mu\)</span> and <span class="math notranslate nohighlight">\(X = N\)</span>.</p>
+<p>The partition function (using the symbol <span class="math notranslate nohighlight">\(\Xi\)</span> per convention for this
+ensemble) then has the form:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\Xi &amp;=  \sum_{j} \exp \left [ -\beta E_j \right ]  \exp \left [\beta \mu N_j \right ]
+%&amp;= \sum_{i}  Z(N, V_i, T)  \exp \left [ \frac{-PV_i}{k_B T} \right ] 
+\end{aligned}\]</div>
+<p>The corresponding thermodynamic potential (using the symbol <span class="math notranslate nohighlight">\(\Sigma_G\)</span>,
+with the subscript indicating the grand canonical ensmeble)is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\Sigma_G  &amp;= E - TS - \mu N \\
+d\Sigma_G &amp;= -P dV - SdT - N d\mu
+\end{aligned}\end{split}\]</div>
+<p>This potential, <span class="math notranslate nohighlight">\(\Sigma_G\)</span>, is also sometimes called the grand
+potential. The total derivative emphasizes that it has the correct
+natural variables (<span class="math notranslate nohighlight">\(\mu\)</span>, <span class="math notranslate nohighlight">\(V\)</span> and <span class="math notranslate nohighlight">\(T\)</span>). We can then equate this
+potential to the partition function as:</p>
+<div class="math notranslate nohighlight">
+\[\Sigma _G = -k_B T \ln \Xi\]</div>
+<p>which we can use to derive various relations. For example, the
+ensemble-average number of particles in the system would be:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\langle N \rangle &amp;=  \left ( \frac{\partial \Sigma_G}{\partial \mu}\right )_{V, T} \\
+&amp;= - k_B T\left ( \frac{\partial \ln \Xi}{\partial \mu}\right )_{V,T}
+\end{aligned}\end{split}\]</div>
+<p>With explicit relations for <span class="math notranslate nohighlight">\(E_j\)</span> and <span class="math notranslate nohighlight">\(N_i\)</span> we could then derive the
+number of particles.</p>
+</section>
+<section id="example-the-isobaric-isothermal-ensemble">
+<h3>Example: the isobaric-isothermal ensemble<a class="headerlink" href="#example-the-isobaric-isothermal-ensemble" title="Permalink to this headline">#</a></h3>
+<p>As another example, we can derive the isobaric-isothermal ensemble, in
+which the energy and volume of a system are allowed to vary while the
+number of particles is held constant. In this case, the natural
+variables at equilibrium are <span class="math notranslate nohighlight">\(N\)</span>, <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(-PdV\)</span> is the work
+term that corresponds to <span class="math notranslate nohighlight">\(fdX\)</span> in the generalized ensemble.</p>
+<p>The partition function (using the symbol <span class="math notranslate nohighlight">\(\Delta\)</span> per convention for
+this ensemble) then has the form:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\Delta &amp;=  \sum_{j} \exp \left [ -\beta E_j \right ]  \exp \left [-\beta PV_j \right ]
+%&amp;= \sum_{i}  Z(N, V_i, T)  \exp \left [ \frac{-PV_i}{k_B T} \right ] 
+\end{aligned}\]</div>
+<p>The corresponding thermodynamic potential is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+G  &amp;= E - TS + PV \\
+dG &amp;= VdP- SdT + \mu dN
+\end{aligned}\end{split}\]</div>
+<p>This potential, <span class="math notranslate nohighlight">\(G\)</span>, is the Gibbs free energy, which is relevant at
+typical experimental conditions. The total derivative emphasizes that it
+has the correct natural variables (<span class="math notranslate nohighlight">\(N\)</span>, <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(T\)</span>). We can then equate
+this potential to the partition function as:</p>
+<div class="math notranslate nohighlight">
+\[G = -k_B T \ln \Delta\]</div>
+<p>which we can use to derive various relations. For example, the
+ensemble-average volume of the system would be:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\langle V \rangle &amp;=  \left ( \frac{\partial G}{\partial P}\right )_T \\
+&amp;= - k_B T\left ( \frac{\partial \ln \Delta}{\partial P}\right )_T 
+\end{aligned}\end{split}\]</div>
+<p>With explicit relations for <span class="math notranslate nohighlight">\(E_j\)</span> and <span class="math notranslate nohighlight">\(V_i\)</span> we could then derive the
+volume.</p>
+<p>We now have discussed 4 explicit ensembles - microcanonical (<span class="math notranslate nohighlight">\(NVE\)</span>),
+canonical (<span class="math notranslate nohighlight">\(NVT\)</span>), grand canonical (<span class="math notranslate nohighlight">\(\mu VT\)</span>), and isothermal-isobaric
+(<span class="math notranslate nohighlight">\(NPT\)</span>), along with a generalized ensemble in which additional work
+terms (e.g. corresponding to external electric/magnetic fields, for
+instance) can be incorporated.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lecture_files"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Lecture4.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Canonical Ensemble Continued</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Lecture6.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">The Ideal Gas Partition Function</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-readings-for-the-enthusiast">Additional Readings for the Enthusiast</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topics-in-this-lecture">Topics in this lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements">Announcements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Generalized ensembles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminary-notes-natural-variables">Preliminary notes: natural variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derivation-of-the-generalized-ensemble">Derivation of the generalized ensemble</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thermodynamic-connection-for-the-generalized-ensemble">Thermodynamic connection for the generalized ensemble</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recipe-for-the-generalized-ensemble">Recipe for the generalized ensemble</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-the-grand-canonical-ensemble">Example: the grand canonical ensemble</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-the-isobaric-isothermal-ensemble">Example: the isobaric-isothermal ensemble</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Reid van Lehn, Matt Gebbie, Rose Cersonsky
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

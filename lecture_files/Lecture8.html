@@ -1,0 +1,783 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>The Ising Model and Mean-Field Theory &#8212; Notes for CBE710</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture_files/Lecture8';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Fluctuations and an Introduction to Molecular Simulation" href="Lecture9.html" />
+    <link rel="prev" title="The Langmuir Isotherm and Ising Model" href="Lecture7.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Notes for CBE710</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Class introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Mechanics</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Lecture1.html">Overview and review of thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture2.html">The Microcanonical Ensemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture3.html">The Canonical Ensemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/ps_1/problem_set_1.html">— Problem Set 1 —</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture4.html">Canonical Ensemble Continued</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture5.html">Generalized Ensembles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture6.html">The Ideal Gas Partition Function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture7.html">The Langmuir Isotherm and Ising Model</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">The Ising Model and Mean-Field Theory</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Molecular Simulation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Lecture9.html">Fluctuations and an Introduction to Molecular Simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture10.html">Monte Carlo Simulations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture11.html">Monte Carlo and Intro to Molecular Dynamics Simulations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture12.html">MD Thermostats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture13.html">The Structure of Classical Fluids</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture14.html">The Potential of Mean Force</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Lecture15.html">Free energy perturbation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture16.html">Postulates of thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture17.html">Heat Engines and Possible Processes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture18.html">Entropy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture19.html">The Fundamental Relation of Thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture20.html">Legendre Transforms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture21.html">Conditions of equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture22.html">Equilibrium in single-component systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture23.html">Phase Diagrams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture24.html">Fugacity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture25.html">Ideal mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture26.html">Non-ideal mixtures</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/lecture_files/Lecture8.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>The Ising Model and Mean-Field Theory</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-readings-for-the-enthusiast">Additional Readings for the Enthusiast</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topics-in-this-lecture">Topics in this lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements">Announcements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-ising-model">The Ising model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-field-theory">Mean-field theory</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="the-ising-model-and-mean-field-theory">
+<h1>The Ising Model and Mean-Field Theory<a class="headerlink" href="#the-ising-model-and-mean-field-theory" title="Permalink to this headline">#</a></h1>
+<section id="additional-readings-for-the-enthusiast">
+<h2>Additional Readings for the Enthusiast<a class="headerlink" href="#additional-readings-for-the-enthusiast" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>- 5.1, 5.4</p></li>
+</ul>
+</section>
+<section id="topics-in-this-lecture">
+<h2>Topics in this lecture<a class="headerlink" href="#topics-in-this-lecture" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>The Ising model</p></li>
+<li><p>Mean-field theory</p></li>
+</ul>
+</section>
+<section id="announcements">
+<h2>Announcements<a class="headerlink" href="#announcements" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Pset 3 due Tuesday, 10/8</p></li>
+<li><p>Exam 1 on Thursday, 10/10 from 6-7:30 PM in EH 3024. Students in CBE
+540 will take it from 1-2:30 PM in EH 3239.</p></li>
+</ul>
+</section>
+<section id="the-ising-model">
+<h2>The Ising model<a class="headerlink" href="#the-ising-model" title="Permalink to this headline">#</a></h2>
+<p>In the last lecture, we finished our derivation of the ideal gas
+partition function and used it to derive well-known thermodynamic
+expressions (such as the ideal gas of equation of state). We also
+derived a Langmuir adsorption isotherm following a similar procedure. In
+both of these cases, we neglected <em>interactions</em> between molecules. The
+approximation that molecules do not interact is severely limiting and
+makes it impossible to analyze most condensed phase systems, such as
+liquids, or examine phase transitions, which fundamentally depend on the
+strength of intermolecular interactions. In general, studying particles
+with interactions is very challenging, leading to very few problems for
+which exact analytical solutions exist. This difficulty emerges because
+interactions between particles lead to <em>correlations</em> between particle
+configurations; the partition function can no longer be factorized into
+independent single-particle partition functions because the energy of
+one particle depends on the configuration of the others. In this
+lecture, we will focus on a simple type of lattice model - resembling
+lattice models we have treated previously - to illustrate how
+interactions affect many-body systems and to introduce a common
+approximation for studying these systems.</p>
+<p>The system we will consider consists of a set of <span class="math notranslate nohighlight">\(N\)</span> magnetic spins
+placed on a lattice, to represent a magnetic system. The lattice can be
+of various dimensions and geometries (e.g. 2D square or hexagonal). Each
+spin can either be up or down; we denote the value of spin <span class="math notranslate nohighlight">\(i\)</span> as
+<span class="math notranslate nohighlight">\(s_i = 1\)</span> for spin up and <span class="math notranslate nohighlight">\(s_i = -1\)</span> for spin down. The lattice may also
+be in the presence of magnetic field, <span class="math notranslate nohighlight">\(H\)</span>, that tends to align spins
+with the field. The energy of a single configuration of this system is:</p>
+<div class="math notranslate nohighlight" id="equation-eq8-2">
+<span class="eqno">(12)<a class="headerlink" href="#equation-eq8-2" title="Permalink to this equation">#</a></span>\[E_\nu = -\sum_i^N \mu H s_i + (\text{energy due to interactions between spins})\]</div>
+<p><span class="math notranslate nohighlight">\(\mu\)</span> is the magnetic moment (not to be confused with the chemical
+potential). Each microstate of the system refers to a particular set of
+spins - that is a set of values of <span class="math notranslate nohighlight">\(s_1=\pm 1, s_2=\pm 1\dots\)</span>, which we
+will denote as <span class="math notranslate nohighlight">\(\{s_i\}\)</span>. In Problem Sets 1 and 2, we already looked at
+the behavior of a system of <em>non-interacting</em> spins in which the latter
+term in Eq. <a class="reference internal" href="#equation-eq8-2">(12)</a> is ignored. Here, we will consider what happens when we incorporate
+these interactions.</p>
+<p><img alt="image" src="../_images/fig_7_3.png" />{width=”80%”}</p>
+<p>A simple model for the interaction energy is to assume that only
+nearest-neighbor spins on the lattice interact, and that this
+interaction can be described by a coupling constant <span class="math notranslate nohighlight">\(J\)</span>. A <strong>pair</strong> of
+spins contributes energy <span class="math notranslate nohighlight">\(-J\)</span> to the system if they are aligned, and a
+pair of spins contributes energy <span class="math notranslate nohighlight">\(J\)</span> to the system if they are
+oppositely aligned. The total energy of the system is then:</p>
+<div class="math notranslate nohighlight">
+\[E_\nu = -\sum_i^N \mu H s_i - \frac{J}{2} \sum_{i}^N \sum_j^\prime s_i s_j\label{eq8.3}\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(\sum_i\)</span> runs over all spins, while <span class="math notranslate nohighlight">\(\sum_j^\prime\)</span> is only over
+the nearest-neighbor spins of spin <span class="math notranslate nohighlight">\(i\)</span>, indicated by the <span class="math notranslate nohighlight">\(\prime\)</span>
+symbol. The negative sign in front of the <span class="math notranslate nohighlight">\(J\)</span> is because the product of
+<span class="math notranslate nohighlight">\(s_i s_j\)</span> is positive for aligned spins, but the energy between aligned
+spins is negative. Because the outer sum runs over all spins while the
+inner sum runs over all neighbors, the interaction between spin <span class="math notranslate nohighlight">\(i\)</span> and
+<span class="math notranslate nohighlight">\(j\)</span> will be counted twice - once when considering the neighbors of spin
+<span class="math notranslate nohighlight">\(i\)</span>, and once when considering the neighbors of spin <span class="math notranslate nohighlight">\(j\)</span>. We divide by 2
+to remove this overcounting of interactions (this is often a confusing
+point that is neglected by some authors in their treatment of this
+model). The <strong>total magnetization</strong> is:</p>
+<div class="math notranslate nohighlight">
+\[M_\nu  = \sum_i^N \mu s_i\]</div>
+<p>This expression for the energy of a set of spins on a lattice is
+referred to as the <strong>Ising model</strong>. A particular quantity of interest
+for magnetic systems is the ensemble-average magnetization,
+<span class="math notranslate nohighlight">\(\langle M \rangle\)</span>. In the problem sets, we studied <span class="math notranslate nohighlight">\(\langle M \rangle\)</span>
+as a function of the external field, <span class="math notranslate nohighlight">\(H\)</span>, but a system can also exhibit
+<strong>spontaneous magnetization</strong> if <span class="math notranslate nohighlight">\(\langle M \rangle \ne 0\)</span> in the
+absence of a field (<span class="math notranslate nohighlight">\(H = 0\)</span>). The spontaneous magnetization of the Ising
+model is determined by the value of the coupling constant, <span class="math notranslate nohighlight">\(J\)</span>. If
+<span class="math notranslate nohighlight">\(J &gt; 0\)</span>, then at equilibrium the lowest-energy configuration would lead
+to the alignment of all spins and there would be a finite magnetization
+in the absence of a field. We call this system <strong>ferromagnetic</strong>.
+Conversely, if <span class="math notranslate nohighlight">\(J &lt; 0\)</span> and spins align in alternating orientations, the
+spins would be ordered but there would be no net magnetization. We call
+this system <strong>antiferromagnetic</strong>. Finally, if <span class="math notranslate nohighlight">\(J=0\)</span> and spins are
+randomly oriented in the absence of a field, we call the system
+<strong>paramagnetic</strong>. This case is the non-interacting case studied in the
+problem sets.</p>
+<p><img alt="image" src="../_images/fig_7_4.png" />{width=”100%”}</p>
+<p>Note that aligning spins reduces the <strong>entropy</strong> of the system. For
+example, consider a case when <span class="math notranslate nohighlight">\(J \gg 0\)</span> and all spins are in the same
+direction. The system can only have two possible microstates - all spins
+are up, or all spins are down. In contrast, a disordered alignment of
+spins would have many more possible configurations. There is thus a
+trade-off between entropy and energy in systems for which <span class="math notranslate nohighlight">\(J\ne 0\)</span>.
+Consider a ferromagnetic system (<span class="math notranslate nohighlight">\(J&gt;0\)</span>) at constant <span class="math notranslate nohighlight">\(NVT\)</span>, with <span class="math notranslate nohighlight">\(H=0\)</span>
+and finite <span class="math notranslate nohighlight">\(T\)</span>. At equilibrium, the Helmholtz free energy of this system
+must be at a minimum. Writing <span class="math notranslate nohighlight">\(F=E-TS\)</span>, the system can switch between a
+low energy state, in which spins align due to the positive value of <span class="math notranslate nohighlight">\(J\)</span>,
+or a high entropy state, where spins are randomly aligned. Therefore,
+there should be a temperature at which there is an <strong>order-disorder
+transition</strong> and the magnetization changes from zero (at high
+temperature) to a non-zero value (at low temperature) due to the
+energetic interactions between spins. We call the temperature at which
+this order-disorder transition occurs the <strong>Curie temperature</strong>, <span class="math notranslate nohighlight">\(T_C\)</span>,
+for this magnetic system, and will now study its origin. However, it is
+important to note that while we are strictly deriving this
+order-disorder transition temperature for a magnetic system, this
+transition is analogous to phase transitions in other systems, such as
+the liquid-gas phase transition. For example, instead of treating a
+series of spins that are up or down, we could use the Ising model to
+represent a series of particles that are of one type or another (<em>e.g.</em>,
+to represent the mixing of two types of liquid-phase molecules; this is
+called the lattice gas model) which would lead to similar behavior.</p>
+<p><img alt="image" src="../_images/fig_7_5.png" />{width=”100%”}</p>
+<p>To determine the Curie temperature, we need to relate the
+ensemble-average magnetization of the system to the temperature. As our
+system can be described by the canonical ensemble (if we include the
+magnetic work term as part of the energy function, as done above), our
+first step will be write an expression for the canonical partition
+function. Using the expression for the energy, the canonical partition
+function for the Ising model is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+Z &amp;= \sum_{\nu} \exp\left (-\beta E_\nu \right )\\
+&amp;= \sum_{\nu}\exp \left (\beta \sum_i^N \mu H s_i + \beta \frac{J}{2}  \sum_{i}^N \sum_j^\prime s_i s_j \right ) \\
+&amp;= \sum_{s_1=\pm 1} \sum_{s_2=\pm 1} \dots \sum_{s_N =\pm 1}\exp \left (\beta \sum_i^N \mu H s_i + \beta \frac{J}{2}  \sum_{i}^N \sum_j^\prime s_i s_j \right )
+\end{aligned}\end{split}\]</div>
+<p>The last expression explicitly sums over all possible configurations of
+the <span class="math notranslate nohighlight">\(\{s_i\}\)</span>, where for each set of spins the energy is defined by
+summing over that set. This partition function is much more complex than
+the versions we’ve seen to date since we cannot factorize it in any
+obvious way due to interactions between spins. It should thus be
+apparent why systems with interactions are challenging to solve
+analytically.</p>
+</section>
+<section id="mean-field-theory">
+<h2>Mean-field theory<a class="headerlink" href="#mean-field-theory" title="Permalink to this headline">#</a></h2>
+<p>Analytically solving the Ising model partition function to obtain a
+simple expression for the Helmholtz free energy that can be
+differentiated to obtain the magnetization is possible in a
+one-dimensional system (Problem Set 3!), possible in a two-dimensional
+system with significant difficulty (first solved by a Nobel laureate),
+and impossible in higher dimensions. Thus, we will instead simplify the
+partition function and introduce an approximation that is commonly used
+in the study of phase behavior - the <strong>mean-field approximation</strong>, or
+the approximation used in mean-field theory. The idea of mean-field
+theory is to examine a particular particle (for the Ising model, a
+single spin) and assume that the surrounding medium (in this case the
+other spins) exerts an <strong>average field</strong> which interacts with the tagged
+spin of interest. That is, instead of examining interactions with the
+specific configuration of neighbors local to that spin, the interactions
+are assumed to be equivalent to that of the average configuration of the
+medium. The approach thus neglects fluctuations of the medium that are
+long-ranged and reduces the many-body problem to an essentially one-body
+problem focused on the particle of interest. We will illustrate the
+essence of mean-field theory by using it to analytically solve the Ising
+model.</p>
+<p><img alt="image" src="../_images/fig_8_1.png" />{width=”100%”}</p>
+<p>Consider again the energy of a single configuration of the Ising model:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+E_\nu &amp;= -\sum_i^N \mu H s_i - \frac{J}{2} \sum_{i}^N \sum_j^\prime s_i s_j \\
+&amp;= -\sum_i^N s_i \left ( \mu H + \frac{J}{2} \sum_j^\prime s_j \right )
+\end{aligned}\end{split}\]</div>
+<p>This expression is for the energy of the entire lattice. If, instead, we
+consider the energy of a single spin <span class="math notranslate nohighlight">\(i\)</span>, we could write:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\epsilon_i &amp;= -\mu H s_i - Js_i \sum_j^\prime  s_j \\
+&amp;= -\mu s_i \left ( H + \frac{J}{\mu} \sum_j^\prime s_j \right )
+\end{aligned}\end{split}\]</div>
+<p>Note that the factor of 1/2 is removed from in front of the sum, since
+we are considering the total energy of the single spin in the system,
+including all interactions with neighbors (again, often a point of
+confusion). We would need to divide the neighbor interaction energy by 2
+if summing over the entire lattice. The form of this energy suggests
+that we can think of the term <span class="math notranslate nohighlight">\(\frac{J}{\mu} \sum_j^\prime s_j\)</span> as a
+perturbation to the actual magnetic field, <span class="math notranslate nohighlight">\(H\)</span>, acting on the spin; we
+therefore define <span class="math notranslate nohighlight">\(H^\textrm{eff}_i\)</span> as the effective magnetic field that
+does work on spin <span class="math notranslate nohighlight">\(i\)</span> including this perturbation:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\begin{aligned}
+H_i^\textrm{eff} &amp;\equiv H + \frac{J}{\mu} \sum_j^\prime s_j
+\end{aligned}$$ The single-spin energy is then written as:\\$$\begin{aligned}
+\epsilon_i &amp;= -\mu  H^\textrm{eff}_i s_i
+\end{aligned}\end{aligned}\end{align} \]</div>
+<p>We can now see that the interaction energy with neighboring spins
+contributes to the effective field that acts on spin <span class="math notranslate nohighlight">\(i\)</span>. We can rewrite
+the expression for the effective field in terms of the average spin of
+the nearest-neighbors to remove the sum:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+H_i^\textrm{eff}  &amp;= H + \frac{J}{\mu} n \langle s \rangle^\prime_i 
+\end{aligned}\]</div>
+<p>Here, we define <span class="math notranslate nohighlight">\(n\)</span> as the number of nearest-neighbors (i.e. 2 in 1D, 4
+in a 2D square lattice, etc.) and <span class="math notranslate nohighlight">\(\langle s \rangle ^\prime_i\)</span> is the
+average value of the spin of the nearest-neighbors of <span class="math notranslate nohighlight">\(s_i\)</span>, hence the
+<span class="math notranslate nohighlight">\(^\prime\)</span>. So far, these expressions are all exact.</p>
+<p>We now make the mean field assumption, and assume that
+<span class="math notranslate nohighlight">\(\langle s \rangle ^\prime_i = \langle s \rangle\)</span> - that is, the average
+value of the <strong>local</strong> spins (nearest-neighbors) of spin <span class="math notranslate nohighlight">\(i\)</span> is equal to
+the average value of spins in the <strong>entire</strong> system. The effective field
+then becomes:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+H_i^\textrm{eff}  &amp;= H + \frac{J}{\mu} n \langle s \rangle \equiv H^\textrm{eff}\\
+\epsilon_i &amp;= -\mu  H^\textrm{eff} s_i
+\end{aligned}\end{split}\]</div>
+<p>These expressions are the essence of mean-field theory - the specific
+accounting of interactions with nearest-neighbor spins has been replaced
+with an average (mean) interaction, <span class="math notranslate nohighlight">\(H^\textrm{eff}\)</span>, so that spins are
+now <strong>independent</strong>. The mean field is identical for each spin and does
+not depend on <span class="math notranslate nohighlight">\(s_i\)</span>. Correlations between spins are completely captured
+in the ensemble-average spin term, which is a property of the state of
+the lattice and not a property of a specific spin. We can then use this
+expression for the energy of a single spin to solve for the
+magnetization. Indeed, we have already done just that on Problem Sets 1
+and 2, where we solved for the magnetization of a paramagnet in a field
+<span class="math notranslate nohighlight">\(H\)</span>. We can use the exact same formalism but replace <span class="math notranslate nohighlight">\(H\)</span> with the
+effective field <span class="math notranslate nohighlight">\(H^\textrm{eff}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+Z &amp;= z^N \\
+z &amp;= \sum_i e^{-\beta \epsilon_i} \\
+&amp;= e^{\beta \mu H^\textrm{eff}} + e^{-\beta \mu H^\textrm{eff}} \\
+&amp;= 2 \cosh(\beta \mu H^\textrm{eff}) \\
+Z &amp;= \left [2 \cosh(\beta \mu H^\textrm{eff})\right] ^N
+\end{aligned}\end{split}\]</div>
+<p>We have simply replaced the field <span class="math notranslate nohighlight">\(H\)</span> with the effective field
+<span class="math notranslate nohighlight">\(H^\textrm{eff}\)</span> in these steps. The rest of the derivation proceeds the
+same as in the problem sets, allowing us to skip to:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\langle M \rangle &amp;= N \mu \tanh( \beta \mu H^\textrm{eff}  ) \\
+&amp;= N \mu \tanh( \beta \mu H + \beta J n \langle s \rangle  )
+\end{aligned}\end{split}\]</div>
+<p>This is the <strong>mean-field approximation</strong> for the total magnetization of
+the lattice, <span class="math notranslate nohighlight">\(M\)</span>, and allows us to determine the magnetization for a set
+of <strong>interacting</strong> spins without knowing exact configurations of spins
+on the lattice. We can simplify this expression by replacing the
+ensemble-average magnetization with the ensemble-average spin via
+<span class="math notranslate nohighlight">\(\langle s \rangle =\langle M \rangle / N\mu\)</span> to finally get:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\langle s \rangle &amp;= \tanh( \beta \mu H +  \beta J n \langle s \rangle )
+\end{aligned}\]</div>
+<p>This equation has <span class="math notranslate nohighlight">\(\langle s \rangle\)</span> on both the left hand side and in
+the <span class="math notranslate nohighlight">\(\tanh\)</span> function. We refer to this type of expression as a
+<strong>self-consistent</strong> mean field theory, because the mean field which
+influences the average value of the magnetization then itself depends on
+the average value of the magnetization. This expression now has the
+magnetization (i.e., average spin) as a function of the temperature,
+external field, lattice (through <span class="math notranslate nohighlight">\(n\)</span>), and coupling parameter, so we can
+solve as a function of temperature to determine the temperature at which
+the system transitions from a non-zero to zero magnetization. For this
+type of expression, we can solve for the solution graphically by finding
+the intersection between <span class="math notranslate nohighlight">\(\langle s \rangle\)</span> and
+<span class="math notranslate nohighlight">\(\tanh( \beta \mu H +  \beta J n \langle s \rangle )\)</span> if both are
+plotted as a function of <span class="math notranslate nohighlight">\(\langle s \rangle\)</span>. In other techniques, such
+as the self-consistent field theory of polymers, similar equations are
+solved iteratively by converging onto a result.</p>
+<p><img alt="image" src="../_images/fig_8_2.png" />{width=”100%”}</p>
+<p>Performing this graphical solution method shows the following behavior
+in the zero-field (<span class="math notranslate nohighlight">\(H=0\)</span>) limit. For small values of <span class="math notranslate nohighlight">\(\beta J n\)</span>, the
+only solution is the trivial solution
+<span class="math notranslate nohighlight">\(\langle s \rangle = \tanh( \beta J n \langle s \rangle ) = 0\)</span>. Since
+<span class="math notranslate nohighlight">\(\beta J n\)</span> is temperature dependent through the <span class="math notranslate nohighlight">\(\beta\)</span> parameter, we
+recognize that this solution, in which there is no spontaneous
+magnetization, is the disordered state. Since <span class="math notranslate nohighlight">\(\beta = 1/k_B T\)</span> this
+corresponds to a high-temperature state, consistent with our
+understanding of the entropically favored disordered state being
+preferred at high temperatures. For large values of <span class="math notranslate nohighlight">\(\beta J n\)</span>, there
+are three solutions for <span class="math notranslate nohighlight">\(\langle s \rangle\)</span>; the trivial solution, and
+two symmetric solutions for finite values of <span class="math notranslate nohighlight">\(\langle s \rangle\)</span>. The
+two possible finite values correspond to the ordered, low-temperature
+alignment of spins characteristic of a ferromagnetic, with two solutions
+possible due to the symmetry of the system. Calculating the free
+energies of these solutions would show that the finite solutions are
+lower free energy than the trivial solution, confirming that at low
+temperatures the system aligns spins. Finally, the crossover between the
+low-temperature and high-temperature state occurs at a temperature:</p>
+<div class="math notranslate nohighlight">
+\[T_C = \frac{nJ}{k_B}\]</div>
+<p>Thus, the mean field theory predicts an order-disorder transition.
+However, it should be noted that this solution is not identical to the
+exact solutions - for example, on a 2D square lattice, the analytical
+solution predicts <span class="math notranslate nohighlight">\(T_C \approx 2.3J/k_B\)</span> which is distinct from the
+value of <span class="math notranslate nohighlight">\(T_C\)</span> in the mean field model. This error decreases as we go to
+higher dimensions, but reflects the approximations within mean-field
+theory. More advanced techniques are possible, including “tagging”
+multiple spins for simultaneous analysis, but that is beyond the scope
+of this class.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lecture_files"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Lecture7.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">The Langmuir Isotherm and Ising Model</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Lecture9.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Fluctuations and an Introduction to Molecular Simulation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-readings-for-the-enthusiast">Additional Readings for the Enthusiast</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topics-in-this-lecture">Topics in this lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements">Announcements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-ising-model">The Ising model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-field-theory">Mean-field theory</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Reid van Lehn, Matt Gebbie, Rose Cersonsky
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

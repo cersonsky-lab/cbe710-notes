@@ -1,0 +1,871 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Ideal mixtures &#8212; Notes for CBE710</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture_files/Lecture25';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Non-ideal mixtures" href="Lecture26.html" />
+    <link rel="prev" title="Fugacity" href="Lecture24.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Notes for CBE710</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Class introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Mechanics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Lecture1.html">Overview and review of thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture2.html">The Microcanonical Ensemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture3.html">The Canonical Ensemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/ps_1/problem_set_1.html">— Problem Set 1 —</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture4.html">Canonical Ensemble Continued</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture5.html">Generalized Ensembles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture6.html">The Ideal Gas Partition Function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture7.html">The Langmuir Isotherm and Ising Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture8.html">The Ising Model and Mean-Field Theory</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Molecular Simulation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Lecture9.html">Fluctuations and an Introduction to Molecular Simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture10.html">Monte Carlo Simulations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture11.html">Monte Carlo and Intro to Molecular Dynamics Simulations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture12.html">MD Thermostats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture13.html">The Structure of Classical Fluids</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture14.html">The Potential of Mean Force</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Lecture15.html">Free energy perturbation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture16.html">Postulates of thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture17.html">Heat Engines and Possible Processes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture18.html">Entropy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture19.html">The Fundamental Relation of Thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture20.html">Legendre Transforms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture21.html">Conditions of equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture22.html">Equilibrium in single-component systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture23.html">Phase Diagrams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture24.html">Fugacity</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Ideal mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture26.html">Non-ideal mixtures</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/lecture_files/Lecture25.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Ideal mixtures</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recommended-textbooks">Recommended textbooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topics-in-this-lecture">Topics in this lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-mixtures-partial-molar-properties">Introduction to mixtures: partial molar properties</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#property-changes-upon-mixing">Property changes upon mixing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fugacity-of-a-component-in-a-mixture">Fugacity of a component in a mixture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ideal-gas-mixtures-and-ideal-solutions">Ideal-gas mixtures and ideal solutions</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="ideal-mixtures">
+<h1>Ideal mixtures<a class="headerlink" href="#ideal-mixtures" title="Permalink to this headline">#</a></h1>
+<section id="recommended-textbooks">
+<h2>Recommended textbooks<a class="headerlink" href="#recommended-textbooks" title="Permalink to this headline">#</a></h2>
+<p>Tester and Modell, Ch. 9.5-9.7, 15.5</p>
+</section>
+<section id="topics-in-this-lecture">
+<h2>Topics in this lecture<a class="headerlink" href="#topics-in-this-lecture" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Property changes during mixing</p></li>
+<li><p>Fugacity of a component in a mixture</p></li>
+<li><p>Ideal mixtures</p></li>
+</ul>
+</section>
+<section id="introduction-to-mixtures-partial-molar-properties">
+<h2>Introduction to mixtures: partial molar properties<a class="headerlink" href="#introduction-to-mixtures-partial-molar-properties" title="Permalink to this headline">#</a></h2>
+<p>In the last lecture, we began to introduce the properties of mixtures.
+We first defined the mole fraction of component <span class="math notranslate nohighlight">\(i\)</span> as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+x_i &amp;\equiv \frac{N_i}{\sum_{i=1}^n N_i} \\
+&amp;= \frac{N_i}{N} 
+\end{aligned}\end{split}\]</div>
+<p>We next defined a partial moler property of component <span class="math notranslate nohighlight">\(i\)</span>, which is the
+increment in the value of some parameter <span class="math notranslate nohighlight">\(B\)</span> for the entire system upon
+addition of a single component, <span class="math notranslate nohighlight">\(i\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\overline{B}_i &amp;\equiv \left(\frac{\partial \underline{B}}{\partial N_i}\right)_{T,P,N_j \ne N_i}
+\end{aligned}\]</div>
+<p>Here, the overline indicates a partial molar property of component <span class="math notranslate nohighlight">\(i\)</span>
+and the partial derivative indicates the change in the (extensive) value
+of <span class="math notranslate nohighlight">\(\underline{B}\)</span> for the mixture upon increment of component <span class="math notranslate nohighlight">\(i\)</span>, with
+the amount of each other component <span class="math notranslate nohighlight">\(j\)</span> held fixed. By definition,
+partial molar properties are defined with the temperature and pressure
+also held constant, as these are the two independent variables commonly
+associated with phase behavior. Note that all partial molar properties
+are intensive since derivative is performed with respect to the number
+of moles of a single component.</p>
+<p>We can define a simple expression for the extensive value of
+<span class="math notranslate nohighlight">\(\underline{B}\)</span> in terms of partial molar properties by again using
+Euler’s theorem If we write the exact differential for <span class="math notranslate nohighlight">\(\underline{B}\)</span>
+as a function of the <span class="math notranslate nohighlight">\(n\)</span> components, <span class="math notranslate nohighlight">\(T\)</span>, and <span class="math notranslate nohighlight">\(P\)</span>, we obtain:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+d\underline{B}(T,P, N_1, N_2, \dots, N_n) &amp;= \left ( \frac{\partial \underline{B}}{\partial T}\right )_{P, N_j} dT + \left ( \frac{\partial \underline{B}}{\partial P}\right )_{T, N_j} dP + \sum_i^n \left ( \frac{\partial \underline{B}}{\partial N_i}\right )_{T,P, N_j \ne N_i} dN_i \\
+&amp;= \left ( \frac{\partial \underline{B}}{\partial T}\right )_{P, N_j} dT + \left ( \frac{\partial \underline{B}}{\partial P}\right )_{T, N_j} dP + \sum_i^n \overline{B}_i dN_i
+\end{aligned}\end{split}\]</div>
+<p>By Euler’s theorem, we obtain expressions for the first-order derivative
+of <span class="math notranslate nohighlight">\(\underline{B}\)</span> with respect to each extensive variable (the set of
+<span class="math notranslate nohighlight">\(N_i\)</span>) multiplied by the corresponding extensive variable:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\underline{B} &amp;=  \sum_i^n \left ( \frac{\partial \underline{B}}{\partial N_i}\right )_{T,P, N_j \ne N_i} N_i \\
+&amp;= \sum_i^n \overline{B}_i N_i
+\end{aligned}\end{split}\]</div>
+<p>Therefore, we obtain a straightforward expression for the extensive
+value of <span class="math notranslate nohighlight">\(\underline{B}\)</span> for a mixture in terms of partial molar
+properties of each component. Since <span class="math notranslate nohighlight">\(\underline{B} = NB\)</span>, where
+<span class="math notranslate nohighlight">\(N = \sum_i^n N_i\)</span> is the total amount of material, we can also then
+obtain:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+B &amp;= \frac{\underline{B}}{N} \\
+&amp;= \frac{\sum_i^n \overline{B}_i N_i}{N} \\
+&amp;= \sum_i^n \overline{B}_i x_i
+\end{aligned}\end{split}\]</div>
+<p>One particular partial molar property deserves special mention. If we
+let <span class="math notranslate nohighlight">\(\underline{B} \equiv \underline{G}\)</span>, then the partial molar Gibbs
+free energy is given by:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\overline{G}_i &amp;= \left ( \frac{\partial \underline{G}}{\partial N_i}\right )_{T,P, N_j \ne N_i} 
+\end{aligned}\]</div>
+<p>By comparison with the exact differential of the Gibbs free energy
+(defined in terms of its natural variables, such that it is a Legendre
+transform of the fundamental relation) we have:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+d\underline{G} &amp;= -\underline{S} dT + \underline{V} dP + \sum_i^n \mu_i dN_i \\
+%&amp;= \left ( \frac{\partial \underline{G}}{\partial T}\right )_{P, N_j} dT + \left ( \frac{\partial \underline{G}}{\partial P}\right )_{T, N_j} dP + \sum_i^n \left ( \frac{\partial \underline{G}}{\partial N_i}\right )_{T,P, N_{j, [i]}} dN_i \\
+\therefore \mu_i &amp;= \left ( \frac{\partial \underline{G}}{\partial N_i}\right )_{T,P, N_j \ne N_i} = \overline{G}_i \\
+G &amp;= \sum_i^n x_i \mu_i
+\end{aligned}\end{split}\]</div>
+<p>We thus find that the partial molar Gibbs free energy of component <span class="math notranslate nohighlight">\(i\)</span>
+is identical to the chemical potential of component <span class="math notranslate nohighlight">\(i\)</span>, and we regain
+an expression for the Gibbs free energy of the mixture that is similar
+to the expression for the Gibbs free energy of a single-component system
+that we obtained from Euler’s theorem.</p>
+</section>
+<section id="property-changes-upon-mixing">
+<h2>Property changes upon mixing<a class="headerlink" href="#property-changes-upon-mixing" title="Permalink to this headline">#</a></h2>
+<p>We can now write the change in a given property upon mixing by
+considering the value of <span class="math notranslate nohighlight">\(B\)</span> of each of the <span class="math notranslate nohighlight">\(n\)</span> pure components and then
+the value of <span class="math notranslate nohighlight">\(B\)</span> for the mixture; since <span class="math notranslate nohighlight">\(B\)</span> is a state function, the
+pathway by which mixing occurs is irrelevant. We can thus write:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\Delta B_\textrm{mix} &amp;= B - \sum_i^n x_i B_i \\
+&amp;= \sum_i^n x_i (\overline{B}_i - B_i)
+\end{aligned}\end{split}\]</div>
+<p>We call <span class="math notranslate nohighlight">\(\Delta B_\textrm{mix}\)</span> the change in the value of a property of
+a mixture relative to pure components the entropy of mixing, energy of
+mixing, free energy of mixing, etc. depending on <span class="math notranslate nohighlight">\(B\)</span>. In this notation,
+<span class="math notranslate nohighlight">\(B\)</span> refers to the (intensive) value of <span class="math notranslate nohighlight">\(B\)</span> for the entire mixture while
+<span class="math notranslate nohighlight">\(\sum_i^n x_i B_i\)</span> is the value of <span class="math notranslate nohighlight">\(B\)</span> for each individual component
+weighted by the mole fraction of that component. Of particular interest
+is the Gibbs free energy of mixing; since the Gibbs free energy is
+minimized at equilibrium, mixing can only occur at equilibribum if
+<span class="math notranslate nohighlight">\(\Delta G_\textrm{mix} &lt; 0\)</span> (although we will discuss that there is a
+subtlety here that may not be obvious). We can write for the Gibbs free
+energy of mixing:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\Delta G_\textrm{mix} &amp;= \sum_i^n x_i (\overline{G}_i - G_i)
+\end{aligned}\]</div>
+<p>We can break this free energy change into two separate components by
+recalling the definition of the Gibbs free energy from Euler’s theorem
+(or from the Legendre transform of the fundamental relation):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+G &amp;= U + PV - TS \\
+&amp;= H - TS \\
+\therefore \Delta G_\textrm{mix} &amp;= \Delta H_\textrm{mix} - T \Delta S_\textrm{mix}
+\end{aligned}\end{split}\]</div>
+<p>Analysis of the enthalpy and entropy of mixing is often performed
+separately to determine under which conditions mixing occurs. We can
+first consider the typical signs of these terms. For most systems, the
+enthalpy of mixing is positive, since intermolecular interactions
+between a species with itself tend to be more attractive than
+cross-interactions with other species. Thus, the enthalpy of mixing
+tends to drive phase separation; an extreme example would be the
+separation of two liquid phases, such as oil and water. Enthalpy changes
+in gas mixtures are likely to be quite small due to the low probability
+of interactions between gas molecules. Conversely, the entropy of mixing
+tends to be positive, leading to a negative contribution to the Gibbs
+free energy of mixing. The gain in entropy of mixing was studied in the
+statistical mechanics unit and can be attributed to the additional
+configurations accessible upon mixing. Finally, we note that both the
+entropy and enthalpy of mixing will be highly dependent on the
+composition of the mixture, as will be discussed for idealized examples
+below.</p>
+<p>We can make some comments on phase-separation processes briefly here,
+and will discuss these again in the next lecture. If we imagine fixing
+an overall system composition at some value <span class="math notranslate nohighlight">\(z_i\)</span>, we can determine if
+the overall free energy change of mixing is positive or negative for a
+single phase at that fixed composition. If it is negative, then the two
+pure components, initially separated, might mix to form a single phase
+at that composition because doing so will lower the Gibbs free energy of
+the system. However, even if the free energy change is positive at the
+composition <span class="math notranslate nohighlight">\(z_i\)</span>, there may be other compositions for which the free
+energy change is negative (similarly, even if the free energy change is
+negative, there might be other compositions for which the free energy is
+more negative). Therefore, the system may be able to mix into two phases
+of different compositions that are not pure phases to minimize the total
+free energy change. This insight tells us that a single value of
+<span class="math notranslate nohighlight">\(\Delta G_\textrm{mix}\)</span> is insufficient to understand phase behavior,
+and we require knowledge of <span class="math notranslate nohighlight">\(\Delta G_\textrm{mix}\)</span> for a full range of
+compositions. Analysis of these phase separation processes will be
+discussed in the next lecture.</p>
+<p><img alt="image" src="../_images/fig_25_1.png" />{width=”100%”}</p>
+</section>
+<section id="fugacity-of-a-component-in-a-mixture">
+<h2>Fugacity of a component in a mixture<a class="headerlink" href="#fugacity-of-a-component-in-a-mixture" title="Permalink to this headline">#</a></h2>
+<p>In the last lecture, we defined a quantity, the <strong>fugacity</strong>, which has
+units of pressure and is related to the deviation of the chemical
+potential of a real system from the chemical potential of an ideal
+system (<em>i.e.</em>, the isothermal Gibbs departure function). We found that
+the conditions of phase equilibrium could be restated as the equivalence
+of fugacities between phases in a single-component system. We then
+introduced mixtures, and specifically the idea of partial molar
+properties as measuring the change in the property of a mixture upon
+increment of only one component. We can now return to conditions of
+phase equilibrium for mixtures by defining the fugacity of a component
+in a mixture. Recall that we defined the fugacity of a single-component
+system as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+G_i - G_i^0 &amp;= RT \ln \frac{f_i}{P} \\
+d G_i &amp;= d\mu_i = RT d \ln f_i
+\end{aligned}\end{split}\]</div>
+<p>We can now define a related quantity, the <strong>fugacity of a component in a
+mixture</strong>, in terms of the isothermal departure of the partial molar
+Gibbs free energy, or:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\overline{G}_i - \overline{G}_i^0 &amp;= RT \ln \frac{\hat{f}_i}{y_i P} \\
+d \overline{G}_i &amp;= d\mu_i = RT d\ln \hat{f}_i
+\end{aligned}\end{split}\]</div>
+<p>Here, we recognize that we can again relate the partial molar Gibbs free
+energy to the chemical potential. <span class="math notranslate nohighlight">\(\overline{G}_i^0\)</span> refers to the
+partial molar Gibbs free energy for component <span class="math notranslate nohighlight">\(i\)</span> in a mixture of ideal
+gases with the same composition as the mixture of interest. We use the
+<span class="math notranslate nohighlight">\(\hat{f}_i\)</span> notation to define the fugacity of a component in a mixture,
+and <span class="math notranslate nohighlight">\(f_i\)</span> to define the fugacity of the same component in a
+single-component system containing pure component <span class="math notranslate nohighlight">\(i\)</span>. <span class="math notranslate nohighlight">\(y_i\)</span> is the mole
+fraction of component <span class="math notranslate nohighlight">\(i\)</span> in the mixture, such that <span class="math notranslate nohighlight">\(y_i P = P_i\)</span> or the
+partial pressure of component <span class="math notranslate nohighlight">\(i\)</span> (note that the symbol <span class="math notranslate nohighlight">\(y_i\)</span> refers to
+mole fractions for vapor-phase mixtures where as <span class="math notranslate nohighlight">\(x_i\)</span> refers to mole
+fractions for liquid or solid-phase mixtures). Since the fugacity of a
+pure ideal gas is defined as equal to the pressure, the fugacity of
+component <span class="math notranslate nohighlight">\(i\)</span> in a mixture of ideal gases is defined as equal to the
+partial pressure (we will discuss this point more later in this
+lecture). As in a single-component case, we can also define the fugacity
+coefficient of component <span class="math notranslate nohighlight">\(i\)</span> in a mixture as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\hat{\phi}_i \equiv \frac{\hat{f}_i}{y_i P}
+\end{aligned}\]</div>
+<p>We use <span class="math notranslate nohighlight">\(y_i\)</span> to refer to the mole fraction of the component in the
+mixture assuming a vapor phase, but we could write the same definitions
+using <span class="math notranslate nohighlight">\(x_i\)</span> were the mixture in the liquid phase. Using this definition
+of the fugacity of component <span class="math notranslate nohighlight">\(i\)</span>, we can again find conditions of
+equilibrium (using vapor-liquid equilibrium as an example) by
+integrating the expression for the chemical potential between the two
+phases; along any path both the volume and composition of the system
+would change, but the path itself does not matter since the chemical
+potential is a state function. We would thus obtain:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+d\mu_i &amp;= RT d\ln \hat{f}_i \\
+\mu_i^{\textrm{liq}} - \mu_i^{\textrm{vap}} &amp;= RT\ln \left ( \frac{\hat{f}_i^{\textrm{liq}}}{\hat{f}_i^{\textrm{vap}}}\right ) = 0 \\
+\therefore \hat{f}_i^{\textrm{liq}} &amp;= \hat{f}_i^{\textrm{vap}} \\
+\therefore  x_i\hat{\phi}_i^\textrm{liq}P &amp;= y_i\hat{\phi}_i^\textrm{vap}P
+\end{aligned}\end{split}\]</div>
+<p>At equilibrium the pressure is the same for both phases, but we include
+<span class="math notranslate nohighlight">\(P\)</span> on each side of this equation to emphasize the relationship between
+the fugacity coefficient of component <span class="math notranslate nohighlight">\(i\)</span> and the corresponding
+fugacity. We use <span class="math notranslate nohighlight">\(x_i\)</span> and <span class="math notranslate nohighlight">\(y_i\)</span> to refer to the mole fraction of <span class="math notranslate nohighlight">\(i\)</span> in
+the correct phase. It is critical to note that in general, the
+composition of the vapor phase and liquid phase will be different at
+phase equilibrium - that is, <span class="math notranslate nohighlight">\(y_i \ne x_i\)</span>. We do not require identical
+compositions at equilibrium, only identical fugacitities for the
+corresponding components.</p>
+<p>If we imagine integrating the chemical potential along an isothermal,
+isobaric path in which a single-component system containing pure <span class="math notranslate nohighlight">\(i\)</span> is
+transformed to a mixture in which the composition of component <span class="math notranslate nohighlight">\(i\)</span> is
+given by <span class="math notranslate nohighlight">\(y_i\)</span>, we would obtain:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+d\mu_i^{\textrm{pure}} &amp;= dG_i = RT d\ln f_i \\
+d\mu_i^{\textrm{mixed}} &amp;= d\overline{G}_i = RT d\ln \hat{f}_i \\
+\mu_i^\textrm{mixed} - \mu_i^{\textrm{pure}} &amp;= \overline{G}_i - G_i \\
+&amp;= RT \ln \frac{\hat{f}_i}{f_i} \\
+\therefore \overline{G}_i - G_i &amp;= RT \ln \frac{\hat{f}_i}{f_i}
+\end{aligned}\end{split}\]</div>
+<p>The difference between the free energy change associated with adding
+component <span class="math notranslate nohighlight">\(i\)</span> to either a mixture or a pure system is related to the
+ratio of fugacities of that component in the mixture of a pure state.
+We’ll use this relationship again shortly.</p>
+<p>Finally, by comparing this expression to the expression for the Gibbs
+free energy of mixing, we also then recognize:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\overline{G}_i - G_i &amp;= RT \ln \frac{\hat{f}_i}{f_i} \\
+\therefore \Delta G_\textrm{mix} &amp;= RT \sum_i^n x_i \ln \frac{\hat{f}_i}{f_i}
+\end{aligned}\end{split}\]</div>
+<p>In principle, then, we can calculate the Gibbs free energy of mixing if
+we know compressibility factors for the pure components and the mixture,
+enabling fugacity calculations like those discussed in the last lecture.
+Calculating the fugacity of a component in a mixture is similar to the
+calculating the fugacity of a pure component, except that the departure
+function of a partial molar Gibbs free energy is needed, leading to
+slightly different calculations. We will not discuss this further but
+the topic is covered in Ch. 9.7 of the textbook.</p>
+</section>
+<section id="ideal-gas-mixtures-and-ideal-solutions">
+<h2>Ideal-gas mixtures and ideal solutions<a class="headerlink" href="#ideal-gas-mixtures-and-ideal-solutions" title="Permalink to this headline">#</a></h2>
+<p>Having defined general expressions for the properties of a mixture, we
+will now discuss the behavior of idealized mixtures with properties that
+are easily defined in terms of the properties of their pure
+constituents. The first approximation we define is an <strong>ideal-gas
+mixture</strong> which is a mixture of gases in the limit that the entire
+mixture acts as an ideal gas. That is, there are no interactions between
+molecules. A second, less restrictive approximation is to define an
+<strong>ideal solution</strong>. An ideal solution is a mixture of two or more
+components in which it is assumed that the intermolecular interactions
+between component <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span> are the same as the intermolecular
+interactions between any component <span class="math notranslate nohighlight">\(i\)</span> with itself. Another way of
+putting this is that adding a small amount of component <span class="math notranslate nohighlight">\(i\)</span> to the
+mixture elicits the same change in the system enthalpy as adding a small
+amount of component <span class="math notranslate nohighlight">\(i\)</span> to a pure system.</p>
+<p>By these definitions, then, we have that:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\overline{H}_i^\textrm{IG} &amp;= H_i^{\textrm{IG}} \\
+\Delta H_\textrm{mix}^\textrm{IG} &amp;= \sum_i y_i(\overline{H}_i^\textrm{IG} - H_i^{\textrm{IG}}) = 0 \\
+\overline{H}_i^\textrm{IS} &amp;= H_i \\
+\Delta H_\textrm{mix}^\textrm{IS} &amp;= \sum_i x_i(\overline{H}_i^\textrm{IS} - H_i) = 0
+\end{aligned}\end{split}\]</div>
+<p>Here, we use the <span class="math notranslate nohighlight">\(\textrm{IG}\)</span> superscript to indicate an ideal-gas
+mixture and <span class="math notranslate nohighlight">\(\textrm{IS}\)</span> superscript to indicate an ideal solution. We
+write the mole fraction as <span class="math notranslate nohighlight">\(x_i\)</span> for the ideal solution assuming a
+liquid phase, but a vapor phase can also be an ideal solution in which
+case <span class="math notranslate nohighlight">\(y_i\)</span> would be appropriate. We can further generalize these same
+relations to other extensive variables that depend on system
+interactions, including the internal energy and volume of mixing;
+however, the entropy of mixing requires special treatment as it depends
+on system configurations, as we will return to:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\Delta U_\textrm{mix}^\textrm{IG} &amp;= \Delta U_\textrm{mix}^\textrm{IS} =0\\
+\Delta V_\textrm{mix}^\textrm{IG} &amp;= \Delta V_\textrm{mix}^\textrm{IS} =0
+\end{aligned}\end{split}\]</div>
+<p>The ideal solution approximation is reasonable for liquid-phase mixtures
+in which the constituent molecules have very similar chemical
+properties, such as mixtures of liquid alkanes with slightly varying
+chain lengths. It is also appropriate for most gas mixtures because, as
+noted above, the likelihood of interactions between gas molecules is
+small so that the enthalpy of mixing can often be neglected. Within
+these two approximations, the primary difference is that there are no
+interactions within an ideal-gas mixture, while in an ideal solution
+molecules interact, but all interactions are identical. Thus, we can
+think of mixtures of ideal gases as subsets of ideal solutions with the
+additional restriction that there are no interactions at all between
+molecules, not that the interactions between all molecules are the same.</p>
+<p>We can now ask what an appropriate expression for the entropy of mixing
+is in the limit that the system energy and volume are unchanged upon
+mixing. If we recall all the way back to Problem Set 1 in our
+Statistical Mechanics unit, we considered this exact problem -
+calculating the entropy change for mixing at constant <span class="math notranslate nohighlight">\(NVE\)</span>. We
+calculated the entropy of mixing as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\Delta S_\textrm{mix}^\textrm{IS} &amp;= \Delta S_\textrm{mix}^\textrm{IG} =-R \sum_i x_i \ln x_i
+\end{aligned}\]</div>
+<p>Putting all of this together, we can then compute the Gibbs free energy
+of mixing for each approximation as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\Delta G_{\textrm{mix}}^\textrm{IG} &amp;= \Delta H_{\textrm{mix}}^\textrm{IG} - T \Delta S_{\textrm{mix}}^\textrm{IG} \\
+&amp;= RT \sum_i y_i \ln y_i \\
+&amp;= \Delta G_{\textrm{mix}}^\textrm{IS} 
+\end{aligned}\end{split}\]</div>
+<p>Using this expression for the Gibbs free energy of mixing, we can now
+derive expressions for the fugacity of a component in an ideal-gas
+mixture or ideal solution, recalling that:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\Delta G_\textrm{mix}^\textrm{IS} &amp;= RT \sum_i x_i \ln \frac{\hat{f}_i^\textrm{IS}}{f_i} =  RT \sum_i x_i \ln x_i \\
+\therefore \hat{f}_i^\textrm{IS} &amp;= x_i f_i
+\end{aligned}\end{split}\]</div>
+<p>This expression is also called the <strong>Lewis-Randall</strong> expression for the
+fugacity of component <span class="math notranslate nohighlight">\(i\)</span> in an ideal solution, and tells us that the
+fugacity is the same as the fugacity of pure <span class="math notranslate nohighlight">\(i\)</span> weighted by its mole
+fraction. This approximation makes fugacities significantly simpler to
+calculate, as we might have an equation of state for a pure system but
+not one for a mixture, for example. For an ideal-gas mixture, the
+fugacity of the pure ideal gas is equal to the pressure, so we can then
+write:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\hat{f}_i^\textrm{IS} &amp;= x_i f_i \\
+\hat{f}_i^\textrm{IG} &amp;= y_i P
+\end{aligned}\end{split}\]</div>
+<p>Recalling that we defined the fugacity of a component in a mixture as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\overline{G}_i - \overline{G}_i^0 &amp;= RT \ln \frac{\hat{f}_i}{y_i P} = RT \ln \frac{\hat{f}_i}{\hat{f}_i^\textrm{IG}}
+\end{aligned}\]</div>
+<p>We see that the denominator of this expression is the fugacity of an
+ideal-gas mixture, and hence we obtain that the fugacity of a component
+in a real system is related to the isothermal departure of the Gibbs
+free energy change of that system from ideal-gas mixture behavior, which
+is consistent with the definition introduced previously.</p>
+<p>We will define one last relation that is commonly used. Recall from
+previous sections that we can relate the chemical potential of a
+component in a mixture to the fugacity by:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+d\mu_i &amp;= RT d\ln \hat{f}_i 
+\end{aligned}\]</div>
+<p>We now consider integrating this expression at constant temperature and
+pressure as we transfer component <span class="math notranslate nohighlight">\(i\)</span> from a pure component <span class="math notranslate nohighlight">\(i\)</span>
+reference state to an ideal solution to obtain:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\mu_i^\textrm{IS} - \mu_i &amp;= RT \ln \frac{\hat{f}_i^\textrm{IS}}{f_i} \\
+&amp;= RT \ln \frac{x_i f_i}{f_i} \\
+\therefore \mu_i^\textrm{IS} &amp;= \mu_i + RT \ln x_i
+\end{aligned}\end{split}\]</div>
+<p>This expression is commonly used to compute the chemical potential of a
+component in an ideal solution as a function of its mole fraction, or
+equivalently its concentration through a change of units; recall that
+this expression is at constant <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(P\)</span>, so typically <span class="math notranslate nohighlight">\(\mu_i\)</span> is
+measured at standard conditions for a pure system and <span class="math notranslate nohighlight">\(x_i\)</span> accounts for
+the effect of mixing. Since <span class="math notranslate nohighlight">\(0 &lt; x_i &lt; 1\)</span>, this tells us that for an
+ideal solution the chemical potential of a component is always less than
+the chemical potential of that pure component, and that this decrease in
+the chemical potential is due to the entropy of mixing.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lecture_files"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Lecture24.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Fugacity</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Lecture26.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Non-ideal mixtures</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recommended-textbooks">Recommended textbooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topics-in-this-lecture">Topics in this lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-mixtures-partial-molar-properties">Introduction to mixtures: partial molar properties</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#property-changes-upon-mixing">Property changes upon mixing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fugacity-of-a-component-in-a-mixture">Fugacity of a component in a mixture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ideal-gas-mixtures-and-ideal-solutions">Ideal-gas mixtures and ideal solutions</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Reid van Lehn, Matt Gebbie, Rose Cersonsky
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

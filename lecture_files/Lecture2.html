@@ -1,0 +1,966 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>The Microcanonical Ensemble &#8212; Notes for CBE710</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture_files/Lecture2';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="The Canonical Ensemble" href="Lecture3.html" />
+    <link rel="prev" title="Overview and review of thermodynamics" href="Lecture1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Notes for CBE710</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Class introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Mechanics</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Lecture1.html">Overview and review of thermodynamics</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">The Microcanonical Ensemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture3.html">The Canonical Ensemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/ps_1/problem_set_1.html">— Problem Set 1 —</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture4.html">Canonical Ensemble Continued</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture5.html">Generalized Ensembles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture6.html">The Ideal Gas Partition Function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture7.html">The Langmuir Isotherm and Ising Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture8.html">The Ising Model and Mean-Field Theory</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Molecular Simulation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Lecture9.html">Fluctuations and an Introduction to Molecular Simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture10.html">Monte Carlo Simulations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture11.html">Monte Carlo and Intro to Molecular Dynamics Simulations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture12.html">MD Thermostats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture13.html">The Structure of Classical Fluids</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture14.html">The Potential of Mean Force</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Lecture15.html">Free energy perturbation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture16.html">Postulates of thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture17.html">Heat Engines and Possible Processes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture18.html">Entropy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture19.html">The Fundamental Relation of Thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture20.html">Legendre Transforms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture21.html">Conditions of equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture22.html">Equilibrium in single-component systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture23.html">Phase Diagrams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture24.html">Fugacity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture25.html">Ideal mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture26.html">Non-ideal mixtures</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/lecture_files/Lecture2.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>The Microcanonical Ensemble</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-readings-for-the-enthusiast">Additional Readings for the Enthusiast</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thermodynamics-review">Thermodynamics review</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-fundamental-relation-of-thermodynamics">The fundamental relation of thermodynamics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#natural-variables">Natural variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equilibrium">Equilibrium</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-thermodynamic-potentials">Additional thermodynamic potentials</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#postulates-of-statistical-mechanics">Postulates of statistical mechanics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postulate-1">Postulate 1:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postulate-2">Postulate 2:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-boltzmann-entropy">The Boltzmann entropy</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="the-microcanonical-ensemble">
+<h1>The Microcanonical Ensemble<a class="headerlink" href="#the-microcanonical-ensemble" title="Permalink to this headline">#</a></h1>
+<section id="additional-readings-for-the-enthusiast">
+<h2>Additional Readings for the Enthusiast<a class="headerlink" href="#additional-readings-for-the-enthusiast" title="Permalink to this headline">#</a></h2>
+<p><span id="id1">McQuarrie [<a class="reference internal" href="#id5" title="Donald A. McQuarrie. Statistical mechanics. University Science Books, Sausalito, Calif, 2000. ISBN 978-1-891389-15-3. URL: https://vuquangnguyen2016.files.wordpress.com/2017/12/339279795-donald-a-mcquarrie-statistical-mechanics-bookzz-org.pdf.">2</a>]</span>, Chapter 1, Chapter 2.1</p>
+<p><span id="id2">Chandler [<a class="reference internal" href="#id4" title="David Chandler. Introduction to Modern Statistical Mechanics. Oxford University Press, New York, 1st edition edition, September 1987. ISBN 978-0-19-504277-1. URL: http://pcossgroup.xmu.edu.cn/old/users/xlu/group/courses/apc/imsm_chandler.pdf.">1</a>]</span>, Chapter 3.1 - 3.2</p>
+</section>
+<section id="thermodynamics-review">
+<h2>Thermodynamics review<a class="headerlink" href="#thermodynamics-review" title="Permalink to this headline">#</a></h2>
+<section id="the-fundamental-relation-of-thermodynamics">
+<h3>The fundamental relation of thermodynamics<a class="headerlink" href="#the-fundamental-relation-of-thermodynamics" title="Permalink to this headline">#</a></h3>
+<p>We ended the last lecture by discussing the combined first and second
+law of thermodynamics (assuming a one-component system), which we write
+as:</p>
+<div class="math notranslate nohighlight">
+\[    dE = TdS - PdV \label{combo_first_second}\]</div>
+<p>This expression is also called the <strong>fundamental relation</strong> of
+thermodynamics in the <strong>energy representation</strong>. We can write an
+equivalent expression in terms of the entropy:</p>
+<div class="math notranslate nohighlight">
+\[    dS = \frac{1}{T} dE + \frac{P}{T} dV\]</div>
+<p>This is called the fundamental relation in the entropy representation.
+Each pair of variables that appear in this expression is called a pair
+of <strong>conjugate variables</strong>, consisting of an intensive prefactor and
+extensive differential. The four most common sets of conjugate pairs
+that we will discuss are:</p>
+<ul class="simple">
+<li><p>Temperature (<span class="math notranslate nohighlight">\(T\)</span>, intensive) and entropy (<span class="math notranslate nohighlight">\(S\)</span>, extensive)</p></li>
+<li><p>Temperature (<span class="math notranslate nohighlight">\(T\)</span>, intensive) and energy (<span class="math notranslate nohighlight">\(E\)</span>, extensive; from
+entropy representation of fundamental relation)</p></li>
+<li><p>Pressure (<span class="math notranslate nohighlight">\(P\)</span>, intensive) and volume (<span class="math notranslate nohighlight">\(V\)</span>, extensive)</p></li>
+<li><p>Chemical potential (<span class="math notranslate nohighlight">\(\mu\)</span>, intensive) and number of particles (<span class="math notranslate nohighlight">\(N\)</span>,
+extensive)</p></li>
+</ul>
+<p>Because the energy is a state function, we can also write an <strong>exact
+differential</strong> of <span class="math notranslate nohighlight">\(dE\)</span> to obtain expressions for intensive variables:</p>
+<div class="math notranslate nohighlight">
+\[dE = \left( \frac{\partial E}{\partial S}\right)_V dS + \left( \frac{\partial E}{\partial V}\right)_S dV\]</div>
+<p>The subscripts indicate that the partial derivative is taken with the
+subscripted variable held constant. We can think of the exact
+differential as essentially saying that the change in energy as a
+function of <span class="math notranslate nohighlight">\(S\)</span> and <span class="math notranslate nohighlight">\(V\)</span> (obtained by integrating this expression) can be
+obtained by computing the energy change along a two-part path consisting
+of a constant <span class="math notranslate nohighlight">\(V\)</span> path in which <span class="math notranslate nohighlight">\(S\)</span> varies (corresponding to the first
+term) and a constant <span class="math notranslate nohighlight">\(S\)</span> path in which <span class="math notranslate nohighlight">\(V\)</span> varies. We could similarly
+write an exact differential for <span class="math notranslate nohighlight">\(E\)</span> in terms of any variables
+thermodynamic variables. However, this particular exact differential is
+useful because we can compare it to the fundamental relation in the
+energy representation to obtain:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\label{de_ds}
+    \left( \frac{\partial E}{\partial S}\right)_V &amp;= T \\
+    \left( \frac{\partial E}{\partial V}\right)_S &amp;= -P
+\end{aligned}\end{split}\]</div>
+<p>In other words, the temperature is defined as the partial derivative of
+the internal energy with respect to entropy at constant volume. Using
+these relations, we find that for each pair of conjugate variables that
+appears in the fundamental relation, the variable that is always
+intensive can be expressed as a partial derivative of either the energy
+or the entropy with respect to its conjugate extensive variable and with
+all other extensive variables held constant.</p>
+</section>
+<section id="natural-variables">
+<h3>Natural variables<a class="headerlink" href="#natural-variables" title="Permalink to this headline">#</a></h3>
+<p>We can extend the fundamental relation to include additional work terms
+(<em>i.e.</em>, additional conjugate pairs) by writing:</p>
+<div class="math notranslate nohighlight">
+\[dE = TdS - PdV + \mu dN + \text{other work terms}\]</div>
+<p>We will typically omit work terms other than pressure-volume and
+chemical work unless required to include them by a specific problem.
+Note again that each intensive variables (<span class="math notranslate nohighlight">\(T, -P, \mu\)</span>) can be written
+as a partial derivative of the internal energy with respect to its
+conjugate extensive variable. As a result, we could integrate the
+fundamental relation to obtain a function that is only a function of the
+extensive variables - that is, a function of the form <span class="math notranslate nohighlight">\(E(N, V, S)\)</span> since
+each intensive variable is fully specified in terms of these variables.
+<span class="math notranslate nohighlight">\(N\)</span>, <span class="math notranslate nohighlight">\(V\)</span>, and <span class="math notranslate nohighlight">\(S\)</span> are called the <strong>natural variables</strong> of the internal
+energy. Similarly, <span class="math notranslate nohighlight">\(N\)</span>, <span class="math notranslate nohighlight">\(V\)</span>, and <span class="math notranslate nohighlight">\(E\)</span> are the natural variables of the
+entropy, <span class="math notranslate nohighlight">\(S(N, V, E)\)</span>, based on the fundamental relation in the entropy
+representation. By inspection of the fundamental relation, we see that
+<span class="math notranslate nohighlight">\(dE = 0\)</span> for any process in which <span class="math notranslate nohighlight">\(N\)</span>, <span class="math notranslate nohighlight">\(V\)</span>, and <span class="math notranslate nohighlight">\(S\)</span> are held constant
+(such that <span class="math notranslate nohighlight">\(dN = dV = dS = 0\)</span>) and therefore <span class="math notranslate nohighlight">\(E(N, V, S)\)</span> is at an
+extremum. If we were to control the natural variables via suitable
+experimental manipulation, or by imposing the appropriate boundaries on
+a system, we could then predict that the corresponding thermodynamic
+potential would go to an extreme. We will take advantage of this
+behavior later.</p>
+</section>
+<section id="equilibrium">
+<h3>Equilibrium<a class="headerlink" href="#equilibrium" title="Permalink to this headline">#</a></h3>
+<p>A system is said to be <strong>at equilibrium</strong> when there is no driving force
+to change intensive variables in the system and the system’s properties
+do not change as a function of time. A system that is at equilibrium is
+described as being in an <strong>equilibrium state</strong> which is fully specified
+by the values of the thermodynamic parameters described above. The three
+most relevant conditions of equilibrium that we will discuss are:</p>
+<ul class="simple">
+<li><p><strong>Thermal equilibrium:</strong> if a system has diathermal walls, at
+equilibrium the temperature of the system will be equivalent to the
+temperature of the surroundings, or
+<span class="math notranslate nohighlight">\(T^\textrm{sys} = T^\textrm{surr}\)</span>.</p></li>
+<li><p><strong>Mechanical equilibrium:</strong> if a system has movable walls, at
+equilibrium the pressure of the system will be equivalent to the
+pressure of the surroundings, or <span class="math notranslate nohighlight">\(P^\textrm{sys} = P^\textrm{surr}\)</span>.</p></li>
+<li><p><strong>Chemical equilibrium:</strong> if a system has open walls, at equilibrium
+the chemical potential of each component of the system will be
+equivalent to the chemical potential of each component in the
+surroundings, or <span class="math notranslate nohighlight">\(\mu_i^\textrm{sys} = \mu_i^\textrm{surr}\)</span>.</p></li>
+</ul>
+<p>In each case, the system is free to exchange an extensive variable and
+the corresponding intensive variable is then constant. These pairs of
+variables are again the conjugate pairs mentioned above. A given system
+can satisfy multiple conditions of equilibrium simultaneously.</p>
+</section>
+<section id="additional-thermodynamic-potentials">
+<h3>Additional thermodynamic potentials<a class="headerlink" href="#additional-thermodynamic-potentials" title="Permalink to this headline">#</a></h3>
+<p>It is possible to write other expressions, called <strong>thermodynamic
+potentials</strong>, that are equivalent in information content to the
+fundamental relation but have a different set of natural variables. In
+the third unit of this class, we will show that these relations are
+equivalent; here, we will only focus on the method for defining them.
+The procedure is as follows:</p>
+<ul class="simple">
+<li><p>Identify the desired natural variables of the new potential (e.g.,
+<span class="math notranslate nohighlight">\(N,V,T\)</span>)</p></li>
+<li><p>For any natural variable that is different from the natural
+variables of the internal energy (i.e., <span class="math notranslate nohighlight">\(N,V,S\)</span>), subtract the
+product of the desired natural variable and its conjugate from the
+internal energy, <span class="math notranslate nohighlight">\(E\)</span>. The new expression defines the equivalent
+thermodynamic potential.</p></li>
+</ul>
+<p>Examples of this protocol follow for several typical thermodynamic
+potentials. First, we define the <strong>enthalpy</strong>, <span class="math notranslate nohighlight">\(H\)</span>, as the thermodynamic
+potential that is a function of the natural variables <span class="math notranslate nohighlight">\(N,P,S\)</span>. This
+differs from the internal energy by the variable <span class="math notranslate nohighlight">\(P\)</span>, so we subtract the
+product of <span class="math notranslate nohighlight">\(P\)</span> and its conjugate (<span class="math notranslate nohighlight">\(V\)</span>) to generate the expression for
+the enthalpy. The slight caveat here is that in our sign convention it
+is <span class="math notranslate nohighlight">\(-P\)</span>, not <span class="math notranslate nohighlight">\(P\)</span>, that is used in the conjugate pair, so we subtract
+<span class="math notranslate nohighlight">\(-P\)</span> instead:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    H &amp;= E - (-PV) \\
+    &amp;= E+PV
+\end{aligned}\end{split}\]</div>
+<p>We can now write an expression for the total derivative of the enthalpy
+and simplify using the fundamental relation to identify what constant
+variables lead to an extremum of the enthalpy:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    dH &amp;= dE + PdV + VdP \\
+    &amp;= TdS - PdV + \mu dN + PdV + VdP \\
+    &amp;= TdS  + VdP + \mu dN
+\end{aligned}\end{split}\]</div>
+<p>The total derivative clearly illustrates that the natural variables of
+the enthalpy are <span class="math notranslate nohighlight">\(N\)</span>, <span class="math notranslate nohighlight">\(P\)</span>, and <span class="math notranslate nohighlight">\(S\)</span> as desired - if these variables are
+constant, the enthalpy reaches an extremum. We can now identify various
+relationships for thermodynamic parameters by comparing with the exact
+differential of the enthalpy:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    dH &amp;= \left ( \frac{\partial H}{\partial S}\right )_{P,N} dS + \left ( \frac{\partial H}{\partial P}\right )_{S,N} dP +  \left ( \frac{\partial H}{\partial N}\right )_{S,P} dN \\
+    &amp; \left ( \frac{\partial H}{\partial S}\right )_{P,N} = T \\
+    &amp;   \left ( \frac{\partial H}{\partial P}\right )_{S,N}  = V \\
+    &amp;\left ( \frac{\partial H}{\partial N}\right )_{S,P} = \mu
+\end{aligned}\end{split}\]</div>
+<p>We can repeat this protocol to identify a thermodynamic potential that
+is a function of the natural variables <span class="math notranslate nohighlight">\(N,V,T\)</span>, called the <strong>Helmholtz
+free energy</strong>, <span class="math notranslate nohighlight">\(F\)</span> (here ignoring the chemical potential term for
+simplicity):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    F &amp;= E-TS \label{helmholtz}\\
+    dF &amp;= dE - TdS - SdT \nonumber\\
+    &amp;= (TdS - PdV) - TdS - SdT \nonumber\\
+    &amp;= -SdT - PdV \\
+    \left( \frac{\partial F}{\partial T}\right)_V &amp;= -S \\
+    \left( \frac{\partial F}{\partial S}\right)_T &amp;= -P
+\end{aligned}\end{split}\]</div>
+<p>Finally, we can identify a thermodynamic potential that is a function of
+natural variables <span class="math notranslate nohighlight">\(N,P,T\)</span>, called the <strong>Gibbs free energy</strong>, <span class="math notranslate nohighlight">\(G\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    G &amp;= E-TS + PV \\
+    dG &amp;= dE - TdS - SdT + PdV + VdP \nonumber\\
+    &amp;= (TdS - PdV) - TdS - SdT + PdV + VdP \nonumber\\
+    &amp;= -SdT + VdP \\
+    \left( \frac{\partial G}{\partial T}\right)_P &amp;= -S \\
+    \left( \frac{\partial G}{\partial P}\right)_T &amp;= V
+\end{aligned}\end{split}\]</div>
+<p>We will return to these expressions repeatedly throughout our discussion
+of statistical mechanics, and will discuss thermodynamic relations in
+more detail later in the course. If the importance of natural variables
+is not clear, you can first see that different thermodynamic potentials
+will reach extremum values when different conditions of equilibrium
+occur. For example, a system with impermeable, rigid, diathermal walls
+that reaches thermal equilibrium with the surroundings will have
+constant <span class="math notranslate nohighlight">\(N\)</span>, <span class="math notranslate nohighlight">\(V\)</span>, and <span class="math notranslate nohighlight">\(T\)</span>, and thus the Helmholtz free energy (with
+corresponding natural variables) will reach an extremum value. Analysis
+of the Helmholtz free energy can then be used to understand how changes
+to this system properties affect its equilibrium behavior. We will
+further use the natural variables to connect to statistical mechanics as
+will be discussed in future lectures. For now, we conclude our review of
+thermodynamics.</p>
+</section>
+</section>
+<section id="postulates-of-statistical-mechanics">
+<h2>Postulates of statistical mechanics<a class="headerlink" href="#postulates-of-statistical-mechanics" title="Permalink to this headline">#</a></h2>
+<p>Recall that our goal in statistical mechanics is to develop a
+mathematical framework that allows us to calculate the macroscopic,
+thermodynamic properties of a system from a description of the
+properties of individual molecules. For example, we might try to derive
+the value of a given thermodynamic property such as the temperature or
+pressure from the knowledge of the quantum mechanical energy levels
+available to a system with <span class="math notranslate nohighlight">\(N\)</span> particles. We will take the first steps
+toward accomplishing that goal in this lecture.</p>
+<p>Imagine a system composed of a single-component gas enclosed within a
+sealed, rigid, insulated container. The walls of the container therefore
+prevent a change in the number of particles (<span class="math notranslate nohighlight">\(N\)</span>), the volume (<span class="math notranslate nohighlight">\(V\)</span>), or
+the energy (<span class="math notranslate nohighlight">\(E\)</span>) of the gas; the system is <strong>isolated</strong>. Equivalently,
+we could describe the system in terms of what macroscopic thermodynamic
+parameters are constant - this gas is defined as having constant <span class="math notranslate nohighlight">\(NVE\)</span>,
+where these particular variables are constant due to the constraints
+imposed by the walls, as opposed to being constant due to a condition of
+equilibrium.</p>
+<p>At the macroscale, these three parameters define the system - if I were
+to characterize the gas with no knowledge of the existence of individual
+gas particles, I would characterize it strictly in terms of the values
+of <span class="math notranslate nohighlight">\(N\)</span>, <span class="math notranslate nohighlight">\(V\)</span>, and <span class="math notranslate nohighlight">\(E\)</span>. We therefore define the <strong>macrostate</strong> of the
+system as the particular values of <span class="math notranslate nohighlight">\(NVE\)</span> (and any thermodynamic
+parameters that are not fixed, such as the pressure or temperature in
+this example) that describe the current state of the gas. However, we
+know that at the microscale there are an enormous number of particle
+configurations that can fulfill these requirements. For example, assume
+that the gas is ideal and therefore the only contribution to the
+internal energy is the kinetic energy of each particle. Even if the
+total internal energy (i.e., the sum of the kinetic energy of each
+particle) is a constant value, there are an enormous number of ways that
+we could arrange particle positions in space that would still have the
+same internal energy, since the kinetic energy does not depend on
+particle positions.</p>
+<p>If we were to take a snapshot of the gas at a particular instant in time
+and record the positions of all <span class="math notranslate nohighlight">\(N\)</span> particles, we would define a
+<strong>microstate</strong> of the system - that is, one particular configuration out
+of the enormous set of configurations of particle positions that have
+the same macroscopic values of <span class="math notranslate nohighlight">\(N\)</span>, <span class="math notranslate nohighlight">\(V\)</span>, and <span class="math notranslate nohighlight">\(E\)</span>. <strong>There are thus many,
+many microstates that are compatible with a given macrostate</strong>.
+Oftentimes, authors will interchangably use the term “state” to mean
+“microstate,” which can be a bit confusing, but should be apparent from
+context.</p>
+<p><img alt="image" src="../_images/fig_2_1.png" /></p>
+<p>Given this definition of a microstate, we can then define the concept of
+an <strong>ensemble</strong> of microstates. An ensemble is a mental collection of
+all possible unique microstates that are consistent with a specific
+macrostate; each member of the ensemble is considered identical
+macroscopically, but unique microscopically. We will discuss four
+primary ensembles in this course that are given names reflecting the
+choice of thermodynamic variables that are held constant. The ensemble
+for which all microstates have a fixed number of particles, volume, and
+internal energy, is called the <strong>microcanonical ensemble</strong>, or the <span class="math notranslate nohighlight">\(NVE\)</span>
+ensemble. The ensemble for which all microstates have a fixed number of
+particles, volume, and temperature, is called the <strong>canonical
+ensemble</strong>, or <span class="math notranslate nohighlight">\(NVT\)</span> ensemble. The ensemble for which all microstates
+have a fixed chemical potential, volume, and temperature, is called the
+<strong>grand canonical ensemble</strong>, or <span class="math notranslate nohighlight">\(\mu VT\)</span> ensemble. Finally, the
+ensemble for which all microstates have a fixed number of particles,
+pressure, and temperature is called the <strong>isothermal-isobaric
+ensemble</strong>, or <span class="math notranslate nohighlight">\(NPT\)</span> ensemble.</p>
+<p>Many more ensembles are possible based on different thermodynamic
+constraints. There are a couple of caveats to note. First, note that
+each microstate of an ensemble will also have thermodynamic parameters
+that are not fixed, and can vary with each microstate. For example, we
+can define an instantaneous energy, <span class="math notranslate nohighlight">\(E_i\)</span>, for the <span class="math notranslate nohighlight">\(i\)</span>th microstate in
+the canonical ensemble, and this energy will generally vary between
+microstates. Also note that in several of these ensembles parameters are
+fixed not due to the walls of the system but rather due to conditions of
+equilibrium, a point that we will return to in the next lecture.</p>
+<p>The number of microstates in an ensemble is an important quantity
+referred to as the <strong>degeneracy</strong> of the ensemble, which we write as
+<span class="math notranslate nohighlight">\(\Omega(N,V,E)\)</span>. The parentheses indicate the fixed variables in the
+corresponding ensemble, so this is the degeneracy of a microcanonical
+ensemble; the degeneracy of a canonical ensemble would be written as
+<span class="math notranslate nohighlight">\(\Omega(N,V,T)\)</span>. For shorthand, I will occasionally refer to the
+degeneracy of the microcanonical ensemble as <span class="math notranslate nohighlight">\(\Omega(E)\)</span> which is
+equivalent to <span class="math notranslate nohighlight">\(\Omega(N,V,E)\)</span> unless otherwise specified. Here, we
+assume that the energy of a system is a discrete quantity such that the
+number of states can be counted explicitly. Systems for which the energy
+is nearly continuous are better described by a related concept called
+<strong>the density of states</strong>, <span class="math notranslate nohighlight">\(\omega(N,V,E)\)</span>, which describes the number
+of states with an energy within a small interval <span class="math notranslate nohighlight">\(E+dE\)</span>. We will largely
+deal with the degeneracy as our chosen quantity for most of this class.
+Other terms are often used to describe the degeneracy of an ensemble -
+for example, the microstates in an ensemble are often called the “phase
+space” of a system so that the degeneracy would be the “extent of phase
+space.”</p>
+<p>Having defined an ensemble of microstates as a collection of
+thermodynamically identical but microscopically distinct configurations
+of a system, we can now define two fundamental postulates of statistical
+mechanics.</p>
+<section id="postulate-1">
+<h3>Postulate 1:<a class="headerlink" href="#postulate-1" title="Permalink to this headline">#</a></h3>
+<p><em>The time-average value of a thermodynamic parameter, <span class="math notranslate nohighlight">\(Y\)</span>, of a system
+is equal to the ensemble-average value of <span class="math notranslate nohighlight">\(Y\)</span></em>.</p>
+<p>The ensemble average is defined as the value of a parameter averaged
+across all microstates of a statistical ensemble, weighted by the
+probability that the system is in each microstate. We can formulate the
+first postulate mathematically as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+Y_\textrm{obs} &amp;= \frac{1}{\tau} \int_0^{\tau} Y(t) dt \quad \quad \text{Time average}\label{timeavg}\\ 
+\langle Y \rangle &amp;= \sum^\textrm{microstates}_i p_i Y_i \quad \quad \text{Ensemble average}\label{ensembleavg}\\ 
+Y_\textrm{obs} &amp;= \langle Y \rangle \label{ergodic}
+\end{aligned}\end{split}\]</div>
+<p>Equation <span class="xref myst">[timeavg]</span>{reference-type=”ref”
+reference=”timeavg”} defines the time-average value of <span class="math notranslate nohighlight">\(Y\)</span>, written as
+<span class="math notranslate nohighlight">\(Y_\textrm{obs}\)</span>. This notation indicates that this is the value of <span class="math notranslate nohighlight">\(Y\)</span>
+that I would observe if I were to measure the parameter experimentally
+(assuming a typical macroscopic measurement); in other words, this would
+be the volume/pressure/etc. of the <strong>macrostate</strong>. Equation
+<span class="xref myst">[ensembleavg]</span>{reference-type=”ref”
+reference=”ensembleavg”} defines the ensemble-average value of <span class="math notranslate nohighlight">\(Y\)</span>,
+written as <span class="math notranslate nohighlight">\(\langle Y \rangle\)</span>. The sum runs over the entire ensemble of
+microstates where <span class="math notranslate nohighlight">\(Y_i\)</span> is the value of <span class="math notranslate nohighlight">\(Y\)</span> in microstate <span class="math notranslate nohighlight">\(i\)</span>, and <span class="math notranslate nohighlight">\(p_i\)</span>
+is the probability that the system is in microstate <span class="math notranslate nohighlight">\(i\)</span> (such that
+<span class="math notranslate nohighlight">\(\sum_i^\textrm{microstates} p_i = 1\)</span>). Equation
+<span class="xref myst">[ergodic]</span>{reference-type=”ref” reference=”ergodic”}
+therefore states that the value of a parameter for a macrostate can be
+written as the value of that parameter averaged across all microstates
+in the corresponding statistical ensemble. This postulate is the
+foundation of statistical mechanics!</p>
+<p>This postulate, also called the <strong>ergodic hypothesis</strong>, illustrates the
+connection between statistical mechanics and thermodynamics by linking
+the macroscopic (observed) value of a thermodynamic variable to an
+average across a large number of particle configurations. We can picture
+this connection by again imagining a gas. Assume that the gas were
+allowed to exchange energy with the environment, such that it maintains
+a constant temperature but its energy can fluctuate. If we were to
+observe this gas for a long period of time and periodically take
+snapshots of molecular configurations, each snapshot by definition would
+be a microstate in the canonical (<span class="math notranslate nohighlight">\(NVT\)</span>) ensemble, and we could
+calculate the value of some non-fixed thermodynamic variable <span class="math notranslate nohighlight">\(Y\)</span> for
+each microstate (e.g., the energy or the pressure). As time progresses,
+we record more and more configurations of the system - we say that the
+system <strong>samples microstates</strong>. Some microstates may be sampled more
+often than others, and therefore we could record identical values of <span class="math notranslate nohighlight">\(Y\)</span>
+multiple times. If we waited a sufficiently long amount of time, the
+system would sample each microstate <span class="math notranslate nohighlight">\(i\)</span> according to the corresponding
+probability <span class="math notranslate nohighlight">\(p_i\)</span>. Therefore, the time-average value of <span class="math notranslate nohighlight">\(Y\)</span> would be
+equivalent to taking the average of all the values I recorded - that is,
+the time-average value would be equivalent to the ensemble-average value
+according to the ergodic hypothesis.</p>
+<p><img alt="image" src="../_images/fig_2_2.png" /></p>
+<p>There are two critical aspects of this postulate that relate to the
+observation time, <span class="math notranslate nohighlight">\(\tau\)</span>. First, the properties of the system cannot
+change with time during the period of observation; that is, the system
+must be at equilibrium. Second, the observation time, <span class="math notranslate nohighlight">\(\tau\)</span>, must be
+very long so that the system properly samples a representative number of
+microstates. “Very long” is obviously a qualitative statement; the
+relevant timescale to compare to is the <strong>autocorrelation time</strong> of the
+observable of interest. If we imagine placing the system in a single
+microstate and then observe the positions and energies of all particles
+as a function of time, the relevant autocorrelation time would be the
+time necessary for the system to reach a new microstate such that
+particle positions/energies are not correlated with the previously
+recorded positions/energies (we will return to this point in Unit 2 of
+this class). Autocorrelation times are generally very small - for
+example, the autocorrelation time for particle positions in a gas is on
+the order of picoseconds, so any macroscopic observation time will be
+sufficiently long to observe a representative set of microstates from
+the ensemble. However, some systems may have long autocorrelation times
+(e.g., glasses) and therefore may not sample a representative number of
+states during an expermient; such systems would then be <strong>non-ergodic</strong>.</p>
+<p>Because the ergodic hypothesis tells us that ensemble averages can be
+related to macroscopic thermodynamic parameters, all of the rules of
+thermodynamics that you have learned and that we covered in the
+preceding lecture can be applied to ensemble-average parameters. For
+example, from the fundamental relation in the energy representation we
+can show:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\left ( \frac{\partial E}{\partial S}\right)_V = T
+\end{aligned}\]</div>
+<p>These rules have been derived assuming some macrostate with values <span class="math notranslate nohighlight">\(E\)</span>,
+<span class="math notranslate nohighlight">\(S\)</span>, <span class="math notranslate nohighlight">\(V\)</span>, and <span class="math notranslate nohighlight">\(T\)</span>. However, the ergodic hypothesis now tells us that we
+can relate macroscopic parameters to microscopic parameters. For
+example, for an ensemble in which <span class="math notranslate nohighlight">\(V\)</span> and <span class="math notranslate nohighlight">\(T\)</span> are fixed and <span class="math notranslate nohighlight">\(E\)</span> is
+allowed to vary, I could equivalently write:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\left ( \frac{\partial \langle E \rangle }{\partial S}\right)_V = T
+\end{aligned}\]</div>
+<p>Note that I have not commented on the entropy, <span class="math notranslate nohighlight">\(S\)</span>, which we will return
+to in Postulate 2.</p>
+<p>Equation <span class="xref myst">[ensembleavg]</span>{reference-type=”ref”
+reference=”ensembleavg”} writes the ensemble average in terms of a
+summation over discrete microstates, with each microstate occurring in
+the ensemble with probability <span class="math notranslate nohighlight">\(p_i\)</span>. In principle, however, we do not
+know the values of <span class="math notranslate nohighlight">\(p_i\)</span>. The second postulate addresses this point.</p>
+</section>
+<section id="postulate-2">
+<h3>Postulate 2:<a class="headerlink" href="#postulate-2" title="Permalink to this headline">#</a></h3>
+<p><em>In the microcanonical ensemble, all microstates are equally probable.</em></p>
+<p>This postulate, also referred to as <strong>the principle of equal <em>a priori</em>
+probabilities</strong>, states that each value of <span class="math notranslate nohighlight">\(p_i\)</span> is equivalent in
+Equation <span class="xref myst">[ensembleavg]</span>{reference-type=”ref”
+reference=”ensembleavg”} for microstates in the microcanonical ensemble,
+as there is no <em>a priori</em> reason to assign different probabilities.
+Using the definition of the degeneracy, <span class="math notranslate nohighlight">\(\Omega(N,V,E)\)</span>, from earlier,
+this postulate defines</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+p_i &amp;= \frac{1}{\Omega (N,V,E)} \\
+\langle Y \rangle &amp;= \sum_i^\textrm{microstates} p_i Y_i = \frac{1}{\Omega (N,V,E)} \sum_1^{\Omega (N,V,E)} Y_i 
+\end{aligned}\end{split}\]</div>
+<p>Note that we can define a degeneracy for <em>any</em> ensemble (e.g.,
+<span class="math notranslate nohighlight">\(\Omega(N,V,T)\)</span> as the degeneracy of the canonical ensemble), but
+Postulate 2 only applies to the microcanonical ensemble.</p>
+<p>In combination, the two postulates state that if an isolated system is
+observed for a long period of time, all possible microstates of the
+system will be visited with equal probability and the time-average value
+of a thermodynamic property will be equivalent to the average of that
+quantity across all microstates. As an aside, it is likely that there
+will always be some uncertainty in the measurement of <span class="math notranslate nohighlight">\(E\)</span> due to the
+quantum properties of a system (i.e., due to the Heisenberg uncertainty
+principle); however, this small uncertainty is effectively
+inconsequential.</p>
+</section>
+<section id="the-boltzmann-entropy">
+<h3>The Boltzmann entropy<a class="headerlink" href="#the-boltzmann-entropy" title="Permalink to this headline">#</a></h3>
+<p>We will close this discussion of the microcanonical ensemble with a
+third “postulate” that will be stated here (although it can be derived
+from future results). Specifically, we define the <strong>entropy</strong> for the
+microcanonical ensemble, <span class="math notranslate nohighlight">\(S\)</span>, as:</p>
+<div class="math notranslate nohighlight">
+\[\label{boltzmann_entropy}
+S = k_B \ln \Omega(N,V,E)\]</div>
+<p>where <span class="math notranslate nohighlight">\(k_B = 1.381 \times 10^{-23}\)</span> J/K is Boltzmann’s constant. This
+definition is also referred to as the <strong>Boltzmann entropy</strong> to
+distinguish from an alternative (but equivalent) definition given by
+Gibbs that will be discussed later. The entropy as defined is an
+extensive variable, as we know from thermodynamics, because in general
+the degeneracy of an ensemble will increase with system size. The
+entropy is also a property of the ensemble itself, unlike other
+thermodynamic variables such as the pressure which can be given a
+specific value for each microstate - in other words, we cannot write
+<span class="math notranslate nohighlight">\(S_i\)</span> as the entropy of a particular state.</p>
+<p>Conceptually, this microscopic definition of the entropy agrees with the
+concept of entropy as a measure of the “disorder” of a system, as is
+often described in thermodynamics. Here, we quantify disorder as the
+number of equivalent microstates - we can imagine that for a gas, there
+are a much larger number of ways of repositioning particles to yield
+equivalent macroscopic properties than for a solid. Alternatively, we
+can think of the entropy as quantifying the volume of the phase space
+accessible to a system. Regardless of how you think of it, this
+definition of entropy provides another connection between the
+microscopic features of a system (i.e., the degeneracy or number of
+accessible microstates) and macroscopic thermodynamic parameters.</p>
+<p><img alt="image" src="../_images/fig_2_3.png" /></p>
+<div class="docutils container" id="id3">
+<dl class="citation">
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
+<dd><p>David Chandler. <em>Introduction to Modern Statistical Mechanics</em>. Oxford University Press, New York, 1st edition edition, September 1987. ISBN 978-0-19-504277-1. URL: <a class="reference external" href="http://pcossgroup.xmu.edu.cn/old/users/xlu/group/courses/apc/imsm_chandler.pdf">http://pcossgroup.xmu.edu.cn/old/users/xlu/group/courses/apc/imsm_chandler.pdf</a>.</p>
+</dd>
+<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id1">2</a></span></dt>
+<dd><p>Donald A. McQuarrie. <em>Statistical mechanics</em>. University Science Books, Sausalito, Calif, 2000. ISBN 978-1-891389-15-3. URL: <a class="reference external" href="https://vuquangnguyen2016.files.wordpress.com/2017/12/339279795-donald-a-mcquarrie-statistical-mechanics-bookzz-org.pdf">https://vuquangnguyen2016.files.wordpress.com/2017/12/339279795-donald-a-mcquarrie-statistical-mechanics-bookzz-org.pdf</a>.</p>
+</dd>
+</dl>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lecture_files"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Lecture1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Overview and review of thermodynamics</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Lecture3.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">The Canonical Ensemble</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-readings-for-the-enthusiast">Additional Readings for the Enthusiast</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thermodynamics-review">Thermodynamics review</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-fundamental-relation-of-thermodynamics">The fundamental relation of thermodynamics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#natural-variables">Natural variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equilibrium">Equilibrium</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-thermodynamic-potentials">Additional thermodynamic potentials</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#postulates-of-statistical-mechanics">Postulates of statistical mechanics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postulate-1">Postulate 1:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postulate-2">Postulate 2:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-boltzmann-entropy">The Boltzmann entropy</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Reid van Lehn, Matt Gebbie, Rose Cersonsky
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

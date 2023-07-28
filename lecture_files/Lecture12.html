@@ -1,0 +1,971 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>MD Thermostats &#8212; Notes for CBE710</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture_files/Lecture12';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="The Structure of Classical Fluids" href="Lecture13.html" />
+    <link rel="prev" title="Monte Carlo and Intro to Molecular Dynamics Simulations" href="Lecture11.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Notes for CBE710</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Class introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Mechanics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Lecture1.html">Overview and review of thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture2.html">The Microcanonical Ensemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture3.html">The Canonical Ensemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/ps_1/problem_set_1.html">— Problem Set 1 —</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture4.html">Canonical Ensemble Continued</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture5.html">Generalized Ensembles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture6.html">The Ideal Gas Partition Function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture7.html">The Langmuir Isotherm and Ising Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture8.html">The Ising Model and Mean-Field Theory</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Molecular Simulation</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Lecture9.html">Fluctuations and an Introduction to Molecular Simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture10.html">Monte Carlo Simulations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture11.html">Monte Carlo and Intro to Molecular Dynamics Simulations</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">MD Thermostats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture13.html">The Structure of Classical Fluids</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture14.html">The Potential of Mean Force</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Lecture15.html">Free energy perturbation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture16.html">Postulates of thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture17.html">Heat Engines and Possible Processes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture18.html">Entropy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture19.html">The Fundamental Relation of Thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture20.html">Legendre Transforms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture21.html">Conditions of equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture22.html">Equilibrium in single-component systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture23.html">Phase Diagrams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture24.html">Fugacity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture25.html">Ideal mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture26.html">Non-ideal mixtures</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/lecture_files/Lecture12.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>MD Thermostats</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recommended-textbooks">Recommended textbooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topics-in-this-lecture">Topics in this lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements">Announcements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equations-of-motion-verlet-algorithm">Equations of motion: Verlet algorithm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#velocity-verlet-integrator">Velocity-Verlet integrator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-the-canonical-ensemble-in-md-simulations">Sampling the canonical ensemble in MD simulations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maxwell-boltzmann-distribution">Maxwell-Boltzmann distribution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-temperature-in-a-molecular-simulation">Calculating temperature in a molecular simulation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initializing-particle-velocities">Initializing particle velocities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#andersen-thermostat">Andersen thermostat</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="md-thermostats">
+<h1>MD Thermostats<a class="headerlink" href="#md-thermostats" title="Permalink to this headline">#</a></h1>
+<section id="recommended-textbooks">
+<h2>Recommended textbooks<a class="headerlink" href="#recommended-textbooks" title="Permalink to this headline">#</a></h2>
+<p>Frenkel and Smit Chapter 4, 6.2</p>
+</section>
+<section id="topics-in-this-lecture">
+<h2>Topics in this lecture<a class="headerlink" href="#topics-in-this-lecture" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Equations of motion</p></li>
+<li><p>Sampling from a canonical ensemble</p></li>
+<li><p>Maxwell-Boltzmann distribution</p></li>
+<li><p>Andersen thermostat</p></li>
+</ul>
+</section>
+<section id="announcements">
+<h2>Announcements<a class="headerlink" href="#announcements" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Simulation project due 11/7</p></li>
+<li><p>Exam 1: Average 52.2 <span class="math notranslate nohighlight">\(\pm\)</span> 13.2, (optional) revision due 10/22</p></li>
+</ul>
+</section>
+<section id="equations-of-motion-verlet-algorithm">
+<h2>Equations of motion: Verlet algorithm<a class="headerlink" href="#equations-of-motion-verlet-algorithm" title="Permalink to this headline">#</a></h2>
+<p>In the last lecture, we began to introduce the basic algorithm for
+molecular dynamics (MD), which consists of two basic steps: the
+calculation of forces on all particles and the update of all particle
+positions based on those forces. As discussed in the last lecture,
+forces are typically calculated based on pairwise interactions between
+particles. The next step in our algorithm is to update particle
+positions by integrating the equations of motion. Again, this will
+roughly follow from Newtonian mechanics. The simplest way we can write
+an expression for the position of a particle at a time <span class="math notranslate nohighlight">\(t+\Delta t\)</span>
+based on its position at time <span class="math notranslate nohighlight">\(t\)</span> is by Taylor expanding the expression
+for the new position <span class="math notranslate nohighlight">\(\textbf{r}_i(t+\Delta t)\)</span> around the old position
+<span class="math notranslate nohighlight">\(\textbf{r}_i(t)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\textbf{r}_i(t+\Delta t) &amp;\approx \textbf{r}_i(t) + \frac{d\textbf{r}_i(t)}{dt} \Delta t + \frac{d^2\textbf{r}_i(t)}{dt^2}\frac{\Delta t^2}{2} + \frac{d^3\textbf{r}_i(t)}{dt^3}\frac{\Delta t^3}{6} \dots \\
+&amp;= \textbf{r}_i(t) + \textbf{v}_i(t) \Delta t + \frac{\textbf{f}_i(t)}{2m}\Delta t^2+ \frac{d^3\textbf{r}_i(t)}{dt^3}\frac{\Delta t^3}{6} +\dots
+\end{aligned}\end{split}\]</div>
+<p>We recognize this as the typical expression for updating positions
+according to Newton’s laws, with the force term normalized by the mass,
+<span class="math notranslate nohighlight">\(m\)</span>. We also ignore terms of fourth order and higher. We can similarly
+write:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\textbf{r}_i(t-\Delta t) &amp;\approx \textbf{r}_i(t) - \textbf{v}_i(t) \Delta t + \frac{\textbf{f}_i(t)}{2m}\Delta t^2 - \frac{d^3\textbf{r}_i(t)}{dt^3}\frac{\Delta t^3}{6} +\dots
+\end{aligned}\]</div>
+<p>Adding these two expressions together yields:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\textbf{r}_i(t+\Delta t) + \textbf{r}_i(t-\Delta t) &amp;= 2 \textbf{r}_i(t) + \frac{\textbf{f}_i(t)}{m}\Delta t^2 + \dots \\
+\textbf{r}_i(t+\Delta t) &amp;\approx 2 \textbf{r}_i(t) - \textbf{r}_i(t-\Delta t) + \frac{\textbf{f}_i(t)}{m}\Delta t^2 
+\end{aligned}\end{split}\]</div>
+<p>This last expression is called the <strong>Verlet algorithm</strong> for updating the
+positions of particles in a Molecular Dynamics simulation. Note that by
+summing together the two different expansions, we remove the third order
+term and hence the error is of fourth-order and higher in the timestep,
+<span class="math notranslate nohighlight">\(\Delta t\)</span>, which is generally negligible. In practice then, we can
+calculate our forces at time <span class="math notranslate nohighlight">\(t\)</span>, and knowing the previous positions of
+a particle, <span class="math notranslate nohighlight">\(\textbf{r}_i(t-\Delta t)\)</span>, and its current position,
+<span class="math notranslate nohighlight">\(\textbf{r}_i(t)\)</span>, we can obtain a new position without ever calculating
+velocities.</p>
+<p>For some applications, though, such as calculating the temperature
+(which we will discuss below) it is necessary to know the velocities of
+the particles. Note that we can obtain this from the Verlet algorithm by
+subtracting, rather than adding, the terms for the positions at
+<span class="math notranslate nohighlight">\(\pm \Delta t\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\textbf{r}_i(t+\Delta t) - \textbf{r}_i(t-\Delta t) &amp;= 2 \textbf{v}_i(t)\Delta t + 2\frac{d^3\textbf{r}_i(t)}{dt^3}\frac{\Delta t^3}{6} + \dots \\
+\textbf{v}_i(t) &amp;\approx \frac{\textbf{r}_i(t+\Delta t) - \textbf{r}_i(t-\Delta t)}{2 \Delta t} 
+\end{aligned}\end{split}\]</div>
+<p>Here we ignore the term of order <span class="math notranslate nohighlight">\(\Delta t^3\)</span> and obtain an error that
+is on the order of <span class="math notranslate nohighlight">\(\Delta t^2\)</span> (since we divide through by <span class="math notranslate nohighlight">\(\Delta t\)</span>).
+In practice, however, this expression is often subject to numerical
+error since it involves dividing by a very small number (<span class="math notranslate nohighlight">\(\Delta t\)</span>)
+which is difficult to accurately calculate in single-precision molecular
+dynamics code.</p>
+</section>
+<section id="velocity-verlet-integrator">
+<h2>Velocity-Verlet integrator<a class="headerlink" href="#velocity-verlet-integrator" title="Permalink to this headline">#</a></h2>
+<p>The Verlet algorithm is a perfectly reasonable algorithm, and is often
+used in many MD simulations. However, the desire to often have
+velocities computed at the same time as positions (again for reasons
+such as calculating the temperature) leads to the use of algorithms such
+as the <strong>Velocity-Verlet algorithm</strong>, which as the name implies is
+identical to the Verlet algorithm but explicitly calculates velocities
+as part of the update step and offers higher numerical precision.
+Velocity-Verlet also fixes a small problem, which is that in the very
+first timestep of a simulation the position <span class="math notranslate nohighlight">\(\textbf{r}_i(t-\Delta t)\)</span>
+is not known. This algorithm again starts from a Taylor expansion for
+the coordinates:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\textbf{r}_i(t+\Delta t) &amp;\approx  \textbf{r}_i(t) + \textbf{v}_i(t) \Delta t + \frac{\textbf{f}_i(t)}{2m}\Delta t^2 \label{vv_eq}
+\end{aligned}\]</div>
+<p>Here we have ignored terms of third-order and higher in <span class="math notranslate nohighlight">\(\Delta t\)</span>.
+Unlike the Verlet algorithm, we now have an explicit step that
+calculates <span class="math notranslate nohighlight">\(\textbf{v}_i(t + \Delta t)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\textbf{v}_i(t + \Delta t) \approx \textbf{v}_i(t)  + \frac{\textbf{f}_i(t)}{2m} \Delta t + \frac{\textbf{f}_i(t+\Delta t) }{2m} \Delta t\]</div>
+<p>We can show that this algorithm is (mathematically) equivalent to the
+Verlet algorithm by writing:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\textbf{r}_i[(t+\Delta t) + \Delta t] &amp;=  \textbf{r}_i(t+\Delta t) + \textbf{v}_i(t+\Delta t) \Delta t + \frac{\textbf{f}_i(t+\Delta t)}{2m}\Delta t^2 
+\end{aligned}\]</div>
+<p>That is, we expand the position at time <span class="math notranslate nohighlight">\(t+\Delta t+\Delta t\)</span> around the
+position at time <span class="math notranslate nohighlight">\(t+\Delta t\)</span>. Similarly, we can rewrite eq.
+<span class="xref myst">[vv_eq]</span>{reference-type=”ref” reference=”vv_eq”} for the
+position as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\textbf{r}_i(t) &amp;=  \textbf{r}_i(t+\Delta t) - \textbf{v}_i(t) \Delta t - \frac{\textbf{f}_i(t)}{2m}\Delta t^2 
+\end{aligned}\]</div>
+<p>Summing these two values yields:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\textbf{r}_i(t +2\Delta t) + \textbf{r}_i(t) &amp;= 2\textbf{r}_i(t+\Delta t) + \left (\textbf{v}_i(t+\Delta t)  - \textbf{v}_i(t) \right ) \Delta t + \frac{\textbf{f}_i(t+\Delta t) - \textbf{f}_i(t)}{2m} \Delta t^2
+\end{aligned}\]</div>
+<p>Substituting in the Velocity-Verlet expression for the velocity yields:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\textbf{r}_i(t +2\Delta t) + \textbf{r}_i(t) &amp;= 2\textbf{r}_i(t+\Delta t) + \frac{\textbf{f}_i(t)}{2m} \Delta t^2 + \frac{\textbf{f}_i(t+\Delta t) }{2m} \Delta t^2 + \frac{\textbf{f}_i(t+\Delta t) - \textbf{f}_i(t)}{2m} \Delta t^2 \\
+&amp;= 2\textbf{r}_i(t+\Delta t) + \frac{\textbf{f}_i(t+\Delta t) }{m} \Delta t^2
+\end{aligned}\end{split}\]</div>
+<p>This final expression matches the form of the original Verlet algorithm.
+The Velocity-Verlet algorithm is most efficient if a slightly different
+order of steps is used when updating positions and velocities since the
+velocities at time <span class="math notranslate nohighlight">\(t+\Delta t\)</span> can only be computed once the forces,
+and thus positions, are known at time <span class="math notranslate nohighlight">\(t+\Delta t\)</span>. The typical MD
+algorithm for the Velocity-Verlet algorithm then becomes:</p>
+<ol class="arabic simple">
+<li><p>For a set of particle positions, <span class="math notranslate nohighlight">\(\textbf{r}^N(t)\)</span>, velocities,
+<span class="math notranslate nohighlight">\(\textbf{v}^N(t)\)</span>, and forces, <span class="math notranslate nohighlight">\(\textbf{f}^N(t)\)</span>, calculate the new
+positions using
+<span class="math notranslate nohighlight">\(\textbf{r}_i(t+\Delta t) =  \textbf{r}_i(t) + \textbf{v}_i(t) \Delta t + \frac{\textbf{f}_i(t)}{2m}\Delta t^2\)</span>.</p></li>
+<li><p>Calculate the first half of the velocity update using
+<span class="math notranslate nohighlight">\(\textbf{v}_i(t + 1/2 \Delta t) = \textbf{v}_i(t)  + \frac{1}{2m} \textbf{f}_i(t)\Delta t\)</span>.
+This half uses forces only at time <span class="math notranslate nohighlight">\(t\)</span>. Note that notationally we
+call this a “half-integer” timestep only to distinguish the
+velocities computed here from the actual velocities at time <span class="math notranslate nohighlight">\(t\)</span> and
+<span class="math notranslate nohighlight">\(t+\Delta t\)</span>; these velocities should not be used the calculation of
+any velocity-dependent quantity.</p></li>
+<li><p>Calculate the new forces at time <span class="math notranslate nohighlight">\(t + \Delta t\)</span> using the new
+positions, <span class="math notranslate nohighlight">\(\textbf{r}^N(t+\Delta t)\)</span>.</p></li>
+<li><p>Finish the velocity update now that new forces are available using
+<span class="math notranslate nohighlight">\(\textbf{v}_i(t+ \Delta t) = \textbf{v}_i(t+ 1/2\Delta t) + \frac{1}{2m} \textbf{f}_i(t+\Delta t)\Delta t\)</span>.</p></li>
+<li><p>Evaluate the kinetic energy for step <span class="math notranslate nohighlight">\(t+\Delta t\)</span> if desired;
+potential energy will have been evaluated during force calculation
+(if desired).</p></li>
+</ol>
+<p>This half-timestep approach to updating the velocities is not strictly
+necessary, but prevents having to store forces at both time <span class="math notranslate nohighlight">\(t\)</span> and
+<span class="math notranslate nohighlight">\(t+\Delta t\)</span>, minimizing the memory load. The Velocity Verlet algorithm
+is very commonly used, as it is more numerically accurate than standard
+Verlet while calculating velocities (and hence kinetic energies) for the
+same timesteps as the positions. Note that the improved numerical
+accuracy comes in part from not having to divide a difference in
+positions by a timestep; these quantities are all very small and can
+result in numerical errors when used in practice (even though the
+approaches are identical mathematically).</p>
+</section>
+<section id="sampling-the-canonical-ensemble-in-md-simulations">
+<h2>Sampling the canonical ensemble in MD simulations<a class="headerlink" href="#sampling-the-canonical-ensemble-in-md-simulations" title="Permalink to this headline">#</a></h2>
+<p>We have now discussed the basic equations of motion for a molecular
+dynamics simulation, but have not clearly connected to a statistical
+ensemble. In Monte Carlo simulations, the statistical ensemble sampled
+(i.e., the canonical ensemble) is enforced by choosing configurations
+with a probability proportional to the Boltzmann factor. In MD
+simulations, the statistical ensemble is enforced by the equations of
+motion. For basic MD, we integrate Newton’s equations of motion, which
+are conservative, so the total energy of the system (kinetic + potential
+energy) is fixed. As a result, the MD algorithm described in above
+samples the microcanonical ensemble. This ensemble is perfectly fine for
+some systems, such as isolated molecules in the gas phase that are not
+in contact with a heat bath. However, in many problems of interest we
+would rather model a system that is at a constant temperature and
+samples the canonical ensemble since this is more representative of most
+physical systems. We thus need to modify our equations of motion to add
+a constraint that maintains a constant temperature instead of constant
+energy.</p>
+<p>We will now seek to derive an algorithm for constant temperature MD
+simulations via the implementation of a simulation <strong>thermostat</strong>.
+First, however, there is a more fundamental question - how do we define
+temperature in a molecular dynamics simulation? Answering this question
+will also tie up a loose end from the previous class, namely how we
+should initialize the velocities of particles in our system.</p>
+</section>
+<section id="maxwell-boltzmann-distribution">
+<h2>Maxwell-Boltzmann distribution<a class="headerlink" href="#maxwell-boltzmann-distribution" title="Permalink to this headline">#</a></h2>
+<p>So far in this class, we have dealt solely with potential energy
+functions that are a function of particle positions. However, in a
+classical simulation, a particle configuration is specified by particle
+momenta (i.e., velocities) in addition to particle positions. An
+accurate representation of a configuration in a molecular dynamics
+simulation would be (<span class="math notranslate nohighlight">\(\textbf{r}^N, \textbf{v}^N\)</span>) where <span class="math notranslate nohighlight">\(\textbf{v}^N\)</span>
+is the vector of particle velocities (note: many authors will use
+momenta, instead of velocities, but the idea is the same). The complete
+energy of the system is then given by both the potential energy,
+<span class="math notranslate nohighlight">\(P(\textbf{r}^N)\)</span>, <em>and</em> the kinetic energy, given by <span class="math notranslate nohighlight">\(K(\textbf{v}^N)\)</span>.
+Note an important feature - in general for a conservative Newtonian
+system, the potential energy is <em>only</em> a function of particle positions,
+while the kinetic energy is <em>only</em> a function of particle
+velocities/momenta. The two contributions are thus separable - i.e.,
+their contributions to the partition function can be factorized.</p>
+<p>Let’s then consider the distribution of molecular velocities associated
+with the kinetic energy, <span class="math notranslate nohighlight">\(K(\textbf{v}^N)\)</span>, since this term in the total
+energy is independent of the potential energy term. As in our derivation
+of the ideal gas partition function, we will consider a system of <span class="math notranslate nohighlight">\(N\)</span>
+particles at constant number, volume, and temperature (<span class="math notranslate nohighlight">\(NVT\)</span>) such that
+the system is described by the canonical ensemble. Previously, we
+considered the translational energies related to quantum mechanical
+effects. Here, we look at the purely classical distribution of particle
+velocities instead as a separate term. We can write the kinetic energy
+of particle <span class="math notranslate nohighlight">\(i\)</span> as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+K(\textbf{v}_i) = \frac{1}{2}m\textbf{v}_i \cdot \textbf{v}_i = \frac{1}{2}mv^2
+\end{aligned}\]</div>
+<p>Here, the speed <span class="math notranslate nohighlight">\(v\)</span> is the magnitude of the velocity vector,
+<span class="math notranslate nohighlight">\(\textbf{v}_i\)</span>. This expression is likely familiar from your previous
+studies of Newtonian mechanics. Now, we ask the probability that a
+particle obtains a particular velocity vector near the point where
+<span class="math notranslate nohighlight">\(\textbf{v}_i = (v_x, v_y, v_z)\)</span>. Note that since we are in the
+classical limit and treat particle coordinates/velocities as a
+continuum, we no longer ask the probability of one specific velocity
+vector, but rather the probability of finding a velocity within a small
+range of velocities. That is, if we think of the space of possible
+velocities as a 3D volume with axes <span class="math notranslate nohighlight">\(v_x, v_y,\)</span> and <span class="math notranslate nohighlight">\(v_z\)</span>, then we want
+to calculate the probability of finding a particle with a velocity
+within an infinitesimal volume <span class="math notranslate nohighlight">\(dv_x dv_y dv_z\)</span> centered on
+<span class="math notranslate nohighlight">\(v_x, v_y, v_z\)</span> in this velocity space. We can write this probability
+density (i.e. probability per unit volume) in the canonical ensemble as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\rho(v_x, v_y, v_z) &amp;=\frac{e^{-\beta K(\textbf{v}_i)}}{Z} \\
+&amp;= \frac{1}{Z} \exp\left [ - \frac{m(v_x^2 + v_y^2 + v_z^2)}{2k_BT }\right ]
+\end{aligned}\end{split}\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(Z\)</span> is a partition function we calculate by enforcing that the
+probability of obtaining a velocity vector in the entire volume of the
+velocity space has to be 1:</p>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \int_{-\infty}^{\infty}  \frac{1}{Z}\exp\left [ - \frac{m(v_x^2 + v_y^2 + v_z^2)}{2k_BT }\right ] dv_x dv_y dv_z = 1\]</div>
+<p>Solving this expression for <span class="math notranslate nohighlight">\(Z\)</span> (via standard integrals) yields:</p>
+<div class="math notranslate nohighlight">
+\[Z = \left(\frac{m}{2\pi k_B T} \right)^{-3/2}\]</div>
+<p>Our probability density for velocities is then:</p>
+<div class="math notranslate nohighlight">
+\[\rho(v_x, v_y, v_z) = \left(\frac{m}{2\pi k_B T} \right)^{3/2}  \exp\left [ - \frac{m(v_x^2 + v_y^2 + v_z^2)}{2k_BT }\right ]\]</div>
+<p>This expression is the <strong>Maxwell-Boltzmann distribution for
+velocities</strong>. This expression tells us that the probability of finding a
+particle with a velocity within an infinitesimal volume element
+<span class="math notranslate nohighlight">\((dv_x, dv_y, dv_z)\)</span> centered on the vector
+<span class="math notranslate nohighlight">\(\textbf{v}_i = (v_x, v_y, v_z)\)</span> is given by:</p>
+<div class="math notranslate nohighlight">
+\[p(v_x, v_y, v_z) = \rho(v_x, v_y, v_z) dv_x dv_y dv_z\]</div>
+<p>Integrating this expression over a finite volume of interest (in
+velocity space) yields the probability of finding a velocity within that
+volume. Recall that it is <span class="math notranslate nohighlight">\(p\)</span> that is normalized to be 1 across the
+entire space, not <span class="math notranslate nohighlight">\(\rho\)</span>.</p>
+<p>There are a few things to note about this distribution. First, each of
+component of the velocity vector is independent; that is, we can write:</p>
+<div class="math notranslate nohighlight">
+\[\rho(v_x, v_y, v_z) = \rho(v_x) \rho(v_y) \rho(v_z)\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\rho(v_x) &amp;= \rho(v_y) = \rho(v_z) \\
+&amp;= \left(\frac{m}{2\pi k_B T} \right)^{1/2}  \exp\left [ - \frac{mv_x^2}{2k_BT }\right ]
+\end{aligned}\end{split}\]</div>
+<p>If we look at the form of this distribution, we see that it follows a
+Gaussian (normal) distribution. Recall that a Gaussian function
+generally has the form:</p>
+<div class="math notranslate nohighlight">
+\[f(x) = \frac{1}{\sigma \sqrt{2\pi}}\exp \left [-\frac{1}{2}\left (\frac{x-\mu}{\sigma}\right )^2 \right ]\]</div>
+<p>where <span class="math notranslate nohighlight">\(\sigma^2\)</span> is the variance and <span class="math notranslate nohighlight">\(\mu\)</span> is the mean. Comparing this
+form with the Maxwell-Boltzmann distribution for a single component of
+the velocity vector shows that the variance of the distribution is
+<span class="math notranslate nohighlight">\(\sigma^2 = \frac{k_B T}{m}\)</span> and the mean is <span class="math notranslate nohighlight">\(\mu=0\)</span>. These two
+quantities tell us that as we increase the temperature of the system,
+the mean velocity is always zero, but we are increasingly likely to
+sample larger velocities.</p>
+<p>We can now calculate some other features of this distribution. First, we
+can calculate the distribution of speeds as opposed to velocities - that
+is, the distribution of <span class="math notranslate nohighlight">\(v = \sqrt{\textbf{v}\cdot \textbf{v}}\)</span>. This
+requires an integral in spherical coordinates to represent all possible
+vector directions with a final result of:</p>
+<div class="math notranslate nohighlight">
+\[\rho(v) = \left(\frac{m}{2\pi k_B T} \right)^{3/2} 4\pi v^2 \exp\left [ - \frac{mv^2}{2k_BT }\right ]\]</div>
+<p>Again, recall that this is the probability density (per unit speed,
+since we multiply by <span class="math notranslate nohighlight">\(dv\)</span> to get the actual probability) of finding the
+particle with a speed near <span class="math notranslate nohighlight">\(v\)</span>, but here <span class="math notranslate nohighlight">\(v\)</span> is always positive and is a
+scalar quantity. Unlike the velocity distribution, the mean of the speed
+distribution is non-zero, and instead we can show that:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\langle v \rangle &amp;= \int_0^\infty v \rho(v) dv = \sqrt{\frac{8k_BT}{\pi m}}\\
+\langle v^2 \rangle &amp;= \int_0^\infty v^2 \rho(v) dv = \frac{3k_BT}{m}
+\end{aligned}\end{split}\]</div>
+<p>This means that at higher temperatures the distribution of speeds
+broadens and shifts to higher values, indicating that particles move
+faster at higher temperatures, as expected.</p>
+<p><img alt="image" src="../_images/fig_12_1.png" />{width=”100%”}</p>
+<p>So note the results we have so far: by assuming a set of particles that
+have velocities consistent with the canonical ensemble, we can relate
+the ensemble-average value of the speed squared to the temperature.
+Relating this last expression to the kinetic energy (for a set of all
+<span class="math notranslate nohighlight">\(N\)</span> particles) gives:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\langle K(\textbf{v}^N) \rangle &amp;= \left \langle \frac{1}{2}Nmv^2 \right \rangle \\
+&amp;= \frac{1}{2}Nm \langle v^2 \rangle \\
+&amp;= \frac{3}{2}Nk_BT
+\end{aligned}\end{split}\]</div>
+<p>This result, that the contribution of each particle to the
+ensemble-average kinetic energy is given by <span class="math notranslate nohighlight">\(3/2 k_BT\)</span>, is exactly the
+result we obtained from the equipartition theorem - each degree of
+freedom for the velocity, which is squared in the expression for the
+kinetic energy, contributes <span class="math notranslate nohighlight">\(1/2 k_BT\)</span> to the corresponding
+ensemble-average energy (kinetic energy in this case). As expected, this
+result is identical to what we get if we instead treat translational
+degrees of freedom using the quantum mechanics formulation (the particle
+in the box) and then take the classical limit of our solution - here, we
+effectively took the classical limit first when writing the energy of
+the system.</p>
+<p>Finally, let’s note some features of the Maxwell-Boltzmann distribution.
+First, we recall that this is strictly only valid at equilibrium, again
+because we use the canonical partition function in the derivation.
+However, that’s the only major assumption we make, other than that
+classical mechanics is valid (i.e. we are not moving at relativistic
+speeds and there are no strong quantum effects). So, an interesting
+feature of this distribution is that it is equally applicable to vapor-
+and condensed-phase systems since the potential energy and kinetic
+energy terms are separable. This means that if two systems are at the
+same temperature, the distribution of their molecular velocities are the
+same, even though we may conventionally think that gas molecules move
+“faster” than liquid molecules. In reality, it’s that liquid-phase
+molecules collide more frequently so that their velocity vectors change
+more rapidly, but the distribution of velocities remains the same as a
+corresponding vapor-phase system. Of course, typically we also associate
+gases with higher temperature phases, in which case our results do
+indeed show that their molecular speeds would be faster on average.</p>
+</section>
+<section id="calculating-temperature-in-a-molecular-simulation">
+<h2>Calculating temperature in a molecular simulation<a class="headerlink" href="#calculating-temperature-in-a-molecular-simulation" title="Permalink to this headline">#</a></h2>
+<p>With the Maxwell-Boltzmann relationship in hand, we can now see a method
+to calculate the temperature in a molecular simulation. Specifically, we
+have the relation:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\frac{1}{2}Nm \langle v^2 \rangle  &amp;= \frac{3}{2}Nk_BT
+\end{aligned}\]</div>
+<p>This expression gives us an operational definition of the temperature;
+while strictly we only relate the ensemble-average kinetic energy to the
+temperature, we can approximate the temperature as a function of time
+by:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+T(t) = \frac{1}{N} \sum_i^N \frac{m_i v_i(t)^2}{3k_B}
+\end{aligned}\]</div>
+<p>Using this definition, the temperature will fluctuate for a system at
+constant energy (i.e. using standard MD algorithms) and also for a
+system at “constant” temperature (i.e. using a thermostat as described
+below) since the relationship between temperature and kinetic energy is
+only valid in ergodic systems. Thus, if a simulation is run for long
+enough at constant temperature such that the Maxwell-Boltzmann
+distribution correctly describes particle speeds, then this relationship
+should generate the expected ensemble-average temperature. Note that the
+instantaneous temperature is still not rigorously defined - we would say
+that the temperature of the system is the ensemble-average temperature,
+and the instantaneous temperature is defined only to facilitate
+calculations (i.e. to maintain temperature via the thermostat described
+below).</p>
+</section>
+<section id="initializing-particle-velocities">
+<h2>Initializing particle velocities<a class="headerlink" href="#initializing-particle-velocities" title="Permalink to this headline">#</a></h2>
+<p>We can now return to the question of how to generate particle
+velocities. In principle, we want to generate velocities such that the
+system begins at a particular, well-defined temperature. The
+Maxwell-Boltzmann distribution then tells us how to do this.
+Specifically, for each particle, we can generate three random numbers
+drawn from the Maxwell-Boltzmann velocity distribution at the desired
+temperature <span class="math notranslate nohighlight">\(T\)</span> to represent each of the three velocity components;
+again this is possible because each component is statistically
+independent.</p>
+<p>In practice, it is worth noting that a property of Gaussian functions is
+that if <span class="math notranslate nohighlight">\(X\)</span> is normally distributed with a mean <span class="math notranslate nohighlight">\(\mu\)</span> and variance
+<span class="math notranslate nohighlight">\(\sigma^2\)</span>, then <span class="math notranslate nohighlight">\(Y=aX\)</span> is also normally distributed with mean <span class="math notranslate nohighlight">\(a\mu\)</span>
+and variance <span class="math notranslate nohighlight">\(a^2\sigma^2\)</span>. Thus, we only need a function that generates
+random numbers drawn from a Gaussian distribution with a mean of 0 and a
+variance of any number, and we can convert the results of that
+distribution to our chosen Maxwell-Boltzmann distribution by multiplying
+by an appropriate value of <span class="math notranslate nohighlight">\(a\)</span>. Matlab has a built-in function to do
+this, for example.</p>
+</section>
+<section id="andersen-thermostat">
+<h2>Andersen thermostat<a class="headerlink" href="#andersen-thermostat" title="Permalink to this headline">#</a></h2>
+<p>We have now derived the Maxwell-Boltzmann distribution for particle
+velocities in the canonical ensemble, and showed that we could link the
+ensemble-average temperature to the ensemble-average kinetic energy as a
+means of <em>defining</em> the simulation temperature. However, we have yet to
+discuss how to actually maintain a well-defined simulation temperature
+so that our system samples the canonical ensemble. We will now discuss
+this by defining a simulation <strong>thermostat</strong>, or algorithm to conserve
+the system temperature.</p>
+<p>First, you may immediately realize that if
+<span class="math notranslate nohighlight">\(T(t) = \sum_i^N \frac{m_i v_i(t)^2}{3k_B N}\)</span>, then we can enforce a
+constant temperature by just rescaling the velocities every time step.
+Velocity rescaling in principle is fine since it does not affect the
+relative positions of particles, and hence will not result in unphysical
+states (e.g. particles overlapping). However, the problem with this
+approach is that it would eliminate fluctuations in the kinetic energy
+and may not capture the correct Maxwell-Boltzmann distribution of
+particle velocities expected in the canonical ensemble. Instead, we will
+describe an approach called the <strong>Andersen thermostat</strong>. The basic idea
+of this thermostat is to model the exchange of heat with an external
+bath by assuming that particles stochastically collide with some
+particle in the external heat reservoir. In between these collisions,
+the system evolves at constant total energy; each collision essentially
+ensures that the system samples different possible constant system
+energies (i.e. different microcanonical ensembles) with the correct
+Boltzmann weight.</p>
+<p>An Andersen thermostat is implemented by selecting a set of particles
+(or a single particle) stochastically with a frequency given by a
+coupling parameter, <span class="math notranslate nohighlight">\(\eta\)</span>, and resetting their velocities according to
+the Maxwell-Boltzmann distribution; this represents a collision with a
+particle in the thermal reservoir. Assuming that collisions are
+uncorrelated, the probability with which each particle collides with the
+bath at each timestep is given by:</p>
+<div class="math notranslate nohighlight">
+\[p(\Delta t; \eta) = \eta \Delta t\]</div>
+<p>This expression is based on the mean number of collisions expected
+during an interval <span class="math notranslate nohighlight">\(\Delta t\)</span>. The collision frequency, <span class="math notranslate nohighlight">\(\eta\)</span>, is
+usually specified in terms of the timestep. It can be shown that this
+procedure correctly reproduces properties of a canonical ensemble since
+the kinetic energy will sample the correct distribution and the
+temperature is only a function of the particle velocities. For example,
+the Andersen thermostat will produce the correct Maxwell-Boltzmann
+distribution of velocities and can exactly reproduce Monte Carlo
+simulations that sample the canonical ensemble. The coupling parameter
+can be tuned and there is not necessarily an optimal value; typical
+values are on the order of <span class="math notranslate nohighlight">\(\eta = \frac{0.01}{\Delta t}\)</span> to
+<span class="math notranslate nohighlight">\(\eta = \frac{0.001}{\Delta t}\)</span> so that velocities are not reset too
+frequently, which could interfere with measurements of dynamical
+behaviors (i.e., the measurement of the diffusion coefficient).</p>
+<p>Note that the Andersen thermostat changes the velocities of particles at
+time <span class="math notranslate nohighlight">\(t\)</span>, and hence requires an equation of motion in which velocities
+are specified, such as the Velocity Verlet algorithm. An example
+algorithm for a MD simulation using the Andersen thermostat then
+consists of the following steps:</p>
+<ol class="arabic simple">
+<li><p>Choose a starting configuration, <span class="math notranslate nohighlight">\(\mathbf{r}^N(t=0)\)</span>.</p></li>
+<li><p>Generate initial particle velocities, <span class="math notranslate nohighlight">\(\textbf{v}^N(t=0)\)</span>, by
+sampling from the Maxwell-Boltzmann velocity distribution at a given
+temperature <span class="math notranslate nohighlight">\(T\)</span>.</p></li>
+<li><p>Compute the forces acting on all particles, <span class="math notranslate nohighlight">\(\textbf{f}^N(t)\)</span>.</p></li>
+<li><p>Update the positions to time <span class="math notranslate nohighlight">\(\textbf{r}^N(t+\Delta t)\)</span>.</p></li>
+<li><p>Update the velocities to <span class="math notranslate nohighlight">\(\textbf{v}^N(t+1/2\Delta t)\)</span> according to
+the Velocity-Verlet algorithm.</p></li>
+<li><p>Calculate the new forces <span class="math notranslate nohighlight">\(\textbf{f}^N(t+\Delta t)\)</span>.</p></li>
+<li><p>Finish the velocity update to <span class="math notranslate nohighlight">\(\textbf{v}^N(t+\Delta t)\)</span></p></li>
+<li><p>Iterate over all particles and stochastically attempt to select a
+particle with probability <span class="math notranslate nohighlight">\(\eta \Delta t\)</span>; if selected, reset the
+particle velocity vector by sampling each component from the
+Maxwell-Boltzmann velocity distribution.</p></li>
+<li><p>Repeat steps 3-8 until a sufficient number of timesteps have
+elapsed. Periodically compute and save the value of some observables
+(e.g., temperature, pressure).</p></li>
+<li><p>Approximate the ensemble-average value of the saved observables by
+averaging over states sampled during a period of time during which
+the system is at equilibrium.</p></li>
+</ol>
+<p>Note again that this algorithm now introduces a stochastic element to
+molecular dynamics, unlike the basic MD algorithm which in principle is
+deterministic. Finally, it is important to recognize that the Andersen
+thermostat is just one simple approach for maintaining the system
+temprature, and is no longer commonly used in practice in favor of more
+advanced techniques (e.g. the Nose-Hoover thermostat) that are
+considered more reliable.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lecture_files"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Lecture11.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Monte Carlo and Intro to Molecular Dynamics Simulations</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Lecture13.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">The Structure of Classical Fluids</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recommended-textbooks">Recommended textbooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topics-in-this-lecture">Topics in this lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements">Announcements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equations-of-motion-verlet-algorithm">Equations of motion: Verlet algorithm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#velocity-verlet-integrator">Velocity-Verlet integrator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-the-canonical-ensemble-in-md-simulations">Sampling the canonical ensemble in MD simulations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maxwell-boltzmann-distribution">Maxwell-Boltzmann distribution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-temperature-in-a-molecular-simulation">Calculating temperature in a molecular simulation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initializing-particle-velocities">Initializing particle velocities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#andersen-thermostat">Andersen thermostat</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Reid van Lehn, Matt Gebbie, Rose Cersonsky
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

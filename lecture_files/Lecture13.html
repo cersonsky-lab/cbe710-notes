@@ -1,0 +1,836 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>The Structure of Classical Fluids &#8212; Notes for CBE710</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture_files/Lecture13';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="The Potential of Mean Force" href="Lecture14.html" />
+    <link rel="prev" title="MD Thermostats" href="Lecture12.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Notes for CBE710</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Class introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Mechanics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Lecture1.html">Overview and review of thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture2.html">The Microcanonical Ensemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture3.html">The Canonical Ensemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/ps_1/problem_set_1.html">— Problem Set 1 —</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture4.html">Canonical Ensemble Continued</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture5.html">Generalized Ensembles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture6.html">The Ideal Gas Partition Function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture7.html">The Langmuir Isotherm and Ising Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture8.html">The Ising Model and Mean-Field Theory</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Molecular Simulation</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Lecture9.html">Fluctuations and an Introduction to Molecular Simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture10.html">Monte Carlo Simulations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture11.html">Monte Carlo and Intro to Molecular Dynamics Simulations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture12.html">MD Thermostats</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">The Structure of Classical Fluids</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture14.html">The Potential of Mean Force</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Lecture15.html">Free energy perturbation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture16.html">Postulates of thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture17.html">Heat Engines and Possible Processes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture18.html">Entropy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture19.html">The Fundamental Relation of Thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture20.html">Legendre Transforms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture21.html">Conditions of equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture22.html">Equilibrium in single-component systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture23.html">Phase Diagrams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture24.html">Fugacity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture25.html">Ideal mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture26.html">Non-ideal mixtures</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/lecture_files/Lecture13.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>The Structure of Classical Fluids</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recommended-textbooks">Recommended textbooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topics-in-this-lecture">Topics in this lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#andersen-thermostat">Andersen thermostat</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importance-of-liquid-structure">Importance of liquid structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reduced-configurational-distribution">Reduced configurational distribution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-radial-distribution-function">The radial distribution function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#g-r-for-different-states-of-matter"><span class="math notranslate nohighlight">\(g(r)\)</span> for different states of matter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-g-r">Calculating <span class="math notranslate nohighlight">\(g(r)\)</span></a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="the-structure-of-classical-fluids">
+<h1>The Structure of Classical Fluids<a class="headerlink" href="#the-structure-of-classical-fluids" title="Permalink to this headline">#</a></h1>
+<section id="recommended-textbooks">
+<h2>Recommended textbooks<a class="headerlink" href="#recommended-textbooks" title="Permalink to this headline">#</a></h2>
+<p>Chapter 7.1-7.3</p>
+</section>
+<section id="topics-in-this-lecture">
+<h2>Topics in this lecture<a class="headerlink" href="#topics-in-this-lecture" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Reduced configurational distribution</p></li>
+<li><p>Radial distribution function</p></li>
+</ul>
+</section>
+<section id="andersen-thermostat">
+<h2>Andersen thermostat<a class="headerlink" href="#andersen-thermostat" title="Permalink to this headline">#</a></h2>
+<p>We ended the last lecture by discussing the Andersen thermostat for
+performing MD simulations that sample the canonical ensemble, but ran
+out of time just before presenting the algorithm. An algorithm for a MD
+simulation using the Andersen thermostat consists of the following
+steps:</p>
+<ol class="arabic simple">
+<li><p>Choose a starting configuration, <span class="math notranslate nohighlight">\(\mathbf{r}^N(t=0)\)</span>.</p></li>
+<li><p>Generate initial particle velocities, <span class="math notranslate nohighlight">\(\textbf{v}^N(t=0)\)</span>, by
+sampling from the Maxwell-Boltzmann velocity distribution at a given
+temperature <span class="math notranslate nohighlight">\(T\)</span>.</p></li>
+<li><p>Compute the forces acting on all particles, <span class="math notranslate nohighlight">\(\textbf{f}^N(t)\)</span>.</p></li>
+<li><p>Update the positions to time <span class="math notranslate nohighlight">\(\textbf{r}^N(t+\Delta t)\)</span>.</p></li>
+<li><p>Update the velocities to <span class="math notranslate nohighlight">\(\textbf{v}^N(t+1/2\Delta t)\)</span> according to
+the Velocity-Verlet algorithm.</p></li>
+<li><p>Calculate the new forces <span class="math notranslate nohighlight">\(\textbf{f}^N(t+\Delta t)\)</span>.</p></li>
+<li><p>Finish the velocity update to <span class="math notranslate nohighlight">\(\textbf{v}^N(t+\Delta t)\)</span></p></li>
+<li><p>Iterate over all particles and stochastically attempt to select a
+particle with probability <span class="math notranslate nohighlight">\(\eta \Delta t\)</span>; if selected, reset the
+particle velocity vector by sampling each component from the
+Maxwell-Boltzmann velocity distribution.</p></li>
+<li><p>Repeat steps 3-8 until a sufficient number of timesteps have
+elapsed. Periodically compute and save the value of some observables
+(e.g., temperature, pressure).</p></li>
+<li><p>Approximate the ensemble-average value of the saved observables by
+averaging over states sampled during a period of time during which
+the system is at equilibrium.</p></li>
+</ol>
+<p>Note again that this algorithm now introduces a stochastic element to
+molecular dynamics, unlike the basic MD algorithm which in principle is
+deterministic. Finally, it is important to recognize that the Andersen
+thermostat is just one simple approach for maintaining the system
+temprature, and is no longer commonly used in practice in favor of more
+advanced techniques (e.g. the Nose-Hoover thermostat) that are
+considered more reliable.</p>
+</section>
+<section id="importance-of-liquid-structure">
+<h2>Importance of liquid structure<a class="headerlink" href="#importance-of-liquid-structure" title="Permalink to this headline">#</a></h2>
+<p>We have now outlined the algorithms underlying the Monte Carlo and
+Molecular Dynamics techniques and identified methods for sampling from
+the canonical ensemble, which is an appropriate ensemble for many
+systems. We have emphasized the point that during these simulations it
+is important to sample some simulation observable, then by proper
+averaging at the conclusion of a simulation we can gain some insight
+into the behavior of our system. Previous observables we have discussed
+included the temperature and energy. In this lecture, we will describe a
+different observable that is related to the structure of a set of
+particles, which will both give important information about the phase of
+the system being studied as well as its thermodynamic properties.</p>
+<p>Consider a set of particles that we want to classify as being gas-like,
+liquid-like, or solid-like. One thing we know about these different
+phases is that their spatial arrangement of particles is dramatically
+different. In a solid, particles tend to be clustered very near to each
+other in their crystalline arrangements, while in a gas they tend to
+spread far apart. A liquid falls somewhere in between, where particles
+are condensed but lack the ordered structure inherent to solids. Knowing
+this, we can interpret the structure of a liquid by looking at the
+<em>relative</em> positions of two particles. That is, if particles tend to be
+near each other, they are more solid-like; particles that have no
+preference for being close to each other are more gas-like. We can
+quantify this thinking by studying the <strong>radial distribution function</strong>
+as we will now discuss.</p>
+<p><img alt="image" src="../_images/fig_13_1.png" />{width=”100%”}</p>
+</section>
+<section id="reduced-configurational-distribution">
+<h2>Reduced configurational distribution<a class="headerlink" href="#reduced-configurational-distribution" title="Permalink to this headline">#</a></h2>
+<p>First, let us again show that we can ground this discussion in the study
+of statistical mechanics, assuming that any given fluid system of
+interest can be treated as at constant <span class="math notranslate nohighlight">\(NVT\)</span> (we could generalize to
+<span class="math notranslate nohighlight">\(NPT\)</span> without much difficulty). Recall that we can write the canonical
+partition function for a classical fluid using the notation:</p>
+<div class="math notranslate nohighlight">
+\[Z = \int_{V^N} d\textbf{r}^N \exp \left [-\beta E(\textbf{r}^N)\right]\]</div>
+<p>This expression integrates over all possible particle configurations in
+a continuous space with phase space volume <span class="math notranslate nohighlight">\(V^N\)</span>, representing all
+possible <em>combinations</em> of positions. Here, we let <span class="math notranslate nohighlight">\(E(\textbf{r}^N)\)</span>
+refer to only the potential energy of the system associated with
+particle-particle interactions and ignore the kinetic energy
+contribution due to particle velocities, as we have noted previously
+that velocities are only a function of the temperature and not particle
+positions. Alternatively, we can also write this integral by breaking up
+<span class="math notranslate nohighlight">\(\textbf{r}^N\)</span> into each of the <span class="math notranslate nohighlight">\(N\)</span> different position vectors for the
+different particles.</p>
+<div class="math notranslate nohighlight">
+\[Z = \int_V d\textbf{r}_1 \int_V d\textbf{r}_2 \int_V d\textbf{r}_3 \dots \int_V d\textbf{r}_N  \exp \left [-\beta E(\textbf{r}_1, \textbf{r}_2, \textbf{r}_3, \dots \textbf{r}_N )\right]\]</div>
+<p>Here, subscripts indicate the index of one particular particle. Using
+either notation, the probability of finding the system in some
+configuration <span class="math notranslate nohighlight">\(\textbf{r}^N\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+p(\textbf{r}^N) &amp;= \frac{\exp \left [-\beta E(\textbf{r}^N)\right]}{\int_{V^N} d\textbf{r}^N \exp \left [-\beta E(\textbf{r}^N)\right]} \\
+ &amp;= \frac{\exp \left [-\beta E(\textbf{r}_1, \textbf{r}_2, \textbf{r}_3, \dots \textbf{r}_N )\right]}{\int_V d\textbf{r}_1 \int_V d\textbf{r}_2 \int_V d\textbf{r}_3 \dots \int_V d\textbf{r}_N  \exp \left [-\beta E(\textbf{r}_1, \textbf{r}_2, \textbf{r}_3, \dots \textbf{r}_N )\right]}
+\end{aligned}\end{split}\]</div>
+<p>This probability distribution function is called the <strong>configurational
+distribution</strong> in analogy to the velocity distribution discussed last
+class. Again, this is technically a probability density function, like
+the Maxwell-Boltzmann distribution, and is the probability of observing
+the system in a small volume of phase space near <span class="math notranslate nohighlight">\(\textbf{r}^N\)</span>; it has
+units of volume<span class="math notranslate nohighlight">\(^{-N}\)</span> as a result since <span class="math notranslate nohighlight">\(\textbf{r}^N\)</span> has units of
+<span class="math notranslate nohighlight">\(V^N\)</span>.</p>
+<p>Now, let’s consider a different question. Rather than asking the
+probability of a particular configuration of particles, let’s ask the
+probability that particle 1 is at position <span class="math notranslate nohighlight">\(\textbf{r}_1\)</span>. Recall that
+back in our derivation of the canonical ensemble, we divided a combined
+system into a small system of interest and a bath, and we said that the
+probability that the bath obtains a microstate is proportional to the
+number of equivalent bath states. We can use the same idea here, and say
+that the probability of a configuration in which a <strong>specific</strong> particle
+has some particular position is given by integrating the probability of
+a system configuration over all <strong>other</strong> particle positions. In other
+words, we can write the following:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+p(\textbf{r}_1) &amp;= \frac{ \int_V d\textbf{r}_2 \int_V d\textbf{r}_3 \dots \int_V d\textbf{r}_N  \exp \left [-\beta E(\textbf{r}_1, \textbf{r}_2, \textbf{r}_3, \dots \textbf{r}_N )\right]}{Z} \\
+&amp;=  \int_V d\textbf{r}_2 \int_V d\textbf{r}_3 \dots \int_V d\textbf{r}_N p(\textbf{r}^N)
+\end{aligned}\end{split}\]</div>
+<p>What this expression says is that we fix the position of particle 1 at
+<span class="math notranslate nohighlight">\(\textbf{r}_1\)</span>, then we integrate the probability density function over
+the rest of the phase space where the other particle positions can
+obtain any value. This expression is referred to as a <strong>reduced
+configurational distribution</strong> because we are now asking the probability
+of being in one specific region of phase space (i.e., the region where
+the position of particle 1 is fixed). This expression assumes that there
+is a particular particle with index 1 at position <span class="math notranslate nohighlight">\(\textbf{r}_1\)</span>.
+Alternatively, we could insead calculate the probability that <strong>any</strong> of
+<span class="math notranslate nohighlight">\(N\)</span> identical particles is at position <span class="math notranslate nohighlight">\(\textbf{r}_1\)</span> as opposed to a
+specific tagged particle. Since the particles are identical, this
+probability is just <span class="math notranslate nohighlight">\(N\)</span> times larger, leading to:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\tilde{p}(\textbf{r}_1) &amp;= Np(\textbf{r}_1)\\
+&amp;=  N\int_V d\textbf{r}_2 \int_V d\textbf{r}_3 \dots \int_V d\textbf{r}_N p(\textbf{r}^N)
+\end{aligned}\end{split}\]</div>
+<p>This expression is referred to as a <strong>generic reduced configurational
+distribution</strong>, with the term generic emphasizing that <strong>any</strong> particle
+can occupy position <span class="math notranslate nohighlight">\(\textbf{r}_1\)</span>. Let’s extend this concept to
+multiple positions. Now, we can calculate the probability that <em>any</em>
+particle is at position <span class="math notranslate nohighlight">\(\textbf{r}_1\)</span> and <em>any</em> particle is at position
+<span class="math notranslate nohighlight">\(\textbf{r}_2\)</span>. Again, we fix these positions, then integrate over the
+positions of all other particles. We recognize that there are <span class="math notranslate nohighlight">\(N\)</span> ways
+to choose the first particle and <span class="math notranslate nohighlight">\(N-1\)</span> ways to choose the second. Our
+expression is then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\tilde{p}(\textbf{r}_1, \textbf{r}_2) = N(N-1)  \int_V d\textbf{r}_3 \dots \int_V d\textbf{r}_N p(\textbf{r}^N)
+\end{aligned}\]</div>
+<p>We could continue to generalize this notation, but there is no need for
+our present purposes.</p>
+</section>
+<section id="the-radial-distribution-function">
+<h2>The radial distribution function<a class="headerlink" href="#the-radial-distribution-function" title="Permalink to this headline">#</a></h2>
+<p>Let’s consider simplifying these two reduced configurational
+distribution functions for a system consisting of a homogeneous,
+isotropic fluid. That is, assume the fluid is uniform spatially - the
+properties of the system are unchanged if I look in any direction
+through the fluid. Equivalently, an isotropic fluid can be thought of as
+one in which translating/rotating all particle positions does not
+influence the probability of a configuration; an anisotropic fluid would
+be one in which such manipulations would change the system energy (e.g.
+due to interactions with system boundaries). First, consider the
+expression:</p>
+<div class="math notranslate nohighlight">
+\[p(\textbf{r}_1) =  \int_V d\textbf{r}_2 \int_V d\textbf{r}_3 \dots \int_V d\textbf{r}_N p(\textbf{r}^N)\]</div>
+<p>This expression is the probability density function for finding a
+particle in some small volume, <span class="math notranslate nohighlight">\(dV\)</span>, centered at some position
+<span class="math notranslate nohighlight">\(\textbf{r}_1\)</span>. Since the particle <em>has</em> to be within the volume, then
+the probability density function is normalized such that:</p>
+<div class="math notranslate nohighlight">
+\[\int_V p(\textbf{r}_1) d \textbf{r}_1 = 1\]</div>
+<p>That is, the probability when summed over all possiblve values of
+<span class="math notranslate nohighlight">\(\textbf{r}_1\)</span> within the volume has to be one. For an isotropic fluid,
+there will be an <strong>equal</strong> likelihood that we can find a single particle
+at <strong>any</strong> position in the volume since we are integrating over the
+positions of all other particles - there is no reason why any one
+position should be favored over another. Therefore, the normalization
+condition enforces that <span class="math notranslate nohighlight">\(p(\textbf{r}_1) = 1/V\)</span>, indicating an equal
+likelihood of finding a particular particle anywhere in the volume. The
+generic reduced configurational distribution for a single particle is
+then:</p>
+<div class="math notranslate nohighlight">
+\[\tilde{p}(\textbf{r}_1) =N p(\textbf{r}_1)  = \frac{N}{V} \equiv \rho\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(\rho\)</span> is simply the number density of the system. Thus, the
+density of the system tells us the probability of finding a particle in
+any given small volume of the system independent of the positions of its
+neighbors.</p>
+<p>Now let’s consider the reduced configurational distribution for two
+particles:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\tilde{p}(\textbf{r}_1, \textbf{r}_2) = N(N-1)  \int_V d\textbf{r}_3 \dots \int_V d\textbf{r}_N p(\textbf{r}^N)
+\end{aligned}\]</div>
+<p>Unlike the former case of studying only a single particle, now there are
+possible <strong>correlations</strong> between particles. That is, certain pairs of
+positions may be more likely than others due to the interaction of
+particle 1 and 2, even when integrating over the positions of all other
+particles. Let’s first assume that the particles in our system are
+completely uncorrelated because they do not interact; that is, we have
+an ideal gas. In that case, the probability
+<span class="math notranslate nohighlight">\(p(\textbf{r}_1, \textbf{r}_2)\)</span> can be factorized into two
+single-particle probability distributions since the two particles are
+independent of each other. We can then write:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\tilde{p}(\textbf{r}_1, \textbf{r}_2) &amp;= N(N-1)  \int_V d\textbf{r}_3 \dots \int_V d\textbf{r}_N p(\textbf{r}^N) \\
+&amp;= N(N-1) p(\textbf{r}_1, \textbf{r}_2) \\
+&amp;= N(N-1) p(\textbf{r}_1) p(\textbf{r}_2) \quad \text{if positions are independent/uncorrelated}\\
+&amp;= \frac{N(N-1)}{V^2} \\
+&amp;\approx \rho^2
+\end{aligned}\end{split}\]</div>
+<p>Here, we assume that <span class="math notranslate nohighlight">\(N\gg1\)</span> for a typical system and approximate this
+joint probability distribution function as the density squared. This
+result is true for an ideal gas, but in general a real system will have
+some deviation from ideality that emerges from interactions between
+pairs of particles. We will define a function,
+<span class="math notranslate nohighlight">\(g(\textbf{r}_1, \textbf{r}_2)\)</span>, as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+g(\textbf{r}_1, \textbf{r}_2) &amp;= \frac{\tilde{p}(\textbf{r}_1, \textbf{r}_2)}{\tilde{p}(\textbf{r}_1, \textbf{r}_2)_{\textrm{ideal}}} \\
+&amp;= \frac{\tilde{p}(\textbf{r}_1, \textbf{r}_2)}{\rho^2}
+\end{aligned}\end{split}\]</div>
+<p>This expression is called the <strong>pair-correlation function</strong> because it
+reflects the tendency for pairs of particles to be distributed at
+certain positions relative to each other with probabilities that deviate
+from what would be expected for an ideal gas. The expression would be 1
+for all pairs of positions for an ideal gas. For completeness we can
+rewrite this as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+g(\textbf{r}_1, \textbf{r}_2) &amp;= \frac{N(N-1)\int_V d\textbf{r}_3 \dots \int_V d\textbf{r}_N p(\textbf{r}^N)}{\rho^2} \\
+&amp;= \frac{N(N-1)}{\rho^2} \frac{\int_V d\textbf{r}_3 \dots \int_V d\textbf{r}_N \exp \left [-\beta E(\textbf{r}^N)\right]}{Z} 
+\end{aligned}\end{split}\]</div>
+<p>This expression will be useful in the next lecture. For an isotropic
+system, <span class="math notranslate nohighlight">\(g(\textbf{r}_1, \textbf{r}_2)\)</span> only depends on the distance
+between two particles, <span class="math notranslate nohighlight">\(r = |\textbf{r}_1-\textbf{r}_2|\)</span>. Again, this is
+because all directions in an isotropic fluid are equivalent, so if we
+rotate the entire system there is no change in the probability.
+Equivalently, I can imagine placing particle 1 at some position, then
+placing particle 2 a distance <span class="math notranslate nohighlight">\(r\)</span> away - rotating the entire system,
+including particle 2, while preserving the same distance <span class="math notranslate nohighlight">\(r\)</span> does not
+change the system properties. For an isotropic system we can then write
+the pair-correlation function as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+g(r) \equiv g(\textbf{r}_1, \textbf{r}_2) 
+\end{aligned}\]</div>
+<p>where <span class="math notranslate nohighlight">\(r\)</span> is the scalar distance between particles at position
+<span class="math notranslate nohighlight">\(\textbf{r}_1\)</span> and <span class="math notranslate nohighlight">\(\textbf{r}_2\)</span>. <span class="math notranslate nohighlight">\(g(r)\)</span> is called the <strong>radial
+distribution function</strong>.</p>
+<p>If we assume that one of these particles is always at the origin of the
+coordinate system, and we know that the probability of that particle
+being at the origin is <span class="math notranslate nohighlight">\(\rho\)</span> since that is the single-particle reduced
+distribution function, then we arrive at the result:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+g(\textbf{r}_1, \textbf{r}_2) = g(r) &amp;= \frac{\tilde{p}(\textbf{r}_1, \textbf{r}_2)}{\rho^2}\\
+&amp;= \frac{\tilde{p}(\textbf{r}_1=0)\tilde{p}(\textbf{r}_1=0, r)}{\rho^2}\\
+\therefore g(r) &amp;= \frac{\tilde{p}(\textbf{r}_1=0, r)}{\rho}
+\end{aligned}\end{split}\]</div>
+<p>Here, we write the conditional probability density that any particle is
+at a distance <span class="math notranslate nohighlight">\(r\)</span> away from any particle placed at the origin. Hence we
+finally achieve the following definition: for a given particle <span class="math notranslate nohighlight">\(i\)</span> in a
+system, which we will say is “tagged” and placed at the origin of the
+coordinate system, the radial distribution function tells us the
+probability of a particle being a distance <span class="math notranslate nohighlight">\(r\)</span> away from the tagged
+particle relative to what would be observed in an ideal gas.
+Alternatively, we could say that the quantity <span class="math notranslate nohighlight">\(\rho g(r)\)</span> tells us the
+<strong>average number density</strong> of particles at a distance <span class="math notranslate nohighlight">\(r\)</span> away from a
+single tagged particle. This last definition is probably the most
+intuitive.</p>
+</section>
+<section id="g-r-for-different-states-of-matter">
+<h2><span class="math notranslate nohighlight">\(g(r)\)</span> for different states of matter<a class="headerlink" href="#g-r-for-different-states-of-matter" title="Permalink to this headline">#</a></h2>
+<p>Having defined <span class="math notranslate nohighlight">\(g(r)\)</span>, let’s qualitatively discuss how it should behave.
+As we said, for an ideal gas, the radial distribution function should be
+exactly 1 for all distances <span class="math notranslate nohighlight">\(r\)</span> between a tagged particle and any other
+given particle on average. For a real gas, then, the average density
+will approach the overall density at far distances, but <span class="math notranslate nohighlight">\(g(r)\)</span> will be
+zero for distances less than the diameter of each gas particle - that
+is, real gases exclude volume. There is also like some enhanced average
+density at close distances between particles, reflecting some weak
+attractive intermolecular interactions. For solids, in which atoms are
+in very precise spatial positions, <span class="math notranslate nohighlight">\(g(r)\)</span> will have sharp peaks
+reflecting the typical distances between atoms in crystalline materials.
+Finally, for liquids, <span class="math notranslate nohighlight">\(g(r)\)</span> will fluctuate around the bulk density,
+with high density regions reflecting so-called solvation shells where
+atoms prefer to accumulate due to favorable interactions. Thus,
+calculating <span class="math notranslate nohighlight">\(g(r)\)</span> alone can tell us structural information, such as the
+preferred distances between particles. Moreover, we can derive a series
+of other thermodynamic properties from this expression, one of which
+will be discussed below. First, however, let us discuss how to calculate
+this quantity in a simulation.</p>
+<p><img alt="image" src="../_images/fig_13_2.png" />{width=”100%”}</p>
+</section>
+<section id="calculating-g-r">
+<h2>Calculating <span class="math notranslate nohighlight">\(g(r)\)</span><a class="headerlink" href="#calculating-g-r" title="Permalink to this headline">#</a></h2>
+<p>Let’s now talk about how to algorithmically calculate <span class="math notranslate nohighlight">\(g(r)\)</span> based on
+our above discussion. In principle, <span class="math notranslate nohighlight">\(g(r)\)</span> is a continuous quantity, but
+in a MD simulation we discretize space. Therefore, we can calculate
+<span class="math notranslate nohighlight">\(g(r)\)</span> by populating a histogram of pairwise distances and normalizing
+appropriately. We divide the distance, <span class="math notranslate nohighlight">\(r\)</span>, into a set of bins of width
+<span class="math notranslate nohighlight">\(dr\)</span> that discretizes the distance coordinate. We can number the bins
+such that bin <span class="math notranslate nohighlight">\(i\)</span> refers to the set of distances between <span class="math notranslate nohighlight">\(dr \times i\)</span>
+and <span class="math notranslate nohighlight">\(dr \times (i+1)\)</span>. Each bin then refers to a volume of space given
+by <span class="math notranslate nohighlight">\(\frac{4\pi}{3}dr^3[(i+1)^3 - (i^3)]\)</span>.</p>
+<p>Recalling that our definition of <span class="math notranslate nohighlight">\(g(r)\)</span> is the average density of
+particles a given distance <span class="math notranslate nohighlight">\(r\)</span> apart divided by the overall density, we
+can write the following algorithm:</p>
+<ol class="arabic simple">
+<li><p>During a converged simulation, periodically iterate over all
+particles. For each particle, calculate the distance <span class="math notranslate nohighlight">\(r\)</span> to every
+other particle.</p></li>
+<li><p>For each distance, calculate the corresponding index of the bin in
+the histogram; that is, calculate <span class="math notranslate nohighlight">\(r/dr\)</span> and round to an integer (or
+round down, depending on how you define your bins). Increase the
+value of this bin by 1.</p></li>
+<li><p>Repeat steps 1 and 2 a number of times during a simulation (i.e.,
+every time you save the energy after convergence).</p></li>
+<li><p>Normalize the histogram at the end of the simulation. This requires
+dividing each bin by the number of samples (to time average), the
+number of particles in the system (since we iterate over all
+particles each timestep), and the volume of the bin (to get a
+density). Finally, divide all bins by the bulk density (<span class="math notranslate nohighlight">\(N/V\)</span>) to
+get <span class="math notranslate nohighlight">\(g(r)\)</span>.</p></li>
+</ol>
+<p>Symbolically, this procedure can be written as:</p>
+<div class="math notranslate nohighlight">
+\[g(r) =  \frac{1}{\rho} \frac{1}{N} \frac{1}{V(r)} \left \langle \sum_i^N \sum_{j\ne i}^N \delta (r-r_{ij}) \right \rangle\]</div>
+<p>The function <span class="math notranslate nohighlight">\(\delta(r-r_{ij})\)</span> is a delta function that returns 1 if
+the distance is within the small binwidth of <span class="math notranslate nohighlight">\(dr\)</span> around the desired
+distance <span class="math notranslate nohighlight">\(r\)</span>; this is captured by incrementing bins in our histogram.
+The ensemble-average of this sum is equal to averaging over the number
+of samples (i.e., time-averaging). The term <span class="math notranslate nohighlight">\(1/V(r)\)</span> normalizes each bin
+by its volume to get an average density per bin. The term <span class="math notranslate nohighlight">\(1/N\)</span>
+normalizes the sum by the number of particles, since we iterate over all
+particles each time we sample. Finally, <span class="math notranslate nohighlight">\(1/\rho\)</span> normalizes <span class="math notranslate nohighlight">\(g(r)\)</span> by
+the bulk density as desired. Calculating this for each value of <span class="math notranslate nohighlight">\(r\)</span>
+would yield a complete <span class="math notranslate nohighlight">\(g(r)\)</span> curve.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lecture_files"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Lecture12.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">MD Thermostats</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Lecture14.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">The Potential of Mean Force</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recommended-textbooks">Recommended textbooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topics-in-this-lecture">Topics in this lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#andersen-thermostat">Andersen thermostat</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importance-of-liquid-structure">Importance of liquid structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reduced-configurational-distribution">Reduced configurational distribution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-radial-distribution-function">The radial distribution function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#g-r-for-different-states-of-matter"><span class="math notranslate nohighlight">\(g(r)\)</span> for different states of matter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-g-r">Calculating <span class="math notranslate nohighlight">\(g(r)\)</span></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Reid van Lehn, Matt Gebbie, Rose Cersonsky
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
