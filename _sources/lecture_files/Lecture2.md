@@ -3,6 +3,7 @@
 ## Additional Readings for the Enthusiast
 
 {cite:ts}`mcquarrie_statistical_2000`, Chapter 1, Chapter 2.1
+
 {cite:ts}`chandler_introduction_1987`, Chapter 3.1 - 3.2
 
 ## Goals for today's lecture
