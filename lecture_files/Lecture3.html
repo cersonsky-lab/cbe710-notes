@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>The Canonical Ensemble &#8212; Notes for CBE710</title>
+    <title>Application of the microcanonical ensemble: two-state system &#8212; Notes for CBE710</title>
   
   
   
@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="— Problem Set 1 —" href="../problems/ps_1/problem_set_1.html" />
-    <link rel="prev" title="The Microcanonical Ensemble" href="Lecture2.html" />
+    <link rel="prev" title="Postulates of statistical mechanics" href="Lecture2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -156,8 +156,8 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Lecture1A.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Lecture1B.html">Review of thermodynamics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Lecture2.html">The Microcanonical Ensemble</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">The Canonical Ensemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture2.html">Postulates of statistical mechanics</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Application of the microcanonical ensemble: two-state system</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../problems/ps_1/problem_set_1.html">— Problem Set 1 —</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Lecture4.html">Canonical Ensemble Continued</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Lecture5.html">Generalized Ensembles</a></li>
@@ -324,7 +324,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>The Canonical Ensemble</h1>
+    <h1>Application of the microcanonical ensemble: two-state system</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -335,14 +335,14 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-readings-for-the-enthusiast">Additional Readings for the Enthusiast</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topics-in-this-lecture">Topics in this lecture</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application-of-the-microcanonical-ensemble-two-state-system">Application of the microcanonical ensemble: two-state system</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-for-today-s-lecture">Goals for today’s lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-statement">Problem Statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relevant-mathematics">Relevant Mathematics</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combinatorics">Combinatorics</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stirling-s-approximation">Stirling’s approximation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#back-to-the-example">Back to the example</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-the-canonical-ensemble">Introduction to the canonical ensemble</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#back-to-the-example">Back to the example</a></li>
 </ul>
             </nav>
         </div>
@@ -354,23 +354,22 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="the-canonical-ensemble">
-<h1>The Canonical Ensemble<a class="headerlink" href="#the-canonical-ensemble" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="application-of-the-microcanonical-ensemble-two-state-system">
+<h1>Application of the microcanonical ensemble: two-state system<a class="headerlink" href="#application-of-the-microcanonical-ensemble-two-state-system" title="Permalink to this headline">#</a></h1>
 <section id="additional-readings-for-the-enthusiast">
 <h2>Additional Readings for the Enthusiast<a class="headerlink" href="#additional-readings-for-the-enthusiast" title="Permalink to this headline">#</a></h2>
 <p><span id="id1">McQuarrie [<a class="reference internal" href="Lecture2.html#id5" title="Donald A. McQuarrie. Statistical mechanics. University Science Books, Sausalito, Calif, 2000. ISBN 978-1-891389-15-3. URL: https://vuquangnguyen2016.files.wordpress.com/2017/12/339279795-donald-a-mcquarrie-statistical-mechanics-bookzz-org.pdf.">2</a>]</span>, Chapter 1, Chapter 2.1</p>
 <p><span id="id2">Chandler [<a class="reference internal" href="Lecture2.html#id4" title="David Chandler. Introduction to Modern Statistical Mechanics. Oxford University Press, New York, 1st edition edition, September 1987. ISBN 978-0-19-504277-1. URL: http://pcossgroup.xmu.edu.cn/old/users/xlu/group/courses/apc/imsm_chandler.pdf.">1</a>]</span>, Chapter 3.1-3.4</p>
 </section>
-<section id="topics-in-this-lecture">
-<h2>Topics in this lecture<a class="headerlink" href="#topics-in-this-lecture" title="Permalink to this headline">#</a></h2>
+<section id="goals-for-today-s-lecture">
+<h2>Goals for today’s lecture<a class="headerlink" href="#goals-for-today-s-lecture" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>Example of microcanonical ensemble</p></li>
-<li><p>Stirling’s approximation</p></li>
-<li><p>Canonical partition function</p></li>
+<li><p>Derive a physical observable in the context of the microcanonical ensemble.</p></li>
+<li><p>Understand and apply Stirling’s approximation from last lecture.</p></li>
 </ul>
 </section>
-<section id="application-of-the-microcanonical-ensemble-two-state-system">
-<h2>Application of the microcanonical ensemble: two-state system<a class="headerlink" href="#application-of-the-microcanonical-ensemble-two-state-system" title="Permalink to this headline">#</a></h2>
+<section id="problem-statement">
+<h2>Problem Statement<a class="headerlink" href="#problem-statement" title="Permalink to this headline">#</a></h2>
 <p>In the last lecture, we introduced the concept of the microcanonical
 ensemble, which we defined as the set of all possible microstates
 associated with a macrostate in which the number of particles (<span class="math notranslate nohighlight">\(N\)</span>), the
@@ -386,9 +385,10 @@ states) of the microcanonical ensemble</p></li>
 entropy.</p></li>
 </ul>
 <p>We will now use an example to illustrate how the microcanonical ensemble
-can provide information about the thermodynamic properties of a system.
-Consider a polymer chain that adsorbs to an attractive surface. The
-chain is composed of <span class="math notranslate nohighlight">\(N\)</span> monomers that do not interact with each other.
+can provide information about the thermodynamic properties of a system.</p>
+<p>Consider a polymer chain that adsorbs to an attractive surface.</p>
+<p><img alt="image" src="../_images/fig_3_1-01.png" /></p>
+<p>The chain is composed of <span class="math notranslate nohighlight">\(N\)</span> monomers that do not interact with each other.
 The surface is attractive such that a single monomer adsorbs favorably
 with an energy <span class="math notranslate nohighlight">\(-\epsilon\)</span>. If we assume the energy of the free monomers
 is 0 and there are no monomer-monomer interactions, then the total
@@ -398,16 +398,15 @@ energy of the system for <span class="math notranslate nohighlight">\(n\)</span>
 <p>The question we will ask is - how does the energy of the system (or,
 equivalently, the number of adsorbed monomers) depend on the
 temperature?</p>
-<p><img alt="image" src="../_images/fig_2_4.png" />{width=”100%”}</p>
-<p>We know the following relationships:</p>
+<p>To start – what relationships do we know for our system?</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\left ( \frac{\partial E}{\partial S} \right )_V = T\)</span> from
-thermodynamics</p></li>
 <li><p><span class="math notranslate nohighlight">\(E = -n \epsilon\)</span> from the microscopic description of the system
 given above</p></li>
 <li><p><span class="math notranslate nohighlight">\(S = k_B \ln \Omega (E)\)</span> from the definition of the entropy of the
 microcanonical ensemble using the shorthand version of
 <span class="math notranslate nohighlight">\(\Omega(N,V,E)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(T = \left ( \frac{\partial E}{\partial S} \right )_V\)</span> from
+thermodynamics</p></li>
 </ul>
 <p>Given these relationships, we can use the equations of the
 microcanonical ensemble to relate the degeneracy to the entropy and then
@@ -434,11 +433,19 @@ select <span class="math notranslate nohighlight">\(n\)</span> monomers that ads
 of <span class="math notranslate nohighlight">\(N\)</span> - or in other words, the number of unique ways to split the <span class="math notranslate nohighlight">\(N\)</span>
 monomers into two groups (adsorbed and free). Computing this quantity
 will motivate a mathematical aside.</p>
+</section>
+<section id="relevant-mathematics">
+<h2>Relevant Mathematics<a class="headerlink" href="#relevant-mathematics" title="Permalink to this headline">#</a></h2>
 <section id="combinatorics">
 <h3>Combinatorics<a class="headerlink" href="#combinatorics" title="Permalink to this headline">#</a></h3>
-<p>Imagine that you have <span class="math notranslate nohighlight">\(N\)</span> objects. In general, objects can either be
-<strong>distinguishable</strong>, such as playing cards, or <strong>indistinguishable</strong>,
-such as identical marbles. A common question we will face is how many
+<p>Imagine that you have <span class="math notranslate nohighlight">\(N\)</span> objects. In general, objects can either be</p>
+<dl class="glossary simple">
+<dt id="term-distinguishable">distinguishable<a class="headerlink" href="#term-distinguishable" title="Permalink to this term">#</a></dt><dd><p>objects that can be told apart, such as playing cards, or</p>
+</dd>
+<dt id="term-indistinguishable">indistinguishable<a class="headerlink" href="#term-indistinguishable" title="Permalink to this term">#</a></dt><dd><p>objects that cannot be told apart, such as marbles</p>
+</dd>
+</dl>
+<p>A common question we will face is how many
 ways we can uniquely divide <span class="math notranslate nohighlight">\(N\)</span> distinguishable objects into groups. We
 can calculate this using playing cards as an example. First, we can
 count the number of unique ways to shuffle a deck of <span class="math notranslate nohighlight">\(N\)</span> distinguishable
@@ -450,13 +457,13 @@ removed 1 card, there are now <span class="math notranslate nohighlight">\(N-1\)
 leads to:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
-\text{\# of arrangements} &amp;= N(N-1)(N-2) \dots (2)(1) \nonumber \\
+\text{# of arrangements} &amp;= N(N-1)(N-2) \dots (2)(1) \nonumber \\
 &amp;= N!
 \end{aligned}\end{split}\]</div>
 <p>If the playing cards were instead indistinguishable, then there would
-instead be only unique 1 arrangement of playing cards since switching
-the order of any two cards would not result in an observable change to
-the order of the deck. Now, we consider the question how many ways there
+instead be only unique 1 arrangement of playing cards (since switching
+the order of any two cards would make the order look exactly the same).
+Now, we consider the question how many ways there
 are to divide <span class="math notranslate nohighlight">\(N\)</span> distinguishable playing cards into two groups, one
 containing <span class="math notranslate nohighlight">\(n_1\)</span> cards and the second containing <span class="math notranslate nohighlight">\(N-n_1\)</span> cards.
 Following the same reasoning as above, for the first group we have <span class="math notranslate nohighlight">\(N\)</span>
@@ -464,29 +471,33 @@ options for the first card, <span class="math notranslate nohighlight">\(N-1\)</
 the last selection we have <span class="math notranslate nohighlight">\(N-n_1+1\)</span> choices. The total number of
 arrangements for group 1 is thus:</p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}\begin{split}\begin{aligned}
+\[\begin{split}\begin{aligned}
 N(N-1)(N-2)\dots(N-n_1+1) &amp;= \frac{N(N-1)(N-2)\dots(2)(1)}{(N-n_1)(N-n_1-1)\dots(2)(1)} \nonumber \\ 
 &amp;= \frac{N!}{(N-n_1)!}
-\end{aligned}$$  The second group has $N-n_1!$ choices for placing the
-remaining $N-n_1$ cards, so that in total there are
-$\left [ N!/(N-n_1)!\right ] \times (N-n_1)! = N!$ arrangements of the
-two groups. However, the question asked for how many ways there are to
-**divide** them into two groups; the arrangement of cards within each
-group does not matter, as placing the same $n_1$ cards in the group in
-any order is still the same division. There are $n_1!$ ways to arrange
-the $n_1$ cards in the first group and $(N-n_1)!$ ways to arrange the
+\end{aligned}\end{split}\]</div>
+<p>The second group has <span class="math notranslate nohighlight">\(N-n_1!\)</span> choices for placing the
+remaining <span class="math notranslate nohighlight">\(N-n_1\)</span> cards, so that in total there are
+<span class="math notranslate nohighlight">\(\left [ N!/(N-n_1)!\right ] \times (N-n_1)! = N!\)</span> arrangements of the
+two groups.</p>
+<p>However, the question asked for how many ways there are to
+<strong>divide</strong> them into two groups; the arrangement of cards within each
+group does not matter, as placing the same <span class="math notranslate nohighlight">\(n_1\)</span> cards in the group in
+any order is still the same division. There are <span class="math notranslate nohighlight">\(n_1!\)</span> ways to arrange
+the <span class="math notranslate nohighlight">\(n_1\)</span> cards in the first group and <span class="math notranslate nohighlight">\((N-n_1)!\)</span> ways to arrange the
 cards in the second group, so in total we have overcounted by
-$n_1!(N-n_1)!$ since every division into a group of $n_1$ and $N-N_1$
-was counted an extra $n_1!(N-n_1)!$ times associated with different
+<span class="math notranslate nohighlight">\(n_1!(N-n_1)!\)</span> since every division into a group of <span class="math notranslate nohighlight">\(n_1\)</span> and <span class="math notranslate nohighlight">\(N-N_1\)</span>
+was counted an extra <span class="math notranslate nohighlight">\(n_1!(N-n_1)!\)</span> times associated with different
 orders of the cards. Thus, the total number of unique ways of dividing
-the cards into two groups if the order within each group doesn't matter
-is:\end{split}\\$$\text{\# of divisions} = \frac{N!}{n_1!(N-n_1)!}\end{aligned}\end{align} \]</div>
+the cards into two groups if the order within each group doesn’t matter
+is:</p>
+<div class="math notranslate nohighlight">
+\[\text{# of divisions} = \frac{N!}{n_1!(N-n_1)!}\]</div>
 <p>This expression appears in the binomial expansion and is referred to as
-the binomial coefficient, and can be expanded to any number of groups
+the <a class="reference external" href="https://en.wikipedia.org/wiki/Binomial_coefficient">binomial coefficient</a>, and can be expanded to any number of groups
 following similar reasoning.</p>
 </section>
 <section id="stirling-s-approximation">
-<h3>Stirling’s approximation<a class="headerlink" href="#stirling-s-approximation" title="Permalink to this headline">#</a></h3>
+<h3><a class="reference external" href="https://en.wikipedia.org/wiki/Stirling%27s_approximation">Stirling’s approximation</a><a class="headerlink" href="#stirling-s-approximation" title="Permalink to this headline">#</a></h3>
 <p>We have just seen an example of a calculation that uses factorials,
 which can become difficult to treat algebraically. Fortunately, there is
 an approximation that simplifies the use of factorials. Because <span class="math notranslate nohighlight">\(N!\)</span> is
@@ -494,10 +505,11 @@ a product, it is easier to deal with <span class="math notranslate nohighlight">
 write:</p>
 <div class="math notranslate nohighlight">
 \[\ln N! = \sum_{m=1}^N \ln m\]</div>
+<p><img alt="image" src="../_images/fig_3_2-01.gif" /></p>
 <p>The value of this sum is equal to the total area of a series of
 rectangles, each with height <span class="math notranslate nohighlight">\(\ln m\)</span> and width <span class="math notranslate nohighlight">\(dm = 1\)</span>. That is, we can
-equate the sum to the integral of <span class="math notranslate nohighlight">\(\ln m\)</span> using rectangular integration.
-As <span class="math notranslate nohighlight">\(N\)</span> increases, the difference between successive terms in the sum
+equate the sum to the integral of <span class="math notranslate nohighlight">\(\ln m\)</span> using rectangular integration.</p>
+<p>As <span class="math notranslate nohighlight">\(N\)</span> increases, the difference between successive terms in the sum
 will become very small - if <span class="math notranslate nohighlight">\(N \gg 1\)</span>, the difference in the terms
 becomes:</p>
 <div class="math notranslate nohighlight">
@@ -510,82 +522,112 @@ allowing the width of each rectangle (<span class="math notranslate nohighlight"
 infinitesimal value. The error between the approximation using an
 integral and the exact sum over integer values of <span class="math notranslate nohighlight">\(m\)</span> is very small once
 <span class="math notranslate nohighlight">\(N\)</span> is large. The resulting approximation allows us to write:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-\ln N! &amp;= \sum_{m=1}^N \ln m \nonumber \\
+<div class="math notranslate nohighlight" id="equation-stirling">
+<span class="eqno">(14)<a class="headerlink" href="#equation-stirling" title="Permalink to this equation">#</a></span>\[\begin{split}\ln N! &amp;= \sum_{m=1}^N \ln m \nonumber \\
 &amp;\approx \int_1^N \ln m dm  \quad \text{if $N \gg 1$} \nonumber\\
-&amp;= \boxed{N \ln N - N} \label{stirling}
-\end{aligned}\end{split}\]</div>
-<p>Equation <span class="xref myst">[stirling]</span>{reference-type=”ref”
-reference=”stirling”} is <strong>Stirling’s approximation</strong>, and differs by
+&amp;= \boxed{N \ln N - N} \end{split}\]</div>
+<p>Equation <a class="reference internal" href="#equation-stirling">(14)</a> is <strong>Stirling’s approximation</strong>, and differs by
 less than 1% from <span class="math notranslate nohighlight">\(\ln N!\)</span> if <span class="math notranslate nohighlight">\(N &gt; 50\)</span>. We will make frequent use of
 Stirling’s approximation, and moreover we will often approximate
 summations as integrals, throughout the course. We will return to
 solving the example using Stirling’s approximation and combinatorics in
 the next lecture.</p>
-<p><img alt="image" src="../_images/fig_2_5.png" />{width=”100%”}</p>
+</section>
 </section>
 <section id="back-to-the-example">
-<h3>Back to the example<a class="headerlink" href="#back-to-the-example" title="Permalink to this headline">#</a></h3>
+<h2>Back to the example<a class="headerlink" href="#back-to-the-example" title="Permalink to this headline">#</a></h2>
+<p>Reminder, our overarching question is: how does the energy of the system
+(or, equivalently, the number of adsorbed monomers) depend on the temperature?</p>
 <p>Having defined methods for splitting objects into two groups, we can now
 count how many ways there are to separate <span class="math notranslate nohighlight">\(N\)</span> monomers into a group of
 <span class="math notranslate nohighlight">\(n\)</span> that are adsorbed to a surface and <span class="math notranslate nohighlight">\(N-n\)</span> that are not which defines
 the degeneracy of a microcanonical ensemble with
-<span class="math notranslate nohighlight">\(\langle E \rangle = n\epsilon\)</span>. We thus write an expression for
+<span class="math notranslate nohighlight">\(\langle E \rangle = n\epsilon\)</span>.</p>
+<p>We thus write an expression for
 <span class="math notranslate nohighlight">\(\Omega(E)\)</span> and the entropy based on the combinatorics expression above:</p>
+<div class="admonition-s-k-b-ln-left-frac-n-n-n-n-right admonition">
+<p class="admonition-title"><span class="math notranslate nohighlight">\(S =  k_B \ln \left ( \frac{N!}{n!(N-n)!} \right )\)</span></p>
+<details>
+  <summary><b></b>[Show derivation]</summary>
 <div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-\Omega(E) &amp;= \frac{N!}{n!(N-n)!} \\
-S &amp;= k_B \ln \Omega(E) \nonumber\\
-&amp;= k_B \ln \left ( \frac{N!}{n!(N-n)!} \right )
-\end{aligned}\end{split}\]</div>
-<p>To simplify the expression for the entropy, we can invoke Stirling’s
-approximation:</p>
+\[\begin{split}
+  \Omega(E) &amp;= \frac{N!}{n!(N-n)!}\\
+  S         &amp;= k_B \ln \Omega(E) \\
+            &amp;= k_B \ln \frac{N!}{n!(N-n)!} \\
+  \end{split}\]</div>
+</details>
+</div>
+<div class="admonition-s-k-b-n-left-alpha-ln-alpha-1-alpha-ln-1-alpha-right-where-alpha-equiv-n-n admonition">
+<p class="admonition-title"><span class="math notranslate nohighlight">\(S =  -k_B N \left[\alpha \ln \alpha  + (1-\alpha)\ln(1-\alpha)\right]\)</span>, where <span class="math notranslate nohighlight">\(\alpha \equiv n/N\)</span></p>
+<details>
+  <summary><b></b>[Show derivation]</summary>
+<p>First, some algebra,</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-S &amp;= k_B \ln \left ( \frac{N!}{n_1!(N-n)!} \right ) \\
-&amp;= k_B \left [\ln N! - \ln n! - \ln(N-n)! \right ] \\
-&amp;\approx k_B \left ( [ N \ln N - N] - [n \ln n - n] - [(N-n) \ln (N-n) - (N-n)] \right ) \\
-&amp;= k_B \left ( N \ln N - n\ln n - (N-n)\ln (N-n) \right ) \label{entropysimple}
-\end{aligned}\end{split}\]</div>
-<p>Now we will simplify this expression with some algebra, defining
-<span class="math notranslate nohighlight">\(n/N \equiv \alpha\)</span> for convenience:</p>
+\[
+  S =  k_B \left[\ln(N!) - \ln(n!) - \ln[(N-n)!]\right]
+  \]</div>
+<p>Using Stirling’s approximation,</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-S &amp;= k_B \left ( N \ln N - n \ln n - (N-n)(\ln N + \ln (1-\alpha))\right ) \\
-&amp;= k_B \left ( N \ln N - n \ln n - N \ln N - N \ln (1 - \alpha) + n \ln N + n \ln (1-\alpha) \right ) \\
-&amp;= k_B \left ( (n - N) \ln (1 - \alpha) -n \ln \alpha  \right ) \\
-&amp;=- k_B N \left [ (1 - \alpha) \ln (1- \alpha) + \alpha \ln \alpha \right ]
-\end{aligned}\end{split}\]</div>
-<p>Recognizing that entropy and energy that we define here are equvalent to
-their macroscopic definitions (according to Postulate 1 and 2) we can
-use <span class="math notranslate nohighlight">\(\left ( \frac{\partial E}{\partial S} \right )_V = T\)</span> and the chain
-rule to derive a temperature dependence in terms of the total system
-energy, <span class="math notranslate nohighlight">\(E = \langle E \rangle = -n \epsilon\)</span>.</p>
+\[\begin{split}
+  S &amp;=  k_B \left[N\ln N - N - n\ln n + n -(N-n)\ln(N-n) + (N-n)\right]\\
+    &amp;=  k_B \left[N\ln N  - n\ln n -(N-n)\ln(N-n)\right]\\
+  \end{split}\]</div>
+<p>Replacing all <span class="math notranslate nohighlight">\(n\)</span> with <span class="math notranslate nohighlight">\(N \alpha\)</span></p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-\left ( \frac{\partial E}{\partial S} \right )_V &amp;= T \\
--\left ( \frac{\partial S}{\partial (n \epsilon)} \right )_V &amp;= \frac{1}{T} \\
--\frac{1}{\epsilon} \left (\frac{\partial S}{\partial \alpha} \right )_V \left ( \frac{\partial \alpha}{\partial n} \right )_V &amp;= \frac{1}{T} \\
--\frac{1}{N\epsilon} \left (\frac{\partial S}{\partial \alpha} \right )_V &amp;= \frac{1}{T}  \\
--\frac{k_B }{\epsilon} \left (\ln(1-\alpha) - \ln \alpha \right ) &amp;= \frac{1}{T}  \\
-\ln \frac{1-\alpha}{\alpha} &amp;= -\frac{\epsilon}{k_BT}  \\
-\frac{1}{\alpha} = 1 +  e^{-\epsilon / k_BT} 
-\end{aligned}\end{split}\]</div>
-<p>Finally, we simplify by recognizing that <span class="math notranslate nohighlight">\(\alpha = n/N\)</span>:</p>
+\[\begin{split}
+    &amp;=  k_B \left[N\ln N  - N\alpha \ln (N\alpha) -(N-N\alpha)\ln(N-N\alpha)\right]\\
+    &amp;=  k_B N \left[\ln N  - \alpha \ln (N\alpha) -(1-\alpha)\ln(N(1-\alpha))\right]\\
+    &amp;=  - k_B N \left[\alpha \ln \alpha  + (1-\alpha)\ln(1-\alpha)\right]\\
+  \end{split}\]</div>
+</details>
+</div>
+<p>With this equation relating the entropy and our number of adsorbed monomers,
+and our earlier equation relating the energy to the number of adsorbed monomers,
+we can determine the temperature dependence of the latter by using</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-\frac{N}{n} &amp;= 1 +  e^{-\epsilon / k_BT} \\
-&amp;\boxed{n = \frac{N}{ 1 +  e^{-\epsilon / k_BT}}} \label{twostatemicrofinal}
-\end{aligned}\end{split}\]</div>
-<p>Equation
-<span class="xref myst">[twostatemicrofinal]</span>{reference-type=”ref”
-reference=”twostatemicrofinal”} relates the number of adsorbed monomers
+\[
+\left ( \frac{\partial E}{\partial S} \right )_V = T
+\]</div>
+<p>Given that the relationship <span class="math notranslate nohighlight">\(\frac{\partial S}{\partial E}\)</span> is more
+well-defined, we flip our equation:</p>
+<div class="math notranslate nohighlight">
+\[
+\left ( -\frac{\partial S}{\partial E} \right )_V = \frac{1}{T}
+\]</div>
+<div class="admonition-n-frac-n-1-e-epsilon-k-bt admonition">
+<p class="admonition-title"><span class="math notranslate nohighlight">\(n = \frac{N}{ 1 +  e^{-\epsilon / k_BT}}\)</span></p>
+<details>
+  <summary><b></b>[Show derivation]</summary>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \left ( -\frac{\partial S}{\partial (n\epsilon)} \right )_V &amp;= \frac{1}{T} \\
+    -\frac{1}{\epsilon}\left (\frac{\partial S}{\partial \alpha}\right)_V\left (\frac{\partial \alpha}{\partial n} \right )_V &amp;= \frac{1}{T} \\
+   \end{split}\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+   \left(\frac{\partial S}{\partial \alpha}\right)_V = k_B N \left[\ln(1-\alpha) - \ln\alpha\right]\\
+   \left(\frac{\partial \alpha}{\partial n}\right)_V = \frac{1}{N}
+   \end{split}\]</div>
+<p>such that</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \frac{-k_B}{\epsilon}\left[ (\ln(1-\alpha) - \ln\alpha) \right] &amp;= \frac{1}{T} \\
+    \ln(\frac{1}{\alpha}-1) &amp;= \frac{-\epsilon}{k_B T} \\
+    \frac{1}{\alpha} &amp;= 1 + e^{-\epsilon / k_BT} \\
+    \frac{N}{n} &amp;= 1 + e^{-\epsilon / k_BT} \\
+   \end{split}\]</div>
+<div class="math notranslate nohighlight" id="equation-twostatemicrofinal">
+<span class="eqno">(15)<a class="headerlink" href="#equation-twostatemicrofinal" title="Permalink to this equation">#</a></span>\[ n = \frac{N}{1 + e^{-\epsilon / k_BT}} \]</div>
+</div>
+</details>
+<p>Equation <a class="reference internal" href="#equation-twostatemicrofinal">(15)</a> relates the number of adsorbed monomers
 to microscopic features (i.e. the adsorption energy per monomer and
-total number of monomers) as a function of the system temperature. As
-<span class="math notranslate nohighlight">\(T\)</span> goes to 0, we expect the system to be in an energy-minimizing
+total number of monomers) as a function of the system temperature.</p>
+<p>As <span class="math notranslate nohighlight">\(T\)</span> goes to 0, we expect the system to be in an energy-minimizing
 configuration with all monomers bound - indeed, as <span class="math notranslate nohighlight">\(T\rightarrow 0\)</span>,
-<span class="math notranslate nohighlight">\(n\rightarrow N\)</span>, indicating that all monomers adsorb. In the opposite
+<span class="math notranslate nohighlight">\(n\rightarrow N\)</span>, indicating that all monomers adsorb.</p>
+<p>In the opposite
 extreme, as <span class="math notranslate nohighlight">\(T \rightarrow \infty\)</span>, <span class="math notranslate nohighlight">\(n\rightarrow N/2\)</span>, indicating that
 at infinite temperature exactly half of the monomers bind to the
 surface. This makes conceptual sense - if we have infinite thermal
@@ -593,18 +635,23 @@ energy, the energy for adsorption is negligible so adsorbing or not
 adsorbing is equally likely for each monomer (we will revisit this
 result in future lectures).</p>
 <p>This example illustrates the basic principles of the statistical
-mechanics approach: we begin by identifying a set of constant
-macroscopic thermodynamic variables for the system (<span class="math notranslate nohighlight">\(NVE\)</span>), choose an
-appropriate statistical ensemble (microcanonical) corresponding to these
-variables, calculate the value for a thermodynamic variable (entropy)
-from ensemble properties based on our microscopic picture of the system,
-then use thermodynamic relations to get additional information about the
-system (temperature). Note that our final result seems to contradict our
-assumption - we explicitly derive a relationship between the energy and
-the temperature, showing that the energy is not, in fact, constant.
-Recall, though, that the problem statement itself (i.e. the microscopic
+mechanics approach:</p>
+<ul class="simple">
+<li><p>we begin by identifying a set of constant
+macroscopic thermodynamic variables for the system (<span class="math notranslate nohighlight">\(NVE\)</span>),</p></li>
+<li><p>choose an appropriate statistical ensemble (microcanonical) corresponding to these
+variables,</p></li>
+<li><p>calculate the value for a thermodynamic variable (entropy) from ensemble properties based on our microscopic picture of the system,</p></li>
+<li><p>then use thermodynamic relations to get additional information about the
+system (temperature).</p></li>
+</ul>
+<div class="admonition-why-does-our-final-result-seem-to-contradict-our-assumption-that-energy-is-constant admonition">
+<p class="admonition-title">Why does our final result seem to contradict our assumption that energy is constant?</p>
+<details>
+  <summary><b></b>[Click for answer]</summary>
+Recall that the problem statement itself (i.e. the microscopic
 description of the system) does not specific a constant energy - we
-<strong>choose</strong> to describe our system in such a way that the energy is held
+**choose** to describe our system in such a way that the energy is held
 constant, then apply the equations of the microcanonical ensemble
 (consistent with our choice) to derive the temperature dependence. We
 also could have derived the same result by assuming that the system is
@@ -612,109 +659,9 @@ held at constant temperature and that the energy is allowed to vary, and
 achieve the same result (we will do this next lecture). We will find
 several variations of this basic approach, and will illustrate that the
 correct choice of thermodynamic variables, even for the same system, can
-dramatically simplify problem solutions.</p>
-</section>
-</section>
-<section id="introduction-to-the-canonical-ensemble">
-<h2>Introduction to the canonical ensemble<a class="headerlink" href="#introduction-to-the-canonical-ensemble" title="Permalink to this headline">#</a></h2>
-<p>In principle, all calculations in statistical mechanics can be performed
-using the microcanonical ensemble by deriving relationships based on a
-fixed set of constant energy states. In practice, the microcanonical
-ensemble is often not convenient because in many cases the energy of the
-system is not fixed. For example, most laboratory experiments take place
-in environments in which the energy of the system is able to exchange
-with the environment; that is, the walls of the system are
-<strong>diathermal</strong>. <span class="math notranslate nohighlight">\(E\)</span> is therefore no longer a fixed quantity and instead
-varies between each microstate. At equilibrium, however, we know from
-thermodynamics that the temperature of the system will be equal to the
-temperature of the environment. It would therefore be ideal to have
-equations describing systems in which the temperature is fixed in each
-microstate due to this condition of equilibrium while the energy is
-allowed to vary. The ensemble of microstates for a system at constant
-temperature (and number and volume) is the canonical ensemble or <span class="math notranslate nohighlight">\(NVT\)</span>
-ensemble. As we will see, choosing the appropriate ensemble to describe
-a system of interest is essential in simplifying problem solutions.
-However, if we allow the energy to vary between each microstate then the
-probability that a system obtains a given state, <span class="math notranslate nohighlight">\(p_i\)</span>, is no longer a
-constant value - that is, Postulate 2 no longer applies. We thus will
-derive an expression for the probability of microstate <span class="math notranslate nohighlight">\(i\)</span> in order to
-calculate ensemble-average quantities for the canonical ensemble.</p>
-<p>Let us consider a system of interest that is contact with surroundings
-that we will refer to as the <strong>bath</strong>. The bath is significantly larger
-than the system of interest, so that the energy and number of particles
-in the bath are also much larger than the energy and number of particles
-in the system. Thermodynamic parameters associated with the system will
-be denoted with the subscript <span class="math notranslate nohighlight">\(S\)</span>, parameters associated with the bath
-will be denoted with the subscript <span class="math notranslate nohighlight">\(B\)</span>, and parameters associated with
-the total combination of system and bath will be denoted with the
-subscript <span class="math notranslate nohighlight">\(T\)</span>. We assume that the walls of the system prevent the
-exchange of particles and volume so that <span class="math notranslate nohighlight">\(N_S\)</span> and <span class="math notranslate nohighlight">\(V_S\)</span> are fixed;
-however, the energy, <span class="math notranslate nohighlight">\(E_S\)</span>, can exchange with the surrounding bath. At
-thermal equilibrium, the temperature of the bath and system are
-equivalent (<span class="math notranslate nohighlight">\(T_S = T_B \equiv T_T\)</span>). A physical realization of such a
-system would be a sealed box with conducting walls that allows heat to
-exchange with the outside environment. Finally, we assume that the
-<em>total</em> energy, <span class="math notranslate nohighlight">\(E_T\)</span>, of the bath plus the system is a constant (i.e.,
-exchanges of energy between the bath and system obey conservation of
-energy):</p>
-<div class="math notranslate nohighlight">
-\[E_T = E_S + E_B = \text{constant}\]</div>
-<p>The total combination of system and bath is isolated; this assumption is
-generally true of the universe, for example. Microstates of the total
-isolated system belong to the microcanonical ensemble, but the energy of
-each of these microstates is <strong>partitioned</strong> between the system of
-interest and the bath. The canonical ensemble then refers to the
-ensemble of microstates describing the system of interest, in which the
-energy may vary between microstates in the ensemble.</p>
-<p><img alt="image" src="../_images/fig_3_2.png" />{width=”100%”}</p>
-<p>The system is characterized by <span class="math notranslate nohighlight">\(N_S\)</span>, <span class="math notranslate nohighlight">\(V_S\)</span>, and <span class="math notranslate nohighlight">\(E_S\)</span>, and connected to
-a bath with <span class="math notranslate nohighlight">\(N_B\)</span>, <span class="math notranslate nohighlight">\(V_B\)</span>, and <span class="math notranslate nohighlight">\(E_B\)</span>. We will now determine the
-probability <span class="math notranslate nohighlight">\(p_j\)</span> of observing a single microstate of the system, <span class="math notranslate nohighlight">\(j\)</span>,
-which has energy <span class="math notranslate nohighlight">\(E_j\)</span> (noting that there can be many possible
-microstates with the same energy - in fact, there is a microcanonical
-ensemble of microstates with the same energy! We use the subscript <span class="math notranslate nohighlight">\(j\)</span>
-to denote a single specific microstate - that is, a single arrangement
-of particles with a specific energy <span class="math notranslate nohighlight">\(E_j\)</span> out of the many possible
-microstates that would have the same energy). Since the energy of the
-system is fixed and equal to <span class="math notranslate nohighlight">\(E_j\)</span>, the energy of the bath is also fixed
-and equal to <span class="math notranslate nohighlight">\(E_B=E_T-E_j\)</span>. Imagine taking a snapshot of the <span class="math notranslate nohighlight">\(N_S\)</span>
-particles in microstate <span class="math notranslate nohighlight">\(j\)</span> and counting the subset of all possible
-microstates of the total isolated system for which the system has
-exactly the particle positions/energies specified for microstate <span class="math notranslate nohighlight">\(j\)</span>.
-Alternatively, you could imagine fixing the positions/energies of the
-<span class="math notranslate nohighlight">\(N_S\)</span> particles into microstate <span class="math notranslate nohighlight">\(j\)</span> and then counting all possible
-combinations of the positions/energies of the <span class="math notranslate nohighlight">\(N_B\)</span> remaining particles.
-Either approach would yield the number of microstates of the <strong>total
-combined system</strong> in which the system of interest is in the particular
-microstate <span class="math notranslate nohighlight">\(j\)</span>. This value is equal to the number of microstates of the
-<strong>bath</strong> that are possible for the given microstate of the <strong>system</strong>.
-Since the energy of the bath is itself fixed, this number of states is
-equal to the degeneracy of a bath microcanonical ensemble with energy
-<span class="math notranslate nohighlight">\(E_T-E_j\)</span>, or <span class="math notranslate nohighlight">\(\Omega(N_B,V_B,E_T-E_j)\)</span>. We could write a similar
-degeneracy for each possible microstate of the system. Since the total
-isolated system is a microcanonical ensemble in which all microstates
-are equally probable, the probability of observing a single microstate
-of the system <span class="math notranslate nohighlight">\(j\)</span> is equal to the number of microstates of the total
-isolated system in which the system of interest is in microstate <span class="math notranslate nohighlight">\(j\)</span>
-divided by the total number of microstates of the combined isolated
-system.</p>
-<p><img alt="image" src="../_images/fig_3_3.png" />{width=”100%”}</p>
-<p>From the logic above, we can write the normalized probability of finding
-microstate <span class="math notranslate nohighlight">\(j\)</span> of the system in terms of the degeneracy of the bath as:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-p_j &amp;= \frac{\Omega(N_B, V_B, E_T-E_j)}{\sum_j^{\textrm{system microstates}} \Omega(N_B, V_B, E_T-E_j)} \\
-&amp;= \frac{\Omega(N_B, V_B, E_T-E_j)}{C_1}
-\end{aligned}\end{split}\]</div>
-<p>That is, the probability of finding a particular microstate in the
-<strong>canonical ensemble</strong> (of the system) is related to the degeneracy of a
-bath described by a <strong>microcanonical ensemble</strong> with energy <span class="math notranslate nohighlight">\(E_T-E_j\)</span>.
-We use the constant <span class="math notranslate nohighlight">\(C_1\)</span> to refer to the normalization factor in the
-denominator (this quantity will drop out later on in the derivation). We
-will proceed from here in the next lecture by relating the degeneracy of
-the bath microcanonical ensemble to the entropy (following our previous
-approach) and from there obtaining an expression for <span class="math notranslate nohighlight">\(p_j\)</span> that does not
-depend on any properties of the bath.</p>
+dramatically simplify problem solutions.
+</details>
+</div>
 </section>
 </section>
 
@@ -755,7 +702,7 @@ depend on any properties of the bath.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">The Microcanonical Ensemble</p>
+        <p class="prev-next-title">Postulates of statistical mechanics</p>
       </div>
     </a>
     <a class="right-next"
@@ -786,14 +733,14 @@ depend on any properties of the bath.</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-readings-for-the-enthusiast">Additional Readings for the Enthusiast</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topics-in-this-lecture">Topics in this lecture</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application-of-the-microcanonical-ensemble-two-state-system">Application of the microcanonical ensemble: two-state system</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-for-today-s-lecture">Goals for today’s lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-statement">Problem Statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relevant-mathematics">Relevant Mathematics</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combinatorics">Combinatorics</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stirling-s-approximation">Stirling’s approximation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#back-to-the-example">Back to the example</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-the-canonical-ensemble">Introduction to the canonical ensemble</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#back-to-the-example">Back to the example</a></li>
 </ul>
   </nav></div>
 

@@ -156,7 +156,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Lecture1A.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Lecture1B.html">Review of thermodynamics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Lecture2.html">The Microcanonical Ensemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture2.html">Postulates of statistical mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Lecture3.html">The Canonical Ensemble</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../problems/ps_1/problem_set_1.html">— Problem Set 1 —</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Canonical Ensemble Continued</a></li>
@@ -337,6 +337,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-readings-for-the-enthusiast">Additional Readings for the Enthusiast</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topics-in-this-lecture">Topics in this lecture</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements">Announcements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-the-canonical-ensemble">Introduction to the canonical ensemble</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivation-of-canonical-partition-function">Derivation of canonical partition function</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-the-canonical-ensemble-to-thermodynamics">Connecting the canonical ensemble to thermodynamics</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#revisiting-the-two-state-system">Revisiting the two-state system</a></li>
@@ -374,6 +375,107 @@ document.write(`
 <li><p>Problem Set 1 due Thursday</p></li>
 <li><p>Fill out polls for rescheduled lectures</p></li>
 </ul>
+</section>
+<section id="introduction-to-the-canonical-ensemble">
+<h2>Introduction to the canonical ensemble<a class="headerlink" href="#introduction-to-the-canonical-ensemble" title="Permalink to this headline">#</a></h2>
+<p>In principle, all calculations in statistical mechanics can be performed
+using the microcanonical ensemble by deriving relationships based on a
+fixed set of constant energy states. In practice, the microcanonical
+ensemble is often not convenient because in many cases the energy of the
+system is not fixed. For example, most laboratory experiments take place
+in environments in which the energy of the system is able to exchange
+with the environment; that is, the walls of the system are
+<strong>diathermal</strong>. <span class="math notranslate nohighlight">\(E\)</span> is therefore no longer a fixed quantity and instead
+varies between each microstate. At equilibrium, however, we know from
+thermodynamics that the temperature of the system will be equal to the
+temperature of the environment. It would therefore be ideal to have
+equations describing systems in which the temperature is fixed in each
+microstate due to this condition of equilibrium while the energy is
+allowed to vary. The ensemble of microstates for a system at constant
+temperature (and number and volume) is the canonical ensemble or <span class="math notranslate nohighlight">\(NVT\)</span>
+ensemble. As we will see, choosing the appropriate ensemble to describe
+a system of interest is essential in simplifying problem solutions.
+However, if we allow the energy to vary between each microstate then the
+probability that a system obtains a given state, <span class="math notranslate nohighlight">\(p_i\)</span>, is no longer a
+constant value - that is, Postulate 2 no longer applies. We thus will
+derive an expression for the probability of microstate <span class="math notranslate nohighlight">\(i\)</span> in order to
+calculate ensemble-average quantities for the canonical ensemble.</p>
+<p>Let us consider a system of interest that is contact with surroundings
+that we will refer to as the <strong>bath</strong>. The bath is significantly larger
+than the system of interest, so that the energy and number of particles
+in the bath are also much larger than the energy and number of particles
+in the system. Thermodynamic parameters associated with the system will
+be denoted with the subscript <span class="math notranslate nohighlight">\(S\)</span>, parameters associated with the bath
+will be denoted with the subscript <span class="math notranslate nohighlight">\(B\)</span>, and parameters associated with
+the total combination of system and bath will be denoted with the
+subscript <span class="math notranslate nohighlight">\(T\)</span>. We assume that the walls of the system prevent the
+exchange of particles and volume so that <span class="math notranslate nohighlight">\(N_S\)</span> and <span class="math notranslate nohighlight">\(V_S\)</span> are fixed;
+however, the energy, <span class="math notranslate nohighlight">\(E_S\)</span>, can exchange with the surrounding bath. At
+thermal equilibrium, the temperature of the bath and system are
+equivalent (<span class="math notranslate nohighlight">\(T_S = T_B \equiv T_T\)</span>). A physical realization of such a
+system would be a sealed box with conducting walls that allows heat to
+exchange with the outside environment. Finally, we assume that the
+<em>total</em> energy, <span class="math notranslate nohighlight">\(E_T\)</span>, of the bath plus the system is a constant (i.e.,
+exchanges of energy between the bath and system obey conservation of
+energy):</p>
+<div class="math notranslate nohighlight">
+\[E_T = E_S + E_B = \text{constant}\]</div>
+<p>The total combination of system and bath is isolated; this assumption is
+generally true of the universe, for example. Microstates of the total
+isolated system belong to the microcanonical ensemble, but the energy of
+each of these microstates is <strong>partitioned</strong> between the system of
+interest and the bath. The canonical ensemble then refers to the
+ensemble of microstates describing the system of interest, in which the
+energy may vary between microstates in the ensemble.</p>
+<p><img alt="image" src="../_images/fig_3_2.png" />{width=”100%”}</p>
+<p>The system is characterized by <span class="math notranslate nohighlight">\(N_S\)</span>, <span class="math notranslate nohighlight">\(V_S\)</span>, and <span class="math notranslate nohighlight">\(E_S\)</span>, and connected to
+a bath with <span class="math notranslate nohighlight">\(N_B\)</span>, <span class="math notranslate nohighlight">\(V_B\)</span>, and <span class="math notranslate nohighlight">\(E_B\)</span>. We will now determine the
+probability <span class="math notranslate nohighlight">\(p_j\)</span> of observing a single microstate of the system, <span class="math notranslate nohighlight">\(j\)</span>,
+which has energy <span class="math notranslate nohighlight">\(E_j\)</span> (noting that there can be many possible
+microstates with the same energy - in fact, there is a microcanonical
+ensemble of microstates with the same energy! We use the subscript <span class="math notranslate nohighlight">\(j\)</span>
+to denote a single specific microstate - that is, a single arrangement
+of particles with a specific energy <span class="math notranslate nohighlight">\(E_j\)</span> out of the many possible
+microstates that would have the same energy). Since the energy of the
+system is fixed and equal to <span class="math notranslate nohighlight">\(E_j\)</span>, the energy of the bath is also fixed
+and equal to <span class="math notranslate nohighlight">\(E_B=E_T-E_j\)</span>. Imagine taking a snapshot of the <span class="math notranslate nohighlight">\(N_S\)</span>
+particles in microstate <span class="math notranslate nohighlight">\(j\)</span> and counting the subset of all possible
+microstates of the total isolated system for which the system has
+exactly the particle positions/energies specified for microstate <span class="math notranslate nohighlight">\(j\)</span>.
+Alternatively, you could imagine fixing the positions/energies of the
+<span class="math notranslate nohighlight">\(N_S\)</span> particles into microstate <span class="math notranslate nohighlight">\(j\)</span> and then counting all possible
+combinations of the positions/energies of the <span class="math notranslate nohighlight">\(N_B\)</span> remaining particles.
+Either approach would yield the number of microstates of the <strong>total
+combined system</strong> in which the system of interest is in the particular
+microstate <span class="math notranslate nohighlight">\(j\)</span>. This value is equal to the number of microstates of the
+<strong>bath</strong> that are possible for the given microstate of the <strong>system</strong>.
+Since the energy of the bath is itself fixed, this number of states is
+equal to the degeneracy of a bath microcanonical ensemble with energy
+<span class="math notranslate nohighlight">\(E_T-E_j\)</span>, or <span class="math notranslate nohighlight">\(\Omega(N_B,V_B,E_T-E_j)\)</span>. We could write a similar
+degeneracy for each possible microstate of the system. Since the total
+isolated system is a microcanonical ensemble in which all microstates
+are equally probable, the probability of observing a single microstate
+of the system <span class="math notranslate nohighlight">\(j\)</span> is equal to the number of microstates of the total
+isolated system in which the system of interest is in microstate <span class="math notranslate nohighlight">\(j\)</span>
+divided by the total number of microstates of the combined isolated
+system.</p>
+<p><img alt="image" src="../_images/fig_3_3.png" />{width=”100%”}</p>
+<p>From the logic above, we can write the normalized probability of finding
+microstate <span class="math notranslate nohighlight">\(j\)</span> of the system in terms of the degeneracy of the bath as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+p_j &amp;= \frac{\Omega(N_B, V_B, E_T-E_j)}{\sum_j^{\textrm{system microstates}} \Omega(N_B, V_B, E_T-E_j)} \\
+&amp;= \frac{\Omega(N_B, V_B, E_T-E_j)}{C_1}
+\end{aligned}\end{split}\]</div>
+<p>That is, the probability of finding a particular microstate in the
+<strong>canonical ensemble</strong> (of the system) is related to the degeneracy of a
+bath described by a <strong>microcanonical ensemble</strong> with energy <span class="math notranslate nohighlight">\(E_T-E_j\)</span>.
+We use the constant <span class="math notranslate nohighlight">\(C_1\)</span> to refer to the normalization factor in the
+denominator (this quantity will drop out later on in the derivation). We
+will proceed from here in the next lecture by relating the degeneracy of
+the bath microcanonical ensemble to the entropy (following our previous
+approach) and from there obtaining an expression for <span class="math notranslate nohighlight">\(p_j\)</span> that does not
+depend on any properties of the bath.</p>
 </section>
 <section id="derivation-of-canonical-partition-function">
 <h2>Derivation of canonical partition function<a class="headerlink" href="#derivation-of-canonical-partition-function" title="Permalink to this headline">#</a></h2>
@@ -818,6 +920,7 @@ relation from above we can then write:</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-readings-for-the-enthusiast">Additional Readings for the Enthusiast</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topics-in-this-lecture">Topics in this lecture</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements">Announcements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-the-canonical-ensemble">Introduction to the canonical ensemble</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivation-of-canonical-partition-function">Derivation of canonical partition function</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-the-canonical-ensemble-to-thermodynamics">Connecting the canonical ensemble to thermodynamics</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#revisiting-the-two-state-system">Revisiting the two-state system</a></li>

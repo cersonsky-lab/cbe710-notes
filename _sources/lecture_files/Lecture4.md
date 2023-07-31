@@ -19,6 +19,113 @@
 -   Problem Set 1 due Thursday
 
 -   Fill out polls for rescheduled lectures
+## Introduction to the canonical ensemble
+
+In principle, all calculations in statistical mechanics can be performed
+using the microcanonical ensemble by deriving relationships based on a
+fixed set of constant energy states. In practice, the microcanonical
+ensemble is often not convenient because in many cases the energy of the
+system is not fixed. For example, most laboratory experiments take place
+in environments in which the energy of the system is able to exchange
+with the environment; that is, the walls of the system are
+**diathermal**. $E$ is therefore no longer a fixed quantity and instead
+varies between each microstate. At equilibrium, however, we know from
+thermodynamics that the temperature of the system will be equal to the
+temperature of the environment. It would therefore be ideal to have
+equations describing systems in which the temperature is fixed in each
+microstate due to this condition of equilibrium while the energy is
+allowed to vary. The ensemble of microstates for a system at constant
+temperature (and number and volume) is the canonical ensemble or $NVT$
+ensemble. As we will see, choosing the appropriate ensemble to describe
+a system of interest is essential in simplifying problem solutions.
+However, if we allow the energy to vary between each microstate then the
+probability that a system obtains a given state, $p_i$, is no longer a
+constant value - that is, Postulate 2 no longer applies. We thus will
+derive an expression for the probability of microstate $i$ in order to
+calculate ensemble-average quantities for the canonical ensemble.
+
+Let us consider a system of interest that is contact with surroundings
+that we will refer to as the **bath**. The bath is significantly larger
+than the system of interest, so that the energy and number of particles
+in the bath are also much larger than the energy and number of particles
+in the system. Thermodynamic parameters associated with the system will
+be denoted with the subscript $S$, parameters associated with the bath
+will be denoted with the subscript $B$, and parameters associated with
+the total combination of system and bath will be denoted with the
+subscript $T$. We assume that the walls of the system prevent the
+exchange of particles and volume so that $N_S$ and $V_S$ are fixed;
+however, the energy, $E_S$, can exchange with the surrounding bath. At
+thermal equilibrium, the temperature of the bath and system are
+equivalent ($T_S = T_B \equiv T_T$). A physical realization of such a
+system would be a sealed box with conducting walls that allows heat to
+exchange with the outside environment. Finally, we assume that the
+*total* energy, $E_T$, of the bath plus the system is a constant (i.e.,
+exchanges of energy between the bath and system obey conservation of
+energy):
+
+$$E_T = E_S + E_B = \text{constant}$$
+
+The total combination of system and bath is isolated; this assumption is
+generally true of the universe, for example. Microstates of the total
+isolated system belong to the microcanonical ensemble, but the energy of
+each of these microstates is **partitioned** between the system of
+interest and the bath. The canonical ensemble then refers to the
+ensemble of microstates describing the system of interest, in which the
+energy may vary between microstates in the ensemble.
+
+![image](figs/fig_3_2.png){width="100%"}
+
+The system is characterized by $N_S$, $V_S$, and $E_S$, and connected to
+a bath with $N_B$, $V_B$, and $E_B$. We will now determine the
+probability $p_j$ of observing a single microstate of the system, $j$,
+which has energy $E_j$ (noting that there can be many possible
+microstates with the same energy - in fact, there is a microcanonical
+ensemble of microstates with the same energy! We use the subscript $j$
+to denote a single specific microstate - that is, a single arrangement
+of particles with a specific energy $E_j$ out of the many possible
+microstates that would have the same energy). Since the energy of the
+system is fixed and equal to $E_j$, the energy of the bath is also fixed
+and equal to $E_B=E_T-E_j$. Imagine taking a snapshot of the $N_S$
+particles in microstate $j$ and counting the subset of all possible
+microstates of the total isolated system for which the system has
+exactly the particle positions/energies specified for microstate $j$.
+Alternatively, you could imagine fixing the positions/energies of the
+$N_S$ particles into microstate $j$ and then counting all possible
+combinations of the positions/energies of the $N_B$ remaining particles.
+Either approach would yield the number of microstates of the **total
+combined system** in which the system of interest is in the particular
+microstate $j$. This value is equal to the number of microstates of the
+**bath** that are possible for the given microstate of the **system**.
+Since the energy of the bath is itself fixed, this number of states is
+equal to the degeneracy of a bath microcanonical ensemble with energy
+$E_T-E_j$, or $\Omega(N_B,V_B,E_T-E_j)$. We could write a similar
+degeneracy for each possible microstate of the system. Since the total
+isolated system is a microcanonical ensemble in which all microstates
+are equally probable, the probability of observing a single microstate
+of the system $j$ is equal to the number of microstates of the total
+isolated system in which the system of interest is in microstate $j$
+divided by the total number of microstates of the combined isolated
+system.
+
+![image](figs/fig_3_3.png){width="100%"}
+
+From the logic above, we can write the normalized probability of finding
+microstate $j$ of the system in terms of the degeneracy of the bath as:
+
+$$\begin{aligned}
+p_j &= \frac{\Omega(N_B, V_B, E_T-E_j)}{\sum_j^{\textrm{system microstates}} \Omega(N_B, V_B, E_T-E_j)} \\
+&= \frac{\Omega(N_B, V_B, E_T-E_j)}{C_1}
+\end{aligned}$$
+
+That is, the probability of finding a particular microstate in the
+**canonical ensemble** (of the system) is related to the degeneracy of a
+bath described by a **microcanonical ensemble** with energy $E_T-E_j$.
+We use the constant $C_1$ to refer to the normalization factor in the
+denominator (this quantity will drop out later on in the derivation). We
+will proceed from here in the next lecture by relating the degeneracy of
+the bath microcanonical ensemble to the entropy (following our previous
+approach) and from there obtaining an expression for $p_j$ that does not
+depend on any properties of the bath.
 
 ## Derivation of canonical partition function
 
