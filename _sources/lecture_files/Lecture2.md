@@ -5,6 +5,12 @@
 {cite:ts}`mcquarrie_statistical_2000`, Chapter 1, Chapter 2.1
 {cite:ts}`chandler_introduction_1987`, Chapter 3.1 - 3.2
 
+## Goals for today's lecture
+- What is a macrostate? A microstate? An ensemble?
+- Why would the degeneracy of an ensemble be important?
+- What are important conditions to ensure the time-average is equivalent to the ensemble-average?
+- How does the definition of entropy we discuss differ from the classic "entropy is disorder" description?
+
 ## Macrostates and Microstates
 
 Recall that our goal in statistical mechanics is to develop a
