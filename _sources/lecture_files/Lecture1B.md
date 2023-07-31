@@ -8,6 +8,13 @@ that will be re-visited later in the course. We will first briefly
 review thermodynamic concepts that will prove necessary for studying
 statistical mechanics.
 
+## Goals for today's lecture
+- How do we describe thermodynamic systems?
+- What is the difference between a state variable and a path-dependent variable? What are some examples?
+- What are natural variables? 
+- What is equilibrium?
+- Given a set of natural variables, how do I define a new thermodynamic potential?
+
 ## Description of the system
 
 Let's start with definitions:
