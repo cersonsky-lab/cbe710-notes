@@ -175,10 +175,10 @@ Y_{ens} \equiv \sum_{\text{microstate}~i} p_i Y_i  dt
 
 and noting that our observed quantity
 $
-\langle Y \rangle \equiv Y_{time} \equiv Y_{ens}.
+Y_\textrm{obs} = \langle Y \rangle \equiv Y_{time} \equiv Y_{ens}.
 $
 
-Equation {eq}`timeavg` defines the time-average value of $Y$, where this is the value of $Y$
+Equation {eq}`timeavg` defines the time-average value of $Y$, where this is the value of $Y_\textrm{obs}$
 that I would observe if I were to measure the parameter experimentally
 (assuming a typical macroscopic measurement); in other words, this would
 be the volume/pressure/etc. of the **macrostate**. Equation
