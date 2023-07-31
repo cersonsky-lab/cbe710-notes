@@ -13,25 +13,25 @@ parts:
         - file: lecture_files/Lecture6
         - file: lecture_files/Lecture7
         - file: lecture_files/Lecture8
-  - caption: Molecular Simulation
-    chapters:
-        - file: lecture_files/Lecture9
-        - file: lecture_files/Lecture10
-        - file: lecture_files/Lecture11
-        - file: lecture_files/Lecture12
-        - file: lecture_files/Lecture13
-        - file: lecture_files/Lecture14
-  - caption: Thermodynamics
-    chapters:
-        - file: lecture_files/Lecture15
-        - file: lecture_files/Lecture16
-        - file: lecture_files/Lecture17
-        - file: lecture_files/Lecture18
-        - file: lecture_files/Lecture19
-        - file: lecture_files/Lecture20
-        - file: lecture_files/Lecture21
-        - file: lecture_files/Lecture22
-        - file: lecture_files/Lecture23
-        - file: lecture_files/Lecture24
-        - file: lecture_files/Lecture25
-        - file: lecture_files/Lecture26
+#   - caption: Molecular Simulation
+#     chapters:
+#         - file: lecture_files/Lecture9
+#         - file: lecture_files/Lecture10
+#         - file: lecture_files/Lecture11
+#         - file: lecture_files/Lecture12
+#         - file: lecture_files/Lecture13
+#         - file: lecture_files/Lecture14
+#   - caption: Thermodynamics
+#     chapters:
+#         - file: lecture_files/Lecture15
+#         - file: lecture_files/Lecture16
+#         - file: lecture_files/Lecture17
+#         - file: lecture_files/Lecture18
+#         - file: lecture_files/Lecture19
+#         - file: lecture_files/Lecture20
+#         - file: lecture_files/Lecture21
+#         - file: lecture_files/Lecture22
+#         - file: lecture_files/Lecture23
+#         - file: lecture_files/Lecture24
+#         - file: lecture_files/Lecture25
+#         - file: lecture_files/Lecture26
