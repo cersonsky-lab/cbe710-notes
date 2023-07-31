@@ -3,7 +3,8 @@ root: intro
 parts:
   - caption: Statistical Mechanics
     chapters:
-        - file: lecture_files/Lecture1
+        - file: lecture_files/Lecture1A
+        - file: lecture_files/Lecture1B
         - file: lecture_files/Lecture2
         - file: lecture_files/Lecture3
         - file: problems/ps_1/problem_set_1
