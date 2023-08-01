@@ -7,12 +7,11 @@ parts:
         - file: lecture_files/Lecture1B
         - file: lecture_files/Lecture2
         - file: lecture_files/Lecture3
-        - file: problems/ps_1/problem_set_1
         - file: lecture_files/Lecture4
         - file: lecture_files/Lecture5
-        - file: lecture_files/Lecture6
-        - file: lecture_files/Lecture7
-        - file: lecture_files/Lecture8
+#         - file: lecture_files/Lecture6
+#         - file: lecture_files/Lecture7
+#         - file: lecture_files/Lecture8
 #   - caption: Molecular Simulation
 #     chapters:
 #         - file: lecture_files/Lecture9
@@ -35,3 +34,14 @@ parts:
 #         - file: lecture_files/Lecture24
 #         - file: lecture_files/Lecture25
 #         - file: lecture_files/Lecture26
+  - caption: Problem Sets 
+    chapters:
+        - file: problems/ps_1/problem_set_1
+#         - file: problems/ps_2/problem_set_2
+#         - file: problems/ps_3/problem_set_3
+#         - file: problems/ps_4/problem_set_4
+#         - file: problems/ps_5/problem_set_5
+#         - file: problems/ps_6/problem_set_6
+#  - caption: Problem Sets
+#    chapters:
+#       - file: 
