@@ -1,6 +1,6 @@
 # --- Problem Set 1 ---
 
-**Question 1: Polymer dimensions**
+## Question 1: Polymer dimensions
 
 Ideal polymer chains are often described as undergoing *random walks* on
 a lattice. Like ideal gases, the monomers in an ideal polymer chain do
@@ -19,92 +19,56 @@ placed.
 ![image](pset_1_random_walk_fig.png)
 Figure 1 shows an example for $N = 8$ in which the end-to-end distance is after all 8 steps are taken.
 
-**(a)** For a one-dimensional ideal chain with $N$ segments and segment
+```{admonition} **(a)**
+
+For a one-dimensional ideal chain with $N$ segments and segment
 size $b$, calculate the probability, $p(x)$, that the end-to-end
 distance of the polymer is equal to $x$. Assume that there is an **equal
 likelihood** of taking a step in either the positive or negative
 direction for each chain segment.
+
 <details>
   <summary>Hints</summary>
   First compute the probability that we take n steps to the right.
 </details>
 
-**(b)** For the chain described in part **a**, show that in the large
+```
+
+
+```{admonition} **(b)**
+
+For the chain described in part **a**, using Stirling's
+approximation, show that in the large
 $N$ limit the probability distribution $p(x)$ can be approximated by:
 
-$$p(x) = \frac{1}{\sqrt{2\pi Nb^2}}  \exp \left ( -\frac{x^2}{2Nb^2}\right )$$
+$$p(x) = C  \exp \left ( -\frac{x^2}{2Nb^2}\right )$$
+
+where $C=\frac{1}{\sqrt{2\pi Nb^2}}$ is a normalization constant
+to enforce that $\int_{-\infty}^{\infty} p(x)  dx = 1$. Make sure
+to show how you obtain $C$.
 
 <details>
   <summary>Hints</summary>
-    Define the quantity $x/Nb \equiv a$, where $a \ll 1$ in the large $N$ limit, and write a series expansion for $\ln(1-a)$ when appropriate.
+    Define the quantity a = x/Nb, where a << 1 in the large N limit,
+    and write a Taylor series expansion for ln(1-a) when appropriate.
+
 </details>
 
-In the large $N$ limit, we can simplify the result from part **a** by
-taking the logarithm of $p(x)$ and using Stirling's relation:
+```
 
-$$\begin{aligned}
-\ln p(x)  &= -N\ln 2 + N \ln N - (N + x/b)/2 \ln (N + x/b)/2 - (N- x/b)/2 \ln(N-x/b)/2 \\
-&=  N \ln N - (N + x/b)/2 \ln (N + x/b) - (N- x/b)/2 \ln(N-x/b) \\
-&= N \ln N - N(1 + x/Nb)/2 \ln N (1+x/Nb) - N(1-x/Nb)/2 \ln N(1-x/Nb) 
-\end{aligned}$$
 
-To simplify these expressions a bit we'll define $x/Nb \equiv a$ and
-collect terms:
+```{admonition} **(c)**
 
-$$\begin{aligned}
-\ln p(x)  &= \frac{N}{2} \left [2 \ln N - (1+a) \ln N - (1+a) \ln (1+a) - (1-a) \ln N - (1-a) \ln (1-a) \right ] \\
-&= -\frac{N}{2} \left [(1+a) \ln (1+a) + (1-a) \ln (1-a) \right ] 
-\end{aligned}$$
-
-Next, we can use the Taylor expansion
-$\ln (1-a) = -a - \frac{1}{2}a^2 \dots$ to simplify this expression.
-Since $a \ll 1$, we will truncate the expansion at second order:
-
-$$\begin{aligned}
-\ln p(x)  &= -\frac{N}{2} \left [(1+a) \left ( a - \frac{1}{2} a^2 \right ) + (1-a) \left ( -a - \frac{1}{2} a^2 \right ) \right ] \\
-&=   -\frac{N}{2} \left [ a - \frac{1}{2} a^2 + a^2 - \frac{1}{2} a^3 - a -\frac{1}{2} a^2 + a^2 + \frac{1}{2} a^3 \right ] \\
-&= -\frac{Na^2}{2} \\  
-&= -\frac{x^2}{2Nb^2}\\ 
-\therefore p(x)  &= C\exp \left ( -\frac{x^2}{2Nb^2}\right )
-\end{aligned}$$
-
-We leave the constant $C$ to recognize that the probability distribution
-is not properly normalized, since Stirling's approximation is inexact.
-To normalize this probability, we can use the relation that
-$\int_{-\infty}^{\infty} p(x)  dx = 1$ and evaluate the Gaussian
-integral:
-
-$$\begin{aligned}
-\int_{-\infty}^{\infty} C\exp \left ( -\frac{x^2}{2Nb^2}\right )dx &= 1 \\
-C \sqrt{2\pi Nb^2} &= 1 \\
-C &= \frac{1}{\sqrt{2\pi Nb^2}} \\
-\therefore  p(x)  &= \frac{1}{\sqrt{2\pi Nb^2}}  \exp \left ( -\frac{x^2}{2Nb^2}\right )
-\end{aligned}$$
-
-**(c)** Show that the entropy of an ideal one-dimensional chain in the
+Show that the entropy of an ideal one-dimensional chain in the
 large $N$ limit is given by:
 
-$$S(N, x) = -\frac{k_Bx^2}{2Nb^2} + S(N)$$
+$$S(N, x) = -\frac{k_Bx^2}{2Nb^2} + S(N) + k_B \ln{C}$$.
 
-where $S(N)$ is a constant that is not dependent on $x$.
+where $C$ is our normalizing constant from above, and S(N) is the x-independent entropy term.
 
-As noted in part **a**, the probability of obtaining a final position
-$x$ can be written as: $$p(x)  = \frac{\Omega(N, x)}{\Omega(N)}$$
+```
 
-We can thus use this relation and our expression for $p(x)$ in the large
-$N$ limit to find the entropy:
-
-$$\begin{aligned}
-S(N, x) &= k_B \ln \Omega(N, x) \\
-&= k_B \ln \left [ p(x) \Omega(N)\right ] \\
-&= k_B \ln \left [   \frac{1}{\sqrt{2\pi Nb^2}}  \exp \left ( -\frac{x^2}{2Nb^2}\right ) \Omega(N) \right ]\\
-&= k_B \ln  \left [ \exp \left ( -\frac{x^2}{2Nb^2}\right )  \right ] + k_B  \ln  \left [ \frac{1}{\sqrt{2\pi Nb^2}}  \Omega(N)  \right ] \\
-&= -\frac{k_B x^2}{2Nb^2} + S(N)
-\end{aligned}$$
-
-In the last line we collect the terms that are not a function of $x$.
-
-**Question 2: Magnetization of a paramagnet**
+## Question 2: Magnetization of a paramagnet
 
 Consider a system of $N$ distinguishable, non-interacting atoms with
 magnetic dipole moments (spins) in a magnetic field $H$ at constant
@@ -125,110 +89,50 @@ This model is commonly used to describe paramagnetic materials. In this
 problem, we will derive an expression for the ensemble-average
 magnetization of a paramagnet in a magnetic field.
 
-**(a)** Assuming that the paramagnet has a fixed energy $E$, write an
+
+```{admonition} **(a)**
+
+Assuming that the paramagnet has a fixed energy $E$, write an
 expression for the entropy as a function of the number of spins aligned
 with the field, $N_+$, and the total number of spins, $N$.
 
-We can first define $N_+$ as the number of spins for which $s_i = 1$,
-$N_-$ is the number fo which $s_i = -1$, and $N_+ + N_- = N$. Using
-these definitions we can then write for the energy:
 
-$$\begin{aligned}
-    E &= -\mu H \sum_i^N s_i\\
-    &= -\mu H  [N_+ (1) + N_-(-1) ]\\
-    &= -\mu H (2N_+ - N) 
-    
-\end{aligned}$$
+<details>
+  <summary>Hints</summary>
+    Use the [Boltzmann formulation](https://en.m.wikipedia.org/wiki/Boltzmann's_entropy_formula) for entropy.
 
-We can write the degeneracy of this particular energy level as:
+</details>
+```
 
-$$\Omega(E) = \frac{N!}{N_+!(N-N_+)!}$$
+```{admonition} **(b)**
 
-Note that this expression assumes that spins are distinguishable but the
-order within each group of spins does not matter, which is a reasonable
-treatment of spins on a lattice since each lattice position is uniquely
-distinguishable but spins cannot interchange positions. Using the
-Boltzmann expression for the entropy:
-
-$$\begin{aligned}
-    S &= k_B \ln \Omega(E) \\
-    &= k_B \ln \left [ \frac{N!}{N_+!(N-N_+)!} \right ] \\
-    &= k_B \left [ N \ln N - N_+ \ln N_+ - (N-N_+)\ln(N-N_+) \right ]
-    
-\end{aligned}$$
-
-**(b)** Derive an expression for $N_+$ as a function of the number of
+Show that the expression for $N_+$ as a function of the number of
 spins $N$, the magnetic field strength $H$, the magnetic moment $\mu$,
-and the temperature $T$ (or as a function of $\beta \equiv 1/k_B T$).
+and the temperature $T$ (or as a function of $\beta \equiv 1/k_B T$) is
 
-To obtain a temperature dependence, we can relate the entropy to the
-energy via the relation
-$\left ( \frac{\partial S}{\partial E} \right )_{N, V} = 1/T$ to
-identify an expression for $N_+$:
 
-$$\begin{aligned}
-    \frac{1}{T} &= \left ( \frac{\partial S}{\partial E} \right )_{N, V} \\
-    &=  \left ( \frac{\partial S}{\partial E} \right )_{N, V} \\
-    &= \left ( \frac{\partial S}{\partial N_+} \right )_{N, V} \left ( \frac{\partial N_+}{\partial E} \right )_{N, V} 
-    
-\end{aligned}$$
+$$ N_+ = \frac{N}{1+exp(-2H\beta\mu)}$$
 
-We can obtain these derivatives from prior expressions:
 
-$$\begin{aligned}
-    E &= -\mu H (2N_+ - N) \\
-    \therefore \left ( \frac{\partial N_+}{\partial E} \right )_{N, V} &= -\frac{1}{2H\mu}\\
-    S &=  k_B \left [ N \ln N - N_+ \ln N_+ - (N-N_+)\ln(N-N_+) \right ] \\
-    \therefore \left ( \frac{\partial S}{\partial N_+} \right )_{N, V} &= - k_B \ln \left ( \frac{N_+}{N-N_+} \right )
-    
-\end{aligned}$$
+<details>
+  <summary>Hints</summary>
+  Procedurally, this is almost identical to our previous lecture.
 
-Combining these expressions with the expression for the temperature
-gives:
+</details>
+```
 
-$$\begin{aligned}
-    \frac{1}{T} &=k_B \ln \left ( \frac{N_+}{N-N_+} \right ) \frac{1}{2 H \mu} \\
-    2\beta H\mu &= \ln \left ( \frac{N_+}{N-N_+} \right ) \\
-    -\ln \left ( \frac{1}{\frac{N}{N_+} - 1} \right ) &= -2\beta H \mu \\
-    \ln \left ( \frac{N}{N_+} - 1 \right ) &= -2\beta H \mu \\
-    \frac{N}{N_+} &= 1 + \exp(-2\beta H \mu) \\
-    N_+ &= \frac{N}{1+\exp(-2\beta H \mu)}
-    
-\end{aligned}$$
 
-**(c)** Show that the magnetization of a paramagnet is given by:
+
+```{admonition} **(c)**
+Show that the magnetization of a paramagnet is given by:
 
 $$\begin{aligned}
 M = N\mu \tanh (\beta \mu H) 
 \end{aligned}$$
 
-We can write for the magnetization using the definition in the problem
-statement:
+```
 
-$$\begin{aligned}
-    M &= -\frac{E}{H}\\
-    &= \mu(2N_+ - N) 
-    
-\end{aligned}$$
-
-We can now substitute in our expression for $N_+$ from the previous
-part:
-
-$$\begin{aligned}
-    M &= \mu \left ( \frac{2N}{1+\exp(-2\beta H \mu)} - N \right ) \\
-    &= \mu \left ( \frac{2N}{1+\exp(-2\beta H \mu)} - \frac{N[1+\exp(-2\beta H \mu)]}{1+\exp(-2\beta H \mu)} \right ) \\
-    &= \mu \left ( \frac{N - N \exp(-2\beta H \mu)}{1+\exp(-2\beta H \mu)} \right ) \\
-    &= N \mu \left ( \frac{1 - \exp(-2\beta H \mu)}{1+\exp(-2\beta H \mu)} \right )\\
-    &= N\mu \left ( \frac{\exp(\beta H \mu) - \exp(-\beta H \mu)}{\exp(\beta H \mu)+\exp(-\beta H \mu)} \right ) \\
-    &= N\mu \tanh (\beta \mu H) 
-    
-\end{aligned}$$
-
-This agrees with the result in the problem statement. Hence, we have
-shown that we derive an expression for the magnetization of a paramagnet
-using the equations of the microcanonical ensemble.
-
-**Question 3: Mixing entropy**
+## Question 3: Mixing entropy
 
 Consider two different ideal fluids containing $N_1$ and $N_2$
 molecules, respectively, for a total of $N$ molecules. All molecules
@@ -240,75 +144,55 @@ fluids are allowed to mix at constant volume as illustrated in Figure 2.
 Assume also that the molecules of each fluid are **indistinguishable**
 from the molecules of the same fluid.
 
-<figure>
-<img src="pset_1_mixing_entropy_fig.png" />
-<figcaption>Diagram illustrating mixing of two initially demixed
-fluids.</figcaption>
-</figure>
+![image](pset_1_mixing_entropy_fig.png)
 
-**(a)** Assume that the two fluids occupy a fictitious lattice that
+```{admonition} **(a)**
+
+Assume that the two fluids occupy a fictitious lattice that
 spans the available volume. Each molecule occupies a single lattice site
 and all lattice sites are occupied; thus, there are are $N_1$ lattice
 sites occupied by molecule 1 and $N_2$ lattice sites occupied by
 molecule 2. Using this approximation, calculate $\Omega(N_1, N_2)$,
 which is defined as the number of microstates for the mixture of fluids.
 
-Using this approximation, we recognize that there are a total of
-$N = N_1 + N_2$ sites on our fictitious lattice, identical arrangements
-of the fluids are indistinguishable (although the fluids themselves are
-distinguishable from each other), and thus the degeneracy is:
 
-$$\Omega(N_1, N_2) = \frac{N!}{N_1!N_2!}$$
+<details>
+  <summary>Hints</summary>
+  Identical arrangements of the fluids are indistinguishable.
 
-**(b)** Derive an expression for the entropy change associated with
+</details>
+
+```
+
+```{admonition} **(b)**
+
+Derive an expression for the entropy change associated with
 mixing the two ideal fluids in terms of the mole fractions,
 $x_1 = N_1/N$ and $x_2 = N_2/N$, of the two components. That is,
 determine an expression for:
 
 $$\Delta S_{\textrm{mix}} = S_{\textrm{mixed}} - S_{\textrm{demixed}}$$
 
-We can calculate the entropy of the mixed state immediately by invoking
-Stirling's approximation for the factorials above and using the
-Boltzmann expression for the entropy:
+<details>
+  <summary>Hints</summary>
+  How many distinguishable configurations are there for totally demixed systems?
 
-$$\begin{aligned}
-S_{\textrm{mixed}} &= k_B \ln \Omega(N_1, N_2)  \\
-&= k_B \left ( \ln N! - \ln N_1! - \ln N_2! \right ) \\
-&= k_B \left ( N \ln N - N - N_1 \ln N_1 + N_1 - N_2 \ln N_2 + N_2 \right ) \\
-&= k_B \left ( (N_1 + N_2) \ln N - N_1 \ln N_1 - N_2 \ln N_2 \right )  \\
-&= -k_B \left ( N_1 \ln N_1/N + N_2 \ln N_2/N \right ) \\
-&= -k_B N \left ( x_1 \ln x_1 + x_2 \ln x_2 \right )
-\end{aligned}$$
+</details>
 
-The entropy change associated with mixing is defined as
-$\Delta S_{\textrm{mix}} = S_{\textrm{mixed}} - S_{\textrm{demixed}}$.
-However, in the initial configuration of the system, with both fluids
-completely separate, all configurations of each fluid are
-indistinguishable since the molecules in each of the fluids separately
-are indistinguishable. There is only a single unique configuration in
-the initial state and hence the entropy of the initial state is
-approximately 0. The entropy of mixing is thus:
+```
 
-$$\begin{aligned}
-\Delta S_{\textrm{mix}} &= S_{\textrm{mix}} \\
-&= -k_B N \left ( x_1 \ln x_1 + x_2 \ln x_2 \right )
-\end{aligned}$$
+```{admonition} **(c)**
 
-**(c)** Is the lattice model assumption reasonable for molecules
+Is the lattice model assumption reasonable for molecules
 occupying a continuous set of positions (rather than discrete points)?
 Why or why not?
 
-The lattice model assumption transforms a *continuous* set of particle
-positions to a *discrete* set in order to estimate the degeneracy. This
-approximation is reasonable because we are effectively assuming that
-each molecule has some set of configurations accessible within each
-lattice point (i.e. within the space associated with a lattice), but
-this set of configurations is identical for every molecule and therefore
-will be the same in both the demixed and mixed state, such that taking
-the difference between these states (in part **b**) removes this large
-internal set of configurations from the expression for the degeneracy.
+```
 
-**Question 4: Stirling's approximation**
+## Question 4: Stirling's approximation
+
+
+```{admonition} Python Exercise
 
 Write a Python program that calculates the percent error of Stirling's
 approximation as a function of $N$, where Stirling's approximation is
@@ -322,16 +206,17 @@ as a function of $N$ up to $N=100$, and a plot of the error of
 Stirling's approximation as a function of $N$ up to $N=100$. Your grade
 for this problem will be based in part on the readability of your code
 and plots in addition to the accuracy of the solution.
+```
 
 **Note: this problem is intended to provide you with practice in Python
-programming prior to the assignment of the simulation project.**
+programming prior to the assignment of the simulation project. If you
+need resources for learning to code in Python, see [here](https://sts.doit.wisc.edu/).**
 
-The two requested plots are provided below. Corresponding code is
-available on the Canvas website.
+The two requested plots are provided below. 
 
 ![Comparison of Stirling's approximation vs. $\ln N!$ as a function of
-$N$.](pset_1_plot_stirling.png){width="55%"}
+$N$.](pset_1_plot_stirling.png)
 
 ![Relative error of Stirling's approximation vs. $N$, which approaches
 zero as $N$ exceeds
-$\approx 50$.](pset_1_plot_stirling_error.png){width="55%"}
+$\approx 50$.](pset_1_plot_stirling_error.png)
