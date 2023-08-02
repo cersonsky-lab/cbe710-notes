@@ -44,4 +44,7 @@ parts:
 #         - file: problems/ps_6/problem_set_6
 #  - caption: Problem Sets
 #    chapters:
-#       - file: 
+#       - file:
+  - caption: Appendices
+    chapters:
+      - file: references
