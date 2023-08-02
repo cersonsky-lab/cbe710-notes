@@ -193,7 +193,11 @@ p_j(E_j, X_j) = \frac{\exp \left ( -\frac{E_j}{k_BT} \right )\exp \left ( \frac{
 The partition function for the generalized ensemble, which we will give
 the symbol $\Phi$ is thus:
 
-$$\Phi  = \sum_{j}^{\textrm{microstates}} \exp \left ( -\frac{E_j}{k_BT} \right )\exp \left ( \frac{f X_j}{k_BT} \right ) \label{general_partition}$$
+```{math}
+:label: general_partition
+
+\Phi  = \sum_{j}^{\textrm{microstates}} \exp \left ( -\frac{E_j}{k_BT} \right )\exp \left ( \frac{f X_j}{k_BT} \right )
+```
 
 This general partition function looks quite similar to the canonical
 partition function except that there is now the new work term appears in
@@ -333,8 +337,7 @@ ensemble:
     variables that can exchange with the environment).
 
 -   Write a general partition function ($\Phi$) of the form in Eq.
-    [\[general_partition\]](#general_partition){reference-type="ref"
-    reference="general_partition"}, including all work terms that
+    {eq}`general_partition`, including all work terms that
     correspond to extensive variables that can exchange with the
     environment.
 

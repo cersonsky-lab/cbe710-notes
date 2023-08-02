@@ -1,0 +1,778 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Problem Set 2 (Due XX/XX/XX) &#8212; Notes for CBE710</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/defs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'problems/ps_2/problem_set_2';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Problem Set 3 (Due XX/XX/XX)" href="../ps_3/problem_set_3.html" />
+    <link rel="prev" title="Problem Set 1 (Due XX/XX/XX)" href="../ps_1/problem_set_1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Notes for CBE710</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Class introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Mechanics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture1A.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture1B.html">Review of thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture2.html">Postulates of statistical mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture3.html">Application of the microcanonical ensemble: two-state system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture4.html">The Canonical Ensemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture5.html">Generalized Ensembles</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Problem Sets</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../ps_1/problem_set_1.html">Problem Set 1 (Due XX/XX/XX)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Problem Set 2 (Due XX/XX/XX)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ps_3/problem_set_3.html">Problem Set 3 (Due XX/XX/XX)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ps_4/problem_set_4.html">Problem Set 4 (Due XX/XX/XX)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ps_5/problem_set_5.html">Problem Set 5 (Due XX/XX/XX)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ps_6/problem_set_6.html">Problem Set 6 (Due XX/XX/XX)</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/problems/ps_2/problem_set_2.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Problem Set 2 (Due XX/XX/XX)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-expressions-for-entropy">Question 1: Expressions for entropy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-pulling-on-a-protein">Question 2: Pulling on a protein</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-magnetization-of-a-paramagnet-revisited">Question 3: Magnetization of a paramagnet revisited</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4-numerical-calculation-of-the-magnetization-of-a">Question 4: Numerical calculation of the magnetization of a–</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="problem-set-2-due-xx-xx-xx">
+<h1>Problem Set 2 (Due XX/XX/XX)<a class="headerlink" href="#problem-set-2-due-xx-xx-xx" title="Permalink to this headline">#</a></h1>
+<section id="question-1-expressions-for-entropy">
+<h2>Question 1: Expressions for entropy<a class="headerlink" href="#question-1-expressions-for-entropy" title="Permalink to this headline">#</a></h2>
+<p>The Boltzmann entropy for the microcanonical ensemble is:</p>
+<div class="math notranslate nohighlight">
+\[S(N,V,E) = k_B \ln \Omega(N,V,E)\]</div>
+<p>where <span class="math notranslate nohighlight">\(\Omega(N,V,E)\)</span> is the degeneracy (or number of unique
+microstates) in the microcanonical ensemble. An alternative, general
+definition of the entropy, referred to as the Gibbs entropy, is:</p>
+<div class="math notranslate nohighlight">
+\[S = - k_B\sum_i p_i \ln p_i\]</div>
+<p>where <span class="math notranslate nohighlight">\(p_i\)</span> is the probability of microstate <span class="math notranslate nohighlight">\(i\)</span> and the sum runs over
+all microstates.</p>
+<p><strong>(a)</strong> Show that the Boltzmann and Gibbs entropy are equivalent for the
+microcanonical ensemble.</p>
+<p>Recall that according to the second postulate of statistical mechanics,
+all microstates in the microcanonical ensemble are equally probable.
+Therefore, the probability of each <span class="math notranslate nohighlight">\(p_i\)</span> is equal and given by
+<span class="math notranslate nohighlight">\(\frac{1}{\Omega(N,V,E)}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+S &amp;= -k_B\sum_i p_i \ln p_i \\
+&amp;= -k_B\sum_i \frac{1}{\Omega(N,V,E)} \ln \frac{1}{\Omega(N,V,E)} \\
+&amp;= k_B \sum_i \frac{1}{\Omega(N,V,E)} \ln \Omega(N,V,E) \\
+&amp;=  k_B \ln \Omega(N,V,E)
+\end{aligned}\end{split}\]</div>
+<p>The last relation is apparent because the sum runs over all
+<span class="math notranslate nohighlight">\(\Omega(N,V,E)\)</span> states in the microcanonical ensemble, so the
+denominator drops out of the expression.</p>
+<p><strong>(b)</strong> Starting from an appropriate partial derivative of the Helmholtz
+free energy, derive an expression for the entropy in terms of the
+canonical partition function and the temperature.</p>
+<p>Recognizing that the canonical partition function is related to the
+Helmholtz free energy, we can start by writing an appropriate derivative
+to relate the Helmholtz free energy to the entropy:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+dF &amp;= -S dT - PdV + \mu_dN \\
+S &amp;= -\left ( \frac{\partial F}{\partial T} \right )_{N,V} \\
+&amp;= \left ( \frac{\partial \beta^{-1} \ln Z}{\partial T} \right )_{N,V} \\
+&amp;= \left ( \frac{\partial \beta^{-1} \ln Z}{\partial \beta} \right )_{N,V} \left ( \frac{\partial \beta }{\partial T} \right )_{N,V} \\
+&amp;= -k_B\beta^{2} \left [\beta^{-1} \left ( \frac{\partial \ln Z}{\partial \beta} \right )_{N,V} - \beta^{-2} \ln Z \right ]\\
+&amp;= -k_B\beta \left ( \frac{\partial \ln Z}{\partial \beta} \right )_{N,V} + k_B \ln Z
+\end{aligned}\end{split}\]</div>
+<p>This is a straightforward expression for the entropy in terms of a
+derivative of the partition function with respect to <span class="math notranslate nohighlight">\(\beta\)</span>. We can
+also write this as a derivative with respect to <span class="math notranslate nohighlight">\(T\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+S &amp;= -k_B \beta \left ( \frac{\partial \ln Z}{\partial \beta} \right )_{N,V} + k_B \ln Z \\
+&amp;= k_B T\left ( \frac{\partial \ln Z}{\partial T} \right )_{N,V} + k_B \ln Z 
+\end{aligned}\end{split}\]</div>
+<p>Either expression is reasonable and puts the entropy only in terms of
+the canonical partition function.</p>
+<p><strong>(c)</strong> Show that the expression derived in part <strong>b</strong> reduces to the
+Boltzmann entropy if the canonical ensemble is dominated by a single
+energy level (i.e., the contributions of all other energy levels to the
+partition function are negligible).</p>
+<p>Let us assume that the energy of the system is nearly constant with a
+value <span class="math notranslate nohighlight">\(E\)</span>. The partition function then reduces to:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+Z &amp;= \sum_{\nu}^{\text{energies}} \Omega(E_\nu) e^{-\beta E_\nu} \\
+&amp;\approx \Omega(E) e^{-\beta E}
+\end{aligned}\end{split}\]</div>
+<p>In other words, at constant energy the sum reduces to a single term that
+has a prefactor of the degeneracy. We can now substitute this expression
+for <span class="math notranslate nohighlight">\(Z\)</span> directly into the formula for the entropy:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+S &amp;=  -k_B\beta \left ( \frac{\partial \ln Z}{\partial \beta} \right )_{N,V} + k_B \ln Z \\
+&amp;= - k_B \beta \left ( -E\right ) + k_B \ln \Omega(E) - k_B \beta E\\
+&amp;= k_B \ln \Omega(E)
+\end{aligned}\end{split}\]</div>
+<p>We regain the expression for the Boltzmann entropy and show that our
+ensembles are consistent.</p>
+<p><strong>(d)</strong> Calculate the Gibbs entropy of the canonical ensemble, and show
+that this expression for the entropy leads to the correct thermodynamic
+expression for the Helmholtz free energy (<span class="math notranslate nohighlight">\(F=E-TS\)</span>).</p>
+<p>We again use the expression for the Gibbs entropy explicitly, this time
+setting <span class="math notranslate nohighlight">\(p_i\)</span> to the appropriate Boltzmann factor:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    S &amp;= -k_B\sum_i p_i \ln p_i \\ 
+    &amp;= -k_B \sum_i p_i \ln \frac{e^{-E_i / k_B T}}{Z} \\
+    &amp;= -k_B \sum_i p_i  \left ( -\frac{E_i}{k_BT} - \ln Z\right ) \\
+    &amp;= k_B \sum_i p_i \left ( \frac{E_i}{k_B T} \right )  + k_B  \sum_i p_i \ln Z \\
+    &amp;= \frac{1}{T} \sum_i p_i E_i  + k_B \ln Z \sum_i p_i   \\
+    &amp;= \frac{\langle E \rangle}{T} + k_B \ln Z \\
+    &amp;= \frac{ E }{T} - \frac{F}{T} \\
+    \therefore F &amp;=  E  - TS
+    
+\end{aligned}\end{split}\]</div>
+<p>We regain the expected definition of the Helmholtz free energy that we
+derived in lecture, and we see that we obtain the same expression for
+the entropy as in part b.</p>
+</section>
+<section id="question-2-pulling-on-a-protein">
+<h2>Question 2: Pulling on a protein<a class="headerlink" href="#question-2-pulling-on-a-protein" title="Permalink to this headline">#</a></h2>
+<p>A simplified model for the protein keratin is a linear, long chain
+molecule consisting of <span class="math notranslate nohighlight">\(N\)</span> units. Each unit can be in either an
+unstretched state with energy <span class="math notranslate nohighlight">\(\epsilon_\alpha\)</span> and length <span class="math notranslate nohighlight">\(a\)</span>, or a
+stretched state with energy <span class="math notranslate nohighlight">\(\epsilon_\beta\)</span> and length <span class="math notranslate nohighlight">\(b\)</span>. The chain
+is stretched at constant tension, <span class="math notranslate nohighlight">\(\tau\)</span>, which causes it to reach a
+total length <span class="math notranslate nohighlight">\(L\)</span>; <span class="math notranslate nohighlight">\(\tau\)</span> is a force that is conjugate to <span class="math notranslate nohighlight">\(L\)</span>. Assume
+that stretching the chain (i.e. changing <span class="math notranslate nohighlight">\(L\)</span>) does not change the total
+chain volume, the chain is held at constant temperature, and each unit
+is independent.</p>
+<figure>
+<img src="pset_2_pulling_polymer_fig.png" />
+<figcaption>Keratin protein with a series of units of lengths <span
+class="math inline"><em>a</em></span> or <span
+class="math inline"><em>b</em></span> under an applied tension <span
+class="math inline"><em>τ</em></span>. The total length of the protein
+is <span class="math inline"><em>L</em></span>.</figcaption>
+</figure>
+<p>Hint: for a system of <span class="math notranslate nohighlight">\(N\)</span> distinguishable, independent subsystems for
+which the energy of the combined system, <span class="math notranslate nohighlight">\(E\)</span>, is equal to the sum of the
+energies of the subsystems, <span class="math notranslate nohighlight">\(E = \sum_i \epsilon_i\)</span>, the partition
+function of the combined system, <span class="math notranslate nohighlight">\(Z\)</span>, is related to the partition
+function of each subsystem, <span class="math notranslate nohighlight">\(z\)</span>, by:</p>
+<div class="math notranslate nohighlight">
+\[Z = z^N\]</div>
+<p>This relationship is true of any generalized partition function <span class="math notranslate nohighlight">\(\Phi\)</span>,
+as well as the canonical partition function, <span class="math notranslate nohighlight">\(Z\)</span>.</p>
+<p><strong>(a)</strong> Using the first law of thermodynamics, write a thermodynamic
+potential with natural variables of <span class="math notranslate nohighlight">\(N, V, T\)</span> and <span class="math notranslate nohighlight">\(\tau\)</span> and express its
+differential in terms of <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(\tau\)</span>.</p>
+<p>This question is asking us to apply our recipe for constructing a
+generalized ensemble. We first recognize that the natural variables of
+the system, which are held constant, are <span class="math notranslate nohighlight">\(N\)</span>, <span class="math notranslate nohighlight">\(V\)</span>, <span class="math notranslate nohighlight">\(T\)</span>, and <span class="math notranslate nohighlight">\(\tau\)</span>. The
+tensile force adds an additional work term of <span class="math notranslate nohighlight">\(\tau dL\)</span> to the energy of
+the system. From the first law, we can write for the change in energy:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+    dE = TdS - P dV  + \tau dL
+    
+\end{aligned}\]</div>
+<p>We will define <span class="math notranslate nohighlight">\(B(N,V,T, \tau)\)</span> as the thermodynamic potential that is
+minimized at equilibrium in this system. We can then write for <span class="math notranslate nohighlight">\(B\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    B &amp;= E - TS - \tau L \\
+    dB &amp;= dE - TdS - SdT - \tau dL - L d\tau \\
+    dB &amp;= TdS - PdV + \tau dL - TdS - SdT - \tau dL - Ld\tau \\
+    &amp;= - PdV - SdT - L d\tau
+    
+\end{aligned}\end{split}\]</div>
+<p>We thus have a differential form of <span class="math notranslate nohighlight">\(dB\)</span> that is minimized at constant
+<span class="math notranslate nohighlight">\(V, T, \tau\)</span> and <span class="math notranslate nohighlight">\(N\)</span>.</p>
+<p><strong>(b)</strong> Derive an expression for a generalized partition function with
+fixed thermodynamic parameters that correspond to the natural variables
+of the potential derived in part <strong>a</strong>. Your result should be in terms
+of <span class="math notranslate nohighlight">\(\epsilon_a\)</span>, <span class="math notranslate nohighlight">\(\epsilon_b\)</span>, <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(\tau\)</span>, and <span class="math notranslate nohighlight">\(N\)</span>.</p>
+<p>Since each unit of the molecule is independent and the different units
+are distinguishable, we can use the hint to factorize the partition
+function and write:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+    \Phi &amp;= \phi^N
+    
+\end{aligned}\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(\phi\)</span> is the single-unit partition function, which we see is a
+two-state model with one state characterized by energy <span class="math notranslate nohighlight">\(\epsilon_a\)</span> and
+length <span class="math notranslate nohighlight">\(a\)</span> and the other state characterized by energy <span class="math notranslate nohighlight">\(\epsilon_b\)</span> and
+length <span class="math notranslate nohighlight">\(b\)</span>. We can use a generalized partition function, where
+<span class="math notranslate nohighlight">\(-f = \tau\)</span> and <span class="math notranslate nohighlight">\(X_j = L_j = a \text{ or } b\)</span> to write:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    \Phi &amp;= \phi^N \\
+    \phi &amp;=  \sum_{s=\{a,b\}} e^{-\beta E_{s}}e^{\beta \tau L_s} \\
+    &amp;= e^{-\beta \epsilon_a} e^{\beta\tau a} + e^{-\beta\epsilon_b}e^{\beta \tau b} \\
+    \therefore \Phi &amp;= \left (e^{-\beta \epsilon_a} e^{\beta\tau a} + e^{-\beta\epsilon_b}e^{\beta\tau b}\right )^N
+    
+\end{aligned}\end{split}\]</div>
+<p><strong>(c)</strong> Calculate the average length, <span class="math notranslate nohighlight">\(\langle L \rangle\)</span>, of the
+molecule as a function of the applied tension, <span class="math notranslate nohighlight">\(\tau\)</span>.</p>
+<p>From the differential form of the thermodynamic potential corresponding
+to this system, we can write <span class="math notranslate nohighlight">\(L\)</span> as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+    \langle L \rangle = L = -\left ( \frac{\partial B}{\partial \tau}\right )_{V, T}
+    
+\end{aligned}\]</div>
+<p>Using the relation <span class="math notranslate nohighlight">\(B = -k_B T \ln \Phi\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    \langle L \rangle &amp;= k_B T\left ( \frac{\partial \ln \Phi}{\partial \tau}\right )_{V, T} \\
+    &amp;= \frac{Nk_B T}{\phi} \left ( \frac{\partial \phi}{\partial \tau} \right )_{V,T} \\
+    &amp;= \frac{N k_B T}{e^{-\beta (\epsilon_a - \tau a)} + e^{-\beta (\epsilon_b - \tau b)}}\left( \beta a e^{-\beta(\epsilon_a - \tau a)} + \beta b e^{-\beta(\epsilon_b - \tau b)}\right) \\
+    &amp;= N \frac{a e^{-\beta(\epsilon_a - \tau a)} + b e^{-\beta(\epsilon_b - \tau b)}}{e^{-\beta (\epsilon_a - \tau a)} + e^{-\beta (\epsilon_b - \tau b)} }
+    
+\end{aligned}\end{split}\]</div>
+</section>
+<section id="question-3-magnetization-of-a-paramagnet-revisited">
+<h2>Question 3: Magnetization of a paramagnet revisited<a class="headerlink" href="#question-3-magnetization-of-a-paramagnet-revisited" title="Permalink to this headline">#</a></h2>
+<p>In Problem Set 1, we used the microcanonical ensemble to show that the
+magnetization of a paramagnet is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+M = N\mu \tanh (\beta \mu H) 
+\end{aligned}\]</div>
+<p>The system is <span class="math notranslate nohighlight">\(N\)</span> distinguishable, non-interacting spins that are fixed
+on a lattice and exposed to a magnetic field <span class="math notranslate nohighlight">\(H\)</span> at constant
+temperature. Each spin <span class="math notranslate nohighlight">\(s_i\)</span> has a magnetic moment of <span class="math notranslate nohighlight">\(\mu\)</span>, and can be
+in one of two states: parallel to the field (<span class="math notranslate nohighlight">\(s_i = 1\)</span>) or anti-parallel
+to the field (<span class="math notranslate nohighlight">\(s_i = -1\)</span>). The energy of a particular microstate is due
+only to interactions between the spins and the magnetic field:</p>
+<div class="math notranslate nohighlight">
+\[E = -\sum_{i=1}^N s_i \mu H\]</div>
+<p>The magnetization is defined as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+M = \sum_i^N s_i \mu
+\end{aligned}\]</div>
+<p>Derive the magnetization of the system using the canonical ensemble.</p>
+<p>The system of interest is <span class="math notranslate nohighlight">\(N\)</span> distinguishing, non-interacting (i.e.
+independent) spins, each interacting with the magnetic field and
+contributing an energy <span class="math notranslate nohighlight">\(\epsilon_i = -s_i \mu H\)</span>. We can take advantage
+of the hint in Problem 3 to write a partition function for this system,
+<span class="math notranslate nohighlight">\(Z\)</span>, as:</p>
+<div class="math notranslate nohighlight">
+\[Z = z^N\]</div>
+<p>where <span class="math notranslate nohighlight">\(z\)</span> is the single-spin partition function. Since each spin can
+only be in one of two states, <span class="math notranslate nohighlight">\(s_i = \pm 1\)</span>, the energy <span class="math notranslate nohighlight">\(\epsilon_i\)</span> can
+only obtain values of <span class="math notranslate nohighlight">\(\pm \mu H\)</span>. The single spin partition function is
+then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    z &amp;= \sum_i e^{-\beta \epsilon_i} \\
+    &amp;= e^{\beta \mu H} + e^{-\beta \mu H} \\
+    &amp;= 2 \cosh(\beta \mu H)
+    
+\end{aligned}\end{split}\]</div>
+<p>Therefore, the system partition function, <span class="math notranslate nohighlight">\(Z\)</span>, is equal to:</p>
+<div class="math notranslate nohighlight">
+\[Z = z^N = \left [2 \cosh(\beta \mu H)\right] ^N\]</div>
+<p>From the canonical partition function, we can get the energy:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    \langle E \rangle = E &amp;= -\left (  \frac{\partial \ln Z}{\partial \beta} \right )_{N, V} \\
+    &amp;= - \frac{\partial}{\partial \beta}  \left ( N \ln \left [ \exp \left (\beta \mu H \right ) + \exp \left (-\beta \mu H \right ) \right ] \right ) \\
+    &amp;= -N\mu H \left [\frac{\exp \left (\beta \mu H \right ) - \exp \left (-\beta \mu H \right )}{ \exp \left (\beta \mu H \right ) + \exp \left (-\beta \mu H \right )} \right ]\\
+    &amp;= -N \mu H \tanh(\beta \mu H)
+    
+\end{aligned}\end{split}\]</div>
+<p>The magnetization is then simply related to the energy by:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    \langle M \rangle &amp;= -\frac{1}{H} \langle E \rangle \\
+    &amp;= N \mu \tanh(\beta \mu H)
+    
+\end{aligned}\end{split}\]</div>
+<p>This approach generates the result from Problem Set 1 with much less
+difficulty!</p>
+</section>
+<section id="question-4-numerical-calculation-of-the-magnetization-of-a">
+<h2>Question 4: Numerical calculation of the magnetization of a–<a class="headerlink" href="#question-4-numerical-calculation-of-the-magnetization-of-a" title="Permalink to this headline">#</a></h2>
+<p>paramagnet**</p>
+<p>As an alternative to the analytical derivation of the magnetization of a
+paramagnet, the <strong>Metropolis Monte Carlo</strong> algorithm can be used to
+calculate the ensemble-average magnetization. We will derive this
+algorithm in Lecture 10; in this question, you will apply the algorithm
+to compare to the analytical result in ##Question 3.–</p>
+<p>Consider a system of <span class="math notranslate nohighlight">\(N=100\)</span> distinguishable, non-interacting spins in a
+magnetic field <span class="math notranslate nohighlight">\(H\)</span> at constant temperature. Each spin is fixed to a
+lattice position such that the relative positions of spins cannot
+interchange. The system can assume a set of configurations in which each
+spin is either parallel to the field or antiparallel to the field, with
+the energy of each configuration defined in ##Question 3. The Metropolis–
+Monte Carlo algorithm for calculating the ensemble-average magnetization
+consists of the following steps:</p>
+<ol class="arabic simple">
+<li><p>Initialize the system in a random configuration.</p></li>
+<li><p>Randomly generate a new configuration, in which at least 1 spin has
+switched orientation.</p></li>
+<li><p>Calculate the energy of the new configuration, <span class="math notranslate nohighlight">\(E_{\textrm{new}}\)</span>,
+and old configuration, <span class="math notranslate nohighlight">\(E_{\textrm{old}}\)</span>.</p></li>
+<li><p>Calculate the probability of accepting the trial configuration,
+<span class="math notranslate nohighlight">\(\alpha\)</span>, using the following equation:
+<span class="math notranslate nohighlight">\(\alpha = \text{min} \left ( 1, \exp \left \{ -\beta \left [ E_{\textrm{new}} - E_{\textrm{old}} \right ] \right \} \right )\)</span>,
+where <span class="math notranslate nohighlight">\(\beta = (k_B T)^{-1}\)</span>.</p></li>
+<li><p>Generate a uniform random number in the range [0, 1]. If the
+random number is less than <span class="math notranslate nohighlight">\(\alpha\)</span>, then retain the new
+configuration as the system configuration; the new configuration is
+<em>accepted</em>. If the random number is greater than <span class="math notranslate nohighlight">\(\alpha\)</span>, then
+retain the old configuration as the system configuration; the new
+configuration is <em>rejected</em>. Note that all new configurations for
+which the system energy is lowered are automatically accepted.</p></li>
+<li><p>Performing steps 2-5 defines a single Monte Carlo trial. Repeat
+steps 2-5 for a large number of trials (discussed below).</p></li>
+<li><p>Calculate <span class="math notranslate nohighlight">\(\langle M \rangle\)</span> by averaging values of <span class="math notranslate nohighlight">\(M\)</span> over all
+configurations sampled during the trials. Note that configurations
+will be repeated when new configurations are rejected in step 5.</p></li>
+</ol>
+<p>Think carefully about how to efficiently implement this algorithm.
+<strong>This problem is intended to provide you with practice in Python
+programming prior to the assignment of the simulation project.</strong> Your
+grade for this problem will be based in part on the readability of your
+code and plots in addition to the accuracy of the solution.</p>
+<p><strong>(a)</strong> Write a Python program that computes <span class="math notranslate nohighlight">\(\langle M \rangle\)</span> for the
+paramagnetic spin lattice described in ##Question 3 using the Metropolis–
+Monte Carlo algorithm described above. Attach a copy of your code with
+appropriate comments explaining your implementation.</p>
+<p><strong>(b)</strong> Perform independent Monte Carlo simulations for field strengths
+of <span class="math notranslate nohighlight">\(\mu H =\)</span> -3.0 <span class="math notranslate nohighlight">\(k_BT\)</span> to <span class="math notranslate nohighlight">\(\mu H =\)</span> 3.0 <span class="math notranslate nohighlight">\(k_B T\)</span> in increments of 0.5
+<span class="math notranslate nohighlight">\(k_B T\)</span>. Each simulation should include 100,000 Monte Carlo trials to
+obtain accurate approximations of <span class="math notranslate nohighlight">\(\langle M \rangle\)</span>. Plot
+<span class="math notranslate nohighlight">\(\langle M \rangle\)</span> vs. <span class="math notranslate nohighlight">\(\mu H\)</span> and compare to the analytical result
+from ##Question 3.–</p>
+<p>The Python code for part <strong>a</strong> and <strong>b</strong> is included on the Canvas
+website. The plots below show the number of MC iterations necessary to
+obtain converged values of the ensemble-average magnetization and the
+comparison between the ensemble-average mangetization and the analytical
+result from ##Question 3.–</p>
+<p><img alt="Convergence of ensemble-averagemagnetization." src="../../_images/pset_2_Magnetization_convergence.png" />{width=”70%”}</p>
+<p><img alt="Comparison of the ensemble-average magnetization obtained from theMonte Carlo method to the analytical solution. Points indicate the modelcalculations and the line indicates the analyticalsolution." src="../../_images/pset_2_Magnetization_H.png" />{width=”70%”}</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./problems/ps_2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../ps_1/problem_set_1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Problem Set 1 (Due XX/XX/XX)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../ps_3/problem_set_3.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Problem Set 3 (Due XX/XX/XX)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-expressions-for-entropy">Question 1: Expressions for entropy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-pulling-on-a-protein">Question 2: Pulling on a protein</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-magnetization-of-a-paramagnet-revisited">Question 3: Magnetization of a paramagnet revisited</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4-numerical-calculation-of-the-magnetization-of-a">Question 4: Numerical calculation of the magnetization of a–</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Reid van Lehn, Matt Gebbie, Rose Cersonsky
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

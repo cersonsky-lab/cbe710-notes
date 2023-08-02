@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Problem Set 1 (Due XX/XX/XX) &#8212; Notes for CBE710</title>
+    <title>Problem Set 5 (Due XX/XX/XX) &#8212; Notes for CBE710</title>
   
   
   
@@ -63,10 +63,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'problems/ps_1/problem_set_1';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'problems/ps_5/problem_set_5';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="Generalized Ensembles" href="../../lecture_files/Lecture5.html" />
+    <link rel="next" title="Problem Set 6 (Due XX/XX/XX)" href="../ps_6/problem_set_6.html" />
+    <link rel="prev" title="Problem Set 4 (Due XX/XX/XX)" href="../ps_4/problem_set_4.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -162,7 +163,12 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Problem Sets</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Problem Set 1 (Due XX/XX/XX)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ps_1/problem_set_1.html">Problem Set 1 (Due XX/XX/XX)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ps_2/problem_set_2.html">Problem Set 2 (Due XX/XX/XX)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ps_3/problem_set_3.html">Problem Set 3 (Due XX/XX/XX)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ps_4/problem_set_4.html">Problem Set 4 (Due XX/XX/XX)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Problem Set 5 (Due XX/XX/XX)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ps_6/problem_set_6.html">Problem Set 6 (Due XX/XX/XX)</a></li>
 </ul>
 
     </div>
@@ -217,7 +223,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/problems/ps_1/problem_set_1.md" target="_blank"
+      <li><a href="../../_sources/problems/ps_5/problem_set_5.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -299,7 +305,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Problem Set 1 (Due XX/XX/XX)</h1>
+    <h1>Problem Set 5 (Due XX/XX/XX)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -309,10 +315,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-polymer-dimensions">Question 1: Polymer dimensions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-magnetization-of-a-paramagnet">Question 2: Magnetization of a paramagnet</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-mixing-entropy">Question 3: Mixing entropy</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4-stirling-s-approximation">Question 4: Stirling’s approximation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-actual-gas-expansion">Question 1: Actual gas expansion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-equations-of-state">Question 2: Equations of state</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-high-pressure-gas">Question 3: High pressure gas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4-calculus-of-thermodynamics">Question 4: Calculus of thermodynamics</a></li>
 </ul>
             </nav>
         </div>
@@ -324,176 +330,82 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="problem-set-1-due-xx-xx-xx">
-<h1>Problem Set 1 (Due XX/XX/XX)<a class="headerlink" href="#problem-set-1-due-xx-xx-xx" title="Permalink to this headline">#</a></h1>
-<section id="question-1-polymer-dimensions">
-<h2>Question 1: Polymer dimensions<a class="headerlink" href="#question-1-polymer-dimensions" title="Permalink to this headline">#</a></h2>
-<p>Ideal polymer chains are often described as undergoing <em>random walks</em> on
-a lattice. Like ideal gases, the monomers in an ideal polymer chain do
-not interact with each other; that is, the segments of the chain do not
-exclude volume and can overlap. Consider a <strong>one-dimensional</strong> ideal
-polymer chain composed of <span class="math notranslate nohighlight">\(N\)</span> independent segments.</p>
-<p>One end of the chain is placed at the origin. A single chain conformation can then be
-generated by iteratively placing a single segment of the chain a
-distance <span class="math notranslate nohighlight">\(b\)</span> in either the positive or negative <span class="math notranslate nohighlight">\(x\)</span> dimension from the
-current chain end - <em>i.e.</em>, the chain elongates by taking “steps” along
-the one-dimensional coordinate. The end-to-end distance of the chain,
-<span class="math notranslate nohighlight">\(x\)</span>, is the distance between the origin and the end of the last segment
-placed.</p>
-<p><img alt="image" src="../../_images/pset_1_random_walk_fig.png" />
-Figure 1 shows an example for <span class="math notranslate nohighlight">\(N = 8\)</span> in which the end-to-end distance is after all 8 steps are taken.</p>
-<div class="admonition-a admonition">
-<p class="admonition-title"><strong>(a)</strong></p>
-<p>For a one-dimensional ideal chain with <span class="math notranslate nohighlight">\(N\)</span> segments and segment
-size <span class="math notranslate nohighlight">\(b\)</span>, calculate the probability, <span class="math notranslate nohighlight">\(p(x)\)</span>, that the end-to-end
-distance of the polymer is equal to <span class="math notranslate nohighlight">\(x\)</span>. Assume that there is an <strong>equal
-likelihood</strong> of taking a step in either the positive or negative
-direction for each chain segment.</p>
-<details>
-  <summary>Hints</summary>
-  First compute the probability that we take n steps to the right.
-</details>
-</div>
-<div class="admonition-b admonition">
-<p class="admonition-title"><strong>(b)</strong></p>
-<p>For the chain described in part <strong>a</strong>, using Stirling’s
-approximation, show that in the large
-<span class="math notranslate nohighlight">\(N\)</span> limit the probability distribution <span class="math notranslate nohighlight">\(p(x)\)</span> can be approximated by:</p>
-<div class="math notranslate nohighlight">
-\[p(x) = C  \exp \left ( -\frac{x^2}{2Nb^2}\right )\]</div>
-<p>where <span class="math notranslate nohighlight">\(C=\frac{1}{\sqrt{2\pi Nb^2}}\)</span> is a normalization constant
-to enforce that <span class="math notranslate nohighlight">\(\int_{-\infty}^{\infty} p(x)  dx = 1\)</span>. Make sure
-to show how you obtain <span class="math notranslate nohighlight">\(C\)</span>.</p>
-<details>
-  <summary>Hints</summary>
-    Define the quantity a = x/Nb, where a << 1 in the large N limit,
-    and write a Taylor series expansion for ln(1-a) when appropriate.
-</details>
-</div>
-<div class="admonition-c admonition">
-<p class="admonition-title"><strong>(c)</strong></p>
-<p>Show that the entropy of an ideal one-dimensional chain in the
-large <span class="math notranslate nohighlight">\(N\)</span> limit is given by:</p>
-<p>$<span class="math notranslate nohighlight">\(S(N, x) = -\frac{k_Bx^2}{2Nb^2} + S(N) + k_B \ln{C}\)</span>$.</p>
-<p>where <span class="math notranslate nohighlight">\(C\)</span> is our normalizing constant from above, and S(N) is the x-independent entropy term.</p>
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="problem-set-5-due-xx-xx-xx">
+<h1>Problem Set 5 (Due XX/XX/XX)<a class="headerlink" href="#problem-set-5-due-xx-xx-xx" title="Permalink to this headline">#</a></h1>
+<section id="question-1-actual-gas-expansion">
+<h2>Question 1: Actual gas expansion<a class="headerlink" href="#question-1-actual-gas-expansion" title="Permalink to this headline">#</a></h2>
+<p><span class="math notranslate nohighlight">\(N\)</span> moles of an ideal gas at a temperature <span class="math notranslate nohighlight">\(T_1\)</span> are adiabatically
+expanded from a pressure <span class="math notranslate nohighlight">\(P_1\)</span> to a pressure <span class="math notranslate nohighlight">\(P_2\)</span>. The amount of work
+produced by a reversible adiabatic expansion between these two pressures
+is calculated to be <span class="math notranslate nohighlight">\(\delta \underline{W}_\textrm{rev}\)</span>. The amount of
+work extracted when the process is actually performed is instead
+measured as <span class="math notranslate nohighlight">\(\delta\underline{W}_\textrm{actual}\)</span>, although the process
+is still adiabatic. The heat capacities of the gas at constant volume
+and constant pressure are <span class="math notranslate nohighlight">\(C^0_V = 5R/2\)</span> and <span class="math notranslate nohighlight">\(C^0_P = 7R/2\)</span>,
+respectively, and are not found to depend on temperature.</p>
+<p><strong>(a)</strong> What is the final temperature, <span class="math notranslate nohighlight">\(T_2\)</span>, of the gas after the
+expansion (i.e., the temperature when the process is actually
+performed)?</p>
+<p><strong>(b)</strong> What is the entropy change of the gas during the actual process?</p>
 </section>
-<section id="question-2-magnetization-of-a-paramagnet">
-<h2>Question 2: Magnetization of a paramagnet<a class="headerlink" href="#question-2-magnetization-of-a-paramagnet" title="Permalink to this headline">#</a></h2>
-<p>Consider a system of <span class="math notranslate nohighlight">\(N\)</span> distinguishable, non-interacting atoms with
-magnetic dipole moments (spins) in a magnetic field <span class="math notranslate nohighlight">\(H\)</span> at constant
-temperature. Each spin <span class="math notranslate nohighlight">\(s_i\)</span> has a magnetic moment <span class="math notranslate nohighlight">\(\mu\)</span> and can be in
-one of two states: parallel to the field (<span class="math notranslate nohighlight">\(s_i = 1\)</span>) or anti-parallel to
-the field (<span class="math notranslate nohighlight">\(s_i = -1\)</span>). The energy of each microstate is due only to
-interactions between the spins and the magnetic field, and is given by:</p>
+<section id="question-2-equations-of-state">
+<h2>Question 2: Equations of state<a class="headerlink" href="#question-2-equations-of-state" title="Permalink to this headline">#</a></h2>
+<p>Consider a system with the Fundamental Relation:</p>
 <div class="math notranslate nohighlight">
-\[E = -\sum_{i=1}^N s_i \mu H\]</div>
-<p>The magnetization of the material is defined as:</p>
-<div class="math notranslate nohighlight">
-\[\begin{aligned}
-M = \sum_i^N s_i \mu = -\frac{E}{H}
-\end{aligned}\]</div>
-<p>This model is commonly used to describe paramagnetic materials. In this
-problem, we will derive an expression for the ensemble-average
-magnetization of a paramagnet in a magnetic field.</p>
-<div class="admonition-a admonition">
-<p class="admonition-title"><strong>(a)</strong></p>
-<p>Assuming that the paramagnet has a fixed energy <span class="math notranslate nohighlight">\(E\)</span>, write an
-expression for the entropy as a function of the number of spins aligned
-with the field, <span class="math notranslate nohighlight">\(N_+\)</span>, and the total number of spins, <span class="math notranslate nohighlight">\(N\)</span>.</p>
-<details>
-  <summary>Hints</summary>
-    Use the [Boltzmann formulation](https://en.m.wikipedia.org/wiki/Boltzmann's_entropy_formula) for entropy.
-</details>
-</div>
-<div class="admonition-b admonition">
-<p class="admonition-title"><strong>(b)</strong></p>
-<p>Show that the expression for <span class="math notranslate nohighlight">\(N_+\)</span> as a function of the number of
-spins <span class="math notranslate nohighlight">\(N\)</span>, the magnetic field strength <span class="math notranslate nohighlight">\(H\)</span>, the magnetic moment <span class="math notranslate nohighlight">\(\mu\)</span>,
-and the temperature <span class="math notranslate nohighlight">\(T\)</span> (or as a function of <span class="math notranslate nohighlight">\(\beta \equiv 1/k_B T\)</span>) is</p>
-<div class="math notranslate nohighlight">
-\[ N_+ = \frac{N}{1+exp(-2H\beta\mu)}\]</div>
-<details>
-  <summary>Hints</summary>
-  Procedurally, this is almost identical to our previous lecture.
-</details>
-</div>
-<div class="admonition-c admonition">
-<p class="admonition-title"><strong>(c)</strong></p>
-<p>Show that the magnetization of a paramagnet is given by:</p>
-<div class="math notranslate nohighlight">
-\[\begin{aligned}
-M = N\mu \tanh (\beta \mu H) 
-\end{aligned}\]</div>
-</div>
+\[U(S,V) = \left ( \frac{\theta}{R} \right ) S^2 - \left ( \frac{R\theta}{V_0^2} \right ) V^2\]</div>
+<p><span class="math notranslate nohighlight">\(\theta, R\)</span> and <span class="math notranslate nohighlight">\(V_0\)</span> are positive constants.</p>
+<p><strong>(a)</strong> Find the three equations of state for <span class="math notranslate nohighlight">\(T\)</span>, <span class="math notranslate nohighlight">\(P\)</span>, and <span class="math notranslate nohighlight">\(\mu\)</span> for
+this system, and further show that <span class="math notranslate nohighlight">\(\mu = -U\)</span>.</p>
+<p><strong>(b)</strong> Demonstrate that only two of the intensive parameters are
+independently variable.</p>
 </section>
-<section id="question-3-mixing-entropy">
-<h2>Question 3: Mixing entropy<a class="headerlink" href="#question-3-mixing-entropy" title="Permalink to this headline">#</a></h2>
-<p>Consider two different ideal fluids containing <span class="math notranslate nohighlight">\(N_1\)</span> and <span class="math notranslate nohighlight">\(N_2\)</span>
-molecules, respectively, for a total of <span class="math notranslate nohighlight">\(N\)</span> molecules. All molecules
-exclude the same molar volume and are assumed to interact weakly with
-each other and with themselves, such that the potential energy of the
-system is negligible. The two fluids are initially completely demixed
-due to an impermeable partition; the partition is then removed and the
-fluids are allowed to mix at constant volume as illustrated in Figure 2.
-Assume also that the molecules of each fluid are <strong>indistinguishable</strong>
-from the molecules of the same fluid.</p>
-<p><img alt="image" src="../../_images/pset_1_mixing_entropy_fig.png" /></p>
-<div class="admonition-a admonition">
-<p class="admonition-title"><strong>(a)</strong></p>
-<p>Assume that the two fluids occupy a fictitious lattice that
-spans the available volume. Each molecule occupies a single lattice site
-and all lattice sites are occupied; thus, there are are <span class="math notranslate nohighlight">\(N_1\)</span> lattice
-sites occupied by molecule 1 and <span class="math notranslate nohighlight">\(N_2\)</span> lattice sites occupied by
-molecule 2. Using this approximation, calculate <span class="math notranslate nohighlight">\(\Omega(N_1, N_2)\)</span>,
-which is defined as the number of microstates for the mixture of fluids.</p>
-<details>
-  <summary>Hints</summary>
-  Identical arrangements of the fluids are indistinguishable.
-</details>
-</div>
-<div class="admonition-b admonition">
-<p class="admonition-title"><strong>(b)</strong></p>
-<p>Derive an expression for the entropy change associated with
-mixing the two ideal fluids in terms of the mole fractions,
-<span class="math notranslate nohighlight">\(x_1 = N_1/N\)</span> and <span class="math notranslate nohighlight">\(x_2 = N_2/N\)</span>, of the two components. That is,
-determine an expression for:</p>
+<section id="question-3-high-pressure-gas">
+<h2>Question 3: High pressure gas<a class="headerlink" href="#question-3-high-pressure-gas" title="Permalink to this headline">#</a></h2>
+<p>A gas at high pressure flows through a duct. A thermometer held within
+the duct measures the temperature of the gas at a high temperature
+<span class="math notranslate nohighlight">\(T_H\)</span>. A small amount of gas is then released from the duct through a
+valve to the outside atmosphere, which has a pressure <span class="math notranslate nohighlight">\(P_\textrm{out}\)</span>.
+The process by which this gas is released occurs at <strong>constant
+enthalpy</strong> (where <span class="math notranslate nohighlight">\(\underline{H}=\underline{U}+P\underline{V}\)</span>) as
+indicated in the diagram below.</p>
+<p><img alt="image" src="../../_images/pset_5_joule_thompson-01.png" /></p>
+<p>Note that the enthalpy is a state function. The temperature of the gas
+leaving the valve is measured at a colder temperature <span class="math notranslate nohighlight">\(T_C\)</span>. The gas
+obeys the equation of state:</p>
 <div class="math notranslate nohighlight">
-\[\Delta S_{\textrm{mix}} = S_{\textrm{mixed}} - S_{\textrm{demixed}}\]</div>
-<details>
-  <summary>Hints</summary>
-  How many distinguishable configurations are there for totally demixed systems?
-</details>
-</div>
-<div class="admonition-c admonition">
-<p class="admonition-title"><strong>(c)</strong></p>
-<p>Is the lattice model assumption reasonable for molecules
-occupying a continuous set of positions (rather than discrete points)?
-Why or why not?</p>
-</div>
-</section>
-<section id="question-4-stirling-s-approximation">
-<h2>Question 4: Stirling’s approximation<a class="headerlink" href="#question-4-stirling-s-approximation" title="Permalink to this headline">#</a></h2>
-<div class="admonition-python-exercise admonition">
-<p class="admonition-title">Python Exercise</p>
-<p>Write a Python program that calculates the percent error of Stirling’s
-approximation as a function of <span class="math notranslate nohighlight">\(N\)</span>, where Stirling’s approximation is
+\[\frac{PV}{RT} = 1 + \left ( b- \frac{a}{T}\right ) \frac{P}{RT}\]</div>
+<p>where <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are constants that do not depend on temperature or
+pressure. The molar heat capacity at constant pressure, <span class="math notranslate nohighlight">\(C_P\)</span>, is
 defined as:</p>
 <div class="math notranslate nohighlight">
-\[\ln N! \approx N \ln N - N\]</div>
-<p>Include with your solution a copy of your Python code (including
-comments as necessary), a plot of <span class="math notranslate nohighlight">\(\ln N!\)</span> and Stirling’s approximation
-as a function of <span class="math notranslate nohighlight">\(N\)</span> up to <span class="math notranslate nohighlight">\(N=100\)</span>, and a plot of the error of
-Stirling’s approximation as a function of <span class="math notranslate nohighlight">\(N\)</span> up to <span class="math notranslate nohighlight">\(N=100\)</span>. Your grade
-for this problem will be based in part on the readability of your code
-and plots in addition to the accuracy of the solution.</p>
-</div>
-<p><strong>Note: this problem is intended to provide you with practice in Python
-programming prior to the assignment of the simulation project. If you
-need resources for learning to code in Python, see <a class="reference external" href="https://sts.doit.wisc.edu/">here</a>.</strong></p>
-<p>The two requested plots are provided below.</p>
-<p><img alt="Comparison of Stirling's approximation vs.  as a function of." src="../../_images/pset_1_plot_stirling.png" /></p>
-<p><img alt="Relative error of Stirling's approximation vs. , which approacheszero as  exceeds." src="../../_images/pset_1_plot_stirling_error.png" /></p>
+\[C_P =  T \left ( \frac{\partial {S}}{\partial T} \right )_P\]</div>
+<p>The heat capacity <span class="math notranslate nohighlight">\(C_P^\textrm{out}\)</span> is measured at the pressure
+<span class="math notranslate nohighlight">\(P_\textrm{out}\)</span> and does not depend on temperature. What is the
+pressure of the gas in the duct, <span class="math notranslate nohighlight">\(P_\textrm{in}\)</span>, in terms of <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>,
+<span class="math notranslate nohighlight">\(T_H\)</span>, <span class="math notranslate nohighlight">\(T_C\)</span>, <span class="math notranslate nohighlight">\(P_\textrm{out}\)</span>, and <span class="math notranslate nohighlight">\(C_P^\textrm{out}\)</span>?</p>
+</section>
+<section id="question-4-calculus-of-thermodynamics">
+<h2>Question 4: Calculus of thermodynamics<a class="headerlink" href="#question-4-calculus-of-thermodynamics" title="Permalink to this headline">#</a></h2>
+<p>It is often convenient to relate derivatives that are difficult to
+calculate experimentally to measurable materials parameters. Prove the
+following relationships by appropriately manipulating the relevant
+derivatives. The following materials parameters are defined:</p>
+<ul class="simple">
+<li><p>The thermal expansion coefficient,
+<span class="math notranslate nohighlight">\(\alpha =\frac{1}{V} \left ( \frac{\partial V}{\partial T} \right )_P\)</span></p></li>
+<li><p>The isothermal compressibility,
+<span class="math notranslate nohighlight">\(\beta =-\frac{1}{V} \left ( \frac{\partial V}{\partial P} \right )_T\)</span></p></li>
+<li><p>The heat capacity at constant volume,
+<span class="math notranslate nohighlight">\(C_V = T\left ( \frac{\partial S}{\partial T} \right )_V\)</span></p></li>
+<li><p>The heat capacity at constant pressure,
+<span class="math notranslate nohighlight">\(C_P = T\left ( \frac{\partial S}{\partial T} \right )_P\)</span></p></li>
+</ul>
+<p><strong>(a)</strong>
+<span class="math notranslate nohighlight">\(\left ( \frac{\partial S}{\partial P} \right )_{V} = \frac{C_V}{T} \frac{\beta}{\alpha}\)</span>.</p>
+<p><strong>(b)</strong>
+<span class="math notranslate nohighlight">\(\left ( \frac{\partial T}{\partial P} \right )_S = \frac{T\alpha V}{C_P}\)</span></p>
+<p><strong>(c)</strong>
+<span class="math notranslate nohighlight">\(\left ( \frac{\partial C_V}{\partial V} \right )_T = T\left ( \frac{\partial^2 P}{\partial T^2} \right )_V\)</span></p>
 </section>
 </section>
 
@@ -510,7 +422,7 @@ need resources for learning to code in Python, see <a class="reference external"
         },
         kernelOptions: {
             name: "python3",
-            path: "./problems/ps_1"
+            path: "./problems/ps_5"
         },
         predefinedOutput: true
     }
@@ -529,13 +441,22 @@ need resources for learning to code in Python, see <a class="reference external"
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../../lecture_files/Lecture5.html"
+       href="../ps_4/problem_set_4.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Generalized Ensembles</p>
+        <p class="prev-next-title">Problem Set 4 (Due XX/XX/XX)</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="../ps_6/problem_set_6.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Problem Set 6 (Due XX/XX/XX)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div></div>
   
@@ -555,10 +476,10 @@ need resources for learning to code in Python, see <a class="reference external"
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-polymer-dimensions">Question 1: Polymer dimensions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-magnetization-of-a-paramagnet">Question 2: Magnetization of a paramagnet</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-mixing-entropy">Question 3: Mixing entropy</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4-stirling-s-approximation">Question 4: Stirling’s approximation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-actual-gas-expansion">Question 1: Actual gas expansion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-equations-of-state">Question 2: Equations of state</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-high-pressure-gas">Question 3: High pressure gas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4-calculus-of-thermodynamics">Question 4: Calculus of thermodynamics</a></li>
 </ul>
   </nav></div>
 

@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Class introduction &#8212; Notes for CBE710</title>
+    <title>&lt;no title&gt; &#8212; Notes for CBE710</title>
   
   
   
@@ -61,10 +61,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'unit1';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Overview" href="lecture_files/Lecture1A.html" />
+    <link rel="prev" title="Class introduction" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -130,7 +131,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -143,8 +144,8 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     Class introduction
                 </a>
             </li>
@@ -155,12 +156,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="lecture_files/Lecture1B.html">Review of thermodynamics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lecture_files/Lecture2.html">Postulates of statistical mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lecture_files/Lecture3.html">Application of the microcanonical ensemble: two-state system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="problems/ps_1/problem_set_1.html">— Problem Set 1 —</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lecture_files/Lecture4.html">The Canonical Ensemble</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lecture_files/Lecture5.html">Generalized Ensembles</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Problem Sets</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="problems/ps_1/problem_set_1.html">Problem Set 1 (Due XX/XX/XX)</a></li>
 </ul>
 
     </div>
@@ -215,7 +212,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/intro.rst" target="_blank"
+      <li><a href="_sources/unit1.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -225,7 +222,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.rst</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -284,7 +281,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -295,11 +294,19 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Class introduction</h1>
+    <h1><no title></h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -309,31 +316,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="class-introduction">
-<h1>Class introduction<a class="headerlink" href="#class-introduction" title="Permalink to this headline">#</a></h1>
-<p>This class aims to provide a mathematical and theoretical framework for
-understanding behavior at or near equilibrium. Undergraduate
-thermodynamics often focuses on highly macroscopic, phenomenological
-descriptions of thermodynamics; you may have been told equations of
-state and thermodynamic principles, but you may not know the origin of
-these relationships or how they relate to molecular behavior. This class
-will seek to fill those gaps. We will first introduce statistical
-mechanics as a framework for relating the microscopic behavior of
-equilibrium systems to their macroscopic thermodynamic observables. We
-start with this unit because it will be new to most of you. However,
-statistical mechanics does depend on knowledge of some thermodynamics,
-so it may be challenging to those of you who have not had a
-thermodynamics class in a while. Similarly, we will require exercises in
-Python programming throughout the statistical mechanics unit in
-preparation for the second unit on molecular simulations. Programming
-again may be challenging for some of you with little computational
-background.</p>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-</section>
-
+  
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
@@ -365,6 +348,15 @@ background.</p>
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Class introduction</p>
+      </div>
+    </a>
     <a class="right-next"
        href="lecture_files/Lecture1A.html"
        title="next page">
@@ -383,6 +375,20 @@ background.</p>
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>

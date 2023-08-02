@@ -2,7 +2,7 @@
 
 ## Additional Readings for the Enthusiast
 
--   {cite:ts}`chandler_introduction_1987` Chapter 3.3-3.5
+-   {cite:ts}`chandler_introduction_1987` Chapter 3.3-3.4
 
 ## Goals for today's lecture
 - How do we describe systems with fluctuating or non-constant energy?
