@@ -1,34 +1,23 @@
 # Generalized Ensembles
 
+
 ## Additional Readings for the Enthusiast
 
--   \- Ch 3.5
+-   {cite:ts}`chandler_introduction_1987` Chapter 3.5
 
-## Topics in this lecture
+-   {cite:ts}`mcquarrie_statistical_2000` Chapter 3.2
 
--   Generalized ensembles
+## Goals for today's lecture
+- For an arbitrary set of extensive and intensive variables, how can we construct an ensemble?
 
--   Gibbs entropy
-
--   Recipe for the generalized ensemble
-
-## Announcements
-
--   Pset 1 due today, Pset 2 assigned today.
-
--   Final exam: Tuesday, December 17, 10 AM - 12 PM
-
--   Make up lecture: Wednesday, November 6, 1 PM - 2:15 PM
-
-## Generalized ensembles
-
-### Preliminary notes: natural variables
+## Preliminary notes: natural variables
 
 In the preceding three lectures, we presented derivations to describe
-the microcanonical ($NVE$) and canonical ($NVT$) ensembles. In each
-case, we found a relationship for a normalizing constant for the
-probability that could be equated to a thermodynamic potential. What
-should also be noticed, however, is that the thermodynamic potential
+the microcanonical ($NVE$) and canonical ($NVT$) ensembles.
+
+In each case, we equated a corresponding thermodynamic potential
+to a probability and a normalizing constant.
+What should also be noticed, however, is that the thermodynamic potential
 corresponding to each statistical ensemble is exactly the potential that
 has the same natural variables as the parameters held constant for each
 microstate of the corresponding ensemble. Recall that we can write as
@@ -59,10 +48,15 @@ natural variables.
 
 Based on this reasoning, we might like to have statistical ensembles to
 solve a problem where some other variable is held constant. This leads
-to the idea of deriving a **generalized ensemble** - that is, a
-statistical ensemble appropriate for any system that permits the
-exchange of some extensive variable with the environment. For example,
-consider the adsorption of a gas to a surface; equilibrium is
+to the idea of deriving a
+
+```{glossary}
+generalized ensemble
+    a statistical ensemble appropriate for any system that permits
+    the exchange of some extensive variable with the environment
+```
+
+For example, consider the adsorption of a gas to a surface; equilibrium is
 established when the chemical potential of the gas in the bulk is equal
 to the chemical potential of the gas at the surface, and hence it would
 be intuitive to use a statistical ensemble in which the chemical
@@ -76,7 +70,7 @@ variables as the variables that are constant for the system of interest.
 It is thus convenient to derive a generalized ensemble appropriate for
 any given set of natural varables.
 
-### Derivation of the generalized ensemble
+## Derivation of the generalized ensemble
 
 First, let us consider again the derivation of the canonical ensemble
 presented in the previous lecture. We considered a single system
@@ -86,8 +80,14 @@ energy of the bath such that the system of interest and bath were
 instead at fixed temperature. Here, will consider the same system, but
 now we assume that in addition to exchanging energy with the environment
 the system can also exchange some extensive property $X$ with the bath
-with the associated work given by $fdX$. This notation matches the
-generalized definition of work from Lecture 1. At equilibrium, the
+with the associated work given by $fdX$.
+
+![image](figs/fig_5_1-01.png)
+
+This notation matches the
+generalized definition of work from [our previous lecture](Lecture1B).
+
+At equilibrium, the
 temperature of the bath is equal to the temperature of the system and in
 addition the generalized force, $f$, is the same for the system and the
 bath since intensive variables are equal at equilibrium. For example,
@@ -98,8 +98,6 @@ be the volume, $V$, in which case $fdX = -P dV$ would be
 expansion-contraction work. Both forms of work will lead to similar
 partition functions, motivating the derivation of a generalized
 ensemble.
-
-![image](figs/fig_4_1.png){width="100%"}
 
 We can now follow the same derivation performed previously for the
 canonical ensemble to obtain a partition function for this generalized
@@ -128,28 +126,35 @@ sample when the system is in microstate $j$ with $C_1$ as a
 normalization factor. We now consider the subset of bath states in which
 the bath energy and value of $X$ are fixed to the values $E_T-E_j$ and
 $X_T-X_j$ respectively, so this subset of states is a microcanonical
-ensemble. We now take the logarithm of both sides:
+ensemble.
+
+```{admonition} Using the procedure similar to the last lecture, show that $p_j = C_2 \exp \left (  -\beta E_j+\beta fX_j \right )$
+<details>
+  <summary><b></b>[Show derivation]</summary>
+
+We first take the logarithm of both sides:
 
 $$\begin{aligned}
 \ln p_j(E_j, X_j) &=  \ln \Omega_B(E_T-E_j, X_T-X_j) - \ln C_1
 \end{aligned}$$
 
-Again assuming that $E_B \gg E_j$ and $X_B \gg X_j$, we expand
+Assuming that $E_B \gg E_j$ and $X_B \gg X_j$, we expand
 $\ln \Omega_B(E_T-E_j, X_T-X_j)$ as a Taylor series around the point
 where $E_T-E_j = E_T$ and $X_T - X_j = X_T$ (hence we Taylor expand in 2
 variables, and ignore second-order and higher terms):
 
 $$\begin{aligned}
-%f(x, y) &= f(a, b) + \frac{\partial f(x,y)}{\partial x}(x-a) + \frac{\partial f(x,y)}{\partial y}(y-b)  + \dots \\
-\ln \Omega_B(E_T-E_j, X_T-X_j)  &\approx \ln \Omega_B(E_T, X_T)  - E_j \left ( \frac{\partial \ln \Omega_B(E_T-E_j, X_T-X_j)}{\partial (E_T-E_j)} \right )_{X,V}    \\\nonumber
+\approx & \quad \ln \Omega_B(E_T, X_T)\\
+& \quad - E_j \left ( \frac{\partial \ln \Omega_B(E_T-E_j, X_T-X_j)}{\partial (E_T-E_j)} \right )_{X,V}    \\\nonumber
 & \quad - X_j \left ( \frac{\partial \ln \Omega_B(E_T-E_j, X_T-X_j)}{\partial (X_T-X_j)} \right )_{E,V}
-\\&= \ln \Omega_B(E_T,X_T)  - \frac{E_j}{k_B} \left ( \frac{\partial S_B}{\partial E_B} \right )_{X,V} - \frac{X_j}{k_B} \left ( \frac{\partial S_B}{\partial X_B} \right )_{E,V} 
+\\= & \quad \ln \Omega_B(E_T,X_T)  - \frac{E_j}{k_B} \left ( \frac{\partial S_B}{\partial E_B} \right )_{X,V} - \frac{X_j}{k_B} \left ( \frac{\partial S_B}{\partial X_B} \right )_{E,V} 
 \end{aligned}$$
 
 We have substituted in expressions for the entropy of the bath
 microcanonical ensemble (for the given values of the system energy and
-number of particles). So far the equations should all look familiar. We
-can now write the fundamental relation in the entropy representation
+number of particles). So far the equations should all look familiar.
+
+We can now write the fundamental relation in the entropy representation
 while adding the generic work term $fdX$ to obtain expressions for the
 two partial derivatives:
 
@@ -159,7 +164,7 @@ dS &= \frac{1}{T} dE + \frac{P}{T} dV - \frac{f}{T} dX \label{general_entropy}\\
 &= \left ( \frac{\partial S}{\partial E} \right )_{X,V} dE + \left ( \frac{\partial S}{\partial V} \right )_{E, X} dV + \left ( \frac{\partial S}{\partial X} \right )_{E, V} dX
 \end{aligned}$$
 
-We thus see that:
+We thus see that, for the bath (subscript $B$):
 
 $$\begin{aligned}
 \left ( \frac{\partial S_B}{\partial E_B} \right )_{X,V} &= \frac{1}{T_B} \\
@@ -180,14 +185,17 @@ yields:
 $$\begin{aligned}
 \ln p_j(E_j, X_j) &=  \ln \Omega_B(E_T-E_j, X_T-X_j) - \ln C_1 \\
 &=  \ln \Omega_B(E_T, X_T) - \frac{E_j}{k_B T} + \frac{f X_j}{k_BT} - \ln C_1\\
-\therefore  p_j &= C_2 \exp \left ( -\frac{E_j}{k_BT} \right )\exp \left ( \frac{f X_j}{k_BT} \right )
+\therefore  p_j &= C_2 \exp \left ( -\beta E_j+\beta fX_j\right )
 \end{aligned}$$
+</details>
+```
+
 
 We now invoke the normalization condition $\sum p_j = 1$ to finalize the
 derivation:
 
 $$\begin{aligned}
-p_j(E_j, X_j) = \frac{\exp \left ( -\frac{E_j}{k_BT} \right )\exp \left ( \frac{f X_j}{k_BT} \right )}{\sum_{j}^{\textrm{microstates}} \exp \left ( -\frac{E_j}{k_BT} \right )\exp \left ( \frac{fX_j}{k_BT} \right )}
+p_j(E_j, X_j) = \frac{\exp \left ( -\beta E_j+\beta fX_j\right )}{\sum_{j}^{\textrm{microstates}} \exp \left ( -\beta E_j+\beta fX_j\right )}
 \end{aligned}$$
 
 The partition function for the generalized ensemble, which we will give
@@ -196,26 +204,19 @@ the symbol $\Phi$ is thus:
 ```{math}
 :label: general_partition
 
-\Phi  = \sum_{j}^{\textrm{microstates}} \exp \left ( -\frac{E_j}{k_BT} \right )\exp \left ( \frac{f X_j}{k_BT} \right )
+\Phi  = \sum_{j}^{\textrm{microstates}} \exp \left ( -\beta E_j+\beta fX_j\right )
 ```
 
 This general partition function looks quite similar to the canonical
-partition function except that there is now the new work term appears in
+partition function except that there is now the new work term in
 the exponential. Note one subtlety, here - we include in this derivation
 terms for both the internal energy, $E$, and various work terms. When
 defining a problem, you might think to include a work term as part of
 the energy, which would lead to overcounting. Thus, when using the
 general ensemble approach, it is important that contributions to the
 internal energy (*e.g.*, translational degrees of freedom for particles)
-do not also include work terms (e.g., expansion-contraction work) that
+are not also repeated as work terms (e.g., expansion-contraction work) that
 are separately included in the partition function.
-
-There are some subtleties, however, that should be noted. First, the sum
-runs over all *possible* states in the ensemble. There could be many
-particular states for which the energy $E_j$ is equal to some fixed
-value while the number of particles $N_j$ varies; that is, in general
-$E$ and $N$ may be independent of each other. We can thus write a
-completely equivalent form of the grand canonical partition function as:
 
 ## Thermodynamic connection for the generalized ensemble
 
@@ -224,16 +225,16 @@ function, we can now derive a relationship between a thermodynamic
 potential and this generalized partition function, just as we have a
 relationship between the Helmholtz free energy and the canonical
 partition function. Doing so requires a new definition of the entropy,
-referred to as the **Gibbs entropy**:
+referred to as the [**Gibbs entropy**](https://en.wikipedia.org/wiki/Entropy_(statistical_thermodynamics)#Gibbs_entropy_formula):
 
 $$S = -k_B \sum_j p_j \ln p_j$$
 
 You will shows this expression's equivalence to the Boltzmann definition
-of the entropy on Problem Set 2. We now have the expressions:
+of the entropy on [Problem Set 2](#TBD). We now have the expressions:
 
 $$\begin{aligned}
-p_j(E_j, X_j) &= \frac{\exp \left ( -\beta E_j \right )\exp \left ( \beta f X_j \right )}{\Phi} \label{general_probability}\\
-\Phi  &= \sum_{j}^{\textrm{microstates}} \exp \left ( -\beta E_j \right )\exp \left ( \beta f X_j \right ) \\
+p_j(E_j, X_j) &= \frac{\exp \left ( -\beta E_j + \beta f X_j \right )}{\Phi} \label{general_probability}\\
+\Phi  &= \sum_{j}^{\textrm{microstates}} \exp \left ( -\beta E_j + \beta f X_j \right ) \\
 S &= -k_B \sum_{j} p_j \ln p_j
 \end{aligned}$$
 
@@ -270,9 +271,16 @@ between the canonical partition function and the Helmholtz free energy
 ($F = E - TS$). We will use $\Sigma$ to refer to this new "free energy"
 that we have defined: $\Sigma = E - TS - fX$.
 
+
 Let's just check the self-consistency of this result by writing out
-thermodynamic relations. For example, writing out the total derivative
-of $\Sigma$ and substituting in the fundamental equation gives:
+thermodynamic relations.
+
+```{admonition} Show that $X = -\left ( \frac{\partial \Sigma}{\partial f}\right )_{V, T}$
+<details>
+  <summary><b></b>[Show derivation]</summary>
+
+First, write out the total derivative
+of $\Sigma$ and substitute in the fundamental equation gives:
 
 $$\begin{aligned}
 d\Sigma &= dE - f dX - Xdf - TdS - SdT \\
@@ -281,8 +289,20 @@ d\Sigma &= dE - f dX - Xdf - TdS - SdT \\
 &= \left ( \frac{\partial \Sigma}{\partial f}\right )_{V, T} dX + \left ( \frac{\partial \Sigma}{\partial T}\right )_{X, V} dT + \left ( \frac{\partial \Sigma}{\partial V}\right )_{X, T} dV \\
 \therefore X &= -\left ( \frac{\partial \Sigma}{\partial f}\right )_{V, T}
 \end{aligned}$$
+</details>
+```
 
-We can use this relationship to check that the thermodynamic connection
+```{admonition} Show that $X = \langle X \rangle$. 
+<details>
+  <summary><b></b>Hints</summary>
+
+  Substitute the equation for $\Sigma$ into the equation you just solved.
+
+</details>
+<details>
+  <summary><b></b>[Show derivation]</summary>
+
+We can use $X = -\left ( \frac{\partial \Sigma}{\partial f}\right )_{V, T}$ to check that the thermodynamic connection
 between $\Phi$ and $\Sigma$ is accurate:
 
 $$\begin{aligned}
@@ -300,10 +320,13 @@ Thus, this checks out - we correctly find that the ensemble average is
 equal to the thermodynamic parameter via the relationship between $\Phi$
 and $\Sigma$.
 
+</details>
+```
+
 ## Recipe for the generalized ensemble
 
 In the previous section, the thermodynamic potential that corresponds to
-the log of the generalized enseble partion function is exactly that
+the log of the generalized ensemble partion function is **exactly** that
 potential for which the thermodynamic variables conjugate to $E$ and $X$
 are held constant (i.e., the $VTf$ ensemble in this generalized case).
 We have assumed these variables as constant from the beginning of this
@@ -322,7 +345,7 @@ $V$, $T$, and $f$ are constant, which defines them as the set of natural
 variables for this potential and this partition function. To emphasize
 this point, we can also write the thermodynamic connection as:
 
-$$-k_B T \ln \Phi(V, T, f) = \Sigma(V, T, f)$$
+$$\Sigma(V, T, f) = -k_B T \ln \Phi(V, T, f)$$
 
 where $\Sigma(V, T, f)$ is the generalized thermodynamic potential that
 is a function of the natural variables $VTf$.
@@ -330,26 +353,26 @@ is a function of the natural variables $VTf$.
 This observation suggests a general recipe for deriving a generalized
 ensemble:
 
--   Determine the natural variables of the system (e.g., $\mu$, $V$,
+1.  **Determine the natural variables of the system** (e.g., $\mu$, $V$,
     $T$) as the variables that are either fixed due to the constraints
     of the system boundaries or are constant due to conditions of
     equilibrium (i.e., intensive variables conjugate to extensive
     variables that can exchange with the environment).
 
--   Write a general partition function ($\Phi$) of the form in Eq.
+2.  **Write a general partition function** ($\Phi$) of the form in Eq.
     {eq}`general_partition`, including all work terms that
     correspond to extensive variables that can exchange with the
     environment.
 
--   For each extensive variable that is able to exchange with the
-    environment, substract the product of the extensive variable and its
+3.  For each extensive variable that is able to exchange with the
+    environment, **substract the product of the extensive variable and its
     conjugate variable from the internal energy $E$ to obtain a
-    thermodynamic potential with the correct natural variables
+    thermodynamic potential** with the correct natural variables
 
--   Equate $-k_BT \ln \Phi$ to the thermodynamic potential ($\Sigma$)
+4.  **Equate $-k_BT \ln \Phi$ to the thermodynamic potential ($\Sigma$)**
     that is a function of the same natural variables.
 
--   Derive other thermodynamic variables via appropriate derivatives of
+5.  **Derive other thermodynamic variables** via appropriate derivatives of
     $\Sigma$.
 
 The one caveat here is that for a system that can exchange energy with
@@ -361,28 +384,47 @@ above, is to ensure that you do not include work terms in the expression
 for the energy of the system itself - that would be double counting
 energies.
 
-### Example: the grand canonical ensemble
+## Example: the grand canonical ensemble
 
 As a test of the generalized ensemble approach, we can derive the grand
 canonical ensemble, in which the energy and number of particles of a
 system are allowed to vary while the volume and temperature are held
-constant. Since $N$ (conjugate to $\mu$) and $E$ (conjugate to $1/T$)
+constant.
+
+
+```{admonition} 1.   Determine the natural variables of the system.
+<details>
+  <summary><b></b>[Click for answer]</summary>
+
+Since $N$ (conjugate to $\mu$) and $E$ (conjugate to $1/T$)
 can exchange with the environment and $V$ is fixed due to the
 constraints of the system boundaries, the natural variables at
 equilibrium are $\mu$, $V$ and $T$. Here, $\mu dN$ is the work term that
 corresponds to $fdX$ in the generalized ensemble, so we have that
 $f = \mu$ and $X = N$.
+</details>
+```
+
+```{admonition} 2. Write a general partition function.
+<details>
+  <summary><b></b>[Click for answer]</summary>
 
 The partition function (using the symbol $\Xi$ per convention for this
 ensemble) then has the form:
 
 $$\begin{aligned}
 \Xi &=  \sum_{j} \exp \left [ -\beta E_j \right ]  \exp \left [\beta \mu N_j \right ]
-%&= \sum_{i}  Z(N, V_i, T)  \exp \left [ \frac{-PV_i}{k_B T} \right ] 
 \end{aligned}$$
+</details>
+```
 
-The corresponding thermodynamic potential (using the symbol $\Sigma_G$,
-with the subscript indicating the grand canonical ensmeble)is:
+```{admonition} 3. Substract the product of the extensive variable and its conjugate variable from the internal energy $E$ to obtain the thermodynamic potential.
+<details>
+  <summary><b></b>[Click for answer]</summary>
+
+We then determine the corresponding thermodynamic potential (using the symbol $\Sigma_G$,
+with the subscript indicating the grand canonical ensmeble), noting that because the system
+can exchange energy with the environment, we subtract a factor of $TS$:
 
 $$\begin{aligned}
 \Sigma_G  &= E - TS - \mu N \\
@@ -391,13 +433,28 @@ d\Sigma_G &= -P dV - SdT - N d\mu
 
 This potential, $\Sigma_G$, is also sometimes called the grand
 potential. The total derivative emphasizes that it has the correct
-natural variables ($\mu$, $V$ and $T$). We can then equate this
+natural variables ($\mu$, $V$ and $T$).
+</details>
+```
+
+```{admonition} 4. Equate $-k_BT \ln \Phi$ to the thermodynamic potential.
+<details>
+  <summary><b></b>[Click for answer]</summary>
+
+We can then equate this
 potential to the partition function as:
 
 $$\Sigma _G = -k_B T \ln \Xi$$
 
-which we can use to derive various relations. For example, the
-ensemble-average number of particles in the system would be:
+which we can use to derive various relations.
+</details>
+```
+
+```{admonition} 5. Derive other thermodynamic variables: what is the ensemble-average number of particles?
+<details>
+  <summary><b></b>[Click for answer]</summary>
+
+The ensemble-average number of particles in the system would be:
 
 $$\begin{aligned}
 \langle N \rangle &=  \left ( \frac{\partial \Sigma_G}{\partial \mu}\right )_{V, T} \\
@@ -406,14 +463,29 @@ $$\begin{aligned}
 
 With explicit relations for $E_j$ and $N_i$ we could then derive the
 number of particles.
+</details>
+```
 
-### Example: the isobaric-isothermal ensemble
+## Example: the isobaric-isothermal ensemble
 
 As another example, we can derive the isobaric-isothermal ensemble, in
 which the energy and volume of a system are allowed to vary while the
-number of particles is held constant. In this case, the natural
+number of particles is held constant.
+
+```{admonition} 1.   Determine the natural variables of the system.
+<details>
+  <summary><b></b>[Click for answer]</summary>
+
+In this case, the natural
 variables at equilibrium are $N$, $P$ and $T$ and $-PdV$ is the work
 term that corresponds to $fdX$ in the generalized ensemble.
+
+</details>
+```
+
+```{admonition} 2. Write a general partition function.
+<details>
+  <summary><b></b>[Click for answer]</summary>
 
 The partition function (using the symbol $\Delta$ per convention for
 this ensemble) then has the form:
@@ -422,6 +494,12 @@ $$\begin{aligned}
 \Delta &=  \sum_{j} \exp \left [ -\beta E_j \right ]  \exp \left [-\beta PV_j \right ]
 %&= \sum_{i}  Z(N, V_i, T)  \exp \left [ \frac{-PV_i}{k_B T} \right ] 
 \end{aligned}$$
+</details>
+```
+
+```{admonition} 3. Substract the product of the extensive variable and its conjugate variable from the internal energy $E$ to obtain the thermodynamic potential.
+<details>
+  <summary><b></b>[Click for answer]</summary>
 
 The corresponding thermodynamic potential is:
 
@@ -432,13 +510,30 @@ dG &= VdP- SdT + \mu dN
 
 This potential, $G$, is the Gibbs free energy, which is relevant at
 typical experimental conditions. The total derivative emphasizes that it
-has the correct natural variables ($N$, $P$ and $T$). We can then equate
+has the correct natural variables ($N$, $P$ and $T$).
+
+</details>
+```
+
+```{admonition} 4. Equate $-k_BT \ln \Phi$ to the thermodynamic potential.
+<details>
+  <summary><b></b>[Click for answer]</summary>
+
+We can then equate
 this potential to the partition function as:
 
 $$G = -k_B T \ln \Delta$$
 
-which we can use to derive various relations. For example, the
-ensemble-average volume of the system would be:
+which we can use to derive various relations.
+
+</details>
+```
+
+```{admonition} 5. Derive other thermodynamic variables: what is the ensemble-average volume of the system?
+<details>
+  <summary><b></b>[Click for answer]</summary>
+
+The ensemble-average volume of the system would be:
 
 $$\begin{aligned}
 \langle V \rangle &=  \left ( \frac{\partial G}{\partial P}\right )_T \\
@@ -447,6 +542,8 @@ $$\begin{aligned}
 
 With explicit relations for $E_j$ and $V_i$ we could then derive the
 volume.
+</details>
+```
 
 We now have discussed 4 explicit ensembles - microcanonical ($NVE$),
 canonical ($NVT$), grand canonical ($\mu VT$), and isothermal-isobaric
