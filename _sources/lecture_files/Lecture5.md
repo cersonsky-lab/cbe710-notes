@@ -384,7 +384,7 @@ above, is to ensure that you do not include work terms in the expression
 for the energy of the system itself - that would be double counting
 energies.
 
-## Example: the grand canonical ensemble
+## Example: the {term}`grand canonical ensemble`
 
 As a test of the generalized ensemble approach, we can derive the grand
 canonical ensemble, in which the energy and number of particles of a
@@ -466,9 +466,9 @@ number of particles.
 </details>
 ```
 
-## Example: the isobaric-isothermal ensemble
+## Example: the {term}`isothermal-isobaric ensemble`
 
-As another example, we can derive the isobaric-isothermal ensemble, in
+As another example, we can derive the isothermal-isobaric ensemble, in
 which the energy and volume of a system are allowed to vary while the
 number of particles is held constant.
 

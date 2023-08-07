@@ -66,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'lecture_files/Lecture6';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Problem Set 1 (Due Tuesday, September 19, 2023)" href="../problems/ps_1/problem_set_1.html" />
+    <link rel="next" title="The Langmuir Isotherm" href="Lecture7.html" />
     <link rel="prev" title="Generalized Ensembles" href="Lecture5.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
@@ -161,6 +161,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Lecture4.html">The Canonical Ensemble</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Lecture5.html">Generalized Ensembles</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">The Ideal Gas Partition Function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture7.html">The Langmuir Isotherm</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Problem Sets</span></p>
 <ul class="nav bd-sidenav">
@@ -325,6 +326,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">The ideal gas partition function</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ideal-gas-partition-function-in-the-classical-limit">Ideal gas partition function in the classical limit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thermodynamic-relationships-of-the-ideal-gas-partition-function">Thermodynamic relationships of the ideal gas partition function</a></li>
 </ul>
             </nav>
         </div>
@@ -652,14 +654,14 @@ integral is equivalent to what we did when discussing Stirling’s
 approximation - we can think of the sum over energies as performing
 rectangular integration of the energy vs. <span class="math notranslate nohighlight">\(\nu\)</span>, and as the difference
 between consecutive terms in the sum becomes small, rectangular
-integration can be well-approximated using a continuous integral. The
-assumption that energies are continuous is reasonable in a macroscopic
-system where incrementing the quantum numbers by one leads to a very
-small change in the energy (<span class="math notranslate nohighlight">\(\approx 10^{-9} k_B T\)</span>). This assumption is
-referred to as the <strong>classical limit</strong>, and indeed, writing a partition
-function in terms of an integral over phase space is a hallmark of
-<strong>classical statistical mechanics</strong> (to date, everything we have done is
-in the quantum limit by writing energy levels as discrete). In the
+integration can be well-approximated using a continuous integral.</p>
+<dl class="glossary simple">
+<dt id="term-classical-limit">classical limit<a class="headerlink" href="#term-classical-limit" title="Permalink to this term">#</a></dt><dd><p>The assumption that energies are continuous in a macroscopic
+system; requires that incrementing the quantum numbers by one leads to a very
+small change in the energy (<span class="math notranslate nohighlight">\(\approx 10^{-9} k_B T\)</span>).</p>
+</dd>
+</dl>
+<p>In the
 classical limit the partition function becomes:</p>
 <div class="math notranslate nohighlight">
 \[z = \frac{\pi}{4}  \left( \frac{8m}{h^2}\right )^{3/2} V \int_0^\infty   \epsilon_{\nu}^{1/2}  e^{-\beta \epsilon_{\nu} } d\epsilon_{\nu}\]</div>
@@ -699,9 +701,119 @@ which has units
 of length and is a function of <span class="math notranslate nohighlight">\(T\)</span>; this simplifies our notation and
 defines a characteristic length scale for treating a gas classically -
 if <span class="math notranslate nohighlight">\(V \gg \lambda^3\)</span>, which we will generally assume to be the case,
-then the classical limit is reasonable. With this partition function, we
-can proceed to derive thermodynamic relationships as will be discussed
-in the <a class="reference internal" href="Lecture7.html"><span class="doc std std-doc">next lecture</span></a>.</p>
+then the classical limit is reasonable.</p>
+</section>
+<section id="thermodynamic-relationships-of-the-ideal-gas-partition-function">
+<h2>Thermodynamic relationships of the ideal gas partition function<a class="headerlink" href="#thermodynamic-relationships-of-the-ideal-gas-partition-function" title="Permalink to this headline">#</a></h2>
+<p>We have now performed the first two steps in our approach by identifying
+an expression for the energy of a microstate of our system and
+calculating the corresponding partition function (in the classical
+limit) from the single-particle partition function. We can next derive
+thermodynamic relationships using the connection between the canonical
+partition function and the Helmholtz free energy.</p>
+<p>Let us first calculate
+the ensemble-average pressure of an ideal gas:</p>
+<div class="admonition-show-that-pv-nrt-where-r-n-ak-b admonition">
+<p class="admonition-title">Show that <span class="math notranslate nohighlight">\(PV=NRT\)</span>, where <span class="math notranslate nohighlight">\(R=N_Ak_B\)</span>.</p>
+<details><summary>Show derivation</summary>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\langle P \rangle &amp;= P = -\left ( \frac{\partial F }{\partial V}\right )_{N,T} \\
+&amp;= k_B T \left ( \frac{\partial \ln Z }{\partial V}\right )_{N,T} \\
+\ln Z &amp;=  N\ln V + \ln \left [ \frac{1}{N!} \left( \frac{2\pi m k_BT}{h^2}\right )^{3N/2} \right ] \\
+P &amp;= N k_B T   \frac{1}{V} \\
+\therefore PV &amp;= N k_B T
+\end{aligned}\end{split}\]</div>
+<p>This expression for the pressure is the familiar ideal gas equation of
+state, derived <strong>solely</strong> from statistical mechanics. Note that <span class="math notranslate nohighlight">\(R\)</span>, the
+ideal gas constant, is related to <span class="math notranslate nohighlight">\(k_B\)</span> by a constant factor of
+Avogadro’s constant, <span class="math notranslate nohighlight">\(N_A\)</span>, or <span class="math notranslate nohighlight">\(R = N_A k_B\)</span>. Basically, this is just a
+unit conversion. The only input to obtain this relationship is an energy
+function from quantum mechanics - therefore this is entirely a
+first-principles derivation that does not rely on empirical
+measurements. In the third line we divided the partition function into a
+term that is a function of <span class="math notranslate nohighlight">\(V\)</span> and one that is not; the second term does
+not contribute to the expression for <span class="math notranslate nohighlight">\(P\)</span>.</p>
+</div>
+<p>We can next calculate the average energy of an ideal gas.</p>
+<div class="admonition-show-that-internal-energy-e-frac-3-n-k-bt-2 admonition">
+<p class="admonition-title">Show that internal energy <span class="math notranslate nohighlight">\(E = \frac{3 N k_BT}{2}\)</span>.</p>
+<details><summary>Hints</summary>
+<p>Recall that we
+can relate the energy to the canonical partition function (from a
+<a class="reference internal" href="Lecture4.html"><span class="doc std std-doc">previous lecture</span></a>) via:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+E &amp;= - \left ( \frac{\partial \ln Z}{\partial \beta}\right )_{N,V} \\
+&amp;= k_B T^2 \left ( \frac{\partial \ln Z}{\partial T}\right)_{N,V}
+\end{aligned}\end{split}\]</div>
+</details>
+<details><summary>Show derivation</summary>
+<p>We write out the partition function and
+separate into the temperature-dependent and temperature-independent
+terms:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\ln Z &amp;=  \ln \left [ \frac{1}{N!} \left( \frac{2\pi m k_BT}{h^2}\right )^{3N/2} V^N \right ] \\
+&amp;= \frac{3N}{2} \ln T + \ln \left [ \frac{1}{N!} \left( \frac{2\pi m k_B}{h^2}\right )^{3N/2} V^N \right ]
+\end{aligned}\end{split}\]</div>
+<p>Taking the derivative gives:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+E &amp;= k_B T^2 \frac{3N}{2T} \\
+&amp;= \frac{3 N k_BT}{2}
+\end{aligned}\end{split}\]</div>
+<p>This again is a familiar expression - the internal energy of an ideal
+gas depends only on the temperature, and we obtain the same prefactors
+as in thermodynamics.</p>
+</details>
+</div>
+<p>We can now easily also calculate the heat capacity
+at constant volume, <span class="math notranslate nohighlight">\(C_V\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+C_V &amp;= \left ( \frac{\partial  E  }{\partial T}\right )_{N,V} \\
+&amp;= \frac{3 }{2}N k_B
+\end{aligned}\end{split}\]</div>
+<p>These last two results are manifestations of the</p>
+<dl class="glossary simple">
+<dt id="term-equipartition-theorem"><a class="reference external" href="https://en.wikipedia.org/wiki/Equipartition_theorem">equipartition theorem</a><a class="headerlink" href="#term-equipartition-theorem" title="Permalink to this term">#</a></dt><dd><p>any degree of freedom that appears
+quadratically in the energy of a system contributes <span class="math notranslate nohighlight">\(1/2 k_BT\)</span> to the
+internal energy and contributes <span class="math notranslate nohighlight">\(1/2 k_B\)</span> to the heat capacity in the
+classical limit</p>
+</dd>
+</dl>
+<p>Here, there are 3 translational degrees of freedom
+corresponding to the three quantum numbers that each contribute a
+quadratic energy term (the kinetic energy) for each of the <span class="math notranslate nohighlight">\(N\)</span> atoms,
+leading to <span class="math notranslate nohighlight">\(\frac{3 }{2}N k_B\)</span> for the heat capacity as we found.</p>
+<p>Finally, we can compute the chemical potential of an ideal gas using the
+ideal gas partition function:</p>
+<div class="admonition-show-that-mu-mu-0-t-k-b-t-ln-rho admonition">
+<p class="admonition-title">Show that <span class="math notranslate nohighlight">\(\mu = \mu_0(T) + k_B T \ln \rho\)</span>.</p>
+<details><summary>Hints</summary>
+<div class="math notranslate nohighlight">
+\[\mu = \left ( \frac{\partial F }{\partial N}\right )_{T,V}\]</div>
+</details>
+<details><summary>Show derivation</summary>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\mu &amp;= \left ( \frac{\partial F }{\partial N}\right )_{T,V} \\
+&amp;= -k_B T \left ( \frac{\partial \ln Z }{\partial N}\right )_{T,V} \\
+\ln Z &amp;= \ln \left ( \frac{z^N}{N!}\right ) \\
+&amp;= N \ln z - \ln N! \\
+&amp;= N \ln  \left [\left( \frac{2\pi m k_BT}{h^2}\right )^{3/2} V \right ] - N \ln N + N \\
+\mu &amp;= -k_B T \left [ \ln \left( \frac{2\pi m k_BT}{h^2}\right )^{3/2} V  - \ln N  \right ] \\
+&amp;= -k_B T \ln \left( \frac{2\pi m k_BT}{h^2}\right )^{3/2} + k_B T \ln \frac{N}{V} \\
+&amp;= \mu_0(T) + k_B T \ln \rho
+\end{aligned}\end{split}\]</div>
+</details>
+</div>
+<p>The last formula expresses the chemical potential in terms of a first
+term, which is temperature dependent but concentration (<span class="math notranslate nohighlight">\(\rho\)</span>)
+independent, and then a second concentration-dependent term. This form
+for the chemical potential is again exactly what is observed for ideal
+gases in classical thermodynamics.</p>
 </section>
 </section>
 
@@ -746,11 +858,11 @@ in the <a class="reference internal" href="Lecture7.html"><span class="doc std s
       </div>
     </a>
     <a class="right-next"
-       href="../problems/ps_1/problem_set_1.html"
+       href="Lecture7.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Problem Set 1 (Due Tuesday, September 19, 2023)</p>
+        <p class="prev-next-title">The Langmuir Isotherm</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -780,6 +892,7 @@ in the <a class="reference internal" href="Lecture7.html"><span class="doc std s
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">The ideal gas partition function</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ideal-gas-partition-function-in-the-classical-limit">Ideal gas partition function in the classical limit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thermodynamic-relationships-of-the-ideal-gas-partition-function">Thermodynamic relationships of the ideal gas partition function</a></li>
 </ul>
   </nav></div>
 
