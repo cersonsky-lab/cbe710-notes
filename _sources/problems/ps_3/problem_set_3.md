@@ -1,4 +1,4 @@
-# Problem Set 3 (Due XX/XX/XX)
+# Problem Set 3 (Due Thursday, October 10, 2023)
 
 ## Question 1: Isomerization process
 
@@ -10,88 +10,36 @@ constant temperature. The isomerization from state $A$ to $B$ is
 associated with a change in the energy of the molecule,
 $\Delta \epsilon = \epsilon_B - \epsilon_A$, where $\epsilon_A$ and
 $\epsilon_B$ are internal energies associated with each of the two
-states, respectively. According to the *Boltzmann distribution law*, the
-equilibrium ratio of the $A$ and $B$ populations is given by:
+states, respectively. According to [Maxwell-Boltzmann statistics](https://en.wikipedia.org/wiki/Maxwell%E2%80%93Boltzmann_statistics),
+the equilibrium ratio of the $A$ and $B$ populations is given by:
 
 $$\frac{\langle N_A \rangle}{\langle N_B \rangle} = \frac{\Omega_A}{\Omega_B} e^{\beta \Delta \epsilon}$$
 
 where $\Omega_A$ and $\Omega_B$ are the degeneracies for a single
 molecule in state $A$ and $B$, respectively. Assume that the gas can be
-treated as ideal (*i.e.*, all molecules are non-interacting and
+treated as [ideal](../../lecture_files/Lecture6.md) (i.e., all molecules are non-interacting and
 independent) regardless of whether a molecule is in state $A$ or state
 $B$, and that the single-molecule translational partition function,
 $z_{\textrm{trans}}$, is the same for each state.
 
-**(a)** Write an expression for the system partition function,
-$Z(N_A, N_B, V_, T)$, in terms of the single-molecule partition
+```{admonition} **(a)**
+
+Show that the system partition function,
+$Z(N_A, N_B, V, T)$, can be written in terms of the single-molecule partition
 function, $z_a$, for a molecule in state $A$, the single-molecule
 partition function, $z_b$, for a molecule in state $B$, the
 single-molecule translational partition function, $z_{\textrm{trans}}$,
-and the number of molecules in each state ($N_A$ and $N_B$).
+and the number of molecules in each state ($N_A$ and $N_B$) as
 
-The system we are considering consists of a mixture of two different
-ideal gas molecules (representing the two different isomers) at a fixed
-volume and temperature. Because the two different sets of molecules do
-not interact, we can factorize the partition function for the joint
-system into the product of the single-molecule partition functions for
-each separate isomer. We can write the energy of a single molecule in
-each state as:
+$$Z = \frac{\left (\Omega_A z_{\textrm{trans}}e^{-\epsilon_A/kT} \right )^{N_A}}{N_A!} \frac{\left (\Omega_B z_{\textrm{trans}}e^{-\epsilon_B/kT}\right )^{N_B}}{N_B!}$$
 
-$$\begin{aligned}
-    E_A &= \epsilon_A + E_{\textrm{trans}} \\
-    E_B &= \epsilon_B + E_{\textrm{trans}} 
-    
-\end{aligned}$$
+Explain your rationale with each step.
 
-In other words, the energy associated with being in state $A$ or $B$ is
-distinct from the typical translational energy of an ideal gas,
-$E_{\textrm{trans}}$. We can thus factorize the single-molecule
-partition function into the product of a partition function associated
-with the translational energy ($z_\textrm{trans}$) and a partition
-function associated with the energy and degeneracy of a specific
-isomeric state. The corresponding single-molecule canonical (since each
-set of molecules is at constant $N,V,T$) partition functions for states
-$A$ and $B$, recognizing that the degeneracy of each state is provided
-in the problem statement, is:
-
-$$\begin{aligned}
-    z_A &= \Omega_A z_{\textrm{trans}}e^{-\epsilon_A/kT} \\
-    z_B &= \Omega_B z_{\textrm{trans}}e^{-\epsilon_B/kT} 
-    
-\end{aligned}$$
-
-If we consider only the set of molecules in state $A$, all of these
-molecules are then indistinguishable, so the total partition function
-for all molecules in state $A$ is given by:
-
-$$Z_A = \frac{z_A^{N_A}}{N_A!}$$
-
-This relation follows from our standard factorization of the partition
-function. We can write an equivalent expression for molecules in state
-$B$:
-
-$$Z_B = \frac{z_B^{N_B}}{N_B!}$$
-
-Finally, to get a partition function for the combined system, we
-recognize that the energies of a subsystem corresponding to the set of
-all $A$ molecules and a subsystem corresponding to all $B$ molecules are
-independent. Therefore, the partition function of the entire system is
-equal to the product of the partition functions of these two subsystems
-(and these two subsystems themselves are distinguishable since state $A$
-is distinguishable from state $B$). We can then write:
-
-$$\begin{aligned}
-    Z &= Z_A Z_B \\
-    &= \frac{z_A^{N_A}}{N_A!} \frac{z_B^{N_B}}{N_B!} \\
-    &= \frac{\left (\Omega_A z_{\textrm{trans}}e^{-\epsilon_A/kT} \right )^{N_A}}{N_A!} \frac{\left (\Omega_B z_{\textrm{trans}}e^{-\epsilon_B/kT}\right )^{N_B}}{N_B!}
-    
-\end{aligned}$$
-
-So the key points are: states $A$ and $B$ are distinguishable from each
-other, translational energies and isomeric state energies are
-distinguishable from each other, but molecules in state $A$ are
-indistinguishable from other molecules in state $A$ and ditto for state
-$B$.
+<details><summary> Hints</summary>
+Consider what entities can be distinguished from one another, and therefore
+separated in our partition function formulation.
+</details>
+```
 
 **(b)** Using the result from part **a** and assuming that both $N_A$
 and $N_B$ are large, show that the Boltzmann distribution law follows

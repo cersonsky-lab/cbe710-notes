@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Problem Set 3 (Due XX/XX/XX) &#8212; Notes for CBE710</title>
+    <title>Problem Set 3 (Due Thursday, October 10, 2023) &#8212; Notes for CBE710</title>
   
   
   
@@ -66,6 +66,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'problems/ps_3/problem_set_3';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Bibliography" href="../../references.html" />
+    <link rel="prev" title="Problem Set 2 (Due Thursday, September 28, 2023)" href="../ps_2/problem_set_2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -158,10 +160,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture3.html">Application of the microcanonical ensemble: two-state system</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture4.html">The Canonical Ensemble</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture5.html">Generalized Ensembles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture6.html">The Ideal Gas Partition Function</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Problem Sets</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../ps_1/problem_set_1.html">Problem Set 1 (Due XX/XX/XX)</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../ps_1/problem_set_1.html">Problem Set 1 (Due Tuesday, September 19, 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ps_2/problem_set_2.html">Problem Set 2 (Due Thursday, September 28, 2023)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Problem Set 3 (Due Thursday, October 10, 2023)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="nav bd-sidenav">
@@ -302,7 +307,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Problem Set 3 (Due XX/XX/XX)</h1>
+    <h1>Problem Set 3 (Due Thursday, October 10, 2023)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -327,8 +332,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="problem-set-3-due-xx-xx-xx">
-<h1>Problem Set 3 (Due XX/XX/XX)<a class="headerlink" href="#problem-set-3-due-xx-xx-xx" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="problem-set-3-due-thursday-october-10-2023">
+<h1>Problem Set 3 (Due Thursday, October 10, 2023)<a class="headerlink" href="#problem-set-3-due-thursday-october-10-2023" title="Permalink to this headline">#</a></h1>
 <section id="question-1-isomerization-process">
 <h2>Question 1: Isomerization process<a class="headerlink" href="#question-1-isomerization-process" title="Permalink to this headline">#</a></h2>
 <p>Consider an isomerization process, <span class="math notranslate nohighlight">\(\ce{A \rightleftharpoons B}\)</span>, where
@@ -339,80 +344,32 @@ constant temperature. The isomerization from state <span class="math notranslate
 associated with a change in the energy of the molecule,
 <span class="math notranslate nohighlight">\(\Delta \epsilon = \epsilon_B - \epsilon_A\)</span>, where <span class="math notranslate nohighlight">\(\epsilon_A\)</span> and
 <span class="math notranslate nohighlight">\(\epsilon_B\)</span> are internal energies associated with each of the two
-states, respectively. According to the <em>Boltzmann distribution law</em>, the
-equilibrium ratio of the <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> populations is given by:</p>
+states, respectively. According to <a class="reference external" href="https://en.wikipedia.org/wiki/Maxwell%E2%80%93Boltzmann_statistics">Maxwell-Boltzmann statistics</a>,
+the equilibrium ratio of the <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> populations is given by:</p>
 <div class="math notranslate nohighlight">
 \[\frac{\langle N_A \rangle}{\langle N_B \rangle} = \frac{\Omega_A}{\Omega_B} e^{\beta \Delta \epsilon}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\Omega_A\)</span> and <span class="math notranslate nohighlight">\(\Omega_B\)</span> are the degeneracies for a single
 molecule in state <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, respectively. Assume that the gas can be
-treated as ideal (<em>i.e.</em>, all molecules are non-interacting and
+treated as <a class="reference internal" href="../../lecture_files/Lecture6.html"><span class="doc std std-doc">ideal</span></a> (i.e., all molecules are non-interacting and
 independent) regardless of whether a molecule is in state <span class="math notranslate nohighlight">\(A\)</span> or state
 <span class="math notranslate nohighlight">\(B\)</span>, and that the single-molecule translational partition function,
 <span class="math notranslate nohighlight">\(z_{\textrm{trans}}\)</span>, is the same for each state.</p>
-<p><strong>(a)</strong> Write an expression for the system partition function,
-<span class="math notranslate nohighlight">\(Z(N_A, N_B, V_, T)\)</span>, in terms of the single-molecule partition
+<div class="admonition-a admonition">
+<p class="admonition-title"><strong>(a)</strong></p>
+<p>Show that the system partition function,
+<span class="math notranslate nohighlight">\(Z(N_A, N_B, V, T)\)</span>, can be written in terms of the single-molecule partition
 function, <span class="math notranslate nohighlight">\(z_a\)</span>, for a molecule in state <span class="math notranslate nohighlight">\(A\)</span>, the single-molecule
 partition function, <span class="math notranslate nohighlight">\(z_b\)</span>, for a molecule in state <span class="math notranslate nohighlight">\(B\)</span>, the
 single-molecule translational partition function, <span class="math notranslate nohighlight">\(z_{\textrm{trans}}\)</span>,
-and the number of molecules in each state (<span class="math notranslate nohighlight">\(N_A\)</span> and <span class="math notranslate nohighlight">\(N_B\)</span>).</p>
-<p>The system we are considering consists of a mixture of two different
-ideal gas molecules (representing the two different isomers) at a fixed
-volume and temperature. Because the two different sets of molecules do
-not interact, we can factorize the partition function for the joint
-system into the product of the single-molecule partition functions for
-each separate isomer. We can write the energy of a single molecule in
-each state as:</p>
+and the number of molecules in each state (<span class="math notranslate nohighlight">\(N_A\)</span> and <span class="math notranslate nohighlight">\(N_B\)</span>) as</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-    E_A &amp;= \epsilon_A + E_{\textrm{trans}} \\
-    E_B &amp;= \epsilon_B + E_{\textrm{trans}} 
-    
-\end{aligned}\end{split}\]</div>
-<p>In other words, the energy associated with being in state <span class="math notranslate nohighlight">\(A\)</span> or <span class="math notranslate nohighlight">\(B\)</span> is
-distinct from the typical translational energy of an ideal gas,
-<span class="math notranslate nohighlight">\(E_{\textrm{trans}}\)</span>. We can thus factorize the single-molecule
-partition function into the product of a partition function associated
-with the translational energy (<span class="math notranslate nohighlight">\(z_\textrm{trans}\)</span>) and a partition
-function associated with the energy and degeneracy of a specific
-isomeric state. The corresponding single-molecule canonical (since each
-set of molecules is at constant <span class="math notranslate nohighlight">\(N,V,T\)</span>) partition functions for states
-<span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, recognizing that the degeneracy of each state is provided
-in the problem statement, is:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-    z_A &amp;= \Omega_A z_{\textrm{trans}}e^{-\epsilon_A/kT} \\
-    z_B &amp;= \Omega_B z_{\textrm{trans}}e^{-\epsilon_B/kT} 
-    
-\end{aligned}\end{split}\]</div>
-<p>If we consider only the set of molecules in state <span class="math notranslate nohighlight">\(A\)</span>, all of these
-molecules are then indistinguishable, so the total partition function
-for all molecules in state <span class="math notranslate nohighlight">\(A\)</span> is given by:</p>
-<div class="math notranslate nohighlight">
-\[Z_A = \frac{z_A^{N_A}}{N_A!}\]</div>
-<p>This relation follows from our standard factorization of the partition
-function. We can write an equivalent expression for molecules in state
-<span class="math notranslate nohighlight">\(B\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[Z_B = \frac{z_B^{N_B}}{N_B!}\]</div>
-<p>Finally, to get a partition function for the combined system, we
-recognize that the energies of a subsystem corresponding to the set of
-all <span class="math notranslate nohighlight">\(A\)</span> molecules and a subsystem corresponding to all <span class="math notranslate nohighlight">\(B\)</span> molecules are
-independent. Therefore, the partition function of the entire system is
-equal to the product of the partition functions of these two subsystems
-(and these two subsystems themselves are distinguishable since state <span class="math notranslate nohighlight">\(A\)</span>
-is distinguishable from state <span class="math notranslate nohighlight">\(B\)</span>). We can then write:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-    Z &amp;= Z_A Z_B \\
-    &amp;= \frac{z_A^{N_A}}{N_A!} \frac{z_B^{N_B}}{N_B!} \\
-    &amp;= \frac{\left (\Omega_A z_{\textrm{trans}}e^{-\epsilon_A/kT} \right )^{N_A}}{N_A!} \frac{\left (\Omega_B z_{\textrm{trans}}e^{-\epsilon_B/kT}\right )^{N_B}}{N_B!}
-    
-\end{aligned}\end{split}\]</div>
-<p>So the key points are: states <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are distinguishable from each
-other, translational energies and isomeric state energies are
-distinguishable from each other, but molecules in state <span class="math notranslate nohighlight">\(A\)</span> are
-indistinguishable from other molecules in state <span class="math notranslate nohighlight">\(A\)</span> and ditto for state
-<span class="math notranslate nohighlight">\(B\)</span>.</p>
+\[Z = \frac{\left (\Omega_A z_{\textrm{trans}}e^{-\epsilon_A/kT} \right )^{N_A}}{N_A!} \frac{\left (\Omega_B z_{\textrm{trans}}e^{-\epsilon_B/kT}\right )^{N_B}}{N_B!}\]</div>
+<p>Explain your rationale with each step.</p>
+<details><summary> Hints</summary>
+Consider what entities can be distinguished from one another, and therefore
+separated in our partition function formulation.
+</details>
+</div>
 <p><strong>(b)</strong> Using the result from part <strong>a</strong> and assuming that both <span class="math notranslate nohighlight">\(N_A\)</span>
 and <span class="math notranslate nohighlight">\(N_B\)</span> are large, show that the Boltzmann distribution law follows
 from the condition that the chemical potential of a molecule in state
@@ -748,6 +705,24 @@ from ##Question 3.–</p>
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../ps_2/problem_set_2.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Problem Set 2 (Due Thursday, September 28, 2023)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../references.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Bibliography</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>

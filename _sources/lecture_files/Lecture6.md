@@ -2,29 +2,26 @@
 
 ## Additional Readings for the Enthusiast
 
--   \- Ch. 4 intro, 4.6, 4.7
+-   {cite:ts}`chandler_introduction_1987` Chapter 4 (intro), 4.4-4.7
 
-## Topics in this lecture
-
--   Factorization of the partition function
-
--   The ideal gas partition function
-
-## Announcements
-
--   Pset 2 due Thursday
+## Goals for today's lecture
+- How do independent subsystems impact our formulation of the partition function?
+- How can we account for indistinguishable subsystems in the partition function?
+- What is the characteristic length scale for treating a system classically?
 
 ## Factorization of the partition function
 
 In the last lecture, we derived expressions for generalized partition
 functions and related connections to macroscopic thermodynamic
 potentials. We specifically paid attention to four key ensembles: the
-microcanonical ensemble (our starting point for all further
-derivations), the canonical ensemble, the grand canonical ensemble, and
-the isothermal-isobaric ensemble. These are the four most common
+{term}`microcanonical ensemble` (our starting point for all further
+derivations), the {term}`canonical ensemble`, the {term}`grand canonical ensemble`, and
+the {term}`isothermal-isobaric ensemble`. These are the four most common
 ensembles used in statistical mechanics. To date, we have considered
 partition functions describing all states for an entire system of
-interest. However, often times we will be able to divide the system into
+interest.
+
+However, often times we will be able to divide the system into
 multiple **independent** subsystems (indeed, we did this for the polymer
 adsorption example), perhaps even independent particles, suggesting that
 we may want a relationship between the properties of an entire system
@@ -38,11 +35,16 @@ functions.
 Consider a system for which we can break the energy into two parts
 (i.e., into the energies of two subsystems, for example, or two
 different sources of energy) such that we can write in general
-$E = \epsilon^{(1)} + \epsilon^{(2)}$. The superscripts in this case
+
+$$E = \epsilon^{(1)} + \epsilon^{(2)}$$
+
+The superscripts in this case
 indicate the energies of subsystems 1 and 2, and we partition the total
 system energy between them; this is similar to the partitioning of
 energy between the system of interest and the bulk reservoir that we
-used to derive the canonical partition function in Lecture 3. The energy
+used to derive the canonical partition function in [previous lectures](Lecture3.md).
+
+The energy
 of a single configuration, $j$, of the combined system is then
 $E_j = \epsilon^{(1)}_n + \epsilon^{(2)}_m$, where the label $j$
 identifies a particular configuration of the combined system and $n$ and
@@ -63,21 +65,30 @@ Z &= \sum_j e^{-\beta E_j} \\
 If the indices $n$ and $m$ are independent of each other, we can now
 further write:
 
-$$\begin{aligned}
+```{math}
+:label: ideal_gas_partition
+
 Z &= \left ( \sum_n e^{-\beta\epsilon^{(1)}_n} \right ) \left ( \sum_m e^{-\beta\epsilon^{(2)}_m}  \right ) \\
 &\equiv Z^{(1)}Z^{(2)}
-\end{aligned}$$
+```
 
 Expressing the sum over all possible indices as a product of sums over
 single indices is the key to this method - because $E$ can be decomposed
 into the **sum** of two **independent** values, the **product** of the
 two summations yields all possible values of $E$. You can demonstrate
 this manually by assuming a two-state energy system per subsystem, for
-example, and counting the possible products. Note that this
-factorization is only possible because the two subsystem energies,
+example, and counting the possible products.
+
+```{admonition} Could we do this factorization if $n$ and $m$ were not independent?
+<details>
+<summary> Click for answer </summary>
+This factorization is only possible because the two subsystem energies,
 $\epsilon^{(1)}$ and $\epsilon^{(2)}$ are independent and uncorrelated -
 if either energy were a function of the other (i.e. if $n$ and $m$ were
 not independent), then the same factorization would not be possible.
+</details>
+```
+
 Since each of the independent sums takes the same form as the canonical
 partition function, we use $Z^{(1)}$ to refer to the partition function
 for subsystem 1, etc. Again, note that we write these as sums over
@@ -98,10 +109,12 @@ each subsystem could represent a single particle), then the partition
 function for each subsystem is identical and the partition function of
 the combined system becomes:
 
-$$\begin{aligned}
+```{math}
+:label: factorization
+
 Z &= (Z^{(1)})^N \\
-&= z^N \label{factorization}
-\end{aligned}$$
+&= z^N
+```
 
 To simplify this notation, we will define $Z^{(1)} \equiv z$ as the
 single-subsystem partition function. This factorization dramatically
@@ -109,9 +122,8 @@ simplifies our calculation of a system partition function - for example,
 if we had a system with 100,000 independent molecules (e.g., ideal gas
 molecules), and each molecule can exist in three different microstates,
 then the total number of states in the entire system is $3^{100,000}$,
-which is much too large to calculate. Eq.
-[\[factorization\]](#factorization){reference-type="ref"
-reference="factorization"} instead says that we only need an expression
+which is much too large to calculate. Eq. {eq}`factorization`
+instead says that we only need an expression
 for the three-state partition function $z$ which is trivial. Again, we
 assume that each subsystem is independent and identical - so this
 implies that each subsystem has exactly the same partition function
@@ -120,49 +132,54 @@ energy, etc.).
 
 In the preceding definition we have applied a distinct label to each of
 the $N$ different single-subsystem partition functions, implying that
-each molecule is **distinguishable**. As we discussed in the derivation
+each molecule is {term}`distinguishable`. As we discussed in the derivation
 of the microcanonical ensemble, however, in most systems of independent
-particles the particles are instead **indistinguishable**. Identifying
-distinguishable vs. indistinguishable subsystems can be confusing, but
+particles the particles are instead {term}`indistinguishable`.
+
+Identifying distinguishable vs. indistinguishable subsystems can be confusing, but
 the idea here is that particles/subsystems are distinguishable if we can
-uniquely identify the subsystem if it were randomly selected. For
-example, each monomer in a polymer is distinguishable because we can
+uniquely identify the subsystem if it were randomly selected.
+
+```{admonition} Is a monomer within a polymer distinguishable or indistinguishable?
+<details><summary> Click for answer </summary>
+Distinguishable. Each monomer in a polymer is distinguishable because we can
 identify exactly where in the polymer chain it is (i.e. its if the
-first, second, third, etc. monomer), whereas each molecule in an ideal
-gas is indistinguishable. Similarly, each site on a lattice is
-distinguishable, but if particles are able to move between lattice
-points then the particles are indistinguishable.
+first, second, third, etc. monomer).
+</details>
+```
 
-If each subsystem of a combined system is indistinguishable, then for a
-given value of $E$ we can distribute values of
-$\epsilon^{(1)},\epsilon^{(2)},\epsilon^{(3)},\dots$ to each subsystem
-in many ways that all yield the same value of $E$, but these different
-distributions all lead to sets of microstates that are
-indistinguishable, and thus each set of configurations should only be
-counted once in the system partition function. For example, assume a two
-particle system where each particle can have a discrete energy
-arbitrarily labeled as 1, 2, 3, or 4. Treating each particle as a
-subsystem and assigning an energy of 0 to particle 1 and 4 to particle 2
-is equivalent to assigning an energy of 0 to particle 2 and 4 to
-particle 1; hence this state should only be counted once in the
-partition function. Note that there can still be many different ways of
-assigning energies to achieve the same total system energy of 4 - we
-could have assigned the values of 0/4, 1/3, or 2/2, and these would all
-yield unique states. We just do not want to overcount the redundant
-states 4/0 and 3/1 in this example.
+```{admonition} Is a molecule within an ideal gas distinguishable or indistinguishable?
+<details><summary> Click for answer </summary>
+Indistinguishable. Each molecule in an ideal
+gas is indistinguishable.
+</details>
+```
 
-![image](figs/fig_5_1.png){width="100%"}
+### Over-counting in the partition function
+
+![image](figs/fig_6_1-01.png)
+
+```{admonition} Let's consider our particles on this lattice. Suppose I have set up
+my system to place particle 1 on lattice site 1 and particle 2 on lattice site 2.
+How is this different from placing particle 1 on lattice site 2 and particle 2 on lattice site 1?
+
+<details><summary> Click for answer </summary>
+It isn't. Because particles 1 and 2 are indistinguishable, these two snapshots are
+also indistinguishable.
+
+
+If each subsystem (here, the particles) of a combined system is indistinguishable,
+when we arbitrarily assign labels to each particle, the corresponding
+microstates are still indistinguishable, and thus each set of configurations should only be
+counted once in the system partition function.
+</details>
+```
 
 To avoid overcounting states associated with indistinguishable
-subsystems, we recognize from the discussion of the microcanonical
-ensemble that there are $N!$ possible ways to assign the energies
-$\epsilon_i$, $\epsilon_j$, etc. to the $N$ subsystems. That is, we
-choose one of the $N$ subsystems first and assign it a value
-$\epsilon_i$, then we choose one of the $N-1$ subsystems second and
-assign it a value $\epsilon_j$, etc., such that there $N!$ different
-ways of assigning a given set of $\epsilon_i, \epsilon_j, \dots$ to $N$
-subsystems, and each of these would have the same energy, so for this
-particular value of $E$ we have counted $N!$ states when we should have
+subsystems (here, the particles), we recognize from the discussion of the microcanonical
+ensemble that there are $N!$ possible ways to assign energies
+$\epsilon_i$, $\epsilon_j$, etc. to the $N$ subsystems, where $E = \sum_i \epsilon_i$.
+So for a particular value of $E$ we have counted $N!$ states when we should have
 counted only 1. If we imagine counting our partition function by summing
 over energy levels, then **the degeneracy of each energy level is
 overcounted by this amount**. More specifically, each possible way of
@@ -200,8 +217,8 @@ To summarize, we thus obtain:
 
 $$\begin{aligned}
 Z &= \sum_j e^{-\beta E_j} = \sum_{\nu}\Omega(N,V,E_\nu) e^{-\beta E_\nu} \quad \quad\text{Single system with $N$ particles} \\
-Z &= z^N \rightarrow z = \sum_j e^{-\beta \epsilon_j } \quad \quad\text{$N$ independent, distinguishable subsystems} \\
-Z &= \frac{z^N}{N!} \rightarrow z = \sum_j e^{-\beta \epsilon_j } \quad \quad\text {$N$ independent, indistinguishable subsystems} \\
+Z &= z^N \text{, where}\quad z = \sum_j e^{-\beta \epsilon_j } \quad \quad\text{$N$ independent, distinguishable subsystems} \\
+Z &= \frac{z^N}{N!}\text{, where}\quad z = \sum_j e^{-\beta \epsilon_j } \quad \quad\text {$N$ independent, indistinguishable subsystems} \\
 Z &=  \frac{(z_a z_b z_c\dots)^N}{N!} \quad \quad\text {Eq. 6.14 with multiple energetic components per subsystem}
 \end{aligned}$$
 
@@ -214,41 +231,44 @@ results expected from classical thermodynamics. The basic steps for
 identifying thermodynamic properties of the system will be the
 following:
 
--   Determine a single-particle energy and corresponding single-particle
+1.   Determine a single-particle energy and corresponding single-particle
     partition function
 
--   Write a partition function for the entire system using the
+2.   Write a partition function for the entire system using the
     single-particle partition function
 
--   Derive thermodynamic quantities via derivatives of the partition
+3.   Derive thermodynamic quantities via derivatives of the partition
     function
 
 We will start by performing this derivation in the canonical ensemble.
 We assume a volume of monatomic gas contained with a cubic box of length
 $L$, such that $V=L^3$. Each particle has an associated partition
-function $z = \sum_j e^{-\beta \epsilon_j}$. Because the system is ideal
+function $z = \sum_j e^{-\beta \epsilon_j}$.
+
+Because the system is ideal
 and each molecule is only a single atom (and hence there are no degrees
 of freedom associated with molecular vibrations, etc), the energy of
-each particle is given from the solution to the quantum "particle in a
-box", which is a generalization of a result stated in Lecture 1 (note
-that we will not derive where this energy comes from as it is outside
-the scope of this class). A quantum particle in a box has a discrete
+each particle is given from the solution to the quantum [particle in a
+box](https://en.wikipedia.org/wiki/Particle_in_a_box), which is a
+generalization of a result stated in [an earlier lecture](Lecture1A.md).
+A quantum particle in a box has a discrete
 spectrum of energies corresponding to the possible positions (or, more
 accurately, probability distributions associated with specific
 positions, which are equivalent to the square of the wavefunction). The
 energy is given as:
 
-$$\begin{aligned}
-\epsilon_{\nu} &= \frac{h^2(n_x^2 + n_y^2 + n_z^2)}{8mL^2}, \label{partbox3d} \\
+```{math}
+:label: partbox3d
+\epsilon_{\nu} &= \frac{h^2(n_x^2 + n_y^2 + n_z^2)}{8mL^2}, \\
 n_x, n_y, n_z &= 1, 2, 3 \dots
-\end{aligned}$$
+```
 
 Here, $h$ is the Planck constant, $m$ is the mass of the particle, and
 $n_x$, $n_y$, and $n_z$ are three unitless quantum numbers that specify
 a particular quantum state in a 3D box. Recall that in quantum mechanics
 energies are discretized, such that the three quantum numbers above
 specify discrete values of the energy, $\epsilon_{\nu}$, and also
-contribute to the degeneracy, $\omega(\epsilon_{\nu})$ (written in lower
+contribute to the degeneracy, $\omega_{\nu}$ (written in lower
 case to indicate a single-particle degeneracy). Since particle positions
 are associated with different energies, the degeneracy of each energy
 level is specified only by the number of possible ways of assigning
@@ -258,25 +278,24 @@ To proceed, we would like to calculate the single particle partition
 function. We write the partition function by summing over all possble
 values of the energy, $\epsilon_{\nu}$:
 
-$$z =  \sum_{\nu}^\infty w(\epsilon_{\nu})e^{-\beta \epsilon_{\nu}}$$
+$$z =  \sum_{\nu}^\infty w_{\nu}e^{-\beta \epsilon_{\nu}}$$
 
-The prefactor $w(\epsilon_{\nu})$ is the degeneracy of a given energy
+The prefactor $w_{\nu}$ is the degeneracy of a given energy
 level, $\epsilon_{\nu}$. We can start by computing an expression for the
-degeneracy by picturing a three-dimensional space of quantum numbers in
-a coordinate system defined by $n_x$, $n_y$, and $n_z$, where each point
-in this space that has positive values of all three numbers is a single
-possible molecular quantum state (i.e., one quantum state per unit
-volume) corresponding to some energy value $\epsilon_{\nu}$. The
-equation
+degeneracy by picturing a three-dimensional grid of quantum numbers in
+a coordinate system defined by $n_x\geq 0$, $n_y\geq 0$, and $n_z\geq 0$, where each point
+in this space is a single possible molecular quantum state corresponding
+to some energy value $\epsilon_{\nu}$. 
+
+The equation
 
 $$n_x^2 + n_y^2 + n_z^2 = \frac{8mL^2\epsilon_{\nu}}{h^2} = R^2$$
 
 then defines the equation for a sphere of radius $R^2$ in the
 $n_xn_yn_z$ space, where the expression for $R$ is from the
-rearrangement of Eq. [\[partbox3d\]](#partbox3d){reference-type="ref"
-reference="partbox3d"}.
+rearrangement of Eq. {eq}`partbox3d`. In 2D, this would look like:
 
-![image](figs/fig_6_1.png){width="100%"}
+![image](figs/fig_6_2-01.png)
 
 We can quantify the number of possible microstates as the volume of the
 sphere for which all three quantum numbers are positive, or
@@ -296,7 +315,7 @@ with an energy between $\epsilon_{\nu}$ and
 $\epsilon_{\nu} + \Delta\epsilon_{\nu}$:
 
 $$\begin{aligned}
-\omega(\epsilon_{\nu}) &= \Theta(\epsilon_{\nu} + \Delta\epsilon_{\nu}) - \Theta(\epsilon_{\nu}) \\
+\omega_\nu &= \Theta(\epsilon_{\nu} + \Delta\epsilon_{\nu}) - \Theta(\epsilon_{\nu}) \\
 &= \frac{\Delta \Theta{\epsilon_{\nu}}}{\Delta \epsilon_{\nu}} \Delta \epsilon_{\nu}
 \end{aligned}$$
 
@@ -308,7 +327,7 @@ therefore is a reasonable approximation for the number of states on the
 surface of our sphere. We can thus approximate the degeneracy as:
 
 $$\begin{aligned}
-\omega(\epsilon_{\nu}) &\approx \frac{d\Theta{\epsilon_{\nu}}}{d\epsilon_{\nu}}  d\epsilon_{\nu} \\
+\omega_{\nu} &\approx \frac{d\Theta{\epsilon_{\nu}}}{d\epsilon_{\nu}}  d\epsilon_{\nu} \\
 &= \frac{d}{d\epsilon_{\nu}} \left( \frac{\pi}{6} \left( \frac{8m\epsilon_{\nu}}{h^2}\right )^{3/2} V \right )  d\epsilon_{\nu}\\
 &= \frac{\pi}{4}  \left( \frac{8m}{h^2}\right )^{3/2} V \epsilon_{\nu}^{1/2} d\epsilon_{\nu} \label{eq6.20}
 \end{aligned}$$
@@ -328,7 +347,9 @@ further assume that the sum over all energies can be converted to an
 integral because the differences in the energy between states,
 $\Delta \epsilon$, is much smaller than $k_BT$, such that the energy
 states are also effectively continuous (which is consistent with the
-assumption that quantum numbers are continuous). Converting a sum to an
+assumption that quantum numbers are continuous).
+
+Converting a sum to an
 integral is equivalent to what we did when discussing Stirling's
 approximation - we can think of the sum over energies as performing
 rectangular integration of the energy vs. $\nu$, and as the difference
@@ -345,11 +366,19 @@ classical limit the partition function becomes:
 
 $$z = \frac{\pi}{4}  \left( \frac{8m}{h^2}\right )^{3/2} V \int_0^\infty   \epsilon_{\nu}^{1/2}  e^{-\beta \epsilon_{\nu} } d\epsilon_{\nu}$$
 
-We can analytically solve this expression by defining
-$u = \beta\epsilon_{\nu}$ and recognizing the standard integral
-$\int_0^\infty u^{1/2}e^{-u} du = \sqrt{\pi}/2$. Simplifying yields our
+Simplifying yields our
 final expression for the single-particle partition function for the
 ideal gas:
+
+```{admonition} $z = \left( \frac{2\pi m k_BT}{h^2}\right )^{3/2} V$
+<details><summary> Hints </summary>
+
+We can analytically solve this expression by defining
+$u = \beta\epsilon_{\nu}$ and recognizing the standard integral
+$\int_0^\infty u^{1/2}e^{-u} du = \sqrt{\pi}/2$.
+
+</details>
+<details><summary> Show derivation </summary>
 
 $$\begin{aligned}
 z &= \frac{\pi}{4}  \left( \frac{8m}{h^2}\right )^{3/2} V \int_0^\infty   \epsilon_{\nu}^{1/2}  e^{-\beta\epsilon_{\nu} } d\epsilon_{\nu} \\
@@ -357,6 +386,9 @@ z &= \frac{\pi}{4}  \left( \frac{8m}{h^2}\right )^{3/2} V \int_0^\infty   \epsil
 &= \frac{\pi}{4}  \left( \frac{8 m k_BT}{h^2}\right )^{3/2} V \left ( \frac{\pi^{1/2}}{2} \right ) \\
 &= \left( \frac{2\pi m k_BT}{h^2}\right )^{3/2} V
 \end{aligned}$$
+
+</details>
+```
 
 Finally, we write the full partition function of the system, remembering
 that the particles are indistinguishable, as:
@@ -371,10 +403,11 @@ In the last line, we define:
 
 $$\lambda = \sqrt{\frac{h^2}{2\pi m k_BT}}$$
 
-where $\lambda$ is the **thermal de Broglie wavelength** which has units
+where $\lambda$ is the [thermal de Broglie wavelength](https://en.wikipedia.org/wiki/Thermal_de_Broglie_wavelength)
+which has units
 of length and is a function of $T$; this simplifies our notation and
 defines a characteristic length scale for treating a gas classically -
 if $V \gg \lambda^3$, which we will generally assume to be the case,
 then the classical limit is reasonable. With this partition function, we
 can proceed to derive thermodynamic relationships as will be discussed
-in the next lecture.
+in the [next lecture](Lecture7.md).

@@ -280,7 +280,7 @@ C_2 &= \frac{1}{\sum_j e^{-E_j/k_BT_S}}\\
 
 ```{glossary}
 canonical [partition function](https://en.wikipedia.org/wiki/Partition_function_\(statistical_mechanics\))
-    A term, here $Z \equiv \sum_j e^{-E_j/k_BT_S}$, that normalizes
+    A term, here $Z \equiv \sum_j e^{-E_j/k_BT}$, that normalizes
     the probability of finding state $j$ in the canonical ensemble.
 
 [Boltzmann factor / Boltzmann weight](https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Physical_Chemistry_(LibreTexts)/17%3A_Boltzmann_Factor_and_Partition_Functions#:~:text=The%20Boltzmann%20factor%20is%20used,represents%20a%20Thermally%20Equilibrated%20Distribution)
