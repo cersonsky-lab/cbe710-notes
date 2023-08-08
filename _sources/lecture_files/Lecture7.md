@@ -1,4 +1,4 @@
-# The Langmuir Isotherm
+# Application of independent subsystems: the Langmuir isotherm
 
 ## Additional Readings for the Enthusiast
 
@@ -7,7 +7,7 @@
 ## Goals for today's lecture
 - Derive the fraction of absorbed sites on a surface solely based on the pressure of the surrounding gas and the binding energy.
 
-## Another example of independent particles
+## The Langmuir Isotherm
 The [previous lecture](Lecture7.md) shows that statistical mechanics can reproduce
 classical thermodynamic relationships from first-principles. We will now
 test a second example of the three-step approach for studying

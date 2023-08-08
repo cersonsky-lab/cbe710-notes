@@ -1,4 +1,4 @@
-# Fluctuations and an Introduction to Molecular Simulation
+# Fluctuations and an introduction to molecular simulation
 
 ## Additional Readings for the Enthusiast
 

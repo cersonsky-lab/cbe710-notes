@@ -1,4 +1,4 @@
-# Monte Carlo and Intro to Molecular Dynamics Simulations
+# Monte Carlo and intro to molecular dynamics simulations
 
 ## Recommended textbooks
 

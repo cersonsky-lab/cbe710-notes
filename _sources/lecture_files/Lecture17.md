@@ -1,4 +1,4 @@
-# Heat Engines and Possible Processes
+# Heat engines and possible processes
 
 ## Recommended textbooks
 

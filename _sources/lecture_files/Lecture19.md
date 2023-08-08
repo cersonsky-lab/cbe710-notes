@@ -1,4 +1,4 @@
-# The Fundamental Relation of Thermodynamics
+# The fundamental relation of thermodynamics
 
 ## Recommended textbooks
 

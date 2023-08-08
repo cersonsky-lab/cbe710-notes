@@ -1,4 +1,4 @@
-# Phase Diagrams
+# Phase diagrams
 
 ## Recommended textbooks
 

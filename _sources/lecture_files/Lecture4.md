@@ -1,4 +1,4 @@
-# The Canonical Ensemble
+# The canonical ensemble
 
 ## Additional Readings for the Enthusiast
 

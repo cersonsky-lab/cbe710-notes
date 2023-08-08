@@ -261,9 +261,6 @@ $$\begin{aligned}
 \left ( \frac{\partial \langle E \rangle }{\partial S}\right)_V = T
 \end{aligned}$$
 
-Note that I have not commented on the entropy, $S$, which we will return
-to in Postulate 2.
-
 Equation {eq}`ensembleavg` writes the ensemble average in terms of a
 summation over discrete microstates, with each microstate occurring in
 the ensemble with probability $p_i$. In principle, however, we do not
@@ -312,12 +309,17 @@ definition is also referred to as the [**Boltzmann entropy**](https://en.m.wikip
 distinguish from an alternative (but equivalent) definition given by
 Gibbs that will be discussed later.
 
-The entropy as defined is an
+```{glossary}
+entropy
+    for an ensemble, the measure of uncertainty as to which microstate
+    we are occupying given an identified macrostate
+```
+
+The {term}`entropy` as defined is an
 extensive variable, as we know from thermodynamics, because in general
 the degeneracy of an ensemble will increase with system size.
 
-The
-entropy is also a property of the ensemble itself, unlike other
+The {term}`entropy` is also a property of the ensemble itself, unlike other
 thermodynamic variables such as the pressure which can be given a
 specific value for each microstate - in other words, we cannot write
 $S_i$ as the entropy of a particular state.

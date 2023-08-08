@@ -1,4 +1,4 @@
-# Monte Carlo Simulations
+# Monte carlo simulations
 
 ## Additional Readings for the Enthusiast
 

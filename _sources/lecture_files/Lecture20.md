@@ -1,4 +1,4 @@
-# Legendre Transforms
+# Legendre transforms
 
 ## Recommended textbooks
 

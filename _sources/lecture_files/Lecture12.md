@@ -1,4 +1,4 @@
-# MD Thermostats
+# MD thermostats
 
 ## Recommended textbooks
 

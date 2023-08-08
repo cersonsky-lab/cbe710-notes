@@ -158,10 +158,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Lecture1B.html">Review of thermodynamics</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Postulates of statistical mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Lecture3.html">Application of the microcanonical ensemble: two-state system</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Lecture4.html">The Canonical Ensemble</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Lecture5.html">Generalized Ensembles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Lecture6.html">The Ideal Gas Partition Function</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Lecture7.html">The Langmuir Isotherm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture4.html">The canonical ensemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture5.html">Generalized ensembles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture6.html">The ideal gas partition function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture7.html">Application of independent subsystems: the Langmuir isotherm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture8A.html">The Ising model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture8B.html">Mean-field theory</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Problem Sets</span></p>
 <ul class="nav bd-sidenav">
@@ -563,8 +565,6 @@ allowed to vary, I could equivalently write:</p>
 \[\begin{aligned}
 \left ( \frac{\partial \langle E \rangle }{\partial S}\right)_V = T
 \end{aligned}\]</div>
-<p>Note that I have not commented on the entropy, <span class="math notranslate nohighlight">\(S\)</span>, which we will return
-to in Postulate 2.</p>
 <p>Equation <a class="reference internal" href="#equation-ensembleavg">(13)</a> writes the ensemble average in terms of a
 summation over discrete microstates, with each microstate occurring in
 the ensemble with probability <span class="math notranslate nohighlight">\(p_i\)</span>. In principle, however, we do not
@@ -610,11 +610,15 @@ S = k_B \ln \Omega(N,V,E)\]</div>
 definition is also referred to as the <a class="reference external" href="https://en.m.wikipedia.org/wiki/Boltzmann's_entropy_formula"><strong>Boltzmann entropy</strong></a> to
 distinguish from an alternative (but equivalent) definition given by
 Gibbs that will be discussed later.</p>
-<p>The entropy as defined is an
+<dl class="glossary simple">
+<dt id="term-entropy">entropy<a class="headerlink" href="#term-entropy" title="Permalink to this term">#</a></dt><dd><p>for an ensemble, the measure of uncertainty as to which microstate
+we are occupying given an identified macrostate</p>
+</dd>
+</dl>
+<p>The <a class="reference internal" href="#term-entropy"><span class="xref std std-term">entropy</span></a> as defined is an
 extensive variable, as we know from thermodynamics, because in general
 the degeneracy of an ensemble will increase with system size.</p>
-<p>The
-entropy is also a property of the ensemble itself, unlike other
+<p>The <a class="reference internal" href="#term-entropy"><span class="xref std std-term">entropy</span></a> is also a property of the ensemble itself, unlike other
 thermodynamic variables such as the pressure which can be given a
 specific value for each microstate - in other words, we cannot write
 <span class="math notranslate nohighlight">\(S_i\)</span> as the entropy of a particular state.</p>

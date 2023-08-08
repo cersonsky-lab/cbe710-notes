@@ -1,4 +1,4 @@
-# The Structure of Classical Fluids
+# The structure of classical fluids
 
 ## Recommended textbooks
 

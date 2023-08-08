@@ -1,4 +1,4 @@
-# The Potential of Mean Force
+# The potential of mean force
 
 ## Recommended textbooks
 

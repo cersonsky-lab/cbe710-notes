@@ -1,4 +1,4 @@
-# Generalized Ensembles
+# Generalized ensembles
 
 
 ## Additional Readings for the Enthusiast

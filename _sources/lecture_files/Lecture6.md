@@ -1,4 +1,4 @@
-# The Ideal Gas Partition Function 
+# The ideal gas partition function 
 
 ## Additional Readings for the Enthusiast
 
