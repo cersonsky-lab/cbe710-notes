@@ -297,7 +297,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -313,6 +315,16 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-readings-for-the-enthusiast">Additional Readings for the Enthusiast</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-for-today-s-lecture">Goals for today’s lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Mean-field theory</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -322,18 +334,41 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="mean-field-theory">
+  <section class="tex2jax_ignore mathjax_ignore" id="mean-field-theory">
 <h1>Mean-field theory<a class="headerlink" href="#mean-field-theory" title="Permalink to this headline">#</a></h1>
-<p>Analytically solving the Ising model partition function to obtain a
-simple expression for the Helmholtz free energy that can be
-differentiated to obtain the magnetization is possible in a
-one-dimensional system (Problem Set 3!), possible in a two-dimensional
+<section id="additional-readings-for-the-enthusiast">
+<h2>Additional Readings for the Enthusiast<a class="headerlink" href="#additional-readings-for-the-enthusiast" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><span id="id1">Chandler [<a class="reference internal" href="../references.html#id2" title="David Chandler. Introduction to Modern Statistical Mechanics. Oxford University Press, New York, 1st edition edition, September 1987. ISBN 978-0-19-504277-1. URL: http://pcossgroup.xmu.edu.cn/old/users/xlu/group/courses/apc/imsm_chandler.pdf.">1</a>]</span> 5.4</p></li>
+</ul>
+</section>
+<section id="goals-for-today-s-lecture">
+<h2>Goals for today’s lecture<a class="headerlink" href="#goals-for-today-s-lecture" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Formulate mean-field theory</p></li>
+<li><p>Apply mean-field theory to obtain the self-consistent mean-field theory for the Ising model</p></li>
+<li><p>Understand the limitations and approximations implicit in mean-field theory</p></li>
+</ul>
+</section>
+<section id="id2">
+<h2>Mean-field theory<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<p>Obtaining a simple expression for the Helmholtz free energy that can be
+differentiated to obtain the magnetization <em>analytically</em>
+from the <a class="reference internal" href="Lecture8A.html#computing-thermodynamic-variables-of-the-ising-model"><span class="std std-doc">Ising model partition function</span></a>
+is only possible in a one-dimensional system (<a class="reference internal" href="../problems/ps_3/problem_set_3.html"><span class="doc std std-doc">Problem Set 3</span></a>).
+It is possible in a two-dimensional
 system with significant difficulty (first solved by a Nobel laureate),
 and impossible in higher dimensions. Thus, we will instead simplify the
 partition function and introduce an approximation that is commonly used
 in the study of phase behavior - the <strong>mean-field approximation</strong>, or
-the approximation used in mean-field theory. The idea of mean-field
-theory is to examine a particular particle (for the Ising model, a
+the approximation used in mean-field theory.</p>
+<dl class="glossary simple">
+<dt id="term-mean-field-theory">mean-field theory<a class="headerlink" href="#term-mean-field-theory" title="Permalink to this term">#</a></dt><dd><p>an approximation to simplify our formulation of particle interactions;
+assumes that the media surrounding a particle exerts an <em>average field</em>
+on the particle</p>
+</dd>
+</dl>
+<p>The idea of <a class="reference internal" href="#term-mean-field-theory"><span class="xref std std-term">mean-field theory</span></a> is to examine a particular particle (for the Ising model, a
 single spin) and assume that the surrounding medium (in this case the
 other spins) exerts an <strong>average field</strong> which interacts with the tagged
 spin of interest. That is, instead of examining interactions with the
@@ -344,7 +379,7 @@ long-ranged and reduces the many-body problem to an essentially one-body
 problem focused on the particle of interest. We will illustrate the
 essence of mean-field theory by using it to analytically solve the Ising
 model.</p>
-<p><img alt="image" src="../_images/fig_8_1.png" />{width=”100%”}</p>
+<p><img alt="image" src="../_images/fig_8B_1-01.png" /></p>
 <p>Consider again the energy of a single configuration of the Ising model:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
@@ -358,21 +393,30 @@ consider the energy of a single spin <span class="math notranslate nohighlight">
 \epsilon_i &amp;= -\mu H s_i - Js_i \sum_j^\prime  s_j \\
 &amp;= -\mu s_i \left ( H + \frac{J}{\mu} \sum_j^\prime s_j \right )
 \end{aligned}\end{split}\]</div>
-<p>Note that the factor of 1/2 is removed from in front of the sum, since
+<div class="admonition-why-did-we-lose-the-factor-of-frac-1-2 admonition">
+<p class="admonition-title">Why did we lose the factor of <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span>?</p>
+<details></summary> Click for answer </summary>
+The factor of 1/2 is removed from in front of the sum, since
 we are considering the total energy of the single spin in the system,
 including all interactions with neighbors (again, often a point of
 confusion). We would need to divide the neighbor interaction energy by 2
-if summing over the entire lattice. The form of this energy suggests
+if summing over the entire lattice.
+</details>
+</div>
+<p>The form of this energy suggests
 that we can think of the term <span class="math notranslate nohighlight">\(\frac{J}{\mu} \sum_j^\prime s_j\)</span> as a
 perturbation to the actual magnetic field, <span class="math notranslate nohighlight">\(H\)</span>, acting on the spin; we
 therefore define <span class="math notranslate nohighlight">\(H^\textrm{eff}_i\)</span> as the effective magnetic field that
 does work on spin <span class="math notranslate nohighlight">\(i\)</span> including this perturbation:</p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}\begin{aligned}
+\[\begin{aligned}
 H_i^\textrm{eff} &amp;\equiv H + \frac{J}{\mu} \sum_j^\prime s_j
-\end{aligned}$$ The single-spin energy is then written as:\\$$\begin{aligned}
+\end{aligned}\]</div>
+<p>The single-spin energy is then written as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
 \epsilon_i &amp;= -\mu  H^\textrm{eff}_i s_i
-\end{aligned}\end{aligned}\end{align} \]</div>
+\end{aligned}\]</div>
 <p>We can now see that the interaction energy with neighboring spins
 contributes to the effective field that acts on spin <span class="math notranslate nohighlight">\(i\)</span>. We can rewrite
 the expression for the effective field in terms of the average spin of
@@ -398,13 +442,15 @@ H_i^\textrm{eff}  &amp;= H + \frac{J}{\mu} n \langle s \rangle \equiv H^\textrm{
 <p>These expressions are the essence of mean-field theory - the specific
 accounting of interactions with nearest-neighbor spins has been replaced
 with an average (mean) interaction, <span class="math notranslate nohighlight">\(H^\textrm{eff}\)</span>, so that spins are
-now <strong>independent</strong>. The mean field is identical for each spin and does
-not depend on <span class="math notranslate nohighlight">\(s_i\)</span>. Correlations between spins are completely captured
+no longer explicitly coupled. The mean field is identical for each spin and does
+not depend on <span class="math notranslate nohighlight">\(s_i\)</span>.</p>
+<p>Correlations between spins are completely captured
 in the ensemble-average spin term, which is a property of the state of
 the lattice and not a property of a specific spin. We can then use this
 expression for the energy of a single spin to solve for the
-magnetization. Indeed, we have already done just that on Problem Sets 1
-and 2, where we solved for the magnetization of a paramagnet in a field
+magnetization. Indeed, we have already done just that on <a class="reference download internal" download="" href="../_downloads/fe64d14a06e0f1d125873829f2537319/problem_set_1"><span class="xref download myst">Problem Sets 1</span></a>
+and
+<a class="reference internal" href="../problems/ps_2/problem_set_2.html"><span class="doc std std-doc">2</span></a>, where we solved for the magnetization of a paramagnet in a field
 <span class="math notranslate nohighlight">\(H\)</span>. We can use the exact same formalism but replace <span class="math notranslate nohighlight">\(H\)</span> with the
 effective field <span class="math notranslate nohighlight">\(H^\textrm{eff}\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -434,21 +480,27 @@ ensemble-average magnetization with the ensemble-average spin via
 \langle s \rangle &amp;= \tanh( \beta \mu H +  \beta J n \langle s \rangle )
 \end{aligned}\]</div>
 <p>This equation has <span class="math notranslate nohighlight">\(\langle s \rangle\)</span> on both the left hand side and in
-the <span class="math notranslate nohighlight">\(\tanh\)</span> function. We refer to this type of expression as a
-<strong>self-consistent</strong> mean field theory, because the mean field which
+the <span class="math notranslate nohighlight">\(\tanh\)</span> function. We refer to this type of expression as a</p>
+<dl class="glossary simple">
+<dt id="term-self-consistent-mean-field-theory">self-consistent mean-field theory<a class="headerlink" href="#term-self-consistent-mean-field-theory" title="Permalink to this term">#</a></dt><dd><p>a mean-field theory where the a thermodynamically-averaged variable
+depends on itself.</p>
+</dd>
+</dl>
+<p>… because the mean field which
 influences the average value of the magnetization then itself depends on
 the average value of the magnetization. This expression now has the
 magnetization (i.e., average spin) as a function of the temperature,
 external field, lattice (through <span class="math notranslate nohighlight">\(n\)</span>), and coupling parameter, so we can
 solve as a function of temperature to determine the temperature at which
-the system transitions from a non-zero to zero magnetization. For this
+the system transitions from a non-zero to zero magnetization.</p>
+<p>For this
 type of expression, we can solve for the solution graphically by finding
 the intersection between <span class="math notranslate nohighlight">\(\langle s \rangle\)</span> and
 <span class="math notranslate nohighlight">\(\tanh( \beta \mu H +  \beta J n \langle s \rangle )\)</span> if both are
 plotted as a function of <span class="math notranslate nohighlight">\(\langle s \rangle\)</span>. In other techniques, such
 as the self-consistent field theory of polymers, similar equations are
 solved iteratively by converging onto a result.</p>
-<p><img alt="image" src="../_images/fig_8_2.png" />{width=”100%”}</p>
+<p><img alt="image" src="../_images/fig_8B_2.gif" /></p>
 <p>Performing this graphical solution method shows the following behavior
 in the zero-field (<span class="math notranslate nohighlight">\(H=0\)</span>) limit. For small values of <span class="math notranslate nohighlight">\(\beta J n\)</span>, the
 only solution is the trivial solution
@@ -479,6 +531,7 @@ higher dimensions, but reflects the approximations within mean-field
 theory. More advanced techniques are possible, including “tagging”
 multiple spins for simultaneous analysis, but that is beyond the scope
 of this class.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -539,6 +592,22 @@ of this class.</p>
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-readings-for-the-enthusiast">Additional Readings for the Enthusiast</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-for-today-s-lecture">Goals for today’s lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Mean-field theory</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

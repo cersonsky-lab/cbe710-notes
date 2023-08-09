@@ -20,7 +20,7 @@ system is not fixed.
 For example, most laboratory experiments take place
 in environments in which the energy of the system is able to exchange
 with the environment; that is, the walls of the system are
-**diathermal**. $E$ is therefore no longer a fixed quantity and instead
+{term}`diathermal`. $E$ is therefore no longer a fixed quantity and instead
 varies between each microstate. At equilibrium, however, we know from
 thermodynamics that the temperature of the system will be equal to the
 temperature of the environment. It would therefore be ideal to have
@@ -29,9 +29,11 @@ microstate due to this condition of equilibrium while the energy is
 allowed to vary.
 
 ```{glossary}
+
 canonical ensemble
-    The ensemble of microstates for a system at constant
-    temperature (and number and volume), also known as the $NVT$ ensemble.
+    The ensemble for which all microstates have a fixed number of particles, volume, and
+    temperature. Also known as the $$NVT$$ ensemble.
+
 ```
 
 As we will see, choosing the appropriate ensemble to describe
@@ -40,7 +42,7 @@ However, if we allow the energy to vary between each microstate then the
 probability that a system obtains a given state, $p_i$, is no longer a
 constant value - that is, [Postulate 2](Lecture2.md#postulate-2-in-the-microcanonical-ensemble-all-microstates-are-equally-probable) no longer applies. We thus will
 derive an expression for the probability of microstate $i$ in order to
-calculate ensemble-average quantities for the canonical ensemble.
+calculate ensemble-average quantities for the {term}`canonical ensemble`.
 
 Let us consider a system of interest that is contact with surroundings
 that we will refer to as the **bath**. The bath is significantly larger
@@ -160,12 +162,14 @@ state in the canonical ensemble, $p_j$, which has energy $E_j$.
 ```{admonition} Why is there not a one-to-one correspondence between energy and microstates in the canonical ensemble?
 <details>
   <summary><b></b>[Click for answer]</summary>
+
 In general, many possible microstates could have the same
 energy but different microscopic configurations - thus, there is not a
 one-to-one correspondence between energies and microstates. We will
 eventually consider the probability of observing one of the many states
 that have the same energy $E_\nu$ as opposed to the specific microstate
 $j$.
+
 </details>
 ```
 

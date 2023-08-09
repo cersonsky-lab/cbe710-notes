@@ -1,15 +1,36 @@
+# Mean-field theory
+
+## Additional Readings for the Enthusiast
+
+-   {cite:ts}`chandler_introduction_1987` 5.4
+
+## Goals for today's lecture
+
+- Formulate mean-field theory
+- Apply mean-field theory to obtain the self-consistent mean-field theory for the Ising model
+- Understand the limitations and approximations implicit in mean-field theory
+
 ## Mean-field theory
 
-Analytically solving the Ising model partition function to obtain a
-simple expression for the Helmholtz free energy that can be
-differentiated to obtain the magnetization is possible in a
-one-dimensional system (Problem Set 3!), possible in a two-dimensional
+Obtaining a simple expression for the Helmholtz free energy that can be
+differentiated to obtain the magnetization _analytically_
+from the [Ising model partition function](Lecture8A.md#computing-thermodynamic-variables-of-the-ising-model)
+is only possible in a one-dimensional system ([Problem Set 3](../problems/ps_3/problem_set_3)).
+It is possible in a two-dimensional
 system with significant difficulty (first solved by a Nobel laureate),
 and impossible in higher dimensions. Thus, we will instead simplify the
 partition function and introduce an approximation that is commonly used
 in the study of phase behavior - the **mean-field approximation**, or
-the approximation used in mean-field theory. The idea of mean-field
-theory is to examine a particular particle (for the Ising model, a
+the approximation used in mean-field theory.
+
+```{glossary}
+mean-field theory
+    an approximation to simplify our formulation of particle interactions;
+    assumes that the media surrounding a particle exerts an _average field_
+    on the particle
+```
+
+The idea of {term}`mean-field theory` is to examine a particular particle (for the Ising model, a
 single spin) and assume that the surrounding medium (in this case the
 other spins) exerts an **average field** which interacts with the tagged
 spin of interest. That is, instead of examining interactions with the
@@ -21,7 +42,7 @@ problem focused on the particle of interest. We will illustrate the
 essence of mean-field theory by using it to analytically solve the Ising
 model.
 
-![image](figs/fig_8_1.png){width="100%"}
+![image](figs/fig_8B_1-01.png)
 
 Consider again the energy of a single configuration of the Ising model:
 
@@ -38,11 +59,17 @@ $$\begin{aligned}
 &= -\mu s_i \left ( H + \frac{J}{\mu} \sum_j^\prime s_j \right )
 \end{aligned}$$
 
-Note that the factor of 1/2 is removed from in front of the sum, since
+```{admonition} Why did we lose the factor of $\frac{1}{2}$?
+<details></summary> Click for answer </summary>
+The factor of 1/2 is removed from in front of the sum, since
 we are considering the total energy of the single spin in the system,
 including all interactions with neighbors (again, often a point of
 confusion). We would need to divide the neighbor interaction energy by 2
-if summing over the entire lattice. The form of this energy suggests
+if summing over the entire lattice.
+</details>
+```
+
+The form of this energy suggests
 that we can think of the term $\frac{J}{\mu} \sum_j^\prime s_j$ as a
 perturbation to the actual magnetic field, $H$, acting on the spin; we
 therefore define $H^\textrm{eff}_i$ as the effective magnetic field that
@@ -50,7 +77,9 @@ does work on spin $i$ including this perturbation:
 
 $$\begin{aligned}
 H_i^\textrm{eff} &\equiv H + \frac{J}{\mu} \sum_j^\prime s_j
-\end{aligned}$$ The single-spin energy is then written as:
+\end{aligned}$$
+
+The single-spin energy is then written as:
 
 $$\begin{aligned}
 \epsilon_i &= -\mu  H^\textrm{eff}_i s_i
@@ -84,13 +113,16 @@ H_i^\textrm{eff}  &= H + \frac{J}{\mu} n \langle s \rangle \equiv H^\textrm{eff}
 These expressions are the essence of mean-field theory - the specific
 accounting of interactions with nearest-neighbor spins has been replaced
 with an average (mean) interaction, $H^\textrm{eff}$, so that spins are
-now **independent**. The mean field is identical for each spin and does
-not depend on $s_i$. Correlations between spins are completely captured
+no longer explicitly coupled. The mean field is identical for each spin and does
+not depend on $s_i$.
+
+Correlations between spins are completely captured
 in the ensemble-average spin term, which is a property of the state of
 the lattice and not a property of a specific spin. We can then use this
 expression for the energy of a single spin to solve for the
-magnetization. Indeed, we have already done just that on Problem Sets 1
-and 2, where we solved for the magnetization of a paramagnet in a field
+magnetization. Indeed, we have already done just that on [Problem Sets 1](../problems/ps_1/problem_set_1)
+and
+[2](../problems/ps_2/problem_set_2), where we solved for the magnetization of a paramagnet in a field
 $H$. We can use the exact same formalism but replace $H$ with the
 effective field $H^\textrm{eff}$:
 
@@ -124,13 +156,22 @@ $$\begin{aligned}
 
 This equation has $\langle s \rangle$ on both the left hand side and in
 the $\tanh$ function. We refer to this type of expression as a
-**self-consistent** mean field theory, because the mean field which
+
+```{glossary}
+self-consistent mean-field theory
+    a mean-field theory where the a thermodynamically-averaged variable
+    depends on itself.
+```
+
+... because the mean field which
 influences the average value of the magnetization then itself depends on
 the average value of the magnetization. This expression now has the
 magnetization (i.e., average spin) as a function of the temperature,
 external field, lattice (through $n$), and coupling parameter, so we can
 solve as a function of temperature to determine the temperature at which
-the system transitions from a non-zero to zero magnetization. For this
+the system transitions from a non-zero to zero magnetization.
+
+For this
 type of expression, we can solve for the solution graphically by finding
 the intersection between $\langle s \rangle$ and
 $\tanh( \beta \mu H +  \beta J n \langle s \rangle )$ if both are
@@ -138,7 +179,7 @@ plotted as a function of $\langle s \rangle$. In other techniques, such
 as the self-consistent field theory of polymers, similar equations are
 solved iteratively by converging onto a result.
 
-![image](figs/fig_8_2.png){width="100%"}
+![image](figs/fig_8B_2.gif)
 
 Performing this graphical solution method shows the following behavior
 in the zero-field ($H=0$) limit. For small values of $\beta J n$, the

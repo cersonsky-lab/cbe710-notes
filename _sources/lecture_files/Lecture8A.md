@@ -2,13 +2,13 @@
 
 ## Additional Readings for the Enthusiast
 
--   {cite:ts}`chandler_introduction_1987` 5.1, 5.4
+-   {cite:ts}`chandler_introduction_1987` 5.1
 
 ## Goals for today's lecture
 - How does including a simple set of particle interactions change our partition function?
 - When might we spontaneously switch from one phenomenological behavior to another? What is this called?
 
-## The Ising model
+## Defining the Ising model
 
 We finished our derivation of the ideal gas
 partition function and used it to derive well-known thermodynamic
@@ -88,6 +88,7 @@ referred to as
     on a 2D lattice contributes to the total energy.
 ```
 
+## Magnetic states and spontaneous magnetization
 A particular quantity of interest
 for magnetic systems is the ensemble-average magnetization,
 $\langle M \rangle$. In the problem sets, we studied $\langle M \rangle$
@@ -134,6 +135,7 @@ or a high entropy state, where spins are randomly aligned.
 order-disorder transition
     a phenomenom in a thermodynamic system wherein the system spontaneously
     switches from having order to having none, or vice versa
+
 Curie-temperature
     the temperature at which an order-disorder transition occurs in magnetic
     systems
@@ -155,6 +157,8 @@ series of spins that are up or down, we could use the Ising model to
 represent a series of particles that are of one type or another (*e.g.*,
 to represent the mixing of two types of liquid-phase molecules; this is
 called the lattice gas model) which would lead to similar behavior.
+
+## Computing thermodynamic variables of the Ising model
 
 To determine the Curie temperature, we need to relate the
 ensemble-average magnetization of the system to the temperature. As our
