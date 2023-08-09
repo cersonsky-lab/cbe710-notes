@@ -321,8 +321,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-readings-for-the-enthusiast">Additional Readings for the Enthusiast</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-for-today-s-lecture">Goals for today’s lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fluctuations">Fluctuations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#size-of-fluctuations-and-the-equivalence-of-ensembles">Size of fluctuations and the equivalence of ensembles</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-other-topics">Summary of other topics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#link-to-shared-notes">Link to Shared Notes</a></li>
 </ul>
             </nav>
         </div>
@@ -336,6 +340,21 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="fluctuations-and-thermodynamic-response-functions">
 <h1>Fluctuations and thermodynamic response functions<a class="headerlink" href="#fluctuations-and-thermodynamic-response-functions" title="Permalink to this headline">#</a></h1>
+<section id="additional-readings-for-the-enthusiast">
+<h2>Additional Readings for the Enthusiast<a class="headerlink" href="#additional-readings-for-the-enthusiast" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><span id="id1">McQuarrie [<a class="reference internal" href="../references.html#id3" title="Donald A. McQuarrie. Statistical mechanics. University Science Books, Sausalito, Calif, 2000. ISBN 978-1-891389-15-3. URL: https://vuquangnguyen2016.files.wordpress.com/2017/12/339279795-donald-a-mcquarrie-statistical-mechanics-bookzz-org.pdf.">2</a>]</span> Chapter 3</p></li>
+</ul>
+</section>
+<section id="goals-for-today-s-lecture">
+<h2>Goals for today’s lecture<a class="headerlink" href="#goals-for-today-s-lecture" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Explain the importance of fluctuations in thermodynamic ensembles</p></li>
+<li><p>Explain why, when fluctuations are small, the ergodic hypothesis holds</p></li>
+</ul>
+</section>
+<section id="fluctuations">
+<h2>Fluctuations<a class="headerlink" href="#fluctuations" title="Permalink to this headline">#</a></h2>
 <p>In the <a class="reference internal" href="Lecture8B.html"><span class="doc std std-doc">last lecture</span></a>, we introdued the Ising model as a simple model that
 incorporates interactions between molecules. We showed that it is very
 challenging to handle interactions analytically because we cannot
@@ -425,12 +444,12 @@ second line. We recall from <a class="reference internal" href="Lecture3.html"><
 <span class="math notranslate nohighlight">\(\langle E \rangle = -\left ( \frac{\partial \ln Z}{\partial \beta} \right )_{N, V}\)</span>
 to get:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
+\[\begin{split}
 \langle ( \delta E)^2 \rangle &amp;= -\left ( \frac{\partial \langle E \rangle}{\partial \beta} \right )_{N, V}  \\
 &amp;= k_B \left ( \frac{\partial \langle E \rangle}{\partial T} \right )_{N, V} \left ( \frac{\partial T}{\partial T^{-1}} \right )_{N, V}\\
 &amp;= k_B T^2 \left ( \frac{\partial \langle E \rangle}{\partial T} \right )_{N, V} \\
-&amp;= k_BT ^2 C_V \label{heat_capacity}
-\end{aligned}\end{split}\]</div>
+&amp;= k_BT ^2 C_V
+\end{split}\]</div>
 <p>In the last line, we recognize that
 <span class="math notranslate nohighlight">\(\left ( \frac{\partial \langle E \rangle}{\partial T} \right )_{N, V}\)</span>
 is the heat capacity at constant volume, an experimentally
@@ -456,9 +475,8 @@ illustrates a new means of calculating the heat capacity of the
 material. Without knowledge of this relationship, the simplest way to
 calculate the heat capacity would be to perform multiple experiments at
 different temperatures, measure the corresponding system energy, and
-equate <span class="math notranslate nohighlight">\(C_V\)</span> to the slope of the resulting line. Instead, Eq.
-<span class="xref myst">[heat_capacity]</span>{reference-type=”ref”
-reference=”heat_capacity”} shows that we could take a single system at a
+equate <span class="math notranslate nohighlight">\(C_V\)</span> to the slope of the resulting line. Instead, our equation
+for heat capacity shows that we could take a single system at a
 fixed temperature and instead measure the fluctuations of the energy
 over time to obtain <span class="math notranslate nohighlight">\(C_V\)</span> in a single experiment. Such measurements will
 be possible using computer simulations as we will discuss in future
@@ -466,7 +484,7 @@ lectures. We could also derive the fluctuations of other quantities,
 such as the density, and connect these to other materials parameters as
 a general means of computing response functions from equilibrium
 fluctuations.</p>
-<p><img alt="image" src="../_images/fig_8_4.png" />{width=”90%”}</p>
+</section>
 <section id="size-of-fluctuations-and-the-equivalence-of-ensembles">
 <h2>Size of fluctuations and the equivalence of ensembles<a class="headerlink" href="#size-of-fluctuations-and-the-equivalence-of-ensembles" title="Permalink to this headline">#</a></h2>
 <p>The next question we will address how large fluctuations actually are
@@ -521,16 +539,19 @@ make equivalent predictions for the Helmholtz free energy. Similar
 measures of equivalency could be performed in the thermodynamic limit
 for other ensembles as well.</p>
 <p>There are thus four important conclusions to draw from our study of
-fluctuations: 1) that in the thermodynamic limit, fluctuations are
+fluctuations:</p>
+<ol class="arabic simple">
+<li><p>that in the thermodynamic limit, fluctuations are
 negligible, and hence we can discuss single values of thermodynamic
-variables as being equivalent to ensemble averages; 2) that in the
-thermodynamic limit all ensembles are equivalent, and hence we can use
+variables as being equivalent to ensemble averages;</p></li>
+<li><p>that in the thermodynamic limit all ensembles are equivalent, and hence we can use
 any ensemble that is mathematically convenient to relate molecular
-properties to macroscopic observables; 3) that microscopic fluctuations
-are proportional to a response function, both in equilibrium and in
-non-equilibrium processes; and 4) fluctuations are measurable properties
-of a system that can be used to inform experimental measurements (e.g.
-in light scattering).</p>
+properties to macroscopic observables;</p></li>
+<li><p>that microscopic fluctuations are proportional to a response function,
+both in equilibrium and in non-equilibrium processes;</p></li>
+<li><p>fluctuations are measurable properties of a system that can be used to inform experimental measurements (e.g.
+in light scattering).</p></li>
+</ol>
 </section>
 <section id="summary-of-other-topics">
 <h2>Summary of other topics<a class="headerlink" href="#summary-of-other-topics" title="Permalink to this headline">#</a></h2>
@@ -553,6 +574,9 @@ response theory</p></li>
 </ul>
 <p>If you’re interested in these topics, I am happy to point you toward
 relevant textbooks.</p>
+</section>
+<section id="link-to-shared-notes">
+<h2><a class="reference external" href="https://docs.google.com/document/d/1qMr8xZEuPBengjbnXhnyWbS0n63S0hNU/edit?usp=drive_link&amp;ouid=113272049620170441297&amp;rtpof=true&amp;sd=true">Link to Shared Notes</a><a class="headerlink" href="#link-to-shared-notes" title="Permalink to this headline">#</a></h2>
 </section>
 </section>
 
@@ -623,8 +647,12 @@ relevant textbooks.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-readings-for-the-enthusiast">Additional Readings for the Enthusiast</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-for-today-s-lecture">Goals for today’s lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fluctuations">Fluctuations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#size-of-fluctuations-and-the-equivalence-of-ensembles">Size of fluctuations and the equivalence of ensembles</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-other-topics">Summary of other topics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#link-to-shared-notes">Link to Shared Notes</a></li>
 </ul>
   </nav></div>
 

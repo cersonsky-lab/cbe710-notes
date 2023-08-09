@@ -1,5 +1,14 @@
 # Fluctuations and thermodynamic response functions
 
+## Additional Readings for the Enthusiast
+-   {cite:ts}`mcquarrie_statistical_2000` Chapter 3
+
+## Goals for today's lecture
+- Explain the importance of fluctuations in thermodynamic ensembles
+- Explain why, when fluctuations are small, the ergodic hypothesis holds
+
+## Fluctuations
+
 In the [last lecture](Lecture8B), we introdued the Ising model as a simple model that
 incorporates interactions between molecules. We showed that it is very
 challenging to handle interactions analytically because we cannot
@@ -101,12 +110,12 @@ second line. We recall from [Lecture 3](Lecture3) that
 $\langle E \rangle = -\left ( \frac{\partial \ln Z}{\partial \beta} \right )_{N, V}$
 to get:
 
-$$\begin{aligned}
+$$
 \langle ( \delta E)^2 \rangle &= -\left ( \frac{\partial \langle E \rangle}{\partial \beta} \right )_{N, V}  \\
 &= k_B \left ( \frac{\partial \langle E \rangle}{\partial T} \right )_{N, V} \left ( \frac{\partial T}{\partial T^{-1}} \right )_{N, V}\\
 &= k_B T^2 \left ( \frac{\partial \langle E \rangle}{\partial T} \right )_{N, V} \\
-&= k_BT ^2 C_V \label{heat_capacity}
-\end{aligned}$$
+&= k_BT ^2 C_V
+$$
 
 In the last line, we recognize that
 $\left ( \frac{\partial \langle E \rangle}{\partial T} \right )_{N, V}$
@@ -136,9 +145,8 @@ illustrates a new means of calculating the heat capacity of the
 material. Without knowledge of this relationship, the simplest way to
 calculate the heat capacity would be to perform multiple experiments at
 different temperatures, measure the corresponding system energy, and
-equate $C_V$ to the slope of the resulting line. Instead, Eq.
-[\[heat_capacity\]](#heat_capacity){reference-type="ref"
-reference="heat_capacity"} shows that we could take a single system at a
+equate $C_V$ to the slope of the resulting line. Instead, our equation
+for heat capacity shows that we could take a single system at a
 fixed temperature and instead measure the fluctuations of the energy
 over time to obtain $C_V$ in a single experiment. Such measurements will
 be possible using computer simulations as we will discuss in future
@@ -146,8 +154,6 @@ lectures. We could also derive the fluctuations of other quantities,
 such as the density, and connect these to other materials parameters as
 a general means of computing response functions from equilibrium
 fluctuations.
-
-![image](figs/fig_8_4.png){width="90%"}
 
 ## Size of fluctuations and the equivalence of ensembles
 
@@ -209,15 +215,17 @@ measures of equivalency could be performed in the thermodynamic limit
 for other ensembles as well.
 
 There are thus four important conclusions to draw from our study of
-fluctuations: 1) that in the thermodynamic limit, fluctuations are
+fluctuations:
+
+1. that in the thermodynamic limit, fluctuations are
 negligible, and hence we can discuss single values of thermodynamic
-variables as being equivalent to ensemble averages; 2) that in the
-thermodynamic limit all ensembles are equivalent, and hence we can use
+variables as being equivalent to ensemble averages;
+2. that in the thermodynamic limit all ensembles are equivalent, and hence we can use
 any ensemble that is mathematically convenient to relate molecular
-properties to macroscopic observables; 3) that microscopic fluctuations
-are proportional to a response function, both in equilibrium and in
-non-equilibrium processes; and 4) fluctuations are measurable properties
-of a system that can be used to inform experimental measurements (e.g.
+properties to macroscopic observables;
+3. that microscopic fluctuations are proportional to a response function,
+both in equilibrium and in non-equilibrium processes;
+4. fluctuations are measurable properties of a system that can be used to inform experimental measurements (e.g.
 in light scattering).
 
 ## Summary of other topics
@@ -247,3 +255,7 @@ have not discussed:
 If you're interested in these topics, I am happy to point you toward
 relevant textbooks.
 
+
+
+
+## [Link to Shared Notes](https://docs.google.com/document/d/1qMr8xZEuPBengjbnXhnyWbS0n63S0hNU/edit?usp=drive_link&ouid=113272049620170441297&rtpof=true&sd=true)
