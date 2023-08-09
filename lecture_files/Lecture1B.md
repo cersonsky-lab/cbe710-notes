@@ -541,3 +541,5 @@ to this system properties affect its equilibrium behavior. We will
 further use the natural variables to connect to statistical mechanics as
 will be discussed in future lectures. For now, we conclude our review of
 thermodynamics.
+
+## [Link to Shared Notes](https://docs.google.com/document/d/1SsPXEPwoouHbosxXwvN3TYe2cv6kTClK/edit?usp=drive_link&ouid=113272049620170441297&rtpof=true&sd=true)
