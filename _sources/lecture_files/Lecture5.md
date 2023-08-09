@@ -550,3 +550,7 @@ canonical ($NVT$), grand canonical ($\mu VT$), and isothermal-isobaric
 ($NPT$), along with a generalized ensemble in which additional work
 terms (e.g. corresponding to external electric/magnetic fields, for
 instance) can be incorporated.
+
+
+
+## [Link to Shared Notes](https://docs.google.com/document/d/1cry4CzhkRf5A1EB6jsZTCQwu8ysN_vVr/edit?usp=drive_link&ouid=113272049620170441297&rtpof=true&sd=true)
