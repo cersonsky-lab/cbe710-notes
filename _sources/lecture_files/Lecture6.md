@@ -543,3 +543,6 @@ term, which is temperature dependent but concentration ($\rho$)
 independent, and then a second concentration-dependent term. This form
 for the chemical potential is again exactly what is observed for ideal
 gases in classical thermodynamics.
+
+
+## [Link to Shared Notes](https://docs.google.com/document/d/1eAek5NU2JEa6TlELNmm16em7HD9G4b6v/edit?usp=drive_link&ouid=113272049620170441297&rtpof=true&sd=true)
