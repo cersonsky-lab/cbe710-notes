@@ -187,3 +187,7 @@ obvious way due to interactions between spins. It should thus be
 apparent why systems with interactions are challenging to solve
 analytically.
 
+
+
+
+## [Link to Shared Notes](https://docs.google.com/document/d/1iRK9QqS1S0qYBj-wLBqREN9KrGumefrR/edit?usp=drive_link)

@@ -19,3 +19,13 @@ Python programming throughout the statistical mechanics unit in
 preparation for the second unit on molecular simulations. Programming
 again may be challenging for some of you with little computational
 background.
+
+How to use this online book
+---------------------------
+
+This online book contains the notes I will be covering in class, curated
+over the past few iterations of this class by [myself](https://directory.engr.wisc.edu/che/Faculty/Cersonsky_Rose/),
+[Prof. Matt Gebbie](https://directory.engr.wisc.edu/che/Faculty/Gebbie_Matthew/) and [Prof. Reid van Lehn](https://directory.engr.wisc.edu/che/Faculty/Van-lehn_Reid/).
+The format is meant to help you learn, with embedded links, suggested reading, and interactive elements.
+You will do well in this course if you read and understand the lecture notes, and use the suggested reading and
+resources to complete or augment this knowledge. 
