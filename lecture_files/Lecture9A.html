@@ -1,0 +1,681 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Fluctuations and thermodynamic response functions &#8212; Notes for CBE710</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/defs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture_files/Lecture9A';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Problem Set 1 (Due Tuesday, September 19, 2023)" href="../problems/ps_1/problem_set_1.html" />
+    <link rel="prev" title="Mean-field theory" href="Lecture8B.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Notes for CBE710</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Class introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Mechanics</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Lecture1A.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture1B.html">Review of thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture2.html">Postulates of statistical mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture3.html">Application of the microcanonical ensemble: two-state system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture4.html">The canonical ensemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture5.html">Generalized ensembles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture6.html">The ideal gas partition function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture7.html">Application of independent subsystems: the Langmuir isotherm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture8A.html">The Ising model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture8B.html">Mean-field theory</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Fluctuations and thermodynamic response functions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Problem Sets</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../problems/ps_1/problem_set_1.html">Problem Set 1 (Due Tuesday, September 19, 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/ps_2/problem_set_2.html">Problem Set 2 (Due Thursday, September 28, 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/ps_3/problem_set_3.html">Problem Set 3 (Due Thursday, October 10, 2023)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../references.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/lecture_files/Lecture9A.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Fluctuations and thermodynamic response functions</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#size-of-fluctuations-and-the-equivalence-of-ensembles">Size of fluctuations and the equivalence of ensembles</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-other-topics">Summary of other topics</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="fluctuations-and-thermodynamic-response-functions">
+<h1>Fluctuations and thermodynamic response functions<a class="headerlink" href="#fluctuations-and-thermodynamic-response-functions" title="Permalink to this headline">#</a></h1>
+<p>In the <a class="reference internal" href="Lecture8B.html"><span class="doc std std-doc">last lecture</span></a>, we introdued the Ising model as a simple model that
+incorporates interactions between molecules. We showed that it is very
+challenging to handle interactions analytically because we cannot
+factorize the partition funtion, and instead used <a class="reference internal" href="Lecture8B.html#term-mean-field-theory"><span class="xref std std-term">mean-field theory</span></a> to
+approximate the interaction between each spin and its neighbors as
+equivalent to the average interaction between spins in the entire
+system. Mean-field theory is a convenient approximation that can
+simplify systems sufficiently to allow for analytical approximations.</p>
+<p>However, by assuming that the local properties of each region of a
+system can be approximated by the average properties of the entire
+system, mean-field theory neglects the local fluctuations throughout a
+system (or fluctuations in system properties as a function of time) that
+can be important. Hence, we will close our study of statistical
+mechanics by discussing the importance of fluctuations and how these can
+be connected to macroscopic quantities, thus providing information
+neglected by mean-field theory.</p>
+<p>We begin by clarifying what is meant by <em>fluctuations</em> in this context.
+Consider the energy, <span class="math notranslate nohighlight">\(E_j\)</span>, of a system described by the canonical
+ensemble (fixed <span class="math notranslate nohighlight">\(NVT\)</span>). The energy can vary between many different
+equivalent microstates of the canonical ensemble with different values
+of the energy <span class="math notranslate nohighlight">\(E_j\)</span>, and we can define an ensemble average value of
+<span class="math notranslate nohighlight">\(\langle E \rangle = \sum_j p_j E_j\)</span>. We can think of fluctuations in
+the energy in two different ways. First, we can imagine examining the
+system as a function of time, and periodically recording the
+instantaneous energy, <span class="math notranslate nohighlight">\(E(t)\)</span>. At each snapshot of the system,
+<span class="math notranslate nohighlight">\(E(t) = E_j\)</span>, in other words, the system by definition will be in some
+microstate such that its energy at time <span class="math notranslate nohighlight">\(t\)</span> will have a value equal to
+<span class="math notranslate nohighlight">\(E_j\)</span>.</p>
+<p>Recall the the <a class="reference internal" href="Lecture2.html#postulate-1-the-time-average-value-of-a-thermodynamic-parameter-y-of-a-system-is-equal-to-the-ensemble-average-value-of-y"><span class="std std-doc">ergodic hypothesis</span></a>,
+that says that over sufficiently long times
+<span class="math notranslate nohighlight">\(\int E(t) dt = \langle E \rangle\)</span>. That is, all microstates will be
+visited according to their Boltzmann-weighted probabilities and we can
+observe the ensemble average value of <span class="math notranslate nohighlight">\(E\)</span>. Fluctuations by this
+definition then refer to the expected <em>temporal</em> variation in <span class="math notranslate nohighlight">\(E(t)\)</span> as
+the system evolves in time. However, because ergodicity establishes the
+equivalence of temporal measurements and ensemble averages, we can also
+think of fluctuations in the energy as a measure of the variance in the
+energy in the ensemble of microstates - i.e. simply a statistical
+quantity which reflects the distribution of energies accessible to a
+system. The key point here is that temporal fluctuations in the quantity
+are exactly equal to the statistical fluctuations in that quantity over
+long enough observation times such that ergodicity establishes the
+equivalence of the temporal average and ensemble average.</p>
+<p><img alt="image" src="../_images/fig_9A_1-01.png" /></p>
+<p>Having established the definition of fluctuations, why do we care?
+Well, our fluctuations are related to our</p>
+<dl class="glossary simple">
+<dt id="term-heat-capacity">heat capacity<a class="headerlink" href="#term-heat-capacity" title="Permalink to this term">#</a></dt><dd><p>rate at which energy changes in a system due to a change in temperature</p>
+</dd>
+</dl>
+<div class="admonition-prove-that-our-ensemble-average-variance-langle-delta-e-2-rangle-propto-c-v admonition">
+<p class="admonition-title">Prove that our ensemble-average variance, <span class="math notranslate nohighlight">\(\langle ( \delta E)^2 \rangle \propto C_v\)</span></p>
+<details><summary> Hints </summary>
+<p><span class="math notranslate nohighlight">\(C_v\left ( \frac{\partial \langle E \rangle}{\partial T} \right )_{N, V}\)</span></p>
+</details>
+<details><summary> Show derivation </summary>
+<p>Taking the <em>statistical</em> definition of fluctuations, we can write the
+ensemble-average variance, <span class="math notranslate nohighlight">\(\langle ( \delta E)^2 \rangle\)</span>, in the
+canonical ensemble as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\langle ( \delta E)^2 \rangle &amp;= \langle (E - \langle E \rangle )^2 \rangle \\
+&amp;=  \langle E^2 -  2 E \langle E \rangle +  \langle E \rangle^2 \rangle \\
+&amp;= \langle E^2 \rangle - 2 \langle E \rangle \langle E \rangle + \langle E \rangle ^2 \\
+&amp;= \langle E^2 \rangle  - \langle E \rangle ^2
+\end{aligned}\end{split}\]</div>
+<p>Here we have simply rewritten the ensemble-averaged square fluctuation
+(i.e., the ensemble-averaged variance) in terms of ensemble averages of
+the energy itself. We can now use the equations from the <a class="reference internal" href="Lecture4.html#term-canonical-ensemble"><span class="xref std std-term">canonical ensemble</span></a>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\langle ( \delta E)^2 \rangle  = \langle E^2 \rangle  - \langle E \rangle ^2 &amp;= \sum_j p_j E_j ^2 - \left (\sum_j p_j E_j \right)^2 \\
+&amp;= \frac{1}{Z}\sum_j E_j^2 e^{-\beta E_j} - \left (  \frac{1}{Z} \sum_j E_j e^{-\beta E_j}\right )^2
+\end{aligned}\end{split}\]</div>
+<p>We next recognize that from the definition of the <a class="reference internal" href="Lecture4.html#term-canonical-partition-function"><span class="xref std std-term">canonical partition function</span></a>,
+<span class="math notranslate nohighlight">\(Z = \sum_j e^{-\beta E_j}\)</span>, we get
+<span class="math notranslate nohighlight">\(\frac{\partial Z}{\partial \beta} = -\sum_j E_j e^{-\beta E_j}\)</span>.
+Therefore the above expression becomes:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\langle ( \delta E)^2 \rangle &amp;= \frac{1}{Z} \left (  \frac{\partial^2 Z}{\partial \beta^2} \right )_{N, V} - \left ( \frac{1}{Z} \left (  \frac{\partial Z}{\partial \beta} \right )_{N, V} \right )^2 \\
+&amp;= \frac{\partial}{\partial \beta} \left ( \frac{1}{Z} \frac{\partial Z}{\partial \beta} \right )_{N, V} \\
+&amp;= \frac{\partial}{\partial \beta} \left ( \frac{\partial \ln Z}{\partial \beta} \right )_{N, V}
+\end{aligned}\end{split}\]</div>
+<p>Note the use of the product rule to simplify the first line to the
+second line. We recall from <a class="reference internal" href="Lecture3.html"><span class="doc std std-doc">Lecture 3</span></a> that
+<span class="math notranslate nohighlight">\(\langle E \rangle = -\left ( \frac{\partial \ln Z}{\partial \beta} \right )_{N, V}\)</span>
+to get:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\langle ( \delta E)^2 \rangle &amp;= -\left ( \frac{\partial \langle E \rangle}{\partial \beta} \right )_{N, V}  \\
+&amp;= k_B \left ( \frac{\partial \langle E \rangle}{\partial T} \right )_{N, V} \left ( \frac{\partial T}{\partial T^{-1}} \right )_{N, V}\\
+&amp;= k_B T^2 \left ( \frac{\partial \langle E \rangle}{\partial T} \right )_{N, V} \\
+&amp;= k_BT ^2 C_V \label{heat_capacity}
+\end{aligned}\end{split}\]</div>
+<p>In the last line, we recognize that
+<span class="math notranslate nohighlight">\(\left ( \frac{\partial \langle E \rangle}{\partial T} \right )_{N, V}\)</span>
+is the heat capacity at constant volume, an experimentally
+measurable material constant.</p>
+</div>
+<p>This relationship is remarkable - it shows
+that the fluctuation (either with respect to time or with respect to the
+variation in the statistical ensemble) of energy in a system at fixed
+<span class="math notranslate nohighlight">\(NVT\)</span> is related to the rate at which energy in that system changes due
+to changes in the temperature. We call <span class="math notranslate nohighlight">\(C_V\)</span> a <em>thermodynamic response
+function</em>; that is, it shows the response of a system (i.e. change in
+energy) at equilibrium to a change in a parameter (i.e. the
+temperature). The relation above shows that microscopic fluctuations in
+the energy are a measure of the thermodynamic response of a system.</p>
+<p>This relationship is strictly derived only at equilibrium, since
+everything we have done so far in statistical mechanics is at
+equilibrium; it turns out that similar relationships between statistical
+fluctuations and the response of a system also occur in non-equilibrium
+processes, leading to the so-called fluctuation-dissipation
+relationship, but that is outside of the scope of this lecture.</p>
+<p>The relationship between fluctuations and a thermodynamic response
+illustrates a new means of calculating the heat capacity of the
+material. Without knowledge of this relationship, the simplest way to
+calculate the heat capacity would be to perform multiple experiments at
+different temperatures, measure the corresponding system energy, and
+equate <span class="math notranslate nohighlight">\(C_V\)</span> to the slope of the resulting line. Instead, Eq.
+<span class="xref myst">[heat_capacity]</span>{reference-type=”ref”
+reference=”heat_capacity”} shows that we could take a single system at a
+fixed temperature and instead measure the fluctuations of the energy
+over time to obtain <span class="math notranslate nohighlight">\(C_V\)</span> in a single experiment. Such measurements will
+be possible using computer simulations as we will discuss in future
+lectures. We could also derive the fluctuations of other quantities,
+such as the density, and connect these to other materials parameters as
+a general means of computing response functions from equilibrium
+fluctuations.</p>
+<p><img alt="image" src="../_images/fig_8_4.png" />{width=”90%”}</p>
+<section id="size-of-fluctuations-and-the-equivalence-of-ensembles">
+<h2>Size of fluctuations and the equivalence of ensembles<a class="headerlink" href="#size-of-fluctuations-and-the-equivalence-of-ensembles" title="Permalink to this headline">#</a></h2>
+<p>The next question we will address how large fluctuations actually are
+relative to the average energy of the system. If fluctuations are much
+smaller than the average energy of the system, then the system energy
+will appear approximately constant. To determine the relative size of
+fluctuations, we recognize that the heat capacity, <span class="math notranslate nohighlight">\(C_V\)</span>, is extensive
+and scales with the number of particles of the system, and thus is of
+order <span class="math notranslate nohighlight">\(N\)</span> (this was explicitly shown for an ideal gas). The energy, <span class="math notranslate nohighlight">\(E\)</span>,
+is also extensive and scales with <span class="math notranslate nohighlight">\(N\)</span> (also shown for an ideal gas). The
+ratio of fluctuations to the average energy is then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\frac{\sqrt{\langle ( \delta E)^2 \rangle}}{\langle E \rangle} &amp;=  \frac{\sqrt{k_BT ^2 C_V}}{\langle E \rangle} \\
+&amp;\approx \frac{\sqrt{N}}{N}\\
+&amp;\approx N^{-1/2}
+\end{aligned}\end{split}\]</div>
+<p>This scaling analysis indicates that if <span class="math notranslate nohighlight">\(N\)</span> is a large number (e.g. on
+the order of <span class="math notranslate nohighlight">\(10^{23}\)</span> particles), then the ratio of fluctuations to the
+average energy approaches zero and the energy of the system is
+effectively constant. Thus, in the large <span class="math notranslate nohighlight">\(N\)</span> limit the average energy
+calculated from the canonical ensemble will be identical to the average
+energy of a microcanonical ensemble because energy fluctuations are
+negligible - and this is exactly the limit in which classical
+thermodynamics is valid.</p>
+<p>To illustrate this point in just a bit more detail, we can write the
+equation for the canonical partition function by summing over all energy
+levels, and including the explicit degeneracy of energy level <span class="math notranslate nohighlight">\(\nu\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[Z(N,V,T) = \sum_\nu \Omega(N,V,E_\nu) e^{-\beta E_\nu}\]</div>
+<p>In the large <span class="math notranslate nohighlight">\(N\)</span> limit, we just showed that only a single value of
+<span class="math notranslate nohighlight">\(E_\nu\)</span>, the ensemble average value, is meaningful, as fluctuations away
+from this value are unlikely. Thus, the degeneracy
+<span class="math notranslate nohighlight">\(\Omega(N,V,\langle E \rangle)\)</span> is significantly larger than any other
+term in the summation, and we can write the partition function instead
+as:</p>
+<div class="math notranslate nohighlight">
+\[Z(N,V,T) = \Omega(N,V,\langle E \rangle) e^{-\beta\langle E \rangle}\]</div>
+<p>Taking the logarithm of this expression and equating to the Helmholtz
+free energy yields:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+F &amp;= -k_BT \ln Z(N,V,T) \\ 
+&amp;= -k_B T \ln \left [ \Omega(N,V,\langle E \rangle) e^{-\beta\langle E \rangle} \right ] \\
+&amp;= \langle E \rangle -k_B T \ln \Omega(N,V,\langle E \rangle)
+\end{aligned}\end{split}\]</div>
+<p>We can compare this last expression to the thermodynamic definition of
+the Helmholtz free energy, <span class="math notranslate nohighlight">\(F = E - TS\)</span>. Therefore, we get that
+<span class="math notranslate nohighlight">\(S = k_B \ln \Omega(N,V,\langle E \rangle)\)</span>, the Boltzmann entropy used
+to define the microcanonical ensemble, and we see that the two ensembles
+make equivalent predictions for the Helmholtz free energy. Similar
+measures of equivalency could be performed in the thermodynamic limit
+for other ensembles as well.</p>
+<p>There are thus four important conclusions to draw from our study of
+fluctuations: 1) that in the thermodynamic limit, fluctuations are
+negligible, and hence we can discuss single values of thermodynamic
+variables as being equivalent to ensemble averages; 2) that in the
+thermodynamic limit all ensembles are equivalent, and hence we can use
+any ensemble that is mathematically convenient to relate molecular
+properties to macroscopic observables; 3) that microscopic fluctuations
+are proportional to a response function, both in equilibrium and in
+non-equilibrium processes; and 4) fluctuations are measurable properties
+of a system that can be used to inform experimental measurements (e.g.
+in light scattering).</p>
+</section>
+<section id="summary-of-other-topics">
+<h2>Summary of other topics<a class="headerlink" href="#summary-of-other-topics" title="Permalink to this headline">#</a></h2>
+<p>We have now finished our overview of statistical mechanics and will
+transition into an alternative approach to calculating the statistical
+properties of many-body, interacting systems via computer simulations.
+However, it is useful to emphasize that we have only scratched the
+surface of modern statistical mechanics, and that there many other
+topics of importance. Briefly, here are some topics of interest that we
+have not discussed:</p>
+<ul class="simple">
+<li><p>Kinetic theory of gases (although we will touch on this in the next
+unit)</p></li>
+<li><p>Topics in non-equilibrium statistical mechanics, such as linear
+response theory</p></li>
+<li><p>Renormalization group approaches to phase transitions</p></li>
+<li><p>Correlation functions and order parameters</p></li>
+<li><p>Landau-Ginsburg models for phase transitions</p></li>
+<li><p>Statistical mechanics of surfaces</p></li>
+</ul>
+<p>If you’re interested in these topics, I am happy to point you toward
+relevant textbooks.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lecture_files"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Lecture8B.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Mean-field theory</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../problems/ps_1/problem_set_1.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Problem Set 1 (Due Tuesday, September 19, 2023)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#size-of-fluctuations-and-the-equivalence-of-ensembles">Size of fluctuations and the equivalence of ensembles</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-other-topics">Summary of other topics</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Reid van Lehn, Matt Gebbie, Rose Cersonsky
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
