@@ -566,3 +566,5 @@ $$\begin{aligned}
 \end{aligned}$$
 
 This approach again returns the same result.
+
+## [Link to Shared Notes](https://docs.google.com/document/d/1aCDxbRoz7d2eICYUjXBlMxxE-KaluGfo/edit?usp=drive_link&ouid=113272049620170441297&rtpof=true&sd=true)
