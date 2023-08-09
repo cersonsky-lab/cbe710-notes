@@ -1,4 +1,4 @@
-# The Langmuir Isotherm
+# Application of independent subsystems: the Langmuir isotherm
 
 ## Additional Readings for the Enthusiast
 
@@ -7,7 +7,7 @@
 ## Goals for today's lecture
 - Derive the fraction of absorbed sites on a surface solely based on the pressure of the surrounding gas and the binding energy.
 
-## Another example of independent particles
+## The Langmuir Isotherm
 The [previous lecture](Lecture7.md) shows that statistical mechanics can reproduce
 classical thermodynamic relationships from first-principles. We will now
 test a second example of the three-step approach for studying
@@ -198,3 +198,7 @@ where the surface is half-occupied, we can find a value for $\epsilon_a$
 or the binding energy if the thermal de Broglie wavelength is known.
 Thus, statistical mechanics provides a valuable connection between
 microscopic and macroscopic observables relevant to surface occupancy.
+
+
+
+## [Link to Shared Notes](https://docs.google.com/document/d/1g076unmXybqtkNg-1GSrwfzJZaxw9cQY/edit?usp=drive_link&ouid=113272049620170441297&rtpof=true&sd=true)
