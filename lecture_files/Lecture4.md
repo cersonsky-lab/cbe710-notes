@@ -1,4 +1,4 @@
-# The Canonical Ensemble
+# The canonical ensemble
 
 ## Additional Readings for the Enthusiast
 
@@ -20,7 +20,7 @@ system is not fixed.
 For example, most laboratory experiments take place
 in environments in which the energy of the system is able to exchange
 with the environment; that is, the walls of the system are
-**diathermal**. $E$ is therefore no longer a fixed quantity and instead
+{term}`diathermal`. $E$ is therefore no longer a fixed quantity and instead
 varies between each microstate. At equilibrium, however, we know from
 thermodynamics that the temperature of the system will be equal to the
 temperature of the environment. It would therefore be ideal to have
@@ -29,9 +29,11 @@ microstate due to this condition of equilibrium while the energy is
 allowed to vary.
 
 ```{glossary}
+
 canonical ensemble
-    The ensemble of microstates for a system at constant
-    temperature (and number and volume), also known as the $NVT$ ensemble.
+    The ensemble for which all microstates have a fixed number of particles, volume, and
+    temperature. Also known as the $$NVT$$ ensemble.
+
 ```
 
 As we will see, choosing the appropriate ensemble to describe
@@ -40,7 +42,7 @@ However, if we allow the energy to vary between each microstate then the
 probability that a system obtains a given state, $p_i$, is no longer a
 constant value - that is, [Postulate 2](Lecture2.md#postulate-2-in-the-microcanonical-ensemble-all-microstates-are-equally-probable) no longer applies. We thus will
 derive an expression for the probability of microstate $i$ in order to
-calculate ensemble-average quantities for the canonical ensemble.
+calculate ensemble-average quantities for the {term}`canonical ensemble`.
 
 Let us consider a system of interest that is contact with surroundings
 that we will refer to as the **bath**. The bath is significantly larger
@@ -160,12 +162,14 @@ state in the canonical ensemble, $p_j$, which has energy $E_j$.
 ```{admonition} Why is there not a one-to-one correspondence between energy and microstates in the canonical ensemble?
 <details>
   <summary><b></b>[Click for answer]</summary>
+
 In general, many possible microstates could have the same
 energy but different microscopic configurations - thus, there is not a
 one-to-one correspondence between energies and microstates. We will
 eventually consider the probability of observing one of the many states
 that have the same energy $E_\nu$ as opposed to the specific microstate
 $j$.
+
 </details>
 ```
 
@@ -280,7 +284,7 @@ C_2 &= \frac{1}{\sum_j e^{-E_j/k_BT_S}}\\
 
 ```{glossary}
 canonical [partition function](https://en.wikipedia.org/wiki/Partition_function_\(statistical_mechanics\))
-    A term, here $Z \equiv \sum_j e^{-E_j/k_BT_S}$, that normalizes
+    A term, here $Z \equiv \sum_j e^{-E_j/k_BT}$, that normalizes
     the probability of finding state $j$ in the canonical ensemble.
 
 [Boltzmann factor / Boltzmann weight](https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Physical_Chemistry_(LibreTexts)/17%3A_Boltzmann_Factor_and_Partition_Functions#:~:text=The%20Boltzmann%20factor%20is%20used,represents%20a%20Thermally%20Equilibrated%20Distribution)
@@ -562,3 +566,5 @@ $$\begin{aligned}
 \end{aligned}$$
 
 This approach again returns the same result.
+
+## [Link to Shared Notes](https://docs.google.com/document/d/1aCDxbRoz7d2eICYUjXBlMxxE-KaluGfo/edit?usp=drive_link&ouid=113272049620170441297&rtpof=true&sd=true)
