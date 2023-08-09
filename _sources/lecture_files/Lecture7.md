@@ -198,3 +198,7 @@ where the surface is half-occupied, we can find a value for $\epsilon_a$
 or the binding energy if the thermal de Broglie wavelength is known.
 Thus, statistical mechanics provides a valuable connection between
 microscopic and macroscopic observables relevant to surface occupancy.
+
+
+
+## [Link to Shared Notes](https://docs.google.com/document/d/1g076unmXybqtkNg-1GSrwfzJZaxw9cQY/edit?usp=drive_link&ouid=113272049620170441297&rtpof=true&sd=true)
