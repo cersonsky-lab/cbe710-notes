@@ -213,3 +213,7 @@ theory. More advanced techniques are possible, including "tagging"
 multiple spins for simultaneous analysis, but that is beyond the scope
 of this class.
 
+
+
+
+## [Link to Shared Notes](https://docs.google.com/document/d/1l3Eb8vydJs2NmPXb4oZuABXH0w7W4OiD/edit?usp=drive_link&ouid=113272049620170441297&rtpof=true&sd=true)
