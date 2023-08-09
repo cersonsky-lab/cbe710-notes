@@ -1,4 +1,4 @@
-# The Ideal Gas Partition Function 
+# The ideal gas partition function 
 
 ## Additional Readings for the Enthusiast
 
@@ -354,14 +354,18 @@ integral is equivalent to what we did when discussing Stirling's
 approximation - we can think of the sum over energies as performing
 rectangular integration of the energy vs. $\nu$, and as the difference
 between consecutive terms in the sum becomes small, rectangular
-integration can be well-approximated using a continuous integral. The
-assumption that energies are continuous is reasonable in a macroscopic
-system where incrementing the quantum numbers by one leads to a very
-small change in the energy ($\approx 10^{-9} k_B T$). This assumption is
-referred to as the **classical limit**, and indeed, writing a partition
-function in terms of an integral over phase space is a hallmark of
-**classical statistical mechanics** (to date, everything we have done is
-in the quantum limit by writing energy levels as discrete). In the
+integration can be well-approximated using a continuous integral.
+
+```{glossary}
+classical limit
+
+    The assumption that energies are continuous in a macroscopic
+    system; requires that incrementing the quantum numbers by one leads to a very
+    small change in the energy ($\approx 10^{-9} k_B T$).
+
+```
+
+In the
 classical limit the partition function becomes:
 
 $$z = \frac{\pi}{4}  \left( \frac{8m}{h^2}\right )^{3/2} V \int_0^\infty   \epsilon_{\nu}^{1/2}  e^{-\beta \epsilon_{\nu} } d\epsilon_{\nu}$$
@@ -408,6 +412,137 @@ which has units
 of length and is a function of $T$; this simplifies our notation and
 defines a characteristic length scale for treating a gas classically -
 if $V \gg \lambda^3$, which we will generally assume to be the case,
-then the classical limit is reasonable. With this partition function, we
-can proceed to derive thermodynamic relationships as will be discussed
-in the [next lecture](Lecture7.md).
+then the classical limit is reasonable. 
+
+## Thermodynamic relationships of the ideal gas partition function
+
+We have now performed the first two steps in our approach by identifying
+an expression for the energy of a microstate of our system and
+calculating the corresponding partition function (in the classical
+limit) from the single-particle partition function. We can next derive
+thermodynamic relationships using the connection between the canonical
+partition function and the Helmholtz free energy.
+
+Let us first calculate
+the ensemble-average pressure of an ideal gas:
+
+```{admonition} Show that $PV=NRT$, where $R=N_Ak_B$.
+<details><summary>Show derivation</summary>
+
+$$\begin{aligned}
+\langle P \rangle &= P = -\left ( \frac{\partial F }{\partial V}\right )_{N,T} \\
+&= k_B T \left ( \frac{\partial \ln Z }{\partial V}\right )_{N,T} \\
+\ln Z &=  N\ln V + \ln \left [ \frac{1}{N!} \left( \frac{2\pi m k_BT}{h^2}\right )^{3N/2} \right ] \\
+P &= N k_B T   \frac{1}{V} \\
+\therefore PV &= N k_B T
+\end{aligned}$$
+
+This expression for the pressure is the familiar ideal gas equation of
+state, derived **solely** from statistical mechanics. Note that $R$, the
+ideal gas constant, is related to $k_B$ by a constant factor of
+Avogadro's constant, $N_A$, or $R = N_A k_B$. Basically, this is just a
+unit conversion. The only input to obtain this relationship is an energy
+function from quantum mechanics - therefore this is entirely a
+first-principles derivation that does not rely on empirical
+measurements. In the third line we divided the partition function into a
+term that is a function of $V$ and one that is not; the second term does
+not contribute to the expression for $P$.
+```
+
+We can next calculate the average energy of an ideal gas.
+
+
+```{admonition} Show that internal energy $E = \frac{3 N k_BT}{2}$.
+<details><summary>Hints</summary>
+
+Recall that we
+can relate the energy to the canonical partition function (from a
+[previous lecture](Lecture4.md)) via:
+
+$$\begin{aligned}
+E &= - \left ( \frac{\partial \ln Z}{\partial \beta}\right )_{N,V} \\
+&= k_B T^2 \left ( \frac{\partial \ln Z}{\partial T}\right)_{N,V}
+\end{aligned}$$
+
+</details>
+
+<details><summary>Show derivation</summary>
+
+We write out the partition function and
+separate into the temperature-dependent and temperature-independent
+terms:
+
+$$\begin{aligned}
+\ln Z &=  \ln \left [ \frac{1}{N!} \left( \frac{2\pi m k_BT}{h^2}\right )^{3N/2} V^N \right ] \\
+&= \frac{3N}{2} \ln T + \ln \left [ \frac{1}{N!} \left( \frac{2\pi m k_B}{h^2}\right )^{3N/2} V^N \right ]
+\end{aligned}$$
+
+Taking the derivative gives:
+
+$$\begin{aligned}
+E &= k_B T^2 \frac{3N}{2T} \\
+&= \frac{3 N k_BT}{2}
+\end{aligned}$$
+
+This again is a familiar expression - the internal energy of an ideal
+gas depends only on the temperature, and we obtain the same prefactors
+as in thermodynamics.
+</details>
+```
+
+We can now easily also calculate the heat capacity
+at constant volume, $C_V$:
+
+$$\begin{aligned}
+C_V &= \left ( \frac{\partial  E  }{\partial T}\right )_{N,V} \\
+&= \frac{3 }{2}N k_B
+\end{aligned}$$
+
+These last two results are manifestations of the
+
+```{glossary}
+[equipartition theorem](https://en.wikipedia.org/wiki/Equipartition_theorem)
+    any degree of freedom that appears
+    quadratically in the energy of a system contributes $1/2 k_BT$ to the
+    internal energy and contributes $1/2 k_B$ to the heat capacity in the
+    classical limit
+```
+
+Here, there are 3 translational degrees of freedom
+corresponding to the three quantum numbers that each contribute a
+quadratic energy term (the kinetic energy) for each of the $N$ atoms,
+leading to $\frac{3 }{2}N k_B$ for the heat capacity as we found.
+
+Finally, we can compute the chemical potential of an ideal gas using the
+ideal gas partition function:
+
+
+```{admonition} Show that $\mu = \mu_0(T) + k_B T \ln \rho$.
+<details><summary>Hints</summary>
+
+$$\mu = \left ( \frac{\partial F }{\partial N}\right )_{T,V}$$
+
+</details>
+<details><summary>Show derivation</summary>
+
+$$\begin{aligned}
+\mu &= \left ( \frac{\partial F }{\partial N}\right )_{T,V} \\
+&= -k_B T \left ( \frac{\partial \ln Z }{\partial N}\right )_{T,V} \\
+\ln Z &= \ln \left ( \frac{z^N}{N!}\right ) \\
+&= N \ln z - \ln N! \\
+&= N \ln  \left [\left( \frac{2\pi m k_BT}{h^2}\right )^{3/2} V \right ] - N \ln N + N \\
+\mu &= -k_B T \left [ \ln \left( \frac{2\pi m k_BT}{h^2}\right )^{3/2} V  - \ln N  \right ] \\
+&= -k_B T \ln \left( \frac{2\pi m k_BT}{h^2}\right )^{3/2} + k_B T \ln \frac{N}{V} \\
+&= \mu_0(T) + k_B T \ln \rho
+\end{aligned}$$
+</details>
+```
+
+The last formula expresses the chemical potential in terms of a first
+term, which is temperature dependent but concentration ($\rho$)
+independent, and then a second concentration-dependent term. This form
+for the chemical potential is again exactly what is observed for ideal
+gases in classical thermodynamics.
+
+
+## [Link to Shared Notes](https://docs.google.com/document/d/1eAek5NU2JEa6TlELNmm16em7HD9G4b6v/edit?usp=drive_link&ouid=113272049620170441297&rtpof=true&sd=true)
