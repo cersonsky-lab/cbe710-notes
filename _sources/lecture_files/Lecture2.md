@@ -336,3 +336,5 @@ accessible to a system. Regardless of how you think of it, this
 definition of entropy provides another connection between the
 microscopic features of a system (i.e., the degeneracy or number of
 accessible microstates) and macroscopic thermodynamic parameters.
+
+## [Link to Shared Notes](https://docs.google.com/document/d/1VnvydOX0SLH_P1uq2oHW03x6_ZGmzL7c/edit?usp=drive_link&ouid=113272049620170441297&rtpof=true&sd=true)
