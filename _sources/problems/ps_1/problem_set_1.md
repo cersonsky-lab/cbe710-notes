@@ -62,7 +62,7 @@ to show how you obtain $C$.
 Show that the entropy of an ideal one-dimensional chain in the
 large $N$ limit is given by:
 
-$$S(N, x) = -\frac{k_Bx^2}{2Nb^2} + S(N) + k_B \ln{C}$$.
+$S(N, x) = -\frac{k_Bx^2}{2Nb^2} + S(N) + k_B \ln{C}$.
 
 where $C$ is our normalizing constant from above, and S(N) is the x-independent entropy term.
 
