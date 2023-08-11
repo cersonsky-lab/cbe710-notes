@@ -357,5 +357,6 @@ correct choice of thermodynamic variables, even for the same system, can
 dramatically simplify problem solutions.
 
 </details>
+```
 
 ## [Link to Shared Notes](https://docs.google.com/document/d/1YWxl5aV9YwQdL5cn1YHTd6sZN7o8cx1p/edit?usp=drive_link)
