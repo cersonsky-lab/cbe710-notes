@@ -4,6 +4,12 @@
 
 -   {cite:ts}`frenkel_understanding_2002` Ch. 3
 
+## Goals for this lecture
+
+- What are periodic boundary conditions? Why do we use them?
+- How can stochastic sampling be used to replicate a probability distribution?
+- What are some limitations of random sampling in statistical ensembles?
+
 ## Interactions in molecular simulations
 
 ### Non-bonded potentials
@@ -198,7 +204,7 @@ determined. This observation will form the basis of the Metropolis Monte
 Carlo algorithm. We will now describe Monte Carlo sampling in general,
 then discuss the Metropolis algorithm.
 
-## Stochastic sampling of determinate equations
+## Stochastic sampling
 
 The main idea of the Monte Carlo method is the following: a determinate
 mathematical expression (like the integrals in the equations for the
@@ -217,9 +223,10 @@ This can be likened to computing the average value of a binary function across a
 larger than our shape, _i.e._,
 
 
-$$ A = \langle f \rangle = \sum_{x,y} f(x,y) p_{x,y} $$
+$$ A = A_{box}\langle f \rangle = A_{box}\sum_{x,y} f(x,y) p_{x,y} $$
 
-where $f$ is 1 when we are sitting in the shape and 0 otherwise.
+where $f$ is 1 when we are sitting in the shape and 0 otherwise,
+and $A_{box}$ is the area of our bounding box.
 
 Now, we can calculate the average value of
 $f$ by randomly selecting points within our bounding box and recording
@@ -234,10 +241,77 @@ $p(x,y)$ and the average of $f$ computed
 from the infinite number of trials will be exactly equal to our area.
 
 $$\begin{aligned}
-A = \frac{1}{\tau}\sum_i^\tau  f(x_i, y_i)
+A = \frac{A_{box}}{\tau}\sum_i^\tau  f(x_i, y_i)
 \end{aligned}$$
 
 where $\tau$ is our number of trials (samples).
+
+### Stochastic sampling of determinate equations
+
+Consider evaluating a function $F$ which can be estimated as the integral
+of some function $f(x)$ within a defined interval $[a, b]$:
+
+$$
+F = \int_{a}^{b} f(x) dx
+$$
+
+We can then define an arbitrary probability
+density function, $p(x)$, which represents the probability of finding any
+particular value of $x$. In this case, we assume that the probability density is known
+for the function of interest. We can then write:
+
+$$\begin{align}
+F &= \int_{a}^{b} f(x) dx \\
+&= \int_a^b  \left ( \frac{f(x)}{p(x)} \right ) p(x) dx \\
+&= \left \langle \frac{f(x)}{p(x)}\right \rangle 
+\end{align}$$
+
+This expression is the ensemble-average of an observable
+but in the continuum limit - in other words, this is the
+continuum version of the expression $\langle Y \rangle = \sum p_i Y_i$
+where we have replaced the summation (for discrete states) with an integral
+and the observable we are computing is $\left ( \frac{f(x)}{p(x)} \right )$. 
+
+Now, we can calculate the average value of $\left ( \frac{f(x)}{p(x)} \right )$
+by randomly selecting points within the interval $[a, b]$ according to
+the probability distribution $p(x)$, and calculating $\left ( \frac{f(x)}{p(x)} \right )$
+for each randomly selected value of $x$.
+Like with our area example, if we have an infinite number of trials,
+then each value of $x$ will be sampled
+exactly according to $p(x)$ and the average of $\left ( \frac{f(x)}{p(x)} \right )$
+computed from the infinite number of trials will be exactly equal
+to the value of the integral above. We can thus approximate $F$ by:
+
+$$\begin{align}
+F &= \left \langle \frac{f(x)}{p(x)} \right \rangle  \\
+&\approx \left \langle \frac{f(x)}{p(x)}\right \rangle_{\textrm{trials}} \\
+&= \frac{1}{\tau}\sum_i^\tau  \frac{f(x)}{p(x)} \label{randomsample}
+\end{align}$$
+
+where for each of the $\tau$ trials (samples), $x$ is chosen according to the probability $p(x)$. 
+
+Let's consider a simple example of how we might apply this idea.
+First, we will choose $p(x)$ to be a uniform probability density:
+
+$$
+p(x) = \frac{1}{b - a} \quad \text{for $a \leq x \leq b$} 
+$$
+
+Then, we can generally approximate $F$ as:
+
+$$
+F \approx \frac{b - a}{\tau}\sum_i^{\tau}  f(x) 
+$$
+
+This expression approximates $F$ by randomly, uniformly sampling values of
+$x$ between $a$ and $b$, calculating $f(x)$, and taking the average,
+with additional values of $\tau$ increasing the accuracy of our approximation.
+Of course, for many one-dimensional functions this may not be particularly
+efficient relative to just performing numerical quadrature, but in a $N$-dimensional
+space, such as the configurational space of the partition function,
+this type of methodology could be efficient. 
+
+### Stochastic sampling applied to the canonical partition function
 
 Let's consider applying this uniform sampling methodology to the
 calculation of the canonical partition function. We could write:
@@ -248,9 +322,10 @@ Z &= \int_{V^N} d \mathbf{r}^N \exp \left [ -\beta E(\mathbf{r}^N) \right ] \\
 \end{aligned}$$
 
 $V^N$ is again the volume of phase space which is the $3N$-dimensional
-analogue to the interval $[a, b]$; $\tau$ is the total number of samples
+analogue to $A_{box}$ in our previous example; $\tau$ is the total number of samples
 used for the approximation, and $E(\mathbf{r}_i^N)$ is the potential
 energy of the system for the specific configuration denoted by $i$.
+
 There are two major problems with this approach in practice. First, it's
 difficult to estimate the total phase space volume, $V^N$. This problem
 can be avoided, however, by recognizing that calculating the
@@ -265,11 +340,14 @@ $$\begin{aligned}
 We use the notation $\langle Y\rangle_{NVT}$ as a reminder that the
 ensemble-average value of $Y$ is calculated in the canonical ensemble.
 Due to the ratio, the term involving the total phase space drops out.
+
 But, we are left with a second problem, which is that the vast majority
 of configurations in most systems will have a near-zero contribution to
 the ensemble average, since the Boltzmann weight
 $\exp \left [-\beta E(\mathbf{r}_i^N)\right ] \approx 0$ for any
-configurations with unfavorable energies. For example, consider sampling
+configurations with unfavorable (high) energies.
+
+For example, consider sampling
 configurations from a set of hard spheres to represent a fluid - any
 configuration in which there is slight overlap between spheres leads to
 an infinite system energy, and the corresponding Boltzmann weight would
@@ -279,93 +357,8 @@ inhibiting an accurate calculation. Instead, we would like to perform
 **importance sampling**, by only examining configurations with finite
 contributions to the ensemble average.
 
-![image](figs/fig_10_1.png){width="60%"}
-
-## Importance sampling and Markov chains
-
-To evaluate ensemble averages from the canonical ensemble, we can use
-Eq. [\[randomsample\]](#randomsample){reference-type="eqref"
-reference="randomsample"} but with the probability density, $p(x)$,
-chosen to maximize the likelihood of sampling configurations that
-contribute meaningfully to the calculation of the ensemble average. This
-is the essence of importance sampling. We can perform importance
-sampling for configurations in the canonical ensemble by recalling that
-the probability of finding the system in a given microstate of the
-canonical ensemble, $p(\textbf{r}^N)_{NVT}$, is related to the Boltzmann
-factor for that state normalized by the partition function. We can then
-write:
-
-$$\begin{aligned}
-p(\textbf{r}^N)_{NVT} &= \frac{\exp \left [-\beta E(\mathbf{r}^N)\right ]}{Z} \\
-\langle Y \rangle_{NVT} &= \int d \mathbf{r}^N p(\textbf{r}^N)_{NVT}  Y(\mathbf{r}^N) 
-\end{aligned}$$
-
-The ensemble average then has the same form as $F = \int_a^b f(x) dx$ if
-we let $x=\mathbf{r}^N$ and
-$f(x) = p(\mathbf{r}^N)_{NVT} Y(\mathbf{r}^N)$. Following the reasoning
-above, we can then approximate $\langle Y \rangle_{NVT}$ by:
-
-$$\begin{aligned}
-\langle Y \rangle_{NVT} &\approx \left \langle \frac{f(x)}{p(x)} \right \rangle_{\textrm{trials}} \\
-& = \left \langle \frac{ p(\mathbf{r}^N)_{NVT} Y(\mathbf{r}^N) }{p(\mathbf{r}^N)} \right \rangle_{\textrm{trials}}
-\end{aligned}$$
-
-From this expression, we see that if we select trials according to the
-probability distribution $p(\mathbf{r}^N) = p(\mathbf{r}^N)_{NVT}$, then
-we get:
-
-$$\langle Y \rangle_{NVT}  = \langle Y \rangle_{\textrm{trials}} \label{ensemble_average_mc}$$
-
-Thus, we choose configurations in our ensemble according to the
-canonical ensemble probability distribution, in which case the
-ensemble-average value of $Y$ can be estimated by sampling
-configurations according to their Boltzmann weight. Finally, we note
-that we just need to know the probability of sampling a configuration -
-we do not necessarily need an expression for the partition function
-itself. In principle, we could choose another probability distribution
-$p(x)$ from which to sample states, but the choice of
-$p(\mathbf{r}^N) = p(\mathbf{r}^N)_{NVT}$ is the simplest.
-
-Our problem then boils down to: how do we select states according to the
-correct probability distribution without knowing the value of the
-partition function? To do so, we will generate a **Markov chain of
-states** as a means of sampling our distribution. A Markov chain refers
-to a *sequence* of states (i.e. configurations or trials using our
-previous nomenclature) that satisfy the following two conditions:
-
--   Each state generated belongs to a finite set of possible outcomes
-    called the state space. The statistical mechanical analogue to this
-    statement is to say that each microstate generated belongs to a
-    finite ensemble. We can denote each possible state by
-    $\mathbf{r}_1^N, \mathbf{r}_2^N, \mathbf{r}_3^N, \dots$ for the
-    enormous set of possible microstates within the canonical ensemble
-    that we are sampling. For the canonical ensemble, this state space
-    is equal to $V^N$, the accessible phase space.
-
--   The probability of sampling state $i+1$ in the sequence of states
-    sampled depends only on state $i$, and not on previous states in the
-    chain.
-
-Since the likelihood of sampling a new state is only related to what
-current state we are in, we can define a transition probability,
-$\Pi(m\rightarrow n)$, which defines the likelihood of transitioning
-from state $m$ to state $n$. We can then imagine an algorithm in which
-we start in some state $m$ then transition to a new state $n$ with a
-probability given by $\Pi(m\rightarrow n)$ and repeat this for a large
-number of trials. If we do this an infinite number of times, then the
-state $m$ will appear with an overall probability given by $p(m)$, where
-$p(m)$ is the *limiting* probability distribution that does not depend
-on any of the other states (unlike the transition probability). When
-sampling from the canonical ensemble, then, we want $p(m)$ to equal
-$p(\mathbf{r}_m^N)_{NVT}$ - that is, the likelihood of sampling state
-$m$ if we take enough states from our Markov chain is equal to the
-probability of sampling that state according to the canonical ensemble
-distribution function. Thus, we need to find an expression for the
-transition probability, $\Pi$, that yields this correct limiting
-distribution. We will return to this problem in the next lecture.
-
-![image](figs/fig_10_2.png){width="100%"}
-
 [^1]: Often this partition function is written with a normalizing prefactor with units of
 1/volume$^N$ to ensure that the partition function is unitless; we omit
 this prefactor here.
+
+## [Link to Shared Notes](https://docs.google.com/document/d/1RMdd6sLOoR0m7yjreIfVE3SQp3Ib6X77/edit?usp=drive_link&ouid=113272049620170441297&rtpof=true&sd=true)

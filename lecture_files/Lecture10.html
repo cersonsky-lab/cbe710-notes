@@ -327,6 +327,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-readings-for-the-enthusiast">Additional Readings for the Enthusiast</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-for-this-lecture">Goals for this lecture</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactions-in-molecular-simulations">Interactions in molecular simulations</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-bonded-potentials">Non-bonded potentials</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactions-in-mc-simulations">Interactions in MC simulations</a></li>
@@ -334,8 +335,12 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-from-a-canonical-ensemble">Sampling from a canonical ensemble</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stochastic-sampling-of-determinate-equations">Stochastic sampling of determinate equations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importance-sampling-and-markov-chains">Importance sampling and Markov chains</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stochastic-sampling">Stochastic sampling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stochastic-sampling-of-determinate-equations">Stochastic sampling of determinate equations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stochastic-sampling-applied-to-the-canonical-partition-function">Stochastic sampling applied to the canonical partition function</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#link-to-shared-notes">Link to Shared Notes</a></li>
 </ul>
             </nav>
         </div>
@@ -353,6 +358,14 @@ document.write(`
 <h2>Additional Readings for the Enthusiast<a class="headerlink" href="#additional-readings-for-the-enthusiast" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><span id="id1">Frenkel and Smit [<a class="reference internal" href="../references.html#id5" title="Daan Frenkel and Berend Smit. Understanding molecular simulation: from algorithms to applications. Number 1 in Computational science series. Academic Press, San Diego, 2nd ed edition, 2002. ISBN 978-0-12-267351-1. URL: https://www.eng.uc.edu/~beaucag/Classes/AdvancedMaterialsThermodynamics/Books/%5BComputational%20science%20(San%20Diego,%20Calif.)%5D%20Daan%20Frenkel_%20Berend%20Smit%20-%20Understanding%20molecular%20simulation%20_%20from%20algorithms%20to%20applications%20(2002,%20Academic%20Press%20)%20-%20libgen.lc.pdf.">2</a>]</span> Ch. 3</p></li>
+</ul>
+</section>
+<section id="goals-for-this-lecture">
+<h2>Goals for this lecture<a class="headerlink" href="#goals-for-this-lecture" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>What are periodic boundary conditions? Why do we use them?</p></li>
+<li><p>How can stochastic sampling be used to replicate a probability distribution?</p></li>
+<li><p>What are some limitations of random sampling in statistical ensembles?</p></li>
 </ul>
 </section>
 <section id="interactions-in-molecular-simulations">
@@ -527,8 +540,8 @@ determined. This observation will form the basis of the Metropolis Monte
 Carlo algorithm. We will now describe Monte Carlo sampling in general,
 then discuss the Metropolis algorithm.</p>
 </section>
-<section id="stochastic-sampling-of-determinate-equations">
-<h2>Stochastic sampling of determinate equations<a class="headerlink" href="#stochastic-sampling-of-determinate-equations" title="Permalink to this headline">#</a></h2>
+<section id="stochastic-sampling">
+<h2>Stochastic sampling<a class="headerlink" href="#stochastic-sampling" title="Permalink to this headline">#</a></h2>
 <p>The main idea of the Monte Carlo method is the following: a determinate
 mathematical expression (like the integrals in the equations for the
 canonical ensemble) is reformulated as a probablistic analogue and then
@@ -541,8 +554,9 @@ and are unable to do so analytically.</p>
 <p>This can be likened to computing the average value of a binary function across a space
 larger than our shape, <em>i.e.</em>,</p>
 <div class="math notranslate nohighlight">
-\[ A = \langle f \rangle = \sum_{x,y} f(x,y) p_{x,y} \]</div>
-<p>where <span class="math notranslate nohighlight">\(f\)</span> is 1 when we are sitting in the shape and 0 otherwise.</p>
+\[ A = A_{box}\langle f \rangle = A_{box}\sum_{x,y} f(x,y) p_{x,y} \]</div>
+<p>where <span class="math notranslate nohighlight">\(f\)</span> is 1 when we are sitting in the shape and 0 otherwise,
+and <span class="math notranslate nohighlight">\(A_{box}\)</span> is the area of our bounding box.</p>
 <p>Now, we can calculate the average value of
 <span class="math notranslate nohighlight">\(f\)</span> by randomly selecting points within our bounding box and recording
 whether or not we hit our shape.</p>
@@ -553,9 +567,69 @@ trials, then we will sample exactly according to
 from the infinite number of trials will be exactly equal to our area.</p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
-A = \frac{1}{\tau}\sum_i^\tau  f(x_i, y_i)
+A = \frac{A_{box}}{\tau}\sum_i^\tau  f(x_i, y_i)
 \end{aligned}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\tau\)</span> is our number of trials (samples).</p>
+<section id="stochastic-sampling-of-determinate-equations">
+<h3>Stochastic sampling of determinate equations<a class="headerlink" href="#stochastic-sampling-of-determinate-equations" title="Permalink to this headline">#</a></h3>
+<p>Consider evaluating a function <span class="math notranslate nohighlight">\(F\)</span> which can be estimated as the integral
+of some function <span class="math notranslate nohighlight">\(f(x)\)</span> within a defined interval <span class="math notranslate nohighlight">\([a, b]\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+F = \int_{a}^{b} f(x) dx
+\]</div>
+<p>We can then define an arbitrary probability
+density function, <span class="math notranslate nohighlight">\(p(x)\)</span>, which represents the probability of finding any
+particular value of <span class="math notranslate nohighlight">\(x\)</span>. In this case, we assume that the probability density is known
+for the function of interest. We can then write:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+F &amp;= \int_{a}^{b} f(x) dx \\
+&amp;= \int_a^b  \left ( \frac{f(x)}{p(x)} \right ) p(x) dx \\
+&amp;= \left \langle \frac{f(x)}{p(x)}\right \rangle 
+\end{align}\end{split}\]</div>
+<p>This expression is the ensemble-average of an observable
+but in the continuum limit - in other words, this is the
+continuum version of the expression <span class="math notranslate nohighlight">\(\langle Y \rangle = \sum p_i Y_i\)</span>
+where we have replaced the summation (for discrete states) with an integral
+and the observable we are computing is <span class="math notranslate nohighlight">\(\left ( \frac{f(x)}{p(x)} \right )\)</span>.</p>
+<p>Now, we can calculate the average value of <span class="math notranslate nohighlight">\(\left ( \frac{f(x)}{p(x)} \right )\)</span>
+by randomly selecting points within the interval <span class="math notranslate nohighlight">\([a, b]\)</span> according to
+the probability distribution <span class="math notranslate nohighlight">\(p(x)\)</span>, and calculating <span class="math notranslate nohighlight">\(\left ( \frac{f(x)}{p(x)} \right )\)</span>
+for each randomly selected value of <span class="math notranslate nohighlight">\(x\)</span>.
+Like with our area example, if we have an infinite number of trials,
+then each value of <span class="math notranslate nohighlight">\(x\)</span> will be sampled
+exactly according to <span class="math notranslate nohighlight">\(p(x)\)</span> and the average of <span class="math notranslate nohighlight">\(\left ( \frac{f(x)}{p(x)} \right )\)</span>
+computed from the infinite number of trials will be exactly equal
+to the value of the integral above. We can thus approximate <span class="math notranslate nohighlight">\(F\)</span> by:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+F &amp;= \left \langle \frac{f(x)}{p(x)} \right \rangle  \\
+&amp;\approx \left \langle \frac{f(x)}{p(x)}\right \rangle_{\textrm{trials}} \\
+&amp;= \frac{1}{\tau}\sum_i^\tau  \frac{f(x)}{p(x)} \label{randomsample}
+\end{align}\end{split}\]</div>
+<p>where for each of the <span class="math notranslate nohighlight">\(\tau\)</span> trials (samples), <span class="math notranslate nohighlight">\(x\)</span> is chosen according to the probability <span class="math notranslate nohighlight">\(p(x)\)</span>.</p>
+<p>Let’s consider a simple example of how we might apply this idea.
+First, we will choose <span class="math notranslate nohighlight">\(p(x)\)</span> to be a uniform probability density:</p>
+<div class="math notranslate nohighlight">
+\[
+p(x) = \frac{1}{b - a} \quad \text{for $a \leq x \leq b$} 
+\]</div>
+<p>Then, we can generally approximate <span class="math notranslate nohighlight">\(F\)</span> as:</p>
+<div class="math notranslate nohighlight">
+\[
+F \approx \frac{b - a}{\tau}\sum_i^{\tau}  f(x) 
+\]</div>
+<p>This expression approximates <span class="math notranslate nohighlight">\(F\)</span> by randomly, uniformly sampling values of
+<span class="math notranslate nohighlight">\(x\)</span> between <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>, calculating <span class="math notranslate nohighlight">\(f(x)\)</span>, and taking the average,
+with additional values of <span class="math notranslate nohighlight">\(\tau\)</span> increasing the accuracy of our approximation.
+Of course, for many one-dimensional functions this may not be particularly
+efficient relative to just performing numerical quadrature, but in a <span class="math notranslate nohighlight">\(N\)</span>-dimensional
+space, such as the configurational space of the partition function,
+this type of methodology could be efficient.</p>
+</section>
+<section id="stochastic-sampling-applied-to-the-canonical-partition-function">
+<h3>Stochastic sampling applied to the canonical partition function<a class="headerlink" href="#stochastic-sampling-applied-to-the-canonical-partition-function" title="Permalink to this headline">#</a></h3>
 <p>Let’s consider applying this uniform sampling methodology to the
 calculation of the canonical partition function. We could write:</p>
 <div class="math notranslate nohighlight">
@@ -564,10 +638,10 @@ Z &amp;= \int_{V^N} d \mathbf{r}^N \exp \left [ -\beta E(\mathbf{r}^N) \right ] 
 &amp;\approx \frac{V^N}{\tau} \sum_i^\tau \exp \left [-\beta E(\mathbf{r}_i^N)\right ]
 \end{aligned}\end{split}\]</div>
 <p><span class="math notranslate nohighlight">\(V^N\)</span> is again the volume of phase space which is the <span class="math notranslate nohighlight">\(3N\)</span>-dimensional
-analogue to the interval <span class="math notranslate nohighlight">\([a, b]\)</span>; <span class="math notranslate nohighlight">\(\tau\)</span> is the total number of samples
+analogue to <span class="math notranslate nohighlight">\(A_{box}\)</span> in our previous example; <span class="math notranslate nohighlight">\(\tau\)</span> is the total number of samples
 used for the approximation, and <span class="math notranslate nohighlight">\(E(\mathbf{r}_i^N)\)</span> is the potential
-energy of the system for the specific configuration denoted by <span class="math notranslate nohighlight">\(i\)</span>.
-There are two major problems with this approach in practice. First, it’s
+energy of the system for the specific configuration denoted by <span class="math notranslate nohighlight">\(i\)</span>.</p>
+<p>There are two major problems with this approach in practice. First, it’s
 difficult to estimate the total phase space volume, <span class="math notranslate nohighlight">\(V^N\)</span>. This problem
 can be avoided, however, by recognizing that calculating the
 ensemble-average value of an observable requires only the ratio of two
@@ -579,12 +653,13 @@ quantities within the phase space <span class="math notranslate nohighlight">\(V
 \end{aligned}\end{split}\]</div>
 <p>We use the notation <span class="math notranslate nohighlight">\(\langle Y\rangle_{NVT}\)</span> as a reminder that the
 ensemble-average value of <span class="math notranslate nohighlight">\(Y\)</span> is calculated in the canonical ensemble.
-Due to the ratio, the term involving the total phase space drops out.
-But, we are left with a second problem, which is that the vast majority
+Due to the ratio, the term involving the total phase space drops out.</p>
+<p>But, we are left with a second problem, which is that the vast majority
 of configurations in most systems will have a near-zero contribution to
 the ensemble average, since the Boltzmann weight
 <span class="math notranslate nohighlight">\(\exp \left [-\beta E(\mathbf{r}_i^N)\right ] \approx 0\)</span> for any
-configurations with unfavorable energies. For example, consider sampling
+configurations with unfavorable (high) energies.</p>
+<p>For example, consider sampling
 configurations from a set of hard spheres to represent a fluid - any
 configuration in which there is slight overlap between spheres leads to
 an infinite system energy, and the corresponding Boltzmann weight would
@@ -593,86 +668,10 @@ vast majority of configurations not contributing to the average,
 inhibiting an accurate calculation. Instead, we would like to perform
 <strong>importance sampling</strong>, by only examining configurations with finite
 contributions to the ensemble average.</p>
-<p><img alt="image" src="../_images/fig_10_1.png" />{width=”60%”}</p>
 </section>
-<section id="importance-sampling-and-markov-chains">
-<h2>Importance sampling and Markov chains<a class="headerlink" href="#importance-sampling-and-markov-chains" title="Permalink to this headline">#</a></h2>
-<p>To evaluate ensemble averages from the canonical ensemble, we can use
-Eq. <span class="xref myst">[randomsample]</span>{reference-type=”eqref”
-reference=”randomsample”} but with the probability density, <span class="math notranslate nohighlight">\(p(x)\)</span>,
-chosen to maximize the likelihood of sampling configurations that
-contribute meaningfully to the calculation of the ensemble average. This
-is the essence of importance sampling. We can perform importance
-sampling for configurations in the canonical ensemble by recalling that
-the probability of finding the system in a given microstate of the
-canonical ensemble, <span class="math notranslate nohighlight">\(p(\textbf{r}^N)_{NVT}\)</span>, is related to the Boltzmann
-factor for that state normalized by the partition function. We can then
-write:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-p(\textbf{r}^N)_{NVT} &amp;= \frac{\exp \left [-\beta E(\mathbf{r}^N)\right ]}{Z} \\
-\langle Y \rangle_{NVT} &amp;= \int d \mathbf{r}^N p(\textbf{r}^N)_{NVT}  Y(\mathbf{r}^N) 
-\end{aligned}\end{split}\]</div>
-<p>The ensemble average then has the same form as <span class="math notranslate nohighlight">\(F = \int_a^b f(x) dx\)</span> if
-we let <span class="math notranslate nohighlight">\(x=\mathbf{r}^N\)</span> and
-<span class="math notranslate nohighlight">\(f(x) = p(\mathbf{r}^N)_{NVT} Y(\mathbf{r}^N)\)</span>. Following the reasoning
-above, we can then approximate <span class="math notranslate nohighlight">\(\langle Y \rangle_{NVT}\)</span> by:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-\langle Y \rangle_{NVT} &amp;\approx \left \langle \frac{f(x)}{p(x)} \right \rangle_{\textrm{trials}} \\
-&amp; = \left \langle \frac{ p(\mathbf{r}^N)_{NVT} Y(\mathbf{r}^N) }{p(\mathbf{r}^N)} \right \rangle_{\textrm{trials}}
-\end{aligned}\end{split}\]</div>
-<p>From this expression, we see that if we select trials according to the
-probability distribution <span class="math notranslate nohighlight">\(p(\mathbf{r}^N) = p(\mathbf{r}^N)_{NVT}\)</span>, then
-we get:</p>
-<div class="math notranslate nohighlight">
-\[\langle Y \rangle_{NVT}  = \langle Y \rangle_{\textrm{trials}} \label{ensemble_average_mc}\]</div>
-<p>Thus, we choose configurations in our ensemble according to the
-canonical ensemble probability distribution, in which case the
-ensemble-average value of <span class="math notranslate nohighlight">\(Y\)</span> can be estimated by sampling
-configurations according to their Boltzmann weight. Finally, we note
-that we just need to know the probability of sampling a configuration -
-we do not necessarily need an expression for the partition function
-itself. In principle, we could choose another probability distribution
-<span class="math notranslate nohighlight">\(p(x)\)</span> from which to sample states, but the choice of
-<span class="math notranslate nohighlight">\(p(\mathbf{r}^N) = p(\mathbf{r}^N)_{NVT}\)</span> is the simplest.</p>
-<p>Our problem then boils down to: how do we select states according to the
-correct probability distribution without knowing the value of the
-partition function? To do so, we will generate a <strong>Markov chain of
-states</strong> as a means of sampling our distribution. A Markov chain refers
-to a <em>sequence</em> of states (i.e. configurations or trials using our
-previous nomenclature) that satisfy the following two conditions:</p>
-<ul class="simple">
-<li><p>Each state generated belongs to a finite set of possible outcomes
-called the state space. The statistical mechanical analogue to this
-statement is to say that each microstate generated belongs to a
-finite ensemble. We can denote each possible state by
-<span class="math notranslate nohighlight">\(\mathbf{r}_1^N, \mathbf{r}_2^N, \mathbf{r}_3^N, \dots\)</span> for the
-enormous set of possible microstates within the canonical ensemble
-that we are sampling. For the canonical ensemble, this state space
-is equal to <span class="math notranslate nohighlight">\(V^N\)</span>, the accessible phase space.</p></li>
-<li><p>The probability of sampling state <span class="math notranslate nohighlight">\(i+1\)</span> in the sequence of states
-sampled depends only on state <span class="math notranslate nohighlight">\(i\)</span>, and not on previous states in the
-chain.</p></li>
-</ul>
-<p>Since the likelihood of sampling a new state is only related to what
-current state we are in, we can define a transition probability,
-<span class="math notranslate nohighlight">\(\Pi(m\rightarrow n)\)</span>, which defines the likelihood of transitioning
-from state <span class="math notranslate nohighlight">\(m\)</span> to state <span class="math notranslate nohighlight">\(n\)</span>. We can then imagine an algorithm in which
-we start in some state <span class="math notranslate nohighlight">\(m\)</span> then transition to a new state <span class="math notranslate nohighlight">\(n\)</span> with a
-probability given by <span class="math notranslate nohighlight">\(\Pi(m\rightarrow n)\)</span> and repeat this for a large
-number of trials. If we do this an infinite number of times, then the
-state <span class="math notranslate nohighlight">\(m\)</span> will appear with an overall probability given by <span class="math notranslate nohighlight">\(p(m)\)</span>, where
-<span class="math notranslate nohighlight">\(p(m)\)</span> is the <em>limiting</em> probability distribution that does not depend
-on any of the other states (unlike the transition probability). When
-sampling from the canonical ensemble, then, we want <span class="math notranslate nohighlight">\(p(m)\)</span> to equal
-<span class="math notranslate nohighlight">\(p(\mathbf{r}_m^N)_{NVT}\)</span> - that is, the likelihood of sampling state
-<span class="math notranslate nohighlight">\(m\)</span> if we take enough states from our Markov chain is equal to the
-probability of sampling that state according to the canonical ensemble
-distribution function. Thus, we need to find an expression for the
-transition probability, <span class="math notranslate nohighlight">\(\Pi\)</span>, that yields this correct limiting
-distribution. We will return to this problem in the next lecture.</p>
-<p><img alt="image" src="../_images/fig_10_2.png" />{width=”100%”}</p>
+</section>
+<section id="link-to-shared-notes">
+<h2><a class="reference external" href="https://docs.google.com/document/d/1RMdd6sLOoR0m7yjreIfVE3SQp3Ib6X77/edit?usp=drive_link&amp;ouid=113272049620170441297&amp;rtpof=true&amp;sd=true">Link to Shared Notes</a><a class="headerlink" href="#link-to-shared-notes" title="Permalink to this headline">#</a></h2>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
 <dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
@@ -752,6 +751,7 @@ this prefactor here.</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-readings-for-the-enthusiast">Additional Readings for the Enthusiast</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-for-this-lecture">Goals for this lecture</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactions-in-molecular-simulations">Interactions in molecular simulations</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-bonded-potentials">Non-bonded potentials</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactions-in-mc-simulations">Interactions in MC simulations</a></li>
@@ -759,8 +759,12 @@ this prefactor here.</p>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-from-a-canonical-ensemble">Sampling from a canonical ensemble</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stochastic-sampling-of-determinate-equations">Stochastic sampling of determinate equations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importance-sampling-and-markov-chains">Importance sampling and Markov chains</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stochastic-sampling">Stochastic sampling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stochastic-sampling-of-determinate-equations">Stochastic sampling of determinate equations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stochastic-sampling-applied-to-the-canonical-partition-function">Stochastic sampling applied to the canonical partition function</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#link-to-shared-notes">Link to Shared Notes</a></li>
 </ul>
   </nav></div>
 
