@@ -66,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'lecture_files/Lecture9B';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Problem Set 1 (Due Tuesday, September 19, 2023)" href="../problems/ps_1/problem_set_1.html" />
+    <link rel="next" title="Monte Carlo simulations" href="Lecture10.html" />
     <link rel="prev" title="Fluctuations and thermodynamic response functions" href="Lecture9A.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
@@ -169,6 +169,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Molecular Simulation</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">An introduction to molecular simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture10.html">Monte Carlo simulations</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Problem Sets</span></p>
 <ul class="nav bd-sidenav">
@@ -339,6 +340,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactions-in-mc-simulations">Interactions in MC simulations</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#link-to-shared-notes">Link to Shared Notes</a></li>
 </ul>
             </nav>
         </div>
@@ -582,14 +584,14 @@ detail other than recognizing their existence.</p>
 </section>
 <section id="non-bonded-potentials">
 <h3>Non-bonded potentials<a class="headerlink" href="#non-bonded-potentials" title="Permalink to this headline">#</a></h3>
-<p>The most common non-bonded interaction in molecular simulations is the
-<a class="reference external" href="https://en.wikipedia.org/wiki/Lennard-Jones_potential">Lennard-Jones potential</a>,
-or the 12-6 potential, which is typically written as:</p>
+<p>The most common non-bonded interaction in molecular simulations is the</p>
+<dl class="glossary">
+<dt id="term-Lennard-Jones-potential"><a class="reference external" href="https://en.wikipedia.org/wiki/Lennard-Jones_potential">Lennard-Jones potential</a><a class="headerlink" href="#term-Lennard-Jones-potential" title="Permalink to this term">#</a></dt><dd><p>the 12-6 potential, which is typically written as:</p>
 <div class="math notranslate nohighlight">
-\[\begin{aligned}
-    E_{\textrm{LJ}}(r_{ij}) &amp;= 4\epsilon_{ij} \left [ \left( \frac{\sigma_{ij}}{r_{ij}}\right )^{12} - \left( \frac{\sigma_{ij}}{r_{ij}}\right )^6 \right ] 
-    
-\end{aligned}\]</div>
+\[ \begin{align}\begin{aligned}\begin{aligned}
+    E_{\textrm{LJ}}(r_{ij}) &amp;= 4\epsilon_{ij} \left [ \left( \frac{\sigma_{ij}}{r_{ij}}\right )^{12} - \left( \frac{\sigma_{ij}}{r_{ij}}\right )^6 \right ] \\\end{aligned}\end{aligned}\end{align} \]</div>
+</dd>
+</dl>
 <p>Here, <span class="math notranslate nohighlight">\(r_{ij}\)</span> is the (scalar) distance between particle <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span>,
 <span class="math notranslate nohighlight">\(\epsilon_{ij}\)</span> is a characteristic interaction energy and <span class="math notranslate nohighlight">\(\sigma_{ij}\)</span>
 is a characteristic interaction length scale describing the approximate
@@ -620,10 +622,12 @@ since the calculated <span class="math notranslate nohighlight">\(r^{-6}\)</span
 <p>In addition to van der Waals interactions, it is typical to associate
 charges (or partial charges, to account for the unequal distribution of
 electrons throughout a molecule that leads to dipoles) to atoms or
-particles in a system. These charges interact via a long-range <a class="reference external" href="https://chem.libretexts.org/Courses/Oregon_Institute_of_Technology/OIT%3A_CHE_202_-_General_Chemistry_II/Unit_2%3A_Electrons_in_Atoms/2.1%3A_Coulomb's_Law_and_the_Electrostatic_Potential">Coulombic
-potential</a>:</p>
-<div class="math notranslate nohighlight">
+particles in a system. These charges interact via a</p>
+<dl class="glossary">
+<dt id="term-long-range-Coulombic-potential">long-range <a class="reference external" href="https://chem.libretexts.org/Courses/Oregon_Institute_of_Technology/OIT%3A_CHE_202_-_General_Chemistry_II/Unit_2%3A_Electrons_in_Atoms/2.1%3A_Coulomb's_Law_and_the_Electrostatic_Potential">Coulombic potential</a><a class="headerlink" href="#term-long-range-Coulombic-potential" title="Permalink to this term">#</a></dt><dd><div class="math notranslate nohighlight">
 \[E_{\textrm{coulomb}}(r_{ij}) = \frac{1}{4\pi \epsilon_0 \epsilon_r}\frac{q_i q_j}{r_{ij}}\]</div>
+</dd>
+</dl>
 <p>where <span class="math notranslate nohighlight">\(\epsilon_0\)</span> is the permittivity of free space, <span class="math notranslate nohighlight">\(\epsilon_r\)</span> is
 the relative dielectric constant (1 in vacuum, 2-4 in oil, 80 in water),
 and <span class="math notranslate nohighlight">\(q_i\)</span> is the charge on particle <span class="math notranslate nohighlight">\(i\)</span>. In practice, Coulombic
@@ -645,8 +649,9 @@ dynamics simulations. However, Monte Carlo simulations can use any
 potential energy function regardless of whether it is differentiable,
 expanding the repertoire of possible interactions. Some examples of
 interactions used in MC simulations are noted here.</p>
-<p>The first is a
-<a class="reference external" href="https://en.wikipedia.org/wiki/Hard_spheres">hard-particle interaction</a>, where particles are strictly not allowed to
+<p>The first is a</p>
+<dl class="glossary">
+<dt id="term-hard-particle-interaction"><a class="reference external" href="https://en.wikipedia.org/wiki/Hard_spheres">hard-particle interaction</a><a class="headerlink" href="#term-hard-particle-interaction" title="Permalink to this term">#</a></dt><dd><p>interactions where particles are strictly not allowed to
 overlap (akin to an infinitely strong repulsive potential part of the
 Lennard-Jones interaction):</p>
 <div class="math notranslate nohighlight">
@@ -654,6 +659,8 @@ Lennard-Jones interaction):</p>
     \infty &amp;,&amp; r_{ij} &lt; \sigma \\
     0&amp;,&amp; r_{ij} \geq \sigma
     \end{array} \right\}\end{split}\]</div>
+</dd>
+</dl>
 <p>Another example is the interaction between nearest-neighbors used in the
 Ising model, which can be easily represented in MC simulations:</p>
 <div class="math notranslate nohighlight">
@@ -666,16 +673,18 @@ only included a subset that are commonly found in the simulation
 literature and map directly to many experimental problems.</p>
 <div class="admonition-why-can-we-use-non-differentiable-potentials-in-mc-but-not-md admonition">
 <p class="admonition-title">Why can we use non-differentiable potentials in MC, but not MD?</p>
-<details></summary>Click for answer</summary>
+<details><summary>Click for answer</summary>
 <p>Newton’s equations of motion require that the potentials used in MD are differentiable
 in order to obtain correct forces.</p>
 <p>In MC, we use the potential calculate the relative probability of two states, in order
 to determine whether or not it is probabilistic to move from state 1 to state 2. No
 differentiation required!</p>
 </details>
-<p class="rubric"><a class="reference external" href="https://docs.google.com/document/d/1zpnAV7CQq18WuECyZE1IFmkOelYdcle2/edit?usp=drive_link&amp;ouid=113272049620170441297&amp;rtpof=true&amp;sd=true">Link to Shared Notes</a></p>
 </div>
 </section>
+</section>
+<section id="link-to-shared-notes">
+<h2><a class="reference external" href="https://docs.google.com/document/d/1zpnAV7CQq18WuECyZE1IFmkOelYdcle2/edit?usp=drive_link&amp;ouid=113272049620170441297&amp;rtpof=true&amp;sd=true">Link to Shared Notes</a><a class="headerlink" href="#link-to-shared-notes" title="Permalink to this headline">#</a></h2>
 </section>
 </section>
 
@@ -720,11 +729,11 @@ differentiation required!</p>
       </div>
     </a>
     <a class="right-next"
-       href="../problems/ps_1/problem_set_1.html"
+       href="Lecture10.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Problem Set 1 (Due Tuesday, September 19, 2023)</p>
+        <p class="prev-next-title">Monte Carlo simulations</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -760,6 +769,7 @@ differentiation required!</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactions-in-mc-simulations">Interactions in MC simulations</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#link-to-shared-notes">Link to Shared Notes</a></li>
 </ul>
   </nav></div>
 

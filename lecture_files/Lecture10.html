@@ -1,0 +1,817 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Monte Carlo simulations &#8212; Notes for CBE710</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/defs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture_files/Lecture10';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Problem Set 1 (Due Tuesday, September 19, 2023)" href="../problems/ps_1/problem_set_1.html" />
+    <link rel="prev" title="An introduction to molecular simulation" href="Lecture9B.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Notes for CBE710</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Class introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Mechanics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Lecture1A.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture1B.html">Review of thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture2.html">Postulates of statistical mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture3.html">Application of the microcanonical ensemble: two-state system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture4.html">The canonical ensemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture5.html">Generalized ensembles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture6.html">The ideal gas partition function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture7.html">Application of independent subsystems: the Langmuir isotherm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture8A.html">The Ising model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture8B.html">Mean-field theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture9A.html">Fluctuations and thermodynamic response functions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Molecular Simulation</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Lecture9B.html">An introduction to molecular simulation</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Monte Carlo simulations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Problem Sets</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../problems/ps_1/problem_set_1.html">Problem Set 1 (Due Tuesday, September 19, 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/ps_2/problem_set_2.html">Problem Set 2 (Due Thursday, September 28, 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/ps_3/problem_set_3.html">Problem Set 3 (Due Thursday, October 10, 2023)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../references.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/lecture_files/Lecture10.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Monte Carlo simulations</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-readings-for-the-enthusiast">Additional Readings for the Enthusiast</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactions-in-molecular-simulations">Interactions in molecular simulations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-bonded-potentials">Non-bonded potentials</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactions-in-mc-simulations">Interactions in MC simulations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#periodic-boundary-conditions">Periodic boundary conditions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-from-a-canonical-ensemble">Sampling from a canonical ensemble</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stochastic-sampling-of-determinate-equations">Stochastic sampling of determinate equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importance-sampling-and-markov-chains">Importance sampling and Markov chains</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="monte-carlo-simulations">
+<h1>Monte Carlo simulations<a class="headerlink" href="#monte-carlo-simulations" title="Permalink to this headline">#</a></h1>
+<section id="additional-readings-for-the-enthusiast">
+<h2>Additional Readings for the Enthusiast<a class="headerlink" href="#additional-readings-for-the-enthusiast" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><span id="id1">Frenkel and Smit [<a class="reference internal" href="../references.html#id5" title="Daan Frenkel and Berend Smit. Understanding molecular simulation: from algorithms to applications. Number 1 in Computational science series. Academic Press, San Diego, 2nd ed edition, 2002. ISBN 978-0-12-267351-1. URL: https://www.eng.uc.edu/~beaucag/Classes/AdvancedMaterialsThermodynamics/Books/%5BComputational%20science%20(San%20Diego,%20Calif.)%5D%20Daan%20Frenkel_%20Berend%20Smit%20-%20Understanding%20molecular%20simulation%20_%20from%20algorithms%20to%20applications%20(2002,%20Academic%20Press%20)%20-%20libgen.lc.pdf.">2</a>]</span> Ch. 3</p></li>
+</ul>
+</section>
+<section id="interactions-in-molecular-simulations">
+<h2>Interactions in molecular simulations<a class="headerlink" href="#interactions-in-molecular-simulations" title="Permalink to this headline">#</a></h2>
+<section id="non-bonded-potentials">
+<h3>Non-bonded potentials<a class="headerlink" href="#non-bonded-potentials" title="Permalink to this headline">#</a></h3>
+<p>We ended the <a class="reference internal" href="Lecture9B.html"><span class="doc std std-doc">last lecture</span></a> by introducing pairwise non-bonded
+interactions between particles that are commonly used in molecular
+simulations. We primarily covered the <a class="reference internal" href="Lecture9B.html#term-Lennard-Jones-potential"><span class="xref std std-term">Lennard-Jones potential</span></a>,
+<a class="reference internal" href="Lecture9B.html#term-long-range-Coulombic-potential"><span class="xref std std-term">long-range Coulombic potential</span></a> which account for the van der Waals
+and electrostatic interactions of our particles.</p>
+</section>
+<section id="interactions-in-mc-simulations">
+<h3>Interactions in MC simulations<a class="headerlink" href="#interactions-in-mc-simulations" title="Permalink to this headline">#</a></h3>
+<p>As a reminder, Monte Carlo simulations can use any
+potential energy function regardless of whether it is differentiable,
+expanding the repertoire of possible interactions. In the <a class="reference internal" href="Lecture9B.html"><span class="doc std std-doc">previous lecture</span></a>,
+we covered <a class="reference internal" href="Lecture9B.html#term-hard-particle-interaction"><span class="xref std std-term">hard-particle interaction</span></a>s and nearest-neighbor interactions.</p>
+</section>
+<section id="periodic-boundary-conditions">
+<h3>Periodic boundary conditions<a class="headerlink" href="#periodic-boundary-conditions" title="Permalink to this headline">#</a></h3>
+<p>A challeng in molecular simulations is defining a represenative system
+volume, <span class="math notranslate nohighlight">\(V\)</span>, because we typically simulate very small volumes relative
+to physical systems (i.e. box lengths on the order of 10-100 nm in an
+atomistic or coarse-grained system). In such small box sizes, the
+interface, or box walls, are substantial, and hence there must be some
+method for dealing with the behavior of molecules near the walls. If we
+do not treat the boundaries differently - i.e. if we have a <em>free
+boundary</em> - then molecules at the edge of the box will interact with
+vacuum, which may not be intended.</p>
+<div class="admonition-why-don-t-we-just-increase-our-volume-to-be-arbitrarily-large-so-that-we-can-observe-the-bulk-behavior-without-worrying-about-the-boundary-vacuum admonition">
+<p class="admonition-title">Why don’t we just increase our volume to be arbitrarily large, so that we can observe the <em>bulk</em> behavior without worrying about the boundary vacuum?</p>
+<details><summary>Click for answer</summary>
+<p>Sometimes we do! The problem is, again, that our simulation complexity greatly increases with each new particle we
+consider as part of our system, so doing this makes our computation more costly. If we can avoid it and still get
+meaningful results, we would like to do so.</p>
+</details>
+</div>
+<p>While clearly the volume of a macroscopic system is inaccessible to
+atomistic simulations, it is still possible to define a simulation
+volume in which we sample the same ensemble quantities as the
+macroscale.</p>
+<p>Suppose we define the simulation box by three box vectors, <span class="math notranslate nohighlight">\(a, b,\)</span>
+and <span class="math notranslate nohighlight">\(c\)</span>, and by three angles between these vectors, <span class="math notranslate nohighlight">\(\alpha, \beta,\)</span> and
+<span class="math notranslate nohighlight">\(\gamma\)</span>. While these parameters can vary, for our purposes we will
+assume that the simulation box is cubic, i.e. <span class="math notranslate nohighlight">\(a = b = c = L\)</span> and
+<span class="math notranslate nohighlight">\(\alpha = \beta = \gamma = 90^\circ\)</span>. The most common way of treating
+the boundary of a simulation box is by imposing</p>
+<dl class="glossary simple">
+<dt id="term-periodic-boundary-conditions">periodic boundary conditions<a class="headerlink" href="#term-periodic-boundary-conditions" title="Permalink to this term">#</a></dt><dd><p>also called PBCs; a simulation practice in which we pretend each side of the simulation box
+is connected on the opposite side to an identical simulation</p>
+</dd>
+</dl>
+<p>Using PBCs is akin to using an infinite set of equivalent
+simulation boxes that are offset by a box length <span class="math notranslate nohighlight">\(L\)</span> in a given
+Cartesian direction from the “actual” simulation box. Each of these
+equivalent simulation boxes have equivalent particles as well with their
+positions again modified by <span class="math notranslate nohighlight">\(L\)</span> - the particle located at position
+<span class="math notranslate nohighlight">\(r(x,y,z)\)</span> in the simulation box is mirrored across all of these
+simulation boxes such that it is the same as the particle at positions
+<span class="math notranslate nohighlight">\(r(x+L, y, z)\)</span>, <span class="math notranslate nohighlight">\(r(x, y+L, z)\)</span>, <span class="math notranslate nohighlight">\(r(x, y, z+L)\)</span>, and so on. This
+treatment is analogous to defining the simulation box as a unit cell in
+an infinitely periodic material: if a particle leaves the box along the
+negative x-axis, a particle from one of the adjacent simulation boxes
+immediately re-enters the box along the positive x-axis.</p>
+<p><img alt="image" src="../_images/fig_10_2-01.png" /></p>
+<p>Note that the
+boundaries of the simulation box themselves have no particular
+significance. The system is also translationally invariant: all particle
+positions are shifted uniformly, no system properties would change. If
+particles interact via pairwise intermolecular potentials (see below),
+periodic boundary conditions then allows us to write:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+E(\textbf{r}^N) &amp;= \frac{1}{2} \sum_{i}^{N} \sum_{j}^N E(|\textbf{r}_{ij}|) \quad \text{with free boundaries}\\
+E(\textbf{r}^N) &amp;= \frac{1}{2} \sum_{i}^{N} \sum_{j}^N \sum_{\textbf{n}} E(|\textbf{r}_{ij} + \textbf{n}L|)  \quad \text{with periodic boundaries}
+\end{aligned}\end{split}\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(\textbf{r}^N\)</span> is a vector representing the set of all <span class="math notranslate nohighlight">\(N\)</span>
+particle positions, <span class="math notranslate nohighlight">\(\textbf{r}_{ij}\)</span> is the (vector) distance between
+particle <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span>, <span class="math notranslate nohighlight">\(\textbf{n}\)</span> is a vector of 3 arbitrary integers,
+and <span class="math notranslate nohighlight">\(L\)</span> is the size of the box. The factor of 1/2 eliminates
+overcounting of pairs of atoms. In other words, each particle can
+interact with every possible periodic image since the system is
+infinite. This may not be desirable, so typically interactions use the
+<a class="reference external" href="https://en.wikipedia.org/wiki/Periodic_boundary_conditions#Practical_implementation:_continuity_and_the_minimum_image_convention">minimum image convention</a>
+meaning that the distance used in computing
+pair potentials is the <em>shortest</em> possible distance between two
+particles, taking into account periodic boundary conditions. Thus, the
+distance in any one dimension of the box can never exceed <span class="math notranslate nohighlight">\(L\)</span>.</p>
+<p>In practice, PBCs are used for the vast majority of simulations, but you
+must be careful that they do not introduce artifacts, or</p>
+<dl class="glossary simple">
+<dt id="term-finite-size-effects">finite size effects<a class="headerlink" href="#term-finite-size-effects" title="Permalink to this term">#</a></dt><dd><p>unphysical artifacts introduced when simulation boundary conditions
+impose unrealistic constraints on the behavior of a system</p>
+</dd>
+</dl>
+<p>This can occur, for example, if the value of
+<span class="math notranslate nohighlight">\(L\)</span> is small relative to long-wavelength modes of the system, for
+example, then the presence of PBCs could limit these modes. For example,
+lipid bilayers, while largely planar, undulate out-of-plane over length
+scales of hundreds of nanometers; these undulations are often damped in
+simulations that are too small to properly capture them.</p>
+</section>
+</section>
+<section id="sampling-from-a-canonical-ensemble">
+<h2>Sampling from a canonical ensemble<a class="headerlink" href="#sampling-from-a-canonical-ensemble" title="Permalink to this headline">#</a></h2>
+<p>We will now build upon the
+fundamentals introduced in the <a class="reference internal" href="Lecture9B.html"><span class="doc std std-doc">last lecture</span></a>
+to describe the principles of Monte Carlo simulations.</p>
+<p>In general, the goal of a simulation might be to estimate the ensemble
+average of a quantity which will be denoted as <span class="math notranslate nohighlight">\(Y\)</span>. The ensemble-average
+value of <span class="math notranslate nohighlight">\(Y\)</span> can be obtained readily if we know the partition function
+for the system. Recall from our study of the Ising model that a general
+expression for the partition function of a system with <span class="math notranslate nohighlight">\(N\)</span>
+non-independent particles is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+Z = \sum_{\textbf{r}_1} \sum_{\textbf{r}_2} \sum_{\textbf{r}_3} \dots \sum_{\textbf{r}_N} e^{-\beta E(\textbf{r}_1, \textbf{r}_2, \textbf{r}_3, \dots \textbf{r}_N)}
+\end{aligned}\]</div>
+<p>In this notation, each sum accounts for all possible positions
+(<span class="math notranslate nohighlight">\(\textbf{r}_i\)</span>) of one of the particles, and the energy of each
+configuration is a function of all particle positions. The bold notation
+indicates that <span class="math notranslate nohighlight">\(\textbf{r}_i\)</span> is a vector; in this case a vector with 3
+coordinates referring to the x/y/z positions of the particle. We cannot
+factorize this partition function because the particles are interacting
+and hence a single-particle partition function cannot be written without
+knowledge of the positions/states of the other particles. If we now
+assume that particle positions are continuous, rather than discrete, we
+can transform our sums to integrals in the classical limit and write the
+expression as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+Z &amp;= \int_{\textbf{r}_1} \int_{\textbf{r}_2}  \int_{\textbf{r}_3} \dots \int_{\textbf{r}_N} d\textbf{r}_1 d\textbf{r}_2 d\textbf{r}_3 \dots d\textbf{r}_N e^{-\beta E(\textbf{r}_1, \textbf{r}_2, \textbf{r}_3, \dots \textbf{r}_N)} \\
+&amp;\equiv \int_{V^N} d\textbf{r}^N \exp \left [ -\beta E(\textbf{r}^N)\right ] 
+\end{aligned}\end{split}\]</div>
+<p>Here, each integral runs over some volume which is accessible to each
+particle in the system since the particle positions have units of
+length. We simplify the notation by writing the integral over a single
+vector, <span class="math notranslate nohighlight">\(\textbf{r}^N\)</span>, which contains the positions of all <span class="math notranslate nohighlight">\(N\)</span>
+particles; in three-dimensions, this is then a vector with <span class="math notranslate nohighlight">\(3N\)</span>
+coordinates, and integrating over all possible positions is equivalent
+to integrating over a 3N-dimensional volume <span class="math notranslate nohighlight">\(V^N\)</span> which we call the
+<em>volume of phase space</em> accessible to the <span class="math notranslate nohighlight">\(N\)</span> particles<a class="footnote-reference brackets" href="#id3" id="id2">1</a>.</p>
+<p>With this new notation, the ensemble average in the classical canonical
+ensemble (with <span class="math notranslate nohighlight">\(NVT\)</span> fixed) is given as:</p>
+<div class="math notranslate nohighlight" id="equation-app-a-ensemble-average">
+<span class="eqno">(22)<a class="headerlink" href="#equation-app-a-ensemble-average" title="Permalink to this equation">#</a></span>\[\langle Y \rangle = \frac{\int d \mathbf{r}^N \exp \left [ -\beta E(\mathbf{r}^N) \right ] Y(\mathbf{r}^N) }{\int d \mathbf{r}^N \exp \left [ -\beta E(\mathbf{r}^N) \right ]}\]</div>
+<p>This notation mirrors the notation used to sum over all states
+accessible to a system using a discrete partition function, but here the
+sum is replaced by an integral over phase space. It is only a notation
+change, and is conceptually equivalent.</p>
+<p>In principle, the integrals in Eq. <a class="reference internal" href="#equation-app-a-ensemble-average">(22)</a>
+could be calculated in a brute force
+manner by determining the value of <span class="math notranslate nohighlight">\(Y(\mathbf{r}^N)\)</span> for every set of
+particle coordinates and integrating numerically. However, such an
+approach would be impossible computationally because the number of
+system configurations becomes effectively infinite for even a small
+number of particles.</p>
+<p>Moreover, it is likely that the vast majority of
+the system configurations would have a high energy,
+<span class="math notranslate nohighlight">\(E(\mathbf{r}^N) \gg k_BT\)</span>, and as a result the Boltzmann factor for
+most values of <span class="math notranslate nohighlight">\(Y(\mathbf{r}^N)\)</span> would be zero. In other words, a large
+portion of the phase space (<span class="math notranslate nohighlight">\(V^N\)</span>) possible for a simulation will be
+inaccessible due to its high energy - those configurations will be
+infinitely unlikely. Performing such a calculation would thus be not
+only nearly impossible, but also highly inefficient.</p>
+<p>Finally, the last
+thing to notice is that to calculate <span class="math notranslate nohighlight">\(\langle Y \rangle\)</span>, it is not
+necessary to calculate the value of the integrals in both the numerator
+and denominator of Eq. <a class="reference internal" href="#equation-app-a-ensemble-average">(22)</a>; only their ratio must be
+determined. This observation will form the basis of the Metropolis Monte
+Carlo algorithm. We will now describe Monte Carlo sampling in general,
+then discuss the Metropolis algorithm.</p>
+</section>
+<section id="stochastic-sampling-of-determinate-equations">
+<h2>Stochastic sampling of determinate equations<a class="headerlink" href="#stochastic-sampling-of-determinate-equations" title="Permalink to this headline">#</a></h2>
+<p>The main idea of the Monte Carlo method is the following: a determinate
+mathematical expression (like the integrals in the equations for the
+canonical ensemble) is reformulated as a probablistic analogue and then
+solved by stochastic sampling.</p>
+<p>In reality, we very rarely know the exact formulation of our probability density,
+and so we can use stochastic sampling to construct an approximation.
+For example, suppose we have this weirdly shaped object and want to compute its area,
+and are unable to do so analytically.</p>
+<p><img alt="image" src="../_images/fig_10_3A.png" /></p>
+<p>This can be likened to computing the average value of a binary function across a space
+larger than our shape, <em>i.e.</em>,</p>
+<div class="math notranslate nohighlight">
+\[ A = \langle f \rangle = \sum_{x,y} f(x,y) p_{x,y} \]</div>
+<p>where <span class="math notranslate nohighlight">\(f\)</span> is 1 when we are sitting in the shape and 0 otherwise.</p>
+<p>Now, we can calculate the average value of
+<span class="math notranslate nohighlight">\(f\)</span> by randomly selecting points within our bounding box and recording
+whether or not we hit our shape.</p>
+<p><img alt="image" src="../_images/fig_10_3.gif" /></p>
+<p>If we have an infinite number of
+trials, then we will sample exactly according to
+<span class="math notranslate nohighlight">\(p(x,y)\)</span> and the average of <span class="math notranslate nohighlight">\(f\)</span> computed
+from the infinite number of trials will be exactly equal to our area.</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+A = \frac{1}{\tau}\sum_i^\tau  f(x_i, y_i)
+\end{aligned}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\tau\)</span> is our number of trials (samples).</p>
+<p>Let’s consider applying this uniform sampling methodology to the
+calculation of the canonical partition function. We could write:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+Z &amp;= \int_{V^N} d \mathbf{r}^N \exp \left [ -\beta E(\mathbf{r}^N) \right ] \\
+&amp;\approx \frac{V^N}{\tau} \sum_i^\tau \exp \left [-\beta E(\mathbf{r}_i^N)\right ]
+\end{aligned}\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(V^N\)</span> is again the volume of phase space which is the <span class="math notranslate nohighlight">\(3N\)</span>-dimensional
+analogue to the interval <span class="math notranslate nohighlight">\([a, b]\)</span>; <span class="math notranslate nohighlight">\(\tau\)</span> is the total number of samples
+used for the approximation, and <span class="math notranslate nohighlight">\(E(\mathbf{r}_i^N)\)</span> is the potential
+energy of the system for the specific configuration denoted by <span class="math notranslate nohighlight">\(i\)</span>.
+There are two major problems with this approach in practice. First, it’s
+difficult to estimate the total phase space volume, <span class="math notranslate nohighlight">\(V^N\)</span>. This problem
+can be avoided, however, by recognizing that calculating the
+ensemble-average value of an observable requires only the ratio of two
+quantities within the phase space <span class="math notranslate nohighlight">\(V^N\)</span>. So we can write:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\langle Y \rangle_{NVT} &amp;\approx \frac{\frac{V^N}{\tau} \sum_i^\tau Y_i(\mathbf{r}_i^N) \exp \left [-\beta E(\mathbf{r}_i^N)\right ]}{\frac{V^N}{\tau} \sum_i^\tau \exp \left [-\beta E(\mathbf{r}_i^N)\right ]} \\
+&amp; \approx \frac{ \sum_i^\tau Y_i(\mathbf{r}_i^N) \exp \left [-\beta E(\mathbf{r}_i^N)\right ]}{ \sum_i^\tau \exp \left [-\beta E(\mathbf{r}_i^N)\right ]}
+\end{aligned}\end{split}\]</div>
+<p>We use the notation <span class="math notranslate nohighlight">\(\langle Y\rangle_{NVT}\)</span> as a reminder that the
+ensemble-average value of <span class="math notranslate nohighlight">\(Y\)</span> is calculated in the canonical ensemble.
+Due to the ratio, the term involving the total phase space drops out.
+But, we are left with a second problem, which is that the vast majority
+of configurations in most systems will have a near-zero contribution to
+the ensemble average, since the Boltzmann weight
+<span class="math notranslate nohighlight">\(\exp \left [-\beta E(\mathbf{r}_i^N)\right ] \approx 0\)</span> for any
+configurations with unfavorable energies. For example, consider sampling
+configurations from a set of hard spheres to represent a fluid - any
+configuration in which there is slight overlap between spheres leads to
+an infinite system energy, and the corresponding Boltzmann weight would
+be zero. Randomly selecting particle positions would thus lead to the
+vast majority of configurations not contributing to the average,
+inhibiting an accurate calculation. Instead, we would like to perform
+<strong>importance sampling</strong>, by only examining configurations with finite
+contributions to the ensemble average.</p>
+<p><img alt="image" src="../_images/fig_10_1.png" />{width=”60%”}</p>
+</section>
+<section id="importance-sampling-and-markov-chains">
+<h2>Importance sampling and Markov chains<a class="headerlink" href="#importance-sampling-and-markov-chains" title="Permalink to this headline">#</a></h2>
+<p>To evaluate ensemble averages from the canonical ensemble, we can use
+Eq. <span class="xref myst">[randomsample]</span>{reference-type=”eqref”
+reference=”randomsample”} but with the probability density, <span class="math notranslate nohighlight">\(p(x)\)</span>,
+chosen to maximize the likelihood of sampling configurations that
+contribute meaningfully to the calculation of the ensemble average. This
+is the essence of importance sampling. We can perform importance
+sampling for configurations in the canonical ensemble by recalling that
+the probability of finding the system in a given microstate of the
+canonical ensemble, <span class="math notranslate nohighlight">\(p(\textbf{r}^N)_{NVT}\)</span>, is related to the Boltzmann
+factor for that state normalized by the partition function. We can then
+write:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+p(\textbf{r}^N)_{NVT} &amp;= \frac{\exp \left [-\beta E(\mathbf{r}^N)\right ]}{Z} \\
+\langle Y \rangle_{NVT} &amp;= \int d \mathbf{r}^N p(\textbf{r}^N)_{NVT}  Y(\mathbf{r}^N) 
+\end{aligned}\end{split}\]</div>
+<p>The ensemble average then has the same form as <span class="math notranslate nohighlight">\(F = \int_a^b f(x) dx\)</span> if
+we let <span class="math notranslate nohighlight">\(x=\mathbf{r}^N\)</span> and
+<span class="math notranslate nohighlight">\(f(x) = p(\mathbf{r}^N)_{NVT} Y(\mathbf{r}^N)\)</span>. Following the reasoning
+above, we can then approximate <span class="math notranslate nohighlight">\(\langle Y \rangle_{NVT}\)</span> by:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\langle Y \rangle_{NVT} &amp;\approx \left \langle \frac{f(x)}{p(x)} \right \rangle_{\textrm{trials}} \\
+&amp; = \left \langle \frac{ p(\mathbf{r}^N)_{NVT} Y(\mathbf{r}^N) }{p(\mathbf{r}^N)} \right \rangle_{\textrm{trials}}
+\end{aligned}\end{split}\]</div>
+<p>From this expression, we see that if we select trials according to the
+probability distribution <span class="math notranslate nohighlight">\(p(\mathbf{r}^N) = p(\mathbf{r}^N)_{NVT}\)</span>, then
+we get:</p>
+<div class="math notranslate nohighlight">
+\[\langle Y \rangle_{NVT}  = \langle Y \rangle_{\textrm{trials}} \label{ensemble_average_mc}\]</div>
+<p>Thus, we choose configurations in our ensemble according to the
+canonical ensemble probability distribution, in which case the
+ensemble-average value of <span class="math notranslate nohighlight">\(Y\)</span> can be estimated by sampling
+configurations according to their Boltzmann weight. Finally, we note
+that we just need to know the probability of sampling a configuration -
+we do not necessarily need an expression for the partition function
+itself. In principle, we could choose another probability distribution
+<span class="math notranslate nohighlight">\(p(x)\)</span> from which to sample states, but the choice of
+<span class="math notranslate nohighlight">\(p(\mathbf{r}^N) = p(\mathbf{r}^N)_{NVT}\)</span> is the simplest.</p>
+<p>Our problem then boils down to: how do we select states according to the
+correct probability distribution without knowing the value of the
+partition function? To do so, we will generate a <strong>Markov chain of
+states</strong> as a means of sampling our distribution. A Markov chain refers
+to a <em>sequence</em> of states (i.e. configurations or trials using our
+previous nomenclature) that satisfy the following two conditions:</p>
+<ul class="simple">
+<li><p>Each state generated belongs to a finite set of possible outcomes
+called the state space. The statistical mechanical analogue to this
+statement is to say that each microstate generated belongs to a
+finite ensemble. We can denote each possible state by
+<span class="math notranslate nohighlight">\(\mathbf{r}_1^N, \mathbf{r}_2^N, \mathbf{r}_3^N, \dots\)</span> for the
+enormous set of possible microstates within the canonical ensemble
+that we are sampling. For the canonical ensemble, this state space
+is equal to <span class="math notranslate nohighlight">\(V^N\)</span>, the accessible phase space.</p></li>
+<li><p>The probability of sampling state <span class="math notranslate nohighlight">\(i+1\)</span> in the sequence of states
+sampled depends only on state <span class="math notranslate nohighlight">\(i\)</span>, and not on previous states in the
+chain.</p></li>
+</ul>
+<p>Since the likelihood of sampling a new state is only related to what
+current state we are in, we can define a transition probability,
+<span class="math notranslate nohighlight">\(\Pi(m\rightarrow n)\)</span>, which defines the likelihood of transitioning
+from state <span class="math notranslate nohighlight">\(m\)</span> to state <span class="math notranslate nohighlight">\(n\)</span>. We can then imagine an algorithm in which
+we start in some state <span class="math notranslate nohighlight">\(m\)</span> then transition to a new state <span class="math notranslate nohighlight">\(n\)</span> with a
+probability given by <span class="math notranslate nohighlight">\(\Pi(m\rightarrow n)\)</span> and repeat this for a large
+number of trials. If we do this an infinite number of times, then the
+state <span class="math notranslate nohighlight">\(m\)</span> will appear with an overall probability given by <span class="math notranslate nohighlight">\(p(m)\)</span>, where
+<span class="math notranslate nohighlight">\(p(m)\)</span> is the <em>limiting</em> probability distribution that does not depend
+on any of the other states (unlike the transition probability). When
+sampling from the canonical ensemble, then, we want <span class="math notranslate nohighlight">\(p(m)\)</span> to equal
+<span class="math notranslate nohighlight">\(p(\mathbf{r}_m^N)_{NVT}\)</span> - that is, the likelihood of sampling state
+<span class="math notranslate nohighlight">\(m\)</span> if we take enough states from our Markov chain is equal to the
+probability of sampling that state according to the canonical ensemble
+distribution function. Thus, we need to find an expression for the
+transition probability, <span class="math notranslate nohighlight">\(\Pi\)</span>, that yields this correct limiting
+distribution. We will return to this problem in the next lecture.</p>
+<p><img alt="image" src="../_images/fig_10_2.png" />{width=”100%”}</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
+<dd><p>Often this partition function is written with a normalizing prefactor with units of
+1/volume<span class="math notranslate nohighlight">\(^N\)</span> to ensure that the partition function is unitless; we omit
+this prefactor here.</p>
+</dd>
+</dl>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lecture_files"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Lecture9B.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">An introduction to molecular simulation</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../problems/ps_1/problem_set_1.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Problem Set 1 (Due Tuesday, September 19, 2023)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-readings-for-the-enthusiast">Additional Readings for the Enthusiast</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactions-in-molecular-simulations">Interactions in molecular simulations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-bonded-potentials">Non-bonded potentials</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactions-in-mc-simulations">Interactions in MC simulations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#periodic-boundary-conditions">Periodic boundary conditions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-from-a-canonical-ensemble">Sampling from a canonical ensemble</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stochastic-sampling-of-determinate-equations">Stochastic sampling of determinate equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importance-sampling-and-markov-chains">Importance sampling and Markov chains</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Reid van Lehn, Matt Gebbie, Rose Cersonsky
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -255,13 +255,16 @@ detail other than recognizing their existence.
 ### Non-bonded potentials
 
 The most common non-bonded interaction in molecular simulations is the
-[Lennard-Jones potential](https://en.wikipedia.org/wiki/Lennard-Jones_potential),
-or the 12-6 potential, which is typically written as:
 
-$$\begin{aligned}
-    E_{\textrm{LJ}}(r_{ij}) &= 4\epsilon_{ij} \left [ \left( \frac{\sigma_{ij}}{r_{ij}}\right )^{12} - \left( \frac{\sigma_{ij}}{r_{ij}}\right )^6 \right ] 
+```{glossary}
+[Lennard-Jones potential](https://en.wikipedia.org/wiki/Lennard-Jones_potential)
+    the 12-6 potential, which is typically written as:
+
+    $$\begin{aligned}
+        E_{\textrm{LJ}}(r_{ij}) &= 4\epsilon_{ij} \left [ \left( \frac{\sigma_{ij}}{r_{ij}}\right )^{12} - \left( \frac{\sigma_{ij}}{r_{ij}}\right )^6 \right ] 
     
-\end{aligned}$$
+    \end{aligned}$$
+```
 
 Here, $r_{ij}$ is the (scalar) distance between particle $i$ and $j$,
 $\epsilon_{ij}$ is a characteristic interaction energy and $\sigma_{ij}$
@@ -299,10 +302,13 @@ since the calculated $r^{-6}$ term can be simply squared.
 In addition to van der Waals interactions, it is typical to associate
 charges (or partial charges, to account for the unequal distribution of
 electrons throughout a molecule that leads to dipoles) to atoms or
-particles in a system. These charges interact via a long-range [Coulombic
-potential](https://chem.libretexts.org/Courses/Oregon_Institute_of_Technology/OIT%3A_CHE_202_-_General_Chemistry_II/Unit_2%3A_Electrons_in_Atoms/2.1%3A_Coulomb's_Law_and_the_Electrostatic_Potential):
+particles in a system. These charges interact via a
 
-$$E_{\textrm{coulomb}}(r_{ij}) = \frac{1}{4\pi \epsilon_0 \epsilon_r}\frac{q_i q_j}{r_{ij}}$$
+```{glossary}
+long-range [Coulombic potential](https://chem.libretexts.org/Courses/Oregon_Institute_of_Technology/OIT%3A_CHE_202_-_General_Chemistry_II/Unit_2%3A_Electrons_in_Atoms/2.1%3A_Coulomb's_Law_and_the_Electrostatic_Potential)
+
+    $$E_{\textrm{coulomb}}(r_{ij}) = \frac{1}{4\pi \epsilon_0 \epsilon_r}\frac{q_i q_j}{r_{ij}}$$
+```
 
 where $\epsilon_0$ is the permittivity of free space, $\epsilon_r$ is
 the relative dielectric constant (1 in vacuum, 2-4 in oil, 80 in water),
@@ -328,14 +334,18 @@ expanding the repertoire of possible interactions. Some examples of
 interactions used in MC simulations are noted here.
 
 The first is a
-[hard-particle interaction](https://en.wikipedia.org/wiki/Hard_spheres), where particles are strictly not allowed to
-overlap (akin to an infinitely strong repulsive potential part of the
-Lennard-Jones interaction):
 
-$$E_{\textrm{hard}}(r_{ij}) =  \left\{  \begin{array}{ccc}
-    \infty &,& r_{ij} < \sigma \\
-    0&,& r_{ij} \geq \sigma
-    \end{array} \right\}$$
+```{glossary}
+[hard-particle interaction](https://en.wikipedia.org/wiki/Hard_spheres)
+    interactions where particles are strictly not allowed to
+    overlap (akin to an infinitely strong repulsive potential part of the
+    Lennard-Jones interaction):
+
+    $$E_{\textrm{hard}}(r_{ij}) =  \left\{  \begin{array}{ccc}
+        \infty &,& r_{ij} < \sigma \\
+        0&,& r_{ij} \geq \sigma
+        \end{array} \right\}$$
+```
 
 Another example is the interaction between nearest-neighbors used in the
 Ising model, which can be easily represented in MC simulations:
@@ -350,7 +360,7 @@ only included a subset that are commonly found in the simulation
 literature and map directly to many experimental problems.
 
 ```{admonition} Why can we use non-differentiable potentials in MC, but not MD?
-<details></summary>Click for answer</summary>
+<details><summary>Click for answer</summary>
 
 Newton's equations of motion require that the potentials used in MD are differentiable
 in order to obtain correct forces.
@@ -359,6 +369,6 @@ In MC, we use the potential calculate the relative probability of two states, in
 to determine whether or not it is probabilistic to move from state 1 to state 2. No
 differentiation required!
 </details>
-
+```
 
 ## [Link to Shared Notes](https://docs.google.com/document/d/1zpnAV7CQq18WuECyZE1IFmkOelYdcle2/edit?usp=drive_link&ouid=113272049620170441297&rtpof=true&sd=true)
