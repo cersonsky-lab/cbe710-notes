@@ -7,7 +7,7 @@
 ## Goals for today's lectures
 
 - Describe Monte Carlo and molecular dynamics simulation techniques
-- Understand how these two techniques are related to the ergodic hypothesis from [earlier lectures](Lectures/Lecture2.md)
+- Understand how these two techniques are related to the ergodic hypothesis from [earlier lectures](Lecture2.md)
 - Understand and describe common interaction potentials
 
 ## Two main simulation methods
