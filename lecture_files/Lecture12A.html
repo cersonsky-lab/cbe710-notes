@@ -1,0 +1,793 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Molecular dynamics simulations &#8212; Advanced Thermodynamics for Chemical Engineers</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/defs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture_files/Lecture12A';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Sampling the canonical ensemble in MD simulations" href="Lecture12B.html" />
+    <link rel="prev" title="Nuances of stochastic sampling in statistical ensembles" href="Lecture11.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Advanced Thermodynamics for Chemical Engineers</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Class introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Mechanics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Lecture1A.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture1B.html">Review of thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture2.html">Postulates of statistical mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture3.html">Application of the microcanonical ensemble: two-state system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture4.html">The canonical ensemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture5.html">Generalized ensembles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture6.html">The ideal gas partition function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture7.html">Application of independent subsystems: the Langmuir isotherm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture8A.html">The Ising model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture8B.html">Mean-field theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture9A.html">Fluctuations and thermodynamic response functions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Molecular Simulation</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Lecture9B.html">An introduction to molecular simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture10.html">Monte Carlo simulations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture11.html">Nuances of stochastic sampling in statistical ensembles</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Molecular dynamics simulations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture12B.html">Sampling the canonical ensemble in MD simulations</a></li>
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Problem Sets</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../problems/ps_1/problem_set_1.html">Problem Set 1 (Due Tuesday, September 19, 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/ps_2/problem_set_2.html">Problem Set 2 (Due Thursday, September 28, 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/ps_3/problem_set_3.html">Problem Set 3 (Due Thursday, October 10, 2023)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../references.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/lecture_files/Lecture12A.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Molecular dynamics simulations</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-readings-for-the-enthusiast">Additional Readings for the Enthusiast</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-for-today-s-lecture">Goals for Today’s Lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#molecular-dynamics-the-idea">Molecular dynamics: the idea</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-forces">Calculating forces</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equations-of-motion-verlet-algorithm">Equations of motion: Verlet algorithm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#velocity-verlet-integrator">Velocity-Verlet integrator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#link-to-shared-notes">Link to Shared Notes</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="molecular-dynamics-simulations">
+<h1>Molecular dynamics simulations<a class="headerlink" href="#molecular-dynamics-simulations" title="Permalink to this headline">#</a></h1>
+<section id="additional-readings-for-the-enthusiast">
+<h2>Additional Readings for the Enthusiast<a class="headerlink" href="#additional-readings-for-the-enthusiast" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><span id="id1">Frenkel and Smit [<a class="reference internal" href="../references.html#id5" title="Daan Frenkel and Berend Smit. Understanding molecular simulation: from algorithms to applications. Number 1 in Computational science series. Academic Press, San Diego, 2nd ed edition, 2002. ISBN 978-0-12-267351-1. URL: https://www.eng.uc.edu/~beaucag/Classes/AdvancedMaterialsThermodynamics/Books/%5BComputational%20science%20(San%20Diego,%20Calif.)%5D%20Daan%20Frenkel_%20Berend%20Smit%20-%20Understanding%20molecular%20simulation%20_%20from%20algorithms%20to%20applications%20(2002,%20Academic%20Press%20)%20-%20libgen.lc.pdf.">2</a>]</span>, Ch. 4, 6.2</p></li>
+</ul>
+</section>
+<section id="goals-for-today-s-lecture">
+<h2>Goals for Today’s Lecture<a class="headerlink" href="#goals-for-today-s-lecture" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Understand how simulations are advanced in MD</p></li>
+<li><p>Derive the equations of motion from the Verlet algorithm</p></li>
+<li><p>Related energies and forces</p></li>
+</ul>
+</section>
+<section id="molecular-dynamics-the-idea">
+<h2>Molecular dynamics: the idea<a class="headerlink" href="#molecular-dynamics-the-idea" title="Permalink to this headline">#</a></h2>
+<p>We have now introduced Metropolis (or Metropolis-Hastings
+Monte Carlo as a rigorous method for
+sampling configurations from the canonical ensemble by generating a
+Markov chain of states with a correct probability. However, Metropolis
+Monte Carlo still suffers from drawbacks.</p>
+<div class="admonition-which-of-the-following-is-not-a-drawbacks-of-metropolic-mc admonition">
+<p class="admonition-title">Which of the following is not a drawbacks of Metropolic MC?</p>
+<details><summary>We must ensure effective sampling of the probability distribution</summary>
+<p>This <em>is</em> a drawback – we have to ensure that our sampling is ergodic.</p>
+<p>Try again!</p>
+</details>
+<details><summary>We can use non-differentiable potential energy functions.</summary>
+<p>This is a <em>benefit</em>, not a drawback, correct!</p>
+</details>
+<details><summary>Metropolis MC has no concept of time.</summary>
+<p>This <em>is</em> a drawback – Metropolis MC cannot be used to calculate time-dependent properties of a system.
+For example, one cannot calculate a diffusion
+coefficient, which is an equilibrium property of a system, from a MC
+simulation.</p>
+<p>Try again!</p>
+</details>
+<details><summary>Metropolis MC has limited ability to study non-equilibrium behavior. </summary>
+<p>This <em>is</em> a drawback – Metropolis MC assumes we are pulling from an equilibrium probability distribution.</p>
+<p>Try again!</p>
+</details>
+</div>
+<p>In Molecular Dynamics (MD), we avoid these two issues by introducing an
+approach which tries to closely resemble experimental procedures.
+Specifically, we assume that each particle in the system obeys Newton’s
+laws of motion, and then apply these equations of motion repeatedly to
+generate system configurations. In classical molecular dynamics, it is
+assumed that quantum effects do not contribute. Specifically, we discretize a time interval into
+distinct steps, and at each step we calculate forces acting on each
+particle to determine the next configuration. There is no stochastic
+element to a basic molecular dynamics simulation, although in practice
+the limitations of computer precision ensure that there will always be
+some minimal randomness introduced into a simulation.</p>
+<p>Since we are calculating forces that attempt to reproduce the features of
+a physical system, each configuration of the system generated during a MD
+simulation is physically obtainable (in principle) and we do not have to
+worry about particles overlapping. Moreover, we can explicitly calculate
+a timescale associated with behavior, and can also model non-equilibrium
+events. There are still issues with the technique - notably, the problem
+of ensuring that we simulate systems for sufficiently long enough times
+to observe the behavior we are interested in - but the problems are
+distinct from those of MC simulations.</p>
+<p>We will start by defining a basic MD algorithm, in analogy to the basic
+MC algorithm:</p>
+<ol class="arabic simple">
+<li><p>Choose a starting configuration, <span class="math notranslate nohighlight">\(\mathbf{r}^N(t)\)</span> where <span class="math notranslate nohighlight">\(t=0\)</span>.</p></li>
+<li><p>Generate initial particle velocities, <span class="math notranslate nohighlight">\(\textbf{v}^N(t)\)</span> where <span class="math notranslate nohighlight">\(t=0\)</span>.</p></li>
+<li><p>Compute the forces acting on all particles, <span class="math notranslate nohighlight">\(\textbf{f}^N(t)\)</span>, at
+time <span class="math notranslate nohighlight">\(t\)</span>.</p></li>
+<li><p>Update <span class="math notranslate nohighlight">\(\textbf{v}^N(t)\)</span> and <span class="math notranslate nohighlight">\(\textbf{r}^N(t)\)</span> using
+<span class="math notranslate nohighlight">\(\textbf{f}^N(t)\)</span> and advance the time to <span class="math notranslate nohighlight">\(t+\Delta t\)</span>, where
+<span class="math notranslate nohighlight">\(\Delta t\)</span> is the simulation timestep.</p></li>
+<li><p>Repeat steps 3-4 until a sufficient number of timesteps have
+elapsed. Periodically compute and save the value of some observables
+(e.g., temperature, pressure).</p></li>
+<li><p>Approximate the ensemble average value of some observable
+<span class="math notranslate nohighlight">\(Y(\mathbf{r}^N)\)</span> by averaging over states sampled during a period
+of time during which the system is at equilibrium.</p></li>
+</ol>
+<p>Conceptually, the algorithm is fairly straightforward; we will now
+explore details of its implementation. We will skip the step about
+generating initial velocities and come back to that discussion in the
+next lecture; first, we will discuss the core two steps of the MD
+algorithm.</p>
+</section>
+<section id="calculating-forces">
+<h2>Calculating forces<a class="headerlink" href="#calculating-forces" title="Permalink to this headline">#</a></h2>
+<p>The most time-consuming, and perhaps most important, aspect of the MD
+algorithm is the force calculation. First, recall that we generally have
+defined interactions in terms of energies, which was used directly in
+the Metropolis Monte Carlo algorithm. We can write the force on each
+particle as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\textbf{f}_i &amp;= -\left ( \frac{\partial E(\textbf{r}^N)}{\partial x_i}\right ) \hat{\textbf{x}} -\left ( \frac{\partial E(\textbf{r}^N)}{\partial y_i}\right ) \hat{\textbf{y}} -\left ( \frac{\partial E(\textbf{r}^N)}{\partial z_i}\right ) \hat{\textbf{z}}
+\end{aligned}\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(\textbf{f}_i\)</span> is the force acting on particle <span class="math notranslate nohighlight">\(i\)</span>,
+<span class="math notranslate nohighlight">\(E(\textbf{r}^N)\)</span> is the potential energy of the entire system,
+<span class="math notranslate nohighlight">\(x_i, y_i, z_i\)</span> are the <span class="math notranslate nohighlight">\(x/y/z\)</span> positions of particle <span class="math notranslate nohighlight">\(i\)</span> (i.e. the
+three components of the vector <span class="math notranslate nohighlight">\(\textbf{r}_i\)</span>), and
+<span class="math notranslate nohighlight">\(\hat{\textbf{x}}, \hat{\textbf{y}}, \hat{\textbf{z}}\)</span> are unit vectors
+in each of the Cartesian directions. The force on each particle is thus
+the gradient of the potential energy function, and in general is a
+function of all other particle positions which are calculated by summing
+pairwise potentials.</p>
+<p>For example, let’s consider the calculation of the
+forces on a single particle in a system of <span class="math notranslate nohighlight">\(N\)</span>-particles that only
+interact via pairwise <a class="reference internal" href="Lecture9B.html#term-Lennard-Jones-potential"><span class="xref std std-term">Lennard-Jones potential</span></a>, where</p>
+<div class="math notranslate nohighlight">
+\[ E_{LJ}(r_ij) = \left (4 \epsilon_{ij} \left [ \left (\frac{\sigma_{ij}}{ r_{ij}}\right )^{12} - \left (\frac{\sigma_{ij}}{ r_{ij}}\right )^6\right ] \right )\]</div>
+<p>We can then calculate
+the force on particle <span class="math notranslate nohighlight">\(i\)</span> (which only depends on the interactions of <span class="math notranslate nohighlight">\(i\)</span>
+with other particles, and not on the interactions of other particles
+with each other) as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\textbf{f}_i &amp;= -\left ( \frac{\partial E(\textbf{r}^N)}{\partial x_i}\right ) \hat{\textbf{x}} -\left ( \frac{\partial E(\textbf{r}^N)}{\partial y_i}\right ) \hat{\textbf{y}} -\left ( \frac{\partial E(\textbf{r}^N)}{\partial z_i}\right ) \hat{\textbf{z}} \\
+&amp;= -\sum_{j\ne i}^N  \left ( \frac{\partial E_{LJ}(r_{ij})}{\partial x_i}\right ) \hat{\textbf{x}} + \left ( \frac{\partial E_{LJ}(r_{ij})}{\partial y_i}\right ) \hat{\textbf{y}} + \left ( \frac{\partial E_{LJ}(r_{ij})}{\partial z_i}\right ) \hat{\textbf{z}}
+\end{aligned}\end{split}\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(r_{ij} = \sqrt{\textbf{r}_{ij} \cdot \textbf{r}_{ij}}\)</span> is the
+scalar distance between particle <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span>, where <span class="math notranslate nohighlight">\(\textbf{r}_{ij}\)</span> is
+the vector distance and we compute the scalar distance from the dot
+product.</p>
+<div class="admonition-show-that-textbf-f-i-sum-j-ne-i-frac-48-epsilon-ij-r-ij-2-left-left-frac-sigma-ij-r-ij-right-12-frac-1-2-left-frac-sigma-ij-r-ij-right-6-right-left-x-ij-hat-textbf-x-y-ij-hat-textbf-y-z-ij-hat-textbf-z-right admonition">
+<p class="admonition-title">Show that <span class="math notranslate nohighlight">\(\textbf{f}_i  = -\sum_{j\ne i} \frac{48 \epsilon_{ij}}{ r_{ij}^2} \left [ \left (\frac{\sigma_{ij}}{ r_{ij}}\right )^{12} - \frac{1}{2}\left (\frac{\sigma_{ij}}{ r_{ij}}\right )^6\right ] \left [  x_{ij} \hat{\textbf{x}} +  y_{ij} \hat{\textbf{y}} +  z_{ij} \hat{\textbf{z}}\right ]\)</span></p>
+<details><summary> Show derivation</summary>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+- \left ( \frac{\partial E_{LJ}(r_{ij})}{\partial x_i}\right ) &amp;= -  \left ( \frac{\partial r_{ij}}{\partial x_i}\right )\left ( \frac{\partial E_{LJ}(r_{ij})}{\partial  r_{ij}}\right ) \\
+&amp;= -\left ( \frac{\partial [(x_j - x_i)^2 + (y_j - y_i)^2 + (z_j - z_i)^2]^{1/2}}{\partial x_i}\right ) \left ( \frac{\partial E_{LJ}( r_{ij})}{\partial  r_{ij}}\right )  \\
+&amp;= -\left (\frac{-(x_j-x_i)}{[(x_j - x_i)^2 + (y_j - y_i)^2 + (z_j - z_i)^2]^{1/2}}\right )\left ( \frac{\partial E_{LJ}( r_{ij})}{ r_{ij}}\right )  \\
+&amp;= \left (\frac{ x_{ij}}{ r_{ij}} \right )\left ( \frac{\partial E_{LJ}( r_{ij})}{\partial  r_{ij}}\right ) \\
+&amp;= \left (\frac{ x_{ij}}{r_{ij}} \right ) \frac{\partial }{\partial r_{ij}} \left (4\epsilon_{ij} \left [ \left (\frac{\sigma_{ij}}{ r_{ij}}\right )^{12} - \left (\frac{\sigma_{ij}}{ r_{ij}}\right )^6\right ] \right) \\
+&amp;= \left (\frac{ x_{ij}}{ r_{ij}} \right) \left (\frac{-48 \epsilon_{ij}}{ r_{ij}} \left [ \left (\frac{\sigma_{ij}}{ r_{ij}}\right )^{12} - \frac{1}{2}\left (\frac{\sigma_{ij}}{ r_{ij}}\right )^6\right ] \right ) \\
+&amp;=-\frac{48 \epsilon_{ij}  x_{ij}}{ r_{ij}^2} \left [ \left (\frac{\sigma_{ij}}{ r_{ij}}\right )^{12} - \frac{1}{2}\left (\frac{\sigma_{ij}}{ r_{ij}}\right )^6\right ] \\
+\therefore \textbf{f}_i  &amp;= -\sum_{j\ne i} \frac{48 \epsilon_{ij}}{ r_{ij}^2} \left [ \left (\frac{\sigma_{ij}}{ r_{ij}}\right )^{12} - \frac{1}{2}\left (\frac{\sigma_{ij}}{ r_{ij}}\right )^6\right ] \left [  x_{ij} \hat{\textbf{x}} +  y_{ij} \hat{\textbf{y}} +  z_{ij} \hat{\textbf{z}}\right ]
+\end{aligned}\end{split}\]</div>
+</details>
+</div>
+<p>Substituting in this expression to the equation above gives us a term
+that is very similar to the LJ potential (and hence can be calculated
+with minimal additional computational expense).</p>
+<p><img alt="image" src="../_images/lj.gif" /></p>
+<p>The chosen sign convention is because of how we define the distance in the x-direction;
+if <span class="math notranslate nohighlight">\(x_{ij} &gt; 0\)</span>, the x-position of
+particle <span class="math notranslate nohighlight">\(j\)</span> is more positive than the x-position of particle <span class="math notranslate nohighlight">\(i\)</span>, then
+the magnitude of the force will be <em>positive</em> for
+<span class="math notranslate nohighlight">\(r_{ij} &gt; 2^{1/6} \sigma\)</span> and the sign of the force will correctly point
+in the +x-direction, indicating that particle <span class="math notranslate nohighlight">\(i\)</span> will experience a
+force to move toward particle <span class="math notranslate nohighlight">\(j\)</span>. This agrees with the expectations of
+an attractive potential.</p>
+<p>Finally, recall that because we obey Newton’s laws of motion, we can
+calculate the forces of the entire system by summing over pairs of
+particles, calculating the force on one particle due to the other one,
+and using Newton’s 3rd law to immediately obtain the force on the other
+particle in the pair by reversing the sign of the force calculated. This
+approach also reduces the number of necessary calculations.</p>
+</section>
+<section id="equations-of-motion-verlet-algorithm">
+<h2>Equations of motion: Verlet algorithm<a class="headerlink" href="#equations-of-motion-verlet-algorithm" title="Permalink to this headline">#</a></h2>
+<p>The basic algorithm for molecular dynamics (MD) consists of two basic steps: the
+calculation of forces on all particles and the update of all particle
+positions based on those forces. Forces are typically calculated based on pairwise interactions between
+particles. The next step in our algorithm is to update particle
+positions by integrating the equations of motion. Again, this will
+roughly follow from Newtonian mechanics. The simplest way we can write
+an expression for the position of a particle at a time <span class="math notranslate nohighlight">\(t+\Delta t\)</span>
+based on its position at time <span class="math notranslate nohighlight">\(t\)</span> is by Taylor expanding the expression
+for the new position <span class="math notranslate nohighlight">\(\textbf{r}_i(t+\Delta t)\)</span> around the old position
+<span class="math notranslate nohighlight">\(\textbf{r}_i(t)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\textbf{r}_i(t+\Delta t) &amp;\approx \textbf{r}_i(t) + \frac{d\textbf{r}_i(t)}{dt} \Delta t + \frac{d^2\textbf{r}_i(t)}{dt^2}\frac{\Delta t^2}{2} + \frac{d^3\textbf{r}_i(t)}{dt^3}\frac{\Delta t^3}{6} \dots \\
+&amp;= \textbf{r}_i(t) + \textbf{v}_i(t) \Delta t + \frac{\textbf{f}_i(t)}{2m}\Delta t^2+ \frac{d^3\textbf{r}_i(t)}{dt^3}\frac{\Delta t^3}{6} +\dots
+\end{aligned}\end{split}\]</div>
+<p>We recognize this as the typical expression for updating positions
+according to Newton’s laws, with the force term normalized by the mass,
+<span class="math notranslate nohighlight">\(m\)</span>. We also ignore terms of fourth order and higher. We can similarly
+write:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\textbf{r}_i(t-\Delta t) &amp;\approx \textbf{r}_i(t) - \textbf{v}_i(t) \Delta t + \frac{\textbf{f}_i(t)}{2m}\Delta t^2 - \frac{d^3\textbf{r}_i(t)}{dt^3}\frac{\Delta t^3}{6} +\dots
+\end{aligned}\]</div>
+<p>Adding these two expressions together yields the</p>
+<dl class="glossary">
+<dt id="term-Verlet-algorithm"><a class="reference external" href="https://en.wikipedia.org/wiki/Verlet_integration">Verlet algorithm</a><a class="headerlink" href="#term-Verlet-algorithm" title="Permalink to this term">#</a></dt><dd><div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\textbf{r}_i(t+\Delta t) + \textbf{r}_i(t-\Delta t) &amp;= 2 \textbf{r}_i(t) + \frac{\textbf{f}_i(t)}{m}\Delta t^2 + \dots \\
+\textbf{r}_i(t+\Delta t) &amp;\approx 2 \textbf{r}_i(t) - \textbf{r}_i(t-\Delta t) + \frac{\textbf{f}_i(t)}{m}\Delta t^2 
+\end{aligned}\end{split}\]</div>
+</dd>
+</dl>
+<p>for updating the
+positions of particles in a Molecular Dynamics simulation. Note that by
+summing together the two different expansions, we remove the third order
+term and hence the error is of fourth-order and higher in the timestep,
+<span class="math notranslate nohighlight">\(\Delta t\)</span>, which is generally negligible. In practice then, we can
+calculate our forces at time <span class="math notranslate nohighlight">\(t\)</span>, and knowing the previous positions of
+a particle, <span class="math notranslate nohighlight">\(\textbf{r}_i(t-\Delta t)\)</span>, and its current position,
+<span class="math notranslate nohighlight">\(\textbf{r}_i(t)\)</span>, we can obtain a new position without ever calculating
+velocities.</p>
+<p>For some applications, though, such as calculating the temperature
+it is necessary to know the velocities of
+the particles.</p>
+<div class="admonition-what-are-the-velocities-of-a-system-according-to-the-verlet-algorithm admonition">
+<p class="admonition-title">What are the velocities of a system, according to the Verlet algorithm?</p>
+<details><summary> Click for answer </summary>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\textbf{r}_i(t+\Delta t) - \textbf{r}_i(t-\Delta t) &amp;= 2 \textbf{v}_i(t)\Delta t + 2\frac{d^3\textbf{r}_i(t)}{dt^3}\frac{\Delta t^3}{6} + \dots \\
+\textbf{v}_i(t) &amp;\approx \frac{\textbf{r}_i(t+\Delta t) - \textbf{r}_i(t-\Delta t)}{2 \Delta t} 
+\end{aligned}\end{split}\]</div>
+<p>Here we ignore the term of order <span class="math notranslate nohighlight">\(\Delta t^3\)</span> and obtain an error that
+is on the order of <span class="math notranslate nohighlight">\(\Delta t^2\)</span> (since we divide through by <span class="math notranslate nohighlight">\(\Delta t\)</span>).
+In practice, however, this expression is often subject to numerical
+error since it involves dividing by a very small number (<span class="math notranslate nohighlight">\(\Delta t\)</span>)
+which is difficult to accurately calculate in single-precision molecular
+dynamics code.</p>
+</details>
+</div>
+</section>
+<section id="velocity-verlet-integrator">
+<h2>Velocity-Verlet integrator<a class="headerlink" href="#velocity-verlet-integrator" title="Permalink to this headline">#</a></h2>
+<p>The Verlet algorithm is a perfectly reasonable algorithm, and is often
+used in many MD simulations. However, the desire to often have
+velocities computed at the same time as positions (again for reasons
+such as calculating the temperature) leads to the use of algorithms such
+as the</p>
+<dl class="glossary simple">
+<dt id="term-Velocity-Verlet-algorithm">Velocity-Verlet algorithm<a class="headerlink" href="#term-Velocity-Verlet-algorithm" title="Permalink to this term">#</a></dt><dd><p>Identical to the Verlet algorithm, but with an explicit calculation
+of particle velocities</p>
+</dd>
+</dl>
+<p>Velocity-Verlet also fixes a small problem, which is that in the very
+first timestep of a simulation the position <span class="math notranslate nohighlight">\(\textbf{r}_i(t-\Delta t)\)</span>
+is not known. This algorithm again starts from a Taylor expansion for
+the coordinates:</p>
+<div class="math notranslate nohighlight" id="equation-vv-eq">
+<span class="eqno">(24)<a class="headerlink" href="#equation-vv-eq" title="Permalink to this equation">#</a></span>\[\textbf{r}_i(t+\Delta t) &amp;\approx  \textbf{r}_i(t) + \textbf{v}_i(t) \Delta t + \frac{\textbf{f}_i(t)}{2m}\Delta t^2\]</div>
+<p>Here we have ignored terms of third-order and higher in <span class="math notranslate nohighlight">\(\Delta t\)</span>.
+Unlike the Verlet algorithm, we now have an explicit step that
+calculates <span class="math notranslate nohighlight">\(\textbf{v}_i(t + \Delta t)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\textbf{v}_i(t + \Delta t) \approx \textbf{v}_i(t)  + \frac{\textbf{f}_i(t)}{2m} \Delta t + \frac{\textbf{f}_i(t+\Delta t) }{2m} \Delta t\]</div>
+<p>We can show that this algorithm is (mathematically) equivalent to the
+Verlet algorithm by writing:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\textbf{r}_i[(t+\Delta t) + \Delta t] &amp;=  \textbf{r}_i(t+\Delta t) + \textbf{v}_i(t+\Delta t) \Delta t + \frac{\textbf{f}_i(t+\Delta t)}{2m}\Delta t^2 
+\end{aligned}\]</div>
+<p>That is, we expand the position at time <span class="math notranslate nohighlight">\(t+\Delta t+\Delta t\)</span> around the
+position at time <span class="math notranslate nohighlight">\(t+\Delta t\)</span>. Similarly, we can rewrite Eq. {eq}`vv_eq}
+for the position as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\textbf{r}_i(t) &amp;=  \textbf{r}_i(t+\Delta t) - \textbf{v}_i(t) \Delta t - \frac{\textbf{f}_i(t)}{2m}\Delta t^2 
+\end{aligned}\]</div>
+<p>Summing these two values yields:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\textbf{r}_i(t +2\Delta t) + \textbf{r}_i(t) &amp;= 2\textbf{r}_i(t+\Delta t) + \left (\textbf{v}_i(t+\Delta t)  - \textbf{v}_i(t) \right ) \Delta t + \frac{\textbf{f}_i(t+\Delta t) - \textbf{f}_i(t)}{2m} \Delta t^2
+\end{aligned}\]</div>
+<p>Substituting in the Velocity-Verlet expression for the velocity yields:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\textbf{r}_i(t +2\Delta t) + \textbf{r}_i(t) &amp;= 2\textbf{r}_i(t+\Delta t) + \frac{\textbf{f}_i(t)}{2m} \Delta t^2 + \frac{\textbf{f}_i(t+\Delta t) }{2m} \Delta t^2 + \frac{\textbf{f}_i(t+\Delta t) - \textbf{f}_i(t)}{2m} \Delta t^2 \\
+&amp;= 2\textbf{r}_i(t+\Delta t) + \frac{\textbf{f}_i(t+\Delta t) }{m} \Delta t^2
+\end{aligned}\end{split}\]</div>
+<p>This final expression matches the form of the original Verlet algorithm.
+The Velocity-Verlet algorithm is most efficient if a slightly different
+order of steps is used when updating positions and velocities since the
+velocities at time <span class="math notranslate nohighlight">\(t+\Delta t\)</span> can only be computed once the forces,
+and thus positions, are known at time <span class="math notranslate nohighlight">\(t+\Delta t\)</span>. The typical MD
+algorithm for the Velocity-Verlet algorithm then becomes:</p>
+<ol class="arabic simple">
+<li><p>For a set of particle positions, <span class="math notranslate nohighlight">\(\textbf{r}^N(t)\)</span>, velocities,
+<span class="math notranslate nohighlight">\(\textbf{v}^N(t)\)</span>, and forces, <span class="math notranslate nohighlight">\(\textbf{f}^N(t)\)</span>, calculate the new
+positions using
+<span class="math notranslate nohighlight">\(\textbf{r}_i(t+\Delta t) =  \textbf{r}_i(t) + \textbf{v}_i(t) \Delta t + \frac{\textbf{f}_i(t)}{2m}\Delta t^2\)</span>.</p></li>
+<li><p>Calculate the first half of the velocity update using
+<span class="math notranslate nohighlight">\(\textbf{v}_i(t + 1/2 \Delta t) = \textbf{v}_i(t)  + \frac{1}{2m} \textbf{f}_i(t)\Delta t\)</span>.
+This half uses forces only at time <span class="math notranslate nohighlight">\(t\)</span>. Note that notationally we
+call this a “half-integer” timestep only to distinguish the
+velocities computed here from the actual velocities at time <span class="math notranslate nohighlight">\(t\)</span> and
+<span class="math notranslate nohighlight">\(t+\Delta t\)</span>; these velocities should not be used the calculation of
+any velocity-dependent quantity.</p></li>
+<li><p>Calculate the new forces at time <span class="math notranslate nohighlight">\(t + \Delta t\)</span> using the new
+positions, <span class="math notranslate nohighlight">\(\textbf{r}^N(t+\Delta t)\)</span>.</p></li>
+<li><p>Finish the velocity update now that new forces are available using
+<span class="math notranslate nohighlight">\(\textbf{v}_i(t+ \Delta t) = \textbf{v}_i(t+ 1/2\Delta t) + \frac{1}{2m} \textbf{f}_i(t+\Delta t)\Delta t\)</span>.</p></li>
+<li><p>Evaluate the kinetic energy for step <span class="math notranslate nohighlight">\(t+\Delta t\)</span> if desired;
+potential energy will have been evaluated during force calculation
+(if desired).</p></li>
+</ol>
+<p>This half-timestep approach to updating the velocities is not strictly
+necessary, but prevents having to store forces at both time <span class="math notranslate nohighlight">\(t\)</span> and
+<span class="math notranslate nohighlight">\(t+\Delta t\)</span>, minimizing the memory load. The Velocity Verlet algorithm
+is very commonly used, as it is more numerically accurate than standard
+Verlet while calculating velocities (and hence kinetic energies) for the
+same timesteps as the positions. Note that the improved numerical
+accuracy comes in part from not having to divide a difference in
+positions by a timestep; these quantities are all very small and can
+result in numerical errors when used in practice (even though the
+approaches are identical mathematically).</p>
+</section>
+<section id="link-to-shared-notes">
+<h2><a class="reference external" href="https://docs.google.com/document/d/1LxDnlWSweb7CMp5KMj6WT5teC7FIFwaH/edit?usp=drive_link">Link to Shared Notes</a><a class="headerlink" href="#link-to-shared-notes" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lecture_files"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Lecture11.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Nuances of stochastic sampling in statistical ensembles</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Lecture12B.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Sampling the canonical ensemble in MD simulations</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-readings-for-the-enthusiast">Additional Readings for the Enthusiast</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-for-today-s-lecture">Goals for Today’s Lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#molecular-dynamics-the-idea">Molecular dynamics: the idea</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-forces">Calculating forces</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equations-of-motion-verlet-algorithm">Equations of motion: Verlet algorithm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#velocity-verlet-integrator">Velocity-Verlet integrator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#link-to-shared-notes">Link to Shared Notes</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Reid van Lehn, Matt Gebbie, Rose K. Cersonsky
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
