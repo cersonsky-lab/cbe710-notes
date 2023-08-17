@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Sampling the canonical ensemble in MD simulations &#8212; Advanced Thermodynamics for Chemical Engineers</title>
+    <title>Temperature and velocities in MD &#8212; Advanced Thermodynamics for Chemical Engineers</title>
   
   
   
@@ -172,11 +172,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Lecture10.html">Monte Carlo simulations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Lecture11.html">Nuances of stochastic sampling in statistical ensembles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Lecture12A.html">Molecular dynamics simulations</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Sampling the canonical ensemble in MD simulations</a></li>
-
-
-
-
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Temperature and velocities in MD</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Problem Sets</span></p>
 <ul class="nav bd-sidenav">
@@ -323,7 +319,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Sampling the canonical ensemble in MD simulations</h1>
+    <h1>Temperature and velocities in MD</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -333,13 +329,18 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Sampling the canonical ensemble in MD simulations</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#maxwell-boltzmann-distribution">Maxwell-Boltzmann distribution</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-temperature-in-a-molecular-simulation">Calculating temperature in a molecular simulation</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#initializing-particle-velocities">Initializing particle velocities</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#andersen-thermostat">Andersen thermostat</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-readings-for-the-enthusiast">Additional Readings for the Enthusiast</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-for-today-s-lecture">Goals for Today’s Lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-the-canonical-ensemble-in-md-simulations">Sampling the canonical ensemble in MD simulations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maxwell-boltzmann-distribution">Maxwell-Boltzmann distribution</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-maxwell-boltzmann-distribution-as-a-gaussian-distribution">The Maxwell-Boltzmann distribution as a Gaussian distribution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#features-of-the-maxwell-boltzmann-distribution">Features of the Maxwell-Boltzmann distribution</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-temperature-in-a-molecular-simulation">Calculating temperature in a molecular simulation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#andersen-thermostat">Andersen thermostat</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#link-to-shared-notes">Link to Shared Notes</a></li>
+</ul>
             </nav>
         </div>
     </div>
@@ -350,42 +351,60 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="sampling-the-canonical-ensemble-in-md-simulations">
-<h1>Sampling the canonical ensemble in MD simulations<a class="headerlink" href="#sampling-the-canonical-ensemble-in-md-simulations" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="temperature-and-velocities-in-md">
+<h1>Temperature and velocities in MD<a class="headerlink" href="#temperature-and-velocities-in-md" title="Permalink to this headline">#</a></h1>
+<section id="additional-readings-for-the-enthusiast">
+<h2>Additional Readings for the Enthusiast<a class="headerlink" href="#additional-readings-for-the-enthusiast" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><span id="id1">Frenkel and Smit [<a class="reference internal" href="../references.html#id5" title="Daan Frenkel and Berend Smit. Understanding molecular simulation: from algorithms to applications. Number 1 in Computational science series. Academic Press, San Diego, 2nd ed edition, 2002. ISBN 978-0-12-267351-1. URL: https://www.eng.uc.edu/~beaucag/Classes/AdvancedMaterialsThermodynamics/Books/%5BComputational%20science%20(San%20Diego,%20Calif.)%5D%20Daan%20Frenkel_%20Berend%20Smit%20-%20Understanding%20molecular%20simulation%20_%20from%20algorithms%20to%20applications%20(2002,%20Academic%20Press%20)%20-%20libgen.lc.pdf.">2</a>]</span>, Ch. 6.1</p></li>
+</ul>
+</section>
+<section id="goals-for-today-s-lecture">
+<h2>Goals for Today’s Lecture<a class="headerlink" href="#goals-for-today-s-lecture" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Use the Maxwell-Boltzmann distribution to compute initial particle velocities in simulation</p></li>
+<li><p>Relate ensemble-average velocities to ensemble-average temperature</p></li>
+<li><p>Describe the concept of a simulation thermostat, including the Andersen thermostat</p></li>
+</ul>
+</section>
+<section id="sampling-the-canonical-ensemble-in-md-simulations">
+<h2>Sampling the canonical ensemble in MD simulations<a class="headerlink" href="#sampling-the-canonical-ensemble-in-md-simulations" title="Permalink to this headline">#</a></h2>
 <p>We have now discussed the basic equations of motion for a MD
 simulation, but have not clearly connected to a statistical
 ensemble. In Monte Carlo simulations, the statistical ensemble sampled
 (i.e., the canonical ensemble) is enforced by choosing configurations
-with a probability proportional to the Boltzmann factor. In MD
-simulations, the statistical ensemble is enforced by the equations of
+with a probability proportional to the Boltzmann factor.</p>
+<div class="admonition-what-statistical-ensemble-is-default-for-basic-md-simulations admonition">
+<p class="admonition-title">What statistical ensemble is “default” for basic MD simulations?</p>
+<details><summary> Click for answer </summary>
+<p>In MD simulations, the statistical ensemble is enforced by the equations of
 motion. For basic MD, we integrate Newton’s equations of motion, which
 are conservative, so the total energy of the system (kinetic + potential
 energy) is fixed. As a result, the MD algorithm described in above
 samples the <a class="reference internal" href="Lecture2.html#term-microcanonical-ensemble"><span class="xref std std-term">microcanonical ensemble</span></a>. This ensemble is perfectly fine for
 some systems, such as isolated molecules in the gas phase that are not
-in contact with a heat bath. However, in many problems of interest we
+in contact with a heat bath.</p>
+</details>
+</div>
+<p>In many problems of interest we
 would rather model a system that is at a constant temperature and
 samples the <a class="reference internal" href="Lecture4.html#term-canonical-ensemble"><span class="xref std std-term">canonical ensemble</span></a> since this is more representative of most
 physical systems. We thus need to modify our equations of motion to add
 a constraint that maintains a constant temperature instead of constant
 energy.</p>
 <p>We will now seek to derive an algorithm for constant temperature MD
-simulations via the implementation of a simulation <span class="xref std std-term">thermostat</span>.
+simulations via the implementation of a simulation <a class="reference internal" href="#term-thermostat"><span class="xref std std-term">thermostat</span></a>.
 First, however, there is a more fundamental question - how do we define
 temperature in a molecular dynamics simulation? Answering this question
 will also tie up a loose end from the previous class, namely how we
 should initialize the velocities of particles in our system.</p>
 </section>
 <section id="maxwell-boltzmann-distribution">
-<h1>Maxwell-Boltzmann distribution<a class="headerlink" href="#maxwell-boltzmann-distribution" title="Permalink to this headline">#</a></h1>
+<h2>Maxwell-Boltzmann distribution<a class="headerlink" href="#maxwell-boltzmann-distribution" title="Permalink to this headline">#</a></h2>
 <p>So far in this class, we have dealt solely with potential energy
 functions that are a function of particle positions. However, in a
 classical simulation, a particle configuration is specified by particle
-momenta (i.e., velocities) in addition to particle positions. An
-accurate representation of a configuration in a molecular dynamics
-simulation would be (<span class="math notranslate nohighlight">\(\textbf{r}^N, \textbf{v}^N\)</span>) where <span class="math notranslate nohighlight">\(\textbf{v}^N\)</span>
-is the vector of particle velocities (note: many authors will use
-momenta, instead of velocities, but the idea is the same).</p>
+momenta (i.e., velocities, denoted <span class="math notranslate nohighlight">\(\textbf{v}^N\)</span>) in addition to particle positions (denoted <span class="math notranslate nohighlight">\(\textbf{r}^N\)</span>).</p>
 <p>The complete energy of the system is then given by both the potential energy,
 <span class="math notranslate nohighlight">\(P(\textbf{r}^N)\)</span>, <em>and</em> the kinetic energy, given by <span class="math notranslate nohighlight">\(K(\textbf{v}^N)\)</span>.
 Note an important feature - in general for a conservative Newtonian
@@ -395,13 +414,7 @@ velocities/momenta. The two contributions are thus separable - i.e.,
 their contributions to the partition function can be factorized.</p>
 <p>Let’s then consider the distribution of molecular velocities associated
 with the kinetic energy, <span class="math notranslate nohighlight">\(K(\textbf{v}^N)\)</span>, since this term in the total
-energy is independent of the potential energy term. As in our derivation
-of the <a class="reference internal" href="Lecture6.html"><span class="doc std std-doc">ideal gas partition function</span></a>, we will consider a system of <span class="math notranslate nohighlight">\(N\)</span>
-particles at constant number, volume, and temperature (<span class="math notranslate nohighlight">\(NVT\)</span>) such that
-the system is described by the <a class="reference internal" href="Lecture4.html#term-canonical-ensemble"><span class="xref std std-term">canonical ensemble</span></a>. Previously, we
-considered the translational energies related to quantum mechanical
-effects. Here, we look at the purely classical distribution of particle
-velocities instead as a separate term. We can write the kinetic energy
+energy is independent of the potential energy term. We can write the kinetic energy
 of particle <span class="math notranslate nohighlight">\(i\)</span> as:</p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
@@ -420,7 +433,7 @@ velocities as a 3D volume with axes <span class="math notranslate nohighlight">\
 to calculate the probability of finding a particle with a velocity
 within an infinitesimal volume <span class="math notranslate nohighlight">\(dv_x dv_y dv_z\)</span> centered on
 <span class="math notranslate nohighlight">\(v_x, v_y, v_z\)</span> in this velocity space. We can write this probability
-density (i.e. probability per unit volume) in the canonical ensemble as:</p>
+density (i.e. probability per unit volume) in the <a class="reference internal" href="Lecture4.html#term-canonical-ensemble"><span class="xref std std-term">canonical ensemble</span></a> as:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
 \rho(v_x, v_y, v_z) &amp;=\frac{e^{-\beta K(\textbf{v}_i)}}{Z} \\
@@ -470,6 +483,13 @@ component of the velocity vector is independent; that is, we can write:</p>
 \rho(v_x) &amp;= \rho(v_y) = \rho(v_z) \\
 &amp;= \left(\frac{m}{2\pi k_B T} \right)^{1/2}  \exp\left [ - \frac{mv_x^2}{2k_BT }\right ]
 \end{aligned}\end{split}\]</div>
+<p>Second, the Maxwell-Boltzmann distribution is strictly only valid at equilibrium,
+because we use the canonical partition function in the derivation.
+However, that’s the only major assumption we make, other than that
+classical mechanics is valid (i.e. we are not moving at relativistic
+speeds and there are no strong quantum effects).</p>
+<section id="the-maxwell-boltzmann-distribution-as-a-gaussian-distribution">
+<h3>The Maxwell-Boltzmann distribution as a Gaussian distribution<a class="headerlink" href="#the-maxwell-boltzmann-distribution-as-a-gaussian-distribution" title="Permalink to this headline">#</a></h3>
 <p>If we look at the form of this distribution, we see that it follows a
 Gaussian (normal) distribution. Recall that a Gaussian function
 generally has the form:</p>
@@ -482,7 +502,27 @@ the velocity vector shows that the variance of the distribution is
 quantities tell us that as we increase the temperature of the system,
 the mean velocity is always zero, but we are increasingly likely to
 sample larger velocities.</p>
-<p>We can now calculate some other features of this distribution. First, we
+<p>In principle, we want to generate velocities such that the
+system begins at a particular, well-defined temperature. The
+Maxwell-Boltzmann distribution then tells us how to do this.
+Specifically, for each particle, we can generate three random numbers
+drawn from the Maxwell-Boltzmann velocity distribution at the desired
+temperature <span class="math notranslate nohighlight">\(T\)</span> to represent each of the three velocity components;
+again this is possible because each component is statistically
+independent.</p>
+<p>In practice, it is worth noting that a property of Gaussian functions is
+that if <span class="math notranslate nohighlight">\(X\)</span> is normally distributed with a mean <span class="math notranslate nohighlight">\(\mu\)</span> and variance
+<span class="math notranslate nohighlight">\(\sigma^2\)</span>, then <span class="math notranslate nohighlight">\(Y=aX\)</span> is also normally distributed with mean <span class="math notranslate nohighlight">\(a\mu\)</span>
+and variance <span class="math notranslate nohighlight">\(a^2\sigma^2\)</span>. Thus, we only need a function that generates
+random numbers drawn from a Gaussian distribution with a mean of 0 and a
+variance of any number, and we can convert the results of that
+distribution to our chosen Maxwell-Boltzmann distribution by multiplying
+by an appropriate value of <span class="math notranslate nohighlight">\(a\)</span>. Matlab has a built-in function to do
+this, for example.</p>
+</section>
+<section id="features-of-the-maxwell-boltzmann-distribution">
+<h3>Features of the Maxwell-Boltzmann distribution<a class="headerlink" href="#features-of-the-maxwell-boltzmann-distribution" title="Permalink to this headline">#</a></h3>
+<p>First, we
 can calculate the distribution of speeds as opposed to velocities - that
 is, the distribution of <span class="math notranslate nohighlight">\(v = \sqrt{\textbf{v}\cdot \textbf{v}}\)</span>. This
 requires an integral in spherical coordinates to represent all possible
@@ -516,24 +556,14 @@ Relating this last expression to the kinetic energy (for a set of all
 \end{aligned}\end{split}\]</div>
 <p>This result, that the contribution of each particle to the
 ensemble-average kinetic energy is given by <span class="math notranslate nohighlight">\(3/2 k_BT\)</span>, is exactly the
-result we obtained from the equipartition theorem - each degree of
+result obtained from the <a class="reference external" href="https://en.wikipedia.org/wiki/Equipartition_theorem">equipartition theorem</a> - each degree of
 freedom for the velocity, which is squared in the expression for the
 kinetic energy, contributes <span class="math notranslate nohighlight">\(1/2 k_BT\)</span> to the corresponding
-ensemble-average energy (kinetic energy in this case). As expected, this
-result is identical to what we get if we instead treat translational
-degrees of freedom using the quantum mechanics formulation (the particle
-in the box) and then take the classical limit of our solution - here, we
-effectively took the classical limit first when writing the energy of
-the system.</p>
-<p>Finally, let’s note some features of the Maxwell-Boltzmann distribution.
-First, we recall that this is strictly only valid at equilibrium, again
-because we use the canonical partition function in the derivation.
-However, that’s the only major assumption we make, other than that
-classical mechanics is valid (i.e. we are not moving at relativistic
-speeds and there are no strong quantum effects). So, an interesting
-feature of this distribution is that it is equally applicable to vapor-
-and condensed-phase systems since the potential energy and kinetic
-energy terms are separable. This means that if two systems are at the
+ensemble-average energy (kinetic energy in this case).</p>
+<div class="admonition-say-i-am-simulating-the-liquid-and-vapor-phases-of-a-system-near-the-phase-boundary-i-e-at-the-same-temperature-where-both-phases-are-stable-which-system-s-particles-have-a-higher-velocity admonition">
+<p class="admonition-title">Say I am simulating the liquid and vapor phases of a system near the phase boundary (i.e., at the same temperature, where both phases are stable). Which system’s particles have a higher velocity?</p>
+<details><summary> Click for answer </summary>
+<p>Because the two systems are at the
 same temperature, the distribution of their molecular velocities are the
 same, even though we may conventionally think that gas molecules move
 “faster” than liquid molecules. In reality, it’s that liquid-phase
@@ -542,9 +572,12 @@ more rapidly, but the distribution of velocities remains the same as a
 corresponding vapor-phase system. Of course, typically we also associate
 gases with higher temperature phases, in which case our results do
 indeed show that their molecular speeds would be faster on average.</p>
+</details>
+</div>
+</section>
 </section>
 <section id="calculating-temperature-in-a-molecular-simulation">
-<h1>Calculating temperature in a molecular simulation<a class="headerlink" href="#calculating-temperature-in-a-molecular-simulation" title="Permalink to this headline">#</a></h1>
+<h2>Calculating temperature in a molecular simulation<a class="headerlink" href="#calculating-temperature-in-a-molecular-simulation" title="Permalink to this headline">#</a></h2>
 <p>With the Maxwell-Boltzmann relationship in hand, we can now see a method
 to calculate the temperature in a molecular simulation. Specifically, we
 have the relation:</p>
@@ -574,50 +607,42 @@ and the instantaneous temperature is defined only to facilitate
 calculations (i.e. to maintain temperature via the thermostat described
 below).</p>
 </section>
-<section id="initializing-particle-velocities">
-<h1>Initializing particle velocities<a class="headerlink" href="#initializing-particle-velocities" title="Permalink to this headline">#</a></h1>
-<p>We can now return to the question of how to generate particle
-velocities. In principle, we want to generate velocities such that the
-system begins at a particular, well-defined temperature. The
-Maxwell-Boltzmann distribution then tells us how to do this.
-Specifically, for each particle, we can generate three random numbers
-drawn from the Maxwell-Boltzmann velocity distribution at the desired
-temperature <span class="math notranslate nohighlight">\(T\)</span> to represent each of the three velocity components;
-again this is possible because each component is statistically
-independent.</p>
-<p>In practice, it is worth noting that a property of Gaussian functions is
-that if <span class="math notranslate nohighlight">\(X\)</span> is normally distributed with a mean <span class="math notranslate nohighlight">\(\mu\)</span> and variance
-<span class="math notranslate nohighlight">\(\sigma^2\)</span>, then <span class="math notranslate nohighlight">\(Y=aX\)</span> is also normally distributed with mean <span class="math notranslate nohighlight">\(a\mu\)</span>
-and variance <span class="math notranslate nohighlight">\(a^2\sigma^2\)</span>. Thus, we only need a function that generates
-random numbers drawn from a Gaussian distribution with a mean of 0 and a
-variance of any number, and we can convert the results of that
-distribution to our chosen Maxwell-Boltzmann distribution by multiplying
-by an appropriate value of <span class="math notranslate nohighlight">\(a\)</span>. Matlab has a built-in function to do
-this, for example.</p>
-</section>
 <section id="andersen-thermostat">
-<h1>Andersen thermostat<a class="headerlink" href="#andersen-thermostat" title="Permalink to this headline">#</a></h1>
+<h2>Andersen thermostat<a class="headerlink" href="#andersen-thermostat" title="Permalink to this headline">#</a></h2>
 <p>We have now derived the Maxwell-Boltzmann distribution for particle
 velocities in the canonical ensemble, and showed that we could link the
 ensemble-average temperature to the ensemble-average kinetic energy as a
 means of <em>defining</em> the simulation temperature. However, we have yet to
 discuss how to actually maintain a well-defined simulation temperature
 so that our system samples the canonical ensemble. We will now discuss
-this by defining a simulation <strong>thermostat</strong>, or algorithm to conserve
-the system temperature.</p>
+this by defining a simulation</p>
+<dl class="glossary simple">
+<dt id="term-thermostat">thermostat<a class="headerlink" href="#term-thermostat" title="Permalink to this term">#</a></dt><dd><p>in simulation, an algorithm to conserve the system temperature</p>
+</dd>
+</dl>
 <p>First, you may immediately realize that if
 <span class="math notranslate nohighlight">\(T(t) = \sum_i^N \frac{m_i v_i(t)^2}{3k_B N}\)</span>, then we can enforce a
 constant temperature by just rescaling the velocities every time step.
 Velocity rescaling in principle is fine since it does not affect the
 relative positions of particles, and hence will not result in unphysical
-states (e.g. particles overlapping). However, the problem with this
+states (e.g. particles overlapping).</p>
+<div class="admonition-what-problems-could-you-see-with-velocity-scaling-to-maintain-constant-temperature admonition">
+<p class="admonition-title">What problems could you see with velocity scaling to maintain constant temperature?</p>
+<details><summary>Click for answer</summary>
+The problem with this
 approach is that it would eliminate fluctuations in the kinetic energy
 and may not capture the correct Maxwell-Boltzmann distribution of
-particle velocities expected in the canonical ensemble. Instead, we will
-describe an approach called the <strong>Andersen thermostat</strong>. The basic idea
-of this thermostat is to model the exchange of heat with an external
-bath by assuming that particles stochastically collide with some
-particle in the external heat reservoir. In between these collisions,
+particle velocities expected in the canonical ensemble.
+</details>
+</div>
+<p>Instead, we will
+describe an approach called the</p>
+<dl class="glossary simple">
+<dt id="term-Andersen-thermostat">Andersen thermostat<a class="headerlink" href="#term-Andersen-thermostat" title="Permalink to this term">#</a></dt><dd><p>A simulation thermostat which keeps constant temperature by assuming that particles
+stochastically collide with some particle in the external heat reservoir.</p>
+</dd>
+</dl>
+<p>In between these collisions,
 the system evolves at constant total energy; each collision essentially
 ensures that the system samples different possible constant system
 energies (i.e. different microcanonical ensembles) with the correct
@@ -677,8 +702,12 @@ molecular dynamics, unlike the basic MD algorithm which in principle is
 deterministic. Finally, it is important to recognize that the Andersen
 thermostat is just one simple approach for maintaining the system
 temprature, and is no longer commonly used in practice in favor of more
-advanced techniques (e.g. the Nose-Hoover thermostat) that are
-considered more reliable.</p>
+advanced techniques (e.g. the <a class="reference external" href="https://en.wikipedia.org/wiki/Nos%C3%A9%E2%80%93Hoover_thermostat">Nose-Hoover thermostat</a>)
+that are considered more reliable.</p>
+</section>
+<section id="link-to-shared-notes">
+<h2><a class="reference external" href="https://docs.google.com/document/d/1mkp67adnE72hvnT5ybh3vyHyFji5zZRj/edit?usp=drive_link&amp;ouid=113272049620170441297&amp;rtpof=true&amp;sd=true">Link to Shared Notes</a><a class="headerlink" href="#link-to-shared-notes" title="Permalink to this headline">#</a></h2>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -748,13 +777,18 @@ considered more reliable.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Sampling the canonical ensemble in MD simulations</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#maxwell-boltzmann-distribution">Maxwell-Boltzmann distribution</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-temperature-in-a-molecular-simulation">Calculating temperature in a molecular simulation</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#initializing-particle-velocities">Initializing particle velocities</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#andersen-thermostat">Andersen thermostat</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-readings-for-the-enthusiast">Additional Readings for the Enthusiast</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-for-today-s-lecture">Goals for Today’s Lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-the-canonical-ensemble-in-md-simulations">Sampling the canonical ensemble in MD simulations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maxwell-boltzmann-distribution">Maxwell-Boltzmann distribution</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-maxwell-boltzmann-distribution-as-a-gaussian-distribution">The Maxwell-Boltzmann distribution as a Gaussian distribution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#features-of-the-maxwell-boltzmann-distribution">Features of the Maxwell-Boltzmann distribution</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-temperature-in-a-molecular-simulation">Calculating temperature in a molecular simulation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#andersen-thermostat">Andersen thermostat</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#link-to-shared-notes">Link to Shared Notes</a></li>
+</ul>
   </nav></div>
 
 </div></div>

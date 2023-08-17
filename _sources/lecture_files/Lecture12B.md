@@ -1,18 +1,37 @@
-﻿
+﻿# Temperature and velocities in MD
+
+## Additional Readings for the Enthusiast
+
+- {cite:ts}`frenkel_understanding_2002`, Ch. 6.1
+
+## Goals for Today's Lecture
+- Use the Maxwell-Boltzmann distribution to compute initial particle velocities in simulation
+- Relate ensemble-average velocities to ensemble-average temperature
+- Describe the concept of a simulation thermostat, including the Andersen thermostat
+
 ## Sampling the canonical ensemble in MD simulations
 
 We have now discussed the basic equations of motion for a MD
 simulation, but have not clearly connected to a statistical
 ensemble. In Monte Carlo simulations, the statistical ensemble sampled
 (i.e., the canonical ensemble) is enforced by choosing configurations
-with a probability proportional to the Boltzmann factor. In MD
-simulations, the statistical ensemble is enforced by the equations of
+with a probability proportional to the Boltzmann factor.
+
+```{admonition} What statistical ensemble is "default" for basic MD simulations?
+<details><summary> Click for answer </summary>
+
+In MD simulations, the statistical ensemble is enforced by the equations of
 motion. For basic MD, we integrate Newton's equations of motion, which
 are conservative, so the total energy of the system (kinetic + potential
 energy) is fixed. As a result, the MD algorithm described in above
 samples the {term}`microcanonical ensemble`. This ensemble is perfectly fine for
 some systems, such as isolated molecules in the gas phase that are not
-in contact with a heat bath. However, in many problems of interest we
+in contact with a heat bath.
+
+</details>
+```
+
+In many problems of interest we
 would rather model a system that is at a constant temperature and
 samples the {term}`canonical ensemble` since this is more representative of most
 physical systems. We thus need to modify our equations of motion to add
@@ -31,11 +50,7 @@ should initialize the velocities of particles in our system.
 So far in this class, we have dealt solely with potential energy
 functions that are a function of particle positions. However, in a
 classical simulation, a particle configuration is specified by particle
-momenta (i.e., velocities) in addition to particle positions. An
-accurate representation of a configuration in a molecular dynamics
-simulation would be ($\textbf{r}^N, \textbf{v}^N$) where $\textbf{v}^N$
-is the vector of particle velocities (note: many authors will use
-momenta, instead of velocities, but the idea is the same).
+momenta (i.e., velocities, denoted $\textbf{v}^N$) in addition to particle positions (denoted $\textbf{r}^N$).
 
 The complete energy of the system is then given by both the potential energy,
 $P(\textbf{r}^N)$, *and* the kinetic energy, given by $K(\textbf{v}^N)$.
@@ -47,18 +62,13 @@ their contributions to the partition function can be factorized.
 
 Let's then consider the distribution of molecular velocities associated
 with the kinetic energy, $K(\textbf{v}^N)$, since this term in the total
-energy is independent of the potential energy term. As in our derivation
-of the [ideal gas partition function](Lecture6), we will consider a system of $N$
-particles at constant number, volume, and temperature ($NVT$) such that
-the system is described by the {term}`canonical ensemble`. Previously, we
-considered the translational energies related to quantum mechanical
-effects. Here, we look at the purely classical distribution of particle
-velocities instead as a separate term. We can write the kinetic energy
+energy is independent of the potential energy term. We can write the kinetic energy
 of particle $i$ as:
 
 $$\begin{aligned}
 K(\textbf{v}_i) = \frac{1}{2}m\textbf{v}_i \cdot \textbf{v}_i = \frac{1}{2}mv^2
 \end{aligned}$$
+
 
 Here, the speed $v$ is the magnitude of the velocity vector,
 $\textbf{v}_i$. Now, we ask the probability that a
@@ -74,7 +84,7 @@ velocities as a 3D volume with axes $v_x, v_y,$ and $v_z$, then we want
 to calculate the probability of finding a particle with a velocity
 within an infinitesimal volume $dv_x dv_y dv_z$ centered on
 $v_x, v_y, v_z$ in this velocity space. We can write this probability
-density (i.e. probability per unit volume) in the canonical ensemble as:
+density (i.e. probability per unit volume) in the {term}`canonical ensemble` as:
 
 $$\begin{aligned}
 \rho(v_x, v_y, v_z) &=\frac{e^{-\beta K(\textbf{v}_i)}}{Z} \\
@@ -133,6 +143,14 @@ $$\begin{aligned}
 &= \left(\frac{m}{2\pi k_B T} \right)^{1/2}  \exp\left [ - \frac{mv_x^2}{2k_BT }\right ]
 \end{aligned}$$
 
+Second, the Maxwell-Boltzmann distribution is strictly only valid at equilibrium, 
+because we use the canonical partition function in the derivation.
+However, that's the only major assumption we make, other than that
+classical mechanics is valid (i.e. we are not moving at relativistic
+speeds and there are no strong quantum effects). 
+
+### The Maxwell-Boltzmann distribution as a Gaussian distribution
+
 If we look at the form of this distribution, we see that it follows a
 Gaussian (normal) distribution. Recall that a Gaussian function
 generally has the form:
@@ -147,7 +165,28 @@ quantities tell us that as we increase the temperature of the system,
 the mean velocity is always zero, but we are increasingly likely to
 sample larger velocities.
 
-We can now calculate some other features of this distribution. First, we
+In principle, we want to generate velocities such that the
+system begins at a particular, well-defined temperature. The
+Maxwell-Boltzmann distribution then tells us how to do this.
+Specifically, for each particle, we can generate three random numbers
+drawn from the Maxwell-Boltzmann velocity distribution at the desired
+temperature $T$ to represent each of the three velocity components;
+again this is possible because each component is statistically
+independent.
+
+In practice, it is worth noting that a property of Gaussian functions is
+that if $X$ is normally distributed with a mean $\mu$ and variance
+$\sigma^2$, then $Y=aX$ is also normally distributed with mean $a\mu$
+and variance $a^2\sigma^2$. Thus, we only need a function that generates
+random numbers drawn from a Gaussian distribution with a mean of 0 and a
+variance of any number, and we can convert the results of that
+distribution to our chosen Maxwell-Boltzmann distribution by multiplying
+by an appropriate value of $a$. Matlab has a built-in function to do
+this, for example.
+
+### Features of the Maxwell-Boltzmann distribution
+
+First, we
 can calculate the distribution of speeds as opposed to velocities - that
 is, the distribution of $v = \sqrt{\textbf{v}\cdot \textbf{v}}$. This
 requires an integral in spherical coordinates to represent all possible
@@ -186,25 +225,15 @@ $$\begin{aligned}
 
 This result, that the contribution of each particle to the
 ensemble-average kinetic energy is given by $3/2 k_BT$, is exactly the
-result we obtained from the equipartition theorem - each degree of
+result obtained from the [equipartition theorem](https://en.wikipedia.org/wiki/Equipartition_theorem) - each degree of
 freedom for the velocity, which is squared in the expression for the
 kinetic energy, contributes $1/2 k_BT$ to the corresponding
-ensemble-average energy (kinetic energy in this case). As expected, this
-result is identical to what we get if we instead treat translational
-degrees of freedom using the quantum mechanics formulation (the particle
-in the box) and then take the classical limit of our solution - here, we
-effectively took the classical limit first when writing the energy of
-the system.
+ensemble-average energy (kinetic energy in this case). 
 
-Finally, let's note some features of the Maxwell-Boltzmann distribution.
-First, we recall that this is strictly only valid at equilibrium, again
-because we use the canonical partition function in the derivation.
-However, that's the only major assumption we make, other than that
-classical mechanics is valid (i.e. we are not moving at relativistic
-speeds and there are no strong quantum effects). So, an interesting
-feature of this distribution is that it is equally applicable to vapor-
-and condensed-phase systems since the potential energy and kinetic
-energy terms are separable. This means that if two systems are at the
+```{admonition} Say I am simulating the liquid and vapor phases of a system near the phase boundary (i.e., at the same temperature, where both phases are stable). Which system's particles have a higher velocity?
+<details><summary> Click for answer </summary>
+
+Because the two systems are at the
 same temperature, the distribution of their molecular velocities are the
 same, even though we may conventionally think that gas molecules move
 "faster" than liquid molecules. In reality, it's that liquid-phase
@@ -213,6 +242,9 @@ more rapidly, but the distribution of velocities remains the same as a
 corresponding vapor-phase system. Of course, typically we also associate
 gases with higher temperature phases, in which case our results do
 indeed show that their molecular speeds would be faster on average.
+
+</details>
+```
 
 ## Calculating temperature in a molecular simulation
 
@@ -247,28 +279,6 @@ and the instantaneous temperature is defined only to facilitate
 calculations (i.e. to maintain temperature via the thermostat described
 below).
 
-## Initializing particle velocities
-
-We can now return to the question of how to generate particle
-velocities. In principle, we want to generate velocities such that the
-system begins at a particular, well-defined temperature. The
-Maxwell-Boltzmann distribution then tells us how to do this.
-Specifically, for each particle, we can generate three random numbers
-drawn from the Maxwell-Boltzmann velocity distribution at the desired
-temperature $T$ to represent each of the three velocity components;
-again this is possible because each component is statistically
-independent.
-
-In practice, it is worth noting that a property of Gaussian functions is
-that if $X$ is normally distributed with a mean $\mu$ and variance
-$\sigma^2$, then $Y=aX$ is also normally distributed with mean $a\mu$
-and variance $a^2\sigma^2$. Thus, we only need a function that generates
-random numbers drawn from a Gaussian distribution with a mean of 0 and a
-variance of any number, and we can convert the results of that
-distribution to our chosen Maxwell-Boltzmann distribution by multiplying
-by an appropriate value of $a$. Matlab has a built-in function to do
-this, for example.
-
 ## Andersen thermostat
 
 We have now derived the Maxwell-Boltzmann distribution for particle
@@ -277,22 +287,39 @@ ensemble-average temperature to the ensemble-average kinetic energy as a
 means of *defining* the simulation temperature. However, we have yet to
 discuss how to actually maintain a well-defined simulation temperature
 so that our system samples the canonical ensemble. We will now discuss
-this by defining a simulation **thermostat**, or algorithm to conserve
-the system temperature.
+this by defining a simulation
+
+```{glossary}
+thermostat
+    in simulation, an algorithm to conserve the system temperature
+```
 
 First, you may immediately realize that if
 $T(t) = \sum_i^N \frac{m_i v_i(t)^2}{3k_B N}$, then we can enforce a
 constant temperature by just rescaling the velocities every time step.
 Velocity rescaling in principle is fine since it does not affect the
 relative positions of particles, and hence will not result in unphysical
-states (e.g. particles overlapping). However, the problem with this
+states (e.g. particles overlapping).
+
+```{admonition} What problems could you see with velocity scaling to maintain constant temperature?
+<details><summary>Click for answer</summary>
+The problem with this
 approach is that it would eliminate fluctuations in the kinetic energy
 and may not capture the correct Maxwell-Boltzmann distribution of
-particle velocities expected in the canonical ensemble. Instead, we will
-describe an approach called the **Andersen thermostat**. The basic idea
-of this thermostat is to model the exchange of heat with an external
-bath by assuming that particles stochastically collide with some
-particle in the external heat reservoir. In between these collisions,
+particle velocities expected in the canonical ensemble.
+</details>
+```
+
+Instead, we will
+describe an approach called the
+
+```{glossary}
+Andersen thermostat
+    A simulation thermostat which keeps constant temperature by assuming that particles
+    stochastically collide with some particle in the external heat reservoir.
+```
+
+In between these collisions,
 the system evolves at constant total energy; each collision essentially
 ensures that the system samples different possible constant system
 energies (i.e. different microcanonical ensembles) with the correct
@@ -364,5 +391,9 @@ molecular dynamics, unlike the basic MD algorithm which in principle is
 deterministic. Finally, it is important to recognize that the Andersen
 thermostat is just one simple approach for maintaining the system
 temprature, and is no longer commonly used in practice in favor of more
-advanced techniques (e.g. the Nose-Hoover thermostat) that are
-considered more reliable.
+advanced techniques (e.g. the [Nose-Hoover thermostat](https://en.wikipedia.org/wiki/Nos%C3%A9%E2%80%93Hoover_thermostat))
+that are considered more reliable.
+
+
+
+## [Link to Shared Notes](https://docs.google.com/document/d/1mkp67adnE72hvnT5ybh3vyHyFji5zZRj/edit?usp=drive_link&ouid=113272049620170441297&rtpof=true&sd=true)
