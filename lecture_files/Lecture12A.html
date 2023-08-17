@@ -588,7 +588,7 @@ first timestep of a simulation the position <span class="math notranslate nohigh
 is not known. This algorithm again starts from a Taylor expansion for
 the coordinates:</p>
 <div class="math notranslate nohighlight" id="equation-vv-eq">
-<span class="eqno">(24)<a class="headerlink" href="#equation-vv-eq" title="Permalink to this equation">#</a></span>\[\textbf{r}_i(t+\Delta t) &amp;\approx  \textbf{r}_i(t) + \textbf{v}_i(t) \Delta t + \frac{\textbf{f}_i(t)}{2m}\Delta t^2\]</div>
+<span class="eqno">(24)<a class="headerlink" href="#equation-vv-eq" title="Permalink to this equation">#</a></span>\[\textbf{r}_i(t+\Delta t) \approx  \textbf{r}_i(t) + \textbf{v}_i(t) \Delta t + \frac{\textbf{f}_i(t)}{2m}\Delta t^2\]</div>
 <p>Here we have ignored terms of third-order and higher in <span class="math notranslate nohighlight">\(\Delta t\)</span>.
 Unlike the Verlet algorithm, we now have an explicit step that
 calculates <span class="math notranslate nohighlight">\(\textbf{v}_i(t + \Delta t)\)</span>:</p>
