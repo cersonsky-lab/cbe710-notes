@@ -230,9 +230,7 @@ beginning and end of the chain ($s_1$ and $s_N$) only have a single
 neighbor. An example of a single microstate of a 1D Ising model is
 schematically drawn below.
 
-::: center
 ![image](1D_Ising-01.png){width="30%"}
-:::
 
 **(a)** Show that in the zero field limit ($H=0$), the partition
 function for the 1D Ising model is:

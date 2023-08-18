@@ -178,6 +178,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Lecture14B.html">Umbrella Sampling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Lecture15.html">Free energy perturbation and thermodynamic integration</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Lecture16.html">Postulates of thermodynamics</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Problem Sets</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../problems/ps_1/problem_set_1.html">Problem Set 1 (Due Tuesday, September 19, 2023)</a></li>
@@ -186,6 +190,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../notation.html">Additional Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references.html">Bibliography</a></li>
 </ul>
 
@@ -549,13 +554,16 @@ energy, <span class="math notranslate nohighlight">\(E\)</span>, between state <
 is thus called a <strong>state function</strong> because it is a property of each
 state and not the path between them. We can write the change in <span class="math notranslate nohighlight">\(E\)</span>
 between states <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(\Delta E\)</span>, for a system undergoing a change
-in volume as:</p>
-<div class="math notranslate nohighlight">
+in volume as the:</p>
+<dl class="glossary">
+<dt id="term-first-law-of-thermodynamics">first law of thermodynamics<a class="headerlink" href="#term-first-law-of-thermodynamics" title="Permalink to this term">#</a></dt><dd><div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
-\Delta E = E_B - E_A &amp;= Q + W \\
-&amp;= \int_A^B dQ - \int_A^B PdV
+    \Delta E = E_B - E_A &amp;= Q + W \\
+    &amp;= \int_A^B dQ - \int_A^B PdV
 \end{aligned}\end{split}\]</div>
-<p>This equation is the <strong>first law of thermodynamics</strong> and defines the
+</dd>
+</dl>
+<p>This equation is the <a class="reference internal" href="#term-first-law-of-thermodynamics"><span class="xref std std-term">first law of thermodynamics</span></a> and defines the
 conservation of energy. Note that since each path passes through
 intermediate states which may vary in pressure, <span class="math notranslate nohighlight">\(P\)</span> is within the
 integral above as its value will depend on the specific path taken. The
