@@ -9,21 +9,25 @@ parts:
         - file: lecture_files/Lecture3
         - file: lecture_files/Lecture4
         - file: lecture_files/Lecture5
-#         - file: lecture_files/Lecture6
-#         - file: lecture_files/Lecture7
-#         - file: lecture_files/Lecture8
-#   - caption: Molecular Simulation
-#     chapters:
-#         - file: lecture_files/Lecture9
-#         - file: lecture_files/Lecture10
-#         - file: lecture_files/Lecture11
-#         - file: lecture_files/Lecture12
-#         - file: lecture_files/Lecture13
-#         - file: lecture_files/Lecture14
-#   - caption: Thermodynamics
-#     chapters:
+        - file: lecture_files/Lecture6
+        - file: lecture_files/Lecture7
+        - file: lecture_files/Lecture8A
+        - file: lecture_files/Lecture8B
+        - file: lecture_files/Lecture9A
+  - caption: Molecular Simulation
+    chapters:
+        - file: lecture_files/Lecture9B
+        - file: lecture_files/Lecture10
+        - file: lecture_files/Lecture11
+        - file: lecture_files/Lecture12A
+        - file: lecture_files/Lecture12B
+        - file: lecture_files/Lecture13
+        - file: lecture_files/Lecture14A
+        - file: lecture_files/Lecture14B
 #         - file: lecture_files/Lecture15
 #         - file: lecture_files/Lecture16
+#   - caption: Thermodynamics
+#     chapters:
 #         - file: lecture_files/Lecture17
 #         - file: lecture_files/Lecture18
 #         - file: lecture_files/Lecture19
@@ -37,14 +41,11 @@ parts:
   - caption: Problem Sets 
     chapters:
         - file: problems/ps_1/problem_set_1
-#         - file: problems/ps_2/problem_set_2
-#         - file: problems/ps_3/problem_set_3
+        - file: problems/ps_2/problem_set_2
+        - file: problems/ps_3/problem_set_3
 #         - file: problems/ps_4/problem_set_4
 #         - file: problems/ps_5/problem_set_5
 #         - file: problems/ps_6/problem_set_6
-#  - caption: Problem Sets
-#    chapters:
-#       - file:
   - caption: Appendices
     chapters:
       - file: references
