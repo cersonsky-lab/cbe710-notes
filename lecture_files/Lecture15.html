@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Free energy perturbation &#8212; Advanced Thermodynamics for Chemical Engineers</title>
+    <title>Free energy perturbation and thermodynamic integration &#8212; Advanced Thermodynamics for Chemical Engineers</title>
   
   
   
@@ -176,7 +176,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Lecture13.html">Distribution of particles in states of matter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Lecture14A.html">The potential of mean force</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Lecture14B.html">Umbrella Sampling</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Free energy perturbation</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Free energy perturbation and thermodynamic integration</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Problem Sets</span></p>
 <ul class="nav bd-sidenav">
@@ -323,7 +323,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Free energy perturbation</h1>
+    <h1>Free energy perturbation and thermodynamic integration</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -333,12 +333,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-readings-for-the-enthusiast">Additional Readings for the Enthusiast</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-for-today-s-lecture">Goals for Today’s Lecture</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Free energy perturbation</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#free-energy-perturbation">Free energy perturbation</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determining-the-probabilities-of-energy-differences-between-systems">Determining the probabilities of energy differences between systems</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computing-the-free-energy-difference">Computing the free energy difference</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thermodynamic-integration">Thermodynamic integration</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#link-to-shared-notes">Link to Shared Notes</a></li>
 </ul>
             </nav>
@@ -351,16 +353,22 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="free-energy-perturbation">
-<h1>Free energy perturbation<a class="headerlink" href="#free-energy-perturbation" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="free-energy-perturbation-and-thermodynamic-integration">
+<h1>Free energy perturbation and thermodynamic integration<a class="headerlink" href="#free-energy-perturbation-and-thermodynamic-integration" title="Permalink to this headline">#</a></h1>
+<section id="additional-readings-for-the-enthusiast">
+<h2>Additional Readings for the Enthusiast<a class="headerlink" href="#additional-readings-for-the-enthusiast" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><span id="id1">Frenkel and Smit [<a class="reference internal" href="../references.html#id5" title="Daan Frenkel and Berend Smit. Understanding molecular simulation: from algorithms to applications. Number 1 in Computational science series. Academic Press, San Diego, 2nd ed edition, 2002. ISBN 978-0-12-267351-1. URL: https://www.eng.uc.edu/~beaucag/Classes/AdvancedMaterialsThermodynamics/Books/%5BComputational%20science%20(San%20Diego,%20Calif.)%5D%20Daan%20Frenkel_%20Berend%20Smit%20-%20Understanding%20molecular%20simulation%20_%20from%20algorithms%20to%20applications%20(2002,%20Academic%20Press%20)%20-%20libgen.lc.pdf.">2</a>]</span> Ch. 7.1</p></li>
+</ul>
+</section>
 <section id="goals-for-today-s-lecture">
 <h2>Goals for Today’s Lecture<a class="headerlink" href="#goals-for-today-s-lecture" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Determine the free energy difference for two systems with different potential energy functions</p></li>
 </ul>
 </section>
-<section id="id1">
-<h2>Free energy perturbation<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<section id="free-energy-perturbation">
+<h2>Free energy perturbation<a class="headerlink" href="#free-energy-perturbation" title="Permalink to this headline">#</a></h2>
 <p>So far, we have defined the potential of mean force as the change in the
 free energy of a system during a process in which particle coordinates
 follow some predefined reaction coordinate, and hence the overall system
@@ -494,6 +502,68 @@ absolute free energy of binding by defining a difference in free energy
 between the bound drug molecule and a drug molecule free in solution.</p>
 </section>
 </section>
+<section id="thermodynamic-integration">
+<h2>Thermodynamic integration<a class="headerlink" href="#thermodynamic-integration" title="Permalink to this headline">#</a></h2>
+<p>We will discuss one final
+method to close our discussion of molecular simulations. The final
+technique we will discuss is similar in spirit to free energy
+perturbation, in that it involves the calculation of the change in free
+energy between two systems with distinct potential energy functions. In
+the case of <a class="reference external" href="https://en.wikipedia.org/wiki/Thermodynamic_integration">thermodynamic integration</a>,
+we will explicitly define a
+linear interpolation between the potential energy functions for the two
+systems via a coupling parameter, <span class="math notranslate nohighlight">\(\lambda\)</span>. We write:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+E_\lambda(\textbf{r}^N) &amp;= (1-\lambda)E_0(\textbf{r}^N) + \lambda E_1(\textbf{r}^N) \\
+&amp;= E_0(\textbf{r}^N) + \lambda[E_1(\textbf{r}^N) - E_0(\textbf{r}^N]
+\end{aligned}\end{split}\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(E_0(\textbf{r}^N)\)</span> and <span class="math notranslate nohighlight">\(E_1(\textbf{r}^N)\)</span> refer to the two
+reference states, and the value of <span class="math notranslate nohighlight">\(\lambda\)</span> interpolates the system
+potential energy function between that of <span class="math notranslate nohighlight">\(E_0\)</span> for <span class="math notranslate nohighlight">\(\lambda = 0\)</span> and
+<span class="math notranslate nohighlight">\(E_1\)</span> for <span class="math notranslate nohighlight">\(\lambda = 1\)</span>. We can now write the derivative of the
+Helmholtz free energy with respect to <span class="math notranslate nohighlight">\(\lambda\)</span> as follows:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\left ( \frac{\partial F(\lambda)}{\partial \lambda}\right ) &amp;=-k_BT \frac{\partial }{\partial \lambda} \ln Z(\lambda) \\
+&amp;= -\frac{k_B T}{Z(\lambda)} \frac{\partial Z(\lambda)}{\partial \lambda} \\
+&amp;= -\frac{k_BT}{Z(\lambda)} \frac{\partial }{\partial \lambda} \int d\textbf{r}^N \exp \left [ -\beta E_\lambda(\textbf{r}^N) \right ] \\
+&amp;= \frac{\int d\textbf{r}^N \left ( \partial E_\lambda(\textbf{r}^N) / \partial \lambda \right ) \exp \left [ -\beta E_\lambda(\textbf{r}^N) \right ] }{Z(\lambda)} \\
+&amp;= \left \langle \frac{\partial E_\lambda(\textbf{r}^N)}{\partial \lambda}\right \rangle_\lambda
+\end{aligned}\end{split}\]</div>
+<p>This expression shows that we can relate the change in the free energy
+of the system with respect to the coupling parameter to an ensemble
+average of that derivative sampled from an ensemble at a particular
+value of <span class="math notranslate nohighlight">\(\lambda\)</span>, as indicated by the subscript in the angular
+brackets. We can then calculate the complete free energy difference
+between system 0 and 1 by:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+F(\lambda = 1) - F(\lambda = 0) = \int_{\lambda = 0}^{\lambda = 1} \left \langle \frac{\partial E_\lambda(\textbf{r}^N)}{\partial \lambda}\right \rangle_\lambda d\lambda
+\end{aligned}\]</div>
+<p>This final integral is why the technique is called <em>thermodynamic
+integration</em>. In practice, this integral is evaluated by choosing
+several discrete values of <span class="math notranslate nohighlight">\(\lambda\)</span>, sampling particle configurations
+according to the potential energy function <span class="math notranslate nohighlight">\(E_\lambda\)</span>, and for each
+sampled configuration calculating the energy using
+<span class="math notranslate nohighlight">\(E_{\lambda \pm d\lambda}\)</span> where <span class="math notranslate nohighlight">\(d\lambda\)</span> is some small interval. The
+derivative is approximated from a finite difference between these three
+values and used to calculate the ensemble average. The integral is then
+evaluated by quadrature. This approach does not necessarily require a
+linear coupling parameter, although in practice this is a simple method
+that is commonly used. It should be noted that the coupling parameter
+approach, and the division of the thermodynamic integral into multiple
+discrete values of <span class="math notranslate nohighlight">\(\lambda\)</span>, can also be used with free energy
+perturbation to improve convergence.</p>
+<p>Given the similarities to free energy perturbation, thermodynamic
+integration is often used for similar systems. It has been used
+extensively in calculating the phase behavior of self-assembled
+mixtures, in part because thermodynamic integration can be used to
+calculate the free energy between two phases that differ in their
+thermodynamic properties, such as temperature, via appropriate selection
+of a coupling parameter (as opposed to biasing their potential
+energies).</p>
+</section>
 <section id="link-to-shared-notes">
 <h2><a class="reference external" href="https://docs.google.com/document/d/1Tsa3jGWZJTySrWt0IZWdYpyh-ILLOko_/edit?usp=drive_link">Link to Shared Notes</a><a class="headerlink" href="#link-to-shared-notes" title="Permalink to this headline">#</a></h2>
 </section>
@@ -566,12 +636,14 @@ between the bound drug molecule and a drug molecule free in solution.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-readings-for-the-enthusiast">Additional Readings for the Enthusiast</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-for-today-s-lecture">Goals for Today’s Lecture</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Free energy perturbation</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#free-energy-perturbation">Free energy perturbation</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determining-the-probabilities-of-energy-differences-between-systems">Determining the probabilities of energy differences between systems</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computing-the-free-energy-difference">Computing the free energy difference</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thermodynamic-integration">Thermodynamic integration</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#link-to-shared-notes">Link to Shared Notes</a></li>
 </ul>
   </nav></div>
