@@ -17,54 +17,9 @@ Frenkel and Smit Ch. 7
 In the last lecture, we introduced the concept of the potential of mean
 force, or the change in the Helmholtz free energy of the system as a
 function of a reaction coordinate, $x(\mathbf{r}^N)$, that describes a
-process of interest. The value of the PMF for some specific value of the
-reaction coordinate, $x'$, is defined as:
+process of interest.
 
-$$F(x') = -k_BT \ln Z(x') = -k_B T \ln \left [ p(x')  \right ] - k_B T \ln Z$$
-
-Here, $Z$ is the partition function of the entire system, which is
-unknown, while $p(x')$ is the unbiased probability that the system
-obtains a configuration for which the reaction coordinate has a value
-$x'$. We can write this probability distribution as:
-
-$$\label{app_a_partition_function_eq}
-p(x') = \frac{\int d\mathbf{r}^N \exp \left [ -\beta  E(\mathbf{r}^N)\right  ]  \delta(x(\mathbf{r}^N) - x')}{Z}$$
-
-The PMF is a very useful quantity for calculating equilibrium free
-energy changes associated with processes that involve a well-defined
-reaction coordinate. To calculate the PMF, however, the probability
-associated with a specific value of the reaction coordinate, $p(x')$,
-must be determined, which might be challenging for a system where
-certain values of the reaction coordinate are observed with very low
-probability. As a result, we began to describe an approach called
-**umbrella sampling**, in which we apply some bias to the system
-potential energy function that enforces sampling of particular values of
-$x$. Then, we can relate the corresponding biased probability
-distribution to the unbiased probability distribution to compute the
-PMF. We specifically defined a weight function
-$w_i(x) \equiv w_i[x(\textbf{r}^N)]$ as the weight function that
-restrains the system near some value of the reaction coordinate $x_i$.
-Typically, this is defined as a harmonic potential of the form:
-
-$$\begin{aligned}
-w_i(x) = \frac{1}{2} k(x-x_i)^2
-\end{aligned}$$
-
-The potential energy function of the system is then given by
-$E(\mathbf{r}^N) + w_i(x)$, such that the weight function significantly
-increases the energy of any configurations with values of the reaction
-coordinate that differ significantly from the restrained value $x_i$. In
-other words, we add a fictitious force (a spring force) that is not
-meant to model a physical force in the system, but rather is added
-solely to force the system to sample a particular value of the reaction
-coordinate. Conceptually, the idea behind this is to effectively
-"flatten" the free energy landscape by forcing the system to explore a
-local region near $x_i$, thus allowing the sampling of values of $x_i$
-that would not be explored in an unbiased simulation.
-
-![image](figs/fig_14_4.png){width="100%"}
-
-We can now write the **biased** probability of finding the system at a
+Using {term}`umbrella sampling`, we showed how to write the **biased** probability of finding the system at a
 particular value of the reaction coordinate $x(\mathbf{r}^N) = x'$ for
 the $i$th simulation using the modified potential energy function:
 
@@ -100,7 +55,7 @@ Next, we can recognize that the delta function in the integral selects
 only those states for which $x(\mathbf{r}^N) = x'$ (unlike the previous
 ensemble average, where the integral includes all values of
 $\mathbf{r}^N$ and thus all values of $x(\mathbf{r}^N)$). As a result,
-the value of the weight function can be computed analytically and
+the value of the weight function can set to $e^{-\beta w_i(x')}$ and
 removed from the integral, yielding:
 
 $$\begin{aligned}
@@ -125,27 +80,39 @@ can then write the value of the PMF, $F_i(x')$ associated with $x'$
 based on the $i$th simulation (i.e., the simulation with a bias applied
 to $x_i$) as:
 
-$$\begin{aligned}
+```{math}
+:label: app_a_us_nofi_eq
+
 F_i(x') &= -k_BT \ln \left [ p(x') \right ] - k_BT \ln Z \\ 
 &= -k_BT \ln \left [   e^{\beta w_i(x')} p_{\textrm{bias}, i}(x') \langle e^{-\beta w_i(x)} \rangle \right ] - k_BT \ln Z\\
-&= -k_BT \ln \left [p_{\textrm{bias}, i}(x') \right ] - w_i(x') - k_BT \ln \langle \exp \left [ -\beta w_i(x) \right ] \rangle  - k_BT \ln Z \label{app_a_us_nofi_eq}
-\end{aligned}$$
+&= \textcolor{red}{-k_BT \ln \left [p_{\textrm{bias}, i}(x') \right ]} -
+\textcolor{orange}{w_i(x')}
+\textcolor{green}{-k_BT \ln \langle \exp \left [ -\beta w_i(x) \right ] \rangle}
+\textcolor{blue}{-k_BT \ln Z}
+```
 
-Let's consider each of these terms in turn. The first term,
-$-k_BT \ln \left [p_{\textrm{bias}, i}(x') \right ]$, can be estimated
+Let's consider each of these terms in turn.
+
+The first term,
+$\textcolor{red}{-k_BT \ln \left [p_{\textrm{bias}, i}(x') \right ]}$, can be estimated
 directly from the $i$th biased molecular simulation for which the weight
 function will restrain the simulation to sample configurations with
 $x(\mathbf{r}^N) \approx x_i'$, allowing $p_{\textrm{bias}, i}(x')$ to
 be calculated even if $x'$ is normally not sampled in an unbiased
-simulation. The second term, $w_i(x')$, is calculated analytically since
-the expression for the weight function is specified. The fourth term,
-$-k_BT \ln Z$, is a constant that does not depend on $x'$ and can be
-eliminated by only consider differences in the PMF. Finally, the third
-term, $- k_BT \ln \langle \exp \left [ -\beta w_i(x) \right ] \rangle$
+simulation.
+The second term, $\textcolor{orange}{w_i(x')}$, is calculated analytically since
+the expression for the weight function is specified.
+The fourth term,
+$\textcolor{blue}{-k_BT \ln Z}$, is a constant that does not depend on $x'$ and can be
+eliminated by only consider differences in the PMF.
+The third
+term, $\textcolor{green}{- k_BT \ln \langle \exp \left [ -\beta w_i(x) \right ] \rangle}$
 is the ensemble average of the exponential weight function for $x'$
 sampled from the unbiased ensemble. As we will show below, this term is
 equal to the free energy cost associated with introducing the weight
-function. We can define this term as $K_i$ to write our final expression
+function.
+
+We can define this term as $\textcolor{green}{K_i=- k_BT \ln \langle \exp \left [ -\beta w_i(x) \right ] \rangle}$ to write our final expression
 as:
 
 $$\label{app_a_pmf_final_eq}
@@ -174,7 +141,7 @@ that the harmonic weight function must allow the system to sample
 configurations slightly different from $x_i$ to ensure that $x'$ can be
 sampled in multiple different biased simulations.
 
-![image](figs/fig_15_1.png){width="100%"}
+![image](figs/fig_15_1-01.png)
 
 So, to recap: umbrella sampling allows us to calculate the PMF (i.e. the
 change in the free energy) associated with any arbitrary process by

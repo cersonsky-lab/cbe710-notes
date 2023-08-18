@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Problem Set 1 (Due Tuesday, September 19, 2023)" href="../problems/ps_1/problem_set_1.html" />
-    <link rel="prev" title="The potential of mean force" href="Lecture14.html" />
+    <link rel="prev" title="Distribution of particles in states of matter" href="Lecture13.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -174,7 +174,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Lecture12A.html">Molecular dynamics simulations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Lecture12B.html">Temperature and velocities in MD</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Lecture13.html">Distribution of particles in states of matter</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Lecture14.html">The potential of mean force</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Free energy perturbation</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Problem Sets</span></p>
@@ -366,49 +365,8 @@ document.write(`
 <p>In the last lecture, we introduced the concept of the potential of mean
 force, or the change in the Helmholtz free energy of the system as a
 function of a reaction coordinate, <span class="math notranslate nohighlight">\(x(\mathbf{r}^N)\)</span>, that describes a
-process of interest. The value of the PMF for some specific value of the
-reaction coordinate, <span class="math notranslate nohighlight">\(x'\)</span>, is defined as:</p>
-<div class="math notranslate nohighlight">
-\[F(x') = -k_BT \ln Z(x') = -k_B T \ln \left [ p(x')  \right ] - k_B T \ln Z\]</div>
-<p>Here, <span class="math notranslate nohighlight">\(Z\)</span> is the partition function of the entire system, which is
-unknown, while <span class="math notranslate nohighlight">\(p(x')\)</span> is the unbiased probability that the system
-obtains a configuration for which the reaction coordinate has a value
-<span class="math notranslate nohighlight">\(x'\)</span>. We can write this probability distribution as:</p>
-<div class="math notranslate nohighlight">
-\[\label{app_a_partition_function_eq}
-p(x') = \frac{\int d\mathbf{r}^N \exp \left [ -\beta  E(\mathbf{r}^N)\right  ]  \delta(x(\mathbf{r}^N) - x')}{Z}\]</div>
-<p>The PMF is a very useful quantity for calculating equilibrium free
-energy changes associated with processes that involve a well-defined
-reaction coordinate. To calculate the PMF, however, the probability
-associated with a specific value of the reaction coordinate, <span class="math notranslate nohighlight">\(p(x')\)</span>,
-must be determined, which might be challenging for a system where
-certain values of the reaction coordinate are observed with very low
-probability. As a result, we began to describe an approach called
-<strong>umbrella sampling</strong>, in which we apply some bias to the system
-potential energy function that enforces sampling of particular values of
-<span class="math notranslate nohighlight">\(x\)</span>. Then, we can relate the corresponding biased probability
-distribution to the unbiased probability distribution to compute the
-PMF. We specifically defined a weight function
-<span class="math notranslate nohighlight">\(w_i(x) \equiv w_i[x(\textbf{r}^N)]\)</span> as the weight function that
-restrains the system near some value of the reaction coordinate <span class="math notranslate nohighlight">\(x_i\)</span>.
-Typically, this is defined as a harmonic potential of the form:</p>
-<div class="math notranslate nohighlight">
-\[\begin{aligned}
-w_i(x) = \frac{1}{2} k(x-x_i)^2
-\end{aligned}\]</div>
-<p>The potential energy function of the system is then given by
-<span class="math notranslate nohighlight">\(E(\mathbf{r}^N) + w_i(x)\)</span>, such that the weight function significantly
-increases the energy of any configurations with values of the reaction
-coordinate that differ significantly from the restrained value <span class="math notranslate nohighlight">\(x_i\)</span>. In
-other words, we add a fictitious force (a spring force) that is not
-meant to model a physical force in the system, but rather is added
-solely to force the system to sample a particular value of the reaction
-coordinate. Conceptually, the idea behind this is to effectively
-“flatten” the free energy landscape by forcing the system to explore a
-local region near <span class="math notranslate nohighlight">\(x_i\)</span>, thus allowing the sampling of values of <span class="math notranslate nohighlight">\(x_i\)</span>
-that would not be explored in an unbiased simulation.</p>
-<p><img alt="image" src="../_images/fig_14_4.png" />{width=”100%”}</p>
-<p>We can now write the <strong>biased</strong> probability of finding the system at a
+process of interest.</p>
+<p>Using <span class="xref std std-term">umbrella sampling</span>, we showed how to write the <strong>biased</strong> probability of finding the system at a
 particular value of the reaction coordinate <span class="math notranslate nohighlight">\(x(\mathbf{r}^N) = x'\)</span> for
 the <span class="math notranslate nohighlight">\(i\)</span>th simulation using the modified potential energy function:</p>
 <div class="math notranslate nohighlight">
@@ -441,7 +399,7 @@ p_{\textrm{bias},i}(x') &amp;= \frac{\int d \mathbf{r}^N e^{ -\beta [E(\mathbf{r
 only those states for which <span class="math notranslate nohighlight">\(x(\mathbf{r}^N) = x'\)</span> (unlike the previous
 ensemble average, where the integral includes all values of
 <span class="math notranslate nohighlight">\(\mathbf{r}^N\)</span> and thus all values of <span class="math notranslate nohighlight">\(x(\mathbf{r}^N)\)</span>). As a result,
-the value of the weight function can be computed analytically and
+the value of the weight function can set to <span class="math notranslate nohighlight">\(e^{-\beta w_i(x')}\)</span> and
 removed from the integral, yielding:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
@@ -463,27 +421,33 @@ the <span class="math notranslate nohighlight">\(i\)</span>th biased simulation 
 can then write the value of the PMF, <span class="math notranslate nohighlight">\(F_i(x')\)</span> associated with <span class="math notranslate nohighlight">\(x'\)</span>
 based on the <span class="math notranslate nohighlight">\(i\)</span>th simulation (i.e., the simulation with a bias applied
 to <span class="math notranslate nohighlight">\(x_i\)</span>) as:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-F_i(x') &amp;= -k_BT \ln \left [ p(x') \right ] - k_BT \ln Z \\ 
+<div class="math notranslate nohighlight" id="equation-app-a-us-nofi-eq">
+<span class="eqno">(25)<a class="headerlink" href="#equation-app-a-us-nofi-eq" title="Permalink to this equation">#</a></span>\[\begin{split}F_i(x') &amp;= -k_BT \ln \left [ p(x') \right ] - k_BT \ln Z \\ 
 &amp;= -k_BT \ln \left [   e^{\beta w_i(x')} p_{\textrm{bias}, i}(x') \langle e^{-\beta w_i(x)} \rangle \right ] - k_BT \ln Z\\
-&amp;= -k_BT \ln \left [p_{\textrm{bias}, i}(x') \right ] - w_i(x') - k_BT \ln \langle \exp \left [ -\beta w_i(x) \right ] \rangle  - k_BT \ln Z \label{app_a_us_nofi_eq}
-\end{aligned}\end{split}\]</div>
-<p>Let’s consider each of these terms in turn. The first term,
-<span class="math notranslate nohighlight">\(-k_BT \ln \left [p_{\textrm{bias}, i}(x') \right ]\)</span>, can be estimated
+&amp;= \textcolor{red}{-k_BT \ln \left [p_{\textrm{bias}, i}(x') \right ]} -
+\textcolor{orange}{w_i(x')}
+\textcolor{green}{-k_BT \ln \langle \exp \left [ -\beta w_i(x) \right ] \rangle}
+\textcolor{blue}{-k_BT \ln Z}\end{split}\]</div>
+<p>Let’s consider each of these terms in turn.</p>
+<p>The first term,
+<span class="math notranslate nohighlight">\(\textcolor{red}{-k_BT \ln \left [p_{\textrm{bias}, i}(x') \right ]}\)</span>, can be estimated
 directly from the <span class="math notranslate nohighlight">\(i\)</span>th biased molecular simulation for which the weight
 function will restrain the simulation to sample configurations with
 <span class="math notranslate nohighlight">\(x(\mathbf{r}^N) \approx x_i'\)</span>, allowing <span class="math notranslate nohighlight">\(p_{\textrm{bias}, i}(x')\)</span> to
 be calculated even if <span class="math notranslate nohighlight">\(x'\)</span> is normally not sampled in an unbiased
-simulation. The second term, <span class="math notranslate nohighlight">\(w_i(x')\)</span>, is calculated analytically since
-the expression for the weight function is specified. The fourth term,
-<span class="math notranslate nohighlight">\(-k_BT \ln Z\)</span>, is a constant that does not depend on <span class="math notranslate nohighlight">\(x'\)</span> and can be
-eliminated by only consider differences in the PMF. Finally, the third
-term, <span class="math notranslate nohighlight">\(- k_BT \ln \langle \exp \left [ -\beta w_i(x) \right ] \rangle\)</span>
+simulation.
+The second term, <span class="math notranslate nohighlight">\(\textcolor{orange}{w_i(x')}\)</span>, is calculated analytically since
+the expression for the weight function is specified.
+The fourth term,
+<span class="math notranslate nohighlight">\(\textcolor{blue}{-k_BT \ln Z}\)</span>, is a constant that does not depend on <span class="math notranslate nohighlight">\(x'\)</span> and can be
+eliminated by only consider differences in the PMF.
+The third
+term, <span class="math notranslate nohighlight">\(\textcolor{green}{- k_BT \ln \langle \exp \left [ -\beta w_i(x) \right ] \rangle}\)</span>
 is the ensemble average of the exponential weight function for <span class="math notranslate nohighlight">\(x'\)</span>
 sampled from the unbiased ensemble. As we will show below, this term is
 equal to the free energy cost associated with introducing the weight
-function. We can define this term as <span class="math notranslate nohighlight">\(K_i\)</span> to write our final expression
+function.</p>
+<p>We can define this term as <span class="math notranslate nohighlight">\(\textcolor{green}{K_i=- k_BT \ln \langle \exp \left [ -\beta w_i(x) \right ] \rangle}\)</span> to write our final expression
 as:</p>
 <div class="math notranslate nohighlight">
 \[\label{app_a_pmf_final_eq}
@@ -510,7 +474,7 @@ non-negligible value of <span class="math notranslate nohighlight">\(p_{\textrm{
 that the harmonic weight function must allow the system to sample
 configurations slightly different from <span class="math notranslate nohighlight">\(x_i\)</span> to ensure that <span class="math notranslate nohighlight">\(x'\)</span> can be
 sampled in multiple different biased simulations.</p>
-<p><img alt="image" src="../_images/fig_15_1.png" />{width=”100%”}</p>
+<p><img alt="image" src="../_images/fig_15_1-01.png" /></p>
 <p>So, to recap: umbrella sampling allows us to calculate the PMF (i.e. the
 change in the free energy) associated with any arbitrary process by
 sampling configurations associated with different values of a reaction
@@ -688,12 +652,12 @@ between the bound drug molecule and a drug molecule free in solution.</p>
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Lecture14.html"
+       href="Lecture13.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">The potential of mean force</p>
+        <p class="prev-next-title">Distribution of particles in states of matter</p>
       </div>
     </a>
     <a class="right-next"
