@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Free energy perturbation &#8212; Advanced Thermodynamics for Chemical Engineers</title>
+    <title>Umbrella Sampling &#8212; Advanced Thermodynamics for Chemical Engineers</title>
   
   
   
@@ -63,11 +63,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture_files/Lecture15';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture_files/Lecture14B';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Problem Set 1 (Due Tuesday, September 19, 2023)" href="../problems/ps_1/problem_set_1.html" />
-    <link rel="prev" title="Distribution of particles in states of matter" href="Lecture13.html" />
+    <link rel="prev" title="The potential of mean force" href="Lecture14A.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -174,7 +174,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Lecture12A.html">Molecular dynamics simulations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Lecture12B.html">Temperature and velocities in MD</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Lecture13.html">Distribution of particles in states of matter</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Free energy perturbation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture14A.html">The potential of mean force</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Umbrella Sampling</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Problem Sets</span></p>
 <ul class="nav bd-sidenav">
@@ -239,7 +240,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/lecture_files/Lecture15.md" target="_blank"
+      <li><a href="../_sources/lecture_files/Lecture14B.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -321,7 +322,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Free energy perturbation</h1>
+    <h1>Umbrella Sampling</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -331,10 +332,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recommended-textbooks">Recommended textbooks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topics-in-this-lecture">Topics in this lecture</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#umbrella-sampling">Umbrella sampling</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Free energy perturbation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-readings-for-the-enthusiast">Additional Readings for the Enthusiast</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-for-today-s-lecture">Goals for Today’s Lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Umbrella sampling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relating-the-biased-probability-distribution-to-the-unbiased-one">Relating the biased probability distribution to the unbiased one</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#link-to-shared-notes">Link to Shared Notes</a></li>
 </ul>
             </nav>
         </div>
@@ -346,27 +348,103 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="free-energy-perturbation">
-<h1>Free energy perturbation<a class="headerlink" href="#free-energy-perturbation" title="Permalink to this headline">#</a></h1>
-<section id="recommended-textbooks">
-<h2>Recommended textbooks<a class="headerlink" href="#recommended-textbooks" title="Permalink to this headline">#</a></h2>
-<p>Frenkel and Smit Ch. 7</p>
-</section>
-<section id="topics-in-this-lecture">
-<h2>Topics in this lecture<a class="headerlink" href="#topics-in-this-lecture" title="Permalink to this headline">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="umbrella-sampling">
+<h1>Umbrella Sampling<a class="headerlink" href="#umbrella-sampling" title="Permalink to this headline">#</a></h1>
+<section id="additional-readings-for-the-enthusiast">
+<h2>Additional Readings for the Enthusiast<a class="headerlink" href="#additional-readings-for-the-enthusiast" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>Umbrella sampling</p></li>
-<li><p>Free energy perturbation</p></li>
-<li><p>Thermodynamic integration</p></li>
+<li><p><span id="id1">Frenkel and Smit [<a class="reference internal" href="../references.html#id5" title="Daan Frenkel and Berend Smit. Understanding molecular simulation: from algorithms to applications. Number 1 in Computational science series. Academic Press, San Diego, 2nd ed edition, 2002. ISBN 978-0-12-267351-1. URL: https://www.eng.uc.edu/~beaucag/Classes/AdvancedMaterialsThermodynamics/Books/%5BComputational%20science%20(San%20Diego,%20Calif.)%5D%20Daan%20Frenkel_%20Berend%20Smit%20-%20Understanding%20molecular%20simulation%20_%20from%20algorithms%20to%20applications%20(2002,%20Academic%20Press%20)%20-%20libgen.lc.pdf.">2</a>]</span>, Ch. 7.4</p></li>
 </ul>
 </section>
-<section id="umbrella-sampling">
-<h2>Umbrella sampling<a class="headerlink" href="#umbrella-sampling" title="Permalink to this headline">#</a></h2>
-<p>In the last lecture, we introduced the concept of the potential of mean
-force, or the change in the Helmholtz free energy of the system as a
-function of a reaction coordinate, <span class="math notranslate nohighlight">\(x(\mathbf{r}^N)\)</span>, that describes a
-process of interest.</p>
-<p>Using <span class="xref std std-term">umbrella sampling</span>, we showed how to write the <strong>biased</strong> probability of finding the system at a
+<section id="goals-for-today-s-lecture">
+<h2>Goals for Today’s Lecture<a class="headerlink" href="#goals-for-today-s-lecture" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Understand how to bias simulations towards coordinates of interest</p></li>
+<li><p>Relate biased probability distributions to unbiased ones</p></li>
+</ul>
+</section>
+<section id="id2">
+<h2><a class="reference external" href="https://en.wikipedia.org/wiki/Umbrella_sampling">Umbrella sampling</a><a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<p>The PMF is a very useful quantity for calculating equilibrium free
+energy changes associated with processes that involve a well-defined
+reaction coordinate. To calculate the PMF, however, the probability
+associated with a specific value of the reaction coordinate, <span class="math notranslate nohighlight">\(p(x')\)</span>,
+must be determined.</p>
+<p>In principle, this probability distribution could be
+calculated by simply generating system configurations within the entire
+accessible phase space (using either standard molecular dynamics with
+correct thermostatting or via Monte Carlo sampling, for example) and
+calculating how frequently the desired values of the reaction coordinate
+are observed.</p>
+<div class="admonition-what-are-some-drawbacks-of-stochastically-sampling-the-phase-space-to-analyze-reaction-coordinates admonition">
+<p class="admonition-title">What are some drawbacks of stochastically sampling the phase space to analyze reaction coordinates?</p>
+<details><summary> Click for answer </summary>
+<ol class="arabic simple">
+<li><p>This brute force approach is very unlikely to
+sample states efficiently, as the vast majority of simulation time would
+be spent computing configurations for the high-probability values of
+<span class="math notranslate nohighlight">\(x'\)</span>.</p></li>
+<li><p>If any value of the reaction coordinate exists in a region
+of phase space that is nearly inaccessible (<em>i.e.</em>, the reaction
+coordinate sits at the top of a free energy barrier), then it is likely
+that the value may never be determined via a brute force approach, and
+therefore the free energy cannot be accurately sampled.</p></li>
+</ol>
+<p><img alt="image" src="../_images/fig_14_2-01.png" /></p>
+</details>
+</div>
+<p>One solution to overcome the sampling problem and facilitate the
+calculation of the probability densities of interest (and thus the PMF)
+is to apply a <strong>bias</strong> to the system dynamics - that is, apply
+unphysical forces that will enforce sampling of desired values of
+reaction coordinate. In one popular technique, known as</p>
+<dl class="glossary simple">
+<dt id="term-umbrella-sampling">umbrella sampling<a class="headerlink" href="#term-umbrella-sampling" title="Permalink to this term">#</a></dt><dd><p>an advanced sampling technique where a set of weight functions are defined and added to the
+system potential energy function.</p>
+</dd>
+</dl>
+<p>Consider the case where we want to sample a system near <span class="math notranslate nohighlight">\(x\)</span>. For an
+independent simulation <span class="math notranslate nohighlight">\(i\)</span>, we define
+<span class="math notranslate nohighlight">\(w_i(x) \equiv w_i[x(\mathbf{r}^N)]\)</span> as the weight function about x;
+conventionally, the weight function is harmonic
+(although other functional forms are reasonable) such that :</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+w_i(x) &amp;= \frac{1}{2} k (x - x_i)^2
+\end{aligned}\]</div>
+<p>where <span class="math notranslate nohighlight">\(k\)</span> is the spring constant and <span class="math notranslate nohighlight">\(x_i\)</span> is the value about which the
+system is restrained. The potential energy function of the system is
+then given by <span class="math notranslate nohighlight">\(E(\mathbf{r}^N) + w_i(x)\)</span>, such that the weight function
+significantly increases the energy of any configurations with values of
+the reaction coordinate that differ significantly from the restrained
+value <span class="math notranslate nohighlight">\(x_i\)</span>.</p>
+<p>In other words, we effectively add a fictitious force (a
+spring force) that is not meant to model a physical force in the system,
+but rather is added solely to force the system to sample a particular
+value of the reaction coordinate. Conceptually, the idea behind this is
+to effectively “flatten” the free energy landscape by forcing the system
+to explore a local region near <span class="math notranslate nohighlight">\(x_i\)</span>, thus allowing the sampling of
+values of <span class="math notranslate nohighlight">\(x_i\)</span> that would not be explored in an unbiased simulation.</p>
+<p>We can now write the <strong>biased</strong> probability of finding the system at a
+particular value of the reaction coordinate <span class="math notranslate nohighlight">\(x(\mathbf{r}^n) = x'\)</span> for
+the <span class="math notranslate nohighlight">\(i\)</span>th simulation using the modified potential energy function:</p>
+<div class="math notranslate nohighlight">
+\[p_{\textrm{bias},i}(x') = \frac{\int d \mathbf{r}^N e^{ -\beta [E(\mathbf{r}^N)+w_i(x)]} \delta(x(\mathbf{r}^N) - x')}{\int d \mathbf{r}^N  e^{ -\beta [E(\mathbf{r}^N)+w_i(x)]} }\]</div>
+<p>The delta function selects only values of <span class="math notranslate nohighlight">\(x(\mathbf{r}^N) = x'\)</span>, so if
+<span class="math notranslate nohighlight">\(x' \approx x_i\)</span>, then <span class="math notranslate nohighlight">\(p_{\textrm{bias},i}(x')\)</span> will be large;
+otherwise, the weight function will lead to large values of the total
+energy and thus negligible values of <span class="math notranslate nohighlight">\(p_{\textrm{bias},i}(x')\)</span>. We can
+sample this probability distribution directly in a simulation by adding
+the weight function to the system dynamics (<em>i.e.</em>, adding a spring
+force to relevant particles) to increase sampling of the value <span class="math notranslate nohighlight">\(x'=x_i\)</span>.
+However, we need to sample the <strong>unbiased</strong> probability to calculate the
+potential of mean force, so we need to relate <span class="math notranslate nohighlight">\(p_{\textrm{bias},i}(x')\)</span>
+to <span class="math notranslate nohighlight">\(p(x')\)</span>. Relating the biased probability distribution to the unbiased
+probability distribution will be the focus of the <span class="xref myst">next lecture</span>.</p>
+</section>
+<section id="relating-the-biased-probability-distribution-to-the-unbiased-one">
+<h2>Relating the biased probability distribution to the unbiased one<a class="headerlink" href="#relating-the-biased-probability-distribution-to-the-unbiased-one" title="Permalink to this headline">#</a></h2>
+<p>We showed how to write the <strong>biased</strong> probability of finding the system at a
 particular value of the reaction coordinate <span class="math notranslate nohighlight">\(x(\mathbf{r}^N) = x'\)</span> for
 the <span class="math notranslate nohighlight">\(i\)</span>th simulation using the modified potential energy function:</p>
 <div class="math notranslate nohighlight">
@@ -422,7 +500,7 @@ can then write the value of the PMF, <span class="math notranslate nohighlight">
 based on the <span class="math notranslate nohighlight">\(i\)</span>th simulation (i.e., the simulation with a bias applied
 to <span class="math notranslate nohighlight">\(x_i\)</span>) as:</p>
 <div class="math notranslate nohighlight" id="equation-app-a-us-nofi-eq">
-<span class="eqno">(25)<a class="headerlink" href="#equation-app-a-us-nofi-eq" title="Permalink to this equation">#</a></span>\[\begin{split}F_i(x') &amp;= -k_BT \ln \left [ p(x') \right ] - k_BT \ln Z \\ 
+<span class="eqno">(27)<a class="headerlink" href="#equation-app-a-us-nofi-eq" title="Permalink to this equation">#</a></span>\[\begin{split}F_i(x') &amp;= -k_BT \ln \left [ p(x') \right ] - k_BT \ln Z \\ 
 &amp;= -k_BT \ln \left [   e^{\beta w_i(x')} p_{\textrm{bias}, i}(x') \langle e^{-\beta w_i(x)} \rangle \right ] - k_BT \ln Z\\
 &amp;= \textcolor{red}{-k_BT \ln \left [p_{\textrm{bias}, i}(x') \right ]} -
 \textcolor{orange}{w_i(x')}
@@ -499,124 +577,8 @@ performing multiple independent simulations in which the molecule of
 interest is restrained to each value of the reaction coordinate using a
 harmonic spring.</p>
 </section>
-<section id="id1">
-<h2>Free energy perturbation<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
-<p>So far, we have defined the potential of mean force as the change in the
-free energy of a system during a process in which particle coordinates
-follow some predefined reaction coordinate, and hence the overall system
-potential energy function is unchanged. Computing the potential of mean
-force associated with different regions of phase space is useful for
-calculating the magnitude of energy barriers and identifying local
-minima. However, we might also ask how to calculate the change in free
-energy between two systems with different potential energy functions
-entirely. Finding an algorithm to accomplish this would also be useful
-in applications other than calculating a PMF along a reaction
-coordinate, such as calculating the free energy change associated with
-mutating the chemical identities of molecules in a simulation. We can
-compute the free energy difference between two systems with different
-partition functions using a technique called <strong>free energy
-perturbation</strong>.</p>
-<p>For this calculation, we will first define two partition functions,
-<span class="math notranslate nohighlight">\(Z_0\)</span> and <span class="math notranslate nohighlight">\(Z_1\)</span>, corresponding to two different systems with potential
-energy functions <span class="math notranslate nohighlight">\(E_0(\mathbf{r}^N)\)</span> and <span class="math notranslate nohighlight">\(E_1(\mathbf{r}^N)\)</span>. Note that
-while the potential energy functions are different, we assume that the
-set of possible values of <span class="math notranslate nohighlight">\(\mathbf{r}^N\)</span> are the same (<em>i.e.</em>, both
-systems access the same phase space). For example, one could imagine
-computing the free energy difference between an ideal gas and a
-non-ideal gas with the same number of particles, with the interactions
-associated with the non-ideal gas leading to a different potential
-energy function. The Helmholtz free energy change for transforming from
-system 0 to 1 is then:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-\Delta F &amp;= F_1 - F_0  \\ 
-&amp;= -k_BT \ln Z_1/Z_0 \\
-&amp;= -k_BT \ln \left [ \frac{\int d\mathbf{r}^N \exp \left [ -\beta  E_1(\mathbf{r}^N)\right ]}{\int d\mathbf{r}^N \exp \left [ -\beta  E_0(\mathbf{r}^N)\right ]} \right ]
-\end{aligned}\end{split}\]</div>
-<p>Next, we define <span class="math notranslate nohighlight">\(p_1(\Delta E')\)</span> as the probability distribution for the
-energy difference
-<span class="math notranslate nohighlight">\(\Delta E(\textbf{r}^N) = E_1(\mathbf{r}^N) - E_0(\mathbf{r}^N)\)</span> with
-configurations sampled using <span class="math notranslate nohighlight">\(E_1\)</span>. In other words, we can imagine
-generating a large number of configurations using the potential energy
-function for system 1, calculating the energy of those configurations
-according to both <span class="math notranslate nohighlight">\(E_1\)</span> and <span class="math notranslate nohighlight">\(E_0\)</span>, then finding the probability of
-identifying a particular energy difference <span class="math notranslate nohighlight">\(\Delta E'\)</span>. Similarly,
-<span class="math notranslate nohighlight">\(p_0(\Delta E')\)</span> is the probability density for the same energy
-difference with configurations sampled using <span class="math notranslate nohighlight">\(E_0\)</span>. We then write:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-p_1(\Delta E') &amp;= \frac{\int d\mathbf{r}^N \exp \left [ -\beta E_1(\mathbf{r}^N) \right ] \delta(\Delta E(\textbf{r}^N) - \Delta E')}{Z_1}  \\
-&amp;= \frac{\int d\mathbf{r}^N \exp \left [ -\beta (E_0(\mathbf{r}^N) + \Delta E') \right ] \delta(\Delta E(\textbf{r}^N) - \Delta E')}{Z_1}  \\
-&amp;= \frac{\int d\mathbf{r}^N \exp \left [ -\beta E_0(\mathbf{r}^N) \right ] \exp \left [ -\beta \Delta E' \right ] \delta(\Delta E(\textbf{r}^N) - \Delta E')}{Z_1}
-\end{aligned}\end{split}\]</div>
-<p>Here, <span class="math notranslate nohighlight">\(\Delta E'\)</span> is a fixed value that is not a function of
-<span class="math notranslate nohighlight">\(\mathbf{r}^N\)</span> and the delta function eliminates all other possible
-values of <span class="math notranslate nohighlight">\(\Delta E(\textbf{r}^N)\)</span>, so in the second line we can define
-<span class="math notranslate nohighlight">\(E_1(\textbf{r}^N) = E_0(\textbf{r}^N) + \Delta E'\)</span> and in the third
-line <span class="math notranslate nohighlight">\(\exp \left [ -\beta \Delta E' \right ]\)</span> can be removed from the
-integral. We can now multiply the numerator and demoninator by <span class="math notranslate nohighlight">\(Z_0\)</span> to
-obtain:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-p_1(\Delta E') &amp;= \exp \left [ -\beta \Delta E' \right ] \frac{\int d\mathbf{r}^N \exp \left [ -\beta E_0(\mathbf{r}^N) \right ]  \delta(\Delta E(\textbf{r}^N) - \Delta E')}{Z_1}   \\
-&amp;= \frac{Z_0}{Z_1} \exp \left [ -\beta \Delta E' \right ] \frac{\int d\mathbf{r}^N \exp \left [ -\beta E_0(\mathbf{r}^N) \right ]  \delta(\Delta E(\textbf{r}^N) - \Delta E')}{Z_0}   \\
-&amp;= \frac{Z_0}{Z_1} \exp \left [ -\beta \Delta E' \right ] p_0(\Delta E')
-\end{aligned}\end{split}\]</div>
-<p>We can take the log of both sides to estimate the free energy difference
-using <span class="math notranslate nohighlight">\(\Delta F = -kT \ln Z_1/Z_0\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-\ln p_1(\Delta E') &amp;= \ln \left [ Z_0 / Z_1 \right ] - \beta \Delta E' + \ln p_0 (\Delta E')   \\
-&amp;= \beta \Delta F - \beta \Delta E' + \ln p_0 (\Delta E') \\
-&amp;= \beta (\Delta F - \Delta E') + \ln p_0 (\Delta E') \\
-\therefore p_1(\Delta E')&amp;= p_0 (\Delta E') \exp \left [\beta \left ( \Delta F - \Delta E'\right )\right ]
-\end{aligned}\end{split}\]</div>
-<p>From this equation alone we can see that calculating the two probability
-densities from simulations in both ensembles would allow for the
-calculation of the free energy change <span class="math notranslate nohighlight">\(\Delta F\)</span>. Finally, we can
-integrate both sides over all possible values of <span class="math notranslate nohighlight">\(\Delta E'\)</span> to yield a
-more concise expression:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-\int_{-\infty}^{\infty} d\Delta E' p_1(\Delta E') &amp;= \exp (\beta \Delta F)\int_{-\infty}^{\infty} d\Delta E' p_0(\Delta E') \exp (-\beta \Delta E')\\
-1 &amp;= \exp (\beta \Delta F) \langle \exp \left [ - \beta \Delta E \right ] \rangle_0\\
-\exp \left [ -\beta \Delta F \right ]  &amp;= \langle \exp \left [ - \beta \Delta E \right ] \rangle_0 \label{app_a_fep_eq}
-\end{aligned}\end{split}\]</div>
-<p>Here, we integrate the probability distribution for <span class="math notranslate nohighlight">\(\Delta E'\)</span> over all
-possible energy differences sampled in system 1; since the probability
-distributions is normalized, this just equals 1. The value <span class="math notranslate nohighlight">\(\Delta F\)</span> is
-independent of <span class="math notranslate nohighlight">\(\Delta E'\)</span> so it can be removed from the integral on the
-right hand side, which then is equal to the ensemble average value of
-the exponential of <span class="math notranslate nohighlight">\(\Delta E'\)</span>, yielding the final expression. Note
-again that this ensemble average is sampled using the energy function of
-system 0.</p>
-<p>The final free energy perturbation expression relates the free energy
-change for transforming from system 0 to system 1 to the ensemble
-average of the energy change for this transformation for configurations
-sampled from <span class="math notranslate nohighlight">\(Z_0\)</span>. Free energy perturbation can be used directly in
-molecular simulations by defining system 0 and 1, generating
-configurations according to the potential energy function of system 0,
-calculating the energy of the same configuration calculated using both
-<span class="math notranslate nohighlight">\(E_1\)</span> and <span class="math notranslate nohighlight">\(E_0\)</span>, then averaging <span class="math notranslate nohighlight">\(E_1 - E_0\)</span> to get <span class="math notranslate nohighlight">\(\Delta F\)</span> according
-to eq. <span class="xref myst">[app_a_fep_eq]</span>{reference-type=”eqref”
-reference=”app_a_fep_eq”}. Note that there are <em>no</em> constraints on what
-the potential energy functions of system <span class="math notranslate nohighlight">\(0\)</span> and <span class="math notranslate nohighlight">\(1\)</span> can be, so it is
-possible to use this approach to completely change the chemical identify
-of molecules during a simulation and measure the corresponding free
-energy change. Such transformations are called <em>alchemical free energy
-calculations</em>.</p>
-<p>Alchemical free energy calculations are often used to compute the free
-energy difference between two states that have no clear reaction
-coordinate connecting them, and for which only differences in energy
-(and not complete free energy pathways) are necessary. A typical example
-is in the design of drug inhibitors to bind proteins - free energy
-perturbation can be used to calculate the free energy change between a
-molecule bound to a receptor and a slightly different molecule bound to
-the same receptor to quantify relative binding affinities.
-Alternatively, the same technique could be used to calculate the
-absolute free energy of binding by defining a difference in free energy
-between the bound drug molecule and a drug molecule free in solution.</p>
-<p><img alt="image" src="../_images/fig_15_2.png" />{width=”100%”}</p>
+<section id="link-to-shared-notes">
+<h2><a class="reference external" href="https://docs.google.com/document/d/1G7nxHKyv8UlBFkqbUdrUbfERmWQ9XRh8/edit?usp=drive_link&amp;ouid=113272049620170441297&amp;rtpof=true&amp;sd=true">Link to Shared Notes</a><a class="headerlink" href="#link-to-shared-notes" title="Permalink to this headline">#</a></h2>
 </section>
 </section>
 
@@ -652,12 +614,12 @@ between the bound drug molecule and a drug molecule free in solution.</p>
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Lecture13.html"
+       href="Lecture14A.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Distribution of particles in states of matter</p>
+        <p class="prev-next-title">The potential of mean force</p>
       </div>
     </a>
     <a class="right-next"
@@ -687,10 +649,11 @@ between the bound drug molecule and a drug molecule free in solution.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recommended-textbooks">Recommended textbooks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topics-in-this-lecture">Topics in this lecture</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#umbrella-sampling">Umbrella sampling</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Free energy perturbation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-readings-for-the-enthusiast">Additional Readings for the Enthusiast</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-for-today-s-lecture">Goals for Today’s Lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Umbrella sampling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relating-the-biased-probability-distribution-to-the-unbiased-one">Relating the biased probability distribution to the unbiased one</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#link-to-shared-notes">Link to Shared Notes</a></li>
 </ul>
   </nav></div>
 
