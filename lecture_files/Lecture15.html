@@ -455,12 +455,10 @@ p_1(\Delta E')&amp;= p_0 (\Delta E') \exp \left [\beta \left ( \Delta F - \Delta
 <p>Finally, we can
 integrate both sides over all possible values of <span class="math notranslate nohighlight">\(\Delta E'\)</span> to yield a
 more concise expression:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-\int_{-\infty}^{\infty} d\Delta E' p_1(\Delta E') &amp;= \exp (\beta \Delta F)\int_{-\infty}^{\infty} d\Delta E' p_0(\Delta E') \exp (-\beta \Delta E')\\
+<div class="math notranslate nohighlight" id="equation-app-a-fep-eq">
+<span class="eqno">(28)<a class="headerlink" href="#equation-app-a-fep-eq" title="Permalink to this equation">#</a></span>\[\begin{split}\int_{-\infty}^{\infty} d\Delta E' p_1(\Delta E') &amp;= \exp (\beta \Delta F)\int_{-\infty}^{\infty} d\Delta E' p_0(\Delta E') \exp (-\beta \Delta E')\\
 1 &amp;= \exp (\beta \Delta F) \langle \exp \left [ - \beta \Delta E \right ] \rangle_0\\
-\exp \left [ -\beta \Delta F \right ]  &amp;= \langle \exp \left [ - \beta \Delta E \right ] \rangle_0 \label{app_a_fep_eq}
-\end{aligned}\end{split}\]</div>
+\exp \left [ -\beta \Delta F \right ]  &amp;= \langle \exp \left [ - \beta \Delta E \right ] \rangle_0\end{split}\]</div>
 <p>Here, we integrate the probability distribution for <span class="math notranslate nohighlight">\(\Delta E'\)</span> over all
 possible energy differences sampled in system 1; since the probability
 distributions is normalized, this just equals 1. The value <span class="math notranslate nohighlight">\(\Delta F\)</span> is
@@ -477,7 +475,7 @@ molecular simulations by defining system 0 and 1, generating
 configurations according to the potential energy function of system 0,
 calculating the energy of the same configuration calculated using both
 <span class="math notranslate nohighlight">\(E_1\)</span> and <span class="math notranslate nohighlight">\(E_0\)</span>, then averaging <span class="math notranslate nohighlight">\(E_1 - E_0\)</span> to get <span class="math notranslate nohighlight">\(\Delta F\)</span> according
-to eq. <code class="xref eq docutils literal notranslate"><span class="pre">app_a_fep_eq</span></code>. Note that there are <em>no</em> constraints on what
+to eq. <a class="reference internal" href="#equation-app-a-fep-eq">(28)</a>. Note that there are <em>no</em> constraints on what
 the potential energy functions of system <span class="math notranslate nohighlight">\(0\)</span> and <span class="math notranslate nohighlight">\(1\)</span> can be, so it is
 possible to use this approach to completely change the chemical identify
 of molecules during a simulation and measure the corresponding free

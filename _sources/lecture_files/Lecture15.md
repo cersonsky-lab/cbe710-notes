@@ -111,11 +111,12 @@ Finally, we can
 integrate both sides over all possible values of $\Delta E'$ to yield a
 more concise expression:
 
-$$\begin{aligned}
+```{math}
+:label: app_a_fep_eq
 \int_{-\infty}^{\infty} d\Delta E' p_1(\Delta E') &= \exp (\beta \Delta F)\int_{-\infty}^{\infty} d\Delta E' p_0(\Delta E') \exp (-\beta \Delta E')\\
 1 &= \exp (\beta \Delta F) \langle \exp \left [ - \beta \Delta E \right ] \rangle_0\\
-\exp \left [ -\beta \Delta F \right ]  &= \langle \exp \left [ - \beta \Delta E \right ] \rangle_0 \label{app_a_fep_eq}
-\end{aligned}$$
+\exp \left [ -\beta \Delta F \right ]  &= \langle \exp \left [ - \beta \Delta E \right ] \rangle_0
+```
 
 Here, we integrate the probability distribution for $\Delta E'$ over all
 possible energy differences sampled in system 1; since the probability
