@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Application of independent subsystems: the Langmuir isotherm &#8212; Advanced Thermodynamics for Chemical Engineers</title>
+    <title>Free energy perturbation &#8212; Advanced Thermodynamics for Chemical Engineers</title>
   
   
   
@@ -63,11 +63,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture_files/Lecture7';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture_files/Lecture15';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="The Ising model" href="Lecture8A.html" />
-    <link rel="prev" title="The ideal gas partition function" href="Lecture6.html" />
+    <link rel="next" title="Problem Set 1 (Due Tuesday, September 19, 2023)" href="../problems/ps_1/problem_set_1.html" />
+    <link rel="prev" title="Umbrella Sampling" href="Lecture14B.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -153,7 +153,7 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Mechanics</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Lecture1A.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Lecture1B.html">Review of thermodynamics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Lecture2.html">Postulates of statistical mechanics</a></li>
@@ -161,13 +161,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Lecture4.html">The canonical ensemble</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Lecture5.html">Generalized ensembles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Lecture6.html">The ideal gas partition function</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Application of independent subsystems: the Langmuir isotherm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture7.html">Application of independent subsystems: the Langmuir isotherm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Lecture8A.html">The Ising model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Lecture8B.html">Mean-field theory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Lecture9A.html">Fluctuations and thermodynamic response functions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Molecular Simulation</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Lecture9B.html">An introduction to molecular simulation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Lecture10.html">Monte Carlo simulations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Lecture11.html">Nuances of stochastic sampling in statistical ensembles</a></li>
@@ -176,7 +176,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Lecture13.html">Distribution of particles in states of matter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Lecture14A.html">The potential of mean force</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Lecture14B.html">Umbrella Sampling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Lecture15.html">Free energy perturbation</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Free energy perturbation</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Problem Sets</span></p>
 <ul class="nav bd-sidenav">
@@ -241,7 +241,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/lecture_files/Lecture7.md" target="_blank"
+      <li><a href="../_sources/lecture_files/Lecture15.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -323,7 +323,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Application of independent subsystems: the Langmuir isotherm</h1>
+    <h1>Free energy perturbation</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -333,9 +333,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-readings-for-the-enthusiast">Additional Readings for the Enthusiast</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-for-today-s-lecture">Goals for today’s lecture</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-langmuir-isotherm">The Langmuir Isotherm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-for-today-s-lecture">Goals for Today’s Lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Free energy perturbation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determining-the-probabilities-of-energy-differences-between-systems">Determining the probabilities of energy differences between systems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computing-the-free-energy-difference">Computing the free energy difference</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#link-to-shared-notes">Link to Shared Notes</a></li>
 </ul>
             </nav>
@@ -348,193 +351,153 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="application-of-independent-subsystems-the-langmuir-isotherm">
-<h1>Application of independent subsystems: the Langmuir isotherm<a class="headerlink" href="#application-of-independent-subsystems-the-langmuir-isotherm" title="Permalink to this headline">#</a></h1>
-<section id="additional-readings-for-the-enthusiast">
-<h2>Additional Readings for the Enthusiast<a class="headerlink" href="#additional-readings-for-the-enthusiast" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=eSpmHPnkXOI&amp;pp=ygURbGFuZ211aXIgaXNvdGhlcm0%3D">YouTube Introduction</a></p></li>
-</ul>
-</section>
+  <section class="tex2jax_ignore mathjax_ignore" id="free-energy-perturbation">
+<h1>Free energy perturbation<a class="headerlink" href="#free-energy-perturbation" title="Permalink to this headline">#</a></h1>
 <section id="goals-for-today-s-lecture">
-<h2>Goals for today’s lecture<a class="headerlink" href="#goals-for-today-s-lecture" title="Permalink to this headline">#</a></h2>
+<h2>Goals for Today’s Lecture<a class="headerlink" href="#goals-for-today-s-lecture" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>Derive the fraction of absorbed sites on a surface solely based on the pressure of the surrounding gas and the binding energy.</p></li>
+<li><p>Determine the free energy difference for two systems with different potential energy functions</p></li>
 </ul>
 </section>
-<section id="the-langmuir-isotherm">
-<h2>The Langmuir Isotherm<a class="headerlink" href="#the-langmuir-isotherm" title="Permalink to this headline">#</a></h2>
-<p>The <a class="reference internal" href="#"><span class="doc std std-doc">previous lecture</span></a> shows that statistical mechanics can reproduce
-classical thermodynamic relationships from first-principles. We will now
-test a second example of the three-step approach for studying
-independent particles by deriving the <strong>Langmuir adsorption isotherm</strong>.</p>
-<p>Consider a system of <span class="math notranslate nohighlight">\(N\)</span> ideal gas particles that can adsorb onto a
-surface. Physically, this system <em>could</em> represent the adsorption of
-reactants onto a catalytic surface. We define the number of
-adsorbed particles as <span class="math notranslate nohighlight">\(N_a\)</span> and the remaining number of free gas
-particles as <span class="math notranslate nohighlight">\(N-N_a\)</span>. Particles adsorb favorably with an energy of
-<span class="math notranslate nohighlight">\(-\epsilon_a\)</span> per particle.</p>
-<p><img alt="image" src="../_images/fig_7_1-01.png" /></p>
-<p>To simplify our treatment, we assume all
-particles adsorb onto a lattice of discrete with <span class="math notranslate nohighlight">\(N_s\)</span> possible binding
-sites, of which <span class="math notranslate nohighlight">\(N_a\)</span> are occupied assuming that only a single particle
-can bind to each site (with <span class="math notranslate nohighlight">\(N_s &gt; N_a\)</span>, allowing for all particles to
-adsorb). All binding sites are assumed to be independent; that is, the
-arrangement of particles does not affect the energy of the system. The
-quantity we will determine is the fraction of the surface that is
-occupied as a function of the pressure of the surrounding gas, <span class="math notranslate nohighlight">\(f_a(P)\)</span>.</p>
-<p>We next have to consider what ensemble to use to solve this problem. We
-can think of particles adsorbed to the surface and particles free in the
-bulk as two distinct sets of particles such that particles are free to
-exchange between the surface and bulk. The number of particles adsorbed
-to the surface, <span class="math notranslate nohighlight">\(N_a\)</span>, is thus allowed to vary. <span class="math notranslate nohighlight">\(\langle N_A \rangle\)</span>
-will be determined at equilibrium which is reached when each particle
-adsorbed to the surface has a constant chemical potential, <span class="math notranslate nohighlight">\(\mu_a\)</span>, that
-is equal to the chemical potential of each particle in the bulk,
-<span class="math notranslate nohighlight">\(\mu_b\)</span>.</p>
-<div class="admonition-which-ensemble-is-most-appropriate-here-we-are-treating-the-surface-as-the-system admonition">
-<p class="admonition-title">Which ensemble is most appropriate here? We are treating the surface as the system.</p>
-<details><summary>Microcanonical ensemble</summary> Incorrect, as the number of particles in our system can change, and our energy can change. Try again</details>
-<details><summary>Canonical ensemble</summary> Incorrect, as the number of particles in our system can change. Try again</details>
-<details><summary>Grand canonical Ensemble</summary>
-Since the number of particles can vary on the surface, the
-natural ensemble to consider is the grand canonical ensemble because the
-natural variables of the ensemble, $\mu V T$, are the same variables
-that are constant at equilibrium. 
-</details>
-<details><summary>Isothermal-isobaric ensemble</summary> Incorrect, as the number of particles in our system can change and our pressure can change. Try again</details>
-</div>
-<p>The surface has <span class="math notranslate nohighlight">\(N_s\)</span> potential binding sites; each binding site is
-either occupied or not, with the number of occupied sites (<span class="math notranslate nohighlight">\(N_a\)</span>)
-fluctuating. We aim to find an expression for <span class="math notranslate nohighlight">\(f_a = \frac{N_a}{N_s}\)</span>.
-Since <span class="math notranslate nohighlight">\(N_a\)</span> can vary, we really seek the ensemble average value of
-<span class="math notranslate nohighlight">\(N_a\)</span>, so that <span class="math notranslate nohighlight">\(f_a = \frac{\langle N_a \rangle}{N_s}\)</span>.</p>
-<p>Since each
-binding site is independent and identical, we can factorize the
-partition function by treating each site as a subsystem that is either
-occupied or unoccupied, meaning that a single particle is adsorbed to
-the site or not. Since the sites are spatially distinct, each subsystem
-is distinguishable. We then write the grand canonical ensemble partition
-function for the whole surface as:</p>
-<div class="math notranslate nohighlight">
-\[\Xi_s = \xi_s^{N_s}\]</div>
-<p>where <span class="math notranslate nohighlight">\(\xi_s\)</span> is the single-site grand canonical partition function
-given as:</p>
-<div class="math notranslate nohighlight">
-\[\begin{aligned}
-\xi_s = \sum_{j}e^{-E_j \beta}e^{\mu_a N_j \beta}
-\end{aligned}\]</div>
-<div class="admonition-why-are-we-working-with-the-distinguishable-subsystem-equation admonition">
-<p class="admonition-title">Why are we working with the distinguishable subsystem equation?</p>
-<details><summary> Click for answer</summary>
-<p>Here we are working from the viewpoint of the <em>sites</em> not the <em>particles</em>. The <em>sites</em>
-are distinguishable, whereas the particles are not.</p>
-</details>
-</div>
-<div class="admonition-show-that-xi-s-left-1-e-epsilon-a-beta-e-mu-a-beta-right-n-s admonition">
-<p class="admonition-title">Show that <span class="math notranslate nohighlight">\(\Xi_s = \left ( 1 + e^{\epsilon_a \beta}e^{\mu_a \beta} \right )^{N_s}\)</span>.</p>
-<details><summary>Show derivation</summary>
-<p>For a single site, there are only two possible values of <span class="math notranslate nohighlight">\(N_j\)</span>: either
-the site is occupied, for which <span class="math notranslate nohighlight">\(N_j = 1\)</span>, or the site is unoccupied,
-for which <span class="math notranslate nohighlight">\(N_j = 0\)</span>. Similarly, there are only two possible energies: if
-<span class="math notranslate nohighlight">\(N_j = 1\)</span>, <span class="math notranslate nohighlight">\(E_j = -\epsilon_a\)</span>, and if <span class="math notranslate nohighlight">\(N_j = 0\)</span>, <span class="math notranslate nohighlight">\(E_j = 0\)</span>. Therefore
-the single-site partition function is:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-\xi_s &amp;= e^{0 \beta}e^{0 \beta} + e^{-\epsilon_a \beta}e^{\mu_a \beta} \\
-&amp;= 1 + e^{\epsilon_a \beta}e^{\mu_a \beta} \\
-\Xi_s &amp;= \xi_s^{N_s}\\
-&amp;= \left ( 1 + e^{\epsilon_a \beta}e^{\mu_a \beta} \right )^{N_s}
-\end{aligned}\end{split}\]</div>
-</details>
-</div>
-<p>Next, we write an expression for the grand potential:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-\Sigma_G &amp;= - k_B T \ln \Xi_s \\
-&amp;= - N_s k_B T \ln \left ( 1 + e^{\epsilon_a \beta}e^{\mu_a \beta} \right )
-\end{aligned}\end{split}\]</div>
-<div class="admonition-show-that-f-a-frac-e-epsilon-a-beta-e-mu-a-beta-1-e-epsilon-a-beta-e-mu-a-beta admonition">
-<p class="admonition-title">Show that <span class="math notranslate nohighlight">\(f_a  = \frac{ e^{\epsilon_a \beta}e^{\mu_a \beta}}{ 1 + e^{\epsilon_a \beta}e^{\mu_a \beta}}\)</span>.</p>
-<details><summary>Show derivation</summary>
-<p>We need to relate this thermodynamic potential to the quantity of
-interest, <span class="math notranslate nohighlight">\(\langle N_a \rangle\)</span>. Recall that we can write an expression
-for <span class="math notranslate nohighlight">\(\Sigma_G\)</span>, which is a function of the natural variables
-<span class="math notranslate nohighlight">\(\mu_a V T\)</span>, as:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-\Sigma_G (\mu_a, V, T) &amp;= E(N, V, S) - TS - \mu_a N_a \\
-d\Sigma_G &amp;= dE - TdS - SdT - \mu_a d N_a - N_a d \mu_a \\
-&amp;= TdS - PdV + \mu_a dN_a - TdS - SdT - \mu_a d N_a - N_a d \mu_a \\
-&amp;= -S dT - PdV - N_a d \mu_a
-\end{aligned}\end{split}\]</div>
-<p>Therefore, we recognize that
-<span class="math notranslate nohighlight">\(\left ( \frac{\partial \Sigma_G}{\partial \mu_a} \right )_{V,T} = - N_a\)</span>,
-so:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-N_a  &amp;= -\left ( \frac{\partial \Sigma_G}{\partial \mu_a} \right )_{V,T} \\
-&amp;= \frac{ N_s e^{\epsilon_a \beta}e^{\mu_a \beta}}{ 1 + e^{\epsilon_a \beta}e^{\mu_a \beta} }\\
-f_a &amp;= \frac{ N_a }{N_s} \\
-&amp;= \frac{ e^{\epsilon_a \beta}e^{\mu_a \beta}}{ 1 + e^{\epsilon_a \beta}e^{\mu_a \beta}}
-\end{aligned}\end{split}\]</div>
-</details>
-</div>
-<p>We now have an expression in terms of the chemical potential of the
-particles adsorbed to the bulk, but we’d like an expression in terms of
-the pressure of the bulk gas. At equilibrium, we know that
-<span class="math notranslate nohighlight">\(\mu_a = \mu_b\)</span>, so we can calculate the chemical potential for
-particles in the bulk and relate this to the pressure. Since the gas
-molecules are ideal, non-interacting particles, these particles are
-described as an ideal gas. As a result, we can substitute in the
-expression for the chemical potential derived from the ideal gas
-(canonical) partition function in <a class="reference internal" href="Lecture6.html"><span class="doc std std-doc">our previous lecture</span></a> and use this for the
-chemical potential of particles in the bulk:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-\mu_b &amp;=  -k_B T \ln \left( \frac{2\pi m k_BT}{h^2}\right )^{3/2} + k_B T \ln \frac{N-N_a}{V} \\
-&amp;= -k_B T \ln \left [ \frac{V}{(N-N_a)\lambda^3}\right ]
-\end{aligned}\end{split}\]</div>
-<p>Note that we use <span class="math notranslate nohighlight">\(\lambda\)</span> (the thermal de Broglie wavelength) to
-simplify the notation. We use the ideal gas equation of state
-(<span class="math notranslate nohighlight">\(V = \frac{(N-N_a) k_B T}{P}\)</span>) to obtain a pressure dependence:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-\mu_b &amp;= -k_B T \ln \left [ \frac{(N-N_a)k_B T}{P(N-N_a)\lambda^3}\right ] \\
-&amp;= k_B T \ln \left ( \frac{P\lambda^3}{k_B T}\right )
-\end{aligned}\end{split}\]</div>
-<p>Finally, we now require the condition <span class="math notranslate nohighlight">\(\mu_a = \mu_b\)</span> to find an
-expression for <span class="math notranslate nohighlight">\(f_a\)</span>. Substituting in the expression for <span class="math notranslate nohighlight">\(\mu_b\)</span> to our
-prior expression for <span class="math notranslate nohighlight">\(f_a\)</span> yields:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-f_a &amp;=  \frac{ \left ( \frac{P\lambda^3}{k_BT}\right )e^{\epsilon_a \beta}}{1 +  \left ( \frac{P\lambda^3}{k_BT}\right ) e^{\epsilon_a \beta}} \\
-&amp;= \frac{P / P_0}{1 +  P / P_0}
-\end{aligned}\end{split}\]</div>
-<p>Here, we define
-<span class="math notranslate nohighlight">\(P_0 = \left ( \frac{k_B T}{\lambda^3}\right )e^{-\epsilon_a / k_BT}\)</span> as
-a constant (equal to the pressure for which <span class="math notranslate nohighlight">\(f_a = 0.5\)</span>) that does not
-depend on <span class="math notranslate nohighlight">\(f_a\)</span> or on <span class="math notranslate nohighlight">\(P\)</span>. This expression is our goal - we relate the
-pressure to the fraction of occupied sites, <span class="math notranslate nohighlight">\(f_a\)</span>. We can rearrange this
-to equivalently write:</p>
-<div class="math notranslate nohighlight">
-\[f_a = \frac{P}{P + P_0}\]</div>
-<p>This last expression is referred to as the</p>
+<section id="id1">
+<h2>Free energy perturbation<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p>So far, we have defined the potential of mean force as the change in the
+free energy of a system during a process in which particle coordinates
+follow some predefined reaction coordinate, and hence the overall system
+potential energy function is unchanged. Computing the potential of mean
+force associated with different regions of phase space is useful for
+calculating the magnitude of energy barriers and identifying local
+minima. However, we might also ask how to calculate the change in free
+energy between two systems with different potential energy functions
+entirely. Finding an algorithm to accomplish this would also be useful
+in applications other than calculating a PMF along a reaction
+coordinate, such as calculating the free energy change associated with
+mutating the chemical identities of molecules in a simulation. This leads to</p>
 <dl class="glossary simple">
-<dt id="term-Langmuir-adsorption-isotherm">Langmuir adsorption isotherm<a class="headerlink" href="#term-Langmuir-adsorption-isotherm" title="Permalink to this term">#</a></dt><dd><p><span class="math notranslate nohighlight">\(f_a = \frac{P}{P + P_0}\)</span>; shows that as the pressure of the system increases, the
-surface coverage increases until eventually plateauing.</p>
+<dt id="term-free-energy-perturbation"><a class="reference external" href="https://en.wikipedia.org/wiki/Free_energy_perturbation#:~:text=Free%20energy%20perturbation%20(FEP)%20is,Zwanzig%20in%201954.">free energy perturbation</a><a class="headerlink" href="#term-free-energy-perturbation" title="Permalink to this term">#</a></dt><dd><p>a method to compute the free energy difference between two systems with different
+partition functions</p>
 </dd>
 </dl>
-<p>Similar isotherm
-behavior is observed in a number of experimental systems. Note also that
-by solving for the value <span class="math notranslate nohighlight">\(P_0\)</span>, which is equivalent to the pressure
-where the surface is half-occupied, we can find a value for <span class="math notranslate nohighlight">\(\epsilon_a\)</span>
-or the binding energy if the thermal de Broglie wavelength is known.
-Thus, statistical mechanics provides a valuable connection between
-microscopic and macroscopic observables relevant to surface occupancy.</p>
+<p>For this calculation, we will first define two partition functions,
+<span class="math notranslate nohighlight">\(Z_0\)</span> and <span class="math notranslate nohighlight">\(Z_1\)</span>, corresponding to two different systems with potential
+energy functions <span class="math notranslate nohighlight">\(E_0(\mathbf{r}^N)\)</span> and <span class="math notranslate nohighlight">\(E_1(\mathbf{r}^N)\)</span>. Note that
+while the potential energy functions are different, we assume that the
+set of possible values of <span class="math notranslate nohighlight">\(\mathbf{r}^N\)</span> are the same (<em>i.e.</em>, both
+systems access the same phase space).</p>
+<p>For example, one could imagine
+computing the free energy difference between an ideal gas and a
+non-ideal gas with the same number of particles, with the interactions
+associated with the non-ideal gas leading to a different potential
+energy function. The Helmholtz free energy change for transforming from
+system 0 to 1 is then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\Delta F &amp;= F_1 - F_0  \\ 
+&amp;= -k_BT \ln Z_1/Z_0 \\
+\end{aligned}\end{split}\]</div>
+<p>How do we compute this?</p>
+<section id="determining-the-probabilities-of-energy-differences-between-systems">
+<h3>Determining the probabilities of energy differences between systems<a class="headerlink" href="#determining-the-probabilities-of-energy-differences-between-systems" title="Permalink to this headline">#</a></h3>
+<p>We then define <span class="math notranslate nohighlight">\(p_1(\Delta E')\)</span> as the probability distribution for the
+energy difference
+<span class="math notranslate nohighlight">\(\Delta E(\textbf{r}^N) = E_1(\mathbf{r}^N) - E_0(\mathbf{r}^N)\)</span> with
+configurations sampled using <span class="math notranslate nohighlight">\(E_1\)</span>.</p>
+<p>In other words, we can imagine
+generating a large number of configurations using <span class="math notranslate nohighlight">\(E_1\)</span>,
+calculating the energy of those configurations
+according to both <span class="math notranslate nohighlight">\(E_1\)</span> and <span class="math notranslate nohighlight">\(E_0\)</span>, then finding the probability of
+identifying a particular energy difference <span class="math notranslate nohighlight">\(\Delta E'\)</span>. Similarly,
+<span class="math notranslate nohighlight">\(p_0(\Delta E')\)</span> is the probability density for the same energy
+difference with configurations sampled using <span class="math notranslate nohighlight">\(E_0\)</span>. We then write:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+p_1(\Delta E') &amp;= \frac{\int d\mathbf{r}^N \exp \left [ -\beta E_1(\mathbf{r}^N) \right ] \delta(\Delta E(\textbf{r}^N) - \Delta E')}{Z_1}  \\
+&amp;= \frac{\int d\mathbf{r}^N \exp \left [ -\beta (E_0(\mathbf{r}^N) + \Delta E') \right ] \delta(\Delta E(\textbf{r}^N) - \Delta E')}{Z_1}  \\
+&amp;= \frac{\int d\mathbf{r}^N \exp \left [ -\beta E_0(\mathbf{r}^N) \right ] \exp \left [ -\beta \Delta E' \right ] \delta(\Delta E(\textbf{r}^N) - \Delta E')}{Z_1}
+\end{aligned}\end{split}\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(\Delta E'\)</span> is a fixed value that is not a function of
+<span class="math notranslate nohighlight">\(\mathbf{r}^N\)</span> and the delta function eliminates all other possible
+values of <span class="math notranslate nohighlight">\(\Delta E(\textbf{r}^N)\)</span>, so in the second line we can define
+<span class="math notranslate nohighlight">\(E_1(\textbf{r}^N) = E_0(\textbf{r}^N) + \Delta E'\)</span> and in the third
+line <span class="math notranslate nohighlight">\(\exp \left [ -\beta \Delta E' \right ]\)</span> can be removed from the
+integral. We can now multiply the numerator and demoninator by <span class="math notranslate nohighlight">\(Z_0\)</span> to
+obtain:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+p_1(\Delta E') &amp;= \exp \left [ -\beta \Delta E' \right ] \frac{\int d\mathbf{r}^N \exp \left [ -\beta E_0(\mathbf{r}^N) \right ]  \delta(\Delta E(\textbf{r}^N) - \Delta E')}{Z_1}   \\
+&amp;= \frac{Z_0}{Z_1} \exp \left [ -\beta \Delta E' \right ] \frac{\int d\mathbf{r}^N \exp \left [ -\beta E_0(\mathbf{r}^N) \right ]  \delta(\Delta E(\textbf{r}^N) - \Delta E')}{Z_0}   \\
+&amp;= \frac{Z_0}{Z_1} \exp \left [ -\beta \Delta E' \right ] p_0(\Delta E')
+\end{aligned}\end{split}\]</div>
+<p>Huzzah! With the term of <span class="math notranslate nohighlight">\(\frac{Z_0}{Z_1}\)</span>, we have a way to relate this to our free energy difference.</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\frac{Z_0}{Z_1} &amp; = \frac{p_1(\Delta E')}{ p_0(\Delta E')}\exp \left [\beta \Delta E' \right ]
+\end{aligned}
+\]</div>
+<p>From this equation alone we can see that calculating the two probability
+densities from simulations in both ensembles would allow for the
+calculation of the free energy change <span class="math notranslate nohighlight">\(\Delta F\)</span>.</p>
+</section>
+<section id="computing-the-free-energy-difference">
+<h3>Computing the free energy difference<a class="headerlink" href="#computing-the-free-energy-difference" title="Permalink to this headline">#</a></h3>
+<p>We can take the log of both sides to estimate the free energy difference
+using <span class="math notranslate nohighlight">\(\Delta F = -kT \ln Z_1/Z_0\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\beta\Delta F &amp; = \log p_1(\Delta E') - \log p_0(\Delta E') + \beta \Delta E'
+\end{aligned}
+\]</div>
+<p>For integration purposes, this is easier to write as</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+p_1(\Delta E')&amp;= p_0 (\Delta E') \exp \left [\beta \left ( \Delta F - \Delta E'\right )\right ]
+\end{aligned}\]</div>
+<p>Finally, we can
+integrate both sides over all possible values of <span class="math notranslate nohighlight">\(\Delta E'\)</span> to yield a
+more concise expression:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\int_{-\infty}^{\infty} d\Delta E' p_1(\Delta E') &amp;= \exp (\beta \Delta F)\int_{-\infty}^{\infty} d\Delta E' p_0(\Delta E') \exp (-\beta \Delta E')\\
+1 &amp;= \exp (\beta \Delta F) \langle \exp \left [ - \beta \Delta E \right ] \rangle_0\\
+\exp \left [ -\beta \Delta F \right ]  &amp;= \langle \exp \left [ - \beta \Delta E \right ] \rangle_0 \label{app_a_fep_eq}
+\end{aligned}\end{split}\]</div>
+<p>Here, we integrate the probability distribution for <span class="math notranslate nohighlight">\(\Delta E'\)</span> over all
+possible energy differences sampled in system 1; since the probability
+distributions is normalized, this just equals 1. The value <span class="math notranslate nohighlight">\(\Delta F\)</span> is
+independent of <span class="math notranslate nohighlight">\(\Delta E'\)</span> so it can be removed from the integral on the
+right hand side, which then is equal to the ensemble average value of
+the exponential of <span class="math notranslate nohighlight">\(\Delta E'\)</span>, yielding the final expression. Note
+again that this ensemble average is sampled using the energy function of
+system 0.</p>
+<p>The final free energy perturbation expression relates the free energy
+change for transforming from system 0 to system 1 to the ensemble
+average of the energy change for this transformation for configurations
+sampled from <span class="math notranslate nohighlight">\(Z_0\)</span>. Free energy perturbation can be used directly in
+molecular simulations by defining system 0 and 1, generating
+configurations according to the potential energy function of system 0,
+calculating the energy of the same configuration calculated using both
+<span class="math notranslate nohighlight">\(E_1\)</span> and <span class="math notranslate nohighlight">\(E_0\)</span>, then averaging <span class="math notranslate nohighlight">\(E_1 - E_0\)</span> to get <span class="math notranslate nohighlight">\(\Delta F\)</span> according
+to eq. <code class="xref eq docutils literal notranslate"><span class="pre">app_a_fep_eq</span></code>. Note that there are <em>no</em> constraints on what
+the potential energy functions of system <span class="math notranslate nohighlight">\(0\)</span> and <span class="math notranslate nohighlight">\(1\)</span> can be, so it is
+possible to use this approach to completely change the chemical identify
+of molecules during a simulation and measure the corresponding free
+energy change. Such transformations are called <a class="reference external" href="http://alchemistry.org/wiki/Main_Page">alchemical free energy
+calculations</a>.</p>
+<p>Alchemical free energy calculations are often used to compute the free
+energy difference between two states that have no clear reaction
+coordinate connecting them, and for which only differences in energy
+(and not complete free energy pathways) are necessary. A typical example
+is in the design of drug inhibitors to bind proteins - free energy
+perturbation can be used to calculate the free energy change between a
+molecule bound to a receptor and a slightly different molecule bound to
+the same receptor to quantify relative binding affinities.
+Alternatively, the same technique could be used to calculate the
+absolute free energy of binding by defining a difference in free energy
+between the bound drug molecule and a drug molecule free in solution.</p>
+</section>
 </section>
 <section id="link-to-shared-notes">
-<h2><a class="reference external" href="https://docs.google.com/document/d/1g076unmXybqtkNg-1GSrwfzJZaxw9cQY/edit?usp=drive_link&amp;ouid=113272049620170441297&amp;rtpof=true&amp;sd=true">Link to Shared Notes</a><a class="headerlink" href="#link-to-shared-notes" title="Permalink to this headline">#</a></h2>
+<h2><a class="reference external" href="https://docs.google.com/document/d/1Tsa3jGWZJTySrWt0IZWdYpyh-ILLOko_/edit?usp=drive_link">Link to Shared Notes</a><a class="headerlink" href="#link-to-shared-notes" title="Permalink to this headline">#</a></h2>
 </section>
 </section>
 
@@ -570,20 +533,20 @@ microscopic and macroscopic observables relevant to surface occupancy.</p>
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Lecture6.html"
+       href="Lecture14B.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">The ideal gas partition function</p>
+        <p class="prev-next-title">Umbrella Sampling</p>
       </div>
     </a>
     <a class="right-next"
-       href="Lecture8A.html"
+       href="../problems/ps_1/problem_set_1.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">The Ising model</p>
+        <p class="prev-next-title">Problem Set 1 (Due Tuesday, September 19, 2023)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -605,9 +568,12 @@ microscopic and macroscopic observables relevant to surface occupancy.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-readings-for-the-enthusiast">Additional Readings for the Enthusiast</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-for-today-s-lecture">Goals for today’s lecture</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-langmuir-isotherm">The Langmuir Isotherm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-for-today-s-lecture">Goals for Today’s Lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Free energy perturbation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determining-the-probabilities-of-energy-differences-between-systems">Determining the probabilities of energy differences between systems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computing-the-free-energy-difference">Computing the free energy difference</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#link-to-shared-notes">Link to Shared Notes</a></li>
 </ul>
   </nav></div>
