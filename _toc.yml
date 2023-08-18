@@ -24,10 +24,10 @@ parts:
         - file: lecture_files/Lecture13
         - file: lecture_files/Lecture14A
         - file: lecture_files/Lecture14B
-#         - file: lecture_files/Lecture15
-#         - file: lecture_files/Lecture16
-#   - caption: Thermodynamics
-#     chapters:
+        - file: lecture_files/Lecture15
+  - caption: Thermodynamics
+    chapters:
+        - file: lecture_files/Lecture16
 #         - file: lecture_files/Lecture17
 #         - file: lecture_files/Lecture18
 #         - file: lecture_files/Lecture19
@@ -48,4 +48,5 @@ parts:
 #         - file: problems/ps_6/problem_set_6
   - caption: Appendices
     chapters:
+      - file: notation
       - file: references

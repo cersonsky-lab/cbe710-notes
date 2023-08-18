@@ -1,6 +1,6 @@
 # In _config.yml
-title: Notes for CBE710 
-author: Reid van Lehn, Matt Gebbie, Rose Cersonsky 
+title: Advanced Thermodynamics for Chemical Engineers
+author: Reid van Lehn, Matt Gebbie, Rose K. Cersonsky 
 # logo: logo.png
 execute:
   execute_notebooks: force
@@ -13,3 +13,7 @@ parse:
 sphinx:
   config:
     myst_heading_anchors: 3
+
+exclude_patterns : [playground]
+
+only_build_toc_files        : true

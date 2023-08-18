@@ -275,7 +275,7 @@ the coordinates:
 ```{math}
 :label: vv_eq
 
-\textbf{r}_i(t+\Delta t) &\approx  \textbf{r}_i(t) + \textbf{v}_i(t) \Delta t + \frac{\textbf{f}_i(t)}{2m}\Delta t^2
+\textbf{r}_i(t+\Delta t) \approx  \textbf{r}_i(t) + \textbf{v}_i(t) \Delta t + \frac{\textbf{f}_i(t)}{2m}\Delta t^2
 
 ```
 

@@ -229,14 +229,18 @@ energy, $E$, between state $A$ and $B$ does not depend on the path. $E$
 is thus called a **state function** because it is a property of each
 state and not the path between them. We can write the change in $E$
 between states $A$ and $B$, $\Delta E$, for a system undergoing a change
-in volume as:
+in volume as the:
 
-$$\begin{aligned}
-\Delta E = E_B - E_A &= Q + W \\
-&= \int_A^B dQ - \int_A^B PdV
-\end{aligned}$$
+```{glossary}
+first law of thermodynamics
 
-This equation is the **first law of thermodynamics** and defines the
+    $$\begin{aligned}
+        \Delta E = E_B - E_A &= Q + W \\
+        &= \int_A^B dQ - \int_A^B PdV
+    \end{aligned}$$
+```
+
+This equation is the {term}`first law of thermodynamics` and defines the
 conservation of energy. Note that since each path passes through
 intermediate states which may vary in pressure, $P$ is within the
 integral above as its value will depend on the specific path taken. The

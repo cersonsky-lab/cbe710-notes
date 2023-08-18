@@ -171,4 +171,4 @@ In this course we will focus on the
 former two topics, but it is all three in conjunction that enable the
 analysis of real systems.
 
-[Link to Shared Notes](https://docs.google.com/document/d/1Q-WdZlUi5270iKoOY4a_2qI-t5RGeBFc/edit?usp=drive_link)
+## [Link to Shared Notes](https://docs.google.com/document/d/1Q-WdZlUi5270iKoOY4a_2qI-t5RGeBFc/edit?usp=drive_link)
