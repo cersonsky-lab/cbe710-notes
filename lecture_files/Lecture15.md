@@ -1,4 +1,8 @@
-# Free energy perturbation
+# Free energy perturbation and thermodynamic integration
+
+## Additional Readings for the Enthusiast
+
+-   {cite:ts}`frenkel_understanding_2002` Ch. 7.1
 
 ## Goals for Today's Lecture
 - Determine the free energy difference for two systems with different potential energy functions
@@ -154,5 +158,70 @@ Alternatively, the same technique could be used to calculate the
 absolute free energy of binding by defining a difference in free energy
 between the bound drug molecule and a drug molecule free in solution.
 
+## Thermodynamic integration
+
+We will discuss one final
+method to close our discussion of molecular simulations. The final
+technique we will discuss is similar in spirit to free energy
+perturbation, in that it involves the calculation of the change in free
+energy between two systems with distinct potential energy functions. In
+the case of [thermodynamic integration](https://en.wikipedia.org/wiki/Thermodynamic_integration),
+we will explicitly define a
+linear interpolation between the potential energy functions for the two
+systems via a coupling parameter, $\lambda$. We write:
+
+$$\begin{aligned}
+E_\lambda(\textbf{r}^N) &= (1-\lambda)E_0(\textbf{r}^N) + \lambda E_1(\textbf{r}^N) \\
+&= E_0(\textbf{r}^N) + \lambda[E_1(\textbf{r}^N) - E_0(\textbf{r}^N]
+\end{aligned}$$
+
+Here, $E_0(\textbf{r}^N)$ and $E_1(\textbf{r}^N)$ refer to the two
+reference states, and the value of $\lambda$ interpolates the system
+potential energy function between that of $E_0$ for $\lambda = 0$ and
+$E_1$ for $\lambda = 1$. We can now write the derivative of the
+Helmholtz free energy with respect to $\lambda$ as follows:
+
+$$\begin{aligned}
+\left ( \frac{\partial F(\lambda)}{\partial \lambda}\right ) &=-k_BT \frac{\partial }{\partial \lambda} \ln Z(\lambda) \\
+&= -\frac{k_B T}{Z(\lambda)} \frac{\partial Z(\lambda)}{\partial \lambda} \\
+&= -\frac{k_BT}{Z(\lambda)} \frac{\partial }{\partial \lambda} \int d\textbf{r}^N \exp \left [ -\beta E_\lambda(\textbf{r}^N) \right ] \\
+&= \frac{\int d\textbf{r}^N \left ( \partial E_\lambda(\textbf{r}^N) / \partial \lambda \right ) \exp \left [ -\beta E_\lambda(\textbf{r}^N) \right ] }{Z(\lambda)} \\
+&= \left \langle \frac{\partial E_\lambda(\textbf{r}^N)}{\partial \lambda}\right \rangle_\lambda
+\end{aligned}$$
+
+This expression shows that we can relate the change in the free energy
+of the system with respect to the coupling parameter to an ensemble
+average of that derivative sampled from an ensemble at a particular
+value of $\lambda$, as indicated by the subscript in the angular
+brackets. We can then calculate the complete free energy difference
+between system 0 and 1 by:
+
+$$\begin{aligned}
+F(\lambda = 1) - F(\lambda = 0) = \int_{\lambda = 0}^{\lambda = 1} \left \langle \frac{\partial E_\lambda(\textbf{r}^N)}{\partial \lambda}\right \rangle_\lambda d\lambda
+\end{aligned}$$
+
+This final integral is why the technique is called *thermodynamic
+integration*. In practice, this integral is evaluated by choosing
+several discrete values of $\lambda$, sampling particle configurations
+according to the potential energy function $E_\lambda$, and for each
+sampled configuration calculating the energy using
+$E_{\lambda \pm d\lambda}$ where $d\lambda$ is some small interval. The
+derivative is approximated from a finite difference between these three
+values and used to calculate the ensemble average. The integral is then
+evaluated by quadrature. This approach does not necessarily require a
+linear coupling parameter, although in practice this is a simple method
+that is commonly used. It should be noted that the coupling parameter
+approach, and the division of the thermodynamic integral into multiple
+discrete values of $\lambda$, can also be used with free energy
+perturbation to improve convergence.
+
+Given the similarities to free energy perturbation, thermodynamic
+integration is often used for similar systems. It has been used
+extensively in calculating the phase behavior of self-assembled
+mixtures, in part because thermodynamic integration can be used to
+calculate the free energy between two phases that differ in their
+thermodynamic properties, such as temperature, via appropriate selection
+of a coupling parameter (as opposed to biasing their potential
+energies).
 
 ## [Link to Shared Notes](https://docs.google.com/document/d/1Tsa3jGWZJTySrWt0IZWdYpyh-ILLOko_/edit?usp=drive_link)
