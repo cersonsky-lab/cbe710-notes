@@ -187,6 +187,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../problems/ps_1/problem_set_1.html">Problem Set 1 (Due Tuesday, September 19, 2023)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../problems/ps_2/problem_set_2.html">Problem Set 2 (Due Thursday, September 28, 2023)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../problems/ps_3/problem_set_3.html">Problem Set 3 (Due Thursday, October 10, 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/simulation_project.html">Simulation Project (Due Tuesday, November 14, 2023)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="nav bd-sidenav">
@@ -342,7 +343,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-for-today-s-lecture">Goals for Today’s Lecture</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-four-postulates-of-classical-thermodynamics">The four postulates of classical thermodynamics</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postulate-0">Postulate 0</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postulate-1">Postulate 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postulate-1-equilibrium-states">Postulate 1: Equilibrium States</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postulate-2">Postulate 2</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postulate-3">Postulate 3</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postulate-4">Postulate 4</a></li>
@@ -393,13 +394,12 @@ we follow the postulates as defined in <span id="id2">Tester and Modell [<a clas
 capable of measuring system properties and of manipulating the values of
 system variables as well.</strong></p>
 </section>
-<section id="postulate-1">
-<h3>Postulate 1<a class="headerlink" href="#postulate-1" title="Permalink to this headline">#</a></h3>
+<section id="postulate-1-equilibrium-states">
+<h3>Postulate 1: Equilibrium States<a class="headerlink" href="#postulate-1-equilibrium-states" title="Permalink to this headline">#</a></h3>
 <p><strong>For closed <a class="reference internal" href="#term-simple-system"><span class="xref std std-term">simple system</span></a>s with given internal
 <a class="reference internal" href="#term-restraint"><span class="xref std std-term">restraint</span></a>s, there exist stable <a class="reference internal" href="#term-equilibrium-state"><span class="xref std std-term">equilibrium state</span></a>s which can be
-characterized completely by two independently variable properties in
-addition to the masses of the particular chemical species initially
-charged.</strong></p>
+characterized completely by the internal energy E and a set of independently
+varying state functions.</strong></p>
 <p>First, let’s unpack some definitions here:</p>
 <dl class="glossary simple">
 <dt id="term-simple-system">simple system<a class="headerlink" href="#term-simple-system" title="Permalink to this term">#</a></dt><dd><p>have no internal boundaries of any kind and are
@@ -440,11 +440,11 @@ you were to know the amount of material (i.e., the amount initially
 charged in the system) in a simple, <a class="reference internal" href="Lecture1B.html#term-Closed"><span class="xref std std-term">closed</span></a> system containing a pure
 liquid in equilibrium with its vapor, the properties of the system could
 be completely determined if the volume of the system and its temperature
-were known as these two properties are independently variable. However,
-for this system the pressure and temperature are not independently
+were known as these two properties are independently variable.</p>
+<p>However, for this system the pressure and temperature are not independently
 variable (we’ll learn why explicitly later, but this is a consequence of
 the phase equilibrium between the vapor and liquid), so specifying these
-two variables is insufficient to determine the properties of the system.</p>
+two variables would be insufficient to determine the properties of the system.</p>
 <p>This postulate implies that we will need to find relationships between
 thermodynamic properties to determine what properties can be
 independently varied and to understand how to determine the values of
@@ -456,10 +456,9 @@ relationships as we proceed.</p>
 </section>
 <section id="postulate-2">
 <h3>Postulate 2<a class="headerlink" href="#postulate-2" title="Permalink to this headline">#</a></h3>
-<p><strong>In processes for which there is no net effect on the
-environment, all systems (simple and composite) with given internal
-restraints will change in such a way as to approach one and only one
-stable equilibrium state for each simple subsystem. In the limiting
+<p><strong>All systems, both simple and composite, will change such to approach
+one and only one stable equilibrium state within each subsystem,
+provided there is no net effect on the environment. In the limiting
 condition, the entire system is said to be at equilibrium.</strong></p>
 <dl class="glossary simple">
 <dt id="term-composite-system">composite system<a class="headerlink" href="#term-composite-system" title="Permalink to this term">#</a></dt><dd><p>consists of two or more distinguishable
@@ -507,20 +506,14 @@ temperature) without disturbing the system</p>
 <p>The process includes a description of the two equilibrium end states, prior
 to and after the process, the <a class="reference internal" href="#term-interaction"><span class="xref std std-term">interaction</span></a>s occurring at the boundaries
 of the system, and the set of states through which the system evolves,
-also known as the <strong>path</strong>. A path can be quasi-static, meaning that all
+also known as the <strong>path</strong>. A path can be <a class="reference external" href="https://en.wikipedia.org/wiki/Quasistatic_process">quasi-static</a>, meaning that all
 intermediate states in a process are equilibrium states that can be
 described with two independently variable parameters. Processes that
 involve non-quasi-static paths pass through non-equilibrium states that
 may require additional properties to be specified, and thus do not obey
 Postulate 1.</p>
 <p>Various types of processes can be defined. For example, an
-isothermal process is one in which the temperature is constant. More
-examples will be provided as we continue our studies. Postulate 2
-specifies that the time evolution of a system to an equilibrium state
-must occur with no effect on the environment, implying that the system
-is isolated. However, processes can also consist of a series of steps,
-with individual steps affecting the environment; the net effect across
-multiple steps must just be zero.</p>
+isothermal process is one in which the temperature is constant.</p>
 </section>
 <section id="postulate-3">
 <h3>Postulate 3<a class="headerlink" href="#postulate-3" title="Permalink to this headline">#</a></h3>
@@ -548,8 +541,8 @@ W &amp;= \int_{x_1}^{x_2} f dx
 </dl>
 <p>In its most general form, the product of the force and displacement
 would be a vector product between a force vector <span class="math notranslate nohighlight">\(\vec{f}\)</span> and a vector
-displacement; we drop this notation for simplicity.</p>
-<p>As in statistical mechanics, we will define the sign convention such
+displacement; we drop the vector notation for simplicity.</p>
+<p>As in statistical mechanics, we will define the <a class="reference internal" href="Lecture1A.html"><span class="doc std std-doc">sign convention</span></a> such
 that the work is positive if work is done <em>on</em> the system by the
 environment. In general, for all work interactions, the work done on a
 system by the environment is equal to the work done on the environment
@@ -755,7 +748,7 @@ temperature of the surroundings</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-for-today-s-lecture">Goals for Today’s Lecture</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-four-postulates-of-classical-thermodynamics">The four postulates of classical thermodynamics</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postulate-0">Postulate 0</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postulate-1">Postulate 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postulate-1-equilibrium-states">Postulate 1: Equilibrium States</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postulate-2">Postulate 2</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postulate-3">Postulate 3</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postulate-4">Postulate 4</a></li>

@@ -30,12 +30,11 @@ capable of measuring system properties and of manipulating the values of
 system variables as well.**
 
 
-### Postulate 1
+### Postulate 1: Equilibrium States
 **For closed {term}`simple system`s with given internal
 {term}`restraint`s, there exist stable {term}`equilibrium state`s which can be
-characterized completely by two independently variable properties in
-addition to the masses of the particular chemical species initially
-charged.**
+characterized completely by the internal energy E and a set of independently
+varying state functions.**
 
 First, let's unpack some definitions here:
 
@@ -86,11 +85,12 @@ you were to know the amount of material (i.e., the amount initially
 charged in the system) in a simple, {term}`closed` system containing a pure
 liquid in equilibrium with its vapor, the properties of the system could
 be completely determined if the volume of the system and its temperature
-were known as these two properties are independently variable. However,
-for this system the pressure and temperature are not independently
+were known as these two properties are independently variable.
+
+However, for this system the pressure and temperature are not independently
 variable (we'll learn why explicitly later, but this is a consequence of
 the phase equilibrium between the vapor and liquid), so specifying these
-two variables is insufficient to determine the properties of the system.
+two variables would be insufficient to determine the properties of the system.
 
 This postulate implies that we will need to find relationships between
 thermodynamic properties to determine what properties can be
@@ -103,10 +103,9 @@ relationships as we proceed.
 
 
 ### Postulate 2
-**In processes for which there is no net effect on the
-environment, all systems (simple and composite) with given internal
-restraints will change in such a way as to approach one and only one
-stable equilibrium state for each simple subsystem. In the limiting
+**All systems, both simple and composite, will change such to approach
+one and only one stable equilibrium state within each subsystem,
+provided there is no net effect on the environment. In the limiting
 condition, the entire system is said to be at equilibrium.**
 
 ```{glossary}
@@ -165,7 +164,7 @@ primitive property
 The process includes a description of the two equilibrium end states, prior
 to and after the process, the {term}`interaction`s occurring at the boundaries
 of the system, and the set of states through which the system evolves,
-also known as the **path**. A path can be quasi-static, meaning that all
+also known as the **path**. A path can be [quasi-static](https://en.wikipedia.org/wiki/Quasistatic_process), meaning that all
 intermediate states in a process are equilibrium states that can be
 described with two independently variable parameters. Processes that
 involve non-quasi-static paths pass through non-equilibrium states that
@@ -173,13 +172,7 @@ may require additional properties to be specified, and thus do not obey
 Postulate 1.
 
 Various types of processes can be defined. For example, an
-isothermal process is one in which the temperature is constant. More
-examples will be provided as we continue our studies. Postulate 2
-specifies that the time evolution of a system to an equilibrium state
-must occur with no effect on the environment, implying that the system
-is isolated. However, processes can also consist of a series of steps,
-with individual steps affecting the environment; the net effect across
-multiple steps must just be zero.
+isothermal process is one in which the temperature is constant. 
 
 
 ### Postulate 3
@@ -213,9 +206,9 @@ work
 
 In its most general form, the product of the force and displacement
 would be a vector product between a force vector $\vec{f}$ and a vector
-displacement; we drop this notation for simplicity.
+displacement; we drop the vector notation for simplicity.
 
-As in statistical mechanics, we will define the sign convention such
+As in statistical mechanics, we will define the [sign convention](Lecture1A) such
 that the work is positive if work is done *on* the system by the
 environment. In general, for all work interactions, the work done on a
 system by the environment is equal to the work done on the environment
