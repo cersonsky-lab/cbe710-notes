@@ -246,8 +246,7 @@ the case where $p(\mathbf{r}_n^N) < p(\mathbf{r}_m^N)$, then:
 ```{admonition} If the proposed state has a lower energy than our current one, what is the probability we will accept the transition move?
 <details><summary> Click for answer </summary>
 
-    $\pi=1$. All transitions in which the system
-    energy is lowered are automatically accepted.
+    The probability is 1. All transitions in which the system energy is lowered are automatically accepted.
 </details>
 ```
 
