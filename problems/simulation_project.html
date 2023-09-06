@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Simulation Project (Due Tuesday, November 14, 2023) &#8212; Advanced Thermodynamics for Chemical Engineers</title>
+    <title>Simulation Project (Due Tuesday, November 3, 2023) &#8212; Advanced Thermodynamics for Chemical Engineers</title>
   
   
   
@@ -152,10 +152,13 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Mechanics</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Before we get started</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../lecture_files/Lecture1A.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lecture_files/Lecture1B.html">Review of thermodynamics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Mechanics</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../lecture_files/Lecture2.html">Postulates of statistical mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lecture_files/Lecture3.html">Application of the microcanonical ensemble: two-state system</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lecture_files/Lecture4.html">The canonical ensemble</a></li>
@@ -181,13 +184,14 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../lecture_files/Lecture16.html">Postulates of thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lecture_files/Lecture17.html">Heat engines and possible processes</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Problem Sets</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="ps_1/problem_set_1.html">Problem Set 1 (Due Tuesday, September 19, 2023)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ps_2/problem_set_2.html">Problem Set 2 (Due Thursday, September 28, 2023)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ps_3/problem_set_3.html">Problem Set 3 (Due Thursday, October 10, 2023)</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Simulation Project (Due Tuesday, November 14, 2023)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Simulation Project (Due Tuesday, November 3, 2023)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="nav bd-sidenav">
@@ -329,7 +333,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Simulation Project (Due Tuesday, November 14, 2023)</h1>
+    <h1>Simulation Project (Due Tuesday, November 3, 2023)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -339,6 +343,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resources-for-learning-python">Resources for learning Python</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-ferromagnetic-phase-transition">Question 1: Ferromagnetic phase transition</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-molecular-dynamics-simulations-of-a-lennard-jones-fluid">Question 2: Molecular dynamics simulations of a Lennard-Jones fluid</a></li>
 </ul>
@@ -352,11 +357,20 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="simulation-project-due-tuesday-november-14-2023">
-<h1>Simulation Project (Due Tuesday, November 14, 2023)<a class="headerlink" href="#simulation-project-due-tuesday-november-14-2023" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="simulation-project-due-tuesday-november-3-2023">
+<h1>Simulation Project (Due Tuesday, November 3, 2023)<a class="headerlink" href="#simulation-project-due-tuesday-november-3-2023" title="Permalink to this headline">#</a></h1>
 <p><strong>General point deductions</strong>
 For each plot, if you are missing the title, axis label(s), or have not labeled
 your units, you will incur a 1 point deduction per missing item per plot.</p>
+<section id="resources-for-learning-python">
+<h2>Resources for learning Python<a class="headerlink" href="#resources-for-learning-python" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
+<li><p>The links for CS 301: Intro to Data Programming are useful for setting up Python on multiple platforms. The class website is <a class="reference external" href="http://pages.cs.wisc.edu/~cs301-1/">here</a>.</p></li>
+<li><p>DoIT manages subscriptions to <a class="reference external" href="http://Lynda.com">Lynda.com</a>, which contains ~2 hour long training videos on Python. See the links <a class="reference external" href="https://sts.doit.wisc.edu/">here</a> and <a class="reference external" href="https://www.lynda.com/search?q=Python">here</a>.</p></li>
+<li><p><a class="reference external" href="https://developers.google.com/edu/python/?csw=1">Google’s Python class</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/tutorial/">Python tutorial</a></p></li>
+</ol>
+</section>
 <section id="question-1-ferromagnetic-phase-transition">
 <h2>Question 1: Ferromagnetic phase transition<a class="headerlink" href="#question-1-ferromagnetic-phase-transition" title="Permalink to this headline">#</a></h2>
 <p>Ferromagnetic materials undergo an order-disorder transition as a
@@ -636,6 +650,7 @@ simulations if you have saved your trajectories.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resources-for-learning-python">Resources for learning Python</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-ferromagnetic-phase-transition">Question 1: Ferromagnetic phase transition</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-molecular-dynamics-simulations-of-a-lennard-jones-fluid">Question 2: Molecular dynamics simulations of a Lennard-Jones fluid</a></li>
 </ul>

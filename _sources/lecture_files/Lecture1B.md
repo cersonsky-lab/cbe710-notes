@@ -226,8 +226,15 @@ between state $A$ and state $B$.
 
 However, the difference in the internal
 energy, $E$, between state $A$ and $B$ does not depend on the path. $E$
-is thus called a **state function** because it is a property of each
-state and not the path between them. We can write the change in $E$
+is thus called a
+
+```{glossary}
+
+state function
+    a function that is a property of each state and not the path between them
+```
+
+We can write the change in $E$
 between states $A$ and $B$, $\Delta E$, for a system undergoing a change
 in volume as the:
 

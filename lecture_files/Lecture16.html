@@ -66,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'lecture_files/Lecture16';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Problem Set 1 (Due Tuesday, September 19, 2023)" href="../problems/ps_1/problem_set_1.html" />
+    <link rel="next" title="Heat engines and possible processes" href="Lecture17.html" />
     <link rel="prev" title="Free energy perturbation and thermodynamic integration" href="Lecture15.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
@@ -152,10 +152,13 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Mechanics</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Before we get started</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Lecture1A.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Lecture1B.html">Review of thermodynamics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Mechanics</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Lecture2.html">Postulates of statistical mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Lecture3.html">Application of the microcanonical ensemble: two-state system</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Lecture4.html">The canonical ensemble</a></li>
@@ -181,6 +184,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Postulates of thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture17.html">Heat engines and possible processes</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Problem Sets</span></p>
 <ul class="nav bd-sidenav">
@@ -390,16 +394,22 @@ stated in various ways (and their numbering scheme may vary as well) -
 we follow the postulates as defined in <span id="id2">Tester and Modell [<a class="reference internal" href="../references.html#id4" title="Jefferson W. Tester and Michael Modell. Thermodynamics and its applications. Prentice-Hall international series in the physical and chemical engineering sciences. Prentice Hall PTR, Upper Saddle River, N.J, 3rd ed edition, 1997. ISBN 978-0-13-915356-3. URL: https://www.eng.uc.edu/~beaucag/Classes/ChEThermoBeaucage/Books/Jefferson%20W.%20Tester,%20Michael%20Modell%20-%20Thermodynamics%20and%20Its%20Applications-Prentice%20Hall%20(1997).pdf.">4</a>]</span>.</p>
 <section id="postulate-0">
 <h3>Postulate 0<a class="headerlink" href="#postulate-0" title="Permalink to this headline">#</a></h3>
-<p><strong>We assume that we have an experimental apparatus
+<dl class="glossary simple">
+<dt id="term-Postulate-0">Postulate 0<a class="headerlink" href="#term-Postulate-0" title="Permalink to this term">#</a></dt><dd><p>We assume that we have an experimental apparatus
 capable of measuring system properties and of manipulating the values of
-system variables as well.</strong></p>
+system variables as well.</p>
+</dd>
+</dl>
 </section>
 <section id="postulate-1-equilibrium-states">
 <h3>Postulate 1: Equilibrium States<a class="headerlink" href="#postulate-1-equilibrium-states" title="Permalink to this headline">#</a></h3>
-<p><strong>For closed <a class="reference internal" href="#term-simple-system"><span class="xref std std-term">simple system</span></a>s with given internal
+<dl class="glossary simple">
+<dt id="term-Postulate-1">Postulate 1<a class="headerlink" href="#term-Postulate-1" title="Permalink to this term">#</a></dt><dd><p>For closed <a class="reference internal" href="#term-simple-system"><span class="xref std std-term">simple system</span></a>s with given internal
 <a class="reference internal" href="#term-restraint"><span class="xref std std-term">restraint</span></a>s, there exist stable <a class="reference internal" href="#term-equilibrium-state"><span class="xref std std-term">equilibrium state</span></a>s which can be
 characterized completely by the internal energy E and a set of independently
-varying state functions.</strong></p>
+varying state functions.</p>
+</dd>
+</dl>
 <p>First, let’s unpack some definitions here:</p>
 <dl class="glossary simple">
 <dt id="term-simple-system">simple system<a class="headerlink" href="#term-simple-system" title="Permalink to this term">#</a></dt><dd><p>have no internal boundaries of any kind and are
@@ -456,10 +466,13 @@ relationships as we proceed.</p>
 </section>
 <section id="postulate-2">
 <h3>Postulate 2<a class="headerlink" href="#postulate-2" title="Permalink to this headline">#</a></h3>
-<p><strong>All systems, both simple and composite, will change such to approach
+<dl class="glossary simple">
+<dt id="term-Postulate-2">Postulate 2<a class="headerlink" href="#term-Postulate-2" title="Permalink to this term">#</a></dt><dd><p>All systems, both simple and composite, will change such to approach
 one and only one stable equilibrium state within each subsystem,
 provided there is no net effect on the environment. In the limiting
-condition, the entire system is said to be at equilibrium.</strong></p>
+condition, the entire system is said to be at equilibrium.</p>
+</dd>
+</dl>
 <dl class="glossary simple">
 <dt id="term-composite-system">composite system<a class="headerlink" href="#term-composite-system" title="Permalink to this term">#</a></dt><dd><p>consists of two or more distinguishable
 subsystems that may be separated by boundaries, e.g. two solutions
@@ -517,12 +530,15 @@ isothermal process is one in which the temperature is constant.</p>
 </section>
 <section id="postulate-3">
 <h3>Postulate 3<a class="headerlink" href="#postulate-3" title="Permalink to this headline">#</a></h3>
-<p><strong>For any states, (1) and (2), in which a <a class="reference internal" href="Lecture1B.html#term-Closed"><span class="xref std std-term">closed</span></a> system
+<dl class="glossary simple">
+<dt id="term-Postulate-3">Postulate 3<a class="headerlink" href="#term-Postulate-3" title="Permalink to this term">#</a></dt><dd><p>For any states, (1) and (2), in which a <a class="reference internal" href="Lecture1B.html#term-Closed"><span class="xref std std-term">closed</span></a> system
 is at <a class="reference internal" href="#term-equilibrium"><span class="xref std std-term">equilibrium</span></a>, the change of state represented by (1) <span class="math notranslate nohighlight">\(\rightarrow\)</span>
 (2) and/or the reverse change (2) <span class="math notranslate nohighlight">\(\rightarrow\)</span> (1) can occur by at
 least one <a class="reference internal" href="Lecture1B.html#term-Adiabatic-Insulated"><span class="xref std std-term">adiabatic/insulated</span></a> process, and the <a class="reference internal" href="#term-adiabatic-work-interaction"><span class="xref std std-term">adiabatic work interaction</span></a> between
 this system and its surroundings is determined uniquely by specifying
-the end states (1) and (2).</strong></p>
+the end states (1) and (2).</p>
+</dd>
+</dl>
 <p>This postulate defines several important pieces of terminology that
 require some investigation. First, we formally define the concept of
 <strong>work</strong>, which we have already used repeatedly in our study of
@@ -589,12 +605,12 @@ since the walls and each step is adiabatic. Moreover, the inverse
 process is not possible, since we cannot cool the system adiabatically
 by returning heat to the electric generator.</p>
 <p>Since an adiabatic process is possible between any two states, Postulate
-3 then defines the internal energy of the system, <span class="math notranslate nohighlight">\(\underline{U}\)</span>,
+3 then defines the internal energy of the system, <span class="math notranslate nohighlight">\(U\)</span>,
 as a  <a class="reference internal" href="#term-derived-property"><span class="xref std std-term">derived property</span></a> (i.e. one that is not directly measurable)
 equal to the work done during an adiabatic process, since the adiabatic
 work is only a function of the end states:</p>
 <div class="math notranslate nohighlight">
-\[\underline{U}_2 - \underline{U}_1 = \underline{W}_{1\rightarrow 2, \textrm{adiabatic}}\]</div>
+\[U_2 - U_1 = W_{1\rightarrow 2, \textrm{adiabatic}}\]</div>
 <dl class="glossary simple">
 <dt id="term-derived-property">derived property<a class="headerlink" href="#term-derived-property" title="Permalink to this term">#</a></dt><dd><p>a property which cannot be measured directly by
 any method, but can be determined from changes to primitive
@@ -628,9 +644,9 @@ process and the actual work performed</p>
 <p>We can write this as:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
-\delta Q &amp;= \left(\underline{U}_\textrm{2} - \underline{U}_\textrm{1} \right)- \delta \underline{W} \\
-&amp;= \underline{W}_{\textrm{adiabatic}} - \underline{W}_{\textrm{non-adiabatic}}\\
-\Delta \underline{U} &amp;= \delta \underline{Q} + \delta \underline{W}
+\delta Q &amp;= \left(U_\textrm{2} - U_\textrm{1} \right)- \delta W \\
+&amp;= W_{\textrm{adiabatic}} - W_{\textrm{non-adiabatic}}\\
+\Delta U &amp;= \delta Q + \delta W
 \end{aligned}\end{split}\]</div>
 <p>This relation is referred to as the <a class="reference internal" href="Lecture1B.html#term-first-law-of-thermodynamics"><span class="xref std std-term">first law of thermodynamics</span></a> and
 is consistent with our definition in our <a class="reference internal" href="Lecture1B.html"><span class="doc std std-doc">earlier review</span></a> –
@@ -650,10 +666,13 @@ necessarily undergo a heat interaction.</p>
 </section>
 <section id="postulate-4">
 <h3>Postulate 4<a class="headerlink" href="#postulate-4" title="Permalink to this headline">#</a></h3>
-<p><strong>If the sets of systems <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span> and <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(C\)</span> each have
+<dl class="glossary simple">
+<dt id="term-Postulate-4">Postulate 4<a class="headerlink" href="#term-Postulate-4" title="Permalink to this term">#</a></dt><dd><p>If the sets of systems <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span> and <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(C\)</span> each have
 no heat interaction when connected across non-adiabatic walls, then there
 will be no heat interaction if systems <span class="math notranslate nohighlight">\(B\)</span> and <span class="math notranslate nohighlight">\(C\)</span> are also so
-connected.</strong></p>
+connected.</p>
+</dd>
+</dl>
 <p>This postulate effectively defines the concept of <a class="reference internal" href="#term-thermal-equilibrium"><span class="xref std std-term">thermal equilibrium</span></a> -
 systems connected across non-adiabatic walls that do not have a heat
 interaction are at thermal equilibrium, and thus any two systems that
@@ -718,11 +737,11 @@ temperature of the surroundings</p>
       </div>
     </a>
     <a class="right-next"
-       href="../problems/ps_1/problem_set_1.html"
+       href="Lecture17.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Problem Set 1 (Due Tuesday, September 19, 2023)</p>
+        <p class="prev-next-title">Heat engines and possible processes</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

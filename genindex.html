@@ -147,10 +147,13 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Mechanics</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Before we get started</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="lecture_files/Lecture1A.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lecture_files/Lecture1B.html">Review of thermodynamics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Mechanics</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="lecture_files/Lecture2.html">Postulates of statistical mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lecture_files/Lecture3.html">Application of the microcanonical ensemble: two-state system</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lecture_files/Lecture4.html">The canonical ensemble</a></li>
@@ -176,13 +179,14 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="lecture_files/Lecture16.html">Postulates of thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture_files/Lecture17.html">Heat engines and possible processes</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Problem Sets</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="problems/ps_1/problem_set_1.html">Problem Set 1 (Due Tuesday, September 19, 2023)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="problems/ps_2/problem_set_2.html">Problem Set 2 (Due Thursday, September 28, 2023)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="problems/ps_3/problem_set_3.html">Problem Set 3 (Due Thursday, October 10, 2023)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="problems/simulation_project.html">Simulation Project (Due Tuesday, November 14, 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="problems/simulation_project.html">Simulation Project (Due Tuesday, November 3, 2023)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="nav bd-sidenav">
@@ -396,16 +400,20 @@ document.write(`
 <h2 id="E">E</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="lecture_files/Lecture17.html#term-efficiency"><strong>efficiency</strong></a>
+</li>
       <li><a href="lecture_files/Lecture2.html#term-ensemble-average"><strong>ensemble average</strong></a>
+</li>
+      <li><a href="lecture_files/Lecture17.html#term-enthalpy"><strong>enthalpy</strong></a>
 </li>
       <li><a href="lecture_files/Lecture2.html#term-entropy"><strong>entropy</strong></a>
 </li>
       <li><a href="lecture_files/Lecture1B.html#term-environment"><strong>environment</strong></a>
 </li>
-      <li><a href="lecture_files/Lecture16.html#term-equilibrium"><strong>equilibrium</strong></a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="lecture_files/Lecture16.html#term-equilibrium"><strong>equilibrium</strong></a>
+</li>
       <li><a href="lecture_files/Lecture16.html#term-equilibrium-state"><strong>equilibrium state</strong></a>
 </li>
       <li><a href="lecture_files/Lecture6.html#term-equipartition-theorem"><strong>equipartition theorem</strong></a>
@@ -450,11 +458,13 @@ document.write(`
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="lecture_files/Lecture9B.html#term-hard-particle-interaction"><strong>hard-particle interaction</strong></a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="lecture_files/Lecture16.html#term-heat"><strong>heat</strong></a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="lecture_files/Lecture9A.html#term-heat-capacity"><strong>heat capacity</strong></a>
+</li>
+      <li><a href="lecture_files/Lecture17.html#term-heat-engine"><strong>heat engine</strong></a>
 </li>
   </ul></td>
 </tr></table>
@@ -570,9 +580,19 @@ document.write(`
 </li>
       <li><a href="notation.html#term-partial-molar-property"><strong>partial molar property,</strong></a>
 </li>
+      <li><a href="lecture_files/Lecture10.html#term-periodic-boundary-conditions"><strong>periodic boundary conditions</strong></a>
+</li>
+      <li><a href="lecture_files/Lecture16.html#term-Postulate-0"><strong>Postulate 0</strong></a>
+</li>
+      <li><a href="lecture_files/Lecture16.html#term-Postulate-1"><strong>Postulate 1</strong></a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="lecture_files/Lecture10.html#term-periodic-boundary-conditions"><strong>periodic boundary conditions</strong></a>
+      <li><a href="lecture_files/Lecture16.html#term-Postulate-2"><strong>Postulate 2</strong></a>
+</li>
+      <li><a href="lecture_files/Lecture16.html#term-Postulate-3"><strong>Postulate 3</strong></a>
+</li>
+      <li><a href="lecture_files/Lecture16.html#term-Postulate-4"><strong>Postulate 4</strong></a>
 </li>
       <li><a href="lecture_files/Lecture14A.html#term-potential-of-mean-force"><strong>potential of mean force</strong></a>
 </li>
@@ -608,9 +628,11 @@ document.write(`
 </li>
       <li><a href="lecture_files/Lecture16.html#term-simple-system"><strong>simple system</strong></a>
 </li>
+      <li><a href="lecture_files/Lecture16.html#term-stable-phase"><strong>stable phase</strong></a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="lecture_files/Lecture16.html#term-stable-phase"><strong>stable phase</strong></a>
+      <li><a href="lecture_files/Lecture1B.html#term-state-function"><strong>state function</strong></a>
 </li>
       <li><a href="lecture_files/Lecture1B.html#term-surroundings"><strong>surroundings</strong></a>
 </li>

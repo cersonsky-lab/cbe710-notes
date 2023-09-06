@@ -1,8 +1,15 @@
-# Simulation Project (Due Tuesday, November 14, 2023) 
+# Simulation Project (Due Tuesday, November 3, 2023) 
 
 **General point deductions**
 For each plot, if you are missing the title, axis label(s), or have not labeled
 your units, you will incur a 1 point deduction per missing item per plot.
+
+## Resources for learning Python
+1. The links for CS 301: Intro to Data Programming are useful for setting up Python on multiple platforms. The class website is [here](http://pages.cs.wisc.edu/~cs301-1/). 
+2. DoIT manages subscriptions to Lynda.com, which contains ~2 hour long training videos on Python. See the links [here](https://sts.doit.wisc.edu/) and [here](https://www.lynda.com/search?q=Python). 
+3. [Google’s Python class](https://developers.google.com/edu/python/?csw=1)
+4. [Python tutorial](https://docs.python.org/3/tutorial/) 
+
 
 ## Question 1: Ferromagnetic phase transition
 
