@@ -226,8 +226,15 @@ between state $A$ and state $B$.
 
 However, the difference in the internal
 energy, $E$, between state $A$ and $B$ does not depend on the path. $E$
-is thus called a **state function** because it is a property of each
-state and not the path between them. We can write the change in $E$
+is thus called a
+
+```{glossary}
+
+state function
+    a function that is a property of each state and not the path between them
+```
+
+We can write the change in $E$
 between states $A$ and $B$, $\Delta E$, for a system undergoing a change
 in volume as the:
 
@@ -379,6 +386,13 @@ Therefore, we could write our fundamental relation _without_ these variables,
 instead only in terms of $N$, $V$, and $S$.
 Because of this, $N$, $V$, and $S$ are called the **natural variables** of the internal
 energy.
+
+```{glossary}
+natural variables
+   the variables that, if they were held constant, then the corresponding thermodynamic potential would also be constant;
+   because of the exact differential relationship between a thermodynamic potential and its natural variables,
+   we can write any thermodynamic potential in terms of *only* its natural variables.
+```
 
 
 ```{admonition} What is the differential of internal energy (dE) in a system where we hold N, V, and S constant?
