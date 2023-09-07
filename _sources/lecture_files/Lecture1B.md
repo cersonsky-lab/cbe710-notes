@@ -387,6 +387,13 @@ instead only in terms of $N$, $V$, and $S$.
 Because of this, $N$, $V$, and $S$ are called the **natural variables** of the internal
 energy.
 
+```{glossary}
+natural variables
+   the variables that, if they were held constant, then the corresponding thermodynamic potential would also be constant;
+   because of the exact differential relationship between a thermodynamic potential and its natural variables,
+   we can write any thermodynamic potential in terms of *only* its natural variables.
+```
+
 
 ```{admonition} What is the differential of internal energy (dE) in a system where we hold N, V, and S constant?
 <details>
