@@ -91,22 +91,23 @@ We will discuss four primary ensembles in this course that are given names refle
 choice of thermodynamic variables that are held constant.
 
 ```{glossary}
+
 microcanonical ensemble
     The ensemble for which all microstates have a fixed number of particles, volume, and
-    internal energy. Also known as the $$NVE$$ ensemble.
+    internal energy. Also known as the $NVE$ ensemble.
 
 canonical ensemble
     The ensemble for which all microstates have a fixed number of particles, volume, and
-    temperature. Also known as the $$NVT$$ ensemble.
+    temperature. Also known as the $NVT$ ensemble.
 
 grand canonical ensemble
     The ensemble for which all microstates have a fixed chemical potential, volume, and temperature.
-    Also known as the $$\mu VT$$ ensemble.
+    Also known as the $\mu VT$ ensemble.
 
 isothermal-isobaric ensemble
     The ensemble for which all microstates have a fixed number of particles,
     pressure, and temperature.
-    Also known as the $$NPT$$ ensemble.
+    Also known as the $NPT$ ensemble.
 ```
 
 Many more ensembles are possible based on different thermodynamic
