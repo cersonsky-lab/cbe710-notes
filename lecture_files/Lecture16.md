@@ -25,16 +25,23 @@ stated in various ways (and their numbering scheme may vary as well) -
 we follow the postulates as defined in {cite:ts}`tester_thermodynamics_1997`.
 
 ### Postulate 0
-**We assume that we have an experimental apparatus
-capable of measuring system properties and of manipulating the values of
-system variables as well.**
+```{glossary}
 
+Postulate 0
+    We assume that we have an experimental apparatus
+    capable of measuring system properties and of manipulating the values of
+    system variables as well.
+```
 
 ### Postulate 1: Equilibrium States
-**For closed {term}`simple system`s with given internal
-{term}`restraint`s, there exist stable {term}`equilibrium state`s which can be
-characterized completely by the internal energy E and a set of independently
-varying state functions.**
+```{glossary}
+
+Postulate 1
+    For closed {term}`simple system`s with given internal
+    {term}`restraint`s, there exist stable {term}`equilibrium state`s which can be
+    characterized completely by the internal energy E and a set of independently
+    varying state functions.
+```
 
 First, let's unpack some definitions here:
 
@@ -102,11 +109,16 @@ restraints in the system. We will present examples of these
 relationships as we proceed.
 
 
+
 ### Postulate 2
-**All systems, both simple and composite, will change such to approach
-one and only one stable equilibrium state within each subsystem,
-provided there is no net effect on the environment. In the limiting
-condition, the entire system is said to be at equilibrium.**
+```{glossary}
+
+Postulate 2
+    All systems, both simple and composite, will change such to approach
+    one and only one stable equilibrium state within each subsystem,
+    provided there is no net effect on the environment. In the limiting
+    condition, the entire system is said to be at equilibrium.
+```
 
 ```{glossary}
 
@@ -176,12 +188,16 @@ isothermal process is one in which the temperature is constant.
 
 
 ### Postulate 3
-**For any states, (1) and (2), in which a {term}`closed` system
-is at {term}`equilibrium`, the change of state represented by (1) $\rightarrow$
-(2) and/or the reverse change (2) $\rightarrow$ (1) can occur by at
-least one {term}`adiabatic/insulated` process, and the {term}`adiabatic work interaction` between
-this system and its surroundings is determined uniquely by specifying
-the end states (1) and (2).**
+```{glossary}
+
+Postulate 3
+    For any states, (1) and (2), in which a {term}`closed` system
+    is at {term}`equilibrium`, the change of state represented by (1) $\rightarrow$
+    (2) and/or the reverse change (2) $\rightarrow$ (1) can occur by at
+    least one {term}`adiabatic/insulated` process, and the {term}`adiabatic work interaction` between
+    this system and its surroundings is determined uniquely by specifying
+    the end states (1) and (2).
+```
 
 This postulate defines several important pieces of terminology that
 require some investigation. First, we formally define the concept of
@@ -264,12 +280,12 @@ process is not possible, since we cannot cool the system adiabatically
 by returning heat to the electric generator.
 
 Since an adiabatic process is possible between any two states, Postulate
-3 then defines the internal energy of the system, $\underline{U}$,
+3 then defines the internal energy of the system, $U$,
 as a  {term}`derived property` (i.e. one that is not directly measurable)
 equal to the work done during an adiabatic process, since the adiabatic
 work is only a function of the end states:
 
-$$\underline{U}_2 - \underline{U}_1 = \underline{W}_{1\rightarrow 2, \textrm{adiabatic}}$$
+$$U_2 - U_1 = W_{1\rightarrow 2, \textrm{adiabatic}}$$
 
 
 ```{glossary}
@@ -313,9 +329,9 @@ heat
 We can write this as:
 
 $$\begin{aligned}
-\delta Q &= \left(\underline{U}_\textrm{2} - \underline{U}_\textrm{1} \right)- \delta \underline{W} \\
-&= \underline{W}_{\textrm{adiabatic}} - \underline{W}_{\textrm{non-adiabatic}}\\
-\Delta \underline{U} &= \delta \underline{Q} + \delta \underline{W}
+\delta Q &= \left(U_\textrm{2} - U_\textrm{1} \right)- \delta W \\
+&= W_{\textrm{adiabatic}} - W_{\textrm{non-adiabatic}}\\
+\Delta U &= \delta Q + \delta W
 \end{aligned}$$
 
 This relation is referred to as the {term}`first law of thermodynamics` and
@@ -335,10 +351,15 @@ wall, but having a {term}`diathermal` wall does not imply that a system will
 necessarily undergo a heat interaction.
 
 ### Postulate 4
-**If the sets of systems $A$, $B$ and $A$, $C$ each have
-no heat interaction when connected across non-adiabatic walls, then there
-will be no heat interaction if systems $B$ and $C$ are also so
-connected.**
+
+```{glossary}
+
+Postulate 4
+    If the sets of systems $A$, $B$ and $A$, $C$ each have
+    no heat interaction when connected across non-adiabatic walls, then there
+    will be no heat interaction if systems $B$ and $C$ are also so
+    connected.
+```
 
 This postulate effectively defines the concept of {term}`thermal equilibrium` -
 systems connected across non-adiabatic walls that do not have a heat

@@ -1,10 +1,12 @@
 format: jb-book
 root: intro
 parts:
-  - caption: Statistical Mechanics
+  - caption: Before we get started
     chapters:
         - file: lecture_files/Lecture1A
         - file: lecture_files/Lecture1B
+  - caption: Statistical Mechanics
+    chapters:
         - file: lecture_files/Lecture2
         - file: lecture_files/Lecture3
         - file: lecture_files/Lecture4
@@ -28,7 +30,7 @@ parts:
   - caption: Thermodynamics
     chapters:
         - file: lecture_files/Lecture16
-#         - file: lecture_files/Lecture17
+        - file: lecture_files/Lecture17
 #         - file: lecture_files/Lecture18
 #         - file: lecture_files/Lecture19
 #         - file: lecture_files/Lecture20

@@ -260,7 +260,7 @@ the pressure is constant).
 
 ## Entropy
 
-The second law of thermodynamics defines another state function called
+The second law of thermodynamics defines another {term}`state function` called
 the **entropy**, $S$. Entropy is conceptually equivalent to the amount
 of uncertainty pertaining to any given macrostate (more on this later).
 The combined entropy of a system and its surroundings (*i.e.*, the

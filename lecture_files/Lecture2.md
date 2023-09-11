@@ -64,7 +64,7 @@ and record the positions of all $N$ particles, we would define a
 microstate
     one particular configuration out
     of the enormous set of configurations of particle positions that have
-    the same macroscopic values of $N$, $V$, and $E$
+    the same macroscopic values of a given macrostate
 ```
 
 **There are thus many,
@@ -76,10 +76,16 @@ context.
 ![image](figs/fig_2_1-01.png)
 
 Given this definition of a microstate, we can then define the concept of
-an **ensemble** of microstates. An ensemble is a mental collection of
-all possible unique microstates that are consistent with a specific
-macrostate; each member of the ensemble is considered identical
-macroscopically, but unique microscopically.
+an **ensemble** of microstates.
+
+```{glossary}
+
+ensemble
+    a mental collection of
+    all possible unique microstates that are consistent with a specific
+    macrostate; each member of the ensemble is considered identical
+    macroscopically, but unique microscopically
+```
 
 We will discuss four primary ensembles in this course that are given names reflecting the
 choice of thermodynamic variables that are held constant.
