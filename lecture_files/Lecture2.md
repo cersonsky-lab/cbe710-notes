@@ -177,7 +177,7 @@ and the ensemble average
 
 ```{math}
 :label: ensembleavg
-Y_{ens} \equiv \sum_{\text{microstate}~i} p_i Y_i  dt 
+Y_{ens} \equiv \sum_{\text{microstate}~i} p_i Y_i
 ```
 
 and noting that our observed quantity
