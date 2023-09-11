@@ -367,16 +367,20 @@ $$\begin{aligned}
 \therefore \eta_5 &\le \eta_6 < 1
 \end{aligned}$$
 
-Recall that in Case 5 $\delta Q_A$ is transferred to the engine (away
-from the hot system) and in Case 6 $\delta Q_A$ is transferred from the
-engine (to the hot system). If $\eta_5 > \eta_6$ and there is no work
-done on the environment, then $Q_A$ for the process in Case 5 is smaller
+In other words, processes are where heat is extracted to become work
+are less efficient than processes where work is turned into heat.
+
+```{admonition} What postulate would be broken if $\eta_5 > \eta_6$?
+<details><summary>Click for answer</summary>
+Here, $Q_A$ for the process in Case 5 is smaller
 than $Q_A$ for the process in Case 6, meaning that less energy is
 extracted from $A$ during the process in Case 5 than is returned to $A$
 during the process in Case 6. Running these two processes cylically
 would thus result in a net transfer of heat from $B$ to $A$ since there
 is no net effect on the environment. This transfer is impossible since
 it reduces to Case 2.
+</details>
+```
 
 If $\eta_5 = \eta_6$, then the system and its environment both return to
 their initial states. The latter case is referred to as a **reversible
