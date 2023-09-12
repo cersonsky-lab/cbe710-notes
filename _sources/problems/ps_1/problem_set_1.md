@@ -1,4 +1,4 @@
-# Problem Set 1 (Due Tuesday, September 19, 2023) 
+# Problem Set 1 (Due Wednesday, September 20, 2023) 
 
 ## Question 1: Polymer dimensions
 

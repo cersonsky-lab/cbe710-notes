@@ -1,4 +1,4 @@
-# Problem Set 2 (Due Thursday, September 28, 2023)
+# Problem Set 2 (Due Wednesday, September 27, 2023)
 
 ## Question 1: Expressions for entropy
 

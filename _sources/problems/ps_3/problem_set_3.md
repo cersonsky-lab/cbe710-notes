@@ -1,4 +1,4 @@
-# Problem Set 3 (Due Thursday, October 10, 2023)
+# Problem Set 3 (Due Monday, October 9, 2023)
 
 ## Question 1: Isomerization process
 
