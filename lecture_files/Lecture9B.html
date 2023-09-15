@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>An introduction to molecular simulation &#8212; Advanced Thermodynamics for Chemical Engineers</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -35,17 +35,16 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/defs.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=927b94d3fcb96560df09"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -70,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Monte Carlo simulations" href="Lecture10.html" />
     <link rel="prev" title="Fluctuations and thermodynamic response functions" href="Lecture9A.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
   
   
@@ -79,15 +78,6 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  
-  <div id="pst-scroll-pixel-helper"></div>
-
-  
-  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
-
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -194,6 +184,14 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Lecture16.html">Postulates of thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture17.html">Heat engines and possible processes</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Problem Sets</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../problems/ps_1/problem_set_1.html">Problem Set 1 (Due Wednesday, September 20, 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/ps_2/problem_set_2.html">Problem Set 2 (Due Wednesday, September 27, 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/ps_3/problem_set_3.html">Problem Set 3 (Due Monday, October 9, 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/simulation_project.html">Simulation Project (Due Monday, November 6, 2023)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="nav bd-sidenav">
@@ -307,10 +305,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
 `);
 </script>
@@ -318,7 +316,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
 `);
 </script>
@@ -372,15 +370,15 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="an-introduction-to-molecular-simulation">
-<h1>An introduction to molecular simulation<a class="headerlink" href="#an-introduction-to-molecular-simulation" title="Permalink to this heading">#</a></h1>
+<h1>An introduction to molecular simulation<a class="headerlink" href="#an-introduction-to-molecular-simulation" title="Permalink to this headline">#</a></h1>
 <section id="additional-readings-for-the-enthusiast">
-<h2>Additional Readings for the Enthusiast<a class="headerlink" href="#additional-readings-for-the-enthusiast" title="Permalink to this heading">#</a></h2>
+<h2>Additional Readings for the Enthusiast<a class="headerlink" href="#additional-readings-for-the-enthusiast" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><span id="id1">Frenkel and Smit [<a class="reference internal" href="../references.html#id5" title="Daan Frenkel and Berend Smit. Understanding molecular simulation: from algorithms to applications. Number 1 in Computational science series. Academic Press, San Diego, 2nd ed edition, 2002. ISBN 978-0-12-267351-1. URL: https://www.eng.uc.edu/~beaucag/Classes/AdvancedMaterialsThermodynamics/Books/%5BComputational%20science%20(San%20Diego,%20Calif.)%5D%20Daan%20Frenkel_%20Berend%20Smit%20-%20Understanding%20molecular%20simulation%20_%20from%20algorithms%20to%20applications%20(2002,%20Academic%20Press%20)%20-%20libgen.lc.pdf.">2</a>]</span> Ch. 3.6</p></li>
 </ul>
 </section>
 <section id="goals-for-today-s-lectures">
-<h2>Goals for today’s lectures<a class="headerlink" href="#goals-for-today-s-lectures" title="Permalink to this heading">#</a></h2>
+<h2>Goals for today’s lectures<a class="headerlink" href="#goals-for-today-s-lectures" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Describe Monte Carlo and molecular dynamics simulation techniques</p></li>
 <li><p>Understand how these two techniques are related to the ergodic hypothesis from <a class="reference internal" href="Lecture2.html"><span class="doc std std-doc">earlier lectures</span></a></p></li>
@@ -388,7 +386,7 @@ document.write(`
 </ul>
 </section>
 <section id="two-main-simulation-methods">
-<h2>Two main simulation methods<a class="headerlink" href="#two-main-simulation-methods" title="Permalink to this heading">#</a></h2>
+<h2>Two main simulation methods<a class="headerlink" href="#two-main-simulation-methods" title="Permalink to this headline">#</a></h2>
 <p>In the previous lecture, we performed a first analysis of a many-body,
 interacting system; that is, a system in which particle interactions are
 included in the potential energy function of the system. We also saw
@@ -422,7 +420,7 @@ same property (from [Lecture 2](Lecture 2)):</p>
 \end{aligned}\]</div>
 <p>Which can be visualized like this:</p>
 <p><img alt="image" src="../_images/fig_9A_1-01.png" /></p>
-<dl class="simple glossary">
+<dl class="glossary simple">
 <dt id="term-Monte-Carlo-simulations">Monte Carlo simulations<a class="headerlink" href="#term-Monte-Carlo-simulations" title="Permalink to this term">#</a></dt><dd><p>simulations which use <a class="reference external" href="https://en.wikipedia.org/wiki/Monte_Carlo_method">Monte Carlo sampling</a>
 to determine the probability distribution of configurations, such
 that we can determine the ensemble-average properties</p>
@@ -446,7 +444,7 @@ sampled as long as the energy is well-defined for each state. These
 strengths of MC simulations are also weaknesses, however, as inherently
 time-dependent properties (such as a diffusion coefficient) cannot be
 accurately measured.</p>
-<dl class="simple glossary">
+<dl class="glossary simple">
 <dt id="term-molecular-dynamics-simulations">molecular dynamics simulations<a class="headerlink" href="#term-molecular-dynamics-simulations" title="Permalink to this term">#</a></dt><dd><p>molecular simulations which use Newton’s <a class="reference external" href="https://en.wikipedia.org/wiki/Equations_of_motion">equations of motion</a>
 to determine the time-evolution of a system of particles, such that
 we can extract the time-average properties</p>
@@ -473,7 +471,7 @@ regarding how a physical system is actually modeled in a simulation
 representation.</p>
 </section>
 <section id="model-description-of-a-simulation-system">
-<h2>Model description of a simulation system<a class="headerlink" href="#model-description-of-a-simulation-system" title="Permalink to this heading">#</a></h2>
+<h2>Model description of a simulation system<a class="headerlink" href="#model-description-of-a-simulation-system" title="Permalink to this headline">#</a></h2>
 <p>Regardless of whether we sample a simulation observable using a MC or MD
 method, we first need to understand how to model a physical system. This
 choice is system specific and depends on many factors, including the
@@ -482,7 +480,7 @@ of thermal motions, etc. Here, we will summarize various ways to
 represent a physical system and comment on examples in the literature
 for which they are commonly used.</p>
 <section id="particle-based-representations">
-<h3>Particle-based representations<a class="headerlink" href="#particle-based-representations" title="Permalink to this heading">#</a></h3>
+<h3>Particle-based representations<a class="headerlink" href="#particle-based-representations" title="Permalink to this headline">#</a></h3>
 <p>The most common simulation model consists of a set of <span class="math notranslate nohighlight">\(N\)</span> particles,
 where each particle represents either a single atom or some collection
 of atoms. A single configuration of the system is then specified by by
@@ -526,7 +524,7 @@ and interactions. In your simulation, you want to use the <em>fewest</em>
 number of particles that you can and still capture the relevant physics.</p>
 </section>
 <section id="lattice-models">
-<h3>Lattice models<a class="headerlink" href="#lattice-models" title="Permalink to this heading">#</a></h3>
+<h3>Lattice models<a class="headerlink" href="#lattice-models" title="Permalink to this headline">#</a></h3>
 <p>Another means of representing a system is by projecting all coordinates
 onto a discrete set of lattice points, as opposed to a continuous set of
 coordinates; we solved lattice models analytically for the <a class="reference internal" href="Lecture7.html#term-Langmuir-adsorption-isotherm"><span class="xref std std-term">Langmuir adsorption isotherm</span></a> and the <a class="reference internal" href="Lecture8A.html#term-Ising-model"><span class="xref std std-term">Ising model</span></a> in the Statistical Mechanics unit. A
@@ -547,7 +545,7 @@ and <a class="reference external" href="https://en.wikipedia.org/wiki/Lattice_di
 </section>
 </section>
 <section id="interactions-between-particles">
-<h2>Interactions between particles<a class="headerlink" href="#interactions-between-particles" title="Permalink to this heading">#</a></h2>
+<h2>Interactions between particles<a class="headerlink" href="#interactions-between-particles" title="Permalink to this headline">#</a></h2>
 <p>Having defined various ways of representing a physical system and
 modeling the positions of particles, we now can define how interactions
 are defined in a molecular system. Interactions are defined in terms of
@@ -558,7 +556,7 @@ external field).</p>
 coarse-grained, particle-based simulations, as these potentials are
 common for both MC and MD simulations of distinct molecules.
 Interactions can largely be divided into two classes:</p>
-<dl class="simple glossary">
+<dl class="glossary simple">
 <dt id="term-bonded-interactions">bonded interactions<a class="headerlink" href="#term-bonded-interactions" title="Permalink to this term">#</a></dt><dd><p>interactions meant to represent bonds, bond angles, and torsional angles;</p>
 </dd>
 <dt id="term-non-bonded-interactions">non-bonded interactions<a class="headerlink" href="#term-non-bonded-interactions" title="Permalink to this term">#</a></dt><dd><p>interactions between atoms/particles that are not bonded together, and generally reflect common intermolecular forces</p>
@@ -568,12 +566,12 @@ Interactions can largely be divided into two classes:</p>
 <p>Just like scientific definitions of <em>bonds</em>, these categories are not discrete, we just choose to treat these types of
 interactions differently for simplicity.</p>
 <p>In most such systems, non-bonded interactions are assumed to be a</p>
-<dl class="simple glossary">
+<dl class="glossary simple">
 <dt id="term-pairwise-interaction">pairwise interaction<a class="headerlink" href="#term-pairwise-interaction" title="Permalink to this term">#</a></dt><dd><p>an interaction that only involves a pairs of particles</p>
 </dd>
 </dl>
 <p>as opposed to a</p>
-<dl class="simple glossary">
+<dl class="glossary simple">
 <dt id="term-many-body-interaction">many-body interaction<a class="headerlink" href="#term-many-body-interaction" title="Permalink to this term">#</a></dt><dd><p>an interaction between a set of 3 or more particles</p>
 </dd>
 </dl>
@@ -591,7 +589,7 @@ advantageous to ignore them.</p>
 potentials that would be used primarily in atomistic or coarse-grained
 MD simulations that fall into each of these categories.</p>
 <section id="bonded-potentials">
-<h3>Bonded potentials<a class="headerlink" href="#bonded-potentials" title="Permalink to this heading">#</a></h3>
+<h3>Bonded potentials<a class="headerlink" href="#bonded-potentials" title="Permalink to this headline">#</a></h3>
 <p>Bonds in real systems emerge from quantum mechanics, and hence any
 simulation representation that neglects electron degrees of freedom is
 an approximation to a covalent bond. Most atomic simulations include
@@ -602,7 +600,7 @@ a case-by-case basis we will not discuss bonded potentials in more
 detail other than recognizing their existence.</p>
 </section>
 <section id="non-bonded-potentials">
-<h3>Non-bonded potentials<a class="headerlink" href="#non-bonded-potentials" title="Permalink to this heading">#</a></h3>
+<h3>Non-bonded potentials<a class="headerlink" href="#non-bonded-potentials" title="Permalink to this headline">#</a></h3>
 <p>The most common non-bonded interaction in molecular simulations is the</p>
 <dl class="glossary">
 <dt id="term-Lennard-Jones-potential"><a class="reference external" href="https://en.wikipedia.org/wiki/Lennard-Jones_potential">Lennard-Jones potential</a><a class="headerlink" href="#term-Lennard-Jones-potential" title="Permalink to this term">#</a></dt><dd><p>the 12-6 potential, which is typically written as:</p>
@@ -619,7 +617,7 @@ attractive interaction that scales with <span class="math notranslate nohighligh
 potential that scales with <span class="math notranslate nohighlight">\(r^{-12}\)</span>.</p>
 <p>The attractive potential represents three contributions to typical van der Waals interactions
 that are all attractive and scale with <span class="math notranslate nohighlight">\(r^{-6}\)</span>:</p>
-<dl class="simple glossary">
+<dl class="glossary simple">
 <dt id="term-London-dispersion-forces"><a class="reference external" href="https://en.wikipedia.org/wiki/London_dispersion_force">London dispersion forces</a><a class="headerlink" href="#term-London-dispersion-forces" title="Permalink to this term">#</a></dt><dd><p>interactions stemming from the instantaneous dipoles that arise from quantum mechanical considerations</p>
 </dd>
 <dt id="term-Debye-force"><a class="reference external" href="https://en.wikipedia.org/wiki/Intermolecular_force#Debye_force_(permanent_dipoles%E2%80%93induced_dipoles)">Debye force</a><a class="headerlink" href="#term-Debye-force" title="Permalink to this term">#</a></dt><dd><p>attractions between dipoles on a molecule and induced dipoles that arise from the polarizibility of a
@@ -661,7 +659,7 @@ these represent the two most common functional forms used in most
 atomistic simulations.</p>
 </section>
 <section id="interactions-in-mc-simulations">
-<h3>Interactions in MC simulations<a class="headerlink" href="#interactions-in-mc-simulations" title="Permalink to this heading">#</a></h3>
+<h3>Interactions in MC simulations<a class="headerlink" href="#interactions-in-mc-simulations" title="Permalink to this headline">#</a></h3>
 <p>The interactions described above are all described by potentials that
 are continuous and differentiable, and thus can be used in molecular
 dynamics simulations. However, Monte Carlo simulations can use any
@@ -703,7 +701,7 @@ differentiation required!</p>
 </section>
 </section>
 <section id="link-to-shared-notes">
-<h2><a class="reference external" href="https://docs.google.com/document/d/1zpnAV7CQq18WuECyZE1IFmkOelYdcle2/edit?usp=drive_link&amp;ouid=113272049620170441297&amp;rtpof=true&amp;sd=true">Link to Shared Notes</a><a class="headerlink" href="#link-to-shared-notes" title="Permalink to this heading">#</a></h2>
+<h2><a class="reference external" href="https://docs.google.com/document/d/1zpnAV7CQq18WuECyZE1IFmkOelYdcle2/edit?usp=drive_link&amp;ouid=113272049620170441297&amp;rtpof=true&amp;sd=true">Link to Shared Notes</a><a class="headerlink" href="#link-to-shared-notes" title="Permalink to this headline">#</a></h2>
 </section>
 </section>
 
@@ -732,10 +730,11 @@ differentiation required!</p>
 
               
               
-              
-              
-                <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="Lecture9A.html"
@@ -755,7 +754,10 @@ differentiation required!</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -832,8 +834,8 @@ By Reid van Lehn, Matt Gebbie, Rose K. Cersonsky
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>
