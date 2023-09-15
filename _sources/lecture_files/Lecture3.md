@@ -277,7 +277,7 @@ Given that the relationship $\frac{\partial S}{\partial E}$ is more
 well-defined, we flip our equation:
 
 $$
-\left ( -\frac{\partial S}{\partial E} \right )_V = \frac{1}{T}
+\left ( \frac{\partial S}{\partial E} \right )_V = \frac{1}{T}
 $$
 
 ```{admonition} $n = \frac{N}{ 1 +  e^{-\epsilon / k_BT}}$

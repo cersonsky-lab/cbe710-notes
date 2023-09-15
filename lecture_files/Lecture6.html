@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>The ideal gas partition function &#8212; Advanced Thermodynamics for Chemical Engineers</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -35,16 +35,17 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/defs.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=927b94d3fcb96560df09"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -69,7 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Application of independent subsystems: the Langmuir isotherm" href="Lecture7.html" />
     <link rel="prev" title="Generalized ensembles" href="Lecture5.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -78,6 +79,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -184,14 +194,6 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Lecture16.html">Postulates of thermodynamics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Lecture17.html">Heat engines and possible processes</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Problem Sets</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../problems/ps_1/problem_set_1.html">Problem Set 1 (Due Wednesday, September 20, 2023)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../problems/ps_2/problem_set_2.html">Problem Set 2 (Due Wednesday, September 27, 2023)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../problems/ps_3/problem_set_3.html">Problem Set 3 (Due Monday, October 9, 2023)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../problems/simulation_project.html">Simulation Project (Due Monday, November 6, 2023)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="nav bd-sidenav">
@@ -305,10 +307,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -316,7 +318,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -365,15 +367,15 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="the-ideal-gas-partition-function">
-<h1>The ideal gas partition function<a class="headerlink" href="#the-ideal-gas-partition-function" title="Permalink to this headline">#</a></h1>
+<h1>The ideal gas partition function<a class="headerlink" href="#the-ideal-gas-partition-function" title="Permalink to this heading">#</a></h1>
 <section id="additional-readings-for-the-enthusiast">
-<h2>Additional Readings for the Enthusiast<a class="headerlink" href="#additional-readings-for-the-enthusiast" title="Permalink to this headline">#</a></h2>
+<h2>Additional Readings for the Enthusiast<a class="headerlink" href="#additional-readings-for-the-enthusiast" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><span id="id1">Chandler [<a class="reference internal" href="../references.html#id2" title="David Chandler. Introduction to Modern Statistical Mechanics. Oxford University Press, New York, 1st edition edition, September 1987. ISBN 978-0-19-504277-1. URL: http://pcossgroup.xmu.edu.cn/old/users/xlu/group/courses/apc/imsm_chandler.pdf.">1</a>]</span> Chapter 4 (intro), 4.4-4.7</p></li>
 </ul>
 </section>
 <section id="goals-for-today-s-lecture">
-<h2>Goals for today’s lecture<a class="headerlink" href="#goals-for-today-s-lecture" title="Permalink to this headline">#</a></h2>
+<h2>Goals for today’s lecture<a class="headerlink" href="#goals-for-today-s-lecture" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>How do independent subsystems impact our formulation of the partition function?</p></li>
 <li><p>How can we account for indistinguishable subsystems in the partition function?</p></li>
@@ -381,7 +383,7 @@ document.write(`
 </ul>
 </section>
 <section id="factorization-of-the-partition-function">
-<h2>Factorization of the partition function<a class="headerlink" href="#factorization-of-the-partition-function" title="Permalink to this headline">#</a></h2>
+<h2>Factorization of the partition function<a class="headerlink" href="#factorization-of-the-partition-function" title="Permalink to this heading">#</a></h2>
 <p>In the last lecture, we derived expressions for generalized partition
 functions and related connections to macroscopic thermodynamic
 potentials. We specifically paid attention to four key ensembles: the
@@ -506,7 +508,7 @@ gas is indistinguishable.
 </details>
 </div>
 <section id="over-counting-in-the-partition-function">
-<h3>Over-counting in the partition function<a class="headerlink" href="#over-counting-in-the-partition-function" title="Permalink to this headline">#</a></h3>
+<h3>Over-counting in the partition function<a class="headerlink" href="#over-counting-in-the-partition-function" title="Permalink to this heading">#</a></h3>
 <p><img alt="image" src="../_images/fig_6_1-01.png" /></p>
 <div class="admonition-let-s-consider-our-particles-on-this-lattice-suppose-i-have-set-up admonition">
 <p class="admonition-title">Let’s consider our particles on this lattice. Suppose I have set up</p>
@@ -566,7 +568,7 @@ Z &amp;=  \frac{(z_a z_b z_c\dots)^N}{N!} \quad \quad\text {Eq. 6.14 with multip
 </section>
 </section>
 <section id="id2">
-<h2>The ideal gas partition function<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<h2>The ideal gas partition function<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>We will now use these previous relations to now derive the partition
 function for a <strong>monatomic ideal gas</strong> with <span class="math notranslate nohighlight">\(N\)</span> particles as a exemplary
 case of a many-body non-interacting system and show that we can recover
@@ -667,7 +669,7 @@ z &amp;=  \sum_{\nu}^\infty\frac{\pi}{4}  \left( \frac{8m}{h^2}\right )^{3/2} V 
 \end{aligned}\end{split}\]</div>
 </section>
 <section id="ideal-gas-partition-function-in-the-classical-limit">
-<h2>Ideal gas partition function in the classical limit<a class="headerlink" href="#ideal-gas-partition-function-in-the-classical-limit" title="Permalink to this headline">#</a></h2>
+<h2>Ideal gas partition function in the classical limit<a class="headerlink" href="#ideal-gas-partition-function-in-the-classical-limit" title="Permalink to this heading">#</a></h2>
 <p>The previous expression has now assumed that the quantum numbers are
 effectively continuous in space. To simplify this expression further, we
 further assume that the sum over all energies can be converted to an
@@ -681,7 +683,7 @@ approximation - we can think of the sum over energies as performing
 rectangular integration of the energy vs. <span class="math notranslate nohighlight">\(\nu\)</span>, and as the difference
 between consecutive terms in the sum becomes small, rectangular
 integration can be well-approximated using a continuous integral.</p>
-<dl class="glossary simple">
+<dl class="simple glossary">
 <dt id="term-classical-limit">classical limit<a class="headerlink" href="#term-classical-limit" title="Permalink to this term">#</a></dt><dd><p>The assumption that energies are continuous in a macroscopic
 system; requires that incrementing the quantum numbers by one leads to a very
 small change in the energy (<span class="math notranslate nohighlight">\(\approx 10^{-9} k_B T\)</span>).</p>
@@ -730,7 +732,7 @@ if <span class="math notranslate nohighlight">\(V \gg \lambda^3\)</span>, which 
 then the classical limit is reasonable.</p>
 </section>
 <section id="thermodynamic-relationships-of-the-ideal-gas-partition-function">
-<h2>Thermodynamic relationships of the ideal gas partition function<a class="headerlink" href="#thermodynamic-relationships-of-the-ideal-gas-partition-function" title="Permalink to this headline">#</a></h2>
+<h2>Thermodynamic relationships of the ideal gas partition function<a class="headerlink" href="#thermodynamic-relationships-of-the-ideal-gas-partition-function" title="Permalink to this heading">#</a></h2>
 <p>We have now performed the first two steps in our approach by identifying
 an expression for the energy of a microstate of our system and
 calculating the corresponding partition function (in the classical
@@ -802,7 +804,7 @@ C_V &amp;= \left ( \frac{\partial  E  }{\partial T}\right )_{N,V} \\
 &amp;= \frac{3 }{2}N k_B
 \end{aligned}\end{split}\]</div>
 <p>These last two results are manifestations of the</p>
-<dl class="glossary simple">
+<dl class="simple glossary">
 <dt id="term-equipartition-theorem"><a class="reference external" href="https://en.wikipedia.org/wiki/Equipartition_theorem">equipartition theorem</a><a class="headerlink" href="#term-equipartition-theorem" title="Permalink to this term">#</a></dt><dd><p>any degree of freedom that appears
 quadratically in the energy of a system contributes <span class="math notranslate nohighlight">\(1/2 k_BT\)</span> to the
 internal energy and contributes <span class="math notranslate nohighlight">\(1/2 k_B\)</span> to the heat capacity in the
@@ -842,7 +844,7 @@ for the chemical potential is again exactly what is observed for ideal
 gases in classical thermodynamics.</p>
 </section>
 <section id="link-to-shared-notes">
-<h2><a class="reference external" href="https://docs.google.com/document/d/1eAek5NU2JEa6TlELNmm16em7HD9G4b6v/edit?usp=drive_link&amp;ouid=113272049620170441297&amp;rtpof=true&amp;sd=true">Link to Shared Notes</a><a class="headerlink" href="#link-to-shared-notes" title="Permalink to this headline">#</a></h2>
+<h2><a class="reference external" href="https://docs.google.com/document/d/1eAek5NU2JEa6TlELNmm16em7HD9G4b6v/edit?usp=drive_link&amp;ouid=113272049620170441297&amp;rtpof=true&amp;sd=true">Link to Shared Notes</a><a class="headerlink" href="#link-to-shared-notes" title="Permalink to this heading">#</a></h2>
 </section>
 </section>
 
@@ -871,11 +873,10 @@ gases in classical thermodynamics.</p>
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="Lecture5.html"
@@ -895,10 +896,7 @@ gases in classical thermodynamics.</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -970,8 +968,8 @@ By Reid van Lehn, Matt Gebbie, Rose K. Cersonsky
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09"></script>
 
   <footer class="bd-footer">
   </footer>
