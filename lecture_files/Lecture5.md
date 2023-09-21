@@ -229,7 +229,7 @@ referred to as the [**Gibbs entropy**](https://en.wikipedia.org/wiki/Entropy_(st
 
 $$S = -k_B \sum_j p_j \ln p_j$$
 
-You will shows this expression's equivalence to the Boltzmann definition
+You will show this expression's equivalence to the Boltzmann definition
 of the entropy on [Problem Set 2](../../problems/ps_2/problem_set_2). We now have the expressions:
 
 $$\begin{aligned}
