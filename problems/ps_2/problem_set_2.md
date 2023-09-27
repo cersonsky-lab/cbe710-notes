@@ -230,9 +230,9 @@ comparison between the ensemble-average mangetization and the analytical
 result from Question 3.
 
 ![Convergence of ensemble-average
-magnetization.](pset_2_Magnetization_convergence.png){width="70%"}
+magnetization.](pset_2_Magnetization_convergence.png)
 
 ![Comparison of the ensemble-average magnetization obtained from the
 Monte Carlo method to the analytical solution. Points indicate the model
 calculations and the line indicates the analytical
-solution.](pset_2_Magnetization_H.png){width="70%"}
+solution.](pset_2_Magnetization_H.png)
