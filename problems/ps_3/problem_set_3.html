@@ -1,0 +1,655 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Problem Set 3 (Due Monday, October 9, 2023) &#8212; Advanced Thermodynamics for Chemical Engineers</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/defs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'problems/ps_3/problem_set_3';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Simulation Project (Due Monday, November 6, 2023)" href="../simulation_project.html" />
+    <link rel="prev" title="Problem Set 2 (Due Wednesday, September 27, 2023)" href="../ps_2/problem_set_2.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Advanced Thermodynamics for Chemical Engineers</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Class introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Before we get started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture1A.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture1B.html">Review of thermodynamics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Mechanics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture2.html">Postulates of statistical mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture3.html">Application of the microcanonical ensemble: two-state system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture4.html">The canonical ensemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture5.html">Generalized ensembles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture6.html">The ideal gas partition function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture7.html">Application of independent subsystems: the Langmuir isotherm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture8A.html">The Ising model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture8B.html">Mean-field theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture9A.html">Fluctuations and thermodynamic response functions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Molecular Simulation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture9B.html">An introduction to molecular simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture10.html">Monte Carlo simulations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture11.html">Nuances of stochastic sampling in statistical ensembles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture12A.html">Molecular dynamics simulations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture12B.html">Temperature and velocities in MD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture13.html">Distribution of particles in states of matter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture14A.html">The potential of mean force</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture14B.html">Umbrella Sampling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture15.html">Free energy perturbation and thermodynamic integration</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture16.html">Postulates of thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lecture_files/Lecture17.html">Heat engines and possible processes</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Problem Sets</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../ps_1/problem_set_1.html">Problem Set 1 (Due Wednesday, September 20, 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ps_2/problem_set_2.html">Problem Set 2 (Due Wednesday, September 27, 2023)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Problem Set 3 (Due Monday, October 9, 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation_project.html">Simulation Project (Due Monday, November 6, 2023)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../notation.html">Additional Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/problems/ps_3/problem_set_3.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Problem Set 3 (Due Monday, October 9, 2023)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-isomerization-process">Question 1: Isomerization process</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-adsorption-of-a-gas-mixture">Question 2: Adsorption of a gas mixture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-1d-ising-model">Question 3: 1D Ising model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4-monte-carlo-simulation-of-the-ising-model">Question 4: Monte Carlo simulation of the Ising model</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="problem-set-3-due-monday-october-9-2023">
+<h1>Problem Set 3 (Due Monday, October 9, 2023)<a class="headerlink" href="#problem-set-3-due-monday-october-9-2023" title="Permalink to this headline">#</a></h1>
+<section id="question-1-isomerization-process">
+<h2>Question 1: Isomerization process<a class="headerlink" href="#question-1-isomerization-process" title="Permalink to this headline">#</a></h2>
+<p>Consider an isomerization process, <span class="math notranslate nohighlight">\(\ce{A \rightleftharpoons B}\)</span>, where
+<span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> refer to different isomeric states of a single molecule. A
+dilute gas containing <span class="math notranslate nohighlight">\(N_A\)</span> molecules in state <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(N_B\)</span> molecules
+in state <span class="math notranslate nohighlight">\(B\)</span> undergoes this isomerization process at constant volume and
+constant temperature. The isomerization from state <span class="math notranslate nohighlight">\(A\)</span> to <span class="math notranslate nohighlight">\(B\)</span> is
+associated with a change in the energy of the molecule,
+<span class="math notranslate nohighlight">\(\Delta \epsilon = \epsilon_B - \epsilon_A\)</span>, where <span class="math notranslate nohighlight">\(\epsilon_A\)</span> and
+<span class="math notranslate nohighlight">\(\epsilon_B\)</span> are internal energies associated with each of the two
+states, respectively. According to <a class="reference external" href="https://en.wikipedia.org/wiki/Maxwell%E2%80%93Boltzmann_statistics">Maxwell-Boltzmann statistics</a>,
+the equilibrium ratio of the <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> populations is given by:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\langle N_A \rangle}{\langle N_B \rangle} = \frac{\Omega_A}{\Omega_B} e^{\beta \Delta \epsilon}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\Omega_A\)</span> and <span class="math notranslate nohighlight">\(\Omega_B\)</span> are the degeneracies for a single
+molecule in state <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, respectively. Assume that the gas can be
+treated as <a class="reference internal" href="../../lecture_files/Lecture6.html"><span class="doc std std-doc">ideal</span></a> (i.e., all molecules are non-interacting and
+independent) regardless of whether a molecule is in state <span class="math notranslate nohighlight">\(A\)</span> or state
+<span class="math notranslate nohighlight">\(B\)</span>, and that the single-molecule translational partition function,
+<span class="math notranslate nohighlight">\(z_{\textrm{trans}}\)</span>, is the same for each state.</p>
+<div class="admonition-a admonition">
+<p class="admonition-title"><strong>(a)</strong></p>
+<p>Show that the system partition function,
+<span class="math notranslate nohighlight">\(Z(N_A, N_B, V, T)\)</span>, can be written in terms of the single-molecule partition
+function, <span class="math notranslate nohighlight">\(z_a\)</span>, for a molecule in state <span class="math notranslate nohighlight">\(A\)</span>, the single-molecule
+partition function, <span class="math notranslate nohighlight">\(z_b\)</span>, for a molecule in state <span class="math notranslate nohighlight">\(B\)</span>, the
+single-molecule translational partition function, <span class="math notranslate nohighlight">\(z_{\textrm{trans}}\)</span>,
+and the number of molecules in each state (<span class="math notranslate nohighlight">\(N_A\)</span> and <span class="math notranslate nohighlight">\(N_B\)</span>) as</p>
+<div class="math notranslate nohighlight">
+\[Z = \frac{\left (\Omega_A z_{\textrm{trans}}e^{-\epsilon_A/kT} \right )^{N_A}}{N_A!} \frac{\left (\Omega_B z_{\textrm{trans}}e^{-\epsilon_B/kT}\right )^{N_B}}{N_B!}\]</div>
+<p>Explain your rationale with each step.</p>
+<details><summary> Hints</summary>
+Consider what entities can be distinguished from one another, and therefore
+separated in our partition function formulation.
+</details>
+</div>
+<div class="admonition-b admonition">
+<p class="admonition-title"><strong>(b)</strong></p>
+<p>Using the result from part <strong>a</strong> and assuming that both <span class="math notranslate nohighlight">\(N_A\)</span>
+and <span class="math notranslate nohighlight">\(N_B\)</span> are large, show that the Boltzmann distribution law follows
+from the condition that the chemical potential of a molecule in state
+<span class="math notranslate nohighlight">\(A\)</span> is equal to the chemical potential of a molecule in state <span class="math notranslate nohighlight">\(B\)</span>
+(<em>i.e.</em>, <span class="math notranslate nohighlight">\(\mu_A = \mu_B\)</span>), for a system at constant volume and constant
+temperature.</p>
+</div>
+</section>
+<section id="question-2-adsorption-of-a-gas-mixture">
+<h2>Question 2: Adsorption of a gas mixture<a class="headerlink" href="#question-2-adsorption-of-a-gas-mixture" title="Permalink to this headline">#</a></h2>
+<p>Consider a two-component mixture of two ideal gas species, denoted as
+<span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, that can both adsorb to a surface. Each gas molecule of
+type <span class="math notranslate nohighlight">\(A\)</span> adsorbs with an energy <span class="math notranslate nohighlight">\(\epsilon_i = -\epsilon_A\)</span> while each
+gas molecule of type <span class="math notranslate nohighlight">\(B\)</span> adsorbs with energy <span class="math notranslate nohighlight">\(\epsilon_i = -\epsilon_B\)</span>.
+Gas molecules of either type that are not adsorbed can be treated as an
+ideal gas, and gas molecules adsorbed on the surface can exchange with
+particles in the bulk. Gas particles exclude each other on the surface -
+<em>e.g.</em>, if an <span class="math notranslate nohighlight">\(A\)</span> particle adsorbs to a part of the surface, a <span class="math notranslate nohighlight">\(B\)</span>
+particle cannot adsorb to the same part of the surface. The partial
+pressures of each gas can be written as <span class="math notranslate nohighlight">\(P_A = P x_A\)</span> and <span class="math notranslate nohighlight">\(P_B = P x_B\)</span>,
+where <span class="math notranslate nohighlight">\(P\)</span> is the pressure, <span class="math notranslate nohighlight">\(x_A\)</span> is the mole fraction of gas <span class="math notranslate nohighlight">\(A\)</span> in the
+mixture, <span class="math notranslate nohighlight">\(x_B\)</span> is the mole fraction of gas <span class="math notranslate nohighlight">\(B\)</span> in the mixture, and
+<span class="math notranslate nohighlight">\(x_A + x_B = 1\)</span>. Both the surface and bulk are at constant temperature
+and constant volume.</p>
+<div class="admonition-a admonition">
+<p class="admonition-title"><strong>(a)</strong></p>
+<p>Derive a grand canonical partition function for the surface.
+Define any variables that you introduce.</p>
+<details><summary> Hints</summary>
+This question is an extension of a Langmuir isotherm by allowing for the
+adsorption of multiple components on a single lattice site. 
+</details>
+</div>
+<div class="admonition-b admonition">
+<p class="admonition-title"><strong>(b)</strong></p>
+<p>Show that the fraction of the surface that is
+occupied by molecules of type <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(f_A\)</span>, and the fraction of the
+surface that is occupied by molecules of type <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(f_B\)</span> is given by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    f_A &amp;= \frac{P_A / P_A^0}{1 +  P_A / P_A^0 +  P_B / P_B^0} \\
+    f_B &amp;= \frac{P_B / P_B^0}{1 +  P_A / P_A^0 +  P_B / P_B^0}
+\end{aligned}\end{split}\]</div>
+</div>
+</section>
+<section id="question-3-1d-ising-model">
+<h2>Question 3: 1D Ising model<a class="headerlink" href="#question-3-1d-ising-model" title="Permalink to this headline">#</a></h2>
+<p>In class, we discussed the <a class="reference internal" href="../../lecture_files/Lecture8A.html#term-Ising-model"><span class="xref std std-term">Ising model</span></a> for a magnetic system in
+which a set of <span class="math notranslate nohighlight">\(N\)</span> distinguishable magnetic dipoles are each
+characterized by a spin, <span class="math notranslate nohighlight">\(s_i\)</span>, that has one of two discrete values:
+<span class="math notranslate nohighlight">\(s_i = \pm 1\)</span>. The total magnetization, <span class="math notranslate nohighlight">\(M\)</span>, can be approximated as the
+sum of all spins, <span class="math notranslate nohighlight">\(M = \sum_{i=1}^{N} \mu s_i\)</span>. Spins are placed on a
+fixed lattice and can interact with an external magnetic field, <span class="math notranslate nohighlight">\(H\)</span>, and
+other nearest-neighbor spins. The energy with which spin <span class="math notranslate nohighlight">\(i\)</span> interacts
+with its neighbors is:</p>
+<div class="math notranslate nohighlight">
+\[\epsilon_i =  - J \sum_j s_i s_j\\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(J\)</span> is the value of the coupling parameter (with units of energy)
+that describes the interaction energy between each <em>pair</em> of
+nearest-neighbor spins. The sum <span class="math notranslate nohighlight">\(\sum_j\)</span> indicates a sum over all
+<span class="math notranslate nohighlight">\(n\)</span> nearest-neighbor spins of <span class="math notranslate nohighlight">\(i\)</span> on the lattice. The <em>total</em> energy of
+a single microstate is:</p>
+<div class="math notranslate nohighlight">
+\[E = -\sum_i^N \mu H s_i - \frac{J}{2} \sum_{i}^N \sum_j^\prime s_i s_j\\]</div>
+<p>The factor of <span class="math notranslate nohighlight">\(1/2\)</span> in front of the interaction energy term accounts for
+the double-counting of interactions between pairs of spins when summing
+over the entire system.</p>
+<p>In this problem, we will analytically solve the <strong>1D Ising model</strong>,
+which refers to a set of spins that are placed on a one-dimensional
+lattice. Each spin therefore only has two nearest-neighbors. We will
+assume <strong>free boundary conditions</strong>, which means that the spins at the
+beginning and end of the chain (<span class="math notranslate nohighlight">\(s_1\)</span> and <span class="math notranslate nohighlight">\(s_N\)</span>) only have a single
+neighbor. An example of a single microstate of a 1D Ising model is
+schematically drawn below.</p>
+<p><img alt="image" src="../../_images/1D_Ising-01.png" /></p>
+<div class="admonition-a admonition">
+<p class="admonition-title"><strong>(a)</strong></p>
+<p>Show that in the zero field limit (<span class="math notranslate nohighlight">\(H=0\)</span>), the partition
+function for the 1D Ising model is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+Z &amp;=2 \left[2 \cosh(\beta J)\right]^{N-1}
+\end{aligned}\]</div>
+<details><summary>Hints</summary>
+Hint: Consider each *pair* of spins when simplifying the partition
+function.
+</details>
+</div>
+<div class="admonition-b admonition">
+<p class="admonition-title"><strong>(b)</strong></p>
+<p>Calculate the ensemble-average energy per spin in the limit that
+<span class="math notranslate nohighlight">\(N \rightarrow \infty\)</span>.</p>
+</div>
+</section>
+<section id="question-4-monte-carlo-simulation-of-the-ising-model">
+<h2>Question 4: Monte Carlo simulation of the Ising model<a class="headerlink" href="#question-4-monte-carlo-simulation-of-the-ising-model" title="Permalink to this headline">#</a></h2>
+<p>In Problem Set 2, we introduced the Metropolis Monte Carlo algorithm as
+a means of computing ensembke-average quantities. In Problem Set 2, we
+studied the magnetization of non-interacting spins. We will now use the
+same method to study the 1D Ising model which we analytically studied in
+Question 3</p>
+<p>Consider a 1D Ising model in which <span class="math notranslate nohighlight">\(N = 100\)</span> spins are placed on a 1D
+lattice, such that each lattice point has <span class="math notranslate nohighlight">\(n=2\)</span> nearest-neighbors.
+Assume that the system has free boundaries so that spin <span class="math notranslate nohighlight">\(1\)</span> and spin
+<span class="math notranslate nohighlight">\(100\)</span> only have 1 nearest-neighbor (this directly mimics the problem
+from ##Question 3).–</p>
+<div class="admonition-a admonition">
+<p class="admonition-title"><strong>(a)</strong></p>
+<p>Write a Python program that computes <span class="math notranslate nohighlight">\(\langle E \rangle / N\)</span> for
+the 1D Ising model using the Metropolis Monte Carlo algorithm described
+above. Attach a copy of your code with appropriate comments explaining
+your implementation.</p>
+</div>
+<div class="admonition-b admonition">
+<p class="admonition-title"><strong>(b)</strong></p>
+<p>Perform independent Monte Carlo simulations for <span class="math notranslate nohighlight">\(J =\)</span> -3, -2,
+-1, 0, 1, 2, and 3 <span class="math notranslate nohighlight">\(k_B T\)</span>. Each simulation should include 100,000
+trials to obtain accurate approximations of <span class="math notranslate nohighlight">\(\langle E \rangle / N\)</span>.
+Plot <span class="math notranslate nohighlight">\(\langle E \rangle / N\)</span> vs. <span class="math notranslate nohighlight">\(J\)</span> and compare to the analytical
+result from Question 3.</p>
+</div>
+<p>The plots below show the number of MC iterations necessary to
+obtain converged values of the ensemble-average energy and the
+comparison between the ensemble-average energy and the analytical result
+from Question 3.</p>
+<p><img alt="Convergence of ensemble-averageenergy." src="../../_images/pset_3_Energy_convergence.png" /></p>
+<p><img alt="Comparison of the ensemble-average energy obtained from the MonteCarlo method to the analytical solution. Points indicate the modelcalculations and the line indicates the analyticalsolution." src="../../_images/pset_3_Energy_J.png" /></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./problems/ps_3"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../ps_2/problem_set_2.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Problem Set 2 (Due Wednesday, September 27, 2023)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../simulation_project.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Simulation Project (Due Monday, November 6, 2023)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-isomerization-process">Question 1: Isomerization process</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-adsorption-of-a-gas-mixture">Question 2: Adsorption of a gas mixture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-1d-ising-model">Question 3: 1D Ising model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4-monte-carlo-simulation-of-the-ising-model">Question 4: Monte Carlo simulation of the Ising model</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Reid van Lehn, Matt Gebbie, Rose K. Cersonsky
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

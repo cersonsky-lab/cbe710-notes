@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Monte Carlo simulations &#8212; Advanced Thermodynamics for Chemical Engineers</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -35,17 +35,16 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/defs.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=927b94d3fcb96560df09"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -70,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Nuances of stochastic sampling in statistical ensembles" href="Lecture11.html" />
     <link rel="prev" title="An introduction to molecular simulation" href="Lecture9B.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
   
   
@@ -79,15 +78,6 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  
-  <div id="pst-scroll-pixel-helper"></div>
-
-  
-  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
-
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -194,11 +184,13 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Lecture16.html">Postulates of thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture17.html">Heat engines and possible processes</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Problem Sets</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../problems/ps_1/problem_set_1.html">Problem Set 1 (Due Wednesday, September 20, 2023)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../problems/ps_2/problem_set_2.html">Problem Set 2 (Due Wednesday, September 27, 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/ps_3/problem_set_3.html">Problem Set 3 (Due Monday, October 9, 2023)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../problems/simulation_project.html">Simulation Project (Due Monday, November 6, 2023)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
@@ -313,10 +305,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
 `);
 </script>
@@ -324,7 +316,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
 `);
 </script>
@@ -378,15 +370,15 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="monte-carlo-simulations">
-<h1>Monte Carlo simulations<a class="headerlink" href="#monte-carlo-simulations" title="Permalink to this heading">#</a></h1>
+<h1>Monte Carlo simulations<a class="headerlink" href="#monte-carlo-simulations" title="Permalink to this headline">#</a></h1>
 <section id="additional-readings-for-the-enthusiast">
-<h2>Additional Readings for the Enthusiast<a class="headerlink" href="#additional-readings-for-the-enthusiast" title="Permalink to this heading">#</a></h2>
+<h2>Additional Readings for the Enthusiast<a class="headerlink" href="#additional-readings-for-the-enthusiast" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><span id="id1">Frenkel and Smit [<a class="reference internal" href="../references.html#id5" title="Daan Frenkel and Berend Smit. Understanding molecular simulation: from algorithms to applications. Number 1 in Computational science series. Academic Press, San Diego, 2nd ed edition, 2002. ISBN 978-0-12-267351-1. URL: https://www.eng.uc.edu/~beaucag/Classes/AdvancedMaterialsThermodynamics/Books/%5BComputational%20science%20(San%20Diego,%20Calif.)%5D%20Daan%20Frenkel_%20Berend%20Smit%20-%20Understanding%20molecular%20simulation%20_%20from%20algorithms%20to%20applications%20(2002,%20Academic%20Press%20)%20-%20libgen.lc.pdf.">2</a>]</span> Ch. 3</p></li>
 </ul>
 </section>
 <section id="goals-for-this-lecture">
-<h2>Goals for this lecture<a class="headerlink" href="#goals-for-this-lecture" title="Permalink to this heading">#</a></h2>
+<h2>Goals for this lecture<a class="headerlink" href="#goals-for-this-lecture" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>What are periodic boundary conditions? Why do we use them?</p></li>
 <li><p>How can stochastic sampling be used to replicate a probability distribution?</p></li>
@@ -394,9 +386,9 @@ document.write(`
 </ul>
 </section>
 <section id="interactions-in-molecular-simulations">
-<h2>Interactions in molecular simulations<a class="headerlink" href="#interactions-in-molecular-simulations" title="Permalink to this heading">#</a></h2>
+<h2>Interactions in molecular simulations<a class="headerlink" href="#interactions-in-molecular-simulations" title="Permalink to this headline">#</a></h2>
 <section id="non-bonded-potentials">
-<h3>Non-bonded potentials<a class="headerlink" href="#non-bonded-potentials" title="Permalink to this heading">#</a></h3>
+<h3>Non-bonded potentials<a class="headerlink" href="#non-bonded-potentials" title="Permalink to this headline">#</a></h3>
 <p>We ended the <a class="reference internal" href="Lecture9B.html"><span class="doc std std-doc">last lecture</span></a> by introducing pairwise non-bonded
 interactions between particles that are commonly used in molecular
 simulations. We primarily covered the <a class="reference internal" href="Lecture9B.html#term-Lennard-Jones-potential"><span class="xref std std-term">Lennard-Jones potential</span></a>,
@@ -404,14 +396,14 @@ simulations. We primarily covered the <a class="reference internal" href="Lectur
 and electrostatic interactions of our particles.</p>
 </section>
 <section id="interactions-in-mc-simulations">
-<h3>Interactions in MC simulations<a class="headerlink" href="#interactions-in-mc-simulations" title="Permalink to this heading">#</a></h3>
+<h3>Interactions in MC simulations<a class="headerlink" href="#interactions-in-mc-simulations" title="Permalink to this headline">#</a></h3>
 <p>As a reminder, Monte Carlo simulations can use any
 potential energy function regardless of whether it is differentiable,
 expanding the repertoire of possible interactions. In the <a class="reference internal" href="Lecture9B.html"><span class="doc std std-doc">previous lecture</span></a>,
 we covered <a class="reference internal" href="Lecture9B.html#term-hard-particle-interaction"><span class="xref std std-term">hard-particle interaction</span></a>s and nearest-neighbor interactions.</p>
 </section>
 <section id="periodic-boundary-conditions">
-<h3>Periodic boundary conditions<a class="headerlink" href="#periodic-boundary-conditions" title="Permalink to this heading">#</a></h3>
+<h3>Periodic boundary conditions<a class="headerlink" href="#periodic-boundary-conditions" title="Permalink to this headline">#</a></h3>
 <p>A challeng in molecular simulations is defining a represenative system
 volume, <span class="math notranslate nohighlight">\(V\)</span>, because we typically simulate very small volumes relative
 to physical systems (i.e. box lengths on the order of 10-100 nm in an
@@ -439,7 +431,7 @@ and <span class="math notranslate nohighlight">\(c\)</span>, and by three angles
 assume that the simulation box is cubic, i.e. <span class="math notranslate nohighlight">\(a = b = c = L\)</span> and
 <span class="math notranslate nohighlight">\(\alpha = \beta = \gamma = 90^\circ\)</span>. The most common way of treating
 the boundary of a simulation box is by imposing</p>
-<dl class="simple glossary">
+<dl class="glossary simple">
 <dt id="term-periodic-boundary-conditions">periodic boundary conditions<a class="headerlink" href="#term-periodic-boundary-conditions" title="Permalink to this term">#</a></dt><dd><p>also called PBCs; a simulation practice in which we pretend each side of the simulation box
 is connected on the opposite side to an identical simulation</p>
 </dd>
@@ -482,7 +474,7 @@ particles, taking into account periodic boundary conditions. Thus, the
 distance in any one dimension of the box can never exceed <span class="math notranslate nohighlight">\(L\)</span>.</p>
 <p>In practice, PBCs are used for the vast majority of simulations, but you
 must be careful that they do not introduce artifacts, or</p>
-<dl class="simple glossary">
+<dl class="glossary simple">
 <dt id="term-finite-size-effects">finite size effects<a class="headerlink" href="#term-finite-size-effects" title="Permalink to this term">#</a></dt><dd><p>unphysical artifacts introduced when simulation boundary conditions
 impose unrealistic constraints on the behavior of a system</p>
 </dd>
@@ -496,7 +488,7 @@ simulations that are too small to properly capture them.</p>
 </section>
 </section>
 <section id="sampling-from-a-canonical-ensemble">
-<h2>Sampling from a canonical ensemble<a class="headerlink" href="#sampling-from-a-canonical-ensemble" title="Permalink to this heading">#</a></h2>
+<h2>Sampling from a canonical ensemble<a class="headerlink" href="#sampling-from-a-canonical-ensemble" title="Permalink to this headline">#</a></h2>
 <p>We will now build upon the
 fundamentals introduced in the <a class="reference internal" href="Lecture9B.html"><span class="doc std std-doc">last lecture</span></a>
 to describe the principles of Monte Carlo simulations.</p>
@@ -533,7 +525,7 @@ vector, <span class="math notranslate nohighlight">\(\textbf{r}^N\)</span>, whic
 particles; in three-dimensions, this is then a vector with <span class="math notranslate nohighlight">\(3N\)</span>
 coordinates, and integrating over all possible positions is equivalent
 to integrating over a 3N-dimensional volume <span class="math notranslate nohighlight">\(V^N\)</span> which we call the
-<em>volume of phase space</em> accessible to the <span class="math notranslate nohighlight">\(N\)</span> particles<a class="footnote-reference brackets" href="#id3" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
+<em>volume of phase space</em> accessible to the <span class="math notranslate nohighlight">\(N\)</span> particles<a class="footnote-reference brackets" href="#id3" id="id2">1</a>.</p>
 <p>With this new notation, the ensemble average in the classical canonical
 ensemble (with <span class="math notranslate nohighlight">\(NVT\)</span> fixed) is given as:</p>
 <div class="math notranslate nohighlight" id="equation-app-a-ensemble-average">
@@ -566,7 +558,7 @@ Carlo algorithm. We will now describe Monte Carlo sampling in general,
 then discuss the Metropolis algorithm.</p>
 </section>
 <section id="stochastic-sampling">
-<h2>Stochastic sampling<a class="headerlink" href="#stochastic-sampling" title="Permalink to this heading">#</a></h2>
+<h2>Stochastic sampling<a class="headerlink" href="#stochastic-sampling" title="Permalink to this headline">#</a></h2>
 <p>The main idea of the Monte Carlo method is the following: a determinate
 mathematical expression (like the integrals in the equations for the
 canonical ensemble) is reformulated as a probablistic analogue and then
@@ -596,7 +588,7 @@ A = \frac{A_{box}}{\tau}\sum_i^\tau  f(x_i, y_i)
 \end{aligned}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\tau\)</span> is our number of trials (samples).</p>
 <section id="stochastic-sampling-of-determinate-equations">
-<h3>Stochastic sampling of determinate equations<a class="headerlink" href="#stochastic-sampling-of-determinate-equations" title="Permalink to this heading">#</a></h3>
+<h3>Stochastic sampling of determinate equations<a class="headerlink" href="#stochastic-sampling-of-determinate-equations" title="Permalink to this headline">#</a></h3>
 <p>Consider evaluating a function <span class="math notranslate nohighlight">\(F\)</span> which can be estimated as the integral
 of some function <span class="math notranslate nohighlight">\(f(x)\)</span> within a defined interval <span class="math notranslate nohighlight">\([a, b]\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -654,7 +646,7 @@ space, such as the configurational space of the partition function,
 this type of methodology could be efficient.</p>
 </section>
 <section id="stochastic-sampling-applied-to-the-canonical-partition-function">
-<h3>Stochastic sampling applied to the canonical partition function<a class="headerlink" href="#stochastic-sampling-applied-to-the-canonical-partition-function" title="Permalink to this heading">#</a></h3>
+<h3>Stochastic sampling applied to the canonical partition function<a class="headerlink" href="#stochastic-sampling-applied-to-the-canonical-partition-function" title="Permalink to this headline">#</a></h3>
 <p>Let’s consider applying this uniform sampling methodology to the
 calculation of the canonical partition function. We could write:</p>
 <div class="math notranslate nohighlight">
@@ -696,14 +688,15 @@ contributions to the ensemble average.</p>
 </section>
 </section>
 <section id="link-to-shared-notes">
-<h2><a class="reference external" href="https://docs.google.com/document/d/1RMdd6sLOoR0m7yjreIfVE3SQp3Ib6X77/edit?usp=drive_link&amp;ouid=113272049620170441297&amp;rtpof=true&amp;sd=true">Link to Shared Notes</a><a class="headerlink" href="#link-to-shared-notes" title="Permalink to this heading">#</a></h2>
+<h2><a class="reference external" href="https://docs.google.com/document/d/1RMdd6sLOoR0m7yjreIfVE3SQp3Ib6X77/edit?usp=drive_link&amp;ouid=113272049620170441297&amp;rtpof=true&amp;sd=true">Link to Shared Notes</a><a class="headerlink" href="#link-to-shared-notes" title="Permalink to this headline">#</a></h2>
 <hr class="footnotes docutils" />
-<aside class="footnote brackets" id="id3" role="note">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
-<p>Often this partition function is written with a normalizing prefactor with units of
+<dl class="footnote brackets">
+<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
+<dd><p>Often this partition function is written with a normalizing prefactor with units of
 1/volume<span class="math notranslate nohighlight">\(^N\)</span> to ensure that the partition function is unitless; we omit
 this prefactor here.</p>
-</aside>
+</dd>
+</dl>
 </section>
 </section>
 
@@ -732,10 +725,11 @@ this prefactor here.</p>
 
               
               
-              
-              
-                <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="Lecture9B.html"
@@ -755,7 +749,10 @@ this prefactor here.</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -832,8 +829,8 @@ By Reid van Lehn, Matt Gebbie, Rose K. Cersonsky
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>

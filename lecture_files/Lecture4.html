@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>The canonical ensemble &#8212; Advanced Thermodynamics for Chemical Engineers</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -35,17 +35,16 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/defs.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=927b94d3fcb96560df09"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -70,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Generalized ensembles" href="Lecture5.html" />
     <link rel="prev" title="Application of the microcanonical ensemble: two-state system" href="Lecture3.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
   
   
@@ -79,15 +78,6 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  
-  <div id="pst-scroll-pixel-helper"></div>
-
-  
-  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
-
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -194,11 +184,13 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Lecture16.html">Postulates of thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture17.html">Heat engines and possible processes</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Problem Sets</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../problems/ps_1/problem_set_1.html">Problem Set 1 (Due Wednesday, September 20, 2023)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../problems/ps_2/problem_set_2.html">Problem Set 2 (Due Wednesday, September 27, 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/ps_3/problem_set_3.html">Problem Set 3 (Due Monday, October 9, 2023)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../problems/simulation_project.html">Simulation Project (Due Monday, November 6, 2023)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
@@ -313,10 +305,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
 `);
 </script>
@@ -324,7 +316,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
 `);
 </script>
@@ -370,15 +362,15 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="the-canonical-ensemble">
-<h1>The canonical ensemble<a class="headerlink" href="#the-canonical-ensemble" title="Permalink to this heading">#</a></h1>
+<h1>The canonical ensemble<a class="headerlink" href="#the-canonical-ensemble" title="Permalink to this headline">#</a></h1>
 <section id="additional-readings-for-the-enthusiast">
-<h2>Additional Readings for the Enthusiast<a class="headerlink" href="#additional-readings-for-the-enthusiast" title="Permalink to this heading">#</a></h2>
+<h2>Additional Readings for the Enthusiast<a class="headerlink" href="#additional-readings-for-the-enthusiast" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><span id="id1">Chandler [<a class="reference internal" href="../references.html#id2" title="David Chandler. Introduction to Modern Statistical Mechanics. Oxford University Press, New York, 1st edition edition, September 1987. ISBN 978-0-19-504277-1. URL: http://pcossgroup.xmu.edu.cn/old/users/xlu/group/courses/apc/imsm_chandler.pdf.">1</a>]</span> Chapter 3.3-3.4</p></li>
 </ul>
 </section>
 <section id="goals-for-today-s-lecture">
-<h2>Goals for today’s lecture<a class="headerlink" href="#goals-for-today-s-lecture" title="Permalink to this heading">#</a></h2>
+<h2>Goals for today’s lecture<a class="headerlink" href="#goals-for-today-s-lecture" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>How do we describe systems with fluctuating or non-constant energy?</p></li>
 <li><p>How does the breaking the principle of equal a priori change the likelihood of different microstates?</p></li>
@@ -386,7 +378,7 @@ document.write(`
 </ul>
 </section>
 <section id="introduction-to-the-canonical-ensemble">
-<h2>Introduction to the canonical ensemble<a class="headerlink" href="#introduction-to-the-canonical-ensemble" title="Permalink to this heading">#</a></h2>
+<h2>Introduction to the canonical ensemble<a class="headerlink" href="#introduction-to-the-canonical-ensemble" title="Permalink to this headline">#</a></h2>
 <p>In principle, all calculations in statistical mechanics can be performed
 using the microcanonical ensemble by deriving relationships based on a
 fixed set of constant energy states. In practice, the microcanonical
@@ -402,7 +394,7 @@ temperature of the environment. It would therefore be ideal to have
 equations describing systems in which the temperature is fixed in each
 microstate due to this condition of equilibrium while the energy is
 allowed to vary.</p>
-<dl class="simple glossary">
+<dl class="glossary simple">
 <dt id="term-canonical-ensemble">canonical ensemble<a class="headerlink" href="#term-canonical-ensemble" title="Permalink to this term">#</a></dt><dd><p>The ensemble for which all microstates have a fixed number of particles, volume, and
 temperature. Also known as the $<span class="math notranslate nohighlight">\(NVT\)</span>$ ensemble.</p>
 </dd>
@@ -501,7 +493,7 @@ approach) and from there obtaining an expression for <span class="math notransla
 depend on any properties of the bath.</p>
 </section>
 <section id="derivation-of-canonical-partition-function">
-<h2>Derivation of canonical partition function<a class="headerlink" href="#derivation-of-canonical-partition-function" title="Permalink to this heading">#</a></h2>
+<h2>Derivation of canonical partition function<a class="headerlink" href="#derivation-of-canonical-partition-function" title="Permalink to this headline">#</a></h2>
 <p>We have just derived the equations for the canonical
 ensemble, or the ensemble in which every microstate is at the same
 number of particles, volume, and temperature (<span class="math notranslate nohighlight">\(NVT\)</span>). Unlike the
@@ -614,7 +606,7 @@ to normalize the probability distribution:</p>
 C_2 &amp;= \frac{1}{\sum_j e^{-E_j/k_BT_S}}\\
 \therefore &amp; p_j = \frac{e^{-E_j/k_BT_S}}{\sum_j e^{-E_j/k_BT_S}}
 \end{aligned}\end{split}\]</div>
-<dl class="simple glossary">
+<dl class="glossary simple">
 <dt id="term-canonical-partition-function">canonical <a class="reference external" href="https://en.wikipedia.org/wiki/Partition_function_(statistical_mechanics)">partition function</a><a class="headerlink" href="#term-canonical-partition-function" title="Permalink to this term">#</a></dt><dd><p>A term, here <span class="math notranslate nohighlight">\(Z \equiv \sum_j e^{-E_j/k_BT}\)</span>, that normalizes
 the probability of finding state <span class="math notranslate nohighlight">\(j\)</span> in the canonical ensemble.</p>
 </dd>
@@ -687,7 +679,7 @@ over microstates or over energy levels. We will next connect the
 partition function to macroscopic thermodynamic parameters.</p>
 </section>
 <section id="connecting-the-canonical-ensemble-to-thermodynamics">
-<h2>Connecting the canonical ensemble to thermodynamics<a class="headerlink" href="#connecting-the-canonical-ensemble-to-thermodynamics" title="Permalink to this heading">#</a></h2>
+<h2>Connecting the canonical ensemble to thermodynamics<a class="headerlink" href="#connecting-the-canonical-ensemble-to-thermodynamics" title="Permalink to this headline">#</a></h2>
 <p>Just as we can use the relation <span class="math notranslate nohighlight">\(S = k_B \ln \Omega(N, V, E)\)</span> to derive
 relationships between the degeneracy in the microcanonical ensemble and
 various thermodynamic variables through the entropy, we can relate the
@@ -804,7 +796,7 @@ F &amp;= -k_B T \ln Z(N,V,T)
 \end{aligned}\end{split}\]</div>
 </section>
 <section id="revisiting-the-two-state-system">
-<h2>Revisiting the two-state system<a class="headerlink" href="#revisiting-the-two-state-system" title="Permalink to this heading">#</a></h2>
+<h2>Revisiting the two-state system<a class="headerlink" href="#revisiting-the-two-state-system" title="Permalink to this headline">#</a></h2>
 <p>To illustrate how a judicious choice of statistical ensemble can
 simplify the analysis of systems, we will repeat the example from
 <a class="reference internal" href="Lecture2.html"><span class="doc std std-doc">our previous lecture</span></a> using the canonical ensemble,
@@ -873,7 +865,7 @@ relation from above we can then write:</p>
 <p>This approach again returns the same result.</p>
 </section>
 <section id="link-to-shared-notes">
-<h2><a class="reference external" href="https://docs.google.com/document/d/1aCDxbRoz7d2eICYUjXBlMxxE-KaluGfo/edit?usp=drive_link&amp;ouid=113272049620170441297&amp;rtpof=true&amp;sd=true">Link to Shared Notes</a><a class="headerlink" href="#link-to-shared-notes" title="Permalink to this heading">#</a></h2>
+<h2><a class="reference external" href="https://docs.google.com/document/d/1aCDxbRoz7d2eICYUjXBlMxxE-KaluGfo/edit?usp=drive_link&amp;ouid=113272049620170441297&amp;rtpof=true&amp;sd=true">Link to Shared Notes</a><a class="headerlink" href="#link-to-shared-notes" title="Permalink to this headline">#</a></h2>
 </section>
 </section>
 
@@ -902,10 +894,11 @@ relation from above we can then write:</p>
 
               
               
-              
-              
-                <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="Lecture3.html"
@@ -925,7 +918,10 @@ relation from above we can then write:</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -994,8 +990,8 @@ By Reid van Lehn, Matt Gebbie, Rose K. Cersonsky
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>

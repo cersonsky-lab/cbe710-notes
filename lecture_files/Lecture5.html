@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Generalized ensembles &#8212; Advanced Thermodynamics for Chemical Engineers</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -35,17 +35,16 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/defs.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=927b94d3fcb96560df09"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -70,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="The ideal gas partition function" href="Lecture6.html" />
     <link rel="prev" title="The canonical ensemble" href="Lecture4.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
   
   
@@ -79,15 +78,6 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  
-  <div id="pst-scroll-pixel-helper"></div>
-
-  
-  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
-
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -194,11 +184,13 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Lecture16.html">Postulates of thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture17.html">Heat engines and possible processes</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Problem Sets</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../problems/ps_1/problem_set_1.html">Problem Set 1 (Due Wednesday, September 20, 2023)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../problems/ps_2/problem_set_2.html">Problem Set 2 (Due Wednesday, September 27, 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/ps_3/problem_set_3.html">Problem Set 3 (Due Monday, October 9, 2023)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../problems/simulation_project.html">Simulation Project (Due Monday, November 6, 2023)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
@@ -313,10 +305,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
 `);
 </script>
@@ -324,7 +316,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
 `);
 </script>
@@ -372,22 +364,22 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="generalized-ensembles">
-<h1>Generalized ensembles<a class="headerlink" href="#generalized-ensembles" title="Permalink to this heading">#</a></h1>
+<h1>Generalized ensembles<a class="headerlink" href="#generalized-ensembles" title="Permalink to this headline">#</a></h1>
 <section id="additional-readings-for-the-enthusiast">
-<h2>Additional Readings for the Enthusiast<a class="headerlink" href="#additional-readings-for-the-enthusiast" title="Permalink to this heading">#</a></h2>
+<h2>Additional Readings for the Enthusiast<a class="headerlink" href="#additional-readings-for-the-enthusiast" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><span id="id1">Chandler [<a class="reference internal" href="../references.html#id2" title="David Chandler. Introduction to Modern Statistical Mechanics. Oxford University Press, New York, 1st edition edition, September 1987. ISBN 978-0-19-504277-1. URL: http://pcossgroup.xmu.edu.cn/old/users/xlu/group/courses/apc/imsm_chandler.pdf.">1</a>]</span> Chapter 3.5</p></li>
 <li><p><span id="id2">McQuarrie [<a class="reference internal" href="../references.html#id3" title="Donald A. McQuarrie. Statistical mechanics. University Science Books, Sausalito, Calif, 2000. ISBN 978-1-891389-15-3. URL: https://vuquangnguyen2016.files.wordpress.com/2017/12/339279795-donald-a-mcquarrie-statistical-mechanics-bookzz-org.pdf.">3</a>]</span> Chapter 3.2</p></li>
 </ul>
 </section>
 <section id="goals-for-today-s-lecture">
-<h2>Goals for today’s lecture<a class="headerlink" href="#goals-for-today-s-lecture" title="Permalink to this heading">#</a></h2>
+<h2>Goals for today’s lecture<a class="headerlink" href="#goals-for-today-s-lecture" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>For an arbitrary set of extensive and intensive variables, how can we construct an ensemble?</p></li>
 </ul>
 </section>
 <section id="preliminary-notes-natural-variables">
-<h2>Preliminary notes: natural variables<a class="headerlink" href="#preliminary-notes-natural-variables" title="Permalink to this heading">#</a></h2>
+<h2>Preliminary notes: natural variables<a class="headerlink" href="#preliminary-notes-natural-variables" title="Permalink to this headline">#</a></h2>
 <p>In the preceding three lectures, we presented derivations to describe
 the microcanonical (<span class="math notranslate nohighlight">\(NVE\)</span>) and canonical (<span class="math notranslate nohighlight">\(NVT\)</span>) ensembles.</p>
 <p>In each case, we equated a corresponding thermodynamic potential
@@ -421,7 +413,7 @@ natural variables.</p>
 <p>Based on this reasoning, we might like to have statistical ensembles to
 solve a problem where some other variable is held constant. This leads
 to the idea of deriving a</p>
-<dl class="simple glossary">
+<dl class="glossary simple">
 <dt id="term-generalized-ensemble">generalized ensemble<a class="headerlink" href="#term-generalized-ensemble" title="Permalink to this term">#</a></dt><dd><p>a statistical ensemble appropriate for any system that permits
 the exchange of some extensive variable with the environment</p>
 </dd>
@@ -441,7 +433,7 @@ It is thus convenient to derive a generalized ensemble appropriate for
 any given set of natural varables.</p>
 </section>
 <section id="derivation-of-the-generalized-ensemble">
-<h2>Derivation of the generalized ensemble<a class="headerlink" href="#derivation-of-the-generalized-ensemble" title="Permalink to this heading">#</a></h2>
+<h2>Derivation of the generalized ensemble<a class="headerlink" href="#derivation-of-the-generalized-ensemble" title="Permalink to this headline">#</a></h2>
 <p>First, let us consider again the derivation of the canonical ensemble
 presented in the previous lecture. We considered a single system
 embedded within a bath; the total combined system had fixed <span class="math notranslate nohighlight">\(NVE\)</span>, but
@@ -568,7 +560,7 @@ are not also repeated as work terms (e.g., expansion-contraction work) that
 are separately included in the partition function.</p>
 </section>
 <section id="thermodynamic-connection-for-the-generalized-ensemble">
-<h2>Thermodynamic connection for the generalized ensemble<a class="headerlink" href="#thermodynamic-connection-for-the-generalized-ensemble" title="Permalink to this heading">#</a></h2>
+<h2>Thermodynamic connection for the generalized ensemble<a class="headerlink" href="#thermodynamic-connection-for-the-generalized-ensemble" title="Permalink to this headline">#</a></h2>
 <p>Having established an expression for the generalized ensemble partition
 function, we can now derive a relationship between a thermodynamic
 potential and this generalized partition function, just as we have a
@@ -661,7 +653,7 @@ and <span class="math notranslate nohighlight">\(\Sigma\)</span>.</p>
 </div>
 </section>
 <section id="recipe-for-the-generalized-ensemble">
-<h2>Recipe for the generalized ensemble<a class="headerlink" href="#recipe-for-the-generalized-ensemble" title="Permalink to this heading">#</a></h2>
+<h2>Recipe for the generalized ensemble<a class="headerlink" href="#recipe-for-the-generalized-ensemble" title="Permalink to this headline">#</a></h2>
 <p>In the previous section, the thermodynamic potential that corresponds to
 the log of the generalized ensemble partion function is <strong>exactly</strong> that
 potential for which the thermodynamic variables conjugate to <span class="math notranslate nohighlight">\(E\)</span> and <span class="math notranslate nohighlight">\(X\)</span>
@@ -715,7 +707,7 @@ for the energy of the system itself - that would be double counting
 energies.</p>
 </section>
 <section id="example-the-grand-canonical-ensemble">
-<h2>Example: the <a class="reference internal" href="Lecture2.html#term-grand-canonical-ensemble"><span class="xref std std-term">grand canonical ensemble</span></a><a class="headerlink" href="#example-the-grand-canonical-ensemble" title="Permalink to this heading">#</a></h2>
+<h2>Example: the <a class="reference internal" href="Lecture2.html#term-grand-canonical-ensemble"><span class="xref std std-term">grand canonical ensemble</span></a><a class="headerlink" href="#example-the-grand-canonical-ensemble" title="Permalink to this headline">#</a></h2>
 <p>As a test of the generalized ensemble approach, we can derive the grand
 canonical ensemble, in which the energy and number of particles of a
 system are allowed to vary while the volume and temperature are held
@@ -788,7 +780,7 @@ number of particles.</p>
 </div>
 </section>
 <section id="example-the-isothermal-isobaric-ensemble">
-<h2>Example: the <a class="reference internal" href="Lecture2.html#term-isothermal-isobaric-ensemble"><span class="xref std std-term">isothermal-isobaric ensemble</span></a><a class="headerlink" href="#example-the-isothermal-isobaric-ensemble" title="Permalink to this heading">#</a></h2>
+<h2>Example: the <a class="reference internal" href="Lecture2.html#term-isothermal-isobaric-ensemble"><span class="xref std std-term">isothermal-isobaric ensemble</span></a><a class="headerlink" href="#example-the-isothermal-isobaric-ensemble" title="Permalink to this headline">#</a></h2>
 <p>As another example, we can derive the isothermal-isobaric ensemble, in
 which the energy and volume of a system are allowed to vary while the
 number of particles is held constant.</p>
@@ -861,7 +853,7 @@ terms (e.g. corresponding to external electric/magnetic fields, for
 instance) can be incorporated.</p>
 </section>
 <section id="link-to-shared-notes">
-<h2><a class="reference external" href="https://docs.google.com/document/d/1cry4CzhkRf5A1EB6jsZTCQwu8ysN_vVr/edit?usp=drive_link&amp;ouid=113272049620170441297&amp;rtpof=true&amp;sd=true">Link to Shared Notes</a><a class="headerlink" href="#link-to-shared-notes" title="Permalink to this heading">#</a></h2>
+<h2><a class="reference external" href="https://docs.google.com/document/d/1cry4CzhkRf5A1EB6jsZTCQwu8ysN_vVr/edit?usp=drive_link&amp;ouid=113272049620170441297&amp;rtpof=true&amp;sd=true">Link to Shared Notes</a><a class="headerlink" href="#link-to-shared-notes" title="Permalink to this headline">#</a></h2>
 </section>
 </section>
 
@@ -890,10 +882,11 @@ instance) can be incorporated.</p>
 
               
               
-              
-              
-                <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="Lecture4.html"
@@ -913,7 +906,10 @@ instance) can be incorporated.</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -984,8 +980,8 @@ By Reid van Lehn, Matt Gebbie, Rose K. Cersonsky
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>
