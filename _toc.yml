@@ -45,6 +45,7 @@ parts:
         - file: problems/ps_1/problem_set_1
         - file: problems/ps_2/problem_set_2
         - file: problems/ps_3/problem_set_3
+        - file: problems/exam_1_practice
         - file: problems/simulation_project
 #         - file: problems/ps_4/problem_set_4
 #         - file: problems/ps_5/problem_set_5
