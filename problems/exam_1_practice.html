@@ -1,0 +1,1416 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Practice Problems for Statistical Mechanics Unit Exam &#8212; Advanced Thermodynamics for Chemical Engineers</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/defs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'problems/exam_1_practice';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Simulation Project (Due Monday, November 6, 2023)" href="simulation_project.html" />
+    <link rel="prev" title="Problem Set 3 (Due Monday, October 9, 2023)" href="ps_3/problem_set_3.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Advanced Thermodynamics for Chemical Engineers</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Class introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Before we get started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../lecture_files/Lecture1A.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lecture_files/Lecture1B.html">Review of thermodynamics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Mechanics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../lecture_files/Lecture2.html">Postulates of statistical mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lecture_files/Lecture3.html">Application of the microcanonical ensemble: two-state system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lecture_files/Lecture4.html">The canonical ensemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lecture_files/Lecture5.html">Generalized ensembles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lecture_files/Lecture6.html">The ideal gas partition function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lecture_files/Lecture7.html">Application of independent subsystems: the Langmuir isotherm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lecture_files/Lecture8A.html">The Ising model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lecture_files/Lecture8B.html">Mean-field theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lecture_files/Lecture9A.html">Fluctuations and thermodynamic response functions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Molecular Simulation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../lecture_files/Lecture9B.html">An introduction to molecular simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lecture_files/Lecture10.html">Monte Carlo simulations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lecture_files/Lecture11.html">Nuances of stochastic sampling in statistical ensembles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lecture_files/Lecture12A.html">Molecular dynamics simulations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lecture_files/Lecture12B.html">Temperature and velocities in MD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lecture_files/Lecture13.html">Distribution of particles in states of matter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lecture_files/Lecture14A.html">The potential of mean force</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lecture_files/Lecture14B.html">Umbrella Sampling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lecture_files/Lecture15.html">Free energy perturbation and thermodynamic integration</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../lecture_files/Lecture16.html">Postulates of thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lecture_files/Lecture17.html">Heat engines and possible processes</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Problem Sets</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ps_1/problem_set_1.html">Problem Set 1 (Due Wednesday, September 20, 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ps_2/problem_set_2.html">Problem Set 2 (Due Wednesday, September 27, 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ps_3/problem_set_3.html">Problem Set 3 (Due Monday, October 9, 2023)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Practice Problems for Statistical Mechanics Unit Exam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="simulation_project.html">Simulation Project (Due Monday, November 6, 2023)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../notation.html">Additional Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/problems/exam_1_practice.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Practice Problems for Statistical Mechanics Unit Exam</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-einstein-model-of-a-solid">Question 1: Einstein model of a solid</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-analyzing-simple-systems">Question 2: Analyzing simple systems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-adsorption-of-vibrating-atoms">Question 3: Adsorption of vibrating atoms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4-two-state-free-energy-change">Question 4: Two-state free energy change</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5-protein-folding">Question 5: Protein folding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6-crystalline-defects">Question 6: Crystalline defects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7-adsorption-of-a-mobile-gas">Question 7: Adsorption of a mobile gas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8-van-der-waals-equation-of-state">Question 8: van der Waals equation of state</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="practice-problems-for-statistical-mechanics-unit-exam">
+<h1>Practice Problems for Statistical Mechanics Unit Exam<a class="headerlink" href="#practice-problems-for-statistical-mechanics-unit-exam" title="Permalink to this headline">#</a></h1>
+<p>See below for practice problems related to CBE710, Fall 2023.</p>
+<p><strong>As I may choose to rotate these questions into future iterations
+of the class, this page will not be available in future archives.</strong></p>
+<section id="question-1-einstein-model-of-a-solid">
+<h2>Question 1: Einstein model of a solid<a class="headerlink" href="#question-1-einstein-model-of-a-solid" title="Permalink to this headline">#</a></h2>
+<p>A major challenge in classical thermodynamics was explaining why the
+heat capacity (<span class="math notranslate nohighlight">\(C_V\)</span>) of crystalline solids approaches zero at zero
+temperature. Einstein solved this problem by modeling a solid as <span class="math notranslate nohighlight">\(N\)</span>
+atoms that behave like independent harmonic oscillators about their
+equilibrium positions in the crystal lattice. Each atom vibrates at the
+same frequency, <span class="math notranslate nohighlight">\(\omega\)</span>, in three independent directions; the system is
+thus a collection of <span class="math notranslate nohighlight">\(3N\)</span> identical harmonic oscillators.</p>
+<p>For this problem, the following relationship may be useful:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\sum_{k=0}^\infty r^k = \frac{1}{1-r}
+\end{aligned}\]</div>
+<div class="admonition-a admonition">
+<p class="admonition-title"><strong>(a)</strong></p>
+<p>The energy of a single quantum harmonic oscillator is:</p>
+<div class="math notranslate nohighlight">
+\[E_n = (n+\frac{1}{2})h \omega \quad n = 0, 1, 2, \dots\]</div>
+<p>where <span class="math notranslate nohighlight">\(n\)</span> is a quantum number, <span class="math notranslate nohighlight">\(h\)</span> is Planck’s constant, and <span class="math notranslate nohighlight">\(\omega\)</span> is
+the vibrational frequency. Write an expression for the canonical
+partition function for the Einstein solid.</p>
+<details><summary>Show answer</summary>
+<p>Before you look, did you define your oscillators as independent?</p>
+<details><summary>Yes</summary>
+<p>We can start by recognizing that all <span class="math notranslate nohighlight">\(3N\)</span> oscillators are independent,
+so we can instead write the single-oscillator canonical partition
+function, <span class="math notranslate nohighlight">\(z\)</span>, as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    z &amp;= \sum_i \exp(-\beta E_i ) \\
+    &amp;= \sum_{n=0}^\infty \exp \left [ -  (n+\frac{1}{2})\beta h\omega \right ] \\
+    &amp;= \exp(-\beta h \omega/2)  \sum_{n=0}^\infty \exp \left [ -n\beta h\omega \right ] \\
+    &amp;= \exp(-\beta h \omega/2)  \sum_{n=0}^\infty \exp \left [ -\beta h\omega \right ]^n 
+    
+\end{aligned}\end{split}\]</div>
+<p>We now substitute in the relationship from the hint with <span class="math notranslate nohighlight">\(n=k\)</span> and
+<span class="math notranslate nohighlight">\(r=\exp \left ( -\beta h\omega \right )\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+    z &amp;= \frac{ \exp(-\beta h \omega/2) }{1- \exp \left [ -\beta h\omega \right ]}
+    
+\end{aligned}\]</div>
+<p>Before we go on… do you define your oscillators as distinguishable?</p>
+<details><summary>Yes</summary>
+<p>Each oscillator will be distinguishable in the
+solid (since each position is translationally distinct) so we write the
+total system partition function as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    Z &amp;= z^{3N} \\
+    &amp;= \left ( \frac{ \exp(-\beta h \omega/2) }{1- \exp \left [ -\beta h\omega \right ]} \right )^{3N}
+    
+\end{aligned}\end{split}\]</div>
+</details>
+</details>
+</details>
+</div>
+<div class="admonition-b admonition">
+<p class="admonition-title"><strong>(b)</strong></p>
+<p>Using your expression from part <strong>a</strong>, solve for the internal energy of
+the Einstein solid.</p>
+<details><summary>Show answer</summary>
+<p>We can solve for the energy by writing out an expression for the
+Helmholtz free energy using the canonical partition function, and then
+relating to this entropy through the expression derived in <a class="reference internal" href="../lecture_files/Lecture4.html"><span class="doc std std-doc">our earlier lecture</span></a>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+    E = -\left (\frac{\partial \ln Z}{\partial \beta} \right )_V
+    
+\end{aligned}\]</div>
+<p>Taking the derivative gives:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    E &amp;=-\left (\frac{\partial \ln Z}{\partial \beta} \right )_V \\
+    &amp;= -3N \left (\frac{\partial \ln z}{\partial \beta} \right )_V\\
+    \ln z &amp;= -\frac{\beta h\omega}{2} - \ln \left [1-\exp(-\beta h\omega)\right] \\
+    \therefore &amp;E = 3N \left ( \frac{h\omega}{2} + \frac{h\omega}{\exp(\beta h\omega) -1} \right )
+    
+\end{aligned}\end{split}\]</div>
+</details>
+</div>
+<div class="admonition-c admonition">
+<p class="admonition-title"><strong>(c)</strong></p>
+<p>Using your expression from part <strong>b</strong>, solve for
+<span class="math notranslate nohighlight">\(C_V =\left (\frac{\partial E}{\partial T} \right )_V\)</span> for the Einstein
+solid. Write your answer in terms of the vibrational temperature,
+defined as: <span class="math notranslate nohighlight">\(\Theta \equiv h\omega / k = \beta h\omega T\)</span>.</p>
+<details><summary>Show answer</summary>
+<p>It’s easiest to first show the temperature dependence explicitly, which
+we can do by substituting in <span class="math notranslate nohighlight">\(\Theta\)</span> to our previous result to obtain
+(after a lengthy product/chain rule):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    E &amp;= 3 N k_B \Theta \left ( \frac{1}{2} + \frac{1}{\exp(\Theta / T) - 1} \right ) \\
+    C_V &amp;= \left (\frac{\partial E}{\partial T} \right )_V \\
+    &amp;= 3 N k_B \left ( \frac{\Theta}{T} \right )^2 \frac{\exp (\Theta/T)}{\left [\exp (\Theta/T) -1 \right ]^2}
+    
+\end{aligned}\end{split}\]</div>
+</details>
+</div>
+<div class="admonition-d admonition">
+<p class="admonition-title"><strong>(d)</strong></p>
+<p>Show that <span class="math notranslate nohighlight">\(C_V\rightarrow 0\)</span> as <span class="math notranslate nohighlight">\(T\rightarrow 0\)</span>.</p>
+<details><summary>Show answer</summary>
+<p>As <span class="math notranslate nohighlight">\(T\rightarrow 0\)</span>, <span class="math notranslate nohighlight">\(\Theta / T \rightarrow \infty\)</span>, so
+<span class="math notranslate nohighlight">\(\exp(\Theta/T) \gg 1\)</span> and we approximate the expression as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    C_V &amp;\approx 3 N k_B \left ( \frac{\Theta}{T} \right )^2 \frac{\exp (\Theta/T)}{\exp (2\Theta/T)} \\
+    &amp;= 3 N k_B \left ( \frac{\Theta}{T} \right )^2 \exp(-\Theta/T)
+    
+\end{aligned}\end{split}\]</div>
+<p>As <span class="math notranslate nohighlight">\(T\rightarrow 0\)</span>, the exponential term will approach zero more
+rapidly than the harmonic term will diverge, so we indeed find that
+<span class="math notranslate nohighlight">\(C_V \rightarrow 0\)</span> as <span class="math notranslate nohighlight">\(T\rightarrow 0\)</span>.</p>
+</details>
+</div>
+<div class="admonition-e admonition">
+<p class="admonition-title"><strong>(e)</strong></p>
+<p>The Einstein model does not obtain the correct functional form
+for <span class="math notranslate nohighlight">\(C_V\)</span> in the low-temperature limit. What is the major assumption
+made in this model that is likely not true of real solids?</p>
+<details><summary>Show answer</summary>
+The major assumption made is that all atoms oscillate independently. In
+real solids, atoms have coupled oscillations that give rise to
+additional energetic contributions (e.g. phonon modes) not captured by
+this model.
+</details>
+</div>
+</section>
+<section id="question-2-analyzing-simple-systems">
+<h2>Question 2: Analyzing simple systems<a class="headerlink" href="#question-2-analyzing-simple-systems" title="Permalink to this headline">#</a></h2>
+<p>Write the requested quantity for each system. In each part, define the
+final quantity only in terms of parameters defined in the problem
+statement. Do not evaluate any sums or integrals.</p>
+<div class="admonition-a admonition">
+<p class="admonition-title"><strong>(a)</strong></p>
+<p>The system is <span class="math notranslate nohighlight">\(N\)</span> independent, non-interacting diatomic
+molecules. Two of the molecules are uniquely radiolabeled such that they
+can be distinguished from all other molecules and from each other. The
+partition functions associated with translational, rotational, and
+vibrational energies are <span class="math notranslate nohighlight">\(z_\textrm{trans}\)</span>, <span class="math notranslate nohighlight">\(z_\textrm{rot}\)</span>, and
+<span class="math notranslate nohighlight">\(z_\textrm{vib}\)</span>, respectively. Write a canonical partition function for
+this system.</p>
+<details><summary>Show answer</summary>
+Factorize this partition function, recognizing that we have two sets of
+indistinguishable particles
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    Z &amp;= \frac{\left(z_\textrm{trans}z_\textrm{rot}z_\textrm{vib}\right)^{N-2}}{(N-2)!} {\left(z_\textrm{trans}z_\textrm{rot}z_\textrm{vib}\right)^{2}} \\
+    &amp;= \frac{\left(z_\textrm{trans}z_\textrm{rot}z_\textrm{vib}\right)^{N}}{(N-2)!}
+    
+\end{aligned}\end{split}\]</div>
+</details>
+</div>
+<div class="admonition-b admonition">
+<p class="admonition-title"><strong>(b)</strong></p>
+<p>The system is a surface with <span class="math notranslate nohighlight">\(N\)</span> binding sites onto which two
+different types of molecules adsorb. <span class="math notranslate nohighlight">\(M\)</span> identical molecules of the
+first type adsorb to form a first layer on the surface. <span class="math notranslate nohighlight">\(W\)</span> identical
+molecules of the second type then adsorb on top of the first layer to
+form a second layer. Write the degeneracy for this system.</p>
+<details><summary>Show answer</summary>
+The degeneracy can be combinatorally computed as the number of ways to
+arrange molecules in the first layer multiplied by the number of ways to
+arrange molecules in the second layer. The first layer degeneracy is our
+standard value from class:
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+    \Omega_{\textrm{first}} = \frac{N!}{(N-M)!M!}
+    
+\end{aligned}\]</div>
+<p>The second layer is given by the number of ways of arranging <span class="math notranslate nohighlight">\(W\)</span>
+molecules on the first <span class="math notranslate nohighlight">\(M\)</span> molecules:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+    \Omega_{\textrm{second}} = \frac{M!}{(M-W)!W!}
+    
+\end{aligned}\]</div>
+<p>Combining:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    \Omega &amp;= \frac{N!}{(N-M)!M!}\frac{M!}{(M-W)!W!} \\
+    &amp;= \frac{N!}{(N-M)!(M-W)!W!}
+    
+\end{aligned}\end{split}\]</div>
+</details>
+</div>
+<div class="admonition-c admonition">
+<p class="admonition-title"><strong>(c)</strong></p>
+<p>The system is <span class="math notranslate nohighlight">\(N\)</span> freely rotating spins on a 2D lattice subject
+to an in-plane external magnetic field, <span class="math notranslate nohighlight">\(H\)</span>. Each spin has a magnetic
+moment, <span class="math notranslate nohighlight">\(\mu\)</span>, and can obtain any in-plane orientation, rather than just
+a up/down orientation. The energy of each spin is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+E = -\mu H \cos \theta
+\end{aligned}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\theta\)</span> is the angle between the spin and the direction of the
+external magnetic field. Write a canonical partition function for this
+system.</p>
+<details><summary>Show answer</summary>
+Like the systems studied in [Problem Set 1](problem_set_1) and [2](problem_set_2), we can factorize the
+partition function since all spins are independent and
+indistinguishable. The single-spin partition function is obtained by
+integrating over all possible angles:
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    z &amp;= \int_0^{2\pi} e^{ \beta \mu H \cos \theta} d\theta \\
+    \therefore Z &amp;= z^N = \left [ \int_0^{2\pi} e^{ \beta \mu H \cos \theta} d\theta \right ]^N
+    
+\end{aligned}\end{split}\]</div>
+</div>
+</section>
+<section id="question-3-adsorption-of-vibrating-atoms">
+<h2>Question 3: Adsorption of vibrating atoms<a class="headerlink" href="#question-3-adsorption-of-vibrating-atoms" title="Permalink to this headline">#</a></h2>
+<p>A set of atoms binds to <span class="math notranslate nohighlight">\(M\)</span> lattice sites on a surface such that every
+lattice site is occupied by a single atom. Each atom vibrates in a
+parabolic potential on each site and does not interact with other atom.
+The vibrational energy of a single atom is described by:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\epsilon_i(n) = \left (n+ \frac{1}{2} \right ) h v \quad n=0, 1, 2, \dots
+\end{aligned}\]</div>
+<p>where <span class="math notranslate nohighlight">\(h\)</span> is Planck’s constant, <span class="math notranslate nohighlight">\(n\)</span> is an integer, and <span class="math notranslate nohighlight">\(v\)</span> is a
+characteristic vibrational frequency. The degeneracy of each energy
+level is 1.</p>
+<div class="admonition-a admonition">
+<p class="admonition-title"><strong>(a)</strong></p>
+<p>Write the canonical partition function of the <span class="math notranslate nohighlight">\(M\)</span> adsorbed atoms
+in terms of <span class="math notranslate nohighlight">\(M\)</span> and <span class="math notranslate nohighlight">\(hv\)</span>.</p>
+<details><summary>Hint</summary>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\sum_{k=0}^\infty r^k &amp;= \frac{1}{1-r}
+\end{aligned}\]</div>
+</details>
+<details><summary>Show answer</summary>
+<p>Before we go on… did you define your absorbed atoms as independent subsystems?</p>
+<details><summary>Yes</summary>
+<p>Did you define them as distinguishable?</p>
+<details><summary>Yes, I got this.</summary>
+<p>The adsorbed atoms are distinguishable and independent, so we can
+factorize the partition function and compute a single-atom vibrational
+partition function as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    z &amp;= \sum_{n=0}^\infty e^{-\beta \left (n+ \frac{1}{2} \right ) h v} \\
+    &amp;= e^{-\beta hv/2}\sum_{n=0}^\infty e^{-\beta hvn}
+    
+\end{aligned}\end{split}\]</div>
+<p>Using the first expression from the hint, we let <span class="math notranslate nohighlight">\(r=\exp(-\beta hv)\)</span> and
+we can simplify this to:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+    z &amp;= \frac{e^{-\beta hv/2} }{1-e^{-\beta hv}}
+    
+\end{aligned}\]</div>
+<p>The total system partition function is then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+    Z = z^M = \left ( \frac{e^{-\beta hv/2} }{1-e^{-\beta hv}} \right )^M
+    
+\end{aligned}\]</div>
+</details>
+</details>
+</details>
+</div>
+<div class="admonition-b admonition">
+<p class="admonition-title"><strong>(b)</strong></p>
+<p>Rather than occupying all possible lattice sites, now only <span class="math notranslate nohighlight">\(N\)</span>
+atoms adsorb to the surface, where <span class="math notranslate nohighlight">\(N&lt;M\)</span>. Each atom still vibrates
+independently and there is no other energetic contribution associated
+with adsorption. Only one atom can adsorb per lattice site. Write an
+expression for the canonical partition function of the <span class="math notranslate nohighlight">\(N\)</span> adsorbed
+atoms in terms of <span class="math notranslate nohighlight">\(M\)</span>, <span class="math notranslate nohighlight">\(N\)</span>, and <span class="math notranslate nohighlight">\(hv\)</span>.</p>
+<details><summary>Show answer</summary>
+<p>The energy of the system of adsorbed particles is still the sum of the
+energies of the <span class="math notranslate nohighlight">\(N\)</span> independent particles, so we can still factorize the
+partition function. However, now that there are more lattice sites than
+adsorbed atoms, we have to account for the degeneracy of the
+configurations that give identical energies. Note that we do not need to
+consider the degeneracy of the energy itself, which is given solely by
+the number of bound atoms, <span class="math notranslate nohighlight">\(N\)</span>.</p>
+<p>The degeneracy of the system (i.e., the number of equivalent
+configurations that yields the same energy) is equal to the number of
+ways we can split the <span class="math notranslate nohighlight">\(M\)</span> lattice sites into occupied and empty sites.
+This is the same calculation performed to calculate the entropy of a
+two-state system in the microcanonical ensemble. The system partition
+function with this term is then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+    Z &amp;= \frac{M!}{N!(M-N)!} z^N
+    
+\end{aligned}\]</div>
+<p>where <span class="math notranslate nohighlight">\(z\)</span> is defined as in part <strong>a</strong>.</p>
+</details>
+</div>
+<div class="admonition-c admonition">
+<p class="admonition-title"><strong>(c)</strong></p>
+<p>The adsorbed atoms are now in equilibrium with a surrounding gas
+of atoms. The gas has a constant chemical potential <span class="math notranslate nohighlight">\(\mu\)</span>. Determine the
+ensemble-average number of atoms adsorbed on the <span class="math notranslate nohighlight">\(M\)</span> sites at
+equilibrium.</p>
+<details><summary>Show answer</summary>
+<p>Before we go on… did you assume either the grand canonical or canonical ensemble?</p>
+<details><summary>Yes</summary>
+<p>We will use the grand canonical ensemble here, following a similar approach as in <a class="reference internal" href="../lecture_files/Lecture7.html"><span class="doc std std-doc">our earlier lecture</span></a>.</p>
+<p>Did you define each lattice site as independent?</p>
+<details><summary>Yes</summary>
+We can write a single-site partition function:
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    \xi &amp;= \sum_i e^{\beta \mu N_i} e^{-\beta \epsilon_i} \\
+    &amp;= 1 + e^{\beta \mu} \sum_{n=0}^\infty e^{-\beta \left (n+ \frac{1}{2} \right ) h v}
+    
+\end{aligned}\end{split}\]</div>
+<p>The idea here is that there is one state where no particle is adsorbed
+(<span class="math notranslate nohighlight">\(N_i = 0\)</span>) and therefore the energy of the site is also 0. We then
+obtain an infinite series of states where a single particle is adsorbed
+and vibrates. We can replace this latter quantity with the
+single-particle vibrational partition function from part <strong>a</strong>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+    \xi &amp;= 1 + e^{\beta \mu} z
+    
+\end{aligned}\]</div>
+<p>The total system partition function (recognizing that sites are still
+distinguishable) is then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+    \Xi &amp;= \left (1 + e^{\beta \mu} z \right )^M
+    
+\end{aligned}\]</div>
+<p>We can now determine the ensemble-average number of adsorbed atoms by
+writing a total derivative of the corresponding grand potential:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    d \Sigma &amp;= -S dT - PdV - Nd\mu \\
+    \langle N \rangle &amp;= -\left ( \frac{\partial \Sigma}{\partial \mu} \right )_{V, T}
+    
+\end{aligned}\end{split}\]</div>
+<p>Substituting in the relation between the grand potential and grand
+canonical partition function then gives:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    \langle N \rangle &amp;= M k_B T \left ( \frac{\partial \ln (1 + e^{\beta \mu} z}{\partial \mu} \right )_{V,T} \\
+    &amp;= M k_B T \frac{\beta e^{\beta \mu}z}{1 + e^{\beta \mu} z} \\
+    &amp;= \frac{M e^{\beta \mu}z}{1 + e^{\beta \mu} z}
+    
+\end{aligned}\end{split}\]</div>
+</details>
+</details>
+</details>
+</div>
+</section>
+<section id="question-4-two-state-free-energy-change">
+<h2>Question 4: Two-state free energy change<a class="headerlink" href="#question-4-two-state-free-energy-change" title="Permalink to this headline">#</a></h2>
+<p>A quantity that is often calculated in simulations is the free energy
+change with a process that transforms a system from state <span class="math notranslate nohighlight">\(A\)</span> for state
+<span class="math notranslate nohighlight">\(B\)</span>. For example, you might consider the free energy change for mutating
+a protein side-chain, modifying its interactions with the environment.
+Assume that the energy of microstate <span class="math notranslate nohighlight">\(i\)</span> in state <span class="math notranslate nohighlight">\(A\)</span> is given by
+<span class="math notranslate nohighlight">\(E_A(x_i)\)</span> and the energy of microstate <span class="math notranslate nohighlight">\(i\)</span> in state <span class="math notranslate nohighlight">\(B\)</span> is given by
+<span class="math notranslate nohighlight">\(E_B(x_i)\)</span>.</p>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>Using the tools of statistical mechanics, show that for a
+system in the canonical ensemble, this two-state Helmholtz free energy
+change be written as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\exp\left(-\beta \Delta F\right) &amp;= \langle \exp \left ( -\beta \Delta E \right )\rangle_{A}
+\end{aligned}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\Delta F = F_B - F_A\)</span>, <span class="math notranslate nohighlight">\(\Delta E(x_i) = E_B(x_i) - E_A(x_i)\)</span> and
+the subscript <span class="math notranslate nohighlight">\(A\)</span> indicates that the ensemble-average is computed using
+the partition function for state <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<details><summary>Show answer</summary>
+<p>We can start by writing the free energy for each of the two states:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    F_A &amp;= -k_B T \ln \left ( \sum_i \exp[{-\beta E_A(x_i)}]\right ) \\
+    F_B &amp;= -k_B T \ln \left ( \sum_i \exp[{-\beta E_B(x_i)}]\right ) 
+    
+\end{aligned}\end{split}\]</div>
+<p>Substracting gives the following expression:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+    F_B - F_A = -k_B T \ln \frac{\sum_i \exp[{-\beta E_B(x_i)}]}{\sum_i \exp[{-\beta E_A(x_i)}]}
+    
+\end{aligned}\]</div>
+<p>We now define <span class="math notranslate nohighlight">\(\Delta E(x_i) \equiv E_B(x_i) - E_A(x_i)\)</span> so that
+<span class="math notranslate nohighlight">\(E_B(x_i) = \Delta E(x_i)+E_A(x_i)\)</span>. Substituting this into the
+numerator gives:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    F_B - F_A &amp;= -k_B T \ln \frac{\sum_i \exp[-\beta \Delta E(x_i) - \beta E_A(x_i)]}{\sum_i \exp[{-\beta E_A(x_i)}]} \\
+    &amp;= -k_B T \ln \frac{\sum_i \exp[-\beta \Delta E(x_i)] \exp[- \beta E_A(x_i)]}{\sum_i \exp[{-\beta E_A(x_i)}]}
+    
+\end{aligned}\end{split}\]</div>
+<p>The term within the logarithm is now exactly the ensemble-average value
+of <span class="math notranslate nohighlight">\(\exp(-\beta\Delta E)\)</span>, sampled according to the energy function of
+state <span class="math notranslate nohighlight">\(A\)</span>. By taking the exponent of each side, we therefore obtain:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    F_B - F_A &amp;= -k_B T \ln \langle \exp(-\beta\Delta E) \rangle_{A}\\
+    \therefore \exp\left(-\beta \Delta F\right) &amp;= \langle \exp \left ( -\beta \Delta E \right )\rangle_{A}
+    
+\end{aligned}\end{split}\]</div>
+</details>
+</div>
+</section>
+<section id="question-5-protein-folding">
+<h2>Question 5: Protein folding<a class="headerlink" href="#question-5-protein-folding" title="Permalink to this headline">#</a></h2>
+<p>A four-residue soluble protein can obtain one of the four conformations
+drawn schematically in Figure 1. Three conformations (labeled 1-3)
+correspond to an unfolded protein, while one conformation (labeled 4)
+corresponds to folded protein. The energy of each unfolded conformation
+is <span class="math notranslate nohighlight">\(E_j = \epsilon\)</span>, while the energy of the folded conformation is
+<span class="math notranslate nohighlight">\(E_j = 0\)</span>. Each of the conformations also has a length, <span class="math notranslate nohighlight">\(L_j\)</span>, as
+labeled on the schematic. The protein reversibly folds and unfolds at
+constant temperature and volume.</p>
+<p><img alt="image" src="../_images/exam_1_protein_folding_fig.png" />
+Four possible conformations of a protein labeled with the
+energy, <span class="math notranslate nohighlight">\(E\)</span>, and the length, <span class="math notranslate nohighlight">\(L\)</span>, of each
+conformation.</p>
+<div class="admonition-a admonition">
+<p class="admonition-title"><strong>(a)</strong></p>
+<p>What is the probability of observing the protein in an unfolded
+conformation (i.e., the probability of observing <strong>any</strong> of the three
+unfolded conformation)?</p>
+<details><summary>Show answer</summary>
+<p>Since we are at fixed <span class="math notranslate nohighlight">\(NVT\)</span>, we can write this probability using the
+canonical ensemble by explicitly summing over the possible states of the
+system (recognizing that the degeneracy of the unfolded state is 3):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    p_{\textrm{unfolded}} &amp;= \frac{3e^{-\epsilon/k_B T}}{Z} \\
+    Z &amp;= \sum_j e^{-E_j/k_T} \\
+    &amp;= e^{0} + 3e^{-\epsilon/k_B T} \\
+    &amp;= 1 + 3e^{-\epsilon/k_B T} \\
+    p_{\textrm{unfolded}} &amp;= \frac{3e^{-\epsilon/k_B T}}{ 1 + 3e^{-\epsilon/k_B T}}
+    
+\end{aligned}\end{split}\]</div>
+</details>
+</div>
+<div class="admonition-b admonition">
+<p class="admonition-title"><strong>(b)</strong></p>
+<p>What is the probability of observing the protein in an unfolded
+conformation in the high and low temperature limits?</p>
+<details><summary>Show answer</summary>
+<p>In the high temperature limit, <span class="math notranslate nohighlight">\(k_B T \gg \epsilon\)</span> and
+<span class="math notranslate nohighlight">\(e^{-\epsilon/k_B T} = 1\)</span>. All states are equally probable so
+<span class="math notranslate nohighlight">\(p_{\textrm{unfolded}} = \frac{3}{4}\)</span>.</p>
+<p>In the low temperature limit, <span class="math notranslate nohighlight">\(k_B T \ll \epsilon\)</span> and
+<span class="math notranslate nohighlight">\(e^{-\epsilon/k_B T} = 0\)</span>. The system will now only be observed in its
+lowest-energy state, which in this case is the folded state, and hence
+<span class="math notranslate nohighlight">\(p_{\textrm{unfolded}} = 0\)</span>.</p>
+</details>
+</div>
+<div class="admonition-c admonition">
+<p class="admonition-title"><strong>(c)</strong></p>
+<p>A constant tension, <span class="math notranslate nohighlight">\(\tau\)</span>, is now applied to the same protein
+while the system is still at constant volume and temperature. The
+extensive conjugate variable to the tension is the length of the
+protein, <span class="math notranslate nohighlight">\(L\)</span>. What is the probability of observing the protein in an
+unfolded conformation (i.e., any unfolded conformation) when under
+tension?</p>
+<details><summary>Show answer</summary>
+<p>Placing the protein under tension introduces as new work term, <span class="math notranslate nohighlight">\(\tau L\)</span>,
+to the system. We can write the differential form of the energy as:</p>
+<div class="math notranslate nohighlight">
+\[dE = TdS - PdV + \tau dL\]</div>
+<p>The generalized partition function corresponding to the four possible
+states of the system can then be written as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    \Phi &amp;= \sum_j e^{-E_j/k_B T}e^{\tau L_j/k_BT} \\
+    &amp;= e^{-\epsilon/k_B T}e^{4b \tau / k_B T} + 2e^{-\epsilon/k_B T}e^{3b \tau / k_B T} + e^{2b \tau / k_B T}
+    
+\end{aligned}\end{split}\]</div>
+<p>Since the different unfolded states now have different probabilities
+(due to their different lengths), we have to sum the probabilities of
+the three unfolded conformations to get the probability of obtaining any
+unfolded conformation. The total probability is then:</p>
+<div class="math notranslate nohighlight">
+\[p_{\textrm{unfolded}} = \frac{ e^{-\epsilon/k_B T}e^{4b \tau / k_B T} + 2e^{-\epsilon/k_B T}e^{3b \tau / k_B T}}{e^{-\epsilon/k_B T}e^{4b \tau / k_B T} + 2e^{-\epsilon/k_B T}e^{3b \tau / k_B T} + e^{2b \tau / k_B T}}\]</div>
+</details>
+</div>
+<div class="admonition-d admonition">
+<p class="admonition-title"><strong>(d)</strong></p>
+<p>What is the average length of the protein if it is held under
+tension for a long period of time?</p>
+<details><summary>Show answer</summary>
+<p>The average length can either be computed by summing over appropriately
+weighted states or by taking a derivative of the partition function.
+Here, we will use the latter strategy. First, we define a generalized
+thermodynamic potential with natural variables of <span class="math notranslate nohighlight">\(N, V, T, \tau\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    \Sigma &amp;= E - TS - \tau L \\
+    d\Sigma &amp;= -SdT - PdV - Ld\tau \\
+    \therefore &amp; -\left ( \frac{\partial \Sigma}{\partial \tau} \right )_{V, T} = \langle L \rangle
+    
+\end{aligned}\end{split}\]</div>
+<p>We relate our potential to the partition function via:</p>
+<div class="math notranslate nohighlight">
+\[\Sigma = - k_B T \ln \Phi\]</div>
+<p>We now solve for the average length of the protein, <span class="math notranslate nohighlight">\(\langle L \rangle\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    \langle L \rangle &amp;= -\left ( \frac{\partial \Sigma}{\partial \tau} \right )_{V, T} \\
+    &amp;= k_B T \left ( \frac{\partial \ln \Phi}{\partial \tau} \right )_{V, T} \\
+    &amp;= \frac{k_BT}{\Phi} \left ( \frac{\partial \Phi}{\partial \tau} \right )_{V, T} \\
+    &amp;= \frac{4be^{-\epsilon/k_B T}e^{4b \tau / k_B T} + 6be^{-\epsilon/k_B T}e^{3b \tau / k_B T} + 2be^{2b \tau / k_B T}}{e^{-\epsilon/k_B T}e^{4b \tau / k_B T} + 2e^{-\epsilon/k_B T}e^{3b \tau / k_B T} + e^{2b \tau / k_B T}}
+    
+\end{aligned}\end{split}\]</div>
+</details>
+</div>
+</section>
+<section id="question-6-crystalline-defects">
+<h2>Question 6: Crystalline defects<a class="headerlink" href="#question-6-crystalline-defects" title="Permalink to this headline">#</a></h2>
+<p>In a perfect crystal, there are <span class="math notranslate nohighlight">\(N\)</span> lattice sites, and each lattice site
+is occupied by a single atom. In general, however, crystalline materials
+are not perfect, but instead have defects in which an atom is removed
+from lattice site; such a defect is referred to as a point defect.
+Multiple types of points defects are possible in crystalline materials.</p>
+<p><img alt="image" src="../_images/exam_1_defects_fig_v2.png" />
+Examples of crystalline defects.</p>
+<div class="admonition-a admonition">
+<p class="admonition-title"><strong>(a)</strong></p>
+<p>One type of point defect is called a <em>Schottky defect</em>, in which
+an atom is removed from one of the <span class="math notranslate nohighlight">\(N\)</span> lattice sites and moved to the
+surface of the material (see Figure). The resulting empty lattice site
+is referred to as a <em>vacancy</em>. Assume that the energy associated with
+creating a Schottky defect is <span class="math notranslate nohighlight">\(\epsilon_s\)</span>, moving an atom from a
+lattice site to the surface increases the size of the lattice from <span class="math notranslate nohighlight">\(N\)</span>
+to <span class="math notranslate nohighlight">\(N+1\)</span>, vacancies created in the lattice can be associated with any of
+the lattice sites (including newly created surface lattice sites), and
+there can be as many as <span class="math notranslate nohighlight">\(N\)</span> Schottky defects in the system.</p>
+<p>Write a <strong>canonical</strong> partition function for a crystalline material with
+<span class="math notranslate nohighlight">\(N\)</span> atoms that <strong>only</strong> forms Schottky defects. Your answer may include
+a summation and should be in terms of <span class="math notranslate nohighlight">\(N\)</span>, <span class="math notranslate nohighlight">\(\epsilon_s\)</span>, and any other
+variables that you choose to define.</p>
+<details><summary>Hint</summary>
+Many people try to solve this problem by defining a two-state
+subsystem (i.e. a single lattice site that could be occupied or
+unoccupied) and factorizing the partition function. The problem with
+this approach is that the number of subsystems depends on the total
+energy of the system, since changing the system energy by introducing a
+defect also increases the size of the lattice and thus the number of
+subsystems. As a result, the subsystems are not independent; if we
+consider a fixed number of subsystems, then their energies cannot be
+independently varied since the total energy is constrained. This problem
+is tricky for that reason!
+</details>
+<details><summary>Show answer</summary>
+<p>From the information in the problem statement, we know that creating a
+single Schottky defects costs an energy <span class="math notranslate nohighlight">\(\epsilon_s\)</span> and increases the
+size of the lattice to <span class="math notranslate nohighlight">\(N+1\)</span>. For <span class="math notranslate nohighlight">\(n\)</span> Schottky defects, then, the energy
+is <span class="math notranslate nohighlight">\(n\epsilon\)</span> and the size of the lattice <span class="math notranslate nohighlight">\(N+n\)</span>. We can write a
+canonical partition function by summing over all possible energy levels,
+<span class="math notranslate nohighlight">\(E_\nu\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+    Z = \sum_{n=0}^N \Omega(N,V,E_\nu) e^{-\beta E_\nu}
+    
+\end{aligned}\]</div>
+<p>The degeneracy of each energy level is given by the number of ways to
+distribute <span class="math notranslate nohighlight">\(n\)</span> vacancies across <span class="math notranslate nohighlight">\(N+n\)</span> lattice points, or:</p>
+<div class="math notranslate nohighlight">
+\[\Omega(N,V,E_\nu) = \frac{(N+n)!}{N!n!}\]</div>
+<p>The partition function is then:</p>
+<div class="math notranslate nohighlight">
+\[Z = \sum_{n=0}^N \frac{(N+n)!}{N!n!} e^{-\beta n \epsilon_s}\]</div>
+</details>
+</div>
+<div class="admonition-b admonition">
+<p class="admonition-title"><strong>(b)</strong></p>
+<p>Another type of point defect is called a <em>Frenkel defect</em>, in
+which an atom is removed from a lattice site and occupies an
+interstitial site, or a binding site that is located in between lattice
+sites (see Figure). Atoms on interstitial sites can diffuse to other
+interstitial sites so that there is no correlation between the location
+of the interstitial atom and the location of the vacancy. Unlike a
+Schottky defect, a Frenkel defect does not increase the size of the
+lattice.</p>
+<p>Write an expression for the <strong>entropy</strong> of a crystalline material with
+<span class="math notranslate nohighlight">\(N\)</span> atoms, <span class="math notranslate nohighlight">\(n\)</span> Frenkel defects, and <span class="math notranslate nohighlight">\(N'\)</span> interstitial sites. Assume that
+the system is at constant energy.</p>
+<details><summary>Show answer</summary>
+<p>Here, we consider the entropy in terms of two distinct terms: the
+entropy of the atoms on the <span class="math notranslate nohighlight">\(N'\)</span> interstitial sites, and the entropy of
+the vacancies on the <span class="math notranslate nohighlight">\(N\)</span> lattice sites. At constant energy, the
+Boltzmann entropy is:</p>
+<div class="math notranslate nohighlight">
+\[S = k_B \ln \Omega\]</div>
+<p>The degeneracy of <span class="math notranslate nohighlight">\(n\)</span> atoms located on <span class="math notranslate nohighlight">\(N'\)</span> interstitial sites is then:</p>
+<div class="math notranslate nohighlight">
+\[\Omega_i = \frac{N'!}{(N'-n)!n!}\]</div>
+<p>while the degeneracy of <span class="math notranslate nohighlight">\(n\)</span> vacancies located on <span class="math notranslate nohighlight">\(N\)</span> lattice sites is:</p>
+<div class="math notranslate nohighlight">
+\[\Omega_v = \frac{N!}{(N-n)!n!}\]</div>
+<p>The total entropy of the lattice can then be written as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    S_{\textrm{total}} &amp;= S_{\textrm{interstital}} + S_{\textrm{vacancies}} \\
+    &amp;= k_B \ln \frac{N'!}{(N'-n)!n!} + k_B \ln \frac{N!}{(N-n)!n!} \\
+    &amp;= k_B \ln \left ( \frac{N'!}{(N'-n)!n!}  \frac{N!}{(N-n)!n!} \right )
+    
+\end{aligned}\end{split}\]</div>
+</details>
+</div>
+</section>
+<section id="question-7-adsorption-of-a-mobile-gas">
+<h2>Question 7: Adsorption of a mobile gas<a class="headerlink" href="#question-7-adsorption-of-a-mobile-gas" title="Permalink to this headline">#</a></h2>
+<p>Monatomic ideal gas molecules adsorb onto a surface that is
+homogeneously protected by a surface monolayer. Upon adsorption, the gas
+molecules are <em>mobile</em> and are equally likely to be found at any
+position on the surface, as opposed to being localized to specific
+binding sites. Each molecule adsorbs favorably with an energy
+<span class="math notranslate nohighlight">\(-\epsilon_a\)</span>. Adsorbed molecules do not interact with each other and
+behave like an ideal gas confined to two dimensions. In this problem, we
+will calculate how the ensemble-average surface density of adsorbed
+molecules varies as a function of the pressure of the bulk gas, in
+analogy to the <a class="reference internal" href="../lecture_files/Lecture7.html#term-Langmuir-adsorption-isotherm"><span class="xref std std-term">Langmuir adsorption isotherm</span></a>.</p>
+<div class="admonition-a admonition">
+<p class="admonition-title"><strong>(a)</strong></p>
+<p>Assume that <span class="math notranslate nohighlight">\(N_a\)</span> molecules are adsorbed to the surface. Similar
+to a 3D ideal gas, the translational energy of a single molecule of the
+adsorbed 2D gas is</p>
+<div class="math notranslate nohighlight">
+\[\epsilon_{xy} = \frac{h^2(n_x^2 + n_y^2)}{8mA} \quad n_x, n_y = 1, 2, 3\dots\]</div>
+<p>where <span class="math notranslate nohighlight">\(h\)</span> is Planck’s constant, <span class="math notranslate nohighlight">\(m\)</span> is the mass of the molecule, and <span class="math notranslate nohighlight">\(A\)</span>
+is the area of the surface. Note that this energy does <em>not</em> include the
+energy associated with adsorbing to the surface. The single-molecule
+canonical partition function that corresponds to the translational
+energy is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+z_{\textrm{xy}} &amp;= \frac{2\pi m k_B T}{h^2}A = \frac{A}{\lambda^2}
+\end{aligned}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\lambda = \sqrt{ \frac{h^2}{2\pi m k_B T}}\)</span> is the thermal de
+Broglie wavelength.</p>
+<p>Using this information, write the <strong>canonical</strong> partition function for
+the system of <span class="math notranslate nohighlight">\(N_a\)</span> adsorbed gas molecules. Your answer may be in terms
+of <span class="math notranslate nohighlight">\(N_a\)</span>, <span class="math notranslate nohighlight">\(\lambda\)</span>, <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(\epsilon_a\)</span>, and <span class="math notranslate nohighlight">\(k_B T\)</span> or <span class="math notranslate nohighlight">\(\beta\)</span>.</p>
+<details><summary>Hints </summary>
+<p>Many students again tried to define a single subsystem partition
+function that had two states, bound and unbound, following our previous
+approach for the Langmuir isotherm. The problem statement explicitly
+says not to do this by defining the system as the set of <em>adsorbed</em>
+particles. In our derivation of the Langmuir isotherm our system was
+defined as a set of discrete binding sites which could be treated as
+individual subsystems, but since here there are no binding sites (since
+the particles are mobile) this same approach cannot be done. We could do
+this problem in the grand canonical ensemble by correctly defining a
+single-particle partition function that takes into account the change in
+the translational energy of the particle in the bound/unbound states,
+but this approach is more complex and the problem statement explicitly
+dissuades it.</p>
+</details>
+<details><summary>Show answer</summary>
+<p>First, we can recognize that each of the <span class="math notranslate nohighlight">\(N_a\)</span> adsorbed particles are
+independent and in this case indistinguishable, since unlike the
+Langmuir isotherm case they do not adsorbed to fixed binding sites. The
+canonical partition function can then be written as:</p>
+<div class="math notranslate nohighlight">
+\[Z = \frac{z^{N_a}}{N_a!}\]</div>
+<p>Now we need an expression for the single-molecule partition function,
+<span class="math notranslate nohighlight">\(z\)</span>. Here, we recognize that the energy of the molecule is divided into
+two components: the translational energy, <span class="math notranslate nohighlight">\(\epsilon_{xy}\)</span>, and the
+binding energy, <span class="math notranslate nohighlight">\(\epsilon_a\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\epsilon = \epsilon_{xy} -\epsilon_a\]</div>
+<p>Since these two terms are independent of each other, we can factorize
+<span class="math notranslate nohighlight">\(z\)</span> to write:</p>
+<div class="math notranslate nohighlight">
+\[z = z_{xy}z_{a} = \frac{A e^{\epsilon_a/k_BT}}{\lambda^2}\]</div>
+<p>Here we recognize that
+<span class="math notranslate nohighlight">\(z_a = \sum_j e^{-\epsilon_j/k_BT} = e^{\epsilon_a/k_BT}\)</span> since all of
+the particles by definition are adsorbed, so the partition function has
+one term. The system partition function is then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    Z &amp;= \frac{z^{N_a}}{N_a!} \\
+    &amp;= \frac{1}{N_a!} \left [\frac{A e^{\epsilon_a/k_BT}}{\lambda^2} \right ] ^{N_a}
+    
+\end{aligned}\end{split}\]</div>
+</details>
+</div>
+<div class="admonition-b admonition">
+<p class="admonition-title"><strong>(b)</strong></p>
+<p>Calculate the chemical potential, <span class="math notranslate nohighlight">\(\mu_a\)</span>, of the molecules
+adsorbed to the surface. Your answer may be in terms
+of <span class="math notranslate nohighlight">\(N_a\)</span>, <span class="math notranslate nohighlight">\(\lambda\)</span>, <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(\epsilon_a\)</span>, and <span class="math notranslate nohighlight">\(k_B T\)</span> or <span class="math notranslate nohighlight">\(\beta\)</span>.</p>
+<details><summary>Show answer</summary>
+<p>First, we know that we can calculate the chemical potential from the
+Helmholtz free energy:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    dF &amp;= -SdT - PdV + \mu_a dN_a \\
+    \therefore \mu_a &amp;= \left ( \frac{\partial F}{\partial N_a} \right )_{V, T}
+    
+\end{aligned}\end{split}\]</div>
+<p>We can relate the Helmholtz free energy to the canonical partition
+function and use this to calculate the chemical potential (noting that
+the single-molecule partition function has no <span class="math notranslate nohighlight">\(N_a\)</span> dependence):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    \mu_a &amp;= \left ( \frac{\partial F}{\partial N_a} \right )_{V, T} \\
+    &amp;= -k_B T \left ( \frac{\partial \ln Z}{\partial N_a} \right )_{V, T} \\
+    \ln Z &amp;= \ln  \frac{z^{N_a}}{N_a!} \\
+    &amp;= N_a \ln z - N_a \ln N_a + N_a \\
+    \mu_a &amp;= -k_B T \left [ \ln z -\ln N_a \right ] \\
+    &amp;= k_B T \ln \left ( \frac{N_a}{z} \right ) \\
+    &amp;= k_BT \ln \left (\frac{N_a}{A} \lambda^2 e^{-\epsilon_a/k_BT}  \right )
+    
+\end{aligned}\end{split}\]</div>
+</details>
+</div>
+<div class="admonition-c admonition">
+<p class="admonition-title"><strong>(c)</strong></p>
+<p>The chemical potential of the ideal gas molecules in the bulk,
+<span class="math notranslate nohighlight">\(\mu_{\textrm{gas}}\)</span>, can be written as:</p>
+<div class="math notranslate nohighlight">
+\[\mu_{\textrm{gas}} = \mu_0 + k_B T\ln P\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mu_0\)</span> is a constant and <span class="math notranslate nohighlight">\(P\)</span> is the pressure. Using this
+information, write an expression that relates the ensemble-average
+surface density, <span class="math notranslate nohighlight">\(\langle N_a \rangle / A\)</span>, to the pressure (along with
+other terms) at equilibrium.</p>
+<details><summary>Show answer</summary>
+<p>The condition of equilibrium is that <span class="math notranslate nohighlight">\(\mu_a = \mu_{\textrm{gas}}\)</span>. We
+can then write:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    \mu_a &amp;= \mu_{\textrm{gas}} \\
+    k_BT \ln \left (\frac{N_a}{A} \lambda^2 e^{-\epsilon_a/k_BT}  \right )&amp;= \mu_0 + k_B T\ln P  \\
+    \ln \left (\frac{N_a}{A} \lambda^2 e^{-\epsilon_a/k_BT}  \right ) &amp;= \frac{\mu_0}{k_BT} + \ln P \\
+    \frac{N_a \lambda^2}{A} e^{-\epsilon_a/k_B T} &amp;= P e^{\mu_0 /k_BT} \\
+    \therefore \frac{N_A}{A} &amp;= \frac{P}{\lambda^2} e^{\epsilon_a/k_B T} e^{\mu_0 /k_BT}
+    
+\end{aligned}\end{split}\]</div>
+<p>This is our adsorption isotherm for a system with mobile, rather than
+discrete, binding sites.</p>
+</details>
+</div>
+</section>
+<section id="question-8-van-der-waals-equation-of-state">
+<h2>Question 8: van der Waals equation of state<a class="headerlink" href="#question-8-van-der-waals-equation-of-state" title="Permalink to this headline">#</a></h2>
+<p>The van der Waals equation of state is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+P= \frac{Nk_B T}{V - Nb} - a\frac{N^2}{V^2}
+\end{aligned}\]</div>
+<p>where <span class="math notranslate nohighlight">\(N\)</span> is the number of particles, <span class="math notranslate nohighlight">\(V\)</span> is the volume, <span class="math notranslate nohighlight">\(b\)</span> is the
+excluded volume of each particle (<em>i.e.</em>, particles cannot overlap), and
+<span class="math notranslate nohighlight">\(a\)</span> accounts for attractions between particles. Particles interact with
+an energy <span class="math notranslate nohighlight">\(E_\textrm{int}(r)\)</span>, where <span class="math notranslate nohighlight">\(r\)</span> is the distance between a pair
+of particles.</p>
+<div class="admonition-a admonition">
+<p class="admonition-title"><strong>(a)</strong></p>
+<p>Write the canonical partition function for the system with only
+two particles (<span class="math notranslate nohighlight">\(N=2\)</span>). Assume that particle positions are <strong>continuous</strong>
+and that the positions of the two particles are independent (even though
+there are now interactions between the particles). Write your answer in
+terms of the interaction energy <span class="math notranslate nohighlight">\(E_\textrm{int}(r)\)</span>, quantities defined
+in the problem statement, and the thermal de Broglie wavelength.</p>
+<details><summary>Show answer</summary>
+<p>The key point here is that we can separate the partition function into
+the ideal gas partition function for each particle, accounting for
+translational degrees of freedom, and a partition function corresponding
+to interactions between the particles. We can write this as:</p>
+<div class="math notranslate nohighlight">
+\[Z = \frac{z_{\textrm{trans}}^2}{2!}z_{\textrm{int}}\]</div>
+<p>Here, the first term is the ideal-gas translational partition function
+for two indistinguishable ideal gas particles while the second term
+accounts for interactions between particles. The single-particle
+translational partition function is then given by the ideal gas equation
+of state, which we adjust to account for the reduced volume due to the
+volume excluded by the two particles:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+    z_\textrm{trans} &amp;=\frac{V-2b}{\lambda^3}
+    
+\end{aligned}\]</div>
+<p>Here, we have left the partition function in terms of the de Broglie
+wavelength for simplicity. We can write the second term, recognizing
+that the energy is continuous, and not discretized, as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+    z_{\textrm{int}} &amp;= \int_0^\infty e^{-\beta E_\textrm{int}(r)} dr 
+    
+\end{aligned}\]</div>
+<p>Note that in this notation we assume the integral is over all possible
+vector values of <span class="math notranslate nohighlight">\(r\)</span>, such that we omit a degeneracy term associated
+with the increased number of states with identical scalar values of <span class="math notranslate nohighlight">\(r\)</span>
+at increasing distances. You could also include an explicit accounting
+of the degeneracy (as is done in part b). Combining these terms we get:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+    Z = \frac{1}{2}\left (\frac{V-2b}{\lambda^3}\right)^2 \int_0^\infty e^{-\beta E_\textrm{int}(r)} dr
+    
+\end{aligned}\]</div>
+</details>
+</div>
+<div class="admonition-b admonition">
+<p class="admonition-title"><strong>(b)</strong></p>
+<p>The canonical partition function for the system with <span class="math notranslate nohighlight">\(N\)</span>
+particles can be derived analytically using a mean-field approximation.
+Assume that the interaction energy between particles <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}E_\textrm{int}(r) = \begin{cases} 
+\infty &amp; r &lt; d \\
+-\epsilon \left ( \frac{d}{r}\right )^6 &amp; r \geq d 
+\end{cases}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(d\)</span> is the particle diameter and <span class="math notranslate nohighlight">\(\epsilon\)</span> defines the magnitude
+of the interaction energy. Using this expression, write a mean-field
+approximation for the interaction energy per particle by assuming that
+each particle interacts with the average positions of all other
+particles.</p>
+<details><summary>Hints</summary>
+<p>Consider how many particles, on average, are in a spherical shell
+at a distance <span class="math notranslate nohighlight">\(r\)</span> from a reference particle.</p>
+</details>
+<details><summary>Show answer</summary>
+<p>In the mean-field approximation, we assume that all particles are
+uniformly distributed throughout the system. The average interaction
+between a particle at the origin and particles at a distance <span class="math notranslate nohighlight">\(r\)</span> can be
+approximated as the interaction energy, <span class="math notranslate nohighlight">\(E_\textrm{int}(r)\)</span>, multiplied
+by the average number of particles at a distance <span class="math notranslate nohighlight">\(r\)</span>. Recalling back to
+the density of states of an ideal gas, we can estimate the average
+number of particles at a distance <span class="math notranslate nohighlight">\(r\)</span> as the number of particles within
+a distance <span class="math notranslate nohighlight">\(r+dr\)</span>, which can be estimated as the overall density,
+<span class="math notranslate nohighlight">\(\rho = N/V\)</span>, of the system multiplied by the surface area of a
+spherical shell with radius <span class="math notranslate nohighlight">\(r\)</span>. We further ignore values for which
+<span class="math notranslate nohighlight">\(r&lt;d\)</span> since particles cannot overlap. The total interaction energy is
+then approximated as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    \langle E_\textrm{int} \rangle &amp;= \int_d^\infty E_\textrm{int}(r) \frac{N}{V} 4 \pi r^2 dr \\
+    &amp;= -\frac{4 \pi \epsilon N}{V}\int_d^\infty \frac{d^6}{r^4} dr \\
+    &amp;=-\frac{4 \pi \epsilon d^3 N }{3 V}
+    
+\end{aligned}\end{split}\]</div>
+</details>
+</div>
+<div class="admonition-c admonition">
+<p class="admonition-title"><strong>(c)</strong></p>
+<p>Using the expression from part <strong>b</strong>, write a mean-field
+approximation for the canonical partition function of the entire system
+of <span class="math notranslate nohighlight">\(N\)</span> particles. Be careful to avoid overcounting interaction energies.</p>
+<details><summary>Show answer</summary>
+<p>Using the mean-field approximation, we can now write the single-particle
+partition function in terms of the translational part and the
+interaction energy part, as in part a. Note that we divide the
+interaction energy by 2 to avoid overcounting between pairs of
+particles.</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+    z &amp;= \frac{V-Nb}{\lambda^3} e^{-\frac{1}{2}\beta \langle E_\textrm{int}\rangle }
+    
+\end{aligned}\]</div>
+<p>Substituting in the value for the average interaction energy gives:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+    z &amp;= \frac{V-Nb}{\lambda^3} \exp\left [{\frac{2\pi \epsilon d^3 N}{3V k_BT}} \right ]
+    
+\end{aligned}\]</div>
+<p>The full partition function is then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    Z &amp;= \frac{z^N}{N!} \\
+    &amp;= \frac{1}{N!} \left ( \frac{V-Nb}{\lambda^3} \right )^N \exp\left (\frac{2\pi \epsilon d^3 N^2}{3V k_BT} \right )
+    
+\end{aligned}\end{split}\]</div>
+</details>
+</div>
+<div class="admonition-d admonition">
+<p class="admonition-title"><strong>(d)</strong></p>
+<p>By taking the appropriate derivative of your result from part
+<strong>c</strong>, obtain the van der Waals equation of state given in the problem
+statement and provide an explicit expression for <span class="math notranslate nohighlight">\(a\)</span>.</p>
+<details><summary>Show answer</summary>
+<p>We obtain the equation of state from the volume-derivative of the
+Helmholtz free energy:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+    P &amp;= - \left ( \frac{\partial F}{\partial V}\right )_{N,T}
+    
+\end{aligned}\]</div>
+<p>We can write for <span class="math notranslate nohighlight">\(F\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+    F &amp;= -k_B T \ln Z 
+    
+\end{aligned}\]</div>
+<p>Since we only care about the the volume-dependent terms, we write:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+    F &amp;= -k_BT \left [ N \ln (V-Nb) + \frac{2 \pi \epsilon d^3 N^2}{3Vk_BT} - N \ln (N! \lambda^3)\right ]
+    
+\end{aligned}\]</div>
+<p>Taking the deriatve gives:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    P &amp;=\frac{N  k_BT }{V-Nb} - \frac{2 \pi \epsilon d^3 N^2}{3V^2} \\
+    &amp;= \frac{Nk_BT}{V-Nb} - a \frac{N^2}{V^2}
+    
+\end{aligned}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(a = \frac{2\pi \epsilon d^3}{3}\)</span>.</p>
+</details>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./problems"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ps_3/problem_set_3.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Problem Set 3 (Due Monday, October 9, 2023)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="simulation_project.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Simulation Project (Due Monday, November 6, 2023)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-einstein-model-of-a-solid">Question 1: Einstein model of a solid</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-analyzing-simple-systems">Question 2: Analyzing simple systems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-adsorption-of-vibrating-atoms">Question 3: Adsorption of vibrating atoms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4-two-state-free-energy-change">Question 4: Two-state free energy change</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5-protein-folding">Question 5: Protein folding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6-crystalline-defects">Question 6: Crystalline defects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7-adsorption-of-a-mobile-gas">Question 7: Adsorption of a mobile gas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-8-van-der-waals-equation-of-state">Question 8: van der Waals equation of state</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Reid van Lehn, Matt Gebbie, Rose K. Cersonsky
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
