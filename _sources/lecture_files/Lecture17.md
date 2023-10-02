@@ -372,6 +372,7 @@ are less efficient than processes where work is turned into heat.
 
 ```{admonition} What postulate would be broken if $\eta_5 > \eta_6$?
 <details><summary>Click for answer</summary>
+
 Here, $Q_A$ for the process in Case 5 is smaller
 than $Q_A$ for the process in Case 6, meaning that less energy is
 extracted from $A$ during the process in Case 5 than is returned to $A$
@@ -379,17 +380,32 @@ during the process in Case 6. Running these two processes cylically
 would thus result in a net transfer of heat from $B$ to $A$ since there
 is no net effect on the environment. This transfer is impossible since
 it reduces to Case 2.
+
 </details>
 ```
 
 If $\eta_5 = \eta_6$, then the system and its environment both return to
-their initial states. The latter case is referred to as a **reversible
-cycle** as the action of both processes leaves no net effect on the
-system or environment. Reversible cycles can only occur if there is no
-loss heat due to friction or other processes not considered explicitly
-in the two Cases; we will assume that any heat engine capable of
-performing reversible cycles is immune from these factors and will refer
-to it as a **reversible heat engine**. From the discussion above, we
+their initial states. The latter case is referred to as a
+
+```{glossary}
+
+reversible cycle
+    a cycle where the action of
+    both processes leaves no net effect on the
+    system or environment
+```
+
+Reversible cycles can only occur if there is no
+heat lost due to friction or other processes not considered explicitly
+in the two Cases. We will also define a
+
+```{glossary}
+reversible heat engine
+    any heat engine capable of performing reversible cycles;
+    immune from heat lost due to friction or other processes
+```
+
+From the discussion above, we
 then note that for any reversible heat engine $\eta_5 = \eta_6$, for any
 other heat engine $\eta_5 < \eta_6$, for any heat engine $\eta_5 < 1$,
 and thus we establish that in general $\eta_5 \le \eta_6 < 1$ (although
