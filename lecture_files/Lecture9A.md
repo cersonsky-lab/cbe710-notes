@@ -69,7 +69,7 @@ heat capacity
 ```{admonition} Prove that our ensemble-average variance, $\langle ( \delta E)^2 \rangle \propto C_v$
 <details><summary> Hints </summary>
 
-$C_v\left ( \frac{\partial \langle E \rangle}{\partial T} \right )_{N, V}$
+$C_v = \left ( \frac{\partial \langle E \rangle}{\partial T} \right )_{N, V}$
 
 </details>
 <details><summary> Show derivation </summary>
