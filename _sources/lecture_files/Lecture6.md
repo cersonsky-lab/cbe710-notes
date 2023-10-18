@@ -159,9 +159,7 @@ gas is indistinguishable.
 
 ![image](figs/fig_6_1-01.png)
 
-```{admonition} Let's consider our particles on this lattice. Suppose I have set up
-my system to place particle 1 on lattice site 1 and particle 2 on lattice site 2.
-How is this different from placing particle 1 on lattice site 2 and particle 2 on lattice site 1?
+```{admonition} Let's consider our particles on this lattice. Suppose I have set up my system to place particle 1 on lattice site 1 and particle 2 on lattice site 2. How is this different from placing particle 1 on lattice site 2 and particle 2 on lattice site 1?
 
 <details><summary> Click for answer </summary>
 It isn't. Because particles 1 and 2 are indistinguishable, these two snapshots are
