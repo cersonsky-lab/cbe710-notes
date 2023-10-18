@@ -101,7 +101,7 @@ where $f_1(T_A, T_B)$ is an undetermined function. We can further
 simplify this expression to eliminate the extracted work and place the
 efficiency only in terms of the heat transferred to each system,
 as Postulate 2 was broken by only considering work terms. We know
-from the First Law that $\delta W_E = -(\delta Q_A + \delta Q_B)$, where
+from the {term}`first law of thermodynamics` that $\delta W_E = -(\delta Q_A + \delta Q_B)$, where
 
 - $\delta W_E$ is negative because work is done by the engine on the
 environment,
@@ -401,8 +401,7 @@ point (b) such that the work along the
 to the work along the real path, since the (b)$\rightarrow$(c) isotherm
 can connect many different pairs of points along the adiabatic paths and
 can be positioned freely. Since the change in energy between (a) and (d)
-is independent of the path chosen (according to the First Law of
-Thermodynamics), we then get that:
+is independent of the path chosen (according to the {term}`first law of thermodynamics`), we then get that:
 
 $$\begin{aligned}
 \delta W_{ad} &= \delta W_{abcd} \\
