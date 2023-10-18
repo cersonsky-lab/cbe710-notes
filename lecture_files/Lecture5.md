@@ -160,7 +160,7 @@ two partial derivatives:
 
 $$\begin{aligned}
 dE &= TdS - PdV + f dX \\
-dS &= \frac{1}{T} dE + \frac{P}{T} dV - \frac{f}{T} dX \label{general_entropy}\\ 
+dS &= \frac{1}{T} dE + \frac{P}{T} dV - \frac{f}{T} dX\\ 
 &= \left ( \frac{\partial S}{\partial E} \right )_{X,V} dE + \left ( \frac{\partial S}{\partial V} \right )_{E, X} dV + \left ( \frac{\partial S}{\partial X} \right )_{E, V} dX
 \end{aligned}$$
 

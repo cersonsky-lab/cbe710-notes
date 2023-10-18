@@ -32,7 +32,7 @@ parts:
         - file: lecture_files/Lecture16
         - file: lecture_files/Lecture17
         - file: lecture_files/Lecture18
-#         - file: lecture_files/Lecture19
+        - file: lecture_files/Lecture19
 #         - file: lecture_files/Lecture20
 #         - file: lecture_files/Lecture21
 #         - file: lecture_files/Lecture22
