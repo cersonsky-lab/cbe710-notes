@@ -4,6 +4,12 @@
 
 {cite:ts}`tester_thermodynamics_1997`, Ch. 3.8, 4.1 - 4.3.
 
+## Goals for Today's Lecture
+- What is a heat engine?
+- How can we use the four postulates to understand what heat engines are physically possible?
+- What is the efficiency of a heat engine?
+- What is a reversible process?
+
 ## Recap of the four postulates
 
 In the previous lecture, we introduced the four postulates that will
@@ -28,8 +34,10 @@ which we paraphrase here:
 
 -   {term}`Postulate 4`: If the sets of systems $A$, $B$ and $A$, $C$ each have
     no heat interaction when connected across diathermal walls, then
-    there will be no heat interaction if systems $B$ and $C$ are also so
-    connected.
+    there will be no heat interaction if systems $B$ and $C$ are
+    connected in the same manner. We can infer that there exists no heat
+    interactions between diathermally-connected systems that have the
+    same temperature.
 
 ## Direction of heat transfer
 
@@ -38,9 +46,8 @@ directionality of heat transfer. Assume we have 3 systems, labeled
 $A, B, C$, with $A$ connected to $B$ and $B$ connected to $C$ as defined
 in the postulate. Based on Postulate 4, we define a quantity, the
 temperature, which is a {term}`state function` that is equal for two systems
-that are connected by diathermal walls but do not undergo heat
-interactions. We will assume that the temperature of $A$, $T_A$, is
-greater than $T_B$, and heat interactions are defined such that
+that are connected by diathermal walls when there is no heat interaction. The temperature of $A$, $T_A$, is
+greater than $T_B$, and we have heat interactions
 $Q_{A \rightarrow B} > 0$ and
 $Q_{B \rightarrow C} > 0$. Since heat can flow from
 $A\rightarrow B$ and from $B\rightarrow C$, this also then implies that
@@ -58,7 +65,7 @@ description that $Q_{B \rightarrow C} > 0$.
 <details>
 ```
 
-```{admonition} Why do we know that $T_B \ngtr T_C$?
+```{admonition} Why do we know that $T_B \nless T_C$?
 <details><summary> Click for answer</summary>
 
 If we were to
@@ -72,21 +79,26 @@ would contradict this system description.
 
 ```
 
-Thus, $T_C < T_B < T_A$ is established by the flow of heat in this system.
+Thus, $T_C < T_B < T_A$ is determined by the flow of heat in this system.
 
-We have now shown that heat transfers from a high temperature system to
+This shows that heat transfers from a high temperature system to
 a low temperature system.
 
 ```{admonition} Temperature increases with the energy of a system -- why?
 
 <details><summary> Click for answer</summary>
-This follows from {term}`Postulate 2`. Say we had a system where heat
-transferred from a low-temperature system (LT) to a high-temperature system
-(HT) and a decrease in energy decreases the temperature of the system.
-Then, each time heat transferred from LT to HT, the temperature of the
-HT would decrease, eventually becoming lower than the LT system.
-Then, the process would reverse, and heat would flow indefinitely and
-we would never reach equilibrium, thus violating {term}`Postulate 21.
+
+This follows from {term}`Postulate 2`.
+Say that we had a system containing a low-temperature system (LT)
+and a high-temperature system (HT), where heat flows from HT to LT.
+This exchange of heat would increase the energy of our LT subsystem.
+Here we will enforce that heat always flows high-to-low temperature.
+
+Say this increase in energy _lowered_ the temperature of our LT system.
+With each exchange in heat, the temperature difference becomes larger, and the
+flow of heat continues.
+Thus, heat would flow indefinitely and
+we would never reach equilibrium, thus violating {term}`Postulate 2`.
 We therefore require that $dU/dT > 0$, and will follow
 similar logic below.
 </details>
@@ -116,15 +128,15 @@ Just redefine what our boundaries are.
 ```
 
 Consider the open system in the figure below, where our system is bounded
-by a surface ($\sigma$), but has a diathermal wall where heat $Q_\sigma$ can be
-exchanged, a piston that can contribute work $W_\sigma$, and gap in the wall where
+by a surface ($\sigma$), but has a diathermal wall where heat $\delta Q_\sigma$ can be
+exchanged, a piston that can contribute work $\delta W_\sigma$, and gap in the wall where
 $\delta N_{in}$ molecules can enter or leave the system. These molecules
 have pressure $P_{in}$, volume $V_{in}$, and energy $E_{in}$.
 
 
 ![image](figs/fig_17_2-01.png)
 
-During time interval $\delta t$, if we define the boundary of our system as our $sigma$-surface
+During time interval $\delta t$, if we define the boundary of our system as our $\sigma$-surface
 and the $\delta N_\textrm{in}$ added during the interval, this is a closed system!
 We can then write the change in energy during this interval as
 
@@ -157,6 +169,7 @@ H_\textrm{in} = U_\textrm{in} + P_\textrm{in} V_\textrm{in}
 
 ```{admonition} Why is the sign of $P_\textrm{in} V_\textrm{in} \delta N_\textrm{in}$ positive?
 <details><summary>Click for answer</summary>
+
 We are *adding* energy to the system!
 </details>
 ```
@@ -184,17 +197,22 @@ Thermodynamics. In some cases, we will discuss the behavior of a
 ```{glossary}
 
 heat engine
-    a closed device that undergoes heat interactions with one
-    or more systems and work interactions with a work reservoir (that is
-    part of the environment) but is always returned to the same state as it
+    a closed device that contains heat interactions with one
+    or more systems and work interactions with a {term}`work reservoir`
+    but is always returned to the same state as it
     was prior to the interactions - that is, it only performs **cyclic**
     processes.
+
+work reservoir
+    a system that only exchanges work with other systems
+
 ```
 
-In this case, our work reservoir operates adiabatically and quasi-statically
+In this case, our work reservoir operates adiabatically
+and [quasi-static](https://en.wikipedia.org/wiki/Quasistatic_process)ally
 and is used for storing energy. In each of these cases, we assume that
 there are two systems, $A$ and $B$, with corresponding temperatures
-$T_A > T_B$. Recall that we inferred that $dU/dT > 0$ due to
+$T_A > T_B$. Recall that $dU/dT > 0$ due to
 the postulates - that is, increasing the energy of a system (via a heat
 transfer, for example) necessarily increases its temperature and vice
 versa. Now let us consider six cases and determine if they are possible
@@ -245,7 +263,7 @@ and completely transferred as heat into a system.
 ```
 
 ![image](figs/fig_17_6-01.png)
-```{admonition} **Case 4:** Heat is transferred from system $B$ to the heat engine and all of this energy appears as work in the reservoir, decreasing the temperature of $B$.
+```{admonition} **Case 4:** Heat is transferred from system $B$ to the heat engine and *ALL* of this energy appears as work in the reservoir, decreasing the temperature of $B$.
 <details><summary> Is this physically possible?</summary>
 
 No. This process violates Postulate 2.
@@ -289,6 +307,8 @@ heat in the two systems and work in the environment.
 
 In principle, there could be some processes associated with these state that violate the
 postulates.
+
+![image](figs/fig_17_9-01.png)
 
 For example, we could start in the vein of Case 5 by transferring
 heat $\delta Q = 100$ from $A$ to the engine, then transferring a small amount of

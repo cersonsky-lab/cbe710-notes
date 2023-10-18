@@ -1,0 +1,878 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>The Carnot Cycle and the Theorem of Clausius &#8212; Advanced Thermodynamics for Chemical Engineers</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/defs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture_files/Lecture18';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Problem Set 1 (Due Wednesday, September 20, 2023)" href="../problems/ps_1/problem_set_1.html" />
+    <link rel="prev" title="Heat engines and possible processes" href="Lecture17.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Advanced Thermodynamics for Chemical Engineers</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Class introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Before we get started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Lecture1A.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture1B.html">Review of thermodynamics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Mechanics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Lecture2.html">Postulates of statistical mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture3.html">Application of the microcanonical ensemble: two-state system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture4.html">The canonical ensemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture5.html">Generalized ensembles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture6.html">The ideal gas partition function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture7.html">Application of independent subsystems: the Langmuir isotherm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture8A.html">The Ising model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture8B.html">Mean-field theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture9A.html">Fluctuations and thermodynamic response functions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Molecular Simulation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Lecture9B.html">An introduction to molecular simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture10.html">Monte Carlo simulations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture11.html">Nuances of stochastic sampling in statistical ensembles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture12A.html">Molecular dynamics simulations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture12B.html">Temperature and velocities in MD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture13.html">Distribution of particles in states of matter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture14A.html">The potential of mean force</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture14B.html">Umbrella Sampling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture15.html">Free energy perturbation and thermodynamic integration</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Lecture16.html">Postulates of thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture17.html">Heat engines and possible processes</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">The Carnot Cycle and the Theorem of Clausius</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Problem Sets</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../problems/ps_1/problem_set_1.html">Problem Set 1 (Due Wednesday, September 20, 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/ps_2/problem_set_2.html">Problem Set 2 (Due Wednesday, September 27, 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/ps_3/problem_set_3.html">Problem Set 3 (Due Monday, October 9, 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/exam_1_practice.html">Practice Problems for Statistical Mechanics Unit Exam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/simulation_project.html">Simulation Project (Due Monday, November 6, 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/ps_4/problem_set_4.html">Problem Set 4 (Due Monday, November 20, 2023)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../notation.html">Additional Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/lecture_files/Lecture18.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>The Carnot Cycle and the Theorem of Clausius</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-readings-for-the-enthusiast">Additional Readings for the Enthusiast</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-for-today-s-lecture">Goals for Today’s Lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#efficiency-of-a-reversible-heat-engine">Efficiency of a reversible heat engine</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#let-us-consider-two-distinct-composite-systems">Let us consider two distinct composite systems.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-carnot-cycle">The Carnot Cycle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#theorem-of-clausius">Theorem of Clausius</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#link-to-shared-notes">Link to Shared Notes</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="the-carnot-cycle-and-the-theorem-of-clausius">
+<h1>The Carnot Cycle and the Theorem of Clausius<a class="headerlink" href="#the-carnot-cycle-and-the-theorem-of-clausius" title="Permalink to this headline">#</a></h1>
+<section id="additional-readings-for-the-enthusiast">
+<h2>Additional Readings for the Enthusiast<a class="headerlink" href="#additional-readings-for-the-enthusiast" title="Permalink to this headline">#</a></h2>
+<p><span id="id1">Tester and Modell [<a class="reference internal" href="../references.html#id4" title="Jefferson W. Tester and Michael Modell. Thermodynamics and its applications. Prentice-Hall international series in the physical and chemical engineering sciences. Prentice Hall PTR, Upper Saddle River, N.J, 3rd ed edition, 1997. ISBN 978-0-13-915356-3. URL: https://www.eng.uc.edu/~beaucag/Classes/ChEThermoBeaucage/Books/Jefferson%20W.%20Tester,%20Michael%20Modell%20-%20Thermodynamics%20and%20Its%20Applications-Prentice%20Hall%20(1997).pdf.">4</a>]</span>, Ch. 4.3-4.5</p>
+</section>
+<section id="goals-for-today-s-lecture">
+<h2>Goals for Today’s Lecture<a class="headerlink" href="#goals-for-today-s-lecture" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>What parameters determine the efficiency of a heat engine?</p></li>
+<li><p>What is the Carnot Cycle and how does it define the upper bound for efficiency?</p></li>
+<li><p>How do we determine the heat and work terms of an arbitrary process?</p></li>
+</ul>
+</section>
+<section id="efficiency-of-a-reversible-heat-engine">
+<h2>Efficiency of a reversible heat engine<a class="headerlink" href="#efficiency-of-a-reversible-heat-engine" title="Permalink to this headline">#</a></h2>
+<p>In the <a class="reference internal" href="Lecture17.html"><span class="doc std std-doc">last lecture</span></a>, we defined a <a class="reference internal" href="Lecture17.html#term-heat-engine"><span class="xref std std-term">heat engine</span></a> as a closed device
+that returns to its initial state after it undergoes heat interactions with connected systems and work interactions with the environment. We further defined a
+<a class="reference internal" href="Lecture17.html#term-reversible-heat-engine"><span class="xref std std-term">reversible heat engine</span></a> as one which is capable of undergoing
+completely reversible processes in which there is no net effect on the
+environment.</p>
+<p>In effect, reversible heat engines can undergo heat and
+work interactions without dissipative losses due to friction or similar
+effects. We defined the <a class="reference internal" href="Lecture17.html#term-efficiency"><span class="xref std std-term">efficiency</span></a> of a heat engine in terms of a Case 5
+process, in which heat is transferred to the engine and work is done on
+the environment, and a Case 6 process, in which work is done on the
+engine and heat is transferred to an attached hot system. As a reminder,
+Case 5 and Case 6 are illustrated below.</p>
+<p><img alt="image" src="../_images/fig_17_7-01.png" />
+Case 5</p>
+<p><img alt="image" src="../_images/fig_17_8-01.png" />
+Case 6</p>
+<p>We used these processes to define the efficiency of the engine as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\eta = -\frac{\delta W_E}{\delta Q_A}
+\end{aligned}\]</div>
+<p>We specifically found the bounds on the efficiency as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\eta_5 \le \eta_6 &lt; 1
+\end{aligned}\]</div>
+<p>Importantly, we found that for any reversible heat engine,
+<span class="math notranslate nohighlight">\(\eta_5 = \eta_6 \equiv \eta\)</span>, indicating that both systems, the engine,
+and the environment return to their initial states after performing a
+cyclic process (i.e. Case 5 followed by Case 6). Finally, we note that a
+reversible heat engine is the engine capable of extracting the most work
+from Case 5 during a cyclic process.
+Therefore, a reversible heat engine is of
+particular interest since it maximizes the work extracted during cyclic
+processes (which will be relevant to the generation of power, for
+example, when considering the theoretical efficiency of power plants).</p>
+<p>We have now established that reversible heat engines are of interest
+because they perform reversible processes, they maximize the work
+extracted from a system during the operation of Case 5, and they have
+the same efficiency between Case 5 and Case 6. This begs the question -
+<strong>what determines the efficiency of a reversible heat engine</strong>?</p>
+<p>Here we will show that the efficiency of a reversible heat
+engine depends on the temperatures of the two connected systems. First,
+we will show that <strong>the efficiency cannot depend only on the temperature of the hot system</strong></p>
+<p><img alt="image" src="../_images/fig_18_1-01.png" /></p>
+<p>Consider operating the reversible heat engine shown above,
+where we have combined a Case 5 process between systems
+<span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> with temperatures <span class="math notranslate nohighlight">\(T_A &gt; T_B\)</span> and a process as in Case 6
+between systems <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(C\)</span> with
+temperatures <span class="math notranslate nohighlight">\(T_A &gt; T_C\)</span> (i.e. the environment does work on the engine
+and heat transfers from <span class="math notranslate nohighlight">\(C\)</span> to the engine to <span class="math notranslate nohighlight">\(A\)</span>). In total, the
+temperatures are set such that <span class="math notranslate nohighlight">\(T_A &gt; T_B &gt; T_C\)</span> so that the hot
+temperature is <span class="math notranslate nohighlight">\(T_A\)</span> for each process.</p>
+<div class="admonition-why-can-t-eta-ab-eta-bc-this-would-be-the-case-if-efficiency-was-only-a-function-of-t-a admonition">
+<p class="admonition-title">Why can’t <span class="math notranslate nohighlight">\(\eta_{AB} = \eta_{BC}\)</span>? This would be the case if efficiency was only a function of <span class="math notranslate nohighlight">\(T_A\)</span>.</p>
+<details><summary>Show answer</summary>
+<p>If <span class="math notranslate nohighlight">\(\eta_{AB} = \eta_{BC}\)</span>, we could run
+cycles in which heat is transferred from <span class="math notranslate nohighlight">\(C\)</span> to <span class="math notranslate nohighlight">\(A\)</span> with some input of
+work, then the same heat is transferred from <span class="math notranslate nohighlight">\(A\)</span> to <span class="math notranslate nohighlight">\(B\)</span> while the same
+work is extracted from the engine, since the efficiencies of the engines
+are the same. This process would lead to no net effect on the
+environment but a net transfer of heat from <span class="math notranslate nohighlight">\(C \rightarrow B\)</span>, violating
+Postulate 2.</p>
+</details>
+</div>
+<p>The efficiency of the reversible heat engines involved must
+be a function of both temperatures to prevent this scenario, or:</p>
+<div class="math notranslate nohighlight">
+\[\eta = -\frac{\delta W_E}{\delta Q_A}=f_1(T_A, T_B)\]</div>
+<p>where <span class="math notranslate nohighlight">\(f_1(T_A, T_B)\)</span> is an undetermined function. We can further
+simplify this expression to eliminate the extracted work and place the
+efficiency only in terms of the heat transferred to each system,
+as Postulate 2 was broken by only considering work terms. We know
+from the First Law that <span class="math notranslate nohighlight">\(\delta W_E = -(\delta Q_A + \delta Q_B)\)</span>, where</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\delta W_E\)</span> is negative because work is done by the engine on the
+environment,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\delta Q_A\)</span> is positive because the process in Case 5
+transfers heat from system <span class="math notranslate nohighlight">\(A\)</span> to the engine, and</p></li>
+<li><p><span class="math notranslate nohighlight">\(\delta Q_B\)</span> is
+negative because the process in Case 5 transfers heat from the engine to
+system <span class="math notranslate nohighlight">\(B\)</span>.</p></li>
+</ul>
+<p>We can express the preceding equation instead as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\eta &amp;= -\frac{\delta W_E}{\delta Q_A} \\
+&amp;= \frac{\delta Q_A + \delta Q_B}{\delta Q_A} \\
+\eta -1 &amp;= \frac{\delta Q_B}{\delta Q_A} \equiv f_2(T_A, T_B)
+\end{aligned}\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(f_2(T_A, T_B)\)</span> is another undetermined function. We will next determine
+an expression for either <span class="math notranslate nohighlight">\(f_1(T_A, T_B)\)</span> or <span class="math notranslate nohighlight">\(f_2(T_A, T_B)\)</span> as a means
+of determining the bounds on efficiency.</p>
+<section id="let-us-consider-two-distinct-composite-systems">
+<h3>Let us consider two distinct composite systems.<a class="headerlink" href="#let-us-consider-two-distinct-composite-systems" title="Permalink to this headline">#</a></h3>
+<p><strong>Composite System 1</strong></p>
+<p><img alt="image" src="../_images/fig_18_2-01.png" /></p>
+<p>The first system
+is identical to the one considered in Case 5, and consists of a system <span class="math notranslate nohighlight">\(A\)</span> connected to a reversible heat
+engine <span class="math notranslate nohighlight">\(E_1\)</span> connected to a system <span class="math notranslate nohighlight">\(B\)</span>, such that <span class="math notranslate nohighlight">\(T_A &gt; T_B\)</span>. During
+the process performed in Case 5, heat <span class="math notranslate nohighlight">\(\delta Q_{A1}\)</span> transfers from
+system <span class="math notranslate nohighlight">\(A\)</span> to <span class="math notranslate nohighlight">\(E_1\)</span>, heat <span class="math notranslate nohighlight">\(\delta Q_{B1}\)</span> transfers from <span class="math notranslate nohighlight">\(E_1\)</span> to system
+<span class="math notranslate nohighlight">\(B\)</span>, and work <span class="math notranslate nohighlight">\(\delta W_{E1}\)</span> is done by the engine on the environment.</p>
+<p><strong>Composite System 2</strong></p>
+<p><img alt="image" src="../_images/fig_18_3-01.png" /></p>
+<p>The second composite system has 3 subsystems, <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, and <span class="math notranslate nohighlight">\(C\)</span>, with
+two reversible heat engines, <span class="math notranslate nohighlight">\(E_2\)</span> and <span class="math notranslate nohighlight">\(E_3\)</span>, with temperatures
+<span class="math notranslate nohighlight">\(T_A &gt; T_C &gt; T_B\)</span>. Heat <span class="math notranslate nohighlight">\(\delta Q_{A2}\)</span> transfers from <span class="math notranslate nohighlight">\(A\)</span> to <span class="math notranslate nohighlight">\(E_2\)</span>,
+<span class="math notranslate nohighlight">\(\delta Q_{C2}\)</span> transfers from <span class="math notranslate nohighlight">\(E_2\)</span> to <span class="math notranslate nohighlight">\(C\)</span>, <span class="math notranslate nohighlight">\(\delta Q_{C3}\)</span> transfers
+from <span class="math notranslate nohighlight">\(C\)</span> to <span class="math notranslate nohighlight">\(E_3\)</span>, and <span class="math notranslate nohighlight">\(\delta Q_{B3}\)</span> transfers from <span class="math notranslate nohighlight">\(E_3\)</span> to <span class="math notranslate nohighlight">\(B\)</span>. Any
+heat transferred to <span class="math notranslate nohighlight">\(C\)</span> is immediately transferred to <span class="math notranslate nohighlight">\(E_3\)</span> so that
+there is no net change in the energy of <span class="math notranslate nohighlight">\(C\)</span>. The second composite system
+is similar to the first other than the addition of the intermediate
+system <span class="math notranslate nohighlight">\(C\)</span>.</p>
+<p>If the two composite systems reduce the energy of <span class="math notranslate nohighlight">\(A\)</span> by an equivalent
+amount then the work done by <span class="math notranslate nohighlight">\(E_1\)</span> must be equivalent to the work done
+by <span class="math notranslate nohighlight">\(E_2\)</span> and <span class="math notranslate nohighlight">\(E_3\)</span>; otherwise, one system would be run in reverse to
+create cyclic process in which the state of <span class="math notranslate nohighlight">\(A\)</span> is unchanged but work is
+extracted from the system, which requires that all the heat transferred
+from system <span class="math notranslate nohighlight">\(B\)</span> is obtained as work in the environment which is
+impossible. We can now use energy balances to equate the different
+defined quantities:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\delta Q_{A1} &amp;= \delta Q_{A2} \\
+\delta Q_{B1} &amp;= \delta Q_{B3} \\
+\delta Q_{C2} &amp;= -\delta Q_{C3} \\
+\delta W_{E1} &amp;= \delta W_{E2} + \delta W_{E3}
+\end{aligned}\end{split}\]</div>
+<p>These relations all follow from either the problem statement, the
+discussion above, or an energy balance for the system (for
+<span class="math notranslate nohighlight">\(\delta Q_{B1} = \delta Q_{B3}\)</span>). Using the relation
+<span class="math notranslate nohighlight">\(\frac{\delta Q_B}{\delta Q_A} = f_2(T_A, T_B)\)</span>, we can write for each
+engine:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\frac{\delta Q_{B1}}{\delta Q_{A1}} &amp;= f_2(T_A, T_B) \\
+\frac{\delta Q_{C2}}{\delta Q_{A2}} &amp;= f_2(T_A, T_C) \\
+\frac{\delta Q_{B3}}{\delta Q_{C3}} &amp;= f_2(T_C, T_B) 
+\end{aligned}\end{split}\]</div>
+<p>We can now combine these relations and simplify according to the
+expressions above:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\frac{\delta Q_{C2}}{\delta Q_{A2}} \frac{\delta Q_{B3}}{\delta Q_{C3}}  &amp;= -\frac{\delta Q_{C3}}{\delta Q_{A2}} \frac{\delta Q_{B3}}{\delta Q_{C3}}\\
+&amp;= - \frac{\delta Q_{B3}}{\delta Q_{A2}} \\
+&amp;= -\frac{\delta Q_{B1}}{\delta Q_{A1}} \\
+\therefore &amp; f_2(T_A, T_C)f_2(T_C, T_B) = -f_2(T_A, T_B)
+\end{aligned}\end{split}\]</div>
+<p>Two solutions satisfy this restraint: we can write either:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+f_2(T_i, T_j) &amp;= -\frac{f_3(T_i)}{f_3(T_j)} \\
+\therefore \frac{f_3(T_A)}{f_3(T_C)}\frac{f_3(T_C)}{f_3(T_B)} &amp;= \frac{f_3(T_A)}{f_3(T_B)}
+\end{aligned}\end{split}\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+f_2(T_i, T_j) &amp;= -\frac{f_4(T_j)}{f_4(T_i)} \\
+\frac{f_4(T_C)}{f_4(T_A)}\frac{f_4(T_B)}{f_4(T_C)} &amp;= \frac{f_4(T_B)}{f_4(T_A)}
+\end{aligned}\end{split}\]</div>
+<p>Arbitrarily choosing the latter option, we obtain:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\frac{\delta Q_{B1}}{\delta Q_{A1}}&amp;= -\frac{f_4(T_B)}{f_4(T_A)} \\
+&amp;= \eta-1\\
+\therefore \eta &amp;= \frac{f_4(T_A)-f_4(T_B)}{f_4(T_A)}
+\end{aligned}\end{split}\]</div>
+<p>This relation says that the efficiency of an arbitrary, reversible heat
+engine is related to some function of the temperatures of both connected
+systems, and the function <span class="math notranslate nohighlight">\(f_4\)</span> is a function of a single temperature
+only. We also know that the efficiency of a reversible heat engine
+acting between two systems at the same temperature must be single-valued
+(<em>i.e.</em>, unique).</p>
+<p>If I could have multiple reversible heat engines
+operating with two efficiencies between the same two temperatures, then
+I could imagine connecting two such heat engines, performing a
+high-efficiency Case 5 process to transfer heat from the hot system and
+do work on the environment, then performing a low-efficiency Case 6
+process to do the same amount of work on the engine and transfer heat
+back to the hot system.</p>
+<p>These two processes in series would have no net
+effect on the environment and by the definition of the efficiency more
+heat is transferred to the hot system in the Case 6 process than in the
+Case 5 process - the net result would be a transfer of heat from the
+cold system to the hot system which is impossible. Therefore, the
+efficiency of a reversible heat engine operating between two systems
+must be unique, and thus finding any functional form for <span class="math notranslate nohighlight">\(f_3(T)\)</span> or
+<span class="math notranslate nohighlight">\(f_4(T)\)</span> is sufficient to specify its efficiency (which is why our
+arbitrary choice of <span class="math notranslate nohighlight">\(f_4\)</span> is acceptable). In principle, we could
+determine this functional form by constructing a reversible heat engine,
+operating it, and measuring <span class="math notranslate nohighlight">\(\delta Q_A\)</span> and <span class="math notranslate nohighlight">\(\delta W_E\)</span> to obtain the
+efficiency.</p>
+</section>
+</section>
+<section id="the-carnot-cycle">
+<h2>The Carnot Cycle<a class="headerlink" href="#the-carnot-cycle" title="Permalink to this headline">#</a></h2>
+<p>However, perfectly reversible heat engines are impossible to
+construct in practice, since real systems have friction and other
+dissipative losses of energy. Instead, we will conduct a thought
+experiment in which we construct a reversible heat engine using an ideal
+gas and show that this leads to a particularly simple form of the
+efficiency.</p>
+<p>In this ideal cycle, we imagine a heat engine that operates between a
+hot system <span class="math notranslate nohighlight">\(A\)</span> at temperature <span class="math notranslate nohighlight">\(T_A\)</span> and a cold system <span class="math notranslate nohighlight">\(B\)</span> at temperature
+<span class="math notranslate nohighlight">\(T_B\)</span>. We assume that the two systems are so large that heat transfers
+to and from them do not change their temperatures - they are thus heat
+reservoirs. The heat engine itself consists of an ideal gas that
+undergoes expansions and compressions via the action of a frictionless
+piston.</p>
+<p><img alt="image" src="../_images/fig_18-1-01.png" /></p>
+<p>The ideal gas is initially held at a temperature <span class="math notranslate nohighlight">\(T_A\)</span> in state
+(1). The cycle consists of four steps:</p>
+<p><strong>(1) <span class="math notranslate nohighlight">\(\to\)</span> (2)</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>The heat engine is isolated from both systems A and B and expands
+adiabatically and reversibly to a lower pressure. During this
+expansion, the ideal gas does work on the environment and its
+temperature lowers to $T_B$.
+</pre></div>
+</div>
+<p><strong>(2) <span class="math notranslate nohighlight">\(\to\)</span> (3)</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>The heat engine at temperature $T_B$ is then connected to system $B$
+and the gas is isothermally compressed. During this compression,
+work is done by the environment on the ideal gas and the gas
+transfers heat to system $B$ at a constant temperature $T_B$.
+</pre></div>
+</div>
+<p><strong>(3) <span class="math notranslate nohighlight">\(\to\)</span> (4)</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>The heat engine is isolated from system $B$ and compressed
+adiabatically and reversibly to the original pressure. The gas
+returns to its original temperature $T_A$.
+</pre></div>
+</div>
+<p><strong>(4) <span class="math notranslate nohighlight">\(\to\)</span> (1)</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>The heat engine at temperature $T_A$ is connected to system $A$ and
+the gas is isothermally expanded. During this expansion, work is
+done on the environment and heat transfers from system $A$ at
+constant temperature $T_A$ and the engine transitions 
+to the original state.
+</pre></div>
+</div>
+<p>The total of these four steps leads to a net transfer of heat from
+system <span class="math notranslate nohighlight">\(A\)</span> to system <span class="math notranslate nohighlight">\(B\)</span> with work done on the environment - it is thus
+a Case 5 process. We refer to this cycle as the</p>
+<dl class="glossary simple">
+<dt id="term-Carnot-cycle"><a class="reference external" href="https://en.wikipedia.org/wiki/Carnot_cycle">Carnot cycle</a><a class="headerlink" href="#term-Carnot-cycle" title="Permalink to this term">#</a></dt><dd><p>The <em>ideal</em> cycle defined by a four step process of heat transfer
+and pressure-expansion work of an ideal gas. Determines the upper-
+limit for cycle efficiency</p>
+</dd>
+</dl>
+<p>Using the ideal gas law, <span class="math notranslate nohighlight">\(P\underline{V} = NRT\)</span> and analyzing the
+various work and heat transfers during this cycle, it is possible to
+show that the efficiency can be written as:</p>
+<div class="math notranslate nohighlight">
+\[\eta = \frac{T_A - T_B}{T_A} \rightarrow f_4(T_i) = T_i\]</div>
+<div class="admonition-what-does-the-underline-in-underline-v-refer-to admonition">
+<p class="admonition-title">What does the underline in <span class="math notranslate nohighlight">\(\underline{V}\)</span> refer to?</p>
+<details><summary>Click for answer</summary>
+<p>This is standard notation in thermodynamics for an extensive variable.
+Thus far, we’ve been using standard statistical mechanics notation,
+which often omits the underline. From hereon, we’ll be using the underline.</p>
+</details>
+</div>
+<p>Proving this relationship will be performed in a <a class="reference internal" href="../problems/ps_4/problem_set_4.html"><span class="doc std std-doc">problem set</span></a>. This
+derivation leads us to a very simple form of the efficiency of a
+reversible heat engine. From this derivation, then, we have established
+that the efficiency of an idealized reversible heat engine is a function
+solely of the temperatures of the hot and cold systems that it connects;
+although a real heat engine will have a lower efficiency due to
+dissipation during its operation, the Carnot cycle efficiency puts an
+upper bound on the efficiency of any real heat engine.</p>
+<p>Note that we
+could choose any fluid, not just an ideal gas, to place within the heat
+engine and undergo these processes and we would get the same result -
+the only difference would be the equations for the heat and work
+interactions along the isotherms and adiabats.</p>
+</section>
+<section id="theorem-of-clausius">
+<h2>Theorem of Clausius<a class="headerlink" href="#theorem-of-clausius" title="Permalink to this headline">#</a></h2>
+<p>The preceding discussion and derivations have established bounds on the
+efficiency of reversible heat engines, thus putting bounds on what
+processes are possible. We will next seek to generalize the idea of
+determining if a process is possible by re-defining the <strong>entropy</strong>. First,
+given our derivation of the efficiency of a reversible heat engine
+performing a <a class="reference internal" href="#term-Carnot-cycle"><span class="xref std std-term">Carnot cycle</span></a>, we can now show:</p>
+<div class="admonition-frac-dq-a-t-a-frac-dq-b-t-b-0 admonition">
+<p class="admonition-title"><span class="math notranslate nohighlight">\(\frac{dQ_A}{T_A} + \frac{dQ_B}{T_B} = 0\)</span></p>
+<details><summary> Show derivation </summary>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\eta -1 &amp;= \frac{\delta Q_B}{\delta Q_A} = \frac{T_A - T_B}{T_A} - 1\\
+\frac{\delta Q_B}{\delta Q_A} &amp;=  -\frac{T_B}{T_A} \\
+\therefore &amp;\frac{\delta Q_A}{T_A} + \frac{\delta Q_B}{T_B} = 0\\
+&amp;\frac{dQ_A}{T_A} + \frac{dQ_B}{T_B} = 0
+\end{aligned}\end{split}\]</div>
+</details>
+</div>
+<p>This relation again shows how the differential change in heat for a
+reversible heat engine is related to the temperatures of two connected
+systems.</p>
+<p>Let us now consider a system similar to that of the Carnot cycle, in
+which we have a closed, reversible heat engine containing some material
+(which need not be an ideal gas). We assume that the system is able to
+reversibly expand and compress so that <span class="math notranslate nohighlight">\(P-\underline{V}\)</span> work can be
+done on the system and there are no other work terms.</p>
+<p><img alt="image" src="../_images/fig_18-2-01.png" /></p>
+<p>We can imagine a
+process that changes the state of our system from state (a) to state (d)
+via some unspecified path that may involve a series of different events
+(e.g. adiabatic expansions/compressions, isothermal
+compressions/expansions, etc.) as in the Carnot cycle. We represent this
+path on a state diagram in the <span class="math notranslate nohighlight">\(P-\underline{V}\)</span> space (on the left).</p>
+<p>Now, let us consider an alternative means of transitioning between state
+(a) and (d) along one specific path. First, we can draw the <em>adiabatic
+paths</em> on the state diagram that correspond to adiabatic expansions or
+compressions (recall: no heat is transferred during these processes)
+starting at either (a) or (d); following either of these paths alone
+does not guarantee that we reach (a) from (d). We can also draw
+<em>isothermal paths</em> on the same diagram, corresponding to isothermal
+expansions/compressions (recall: both heat and work can be transferred
+during these processes), such that these paths connect the adiabatic
+paths drawn previously. We define states (b) and (c) as the states on
+the adiabatic paths that are connected by an isothermal path. In this
+way, we define a connected series of adiabatic and isothermal processes
+which reaches the same state (d) as in the original process.</p>
+<p>Now, we can analyze the transfers of heat and work along these two
+alternative processes. First, we know that the work along the real path
+(a) to (d) is given by:</p>
+<div class="math notranslate nohighlight">
+\[\delta W_{ad} = \int_{(a)}^{(d)} -P dV\]</div>
+<p>or, in other words, the area under the <span class="math notranslate nohighlight">\(P-V\)</span> curve. We can choose the
+point (b) such that the work along the
+(a)<span class="math notranslate nohighlight">\(\rightarrow\)</span>(b)<span class="math notranslate nohighlight">\(\rightarrow\)</span>(c)<span class="math notranslate nohighlight">\(\rightarrow\)</span>(d) path is equivalent
+to the work along the real path, since the (b)<span class="math notranslate nohighlight">\(\rightarrow\)</span>(c) isotherm
+can connect many different pairs of points along the adiabatic paths and
+can be positioned freely. Since the change in energy between (a) and (d)
+is independent of the path chosen (according to the First Law of
+Thermodynamics), we then get that:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\delta W_{ad} &amp;= \delta W_{abcd} \\
+\Delta {U}_{ad} &amp;= \Delta {U}_{abcd} \\
+\therefore \delta Q_{ad} &amp;= \delta Q_{abcd} =\delta Q_{bc}
+\end{aligned}\end{split}\]</div>
+<p>The last expression follows from the fact that
+<span class="math notranslate nohighlight">\(\delta Q_{ab} = \delta Q_{cd} = 0\)</span> by construction along the adiabatic
+paths. Together then, we see that we can decompose an arbitrary path
+into a series of isothermal and adiabatic paths and use this to deduce a
+relationship for the heat transfer between the two states along a
+specific isothermal path. This finding is generalized as the</p>
+<dl class="glossary simple">
+<dt id="term-Theroem-of-Clausius">Theroem of Clausius<a class="headerlink" href="#term-Theroem-of-Clausius" title="Permalink to this term">#</a></dt><dd><p>Given any reversible process in which the temperature
+changes in any prescribed manner, it is always possible to find a
+reversible “zigzag” process consisting of adiabatic-isothermal-adiabatic
+steps such that the heat interaction in the isothermal step is equal to
+the heat interaction in the original process.</p>
+</dd>
+</dl>
+</section>
+<section id="link-to-shared-notes">
+<h2><a class="reference external" href="https://docs.google.com/document/d/1OtJolRmKvIXQOcbuwEs50ByCO9ZRvtZv/edit?usp=share_link&amp;ouid=113272049620170441297&amp;rtpof=true&amp;sd=true">Link to Shared Notes</a><a class="headerlink" href="#link-to-shared-notes" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lecture_files"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Lecture17.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Heat engines and possible processes</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../problems/ps_1/problem_set_1.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Problem Set 1 (Due Wednesday, September 20, 2023)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-readings-for-the-enthusiast">Additional Readings for the Enthusiast</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-for-today-s-lecture">Goals for Today’s Lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#efficiency-of-a-reversible-heat-engine">Efficiency of a reversible heat engine</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#let-us-consider-two-distinct-composite-systems">Let us consider two distinct composite systems.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-carnot-cycle">The Carnot Cycle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#theorem-of-clausius">Theorem of Clausius</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#link-to-shared-notes">Link to Shared Notes</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Reid van Lehn, Matt Gebbie, Rose K. Cersonsky
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

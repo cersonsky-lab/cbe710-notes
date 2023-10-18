@@ -287,6 +287,13 @@ work is only a function of the end states:
 
 $$U_2 - U_1 = W_{1\rightarrow 2, \textrm{adiabatic}}$$
 
+```{admonition} So far we've used $E$ to describe internal energy, but here we use $U$. Why?
+<details><summary>Click for answer</summary>
+
+To be honest, absolutely no reason. I only asked the question to make sure you noticed the
+variable change.
+</details>
+```
 
 ```{glossary}
 

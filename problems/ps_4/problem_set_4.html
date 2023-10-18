@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Problem Set 3 (Due Monday, October 9, 2023) &#8212; Advanced Thermodynamics for Chemical Engineers</title>
+    <title>Problem Set 4 (Due Monday, November 20, 2023) &#8212; Advanced Thermodynamics for Chemical Engineers</title>
   
   
   
@@ -63,11 +63,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'problems/ps_3/problem_set_3';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'problems/ps_4/problem_set_4';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Practice Problems for Statistical Mechanics Unit Exam" href="../exam_1_practice.html" />
-    <link rel="prev" title="Problem Set 2 (Due Wednesday, September 27, 2023)" href="../ps_2/problem_set_2.html" />
+    <link rel="next" title="Additional Glossary" href="../../notation.html" />
+    <link rel="prev" title="Simulation Project (Due Monday, November 6, 2023)" href="../simulation_project.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -191,10 +191,10 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../ps_1/problem_set_1.html">Problem Set 1 (Due Wednesday, September 20, 2023)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ps_2/problem_set_2.html">Problem Set 2 (Due Wednesday, September 27, 2023)</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Problem Set 3 (Due Monday, October 9, 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ps_3/problem_set_3.html">Problem Set 3 (Due Monday, October 9, 2023)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exam_1_practice.html">Practice Problems for Statistical Mechanics Unit Exam</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../simulation_project.html">Simulation Project (Due Monday, November 6, 2023)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ps_4/problem_set_4.html">Problem Set 4 (Due Monday, November 20, 2023)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Problem Set 4 (Due Monday, November 20, 2023)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="nav bd-sidenav">
@@ -254,7 +254,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/problems/ps_3/problem_set_3.md" target="_blank"
+      <li><a href="../../_sources/problems/ps_4/problem_set_4.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -336,7 +336,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Problem Set 3 (Due Monday, October 9, 2023)</h1>
+    <h1>Problem Set 4 (Due Monday, November 20, 2023)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -346,10 +346,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-isomerization-process">Question 1: Isomerization process</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-adsorption-of-a-gas-mixture">Question 2: Adsorption of a gas mixture</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-1d-ising-model">Question 3: 1D Ising model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4-monte-carlo-simulation-of-the-ising-model">Question 4: Monte Carlo simulation of the Ising model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-carnot-cycle">Question 1: Carnot cycle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-heat-transfer-to-isolated-cylinders">Question 2: Heat transfer to isolated cylinders</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-internal-energy-change-of-an-arbitrary-system">Question 3: Internal energy change of an arbitrary system</a></li>
 </ul>
             </nav>
         </div>
@@ -361,173 +360,159 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="problem-set-3-due-monday-october-9-2023">
-<h1>Problem Set 3 (Due Monday, October 9, 2023)<a class="headerlink" href="#problem-set-3-due-monday-october-9-2023" title="Permalink to this headline">#</a></h1>
-<section id="question-1-isomerization-process">
-<h2>Question 1: Isomerization process<a class="headerlink" href="#question-1-isomerization-process" title="Permalink to this headline">#</a></h2>
-<p>Consider an isomerization process, <span class="math notranslate nohighlight">\(\ce{A \rightleftharpoons B}\)</span>, where
-<span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> refer to different isomeric states of a single molecule. A
-dilute gas containing <span class="math notranslate nohighlight">\(N_A\)</span> molecules in state <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(N_B\)</span> molecules
-in state <span class="math notranslate nohighlight">\(B\)</span> undergoes this isomerization process at constant volume and
-constant temperature. The isomerization from state <span class="math notranslate nohighlight">\(A\)</span> to <span class="math notranslate nohighlight">\(B\)</span> is
-associated with a change in the energy of the molecule,
-<span class="math notranslate nohighlight">\(\Delta \epsilon = \epsilon_B - \epsilon_A\)</span>, where <span class="math notranslate nohighlight">\(\epsilon_A\)</span> and
-<span class="math notranslate nohighlight">\(\epsilon_B\)</span> are internal energies associated with each of the two
-states, respectively. According to <a class="reference external" href="https://en.wikipedia.org/wiki/Maxwell%E2%80%93Boltzmann_statistics">Maxwell-Boltzmann statistics</a>,
-the equilibrium ratio of the <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> populations is given by:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="problem-set-4-due-monday-november-20-2023">
+<h1>Problem Set 4 (Due Monday, November 20, 2023)<a class="headerlink" href="#problem-set-4-due-monday-november-20-2023" title="Permalink to this headline">#</a></h1>
+<section id="question-1-carnot-cycle">
+<h2>Question 1: Carnot cycle<a class="headerlink" href="#question-1-carnot-cycle" title="Permalink to this headline">#</a></h2>
+<p>The Carnot cycle consists of four processes as illustrated in the figure
+below:</p>
+<ol class="arabic simple">
+<li><p>An isothermal expansion from state (4) to (1)</p></li>
+<li><p>An adiabatic expansion from state (1) to (2)</p></li>
+<li><p>An isothermal compression from state (2) to (3)</p></li>
+<li><p>An adiabatic compression from state (3) to (4)</p></li>
+</ol>
+<p><img alt="image" src="../../_images/pset_4_carnot_cycle-01.png" /></p>
+<p>The temperature of the high-temperature states (connected by the dashed
+isotherm) is <span class="math notranslate nohighlight">\(T_A\)</span> and the temperature of the low-temperature states is
+<span class="math notranslate nohighlight">\(T_B\)</span>. The efficiency of a reversible heat engine performing the Carnot
+cycle with an ideal gas working fluid (<em>i.e.</em>, the ideal gas is the
+system) is:</p>
 <div class="math notranslate nohighlight">
-\[\frac{\langle N_A \rangle}{\langle N_B \rangle} = \frac{\Omega_A}{\Omega_B} e^{\beta \Delta \epsilon}\]</div>
-<p>where <span class="math notranslate nohighlight">\(\Omega_A\)</span> and <span class="math notranslate nohighlight">\(\Omega_B\)</span> are the degeneracies for a single
-molecule in state <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, respectively. Assume that the gas can be
-treated as <a class="reference internal" href="../../lecture_files/Lecture6.html"><span class="doc std std-doc">ideal</span></a> (i.e., all molecules are non-interacting and
-independent) regardless of whether a molecule is in state <span class="math notranslate nohighlight">\(A\)</span> or state
-<span class="math notranslate nohighlight">\(B\)</span>, and that the single-molecule translational partition function,
-<span class="math notranslate nohighlight">\(z_{\textrm{trans}}\)</span>, is the same for each state.</p>
-<div class="admonition-a admonition">
-<p class="admonition-title"><strong>(a)</strong></p>
-<p>Show that the system partition function,
-<span class="math notranslate nohighlight">\(Z(N_A, N_B, V, T)\)</span>, can be written in terms of the single-molecule partition
-function, <span class="math notranslate nohighlight">\(z_a\)</span>, for a molecule in state <span class="math notranslate nohighlight">\(A\)</span>, the single-molecule
-partition function, <span class="math notranslate nohighlight">\(z_b\)</span>, for a molecule in state <span class="math notranslate nohighlight">\(B\)</span>, the
-single-molecule translational partition function, <span class="math notranslate nohighlight">\(z_{\textrm{trans}}\)</span>,
-and the number of molecules in each state (<span class="math notranslate nohighlight">\(N_A\)</span> and <span class="math notranslate nohighlight">\(N_B\)</span>) as</p>
-<div class="math notranslate nohighlight">
-\[Z = \frac{\left (\Omega_A z_{\textrm{trans}}e^{-\epsilon_A/kT} \right )^{N_A}}{N_A!} \frac{\left (\Omega_B z_{\textrm{trans}}e^{-\epsilon_B/kT}\right )^{N_B}}{N_B!}\]</div>
-<p>Explain your rationale with each step.</p>
-<details><summary> Hints</summary>
-Consider what entities can be distinguished from one another, and therefore
-separated in our partition function formulation.
-</details>
-</div>
-<div class="admonition-b admonition">
-<p class="admonition-title"><strong>(b)</strong></p>
-<p>Using the result from part <strong>a</strong> and assuming that both <span class="math notranslate nohighlight">\(N_A\)</span>
-and <span class="math notranslate nohighlight">\(N_B\)</span> are large, show that the Boltzmann distribution law follows
-from the condition that the chemical potential of a molecule in state
-<span class="math notranslate nohighlight">\(A\)</span> is equal to the chemical potential of a molecule in state <span class="math notranslate nohighlight">\(B\)</span>
-(<em>i.e.</em>, <span class="math notranslate nohighlight">\(\mu_A = \mu_B\)</span>), for a system at constant volume and constant
-temperature.</p>
-</div>
-</section>
-<section id="question-2-adsorption-of-a-gas-mixture">
-<h2>Question 2: Adsorption of a gas mixture<a class="headerlink" href="#question-2-adsorption-of-a-gas-mixture" title="Permalink to this headline">#</a></h2>
-<p>Consider a two-component mixture of two ideal gas species, denoted as
-<span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, that can both adsorb to a surface. Each gas molecule of
-type <span class="math notranslate nohighlight">\(A\)</span> adsorbs with an energy <span class="math notranslate nohighlight">\(\epsilon_i = -\epsilon_A\)</span> while each
-gas molecule of type <span class="math notranslate nohighlight">\(B\)</span> adsorbs with energy <span class="math notranslate nohighlight">\(\epsilon_i = -\epsilon_B\)</span>.
-Gas molecules of either type that are not adsorbed can be treated as an
-ideal gas, and gas molecules adsorbed on the surface can exchange with
-particles in the bulk. Gas particles exclude each other on the surface -
-<em>e.g.</em>, if an <span class="math notranslate nohighlight">\(A\)</span> particle adsorbs to a part of the surface, a <span class="math notranslate nohighlight">\(B\)</span>
-particle cannot adsorb to the same part of the surface. The partial
-pressures of each gas can be written as <span class="math notranslate nohighlight">\(P_A = P x_A\)</span> and <span class="math notranslate nohighlight">\(P_B = P x_B\)</span>,
-where <span class="math notranslate nohighlight">\(P\)</span> is the pressure, <span class="math notranslate nohighlight">\(x_A\)</span> is the mole fraction of gas <span class="math notranslate nohighlight">\(A\)</span> in the
-mixture, <span class="math notranslate nohighlight">\(x_B\)</span> is the mole fraction of gas <span class="math notranslate nohighlight">\(B\)</span> in the mixture, and
-<span class="math notranslate nohighlight">\(x_A + x_B = 1\)</span>. Both the surface and bulk are at constant temperature
-and constant volume.</p>
-<div class="admonition-a admonition">
-<p class="admonition-title"><strong>(a)</strong></p>
-<p>Derive a grand canonical partition function for the surface.
-Define any variables that you introduce.</p>
-<details><summary> Hints</summary>
-This question is an extension of a Langmuir isotherm by allowing for the
-adsorption of multiple components on a single lattice site. 
-</details>
-</div>
-<div class="admonition-b admonition">
-<p class="admonition-title"><strong>(b)</strong></p>
-<p>Show that the fraction of the surface that is
-occupied by molecules of type <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(f_A\)</span>, and the fraction of the
-surface that is occupied by molecules of type <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(f_B\)</span> is given by</p>
+\[\eta = -\frac{\delta W_E}{\delta Q_A} = \frac{T_A - T_B}{T_A}\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(\delta W_E\)</span> is the total work done on/by the system during the
+cycle and <span class="math notranslate nohighlight">\(\delta Q_A\)</span> is the heat transferred at the “hot” temperature
+<span class="math notranslate nohighlight">\(T_A\)</span>. In this problem, we will derive this expression for the
+efficiency by analyzing the various work and heat transfers during the
+cycle, <strong>without invoking the concept of entropy</strong>. Recall that for an
+ideal gas the following two equations are relevant:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
-    f_A &amp;= \frac{P_A / P_A^0}{1 +  P_A / P_A^0 +  P_B / P_B^0} \\
-    f_B &amp;= \frac{P_B / P_B^0}{1 +  P_A / P_A^0 +  P_B / P_B^0}
+P\underline{V} &amp;= NRT \\
+\underline{U} &amp;= NC_V T
 \end{aligned}\end{split}\]</div>
-</div>
-</section>
-<section id="question-3-1d-ising-model">
-<h2>Question 3: 1D Ising model<a class="headerlink" href="#question-3-1d-ising-model" title="Permalink to this headline">#</a></h2>
-<p>In class, we discussed the <a class="reference internal" href="../../lecture_files/Lecture8A.html#term-Ising-model"><span class="xref std std-term">Ising model</span></a> for a magnetic system in
-which a set of <span class="math notranslate nohighlight">\(N\)</span> distinguishable magnetic dipoles are each
-characterized by a spin, <span class="math notranslate nohighlight">\(s_i\)</span>, that has one of two discrete values:
-<span class="math notranslate nohighlight">\(s_i = \pm 1\)</span>. The total magnetization, <span class="math notranslate nohighlight">\(M\)</span>, can be approximated as the
-sum of all spins, <span class="math notranslate nohighlight">\(M = \sum_{i=1}^{N} \mu s_i\)</span>. Spins are placed on a
-fixed lattice and can interact with an external magnetic field, <span class="math notranslate nohighlight">\(H\)</span>, and
-other nearest-neighbor spins. The energy with which spin <span class="math notranslate nohighlight">\(i\)</span> interacts
-with its neighbors is:</p>
-<div class="math notranslate nohighlight">
-\[\epsilon_i =  - J \sum_j s_i s_j\]</div>
-<p>Here, <span class="math notranslate nohighlight">\(J\)</span> is the value of the coupling parameter (with units of energy)
-that describes the interaction energy between each <em>pair</em> of
-nearest-neighbor spins. The sum <span class="math notranslate nohighlight">\(\sum_j\)</span> indicates a sum over all
-<span class="math notranslate nohighlight">\(n\)</span> nearest-neighbor spins of <span class="math notranslate nohighlight">\(i\)</span> on the lattice. The <em>total</em> energy of
-a single microstate is:</p>
-<div class="math notranslate nohighlight">
-\[E = -\sum_i^N \mu H s_i - \frac{J}{2} \sum_{i}^N \sum_j^\prime s_i s_j\]</div>
-<p>The factor of <span class="math notranslate nohighlight">\(1/2\)</span> in front of the interaction energy term accounts for
-the double-counting of interactions between pairs of spins when summing
-over the entire system.</p>
-<p>In this problem, we will analytically solve the <strong>1D Ising model</strong>,
-which refers to a set of spins that are placed on a one-dimensional
-lattice. Each spin therefore only has two nearest-neighbors. We will
-assume <strong>free boundary conditions</strong>, which means that the spins at the
-beginning and end of the chain (<span class="math notranslate nohighlight">\(s_1\)</span> and <span class="math notranslate nohighlight">\(s_N\)</span>) only have a single
-neighbor. An example of a single microstate of a 1D Ising model is
-schematically drawn below.</p>
-<p><img alt="image" src="../../_images/1D_Ising-01.png" /></p>
+<p>where <span class="math notranslate nohighlight">\(C_V\)</span> is the heat capacity at constant volume that we assume to be
+independent of temperature.</p>
 <div class="admonition-a admonition">
 <p class="admonition-title"><strong>(a)</strong></p>
-<p>Show that in the zero field limit (<span class="math notranslate nohighlight">\(H=0\)</span>), the partition
-function for the 1D Ising model is:</p>
+<p>Consider an ideal gas that changes between an initial state (a)
+and a final state (d) along an isothermal path. Calculate the change in
+the energy of the gas, the work done by the gas, and the heat
+transferred during the process. Define any variables you use, and
+comment on the sign of the work and the heat.</p>
+</div>
+<div class="admonition-b admonition">
+<p class="admonition-title"><strong>(b)</strong></p>
+<p>Show that for an ideal gas that changes between states (a) and
+(d) along an adiabatic path</p>
+<div class="math notranslate nohighlight">
+\[P_d \underline{V}_d^\gamma =  P_a\underline{V}_a^\gamma = \text{constant}\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[\gamma = \frac{C_V + R}{C_V}\]</div>
+</div>
+<div class="admonition-c admonition">
+<p class="admonition-title"><strong>(c)</strong></p>
+<p>For an ideal gas that changes between states (a) and (d) along
+an adiabatic path, calculate the change in the energy of the gas, the
+work done by the gas, and the heat transferred during the process.
+Express your answers in terms of the difference in temperature between
+the two states.</p>
+</div>
+<div class="admonition-d admonition">
+<p class="admonition-title"><strong>(d)</strong></p>
+<p>Using your results from parts <strong>a</strong> to <strong>c</strong>, calculate the
+efficiency of the Carnot cycle to obtain the expected result from the
+problem statement.</p>
+</div>
+</section>
+<section id="question-2-heat-transfer-to-isolated-cylinders">
+<h2>Question 2: Heat transfer to isolated cylinders<a class="headerlink" href="#question-2-heat-transfer-to-isolated-cylinders" title="Permalink to this headline">#</a></h2>
+<p>A cylinder with a radius of 0.5 m and closed at both ends is divided
+into two parts by a frictionless, insulated piston with negligible
+volume. The left side of the cylinder (cylinder A) and the right side of
+the cylinder (cylinder B) each contain 2 m<span class="math notranslate nohighlight">\(^3\)</span> of a monatomic ideal gas,
+initially held at different temperatures. The piston is adiabatic while
+the walls of the entire cylinder are adiabatic and rigid. Note that the
+heat capacity at constant volume of a monatomic ideal gas is given by
+<span class="math notranslate nohighlight">\(C_V = \frac{3}{2}R\)</span>.</p>
+<p><img alt="image" src="../../_images/pset_4_cylinder_fig-01.png" /></p>
+<p>Both cylinder A and cylinder B are initially at equilibrium with the
+following conditions:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Cylinder A</p></th>
+<th class="head"><p>Cylinder B</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Volume</p></td>
+<td><p>2 m<span class="math notranslate nohighlight">\(^3\)</span></p></td>
+<td><p>2 m<span class="math notranslate nohighlight">\(^3\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Pressure</p></td>
+<td><p>1 atm</p></td>
+<td><p>1 atm</p></td>
+</tr>
+<tr class="row-even"><td><p>Temperature</p></td>
+<td><p>500 K</p></td>
+<td><p>400 K</p></td>
+</tr>
+</tbody>
+</table>
+<p>The insulation of cylinder A is temporarily removed and heat is
+transferred to cylinder A without any in-flow of gas. The adiabatic
+walls of cylinder A are then restored and the cylinders are allowed to
+equilibrate. At equilibrium, it is found that the piston has compressed
+the gas in cylinder B to a pressure of 2.0 atm. You will analyze the
+state of the gases in these cylinders after this process.</p>
+<p>Hint: you may need to use relationships from Question 1.</p>
+<div class="admonition-a admonition">
+<p class="admonition-title"><strong>(a)</strong></p>
+<p>What is the final temperature of the gas in cylinder B?</p>
+</div>
+<div class="admonition-b admonition">
+<p class="admonition-title"><strong>(b)</strong></p>
+<p>What is the final temperature of the gas in cylinder A?</p>
+</div>
+<div class="admonition-c admonition">
+<p class="admonition-title"><strong>(c)</strong></p>
+<p>How much work is done on the gas in cylinder B? Express your answer in kJ.</p>
+</div>
+<div class="admonition-d admonition">
+<p class="admonition-title"><strong>(d)</strong></p>
+<p>How much heat is added to the gas in cylinder A? Express your answer in kJ.</p>
+</div>
+</section>
+<section id="question-3-internal-energy-change-of-an-arbitrary-system">
+<h2>Question 3: Internal energy change of an arbitrary system<a class="headerlink" href="#question-3-internal-energy-change-of-an-arbitrary-system" title="Permalink to this headline">#</a></h2>
+<p>For an arbitrary system, it is found that if the system changes from a
+state with volume <span class="math notranslate nohighlight">\(\underline{V}_1\)</span> and pressure <span class="math notranslate nohighlight">\(P_1\)</span> to a state with
+volume <span class="math notranslate nohighlight">\(\underline{V}_1\)</span> and pressure <span class="math notranslate nohighlight">\(P'\)</span> along an isochoric (constant
+volume) path, the heat transferred to the system is:</p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
-Z &amp;=2 \left[2 \cosh(\beta J)\right]^{N-1}
+\delta \underline{Q} = A(P' - P_1)
 \end{aligned}\]</div>
-<details><summary>Hints</summary>
-Hint: Consider each *pair* of spins when simplifying the partition
-function.
-</details>
+<p>where <span class="math notranslate nohighlight">\(A&gt;0\)</span> is a constant. It is also found that along any reversible,
+adiabatic path:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+P\underline{V}^{2} = \text{constant}
+\end{aligned}\]</div>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>Using this information, write an expression for the change in the
+internal energy given by:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\Delta \underline{U} = \underline U(P_2,\underline{V}_2) - \underline{U}(P_1,\underline{V}_1) 
+\end{aligned}\]</div>
+<p>Express your answer in terms of <span class="math notranslate nohighlight">\(P_2\)</span>, <span class="math notranslate nohighlight">\(\underline{V}_2\)</span>, <span class="math notranslate nohighlight">\(P_1\)</span>,
+<span class="math notranslate nohighlight">\(\underline{V}_1\)</span>, and <span class="math notranslate nohighlight">\(A\)</span>. Draw diagrams to indicate any paths through
+the <span class="math notranslate nohighlight">\(P-\underline{V}\)</span> plane that you define.</p>
 </div>
-<div class="admonition-b admonition">
-<p class="admonition-title"><strong>(b)</strong></p>
-<p>Calculate the ensemble-average energy per spin in the limit that
-<span class="math notranslate nohighlight">\(N \rightarrow \infty\)</span>.</p>
-</div>
-</section>
-<section id="question-4-monte-carlo-simulation-of-the-ising-model">
-<h2>Question 4: Monte Carlo simulation of the Ising model<a class="headerlink" href="#question-4-monte-carlo-simulation-of-the-ising-model" title="Permalink to this headline">#</a></h2>
-<p>In Problem Set 2, we introduced the Metropolis Monte Carlo algorithm as
-a means of computing ensembke-average quantities. In Problem Set 2, we
-studied the magnetization of non-interacting spins. We will now use the
-same method to study the 1D Ising model which we analytically studied in
-Question 3</p>
-<p>Consider a 1D Ising model in which <span class="math notranslate nohighlight">\(N = 100\)</span> spins are placed on a 1D
-lattice, such that each lattice point has <span class="math notranslate nohighlight">\(n=2\)</span> nearest-neighbors.
-Assume that the system has free boundaries so that spin <span class="math notranslate nohighlight">\(1\)</span> and spin
-<span class="math notranslate nohighlight">\(100\)</span> only have 1 nearest-neighbor (this directly mimics the problem
-from ##Question 3).–</p>
-<div class="admonition-a admonition">
-<p class="admonition-title"><strong>(a)</strong></p>
-<p>Write a Python program that computes <span class="math notranslate nohighlight">\(\langle E \rangle / N\)</span> for
-the 1D Ising model using the Metropolis Monte Carlo algorithm described
-above. Attach a copy of your code with appropriate comments explaining
-your implementation.</p>
-</div>
-<div class="admonition-b admonition">
-<p class="admonition-title"><strong>(b)</strong></p>
-<p>Perform independent Monte Carlo simulations for <span class="math notranslate nohighlight">\(J =\)</span> -3, -2,
--1, 0, 1, 2, and 3 <span class="math notranslate nohighlight">\(k_B T\)</span>. Each simulation should include 100,000
-trials to obtain accurate approximations of <span class="math notranslate nohighlight">\(\langle E \rangle / N\)</span>.
-Plot <span class="math notranslate nohighlight">\(\langle E \rangle / N\)</span> vs. <span class="math notranslate nohighlight">\(J\)</span> and compare to the analytical
-result from Question 3.</p>
-</div>
-<p>The plots below show the number of MC iterations necessary to
-obtain converged values of the ensemble-average energy and the
-comparison between the ensemble-average energy and the analytical result
-from Question 3.</p>
-<p><img alt="Convergence of ensemble-averageenergy." src="../../_images/pset_3_Energy_convergence.png" /></p>
-<p><img alt="Comparison of the ensemble-average energy obtained from the MonteCarlo method to the analytical solution. Points indicate the modelcalculations and the line indicates the analyticalsolution." src="../../_images/pset_3_Energy_J.png" /></p>
 </section>
 </section>
 
@@ -544,7 +529,7 @@ from Question 3.</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./problems/ps_3"
+            path: "./problems/ps_4"
         },
         predefinedOutput: true
     }
@@ -563,20 +548,20 @@ from Question 3.</p>
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../ps_2/problem_set_2.html"
+       href="../simulation_project.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Problem Set 2 (Due Wednesday, September 27, 2023)</p>
+        <p class="prev-next-title">Simulation Project (Due Monday, November 6, 2023)</p>
       </div>
     </a>
     <a class="right-next"
-       href="../exam_1_practice.html"
+       href="../../notation.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Practice Problems for Statistical Mechanics Unit Exam</p>
+        <p class="prev-next-title">Additional Glossary</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -598,10 +583,9 @@ from Question 3.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-isomerization-process">Question 1: Isomerization process</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-adsorption-of-a-gas-mixture">Question 2: Adsorption of a gas mixture</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-1d-ising-model">Question 3: 1D Ising model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4-monte-carlo-simulation-of-the-ising-model">Question 4: Monte Carlo simulation of the Ising model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-carnot-cycle">Question 1: Carnot cycle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-heat-transfer-to-isolated-cylinders">Question 2: Heat transfer to isolated cylinders</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-internal-energy-change-of-an-arbitrary-system">Question 3: Internal energy change of an arbitrary system</a></li>
 </ul>
   </nav></div>
 
