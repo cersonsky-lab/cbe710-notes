@@ -464,3 +464,7 @@ result a completely reversible process cannot pass through
 non-equilibrium states. To phrase it one more way - *all reversible
 processes only pass through equilibrium states along a quasi-static
 path*.
+
+
+
+## [Link to Shared Notes](https://docs.google.com/document/d/1SGyyFd29AH_ci2_E_XQ9ZcGvshGt3fLK/edit?usp=share_link&ouid=113272049620170441297&rtpof=true&sd=true)
