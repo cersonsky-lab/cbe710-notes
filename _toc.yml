@@ -31,7 +31,7 @@ parts:
     chapters:
         - file: lecture_files/Lecture16
         - file: lecture_files/Lecture17
-#         - file: lecture_files/Lecture18
+        - file: lecture_files/Lecture18
 #         - file: lecture_files/Lecture19
 #         - file: lecture_files/Lecture20
 #         - file: lecture_files/Lecture21
@@ -47,7 +47,7 @@ parts:
         - file: problems/ps_3/problem_set_3
         - file: problems/exam_1_practice
         - file: problems/simulation_project
-#         - file: problems/ps_4/problem_set_4
+        - file: problems/ps_4/problem_set_4
 #         - file: problems/ps_5/problem_set_5
 #         - file: problems/ps_6/problem_set_6
   - caption: Appendices

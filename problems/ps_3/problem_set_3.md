@@ -105,7 +105,7 @@ fixed lattice and can interact with an external magnetic field, $H$, and
 other nearest-neighbor spins. The energy with which spin $i$ interacts
 with its neighbors is:
 
-$$\epsilon_i =  - J \sum_j s_i s_j\$$
+$$\epsilon_i =  - J \sum_j s_i s_j$$
 
 Here, $J$ is the value of the coupling parameter (with units of energy)
 that describes the interaction energy between each *pair* of
@@ -113,7 +113,7 @@ nearest-neighbor spins. The sum $\sum_j$ indicates a sum over all
 $n$ nearest-neighbor spins of $i$ on the lattice. The *total* energy of
 a single microstate is:
 
-$$E = -\sum_i^N \mu H s_i - \frac{J}{2} \sum_{i}^N \sum_j^\prime s_i s_j\$$
+$$E = -\sum_i^N \mu H s_i - \frac{J}{2} \sum_{i}^N \sum_j^\prime s_i s_j$$
 
 The factor of $1/2$ in front of the interaction energy term accounts for
 the double-counting of interactions between pairs of spins when summing
