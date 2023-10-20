@@ -33,8 +33,8 @@ parts:
         - file: lecture_files/Lecture17
         - file: lecture_files/Lecture18
         - file: lecture_files/Lecture19
-#         - file: lecture_files/Lecture20
-#         - file: lecture_files/Lecture21
+        - file: lecture_files/Lecture20
+        - file: lecture_files/Lecture21
 #         - file: lecture_files/Lecture22
 #         - file: lecture_files/Lecture23
 #         - file: lecture_files/Lecture24
@@ -48,9 +48,12 @@ parts:
         - file: problems/exam_1_practice
         - file: problems/simulation_project
         - file: problems/ps_4/problem_set_4
-#         - file: problems/ps_5/problem_set_5
+        - file: problems/ps_5/problem_set_5
 #         - file: problems/ps_6/problem_set_6
   - caption: Appendices
     chapters:
-      - file: notation
-      - file: references
+      - file: appendices/notation
+      - file: appendices/euler 
+      - file: appendices/expansion 
+      - file: appendices/thermo_pot 
+      - file: appendices/references

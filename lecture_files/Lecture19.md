@@ -375,7 +375,7 @@ determined $T$ and $P$, we could fully specify a function
 $$\underline{U}(\underline{S}, \underline{V}) = f_1(\underline{S}, \underline{V}) \label{eq3.2}$$
 
 to within a constant prefactor that would not matter since we only care
-about changes in energy. Referring back to Postulate 1, this expression
+about changes in energy. Referring back to {term}`Postulate 1`, this expression
 satisfies the condition that the properties of any equilibrium state can
 be expressed as a function of two independently variable parameters - in
 this case, $\underline{S}$ and $\underline{V}$. Fortunately, we can
