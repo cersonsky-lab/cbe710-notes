@@ -66,8 +66,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'appendices/thermo_pot';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Bibliography" href="references.html" />
-    <link rel="prev" title="Derivation of expansion rule" href="expansion.html" />
+    <link rel="next" title="Derivation of expansion rule" href="expansion.html" />
+    <link rel="prev" title="Additional Glossary" href="notation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -203,9 +203,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="notation.html">Additional Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="euler.html">Derivation of Euler integration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="expansion.html">Derivation of expansion rule</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Summary of thermodynamic potentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="expansion.html">Derivation of expansion rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="euler.html">Derivation of Euler integration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">Bibliography</a></li>
 </ul>
 
@@ -357,21 +357,54 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="summary-of-thermodynamic-potentials">
 <h1>Summary of thermodynamic potentials<a class="headerlink" href="#summary-of-thermodynamic-potentials" title="Permalink to this headline">#</a></h1>
-<p>Potential                                                    Equation                                                                       Natural variables                                                                      Total derivative</p>
-<hr class="docutils" />
-<p>Energy                        <span class="math notranslate nohighlight">\(\underline{U} = T\underline{S} - P\underline{V} + \sum_i^n \mu_i N_i\)</span>                  <span class="math notranslate nohighlight">\(\underline{U}(\underline{S}, \underline{V}, N_1, N_2, \dots)\)</span>                 <span class="math notranslate nohighlight">\(d\underline{U} = Td\underline{S} - P d\underline{V} +  \sum_i^n \mu_i dN_i\)</span><br />
-Entropy        <span class="math notranslate nohighlight">\(\underline{S} = \frac{1}{T}\underline{U} + \frac{P}{T}\underline{V} - \sum_i^n \frac{\mu_i}{T} N_i\)</span>   <span class="math notranslate nohighlight">\(\underline{S}(\underline{U}, \underline{V}, N_1, N_2, \dots)\)</span>   <span class="math notranslate nohighlight">\(d\underline{S} = \frac{1}{T}d\underline{U} + \frac{P}{T}d\underline{V} - \sum_i^n \frac{\mu_i}{T} dN_i\)</span><br />
-Enthalpy                                 <span class="math notranslate nohighlight">\(\underline{H} = \underline{U} + P\underline{V}\)</span>                                   <span class="math notranslate nohighlight">\(\underline{H}(\underline{S}, P, N_1, N_2, \dots)\)</span>                       <span class="math notranslate nohighlight">\(d\underline{H} = Td\underline{S} + \underline{V}dP +  \sum_i^n \mu_i dN_i\)</span><br />
-Helmholtz                                <span class="math notranslate nohighlight">\(\underline{F} = \underline{U} - T\underline{S}\)</span>                                   <span class="math notranslate nohighlight">\(\underline{F}(T, \underline{V}, N_1, N_2, \dots)\)</span>                       <span class="math notranslate nohighlight">\(d\underline{F} = -\underline{S}dT - Pd\underline{V} +  \sum_i^n \mu_i dN_i\)</span><br />
-Gibbs                           <span class="math notranslate nohighlight">\(\underline{G} = \underline{U} - T\underline{S} + P\underline{V}\)</span>                                 <span class="math notranslate nohighlight">\(\underline{G}(T, P, N_1, N_2, \dots)\)</span>                             <span class="math notranslate nohighlight">\(d\underline{G} = -\underline{S}dT + \underline{V}dP +  \sum_i^n \mu_i dN_i\)</span><br />
-Gibbs-Duhem                                                    N/A                                                                                 N/A                                                     <span class="math notranslate nohighlight">\(-\underline{S}dT + \underline{V}dP  - \sum_i^n N_i d\mu_i = 0\)</span></p>
-<p>Type                           Constraints                   Behavior at equilibrium   Displacement from equilibrium</p>
-<hr class="docutils" />
-<p>Energy          Constant <span class="math notranslate nohighlight">\(\underline{S}, \underline{V}, N\)</span>          Minimized           <span class="math notranslate nohighlight">\(\Delta \underline{U} &gt; 0\)</span><br />
-Entropy         Constant <span class="math notranslate nohighlight">\(\underline{U}, \underline{V}, N\)</span>          Maximized           <span class="math notranslate nohighlight">\(\Delta \underline{S} &lt; 0\)</span><br />
-Enthalpy              Constant <span class="math notranslate nohighlight">\(\underline{S}, P, N\)</span>                Minimized           <span class="math notranslate nohighlight">\(\Delta \underline{H} &gt; 0\)</span><br />
-Helmholtz FE          Constant <span class="math notranslate nohighlight">\(T, \underline{V}, N\)</span>                Minimized           <span class="math notranslate nohighlight">\(\Delta \underline{F} &gt; 0\)</span><br />
-Gibbs FE                    Constant <span class="math notranslate nohighlight">\(T, P, N\)</span>                      Minimized           <span class="math notranslate nohighlight">\(\Delta \underline{G} &gt; 0\)</span></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Potential</p></th>
+<th class="head"><p>Symbol</p></th>
+<th class="head"><p>Natural Variables</p></th>
+<th class="head"><p>Equation</p></th>
+<th class="head"><p>Total derivative</p></th>
+<th class="head"><p>Behavior at Equilibrium</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Energy</p></td>
+<td><p><span class="math notranslate nohighlight">\(\underline{U}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(N, \underline{V}, \underline{S}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\underline{U} = T\underline{S} - P\underline{V} + \sum_i^n \mu_i N_i\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(d\underline{U} = Td\underline{S} - P d\underline{V} +  \sum_i^n \mu_i dN_i\)</span></p></td>
+<td><p>Minimized</p></td>
+</tr>
+<tr class="row-odd"><td><p>Entropy</p></td>
+<td><p><span class="math notranslate nohighlight">\(\underline{S}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(N, \underline{V}, \underline{U}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\underline{S} = \frac{1}{T}\underline{U} + \frac{P}{T}\underline{V} - \sum_i^n \frac{\mu_i}{T} N_i\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(d\underline{S} = \frac{1}{T}d\underline{U} + \frac{P}{T}d\underline{V} - \sum_i^n \frac{\mu_i}{T} dN_i\)</span></p></td>
+<td><p>Maximized</p></td>
+</tr>
+<tr class="row-even"><td><p>Enthalpy</p></td>
+<td><p><span class="math notranslate nohighlight">\(\underline{H}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(N, P, \underline{S}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\underline{H} = \underline{U} + P\underline{V}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(d\underline{H} = Td\underline{S} + \underline{V}dP +  \sum_i^n \mu_i dN_i\)</span></p></td>
+<td><p>Minimized</p></td>
+</tr>
+<tr class="row-odd"><td><p>Helmholtz FE</p></td>
+<td><p><span class="math notranslate nohighlight">\(\underline{F}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(N, \underline{V}, T\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\underline{F} = \underline{U} - T\underline{S}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(d\underline{F} = -\underline{S}dT - Pd\underline{V} +  \sum_i^n \mu_i dN_i\)</span></p></td>
+<td><p>Minimized</p></td>
+</tr>
+<tr class="row-even"><td><p>Gibbs FE</p></td>
+<td><p><span class="math notranslate nohighlight">\(\underline{G}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(N, P, T\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\underline{G} = \underline{U} - T\underline{S} + P\underline{V}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(d\underline{G} = -\underline{S}dT + \underline{V}dP +  \sum_i^n \mu_i dN_i\)</span></p></td>
+<td><p>Minimized</p></td>
+</tr>
+</tbody>
+</table>
 </section>
 
     <script type="text/x-thebe-config">
@@ -406,20 +439,20 @@ Gibbs FE                    Constant <span class="math notranslate nohighlight">
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="expansion.html"
+       href="notation.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Derivation of expansion rule</p>
+        <p class="prev-next-title">Additional Glossary</p>
       </div>
     </a>
     <a class="right-next"
-       href="references.html"
+       href="expansion.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Bibliography</p>
+        <p class="prev-next-title">Derivation of expansion rule</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
