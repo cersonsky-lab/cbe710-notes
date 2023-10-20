@@ -1,4 +1,4 @@
-# Practice Problems for Statistical Mechanics Unit Exam
+# Practice Problems for Unit Exam
 
 See below for practice problems related to CBE710, Fall 2023.
 
