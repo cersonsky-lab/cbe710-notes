@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Problem Set 2 (Due Wednesday, September 27, 2023) &#8212; Advanced Thermodynamics for Chemical Engineers</title>
+    <title>Problem Set 5 (Due Wednesday, November 29, 2023) &#8212; Advanced Thermodynamics for Chemical Engineers</title>
   
   
   
@@ -63,11 +63,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'problems/ps_2/problem_set_2';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'problems/ps_5/problem_set_5';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Problem Set 3 (Due Monday, October 9, 2023)" href="../ps_3/problem_set_3.html" />
-    <link rel="prev" title="Problem Set 1 (Due Wednesday, September 20, 2023)" href="../ps_1/problem_set_1.html" />
+    <link rel="next" title="Additional Glossary" href="../../appendices/notation.html" />
+    <link rel="prev" title="Problem Set 4 (Due Monday, November 20, 2023)" href="../ps_4/problem_set_4.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -193,12 +193,12 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Problem Sets</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../ps_1/problem_set_1.html">Problem Set 1 (Due Wednesday, September 20, 2023)</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Problem Set 2 (Due Wednesday, September 27, 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ps_2/problem_set_2.html">Problem Set 2 (Due Wednesday, September 27, 2023)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ps_3/problem_set_3.html">Problem Set 3 (Due Monday, October 9, 2023)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../exam_1_practice.html">Practice Problems for Statistical Mechanics Unit Exam</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../simulation_project.html">Simulation Project (Due Monday, November 6, 2023)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ps_4/problem_set_4.html">Problem Set 4 (Due Monday, November 20, 2023)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ps_5/problem_set_5.html">Problem Set 5 (Due Wednesday, November 29, 2023)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Problem Set 5 (Due Wednesday, November 29, 2023)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="nav bd-sidenav">
@@ -261,7 +261,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/problems/ps_2/problem_set_2.md" target="_blank"
+      <li><a href="../../_sources/problems/ps_5/problem_set_5.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -343,7 +343,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Problem Set 2 (Due Wednesday, September 27, 2023)</h1>
+    <h1>Problem Set 5 (Due Wednesday, November 29, 2023)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -353,10 +353,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-expressions-for-entropy">Question 1: Expressions for entropy</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-pulling-on-a-protein">Question 2: Pulling on a protein</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-magnetization-of-a-paramagnet-revisited">Question 3: Magnetization of a paramagnet revisited</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4-numerical-calculation-of-the-magnetization-of-a-paramagnet">Question 4: Numerical calculation of the magnetization of a paramagnet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-actual-gas-expansion">Question 1: Actual gas expansion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-equations-of-state">Question 2: Equations of state</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-high-pressure-gas">Question 3: High pressure gas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4-calculus-of-thermodynamics">Question 4: Calculus of thermodynamics</a></li>
 </ul>
             </nav>
         </div>
@@ -368,209 +368,104 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="problem-set-2-due-wednesday-september-27-2023">
-<h1>Problem Set 2 (Due Wednesday, September 27, 2023)<a class="headerlink" href="#problem-set-2-due-wednesday-september-27-2023" title="Permalink to this headline">#</a></h1>
-<section id="question-1-expressions-for-entropy">
-<h2>Question 1: Expressions for entropy<a class="headerlink" href="#question-1-expressions-for-entropy" title="Permalink to this headline">#</a></h2>
-<p>The Boltzmann entropy for the microcanonical ensemble is:</p>
-<div class="math notranslate nohighlight">
-\[S(N,V,E) = k_B \ln \Omega(N,V,E)\]</div>
-<p>where <span class="math notranslate nohighlight">\(\Omega(N,V,E)\)</span> is the degeneracy (or number of unique
-microstates) in the microcanonical ensemble. An alternative, general
-definition of the entropy, referred to as the Gibbs entropy, is:</p>
-<div class="math notranslate nohighlight">
-\[S = - k_B\sum_i p_i \ln p_i\]</div>
-<p>where <span class="math notranslate nohighlight">\(p_i\)</span> is the probability of microstate <span class="math notranslate nohighlight">\(i\)</span> and the sum runs over
-all microstates.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="problem-set-5-due-wednesday-november-29-2023">
+<h1>Problem Set 5 (Due Wednesday, November 29, 2023)<a class="headerlink" href="#problem-set-5-due-wednesday-november-29-2023" title="Permalink to this headline">#</a></h1>
+<section id="question-1-actual-gas-expansion">
+<h2>Question 1: Actual gas expansion<a class="headerlink" href="#question-1-actual-gas-expansion" title="Permalink to this headline">#</a></h2>
+<p><span class="math notranslate nohighlight">\(N\)</span> moles of an ideal gas at a temperature <span class="math notranslate nohighlight">\(T_1\)</span> are adiabatically
+expanded from a pressure <span class="math notranslate nohighlight">\(P_1\)</span> to a pressure <span class="math notranslate nohighlight">\(P_2\)</span>. The amount of work
+produced by a reversible adiabatic expansion between these two pressures
+is calculated to be <span class="math notranslate nohighlight">\(\delta \underline{W}_\textrm{rev}\)</span>. The amount of
+work extracted when the process is actually performed is instead
+measured as <span class="math notranslate nohighlight">\(\delta\underline{W}_\textrm{actual}\)</span>, although the process
+is still adiabatic. The heat capacities of the gas at constant volume
+and constant pressure are <span class="math notranslate nohighlight">\(C^0_V = 5R/2\)</span> and <span class="math notranslate nohighlight">\(C^0_P = 7R/2\)</span>,
+respectively, and are not found to depend on temperature.</p>
 <div class="admonition-a admonition">
 <p class="admonition-title"><strong>(a)</strong></p>
-<p>Show that the Boltzmann and Gibbs entropy are equivalent for the microcanonical ensemble.</p>
-<details>
-<summary> Hints </summary>
-Recall that according to the second postulate of statistical mechanics,
-all microstates in the microcanonical ensemble are equally probable.
-</details>
+<p>What is the final temperature, <span class="math notranslate nohighlight">\(T_2\)</span>, of the gas after the
+expansion (i.e., the temperature when the process is actually
+performed)?</p>
 </div>
 <div class="admonition-b admonition">
 <p class="admonition-title"><strong>(b)</strong></p>
-<p>Starting from an appropriate partial derivative of the Helmholtz
-free energy, show that entropy can be expressed in terms of the
-<a class="reference internal" href="../../lecture_files/Lecture4.html#term-canonical-partition-function"><span class="xref std std-term">canonical partition function</span></a> and the temperature as
-<span class="math notranslate nohighlight">\(S = k_B \left[T\left ( \frac{\partial \ln Z}{\partial T} \right )_{N,V} + \ln Z\right] \)</span>.</p>
-<details>
-<summary> Hints </summary>
-<p><span class="math notranslate nohighlight">\(dF = -SdT - PdV + \mu dN\)</span></p>
-</details>
+<p>What is the entropy change of the gas during the actual process?</p>
+</div>
+</section>
+<section id="question-2-equations-of-state">
+<h2>Question 2: Equations of state<a class="headerlink" href="#question-2-equations-of-state" title="Permalink to this headline">#</a></h2>
+<p>Consider a system with the fundamental relation:</p>
+<div class="math notranslate nohighlight">
+\[U(S,V) = \left ( \frac{\theta}{R} \right ) S^2 - \left ( \frac{R\theta}{V_0^2} \right ) V^2\]</div>
+<p><span class="math notranslate nohighlight">\(\theta, R\)</span> and <span class="math notranslate nohighlight">\(V_0\)</span> are positive constants.</p>
+<div class="admonition-a admonition">
+<p class="admonition-title"><strong>(a)</strong></p>
+<p>Find the three equations of state for <span class="math notranslate nohighlight">\(T\)</span>, <span class="math notranslate nohighlight">\(P\)</span>, and <span class="math notranslate nohighlight">\(\mu\)</span> for
+this system, and further show that <span class="math notranslate nohighlight">\(\mu = -U\)</span>.</p>
+</div>
+<div class="admonition-b admonition">
+<p class="admonition-title"><strong>(b)</strong></p>
+<p>Demonstrate that only two of the intensive parameters are
+independently variable.</p>
+</div>
+</section>
+<section id="question-3-high-pressure-gas">
+<h2>Question 3: High pressure gas<a class="headerlink" href="#question-3-high-pressure-gas" title="Permalink to this headline">#</a></h2>
+<p>A gas at high pressure flows through a duct. A thermometer held within
+the duct measures the temperature of the gas at a high temperature
+<span class="math notranslate nohighlight">\(T_H\)</span>. A small amount of gas is then released from the duct through a
+valve to the outside atmosphere, which has a pressure <span class="math notranslate nohighlight">\(P_\textrm{out}\)</span>.
+The process by which this gas is released occurs at <strong>constant
+enthalpy</strong> (where <span class="math notranslate nohighlight">\(\underline{H}=\underline{U}+P\underline{V}\)</span>) as
+indicated in the diagram below.</p>
+<p><img alt="image" src="../../_images/pset_5_joule_thompson-01.png" /></p>
+<p>Note that the enthalpy is a state function. The temperature of the gas
+leaving the valve is measured at a colder temperature <span class="math notranslate nohighlight">\(T_C\)</span>. The gas
+obeys the equation of state:</p>
+<div class="math notranslate nohighlight">
+\[\frac{PV}{RT} = 1 + \left ( b- \frac{a}{T}\right ) \frac{P}{RT}\]</div>
+<p>where <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are constants that do not depend on temperature or
+pressure. The molar heat capacity at constant pressure, <span class="math notranslate nohighlight">\(C_P\)</span>, is
+defined as:</p>
+<div class="math notranslate nohighlight">
+\[C_P =  T \left ( \frac{\partial {S}}{\partial T} \right )_P\]</div>
+<p>The heat capacity <span class="math notranslate nohighlight">\(C_P^\textrm{out}\)</span> is measured at the pressure
+<span class="math notranslate nohighlight">\(P_\textrm{out}\)</span> and does not depend on temperature.</p>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>What is the
+pressure of the gas in the duct, <span class="math notranslate nohighlight">\(P_\textrm{in}\)</span>, in terms of <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>,
+<span class="math notranslate nohighlight">\(T_H\)</span>, <span class="math notranslate nohighlight">\(T_C\)</span>, <span class="math notranslate nohighlight">\(P_\textrm{out}\)</span>, and <span class="math notranslate nohighlight">\(C_P^\textrm{out}\)</span>?</p>
+</div>
+</section>
+<section id="question-4-calculus-of-thermodynamics">
+<h2>Question 4: Calculus of thermodynamics<a class="headerlink" href="#question-4-calculus-of-thermodynamics" title="Permalink to this headline">#</a></h2>
+<p>It is often convenient to relate derivatives that are difficult to
+calculate experimentally to measurable materials parameters. Prove the
+following relationships by appropriately manipulating the relevant
+derivatives. The following materials parameters are defined:</p>
+<ul class="simple">
+<li><p>The thermal expansion coefficient,
+<span class="math notranslate nohighlight">\(\alpha =\frac{1}{V} \left ( \frac{\partial V}{\partial T} \right )_P\)</span></p></li>
+<li><p>The isothermal compressibility,
+<span class="math notranslate nohighlight">\(\beta =-\frac{1}{V} \left ( \frac{\partial V}{\partial P} \right )_T\)</span></p></li>
+<li><p>The heat capacity at constant volume,
+<span class="math notranslate nohighlight">\(C_V = T\left ( \frac{\partial S}{\partial T} \right )_V\)</span></p></li>
+<li><p>The heat capacity at constant pressure,
+<span class="math notranslate nohighlight">\(C_P = T\left ( \frac{\partial S}{\partial T} \right )_P\)</span></p></li>
+</ul>
+<div class="admonition-a admonition">
+<p class="admonition-title"><strong>(a)</strong></p>
+<p><span class="math notranslate nohighlight">\(\left ( \frac{\partial S}{\partial P} \right )_{V} = \frac{C_V}{T} \frac{\beta}{\alpha}\)</span>.</p>
+</div>
+<div class="admonition-b admonition">
+<p class="admonition-title"><strong>(b)</strong></p>
+<p><span class="math notranslate nohighlight">\(\left ( \frac{\partial T}{\partial P} \right )_S = \frac{T\alpha V}{C_P}\)</span></p>
 </div>
 <div class="admonition-c admonition">
 <p class="admonition-title"><strong>(c)</strong></p>
-<p>Show that the expression derived in part <strong>b</strong> reduces to the
-Boltzmann entropy if the canonical ensemble is dominated by a single
-energy level (i.e., the contributions of all other energy levels to the
-partition function are negligible).</p>
+<p><span class="math notranslate nohighlight">\(\left ( \frac{\partial C_V}{\partial V} \right )_T = T\left ( \frac{\partial^2 P}{\partial T^2} \right )_V\)</span></p>
 </div>
-<div class="admonition-d admonition">
-<p class="admonition-title"><strong>(d)</strong></p>
-<p>Calculate the Gibbs entropy of the canonical ensemble, and show
-that this expression for the entropy leads to the correct thermodynamic
-expression for the Helmholtz free energy (<span class="math notranslate nohighlight">\(F=E-TS\)</span>).</p>
-</div>
-</section>
-<section id="question-2-pulling-on-a-protein">
-<h2>Question 2: Pulling on a protein<a class="headerlink" href="#question-2-pulling-on-a-protein" title="Permalink to this headline">#</a></h2>
-<p>A simplified model for the protein keratin is a linear, long chain
-molecule consisting of <span class="math notranslate nohighlight">\(N\)</span> units. Each unit can be in either an
-unstretched state with energy <span class="math notranslate nohighlight">\(\epsilon_\alpha\)</span> and length <span class="math notranslate nohighlight">\(a\)</span>, or a
-stretched state with energy <span class="math notranslate nohighlight">\(\epsilon_\beta\)</span> and length <span class="math notranslate nohighlight">\(b\)</span>. The chain
-is stretched at constant tension, <span class="math notranslate nohighlight">\(\tau\)</span>, which causes it to reach a
-total length <span class="math notranslate nohighlight">\(L\)</span>; <span class="math notranslate nohighlight">\(\tau\)</span> is a force that is conjugate to <span class="math notranslate nohighlight">\(L\)</span>. Assume
-that stretching the chain (i.e. changing <span class="math notranslate nohighlight">\(L\)</span>) does not change the total
-chain volume, the chain is held at constant temperature, and each unit
-is independent.</p>
-<p><img alt="image" src="../../_images/pset_2_pulling_polymer_fig.png" /></p>
-<details>
-<summary> Hint </summary>
-<p>Hint: for a system of <span class="math notranslate nohighlight">\(N\)</span> distinguishable, independent subsystems for
-which the energy of the combined system, <span class="math notranslate nohighlight">\(E\)</span>, is equal to the sum of the
-energies of the subsystems, <span class="math notranslate nohighlight">\(E = \sum_i \epsilon_i\)</span>, the partition
-function of the combined system, <span class="math notranslate nohighlight">\(Z\)</span>, is related to the partition
-function of each subsystem, <span class="math notranslate nohighlight">\(z\)</span>, by:</p>
-<div class="math notranslate nohighlight">
-\[Z = z^N\]</div>
-<p>This relationship is true of any generalized partition function <span class="math notranslate nohighlight">\(\Phi\)</span>,
-as well as the canonical partition function, <span class="math notranslate nohighlight">\(Z\)</span>.</p>
-</details>
-<div class="admonition-a admonition">
-<p class="admonition-title"><strong>(a)</strong></p>
-<p>Using the first law of thermodynamics, show that the thermodynamic
-potential <span class="math notranslate nohighlight">\(B\)</span> corresponding to this ensemble is expressed
-as <span class="math notranslate nohighlight">\(B = - PdV - SdT - L d\tau\)</span>.</p>
-</div>
-<div class="admonition-b admonition">
-<p class="admonition-title"><strong>(b)</strong></p>
-<p>Derive an expression for a generalized partition function with
-fixed thermodynamic parameters that correspond to the natural variables
-of the potential derived in part <strong>a</strong>. Your result should be in terms
-of <span class="math notranslate nohighlight">\(\epsilon_a\)</span>, <span class="math notranslate nohighlight">\(\epsilon_b\)</span>, <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(\tau\)</span>, and <span class="math notranslate nohighlight">\(N\)</span>.</p>
-<details>
-<summary> Hint </summary>
-<p>Since each unit of the molecule is independent and the different units
-are distinguishable, we can use the first hint within this problem
-to factorize the partition function and write:</p>
-<div class="math notranslate nohighlight">
-\[\begin{aligned}
-    \Phi &amp;= \phi^N
-    
-\end{aligned}\]</div>
-<p>Here, <span class="math notranslate nohighlight">\(\phi\)</span> is the single-unit partition function, which we see is a
-two-state model with one state characterized by energy <span class="math notranslate nohighlight">\(\epsilon_a\)</span> and
-length <span class="math notranslate nohighlight">\(a\)</span> and the other state characterized by energy <span class="math notranslate nohighlight">\(\epsilon_b\)</span> and
-length <span class="math notranslate nohighlight">\(b\)</span>.</p>
-</details>
-</div>
-<div class="admonition-c admonition">
-<p class="admonition-title"><strong>(c)</strong></p>
-<p>Calculate the average length, <span class="math notranslate nohighlight">\(\langle L \rangle\)</span>, of the
-molecule as a function of the tension, <span class="math notranslate nohighlight">\(\tau\)</span>.</p>
-</div>
-</section>
-<section id="question-3-magnetization-of-a-paramagnet-revisited">
-<h2>Question 3: Magnetization of a paramagnet revisited<a class="headerlink" href="#question-3-magnetization-of-a-paramagnet-revisited" title="Permalink to this headline">#</a></h2>
-<p>In <a class="reference internal" href="../ps_1/problem_set_1.html"><span class="doc std std-doc">Problem Set 1</span></a>, we used the microcanonical ensemble to show that the
-magnetization of a paramagnet is:</p>
-<div class="math notranslate nohighlight">
-\[\begin{aligned}
-M = N\mu \tanh (\beta \mu H) 
-\end{aligned}\]</div>
-<p>The system is <span class="math notranslate nohighlight">\(N\)</span> distinguishable, non-interacting spins that are fixed
-on a lattice and exposed to a magnetic field <span class="math notranslate nohighlight">\(H\)</span> at constant
-temperature. Each spin <span class="math notranslate nohighlight">\(s_i\)</span> has a magnetic moment of <span class="math notranslate nohighlight">\(\mu\)</span>, and can be
-in one of two states: parallel to the field (<span class="math notranslate nohighlight">\(s_i = 1\)</span>) or anti-parallel
-to the field (<span class="math notranslate nohighlight">\(s_i = -1\)</span>). The energy of a particular microstate is due
-only to interactions between the spins and the magnetic field:</p>
-<div class="math notranslate nohighlight">
-\[E = -\sum_{i=1}^N s_i \mu H\]</div>
-<p>The magnetization is defined as:</p>
-<div class="math notranslate nohighlight">
-\[\begin{aligned}
-M = \sum_i^N s_i \mu
-\end{aligned}\]</div>
-<div class="admonition-derive-the-magnetization-of-the-system-using-the-canonical-ensemble admonition">
-<p class="admonition-title">Derive the magnetization of the system using the canonical ensemble.</p>
-<details>
-<summary> Hint </summary>
-<p><span class="math notranslate nohighlight">\(\cosh(x) = \frac{e^x + e^{-x}}{2}\)</span></p>
-<p><span class="math notranslate nohighlight">\(\sinh(x) = \frac{e^x - e^{-x}}{2}\)</span></p>
-</details>
-</div>
-</section>
-<section id="question-4-numerical-calculation-of-the-magnetization-of-a-paramagnet">
-<h2>Question 4: Numerical calculation of the magnetization of a paramagnet<a class="headerlink" href="#question-4-numerical-calculation-of-the-magnetization-of-a-paramagnet" title="Permalink to this headline">#</a></h2>
-<p>As an alternative to the analytical derivation of the magnetization of a
-paramagnet, the Metropolis Monte Carlo algorithm can be used to
-calculate the ensemble-average magnetization. We will derive this
-algorithm in a <a class="reference internal" href="../../lecture_files/Lecture10.html"><span class="doc std std-doc">later lecture</span></a>;
-in this question, you will apply the algorithm
-to compare to the analytical result in Question 3.</p>
-<p>Consider a system of <span class="math notranslate nohighlight">\(N=100\)</span> distinguishable, non-interacting spins in a
-magnetic field <span class="math notranslate nohighlight">\(H\)</span> at constant temperature. Each spin is fixed to a
-lattice position such that the relative positions of spins cannot
-interchange. The system can assume a set of configurations in which each
-spin is either parallel to the field or antiparallel to the field, with
-the energy of each configuration defined in Question 3. The Metropolis-
-Monte Carlo algorithm for calculating the ensemble-average magnetization
-consists of the following steps:</p>
-<ol class="arabic simple">
-<li><p>Initialize the system in a random configuration.</p></li>
-<li><p>Randomly generate a new configuration, in which at least 1 spin has
-switched orientation.</p></li>
-<li><p>Calculate the energy of the new configuration, <span class="math notranslate nohighlight">\(E_{\textrm{new}}\)</span>,
-and old configuration, <span class="math notranslate nohighlight">\(E_{\textrm{old}}\)</span>.</p></li>
-<li><p>Calculate the probability of accepting the trial configuration,
-<span class="math notranslate nohighlight">\(\alpha\)</span>, using the following equation:
-$<span class="math notranslate nohighlight">\(\alpha = \text{min} \left ( 1, \exp \left \{ -\beta \left [ E_{\textrm{new}} - E_{\textrm{old}} \right ] \right \} \right )\)</span><span class="math notranslate nohighlight">\(,
-where \)</span>\beta = (k_B T)^{-1}$.</p></li>
-<li><p>Generate a uniform random number in the range [0, 1]. If the
-random number is less than <span class="math notranslate nohighlight">\(\alpha\)</span>, then retain the new
-configuration as the system configuration; the new configuration is
-<em>accepted</em>. If the random number is greater than <span class="math notranslate nohighlight">\(\alpha\)</span>, then
-retain the old configuration as the system configuration; the new
-configuration is <em>rejected</em>. Note that all new configurations for
-which the system energy is lowered are automatically accepted.</p></li>
-<li><p>Performing steps 2-5 defines a single Monte Carlo trial. Repeat
-steps 2-5 for a large number of trials (discussed below).</p></li>
-<li><p>Calculate <span class="math notranslate nohighlight">\(\langle M \rangle\)</span> by averaging values of <span class="math notranslate nohighlight">\(M\)</span> over all
-configurations sampled during the trials. Note that configurations
-will be repeated when new configurations are rejected in step 5.</p></li>
-</ol>
-<p>Think carefully about how to efficiently implement this algorithm.
-<strong>This problem is intended to provide you with practice in Python
-programming prior to the assignment of the simulation project.</strong> Your
-grade for this problem will be based in part on the readability of your
-code and plots in addition to the accuracy of the solution.</p>
-<div class="admonition-a admonition">
-<p class="admonition-title"><strong>(a)</strong></p>
-<p>Write a Python program that computes <span class="math notranslate nohighlight">\(\langle M \rangle\)</span> for the
-paramagnetic spin lattice described in Question 3 using the Metropolis-
-Monte Carlo algorithm described above. Attach a copy of your code with
-appropriate comments explaining your implementation.</p>
-</div>
-<div class="admonition-b admonition">
-<p class="admonition-title"><strong>(b)</strong></p>
-<p>Perform independent Monte Carlo simulations for field strengths
-of <span class="math notranslate nohighlight">\(\mu H =\)</span> -3.0 <span class="math notranslate nohighlight">\(k_BT\)</span> to <span class="math notranslate nohighlight">\(\mu H =\)</span> 3.0 <span class="math notranslate nohighlight">\(k_B T\)</span> in increments of 0.5
-<span class="math notranslate nohighlight">\(k_B T\)</span>. Each simulation should include 100,000 Monte Carlo trials to
-obtain accurate approximations of <span class="math notranslate nohighlight">\(\langle M \rangle\)</span>. Plot
-<span class="math notranslate nohighlight">\(\langle M \rangle\)</span> vs. <span class="math notranslate nohighlight">\(\mu H\)</span> and compare to the analytical result
-from Question 3.</p>
-</div>
-<p>The Python code for part <strong>a</strong> and <strong>b</strong> is included on the Canvas
-website. The plots below show the number of MC iterations necessary to
-obtain converged values of the ensemble-average magnetization and the
-comparison between the ensemble-average mangetization and the analytical
-result from Question 3.</p>
-<p><img alt="Convergence of ensemble-averagemagnetization." src="../../_images/pset_2_Magnetization_convergence.png" /></p>
-<p><img alt="Comparison of the ensemble-average magnetization obtained from theMonte Carlo method to the analytical solution. Points indicate the modelcalculations and the line indicates the analyticalsolution." src="../../_images/pset_2_Magnetization_H.png" /></p>
 </section>
 </section>
 
@@ -587,7 +482,7 @@ result from Question 3.</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./problems/ps_2"
+            path: "./problems/ps_5"
         },
         predefinedOutput: true
     }
@@ -606,20 +501,20 @@ result from Question 3.</p>
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../ps_1/problem_set_1.html"
+       href="../ps_4/problem_set_4.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Problem Set 1 (Due Wednesday, September 20, 2023)</p>
+        <p class="prev-next-title">Problem Set 4 (Due Monday, November 20, 2023)</p>
       </div>
     </a>
     <a class="right-next"
-       href="../ps_3/problem_set_3.html"
+       href="../../appendices/notation.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Problem Set 3 (Due Monday, October 9, 2023)</p>
+        <p class="prev-next-title">Additional Glossary</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -641,10 +536,10 @@ result from Question 3.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-expressions-for-entropy">Question 1: Expressions for entropy</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-pulling-on-a-protein">Question 2: Pulling on a protein</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-magnetization-of-a-paramagnet-revisited">Question 3: Magnetization of a paramagnet revisited</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4-numerical-calculation-of-the-magnetization-of-a-paramagnet">Question 4: Numerical calculation of the magnetization of a paramagnet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-actual-gas-expansion">Question 1: Actual gas expansion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-equations-of-state">Question 2: Equations of state</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-high-pressure-gas">Question 3: High pressure gas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4-calculus-of-thermodynamics">Question 4: Calculus of thermodynamics</a></li>
 </ul>
   </nav></div>
 

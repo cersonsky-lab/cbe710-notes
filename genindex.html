@@ -183,6 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="lecture_files/Lecture18.html">The Carnot Cycle and the Theorem of Clausius</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lecture_files/Lecture19.html">The fundamental relation of thermodynamics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lecture_files/Lecture20.html">Legendre transforms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture_files/Lecture21.html">Conditions of equilibrium</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Problem Sets</span></p>
 <ul class="nav bd-sidenav">
@@ -192,11 +193,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="problems/exam_1_practice.html">Practice Problems for Statistical Mechanics Unit Exam</a></li>
 <li class="toctree-l1"><a class="reference internal" href="problems/simulation_project.html">Simulation Project (Due Monday, November 6, 2023)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="problems/ps_4/problem_set_4.html">Problem Set 4 (Due Monday, November 20, 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="problems/ps_5/problem_set_5.html">Problem Set 5 (Due Wednesday, November 29, 2023)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="notation.html">Additional Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references.html">Bibliography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendices/notation.html">Additional Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendices/euler.html">Derivation of Euler integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendices/expansion.html">Derivation of expansion rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendices/thermo_pot.html">Summary of thermodynamic potentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendices/references.html">Bibliography</a></li>
 </ul>
 
     </div>
@@ -361,9 +366,11 @@ document.write(`
 </li>
       <li><a href="lecture_files/Lecture18.html#term-Carnot-cycle"><strong>Carnot cycle</strong></a>
 </li>
+      <li><a href="lecture_files/Lecture21.html#term-Chain-rule-to-add-another-variable"><strong>Chain rule to add another variable</strong></a>
+</li>
       <li><a href="lecture_files/Lecture1B.html#term-Chemical-equilibrium"><strong>Chemical equilibrium</strong></a>
 </li>
-      <li><a href="notation.html#term-chemical-equilibrium"><strong>chemical equilibrium</strong></a>
+      <li><a href="appendices/notation.html#term-chemical-equilibrium"><strong>chemical equilibrium</strong></a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -455,9 +462,11 @@ document.write(`
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="lecture_files/Lecture5.html#term-generalized-ensemble"><strong>generalized ensemble</strong></a>
 </li>
+      <li><a href="lecture_files/Lecture13.html#term-generic-reduced-configurational-distribution"><strong>generic reduced configurational distribution</strong></a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="lecture_files/Lecture13.html#term-generic-reduced-configurational-distribution"><strong>generic reduced configurational distribution</strong></a>
+      <li><a href="lecture_files/Lecture21.html#term-Gibbs-Duhem-equation"><strong>Gibbs-Duhem equation</strong></a>
 </li>
       <li><a href="lecture_files/Lecture2.html#term-grand-canonical-ensemble"><strong>grand canonical ensemble</strong></a>
 </li>
@@ -489,9 +498,11 @@ document.write(`
 </li>
       <li><a href="lecture_files/Lecture1B.html#term-Intensive"><strong>Intensive</strong></a>
 </li>
+      <li><a href="lecture_files/Lecture16.html#term-interaction"><strong>interaction</strong></a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="lecture_files/Lecture16.html#term-interaction"><strong>interaction</strong></a>
+      <li><a href="lecture_files/Lecture21.html#term-Inversion-of-derivatives"><strong>Inversion of derivatives</strong></a>
 </li>
       <li><a href="lecture_files/Lecture8A.html#term-Ising-model"><strong>Ising model</strong></a>
 </li>
@@ -535,17 +546,21 @@ document.write(`
 </li>
       <li><a href="lecture_files/Lecture11.html#term-Markov-chain-of-states"><strong>Markov chain of states</strong></a>
 </li>
+      <li><a href="lecture_files/Lecture21.html#term-Maxwell-reciprocity"><strong>Maxwell reciprocity</strong></a>
+</li>
+      <li><a href="lecture_files/Lecture21.html#term-Maxwell-relation"><strong>Maxwell relation</strong></a>
+</li>
       <li><a href="lecture_files/Lecture12B.html#term-Maxwell-Boltzmann-distribution-for-velocities"><strong>Maxwell-Boltzmann distribution for velocities</strong></a>
 </li>
       <li><a href="lecture_files/Lecture14A.html#term-mean-force"><strong>mean force</strong></a>
 </li>
       <li><a href="lecture_files/Lecture8B.html#term-mean-field-theory"><strong>mean-field theory</strong></a>
 </li>
-      <li><a href="lecture_files/Lecture1B.html#term-Mechanical-equilibrium"><strong>Mechanical equilibrium</strong></a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="notation.html#term-mechanical-equilibrium"><strong>mechanical equilibrium</strong></a>
+      <li><a href="lecture_files/Lecture1B.html#term-Mechanical-equilibrium"><strong>Mechanical equilibrium</strong></a>
+</li>
+      <li><a href="appendices/notation.html#term-mechanical-equilibrium"><strong>mechanical equilibrium</strong></a>
 </li>
       <li><a href="lecture_files/Lecture11.html#term-Metropolis-Hastings-algorithm"><strong>Metropolis-Hastings algorithm</strong></a>
 </li>
@@ -593,7 +608,7 @@ document.write(`
 </li>
       <li><a href="lecture_files/Lecture9B.html#term-pairwise-interaction"><strong>pairwise interaction</strong></a>
 </li>
-      <li><a href="notation.html#term-partial-molar-property"><strong>partial molar property,</strong></a>
+      <li><a href="appendices/notation.html#term-partial-molar-property"><strong>partial molar property,</strong></a>
 </li>
       <li><a href="lecture_files/Lecture10.html#term-periodic-boundary-conditions"><strong>periodic boundary conditions</strong></a>
 </li>
@@ -663,6 +678,8 @@ document.write(`
 <h2 id="T">T</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="lecture_files/Lecture21.html#term-The-expansion-rule"><strong>The expansion rule</strong></a>
+</li>
       <li><a href="lecture_files/Lecture1B.html#term-Thermal-equilibrium"><strong>Thermal equilibrium</strong></a>
 </li>
       <li><a href="lecture_files/Lecture16.html#term-thermal-equilibrium"><strong>thermal equilibrium</strong></a>
@@ -672,6 +689,8 @@ document.write(`
       <li><a href="lecture_files/Lecture12B.html#term-thermostat"><strong>thermostat</strong></a>
 </li>
       <li><a href="lecture_files/Lecture18.html#term-Theroem-of-Clausius"><strong>Theroem of Clausius</strong></a>
+</li>
+      <li><a href="lecture_files/Lecture21.html#term-Triple-product-rule"><strong>Triple product rule</strong></a>
 </li>
   </ul></td>
 </tr></table>

@@ -1,0 +1,958 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Conditions of equilibrium &#8212; Advanced Thermodynamics for Chemical Engineers</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/defs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture_files/Lecture21';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Problem Set 1 (Due Wednesday, September 20, 2023)" href="../problems/ps_1/problem_set_1.html" />
+    <link rel="prev" title="Legendre transforms" href="Lecture20.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Advanced Thermodynamics for Chemical Engineers</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Class introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Before we get started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Lecture1A.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture1B.html">Review of thermodynamics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Mechanics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Lecture2.html">Postulates of statistical mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture3.html">Application of the microcanonical ensemble: two-state system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture4.html">The canonical ensemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture5.html">Generalized ensembles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture6.html">The ideal gas partition function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture7.html">Application of independent subsystems: the Langmuir isotherm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture8A.html">The Ising model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture8B.html">Mean-field theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture9A.html">Fluctuations and thermodynamic response functions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Molecular Simulation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Lecture9B.html">An introduction to molecular simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture10.html">Monte Carlo simulations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture11.html">Nuances of stochastic sampling in statistical ensembles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture12A.html">Molecular dynamics simulations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture12B.html">Temperature and velocities in MD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture13.html">Distribution of particles in states of matter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture14A.html">The potential of mean force</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture14B.html">Umbrella Sampling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture15.html">Free energy perturbation and thermodynamic integration</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Lecture16.html">Postulates of thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture17.html">Heat engines and possible processes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture18.html">The Carnot Cycle and the Theorem of Clausius</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture19.html">The fundamental relation of thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture20.html">Legendre transforms</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Conditions of equilibrium</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Problem Sets</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../problems/ps_1/problem_set_1.html">Problem Set 1 (Due Wednesday, September 20, 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/ps_2/problem_set_2.html">Problem Set 2 (Due Wednesday, September 27, 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/ps_3/problem_set_3.html">Problem Set 3 (Due Monday, October 9, 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/exam_1_practice.html">Practice Problems for Statistical Mechanics Unit Exam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/simulation_project.html">Simulation Project (Due Monday, November 6, 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/ps_4/problem_set_4.html">Problem Set 4 (Due Monday, November 20, 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/ps_5/problem_set_5.html">Problem Set 5 (Due Wednesday, November 29, 2023)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../appendices/notation.html">Additional Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices/euler.html">Derivation of Euler integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices/expansion.html">Derivation of expansion rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices/thermo_pot.html">Summary of thermodynamic potentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices/references.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/lecture_files/Lecture21.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Conditions of equilibrium</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-readings-for-the-enthusiast">Additional Readings for the Enthusiast</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-for-today-s-lecture">Goals for Today’s Lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#behavior-of-new-thermodynamic-potentials-at-equilibrium">Behavior of new thermodynamic potentials at equilibrium</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relationship-between-partial-derivatives">Relationship between partial derivatives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-derivatives-in-thermodynamics">Partial derivatives in thermodynamics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maxwell-relations">Maxwell relations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#behavior-of-state-functions">Behavior of state functions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#euler-s-theorem">Euler’s Theorem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#link-to-shared-notes">Link to Shared Notes</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="conditions-of-equilibrium">
+<h1>Conditions of equilibrium<a class="headerlink" href="#conditions-of-equilibrium" title="Permalink to this headline">#</a></h1>
+<section id="additional-readings-for-the-enthusiast">
+<h2>Additional Readings for the Enthusiast<a class="headerlink" href="#additional-readings-for-the-enthusiast" title="Permalink to this headline">#</a></h2>
+<p><span id="id1">Tester and Modell [<a class="reference internal" href="../appendices/references.html#id4" title="Jefferson W. Tester and Michael Modell. Thermodynamics and its applications. Prentice-Hall international series in the physical and chemical engineering sciences. Prentice Hall PTR, Upper Saddle River, N.J, 3rd ed edition, 1997. ISBN 978-0-13-915356-3. URL: https://www.eng.uc.edu/~beaucag/Classes/ChEThermoBeaucage/Books/Jefferson%20W.%20Tester,%20Michael%20Modell%20-%20Thermodynamics%20and%20Its%20Applications-Prentice%20Hall%20(1997).pdf.">4</a>]</span>, Ch. 5.3, 5.5, 6.2-6.4, Appendix A, Appendix C</p>
+</section>
+<section id="goals-for-today-s-lecture">
+<h2>Goals for Today’s Lecture<a class="headerlink" href="#goals-for-today-s-lecture" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Understand the behavior of arbitrary thermodynamic potentials at equilibrium</p></li>
+<li><p>Define the path of a state variable between two states given an arbitrary set of variables</p></li>
+<li><p>Relate derivatives of thermodynamic potentials using Maxwell relations</p></li>
+<li><p>Apply the Euler theorem to obtain the <a class="reference external" href="https://en.wikipedia.org/wiki/Gibbs%E2%80%93Duhem_equation">Gibbs-Duhem equation</a></p></li>
+</ul>
+</section>
+<section id="behavior-of-new-thermodynamic-potentials-at-equilibrium">
+<h2>Behavior of new thermodynamic potentials at equilibrium<a class="headerlink" href="#behavior-of-new-thermodynamic-potentials-at-equilibrium" title="Permalink to this headline">#</a></h2>
+<p>In the last lecture, we introduced the Legendre transform which
+expresses a function in terms of its tangent lines and their intercepts.
+The Legendre transform of a function in which <span class="math notranslate nohighlight">\(k\)</span> variables are
+transformed is given by <a class="reference internal" href="Lecture20.html#equation-legendre-transform">(31)</a>:</p>
+<div class="math notranslate nohighlight">
+\[y^{(k)} = y^{(0)} - \sum_i^k q_i x_i\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(q_i\)</span> is a first-order partial derivative of <span class="math notranslate nohighlight">\(y^{(0)}\)</span> and <span class="math notranslate nohighlight">\(x_i\)</span>
+is its conjugate independent variable. We used Legendre transforms of
+the fundamental relation to derive expressions for new thermodynamic
+potentials (free energies) that are a function of experimentally
+accessible independent variables. For example, the Gibbs free energy is
+the second Legendre transform of the fundamental relation in the energy
+representation for which the independent variables <span class="math notranslate nohighlight">\(\underline{S}\)</span> and
+<span class="math notranslate nohighlight">\(\underline{V}\)</span> are replaced by the conjugate variables <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(-P\)</span>,
+which are the slopes of tangent lines to the surface specified by the
+fundamental relation. We wrote:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+y^{(0)} &amp;= \underline{U} = f_U(x_1, x_2, x_3, x_4, \dots) \\
+&amp;= f_U(\underline{S}, \underline{V}, N_1, N_2, \dots) \\
+y^{(2)} &amp;= y^{(0)} - \sum_i^2 q_i x_i \\
+&amp;= \underline{U} - T\underline{S} + P\underline{V} \\
+&amp;\equiv \underline{G}
+\end{aligned}\end{split}\]</div>
+<p>This manipulation is useful in part because it allows us to define new
+behavior of these potentials at equilibrium under conditions where the
+independent variables are constant. We refer to the independent
+variables of a thermodynamic potential as <a class="reference internal" href="Lecture1B.html#term-natural-variables"><span class="xref std std-term">natural variables</span></a>.
+Therefore, the natural variables of <span class="math notranslate nohighlight">\(\underline{U}\)</span> are
+<span class="math notranslate nohighlight">\(\underline{S}, \underline{V}, N_1, N_2,\dots\)</span>, the natural variables of
+<span class="math notranslate nohighlight">\(\underline{G}\)</span> are <span class="math notranslate nohighlight">\(T, P, N_1, N_2,\dots\)</span>, etc. Previously, we showed
+that for a system with <span class="math notranslate nohighlight">\(\underline{U}, \underline{V}, N\)</span> as natural
+variables, the entropy is at a maximum, while for a system with
+<span class="math notranslate nohighlight">\(\underline{S}, \underline{V}, N\)</span> as natural variables, the energy is at
+a minimum. Now we ask what the criterion of equilibrium is for
+transformed systems with different natural variables.</p>
+<p>Let us consider a system that is connected to two reservoirs: a thermal
+reservoir, denoted by <span class="math notranslate nohighlight">\(R_T\)</span>, and a work reservoir, denoted by <span class="math notranslate nohighlight">\(R_P\)</span>.
+Connecting the system to the thermal reservoir allows it to be held at
+constant temperature, since heat will exchange to maintain constant
+system temperature that is equal to the temperature of the thermal
+reservoir when the system is at equilibrium (from <a class="reference internal" href="Lecture16.html#term-Postulate-2"><span class="xref std std-term">Postulate 2</span></a> and
+<a class="reference internal" href="Lecture16.html#term-Postulate-4"><span class="xref std std-term">Postulate 4</span></a>).</p>
+<p><img alt="image" src="../_images/fig_21-1-01.png" /></p>
+<p>Connecting the system to the work reservoir allows it to
+be held at constant pressure since the system will exchange volume with
+the work reservoir to maintain a constant pressure when the system is at
+equilibrium (we have not yet proven that this occurs, but will do so in
+<span class="xref myst">a future lecture</span>). We assume that the connection to each reservoir is
+controllable (i.e. interactions can be turned on or off), the thermal
+reservoir is held at constant <span class="math notranslate nohighlight">\(\underline{V}\)</span> and <span class="math notranslate nohighlight">\(N\)</span>, the work
+reservoir is held at constant <span class="math notranslate nohighlight">\(\underline{S}\)</span> and <span class="math notranslate nohighlight">\(N\)</span>, and that changes
+to one reservoir do not affect the other.</p>
+<p>Finally, we place the entire
+connected system in isolation, such that if we consider the system and
+both reservoirs the total entropy, volume, and number of particles is
+fixed. Referring to the global system as <span class="math notranslate nohighlight">\(\Sigma\)</span>, we thus hold the
+system at constant
+<span class="math notranslate nohighlight">\(\underline{S}^\Sigma, \underline{V}^\Sigma, N^\Sigma\)</span>. We allow the
+system to come to a global equilibrium, and then consider the effect of
+small perturbations from this equilibrium as we did previously in
+determining the condition of equilibrium for the energy and entropy.</p>
+<p><a class="reference internal" href="Lecture19.html"><span class="doc std std-doc">Two lectures ago</span></a>, we concluded that any perturbations to a system at
+equilibrium that is held at constant entropy necessarily increases the
+internal energy. We can thus write for the total isolated system:</p>
+<div class="math notranslate nohighlight">
+\[\Delta\underline{U}^\Sigma = \Delta\underline{U} + \Delta\underline{U}^{R_T} + \Delta\underline{U}^{R_P}  &gt; 0\]</div>
+<p>where <span class="math notranslate nohighlight">\(\underline{U}\)</span> is the energy of the system, <span class="math notranslate nohighlight">\(\underline{U}^{R_T}\)</span>
+is the energy of the thermal reservoir, and <span class="math notranslate nohighlight">\(\underline{U}^{R_P}\)</span> is the
+energy of the work reservoir. The entropy of the global system is
+constant and the work reservoir has adiabatic walls, but heat can
+exchange between the system and thermal reservoir so the entropy in
+these two systems can change. We can also write:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\Delta\underline{S}^\Sigma &amp;= \Delta \underline{S} + \Delta\underline{S}^{R_T}  = 0 \\
+\Delta  \underline{S}^{R_P} &amp;= 0
+\end{aligned}\end{split}\]</div>
+<p>Similarly, the volume of the thermal reservoir is fixed, the volume of
+the global system is fixed, but the system under study can exchange
+volume with the work reservoir:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\Delta\underline{V}^\Sigma &amp;= \Delta  \underline{V} + \Delta\underline{V}^{R_P}   = 0 \\
+\Delta  \underline{V}^{R_T} &amp;= 0
+\end{aligned}\end{split}\]</div>
+<p>Finally, the number of particles is fixed in each subsystem:</p>
+<div class="math notranslate nohighlight">
+\[\Delta N^\Sigma = \Delta N = \Delta N^{R_T}   = \Delta N^{R_P} = 0\]</div>
+<p>Now we can consider variations of the system that allow us to consider
+the behavior of different thermodynamic potentials.</p>
+<div class="admonition-case-1-when-there-are-interactions-with-the-work-reservoir-and-no-interactions-with-the-thermal-reservoir-show-that-the-enthalpy-h-is-minimized-at-equilibrium admonition">
+<p class="admonition-title"><strong>Case 1</strong>: When there are interactions with the work reservoir and no interactions with the thermal reservoir, show that the enthalpy <span class="math notranslate nohighlight">\(H\)</span> is minimized at equilibrium.</p>
+<details><summary>Click for answer</summary>
+<p>In this case, we assume that the thermal reservoir is not
+part of the system so that <span class="math notranslate nohighlight">\(\Delta \underline{S}^{R_T} = 0\)</span> and thus
+<span class="math notranslate nohighlight">\(\Delta \underline{S} = 0\)</span>. However, the pressure is kept constant due
+to contact with the work reservoir; the system is at constant
+<span class="math notranslate nohighlight">\(\underline{S}\)</span>, <span class="math notranslate nohighlight">\(P\)</span>, and <span class="math notranslate nohighlight">\(N\)</span>. Now, we consider a perturbation to the
+system such that <span class="math notranslate nohighlight">\(\Delta \underline{U}^{\Sigma} &gt; 0\)</span>.</p>
+<p>First, we write the energy change of the work reservoir using the first law as:</p>
+<div class="math notranslate nohighlight">
+\[\Delta \underline{U}^{R_P} = -P \Delta \underline{V}^{R_P}\]</div>
+<p>From the volume constraint (<span class="math notranslate nohighlight">\(\underline{V}^{R_P}=-\underline{V}\)</span>), this is equivalent to:</p>
+<div class="math notranslate nohighlight">
+\[\Delta \underline{U}^{R_P} = P\Delta\underline{V}\]</div>
+<p>Substituting into the system energy, with
+<span class="math notranslate nohighlight">\(\Delta \underline{U}^{R_T} = 0\)</span> since there is no work interaction with
+the thermal reservoir, we get:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\Delta \underline{U}^{\Sigma} &amp;= \Delta  \underline{U} + \Delta\underline{U}^{R_T} + \Delta\underline{U}^{R_P}  &gt; 0 \\
+&amp;= \Delta \underline{U} + P\Delta \underline{V}  &gt; 0 \\
+\therefore \Delta \underline{H} &amp;&gt; 0
+\end{aligned}\end{split}\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(H\)</span> is the enthalpy of the enthalpy, which we can see is a
+Legendre transform of the energy (<span class="math notranslate nohighlight">\(H = U + PV\)</span>). Therefore, any change
+in the system held at constant <span class="math notranslate nohighlight">\(\underline{S}, \underline{P}, N\)</span>
+increases the enthalpy; <em>the enthalpy is minimized for a system with
+constant <span class="math notranslate nohighlight">\(\underline{S}, \underline{P}, N\)</span> at equilibrium</em>.</p>
+</div>
+<div class="admonition-case-2-when-there-is-no-interaction-with-the-work-reservoir-and-interactions-with-the-thermal-reservoir-show-that-the-helmholtz-free-energy-f-is-minimized-at-equilibrium admonition">
+<p class="admonition-title"><strong>Case 2</strong>: When there is no interaction with the work reservoir and interactions with the thermal reservoir, show that the Helmholtz free energy <span class="math notranslate nohighlight">\(F\)</span> is minimized at equilibrium.</p>
+<details><summary>Click for answer</summary>
+<p>Similar idea as above. The system of interest is now held
+at constant <span class="math notranslate nohighlight">\(\underline{V}, T, N\)</span> since interactions with the work
+reservoir are not allowed, but heat can be exchanged with the thermal
+reservoir to maintain constant temperature. Following the same logic as
+above, we can use the first law (with <span class="math notranslate nohighlight">\(\Delta \underline{V}^{R_T} = 0\)</span>)
+to write:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\Delta \underline{U}^{R_T} &amp;= T \Delta \underline{S}^{R_T} = -T\Delta\underline{S}
+\end{aligned}\]</div>
+<p>Substituting into the change in energy of the global system (with again
+<span class="math notranslate nohighlight">\(\Delta \underline{U}^{R_P} = 0\)</span> since there is no interaction with the
+work reservoir) yields:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\Delta \underline{U}^{\Sigma} &amp;= \Delta \underline{U} + \Delta\underline{U}^{R_T} + \Delta\underline{U}^{R_P} &gt; 0 \\
+&amp;= \Delta \underline{U} - T\Delta \underline{S} \\
+\therefore \Delta \underline{F} &gt; 0
+\end{aligned}\end{split}\]</div>
+<p>Hence, <em>the Helmholtz free energy is minimized for a system with
+constant <span class="math notranslate nohighlight">\(T, \underline{V}, N\)</span> at equilibrium.</em></p>
+</div>
+<div class="admonition-case-3-when-there-are-interactions-with-both-the-work-reservoir-and-thermal-reservoir-show-that-the-gibbs-free-energy-g-is-minimized-at-equilibrium admonition">
+<p class="admonition-title"><strong>Case 3</strong>: When there are interactions with both the work reservoir and thermal reservoir, show that the Gibbs free energy <span class="math notranslate nohighlight">\(G\)</span> is minimized at equilibrium.</p>
+<details><summary>Click for answer</summary>
+<p>Finally, we consider a case in which both reservoirs interact with the
+system, so the system is at constant <span class="math notranslate nohighlight">\(T, P, N\)</span>. We can combine the logic
+from the two cases above to write:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\Delta \underline{U}^{R_P} &amp;= P\Delta\underline{V} \\
+\Delta \underline{U}^{R_T} &amp;= -T\Delta\underline{S} \\
+\Delta \underline{U}^{\Sigma} &amp;= \Delta  \underline{U} + \Delta \underline{U}^{R_T} + \Delta \underline{U}^{R_P} &gt; 0 \\
+&amp;= \Delta  \underline{U} - T\Delta \underline{S} + P\Delta\underline{V}  \\
+\therefore \Delta \underline{G} &gt; 0
+\end{aligned}\end{split}\]</div>
+<p><em>The Gibbs free energy is minimized for a system with constant <span class="math notranslate nohighlight">\(T, P, N\)</span>
+at equilibrium.</em></p>
+</div>
+</section>
+<section id="relationship-between-partial-derivatives">
+<h2>Relationship between partial derivatives<a class="headerlink" href="#relationship-between-partial-derivatives" title="Permalink to this headline">#</a></h2>
+<p>The introduction of new thermodynamic potentials gives rise to a series
+of new partial derivatives that tend to appear in thermodynamic
+relationships.</p>
+<p>Remember, we can relate known thermodynamic variables to
+the exact differentials of thermodynamic potentials
+with respect to their natural variables.
+In other cases, we might also define an exact differential of a thermodynamic
+potential in terms of arbitrary parameters that are not the natural
+variables of the potential, in which case we need methods to relate
+partial derivatives to measurable quantities. Here, we briefly review
+several rules for helping simplify partial derivatives, as this will be
+an important aspect of solving problems when confronted with derivatives
+that are not easily measurable experimentally.</p>
+<dl class="glossary">
+<dt id="term-Inversion-of-derivatives"><a class="reference external" href="https://en.wikipedia.org/wiki/Inverse_function_rule">Inversion of derivatives</a><a class="headerlink" href="#term-Inversion-of-derivatives" title="Permalink to this term">#</a></dt><dd><div class="math notranslate nohighlight">
+\[\left ( \frac{\partial f}{\partial y}\right )_x = \left ( \frac{\partial y}{\partial f}\right )_x^{-1}\]</div>
+<p>For example:
+<span class="math notranslate nohighlight">\(\left ( \frac{\partial S}{\partial P}\right )_T = \left ( \frac{\partial P}{\partial S}\right )_T^{-1}\)</span></p>
+</dd>
+</dl>
+<dl class="glossary">
+<dt id="term-Triple-product-rule"><a class="reference external" href="https://en.wikipedia.org/wiki/Triple_product_rule">Triple product rule</a><a class="headerlink" href="#term-Triple-product-rule" title="Permalink to this term">#</a></dt><dd><div class="math notranslate nohighlight">
+\[\left ( \frac{\partial f}{\partial x}\right )_y \left ( \frac{\partial x}{\partial y}\right )_f  \left ( \frac{\partial y}{\partial f}\right )_x  = -1\]</div>
+<p>For example:
+<span class="math notranslate nohighlight">\(\left ( \frac{\partial H}{\partial T}\right )_P \left ( \frac{\partial T}{\partial P}\right )_H  \left ( \frac{\partial P}{\partial H}\right )_T  = -1\)</span></p>
+</dd>
+</dl>
+<dl class="glossary">
+<dt id="term-Chain-rule-to-add-another-variable"><a class="reference external" href="https://en.wikipedia.org/wiki/Chain_rule">Chain rule</a> to add another variable<a class="headerlink" href="#term-Chain-rule-to-add-another-variable" title="Permalink to this term">#</a></dt><dd><div class="math notranslate nohighlight">
+\[\left ( \frac{\partial f}{\partial y}\right )_x = \frac{(\partial f / \partial z )_x}{(\partial y / \partial z )_x} = \left ( \frac{\partial f}{\partial z}\right )_x \left ( \frac{\partial z}{\partial y}\right )_x\]</div>
+<p>For example:
+<span class="math notranslate nohighlight">\(\left ( \frac{\partial S}{\partial H}\right )_P = \frac{(\partial S / \partial T )_P}{(\partial H / \partial T )_P} = \frac{C_P/T}{C_P} = \frac{1}{T}\)</span></p>
+</dd>
+</dl>
+<dl class="glossary">
+<dt id="term-The-expansion-rule">The expansion rule<a class="headerlink" href="#term-The-expansion-rule" title="Permalink to this term">#</a></dt><dd><p>This rule is a bit less obvious than the others. We
+will provide an example here, and proof of this rule is provided in
+<a class="reference internal" href="../appendices/expansion.html"><span class="doc std std-doc">the appendices</span></a>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\left ( \frac{\partial f}{\partial u}\right )_{v} &amp;= \left ( \frac{\partial f}{\partial x}\right )_{y}  \left ( \frac{\partial x}{\partial u}\right )_{v} + \left ( \frac{\partial f}{\partial y}\right )_{x} \left ( \frac{\partial y}{\partial u}\right )_{v}
+\end{aligned}\]</div>
+<p>This rule is most commonly used when initially given a total derivative.
+For example:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+dS &amp;= \left ( \frac{\partial S}{\partial T} \right )_V dT  + \left ( \frac{\partial S}{\partial V} \right )_T dV \\
+\therefore \left ( \frac{\partial S}{\partial T} \right )_P &amp;= \left ( \frac{\partial S}{\partial T} \right )_V   \left ( \frac{\partial T}{\partial T} \right )_P  + \left ( \frac{\partial S}{\partial V} \right )_T \left ( \frac{\partial V}{\partial T} \right )_P \\
+&amp;= \left ( \frac{\partial S}{\partial T} \right )_V  + \left ( \frac{\partial S}{\partial V} \right )_T \left ( \frac{\partial V}{\partial T} \right )_P
+\end{aligned}\end{split}\]</div>
+<p>In this example, it may look like I differentiated both sides of the
+total derivative of <span class="math notranslate nohighlight">\(S\)</span>, but if that were so I would need to include
+extra terms due to the product rule. What I have actually done is employ
+the expansion rule with <span class="math notranslate nohighlight">\(f=S\)</span>, <span class="math notranslate nohighlight">\(x=T\)</span>, <span class="math notranslate nohighlight">\(y=V\)</span>, <span class="math notranslate nohighlight">\(u=T\)</span>, and <span class="math notranslate nohighlight">\(v=P\)</span>. Setting
+<span class="math notranslate nohighlight">\(x=u\)</span> removes one of the derivatives from the expression.</p>
+</dd>
+</dl>
+<dl class="glossary">
+<dt id="term-Maxwell-reciprocity">Maxwell reciprocity<a class="headerlink" href="#term-Maxwell-reciprocity" title="Permalink to this term">#</a></dt><dd><div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\left ( \frac{\partial(\partial f / \partial y )_x}{\partial x} \right )_y &amp;= \left ( \frac{\partial(\partial f / \partial x )_y}{\partial y} \right )_x \\
+f_{yx} &amp;= f_{xy}
+\end{aligned}\end{split}\]</div>
+</dd>
+</dl>
+<p>The second line illustrates alternative notation that we may use on
+occasion; the key point is that mixed second derivatives are equivalent
+regardless of the order of differentiation.</p>
+</section>
+<section id="partial-derivatives-in-thermodynamics">
+<h2>Partial derivatives in thermodynamics<a class="headerlink" href="#partial-derivatives-in-thermodynamics" title="Permalink to this headline">#</a></h2>
+<section id="maxwell-relations">
+<h3>Maxwell relations<a class="headerlink" href="#maxwell-relations" title="Permalink to this headline">#</a></h3>
+<p>This last relation - <a class="reference internal" href="#term-Maxwell-reciprocity"><span class="xref std std-term">Maxwell reciprocity</span></a> - will pop up repeatedly by
+establishing the notion of a</p>
+<dl class="glossary simple">
+<dt id="term-Maxwell-relation">Maxwell relation<a class="headerlink" href="#term-Maxwell-relation" title="Permalink to this term">#</a></dt><dd><p>equivalence in thermodynamic second derivatives established by <a class="reference internal" href="#term-Maxwell-reciprocity"><span class="xref std std-term">Maxwell reciprocity</span></a></p>
+</dd>
+</dl>
+<p>We will present an example of a <a class="reference internal" href="#term-Maxwell-relation"><span class="xref std std-term">Maxwell relation</span></a> now, and later show how this
+procedure can be generalized. First, consider an expression for the
+Gibbs free energy in differential form:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+dG &amp;= -S dT + V dP \\
+&amp;= \left ( \frac{\partial G}{\partial T}\right )_{P} dT + \left ( \frac{\partial G}{\partial P}\right )_{T} dP
+\end{aligned}\end{split}\]</div>
+<p>We can now take derivatives of <span class="math notranslate nohighlight">\(-S\)</span> and <span class="math notranslate nohighlight">\(V\)</span> with respect to <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(T\)</span>
+respectively, which are equivalent according to the Maxwell reciprocity
+theorem:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+-S &amp;=  \left ( \frac{\partial G}{\partial T}\right )_{P} \\
+V &amp;= \left ( \frac{\partial G}{\partial P}\right )_{T} \\
+\left ( \frac{\partial (\partial G/\partial T)_P}{\partial  P}\right )_{T} &amp;= \left ( \frac{\partial (\partial G/\partial P)_T}{\partial T}\right )_{P} \\
+\therefore -\left ( \frac{\partial S}{\partial P}\right )_{T} &amp;= \left ( \frac{\partial V}{\partial T}\right )_{P}
+\end{aligned}\end{split}\]</div>
+<p>Maxwell relations thus relate second derivatives of the fundamental
+relation to each other, which is often very useful for transforming
+derivatives into forms that are related to materials properties will be
+demonstrated in <a class="reference internal" href="../problems/ps_5/problem_set_5.html"><span class="doc std std-doc">the Problem Sets</span></a>.</p>
+<p>Shameless plug: if you want to see Maxwell relations in action, check out
+Prof. Cersonsky’s <a class="reference external" href="https://www.doi.org/10.1073/pnas.1720139115">first paper</a>.</p>
+</section>
+<section id="behavior-of-state-functions">
+<h3>Behavior of state functions<a class="headerlink" href="#behavior-of-state-functions" title="Permalink to this headline">#</a></h3>
+<p>Finally, let’s remind ourselves of relationships assocated with state
+functions, although we have already been performing these manipulations.
+We define <span class="math notranslate nohighlight">\(B\)</span> as a state function (<em>i.e.</em>, a derived or primative
+property of a system, including the energy, thermodynamic parameters,
+mechanical properties, or any parameters discussed to date excluding
+heat and work). We can write <span class="math notranslate nohighlight">\(B\)</span> as a function of three independently
+variable parameters, <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>, and <span class="math notranslate nohighlight">\(z\)</span>, as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+B = f(x,y,z)
+\end{aligned}\]</div>
+<p>Note that in the past we have largely assumed that <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>, and <span class="math notranslate nohighlight">\(z\)</span> are
+the natural variables when <span class="math notranslate nohighlight">\(B\)</span> is a thermodynamic potential (<em>i.e.</em>, the
+energy, entropy, or a free energy), but this is not necessary. The
+difference in the value of <span class="math notranslate nohighlight">\(B\)</span> can always be written as the difference
+in <span class="math notranslate nohighlight">\(f(x,y,z)\)</span> for any two stable equilibrium states:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\Delta B = B_2 - B_1 = f(x_2, y_2, z_2) - f(x_1, y_1, z_1)
+\end{aligned}\]</div>
+<p>We can also write <span class="math notranslate nohighlight">\(B\)</span> in differential form as an exact differential as a
+function of <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>, and <span class="math notranslate nohighlight">\(z\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+dB &amp;= \left ( \frac{\partial f}{\partial x}\right)_{y, z} dx + \left ( \frac{\partial f}{\partial y}\right)_{x, z} dy  + \left ( \frac{\partial f}{\partial z}\right)_{x, y} dz
+\end{aligned}\]</div>
+<p>We can then compute the change <span class="math notranslate nohighlight">\(\Delta B\)</span> <strong>along a specified path</strong> by
+integrating this exact differential. The path will stipulate the limits
+of integration for each variable as well as the values that are fixed.
+However, the actual path chosen does not affect the value of <span class="math notranslate nohighlight">\(\Delta B\)</span>
+since it is a state function, so we can integrate along any convenient
+path. For example, we could calculate the change in <span class="math notranslate nohighlight">\(B\)</span> from state 1 to
+state 2 in which we proceed to <span class="math notranslate nohighlight">\(x_2\)</span> along a constant <span class="math notranslate nohighlight">\(y_1, z_1\)</span> path,
+to <span class="math notranslate nohighlight">\(y_2\)</span> along a constant <span class="math notranslate nohighlight">\(x_2, z_1\)</span> path, then to <span class="math notranslate nohighlight">\(z_2\)</span> along a
+constant <span class="math notranslate nohighlight">\(x_2, y_2\)</span> path. The corresponding integral is then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\Delta B &amp;= \int_{x_1}^{x_2} \left ( \frac{\partial f}{\partial x}\right)_{y_1, z_1} dx + \int_{y_1}^{y_2} \left ( \frac{\partial f}{\partial y}\right)_{x_2, z_1} dy  +  \int_{z_1}^{z_2} \left ( \frac{\partial f}{\partial z}\right)_{x_2, y_2} dz
+\end{aligned}\]</div>
+<p>Note that we have to be careful about what variables are held constant,
+or more specifically where in the overall phase space each of these
+derivatives is evaluated.</p>
+</section>
+</section>
+<section id="euler-s-theorem">
+<h2>Euler’s Theorem<a class="headerlink" href="#euler-s-theorem" title="Permalink to this headline">#</a></h2>
+<p>We will now introduce Euler’s Theorem, which will be useful for
+interpreting the fundamental relation. Euler’s theorem states that if a
+function <span class="math notranslate nohighlight">\(f(a,b,x,y)\)</span> obeys the relation:</p>
+<div class="math notranslate nohighlight">
+\[f(a, b, Kx, Ky) = K^hf(a, b, x, y)\]</div>
+<p>where <span class="math notranslate nohighlight">\(K\)</span> and <span class="math notranslate nohighlight">\(h\)</span> are constants, then</p>
+<div class="math notranslate nohighlight" id="equation-eq22-17">
+<span class="eqno">(33)<a class="headerlink" href="#equation-eq22-17" title="Permalink to this equation">#</a></span>\[x \frac{\partial}{\partial x}[ f(a, b, x, y)] + y \frac{\partial}{\partial y} [f(a, b, x, y) ] = h f(a, b, x, y)\]</div>
+<p>We describe <span class="math notranslate nohighlight">\(f(a,b,x,y)\)</span> as homogeneous to degree <span class="math notranslate nohighlight">\(h\)</span> in <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>. We
+can see from this definition that <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> correspond to intensive
+variables and <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> to extensive variables using our
+thermodynamics nomenclature, in that multiplying <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> by a
+constant (i.e. the amount of material) changes the value of the function
+by the same constant without needing to change the values of <span class="math notranslate nohighlight">\(a\)</span> and
+<span class="math notranslate nohighlight">\(b\)</span>. While we have written this expression in terms of four variables,
+it can be generalized to any number of them.</p>
+<p>We can apply this relation to the fundamental relation (we will use the
+energy representation) by recognizing that the fundamental relation is
+homogeneous to degree 1 (<span class="math notranslate nohighlight">\(h=1\)</span>) with respect to extensive variables. We
+can then write:</p>
+<div class="math notranslate nohighlight">
+\[\underline{U}(K\underline{S}, K\underline{V}, KN) = K\underline{U}(\underline{S}, \underline{V}, N)\]</div>
+<p>This relation is apparent because each of the variables is extensive, so
+multiplying all of them by <span class="math notranslate nohighlight">\(K\)</span> is equivalent to multiplying the energy
+by <span class="math notranslate nohighlight">\(K\)</span>. Comparing to <a class="reference internal" href="#equation-eq22-17">(33)</a>, we have <span class="math notranslate nohighlight">\(x = \underline{S}\)</span>, <span class="math notranslate nohighlight">\(y = \underline{V}\)</span>,
+and a third extensive variable <span class="math notranslate nohighlight">\(z = N\)</span>. We can write a generalized
+version of <a class="reference internal" href="#equation-eq22-17">(33)</a> for this system:</p>
+<div class="math notranslate nohighlight" id="equation-eq3-28">
+<span class="eqno">(34)<a class="headerlink" href="#equation-eq3-28" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{aligned}
+&amp;x \frac{\partial}{\partial x}[ f(x,y,z)] + y \frac{\partial}{\partial y} [f(x,y,z) ] + z \frac{\partial}{\partial z} [f(x,y,z) ] = \nonumber \\ 
+&amp; \underline{S} \left ( \frac{\partial \underline{U}(\underline{S}, \underline{V}, N)}{\partial \underline{S}} \right )_{\underline{V}, N} +  \underline{V} \left ( \frac{\partial \underline{U}(\underline{S}, \underline{V}, N)}{\partial \underline{V}} \right )_{\underline{S}, N} +  N \left ( \frac{\partial \underline{U}(\underline{S}, \underline{V}, N)}{\partial N} \right )_{\underline{S}, \underline{V}} \\ 
+&amp;= \underline{S}T - \underline{V} P + N \mu = hf(x, y, z)  \\
+&amp;\therefore \underline{U}(\underline{S}, \underline{V}, N) = T\underline{S} - P\underline{V} + N\mu
+\end{aligned}\end{split}\]</div>
+<p>This is a useful expression for the energy; we can also derive another
+useful relation by taking the total differential of <a class="reference internal" href="#equation-eq3-28">(34)</a>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+d\underline{U} = Td\underline{S} + \underline{S} dT - Pd\underline{V} - \underline{V}dP + Nd\mu + \mu dN
+\end{aligned}\]</div>
+<p>We can compare this with the combined first and second law for an open
+system:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+d\underline{U} = Td\underline{S} - Pd\underline{V} + \mu dN
+\end{aligned}\]</div>
+<p>Equating these expressions leads to the</p>
+<dl class="glossary">
+<dt id="term-Gibbs-Duhem-equation"><a class="reference external" href="https://en.wikipedia.org/wiki/Gibbs%E2%80%93Duhem_equation">Gibbs-Duhem equation</a><a class="headerlink" href="#term-Gibbs-Duhem-equation" title="Permalink to this term">#</a></dt><dd><div class="math notranslate nohighlight">
+\[\underline{S}dT - \underline{V}dP + Nd\mu = 0\]</div>
+</dd>
+</dl>
+<p>The <a class="reference internal" href="#term-Gibbs-Duhem-equation"><span class="xref std std-term">Gibbs-Duhem equation</span></a> will be used
+extensively in our study of multiphase systems in a generalized form.
+The importance of this relation is that it places a constraint on <span class="math notranslate nohighlight">\(T\)</span>,
+<span class="math notranslate nohighlight">\(P\)</span>, and <span class="math notranslate nohighlight">\(\mu\)</span> such that they cannot all be independently variable;
+indeed, in general if we have a multicomponent system with <span class="math notranslate nohighlight">\(n+2\)</span>
+(always) intensive variables, we can also express any one intensive
+variable in terms of the other <span class="math notranslate nohighlight">\(n+1\)</span> intensive variables using this
+relation.</p>
+<div class="admonition-show-that-the-enthalpy-h-t-underline-s-mu-n admonition">
+<p class="admonition-title">Show that the enthalpy <span class="math notranslate nohighlight">\(H = T\underline{S} + \mu N\)</span>.</p>
+<details><summary>Click for answer</summary>
+<p>First, we define the enthalpy as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+d\underline{H} &amp;= Td\underline{S} + \underline{V} dP + \mu dN \\
+\underline{H} &amp;= \underline{H}(\underline{S}, P, N)\\
+\underline{H}(K\underline{S}, P, KN) &amp;= K\underline{H}(\underline{S}, P, N)
+\end{aligned}\end{split}\]</div>
+<p>For the enthalpy, since <span class="math notranslate nohighlight">\(P\)</span> is an intensive variable, multiplying it by
+a factor of <span class="math notranslate nohighlight">\(K\)</span> leaves it unchanged; therefore we associate <span class="math notranslate nohighlight">\(a = P\)</span>,
+<span class="math notranslate nohighlight">\(x = \underline{S}\)</span>, and <span class="math notranslate nohighlight">\(y=N\)</span> to get from <a class="reference internal" href="#equation-eq22-17">(33)</a>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+hf(a, x, y) &amp;= x \frac{\partial}{\partial x}[ f(a, x, y)] + y \frac{\partial}{\partial y} [f(a, x, y) ] \\
+\underline{H} &amp;= \left ( \frac{\partial \underline{H}}{\partial{S}}\right )_{P, N}  \underline{S} + \left ( \frac{\partial \underline{H}}{\partial{N}}\right )_{P, \underline{S}}  N \\
+&amp;= T\underline{S} + \mu N
+\end{aligned}\end{split}\]</div>
+</div>
+<div class="admonition-show-that-the-gibbs-free-energy-g-mu-n admonition">
+<p class="admonition-title">Show that the Gibbs free energy <span class="math notranslate nohighlight">\(G = \mu N\)</span>.</p>
+<details><summary>Click for answer</summary>
+As a last example, we consider the Gibbs free energy:
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+d\underline{G} &amp;= -\underline{S} dT + \underline{V} dP + \mu dN \\
+\underline{G} &amp;= \underline{G}(T, P, N)\\
+\underline{G}(T, P, KN) &amp;= K\underline{G}(T, P, N)
+\end{aligned}\end{split}\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(a=T\)</span>, <span class="math notranslate nohighlight">\(b=P\)</span>, and <span class="math notranslate nohighlight">\(x=N\)</span>, leading to:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+hf(a, b, x) &amp;= x\frac{\partial}{\partial x}[ f(a, b, x)] \\
+\underline{G} &amp;= \left ( \frac{\partial \underline{G}}{\partial{N}}\right )_{T, P}  N \\
+&amp;= \mu N
+\end{aligned}\end{split}\]</div>
+<p>This last equation is a useful one that we will return to in later
+lectures. Note that we could obtain the same expression by performing a
+Legendre transform of the internal energy to obtain
+<span class="math notranslate nohighlight">\(\underline{G} = U - T\underline{S} + P\underline{V}\)</span> and substituting
+in the Euler integrated form of the internal energy, thus showing
+consistency between our different derivations.</p>
+</details>
+</div>
+<p>These expressions can all
+be generalized for other combinations of intensive and extensive
+variables accordingly.</p>
+</section>
+<section id="link-to-shared-notes">
+<h2><a class="reference external" href="https://docs.google.com/document/d/11xY8-7LTLMbCZU4rzvCepOqwdzWhxohc/edit?usp=share_link&amp;ouid=113272049620170441297&amp;rtpof=true&amp;sd=true">Link to Shared Notes</a><a class="headerlink" href="#link-to-shared-notes" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lecture_files"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Lecture20.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Legendre transforms</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../problems/ps_1/problem_set_1.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Problem Set 1 (Due Wednesday, September 20, 2023)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-readings-for-the-enthusiast">Additional Readings for the Enthusiast</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-for-today-s-lecture">Goals for Today’s Lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#behavior-of-new-thermodynamic-potentials-at-equilibrium">Behavior of new thermodynamic potentials at equilibrium</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relationship-between-partial-derivatives">Relationship between partial derivatives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-derivatives-in-thermodynamics">Partial derivatives in thermodynamics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maxwell-relations">Maxwell relations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#behavior-of-state-functions">Behavior of state functions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#euler-s-theorem">Euler’s Theorem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#link-to-shared-notes">Link to Shared Notes</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Reid van Lehn, Matt Gebbie, Rose K. Cersonsky
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
