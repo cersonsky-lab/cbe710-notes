@@ -164,7 +164,7 @@ vector, $\textbf{r}^N$, which contains the positions of all $N$
 particles; in three-dimensions, this is then a vector with $3N$
 coordinates, and integrating over all possible positions is equivalent
 to integrating over a 3N-dimensional volume $V^N$ which we call the
-*volume of phase space* accessible to the $N$ particles[^1].
+*volume of phase space* accessible to the $N$ particles.
 
 With this new notation, the ensemble average in the classical canonical
 ensemble (with $NVT$ fixed) is given as:
@@ -358,9 +358,5 @@ vast majority of configurations not contributing to the average,
 inhibiting an accurate calculation. Instead, we would like to perform
 **importance sampling**, by only examining configurations with finite
 contributions to the ensemble average.
-
-[^1]: Often this partition function is written with a normalizing prefactor with units of
-1/volume$^N$ to ensure that the partition function is unitless; we omit
-this prefactor here.
 
 ## [Link to Shared Notes](https://docs.google.com/document/d/1RMdd6sLOoR0m7yjreIfVE3SQp3Ib6X77/edit?usp=drive_link&ouid=113272049620170441297&rtpof=true&sd=true)
