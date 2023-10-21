@@ -370,16 +370,20 @@ derivatives is evaluated.
 ## Euler's Theorem
 
 We will now introduce Euler's Theorem, which will be useful for
-interpreting the fundamental relation. Euler's theorem states that if a
-function $f(a,b,x,y)$ obeys the relation:
+interpreting the fundamental relation.
 
-$$f(a, b, Kx, Ky) = K^hf(a, b, x, y)$$
+```{glossary}
+Euler's theorem
+    if a function $f(a,b,x,y)$ obeys the relation:
 
-where $K$ and $h$ are constants, then
+    $$f(a, b, Kx, Ky) = K^hf(a, b, x, y),$$
 
-```{math}
-:label: eq22.17
-x \frac{\partial}{\partial x}[ f(a, b, x, y)] + y \frac{\partial}{\partial y} [f(a, b, x, y) ] = h f(a, b, x, y)
+    where $K$ and $h$ are constants, then
+
+    ```{math}
+    :label: eq22.17
+    x \frac{\partial}{\partial x}[ f(a, b, x, y)] + y \frac{\partial}{\partial y} [f(a, b, x, y) ] = h f(a, b, x, y)
+    ```
 ```
 
 We describe $f(a,b,x,y)$ as homogeneous to degree $h$ in $x$ and $y$. We

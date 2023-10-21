@@ -16,6 +16,12 @@ parts:
         - file: lecture_files/Lecture8A
         - file: lecture_files/Lecture8B
         - file: lecture_files/Lecture9A
+  - caption: Statistical Mechanics Problem Sets 
+    chapters:
+        - file: problems/ps_1/problem_set_1
+        - file: problems/ps_2/problem_set_2
+        - file: problems/ps_3/problem_set_3
+        - file: problems/exam_1_practice
   - caption: Molecular Simulation
     chapters:
         - file: lecture_files/Lecture9B
@@ -27,6 +33,9 @@ parts:
         - file: lecture_files/Lecture14A
         - file: lecture_files/Lecture14B
         - file: lecture_files/Lecture15
+  - caption: Molecular Simulation Project 
+    chapters:
+        - file: problems/simulation_project
   - caption: Thermodynamics
     chapters:
         - file: lecture_files/Lecture16
@@ -35,25 +44,20 @@ parts:
         - file: lecture_files/Lecture19
         - file: lecture_files/Lecture20
         - file: lecture_files/Lecture21
-#         - file: lecture_files/Lecture22
+        - file: lecture_files/Lecture22
 #         - file: lecture_files/Lecture23
 #         - file: lecture_files/Lecture24
 #         - file: lecture_files/Lecture25
 #         - file: lecture_files/Lecture26
-  - caption: Problem Sets 
+  - caption: Thermodynamics Problem Sets 
     chapters:
-        - file: problems/ps_1/problem_set_1
-        - file: problems/ps_2/problem_set_2
-        - file: problems/ps_3/problem_set_3
-        - file: problems/exam_1_practice
-        - file: problems/simulation_project
         - file: problems/ps_4/problem_set_4
         - file: problems/ps_5/problem_set_5
 #         - file: problems/ps_6/problem_set_6
   - caption: Appendices
     chapters:
       - file: appendices/notation
-      - file: appendices/euler 
-      - file: appendices/expansion 
       - file: appendices/thermo_pot 
+      - file: appendices/expansion 
+      - file: appendices/euler 
       - file: appendices/references
