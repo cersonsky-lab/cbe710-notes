@@ -25,6 +25,7 @@ stated in various ways (and their numbering scheme may vary as well) -
 we follow the postulates as defined in {cite:ts}`tester_thermodynamics_1997`.
 
 ### Postulate 0
+
 ```{glossary}
 
 Postulate 0
@@ -34,6 +35,7 @@ Postulate 0
 ```
 
 ### Postulate 1: Equilibrium States
+
 ```{glossary}
 
 Postulate 1
@@ -48,9 +50,8 @@ First, let's unpack some definitions here:
 ```{glossary}
 
 simple system
-    have no internal boundaries of any kind and are
-    not acted on by external or inertial forces
-    
+    have no internal boundaries of any kind and are not acted on by external or inertial forces
+
 restraint
     is a condition on a system that prevents a change to
     that system from happening. Boundaries that are rigid, adiabatic,
@@ -111,6 +112,7 @@ relationships as we proceed.
 
 
 ### Postulate 2
+
 ```{glossary}
 
 Postulate 2
@@ -148,7 +150,7 @@ subsystems.
 Since Postulate 1 and 2 together introduce the concept of stable
 equilibrium states that are reached after the time-evolution of a
 system, we now must introduce the concept of a thermodynamic
-**process**.
+{term}`process`.
 
 ```{glossary}
 
@@ -188,6 +190,7 @@ isothermal process is one in which the temperature is constant.
 
 
 ### Postulate 3
+
 ```{glossary}
 
 Postulate 3
