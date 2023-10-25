@@ -1,0 +1,806 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Fugacity &#8212; Advanced Thermodynamics for Chemical Engineers</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/defs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture_files/Lecture24';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Additional Glossary" href="../appendices/notation.html" />
+    <link rel="prev" title="Phase diagrams" href="Lecture23.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Advanced Thermodynamics for Chemical Engineers</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Class introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Before we get started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Lecture1A.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture1B.html">Review of thermodynamics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Mechanics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Lecture2.html">Postulates of statistical mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture3.html">Application of the microcanonical ensemble: two-state system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture4.html">The canonical ensemble</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture5.html">Generalized ensembles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture6.html">The ideal gas partition function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture7.html">Application of independent subsystems: the Langmuir isotherm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture8A.html">The Ising model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture8B.html">Mean-field theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture9A.html">Fluctuations and thermodynamic response functions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Mechanics Problem Sets</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../problems/ps_1/problem_set_1.html">Problem Set 1 (Due Wednesday, September 20, 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/ps_2/problem_set_2.html">Problem Set 2 (Due Wednesday, September 27, 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/ps_3/problem_set_3.html">Problem Set 3 (Due Monday, October 9, 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/exam_1_practice.html">Practice Problems for Unit Exam</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Molecular Simulation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Lecture9B.html">An introduction to molecular simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture10.html">Monte Carlo simulations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture11.html">Nuances of stochastic sampling in statistical ensembles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture12A.html">Molecular dynamics simulations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture12B.html">Temperature and velocities in MD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture13.html">Distribution of particles in states of matter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture14A.html">The potential of mean force</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture14B.html">Umbrella Sampling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture15.html">Free energy perturbation and thermodynamic integration</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Molecular Simulation Project</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../problems/simulation_project.html">Simulation Project (Due Monday, November 6, 2023)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Lecture16.html">Postulates of thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture17.html">Heat engines and possible processes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture18.html">The Carnot Cycle and the Theorem of Clausius</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture19.html">The fundamental relation of thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture20.html">Legendre transforms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture21.html">Conditions of equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture22.html">Equilibrium in single-component systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture23.html">Phase diagrams</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Fugacity</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../appendices/notation.html">Additional Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices/thermo_pot.html">Summary of thermodynamic potentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices/expansion.html">Derivation of expansion rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices/euler.html">Derivation of Euler integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices/references.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/lecture_files/Lecture24.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Fugacity</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-readings-for-the-enthusiast">Additional Readings for the Enthusiast</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#single-component-phase-equilibrium-defining-fugacity">Single-component phase equilibrium: defining fugacity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-the-fugacity">Calculating the fugacity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-mixtures-partial-molar-properties">Introduction to mixtures: partial molar properties</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="fugacity">
+<h1>Fugacity<a class="headerlink" href="#fugacity" title="Permalink to this headline">#</a></h1>
+<section id="additional-readings-for-the-enthusiast">
+<h2>Additional Readings for the Enthusiast<a class="headerlink" href="#additional-readings-for-the-enthusiast" title="Permalink to this headline">#</a></h2>
+<p><span id="id1">Tester and Modell [<a class="reference internal" href="../appendices/references.html#id4" title="Jefferson W. Tester and Michael Modell. Thermodynamics and its applications. Prentice-Hall international series in the physical and chemical engineering sciences. Prentice Hall PTR, Upper Saddle River, N.J, 3rd ed edition, 1997. ISBN 978-0-13-915356-3. URL: https://www.eng.uc.edu/~beaucag/Classes/ChEThermoBeaucage/Books/Jefferson%20W.%20Tester,%20Michael%20Modell%20-%20Thermodynamics%20and%20Its%20Applications-Prentice%20Hall%20(1997).pdf.">4</a>]</span>, Ch. 8.5, 9.7, 9.1, 9.2</p>
+</section>
+<section id="single-component-phase-equilibrium-defining-fugacity">
+<h2>Single-component phase equilibrium: defining fugacity<a class="headerlink" href="#single-component-phase-equilibrium-defining-fugacity" title="Permalink to this headline">#</a></h2>
+<p>We have now described departures from ideality with respect to the <span class="math notranslate nohighlight">\(PVT\)</span>
+behavior of systems by defining the <a class="reference internal" href="Lecture23.html#term-compressibility-factor"><span class="xref std std-term">compressibility factor</span></a>, <span class="math notranslate nohighlight">\(Z = PV/RT\)</span>,
+and deriving the general form for a departure function. In principle, we
+now have the framework necessary to compute the chemical potential and
+thus determine conditions of phase equilibrium. Recall that for a
+single-component system, phase equilibrium is reached at constant
+temperature and pressure if the following condition is met:</p>
+<div class="math notranslate nohighlight">
+\[\mu^{(1)}(T,P) = \mu^{(2)}(T,P)\]</div>
+<p>where <span class="math notranslate nohighlight">\((1)\)</span> and <span class="math notranslate nohighlight">\((2)\)</span> refer to the two phases that coexist in the
+system. We can relate the chemical potential to the temperature and
+pressure via the <a class="reference internal" href="Lecture21.html#term-Gibbs-Duhem-equation"><span class="xref std std-term">Gibbs-Duhem equation</span></a> in intensive form:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+d\mu &amp;= - SdT + VdP \\
+\therefore \mu &amp;= f_1(T,P)
+\end{aligned}\end{split}\]</div>
+<p>We now want to calculate values of <span class="math notranslate nohighlight">\(\mu\)</span> at phase equilibrium, and will
+consider vapor-liquid equilibrium in a single-component system as a
+representative example. To calculate <span class="math notranslate nohighlight">\(\mu\)</span> in either the liquid or vapor
+phase, we can integrate the <a class="reference internal" href="Lecture21.html#term-Gibbs-Duhem-equation"><span class="xref std std-term">Gibbs-Duhem equation</span></a> from a reference state
+to the chemical potential of interest. As in our discussion of departure
+functions, a common choice of reference state is an ideal gas state at
+the same temperature, <span class="math notranslate nohighlight">\(T\)</span>, as the system at phase equilibrium. This
+reference state is convenient because we can obtain the value of the
+chemical potential for any given temperature at constant pressure for an
+ideal gas if we know the temperature dependence of <span class="math notranslate nohighlight">\(C_P^0\)</span> (with the
+<span class="math notranslate nohighlight">\(^0\)</span> indicating the ideal gas state as above); this follows from the
+relationship between the entropy and the heat capacity derived in the
+last two lectures. To obtain the chemical potential for any given <span class="math notranslate nohighlight">\(T\)</span>
+and <span class="math notranslate nohighlight">\(P\)</span> we can thus integrate the Gibbs-Duhem equation at constant
+temperature <span class="math notranslate nohighlight">\(T\)</span> from <span class="math notranslate nohighlight">\(P^{\textrm{ref}}\)</span> to <span class="math notranslate nohighlight">\(P\)</span>, yielding:</p>
+<div class="math notranslate nohighlight">
+\[\mu(T, P) - \mu(T, P^{\textrm{ref}})  = \int_{P^{\textrm{ref}}}^{P} V dP\]</div>
+<p>This integral is straightforward if we know the <span class="math notranslate nohighlight">\(PVT\)</span> behavior of the
+system either through tabulated compressibility factors or equations of
+state. Again, note that we only have the <span class="math notranslate nohighlight">\(dP\)</span> term because we are
+assuming a isothermal path between a reference state at the same
+temperature. However, there is an issue associated with this calculation
+when using an ideal gas reference state that may not be obvious. For
+example, consider the pressure variation of the chemical potential over
+a range of pressures in which the system acts like an ideal gas, so that
+we can substitute in the ideal gas equation of state for the molar
+volume to obtain:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\mu^0(T, P) - \mu^0(T, P^{\textrm{ref}})  &amp;= \int_{P^{\textrm{ref}}}^{P} \frac{RT}{P} dP \\
+&amp;= RT \int_{P^{\textrm{ref}}}^{P} \frac{1}{P} dP \\
+&amp;= RT \ln\left(\frac{P}{P^{\textrm{ref}}}\right)
+\end{aligned}\end{split}\]</div>
+<p>This last expression illustrates the issue - the system will behave like
+an ideal gas as <span class="math notranslate nohighlight">\(P^\textrm{ref} \rightarrow 0\)</span>, but the chemical
+potential will approach negative infinity in the same limit. This issue,
+which also appeared in our treatment of departure functions, motivates
+the definition of a new quantity, the <strong>fugacity</strong>, which is better
+behaved.</p>
+<p>We define the fugacity in terms of the isothermal departure function of
+the molar Gibbs free energy (or, equivalently, chemical potential):</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+G(T,P) - G^0(T,P) = \mu(T,P) - \mu^0(T,P) \equiv RT \ln \frac{f}{P}
+\end{aligned}\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(f\)</span> is the fugacity and is a function of temperature and pressure.
+<span class="math notranslate nohighlight">\(G^0\)</span> is the molar Gibbs free energy of the ideal gas reference state.
+The fugacity has units of pressure, and by inspection of this definition
+we see that <span class="math notranslate nohighlight">\(f=P\)</span> if the system is an ideal gas, <span class="math notranslate nohighlight">\(f&gt;P\)</span> if the system has
+repulsive interactions between its molecules that would lead to an
+increase in the chemical potential, and <span class="math notranslate nohighlight">\(f&lt;P\)</span> if the system has
+attractive interactions that would lead to a decrease in the chemical
+potential. Because <span class="math notranslate nohighlight">\(f=P\)</span> and therefore <span class="math notranslate nohighlight">\(\mu(T,P) = \mu^0(T,P)\)</span> for an
+ideal gas, we can also think of the fugacity as <strong>the pressure of an
+ideal gas that has the same chemical potential as the real fluid of
+interest at the same temperature</strong>. Thus, the fugacity effectively
+captures departures of the pressure from ideality. We can also write the
+fugacity in differential form as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+d \ln(f) = \frac{d\mu}{RT}
+\end{aligned}\]</div>
+<p>Finally, we can also define a related, unitless quantity, the <strong>fugacity
+coefficient</strong>, as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\phi \equiv \frac{f}{P}
+\end{aligned}\]</div>
+<p>Returning to the condition of phase equilibrium, if two phases (e.g.,
+the liquid and vapor phases of a pure component) are in equilibrium,
+then the chemical potentials are equal, leading to:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\mu^{\textrm{liq}}(T,P) &amp;= \mu^{\textrm{vap}}(T,P) \\
+\mu^{\textrm{liq}} - \mu^0(T,P) &amp;=  \mu^{\textrm{vap}}(T,P)- \mu^0(T,P) \\
+RT \ln \frac{f^{\textrm{liq}}}{P} &amp;= RT \ln \frac{f^{\textrm{vap}}}{P}\\
+%\frac{\mu^{\textrm{liq}} - \mu^{\textrm{vap}}}{RT} &amp;= \ln \left ( \frac{f^{\textrm{liq}}}{f^{\textrm{vap}}}\right ) = 0 \\
+\therefore f^{\textrm{liq}} &amp;= f^{\textrm{vap}} \\
+\therefore \phi^\textrm{liq} &amp;= \phi^\textrm{vap}
+\end{aligned}\end{split}\]</div>
+<p>Since the ideal gas reference state is the same for both phases, the
+reference state chemical potentials ,<span class="math notranslate nohighlight">\(\mu^0(T,P\)</span>), can be subtracted
+from each phase’s chemical potential and we find that fugacities are
+equal between two phases at equilibrium. We also establish the
+equivalence of fugacity coefficients since pressures are equal at
+equilibrium. Summarizing, the fugacity has the following properties:</p>
+<ul class="simple">
+<li><p>For an ideal gas, <span class="math notranslate nohighlight">\(f = P\)</span>.</p></li>
+<li><p>For a gas with repulsive intermolecular interactions, <span class="math notranslate nohighlight">\(f &gt; P\)</span>.</p></li>
+<li><p>For a gas with attractive intermolecular interactions, <span class="math notranslate nohighlight">\(f &lt; P\)</span>.</p></li>
+<li><p>Since the fugacity is monotonically related to the chemical
+potential, at constant <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(P\)</span> the phase with a lower fugacity
+will be present at equilibrium.</p></li>
+<li><p>At phase equilibrium, <span class="math notranslate nohighlight">\(f^{(1)} = f^{(2)}\)</span> and
+<span class="math notranslate nohighlight">\(\phi^{(1)} = \phi^{(2)}\)</span>.</p></li>
+</ul>
+</section>
+<section id="calculating-the-fugacity">
+<h2>Calculating the fugacity<a class="headerlink" href="#calculating-the-fugacity" title="Permalink to this headline">#</a></h2>
+<p>Next, let’s consider how to calculate the fugacity as a function of the
+pressure in analogy to what was discussed above for the chemical
+potential. Our eventual goal is to try to identify a single pressure,
+the saturation pressure, for which the fugacities of the liquid and
+vapor phases of a material are equal, which would then satisfy the
+condition of phase equilibrium. First, we can write from the definition:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\left ( \frac{\partial \ln f}{\partial P} \right )_{T} &amp;= \frac{1}{RT}\left ( \frac{\partial \mu}{\partial P} \right )_{T} 
+\end{aligned}\]</div>
+<p>The intensive form of the Gibbs-Duhem relation is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+d\mu &amp;= -S dT + V dP \\
+\therefore \left ( \frac{\partial \mu}{\partial P} \right )_{T} &amp;= V \\
+\left ( \frac{\partial \ln f}{\partial P} \right )_{T, N} &amp;=  \frac{V}{RT} \\
+\ln \left [ \frac{f(P)}{f(P^{\textrm{ref}})} \right ] &amp;= \frac{1}{RT} \int_{P^{\textrm{ref}}}^P V dP
+\end{aligned}\end{split}\]</div>
+<p>Note that this integral is performed at constant <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(N\)</span>. We thus
+obtain a similar expression as was originally developed for the chemical
+potential in terms of an ideal gas. If our reference state is defined
+such that the molar volume <span class="math notranslate nohighlight">\(V\)</span> is not a strong function of pressure,
+then we can directly integrate this expression. For example, if we
+consider a change in the fugacity of a condensed state (i.e., a liquid),
+then the molar volume is largely invariant with respect to pressure
+since most liquids/solids are incompressible. In this case, a reasonable
+reference pressure is the saturation pressure, <span class="math notranslate nohighlight">\(P^{\textrm{sat}}\)</span>, where
+the vapor fugacity is equal to the liquid fugacity, and we integrate to
+the pressure of interest at constant volume and temperature:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+f^{\textrm{liq}}(P) = f^{\textrm{sat}}(P^{\textrm{sat}}) \exp\left [ \frac{V^{\textrm{liq}}(P-P^{\textrm{sat}})}{RT} \right ]
+\end{aligned}\]</div>
+<p>The exponential term is called the <strong>Poynting correction</strong> and accounts
+for the change in the fugacity associated with pressures that are higher
+than the saturation pressure. Recall that compressibility factors for
+liquids are often quite small (<span class="math notranslate nohighlight">\(Z\approx 0.01 - 0.3\)</span>) and the term in
+the exponential is equivalent to the difference in the compressibility
+factor of the liquid at a pressure <span class="math notranslate nohighlight">\(P\)</span> relative to the saturation
+pressure. Therefore, the term in the exponential is also typically
+<span class="math notranslate nohighlight">\(\approx 0\)</span> and the Poynting correction is typically close to 1 unless
+the pressure is significantly larger than the saturation pressure,
+allowing the correct to be safely neglected.</p>
+<p><img alt="image" src="../_images/fig_24_1.png" />{width=”86%”}</p>
+<p>The prior framework is useful for computing liquid-phase fugacities, but
+is not particularly helpful in determining conditions of phase
+equilibrium because it presupposes that we know the saturation pressure,
+which is exactly the quantity that we seek to determine. Moreover, we
+cannot use the Poynting approach for vapor phases because in general the
+vapor-phase volume will be a strong function of pressure. Instead, we
+can return to our definition of the fugacity coefficient as equal to the
+isothermal Gibbs departure function and use this to calculate fugacities
+directly from tabulated or analytical compressibility factors (or
+equations of state). First, recall the expression for the isothermal
+Gibbs departure function:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+G(T,P) - G^0(T,P) &amp;= RT \ln \phi = RT \int_0^P (Z-1)\frac{dP}{P} \\ 
+\therefore \ln \phi &amp;= \int_0^P (Z-1)\frac{dP}{P}
+\end{aligned}\end{split}\]</div>
+<p>In principle we can integrate this expression directly. A problem,
+however, is that <span class="math notranslate nohighlight">\(Z(P)\)</span> is generally a poorly behaved function for real
+gases at phase coexistence, since many gas equations of state are cubic
+with respect to volume and thus would be multivalued for a given value
+of <span class="math notranslate nohighlight">\(P\)</span> corresponding to volumes of different phases. For example, the
+van der Waals equation of state is:</p>
+<div class="math notranslate nohighlight">
+\[P = \frac{RT}{V-b} - \frac{a}{V^2}\]</div>
+<p><span class="math notranslate nohighlight">\(b\)</span> represents excluded molecular volume and <span class="math notranslate nohighlight">\(a\)</span> measures the attraction
+between molecules. This expression is cubic in <span class="math notranslate nohighlight">\(V\)</span> and when plotted
+would have pressures that correspond to multiple different volumes as
+expected for any equation of state that can describe phase equilibrium.
+This equation of state is the simplest that properly captures two
+different molecular volumes corresponding to a vapor and liquid phase if
+plotted at constant temperature; the smaller volume corresponds to the
+liquid phase (<span class="math notranslate nohighlight">\(V^L\)</span>), while the larger corresponds to the vapor phase
+(<span class="math notranslate nohighlight">\(V^V\)</span>) in a two-phase region. Thus, <span class="math notranslate nohighlight">\(Z(P)\)</span> is not a well-defined
+function because it is multivalued for a given value of <span class="math notranslate nohighlight">\(P\)</span>, so we can
+instead use <span class="math notranslate nohighlight">\(Z(V)\)</span> to calculate the fugacity coefficient. From the
+definition of <span class="math notranslate nohighlight">\(Z\)</span>, we can write a total differential for <span class="math notranslate nohighlight">\(Z\)</span> at constant
+<span class="math notranslate nohighlight">\(T\)</span> as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+Z &amp;= PV/RT \\
+Z RT &amp;= PV \\
+RT dZ &amp;= V dP + P dV \\
+\frac{dP}{P} &amp;=  \left (\frac{RT}{PV}\right ) dZ - \frac{dV}{V} \\
+&amp;= \frac{dZ}{Z} - \frac{dV}{V}
+\end{aligned}\end{split}\]</div>
+<p>Substituting this expression into the fugacity coefficient expression
+gives:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\ln \phi &amp;= \int_0^P \left ( Z - 1\right ) \left ( \frac{dP}{P} \right ) \\
+&amp;= \int_1^Z \left ( Z - 1\right ) \left ( \frac{dZ}{Z} \right ) - \int_\infty^V \left ( Z - 1\right ) \left ( \frac{dV}{V} \right ) \\
+&amp;= \int_1^Z dZ - \int_1^Z \frac{dZ}{Z}  - \int_\infty^V \left ( Z - 1\right ) \left ( \frac{dV}{V} \right )  \\
+&amp;= Z -1 - \ln Z + \int^\infty_V \left ( \frac{ Z - 1}{V}\right )dV
+\end{aligned}\end{split}\]</div>
+<p>Note that we have chosen appropriate limits of integration for each
+integral to reflect an ideal gas reference state - at <span class="math notranslate nohighlight">\(P = 0\)</span>, <span class="math notranslate nohighlight">\(Z = 1\)</span>
+since that is the ideal gas state, and also at <span class="math notranslate nohighlight">\(P = 0\)</span>, <span class="math notranslate nohighlight">\(V = \infty\)</span>
+since volume and pressure are inversely related. Also, recall that all
+of these integrals are along isothermal paths (i.e., at constant <span class="math notranslate nohighlight">\(T\)</span> and
+<span class="math notranslate nohighlight">\(N\)</span>). We now have an expression in which the integral is related to
+volume, which would be appropriate for a compressibility factor given as
+<span class="math notranslate nohighlight">\(Z(V)\)</span>. From knowledge of the compressibility factor, we thus have a
+means of computing fugacities and determining the conditions of
+equilibrium - we could choose a pressure, determine the corresponding
+molar volumes of the liquid and vapor phases associated with the
+isotherm for that pressure (i.e., roots of the cubic equation of state),
+calculate the fugacity for each molar volume, and iterate until a
+pressure is found such that the fugacity corresponding to each volume is
+identical. This pressure would be the saturation pressure. A similar
+procedure could be performed using tabulated compressibility factor data
+by interpolating between known data points as needed.</p>
+</section>
+<section id="introduction-to-mixtures-partial-molar-properties">
+<h2>Introduction to mixtures: partial molar properties<a class="headerlink" href="#introduction-to-mixtures-partial-molar-properties" title="Permalink to this headline">#</a></h2>
+<p>So far, we have only calculated the fugacity of a single-component
+system at phase equilibrium. Now, we will extend our framework to
+consider mixtures. First, let’s consider some simple definitions when
+dealing with mixtures. We define <span class="math notranslate nohighlight">\(x_i\)</span> as the mole fraction of component
+<span class="math notranslate nohighlight">\(i\)</span>, such that:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+x_i &amp;\equiv \frac{N_i}{\sum_{i=1}^n N_i} \\
+&amp;= \frac{N_i}{N} \\
+\sum_{i=1}^n x_i &amp;= 1
+\end{aligned}\end{split}\]</div>
+<p>Each of the <span class="math notranslate nohighlight">\(N_i\)</span> is given in moles, and <span class="math notranslate nohighlight">\(N\)</span> is the total number of
+moles in the mixture. Note that by convention <span class="math notranslate nohighlight">\(x_i\)</span> refers to mole
+fractions in a liquid or solid phase and <span class="math notranslate nohighlight">\(y_i\)</span> refers to mole fractions
+in a vapor phase. Using <span class="math notranslate nohighlight">\(x_i\)</span> (or <span class="math notranslate nohighlight">\(y_i\)</span>) in place of <span class="math notranslate nohighlight">\(N_i\)</span> allows us to
+write an intensive form of some potential <span class="math notranslate nohighlight">\(B\)</span>; for example, the
+intensive Gibbs free energy of a multicomponent mixture is then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+G(T,P,x_1, x_2, \dots x_n)
+\end{aligned}\]</div>
+<p>We could also write two equivalent expressions for the extensive value
+of the Gibbs free energy:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\underline{G}(T,P, N_1, N_2,\dots N_n) = \underline{G}(T, P, x_1, x_2, \dots x_{n-1}, N)
+\end{aligned}\]</div>
+<p>We can determine <span class="math notranslate nohighlight">\(x_n\)</span> from the other mole fractions by the constraint
+above. Now, let us consider what happens to system properties during the
+process of mixing relative to the properties of the independent pure
+components of that mixture. In other words, the process we consider is
+taking separate single-component systems and mixing their constituents
+into a single-phase mixture with a given composition, as illustrated
+below:</p>
+<p><img alt="image" src="../_images/fig_24_2.png" />{width=”86%”}</p>
+<p>For example, consider the volume of a two-component mixture relative to
+the volume of the two initially separate pure phases. Intuitively, we
+might guess that the molar volume of a mixture would be the weighted
+average of the molar volumes of the two components. However, in general
+this will not hold for a real mixture, or in other words:</p>
+<div class="math notranslate nohighlight">
+\[V\ne x_1 V_1 + x_2 V_2\]</div>
+<p>The difference in volume will emerge from the interactions between the
+two components, which will likely differ in their attraction or
+repulsion from interactions of a given component with other molecules of
+the same type. To account for interactions between components, we can
+instead define the increment in the value of some parameter <span class="math notranslate nohighlight">\(B\)</span> for the
+entire system upon addition of a single component, <span class="math notranslate nohighlight">\(i\)</span>, which we refer
+to as a <strong>partial molar property of component i</strong>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\overline{B}_i &amp;\equiv \left(\frac{\partial \underline{B}}{\partial N_i}\right)_{T,P,N_j \ne N_i}
+\end{aligned}\]</div>
+<p>Here, the overline indicates a partial molar property of component <span class="math notranslate nohighlight">\(i\)</span>
+and the partial derivative indicates the change in the (extensive) value
+of <span class="math notranslate nohighlight">\(\underline{B}\)</span> for the mixture upon increment of component <span class="math notranslate nohighlight">\(i\)</span>, with
+the amount of each other component <span class="math notranslate nohighlight">\(j\)</span> held fixed. By definition,
+partial molar properties are defined with the temperature and pressure
+also held constant, as these are the two independent variables commonly
+associated with phase behavior. Note that all partial molar properties
+are intensive since derivative is performed with respect to the number
+of moles of a single component.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lecture_files"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Lecture23.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Phase diagrams</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../appendices/notation.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Additional Glossary</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-readings-for-the-enthusiast">Additional Readings for the Enthusiast</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#single-component-phase-equilibrium-defining-fugacity">Single-component phase equilibrium: defining fugacity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-the-fugacity">Calculating the fugacity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-mixtures-partial-molar-properties">Introduction to mixtures: partial molar properties</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Reid van Lehn, Matt Gebbie, Rose K. Cersonsky
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

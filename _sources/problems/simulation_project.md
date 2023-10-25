@@ -230,7 +230,7 @@ Simulation visualization is also recommended.
 
 <details><summary>5 points available, click for grading breakdown</summary>
 
--   Correct RDFs (zero at large r, not showing past L/2): 3 pts
+-   Correct RDFs (zero at large r, not showing to an absurd limit): 3 pts
 
 -   Compare results for three different densities: 2 pts
 </details>
