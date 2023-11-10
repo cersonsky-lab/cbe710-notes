@@ -52,7 +52,7 @@ parts:
   - caption: Thermodynamics Problem Sets 
     chapters:
         - file: problems/ps_4/problem_set_4
-#        - file: problems/ps_5/problem_set_5
+        - file: problems/ps_5/problem_set_5
 #        - file: problems/ps_6/problem_set_6
   - caption: Appendices
     chapters:

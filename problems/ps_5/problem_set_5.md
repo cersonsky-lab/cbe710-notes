@@ -19,7 +19,16 @@ performed)?
 ```
 
 ```{admonition} **(b)**
-What is the entropy change of the gas during the actual process?
+Show that the entropy change during this process is:
+
+$\Delta \underline{S} = \frac{7NR}{2} \ln \frac{2\delta W_\textrm{actual} + 5NRT_1}{2\delta W_\textrm{rev}+ 5NRT_1}$
+
+<details><summary>Hints</summary>
+
+Consider our process as two separate processes, one the reversible, adiabatic process from $T_1, P_1$ to
+$T_{rev}, P_2$, and the second the irreversible process from $T_{rev}, P_2$ to $T_2, P_2$.
+
+</details>
 ```
 
 ## Question 2: Equations of state
@@ -68,9 +77,18 @@ The heat capacity $C_P^\textrm{out}$ is measured at the pressure
 $P_\textrm{out}$ and does not depend on temperature.
 
 ```{admonition} Question
-What is the
-pressure of the gas in the duct, $P_\textrm{in}$, in terms of $a$, $b$,
-$T_H$, $T_C$, $P_\textrm{out}$, and $C_P^\textrm{out}$?
+Shown that the
+pressure of the gas in the duct, $P_\textrm{in}$, equals
+
+$P_\text{in} = P_{\textrm{out}} - \frac{C_P^{P_{\textrm{out}}}(T_h - T_C)}{b- \frac{2a}{T_H} }$
+
+<details><summary>Hints</summary>
+
+- Define the state path of enthalpy in terms of independent isothermal and isobaric paths.
+- Leverage {term}`Maxwell relation`s.
+
+</details>
+
 ```
 
 ## Question 4: Calculus of thermodynamics
