@@ -40,20 +40,22 @@ independent of temperature.
 
 ```{admonition} **(a)**
 
-Consider an ideal gas that changes between an initial state (a)
-and a final state (d) along an isothermal path. Calculate the change in
-the energy of the gas, the work done by the gas, and the heat
-transferred during the process. Define any variables you use, and
-comment on the sign of the work and the heat.
+Consider an ideal gas that changes between an arbitrary initial state $i$
+and a final state $f$ along an **isothermal** path. Show that the
+heat transferred during the process is
+
+$\delta \underline{Q} = NRT \ln \frac{\underline{V}_f}{\underline{V}_i}$
+
+by explicitly computing the change in energy of the gas and the work done by the gas.
 
 ```
 
 ```{admonition} **(b)**
 
-Show that for an ideal gas that changes between states (a) and
-(d) along an adiabatic path
+Show that for an ideal gas that changes between an arbitrary initial state $i$ and
+final state $f$ along an adiabatic path
 
-$$P_d \underline{V}_d^\gamma =  P_a\underline{V}_a^\gamma = \text{constant}$$
+$$P_i \underline{V}_i^\gamma =  P_f\underline{V}_f^\gamma = \text{constant}$$
 
 where
 
@@ -63,11 +65,13 @@ $$\gamma = \frac{C_V + R}{C_V}$$
 
 ```{admonition} **(c)**
 
-For an ideal gas that changes between states (a) and (d) along
-an adiabatic path, calculate the change in the energy of the gas, the
-work done by the gas, and the heat transferred during the process.
-Express your answers in terms of the difference in temperature between
-the two states.
+For an ideal gas that changes between an arbitrary initial state (i) and final state (f) along
+an **adiabatic** path, show that the work done by the gas is
+
+$\delta  \underline{W} = \frac{NR}{\gamma-1} \left ( T_f - T_i \right )$
+
+by explicitly computing the change in the energy of the gas
+and the heat transferred during the process.
 
 ```
 
@@ -105,47 +109,54 @@ following conditions:
 The insulation of cylinder A is temporarily removed and heat is
 transferred to cylinder A without any in-flow of gas. The adiabatic
 walls of cylinder A are then restored and the cylinders are allowed to
-equilibrate. At equilibrium, it is found that the piston has compressed
-the gas in cylinder B to a pressure of 2.0 atm. You will analyze the
+equilibrate. At equilibrium, it is found that the pressure of 
+the gas in cylinder B is 2.0 atm. You will analyze the
 state of the gases in these cylinders after this process.
 
 Hint: you may need to use relationships from Question 1.
 
 ```{admonition} **(a)**
 
-What is the final temperature of the gas in cylinder B?
+What is the final temperature of the gas in cylinder B? Round to the nearest degree.
 
 ```
 
 ```{admonition} **(b)**
-What is the final temperature of the gas in cylinder A?
+What is the final temperature of the gas in cylinder A? Round to the nearest degree.
 
 ```
 
 ```{admonition} **(c)**
 
-How much work is done on the gas in cylinder B? Express your answer in kJ.
+How much work is done on the gas in cylinder B? Express your answer to the nearest kJ.
 
 ```
 
 ```{admonition} **(d)**
 
-How much heat is added to the gas in cylinder A? Express your answer in kJ.
+How much heat is added to the gas in cylinder A? Express your answer to the nearest kJ.
 ```
 
 ## Question 3: Internal energy change of an arbitrary system
 
-For an arbitrary system, it is found that if the system changes from a
+For the following exercise, we will calculate the change in energy for
+an arbitrary system at $P_1$, $\underline{V}_1$ that we initially isochorically pressurize
+(in other words, increase the pressure
+of without changing the volume) to $P'$, then allow to equilibrate at a new volume
+$\underline{V}_2$ and pressure $P_2$. To do so, we need the following relations.
+
+When the system changes from a
 state with volume $\underline{V}_1$ and pressure $P_1$ to a state with
 volume $\underline{V}_1$ and pressure $P'$ along an isochoric (constant
 volume) path, the heat transferred to the system is:
 
 $$\begin{aligned}
-\delta \underline{Q} = A(P' - P_1)
+\delta \underline{Q} = A(P` - P_1)
 \end{aligned}$$
 
-where $A>0$ is a constant. It is also found that along any reversible,
-adiabatic path:
+where $A>0$ is a constant.
+
+Along any reversible, adiabatic path:
 
 $$\begin{aligned}
 P\underline{V}^{2} = \text{constant}
@@ -153,7 +164,7 @@ P\underline{V}^{2} = \text{constant}
 
 ```{admonition} Question
 
-Using this information, write an expression for the change in the
+Write an expression for the change in the
 internal energy given by:
 
 $$\begin{aligned}

@@ -30,7 +30,7 @@ allowed to vary.
 
 ```{glossary}
 
-canonical ensemble
+a repeat definition of the canonical ensemble
     The ensemble for which all microstates have a fixed number of particles, volume, and
     temperature. Also known as the $$NVT$$ ensemble.
 
