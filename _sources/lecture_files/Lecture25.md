@@ -1,8 +1,15 @@
 # Ideal mixtures
 
-## Additional Reading for the Enthusiast
+## Additional Readings for the Enthusiast
 
 {cite:ts}`tester_thermodynamics_1997`, Ch. 9.5-9.7, 15.5
+
+## Goals for Today's Lecture
+- Define partial molar properties and give examples
+- Define properties upon mixing and give examples
+- Differentiate enthalpy and entropy of mixing and their positivity/negativity
+- Define and compute the fugacity of mixing
+- Define and describe ideal-gas mixtures and ideal solutions, and use them to simplify calculations of equilibrium conditions
 
 ## Introduction to mixtures: partial molar properties
 
@@ -321,11 +328,17 @@ At equilibrium the pressure is the same for both phases, but we include
 $P$ on each side of this equation to emphasize the relationship between
 the fugacity coefficient of component $i$ and the corresponding
 fugacity. We use $x_i$ and $y_i$ to refer to the mole fraction of $i$ in
-the correct phase. It is critical to note that in general, the
-composition of the vapor phase and liquid phase will be different at
+the correct phase.
+
+```{admonition} Why is it necessary to differentiate $x_i$ and $y_i$?
+<details><summary>Click for answer</summary>
+
+In general, the composition of the vapor phase and liquid phase will be different at
 phase equilibrium - that is, $y_i \ne x_i$. We do not require identical
 compositions at equilibrium, only identical fugacitities for the
 corresponding components.
+</details>
+```
 
 If we imagine integrating the chemical potential along an isothermal,
 isobaric path in which a single-component system containing pure $i$ is
@@ -509,3 +522,7 @@ the effect of mixing. Since $0 < x_i < 1$, this tells us that for an
 ideal solution the chemical potential of a component is always less than
 the chemical potential of that pure component, and that this decrease in
 the chemical potential is due to the entropy of mixing.
+
+
+
+## [Link to Shared Notes](https://docs.google.com/document/d/1yuXHEl6DmO5lndSbz8vCFRb_YoOMw3lm/edit?usp=drive_link&ouid=113272049620170441297&rtpof=true&sd=true)

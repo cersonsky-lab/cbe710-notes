@@ -364,11 +364,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-reading-for-the-enthusiast">Additional Reading for the Enthusiast</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-readings-for-the-enthusiast">Additional Readings for the Enthusiast</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-for-today-s-lecture">Goals for Today’s Lecture</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-mixtures-partial-molar-properties">Introduction to mixtures: partial molar properties</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#property-changes-upon-mixing">Property changes upon mixing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fugacity-of-a-component-in-a-mixture">Fugacity of a component in a mixture</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ideal-gas-mixtures-and-ideal-solutions">Ideal-gas mixtures and ideal solutions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#link-to-shared-notes">Link to Shared Notes</a></li>
 </ul>
             </nav>
         </div>
@@ -382,9 +384,19 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="ideal-mixtures">
 <h1>Ideal mixtures<a class="headerlink" href="#ideal-mixtures" title="Permalink to this headline">#</a></h1>
-<section id="additional-reading-for-the-enthusiast">
-<h2>Additional Reading for the Enthusiast<a class="headerlink" href="#additional-reading-for-the-enthusiast" title="Permalink to this headline">#</a></h2>
+<section id="additional-readings-for-the-enthusiast">
+<h2>Additional Readings for the Enthusiast<a class="headerlink" href="#additional-readings-for-the-enthusiast" title="Permalink to this headline">#</a></h2>
 <p><span id="id1">Tester and Modell [<a class="reference internal" href="../appendices/references.html#id4" title="Jefferson W. Tester and Michael Modell. Thermodynamics and its applications. Prentice-Hall international series in the physical and chemical engineering sciences. Prentice Hall PTR, Upper Saddle River, N.J, 3rd ed edition, 1997. ISBN 978-0-13-915356-3. URL: https://www.eng.uc.edu/~beaucag/Classes/ChEThermoBeaucage/Books/Jefferson%20W.%20Tester,%20Michael%20Modell%20-%20Thermodynamics%20and%20Its%20Applications-Prentice%20Hall%20(1997).pdf.">4</a>]</span>, Ch. 9.5-9.7, 15.5</p>
+</section>
+<section id="goals-for-today-s-lecture">
+<h2>Goals for Today’s Lecture<a class="headerlink" href="#goals-for-today-s-lecture" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Define partial molar properties and give examples</p></li>
+<li><p>Define properties upon mixing and give examples</p></li>
+<li><p>Differentiate enthalpy and entropy of mixing and their positivity/negativity</p></li>
+<li><p>Define and compute the fugacity of mixing</p></li>
+<li><p>Define and describe ideal-gas mixtures and ideal solutions, and use them to simplify calculations of equilibrium conditions</p></li>
+</ul>
 </section>
 <section id="introduction-to-mixtures-partial-molar-properties">
 <h2>Introduction to mixtures: partial molar properties<a class="headerlink" href="#introduction-to-mixtures-partial-molar-properties" title="Permalink to this headline">#</a></h2>
@@ -669,11 +681,16 @@ d\mu_i &amp;= RT d\ln \hat{f}_i \\
 <span class="math notranslate nohighlight">\(P\)</span> on each side of this equation to emphasize the relationship between
 the fugacity coefficient of component <span class="math notranslate nohighlight">\(i\)</span> and the corresponding
 fugacity. We use <span class="math notranslate nohighlight">\(x_i\)</span> and <span class="math notranslate nohighlight">\(y_i\)</span> to refer to the mole fraction of <span class="math notranslate nohighlight">\(i\)</span> in
-the correct phase. It is critical to note that in general, the
-composition of the vapor phase and liquid phase will be different at
+the correct phase.</p>
+<div class="admonition-why-is-it-necessary-to-differentiate-x-i-and-y-i admonition">
+<p class="admonition-title">Why is it necessary to differentiate <span class="math notranslate nohighlight">\(x_i\)</span> and <span class="math notranslate nohighlight">\(y_i\)</span>?</p>
+<details><summary>Click for answer</summary>
+<p>In general, the composition of the vapor phase and liquid phase will be different at
 phase equilibrium - that is, <span class="math notranslate nohighlight">\(y_i \ne x_i\)</span>. We do not require identical
 compositions at equilibrium, only identical fugacitities for the
 corresponding components.</p>
+</details>
+</div>
 <p>If we imagine integrating the chemical potential along an isothermal,
 isobaric path in which a single-component system containing pure <span class="math notranslate nohighlight">\(i\)</span> is
 transformed to a mixture in which the composition of component <span class="math notranslate nohighlight">\(i\)</span> is
@@ -838,6 +855,9 @@ ideal solution the chemical potential of a component is always less than
 the chemical potential of that pure component, and that this decrease in
 the chemical potential is due to the entropy of mixing.</p>
 </section>
+<section id="link-to-shared-notes">
+<h2><a class="reference external" href="https://docs.google.com/document/d/1yuXHEl6DmO5lndSbz8vCFRb_YoOMw3lm/edit?usp=drive_link&amp;ouid=113272049620170441297&amp;rtpof=true&amp;sd=true">Link to Shared Notes</a><a class="headerlink" href="#link-to-shared-notes" title="Permalink to this headline">#</a></h2>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -907,11 +927,13 @@ the chemical potential is due to the entropy of mixing.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-reading-for-the-enthusiast">Additional Reading for the Enthusiast</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-readings-for-the-enthusiast">Additional Readings for the Enthusiast</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals-for-today-s-lecture">Goals for Today’s Lecture</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-mixtures-partial-molar-properties">Introduction to mixtures: partial molar properties</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#property-changes-upon-mixing">Property changes upon mixing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fugacity-of-a-component-in-a-mixture">Fugacity of a component in a mixture</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ideal-gas-mixtures-and-ideal-solutions">Ideal-gas mixtures and ideal solutions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#link-to-shared-notes">Link to Shared Notes</a></li>
 </ul>
   </nav></div>
 
