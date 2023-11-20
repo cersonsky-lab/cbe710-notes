@@ -4,6 +4,11 @@
 
 {cite:ts}`tester_thermodynamics_1997`, Ch. 8.5, 9.7, 9.1, 9.2
 
+## Goals for Today's Lecture
+- Why is it insufficient to calculate the chemical potential with respect to a reference state at $P=0$?
+- What is the fugacity, and what does it conceptually represent?
+- How do interactions within a system affect the fugacity?
+
 ## Single-component phase equilibrium: defining fugacity
 
 We have now described departures from ideality with respect to the $PVT$
@@ -35,6 +40,7 @@ to the chemical potential of interest.
 
 ```{admonition} What would be a good choice for our reference state?
 <details><summary>Click for answer</summary>
+
 Just as in our discussion of departure functions, we can use the ideal
 gas state at the same temperature $T$.
 </details>
@@ -55,7 +61,7 @@ This integral is straightforward if we know the $PVT$ behavior of the
 system either through tabulated compressibility factors or equations of
 state. Again, note that we only have the $dP$ term because we are
 assuming a isothermal path between a reference state at the same
-temperature.
+temperature (and hence $dT=0$).
 
 ```{admonition} What happens to $\mu(T, P) - \mu(T, P^{\textrm{ref}})$ as $P^{\textrm{ref}}\to 0$?
 <details><summary>Click for answer</summary>
@@ -342,3 +348,7 @@ pressure is found such that the fugacity corresponding to each volume is
 identical. This pressure would be the saturation pressure. A similar
 procedure could be performed using tabulated compressibility factor data
 by interpolating between known data points as needed.
+
+
+
+## [Link to Shared Notes](https://docs.google.com/document/d/1nQI-uqbcs7XYo5LneCgOuZDE-gxwqzc-/edit?usp=drive_link)

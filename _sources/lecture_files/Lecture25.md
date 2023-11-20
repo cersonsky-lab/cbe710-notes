@@ -1,6 +1,6 @@
 # Ideal mixtures
 
-## Recommended textbooks
+## Additional Reading for the Enthusiast
 
 {cite:ts}`tester_thermodynamics_1997`, Ch. 9.5-9.7, 15.5
 
