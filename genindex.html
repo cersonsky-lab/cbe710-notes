@@ -198,11 +198,14 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="lecture_files/Lecture22.html">Equilibrium in single-component systems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lecture_files/Lecture23.html">Phase diagrams</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lecture_files/Lecture24.html">Fugacity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture_files/Lecture25.html">Ideal mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lecture_files/Lecture26.html">Non-ideal mixtures</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics Problem Sets</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="problems/ps_4/problem_set_4.html">Problem Set 4 (Due Monday, November 20, 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="problems/ps_4/problem_set_4.html">Problem Set 4 (Due Wednesday, November 22, 2023)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="problems/ps_5/problem_set_5.html">Problem Set 5 (Due Wednesday, November 29, 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="problems/ps_6/problem_set_6.html">Problem Set 6 (Due Wednesday, December 6, 2023)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="nav bd-sidenav">
@@ -343,10 +346,14 @@ document.write(`
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="lecture_files/Lecture4.html#term-a-repeat-definition-of-the-canonical-ensemble"><strong>a repeat definition of the canonical ensemble</strong></a>
 </li>
-      <li><a href="lecture_files/Lecture16.html#term-adiabatic-work-interaction"><strong>adiabatic work interaction</strong></a>
+      <li><a href="lecture_files/Lecture26.html#term-activity"><strong>activity</strong></a>
+</li>
+      <li><a href="lecture_files/Lecture26.html#term-activity-coefficient"><strong>activity coefficient</strong></a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="lecture_files/Lecture16.html#term-adiabatic-work-interaction"><strong>adiabatic work interaction</strong></a>
+</li>
       <li><a href="lecture_files/Lecture1B.html#term-Adiabatic-Insulated"><strong>Adiabatic/Insulated</strong></a>
 </li>
       <li><a href="lecture_files/Lecture12B.html#term-Andersen-thermostat"><strong>Andersen thermostat</strong></a>
@@ -361,11 +368,15 @@ document.write(`
 </li>
       <li><a href="lecture_files/Lecture4.html#term-Boltzmann-factor-Boltzmann-weight"><strong>Boltzmann factor / Boltzmann weight</strong></a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="lecture_files/Lecture9B.html#term-bonded-interactions"><strong>bonded interactions</strong></a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="lecture_files/Lecture1B.html#term-boundaries"><strong>boundaries</strong></a>
+</li>
+      <li><a href="lecture_files/Lecture26.html#term-bubble-line"><strong>bubble line</strong></a>
+</li>
+      <li><a href="lecture_files/Lecture26.html#term-bubble-point"><strong>bubble point</strong></a>
 </li>
   </ul></td>
 </tr></table>
@@ -417,6 +428,8 @@ document.write(`
 </li>
       <li><a href="lecture_files/Lecture2.html#term-density-of-states"><strong>density of states</strong></a>
 </li>
+      <li><a href="lecture_files/Lecture23.html#term-departure-function"><strong>departure function</strong></a>
+</li>
       <li><a href="lecture_files/Lecture23.html#term-departure-functions"><strong>departure functions</strong></a>
 </li>
   </ul></td>
@@ -424,6 +437,8 @@ document.write(`
       <li><a href="lecture_files/Lecture16.html#term-derived-property"><strong>derived property</strong></a>
 </li>
       <li><a href="lecture_files/Lecture11.html#term-detailed-balance"><strong>detailed balance</strong></a>
+</li>
+      <li><a href="lecture_files/Lecture26.html#term-dew-line"><strong>dew line</strong></a>
 </li>
       <li><a href="lecture_files/Lecture22.html#term-dew-point"><strong>dew point</strong></a>
 </li>
@@ -465,6 +480,8 @@ document.write(`
 </li>
       <li><a href="lecture_files/Lecture16.html#term-event"><strong>event</strong></a>
 </li>
+      <li><a href="lecture_files/Lecture26.html#term-excess-property"><strong>excess property</strong></a>
+</li>
       <li><a href="lecture_files/Lecture1B.html#term-Extensive"><strong>Extensive</strong></a>
 </li>
   </ul></td>
@@ -477,11 +494,17 @@ document.write(`
 </li>
       <li><a href="lecture_files/Lecture1B.html#term-first-law-of-thermodynamics"><strong>first law of thermodynamics</strong></a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="lecture_files/Lecture22.html#term-first-order-phase-transition"><strong>first-order phase transition</strong></a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="lecture_files/Lecture15.html#term-free-energy-perturbation"><strong>free energy perturbation</strong></a>
+</li>
+      <li><a href="lecture_files/Lecture24.html#term-fugacity"><strong>fugacity</strong></a>
+</li>
+      <li><a href="lecture_files/Lecture24.html#term-fugacity-coefficient"><strong>fugacity coefficient</strong></a>
+</li>
+      <li><a href="lecture_files/Lecture25.html#term-fugacity-of-a-component-in-a-mixture"><strong>fugacity of a component in a mixture</strong></a>
 </li>
   </ul></td>
 </tr></table>
@@ -521,16 +544,20 @@ document.write(`
 <h2 id="I">I</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="lecture_files/Lecture25.html#term-ideal-solution"><strong>ideal solution</strong></a>
+</li>
+      <li><a href="lecture_files/Lecture25.html#term-ideal-gas-mixture"><strong>ideal-gas mixture</strong></a>
+</li>
       <li><a href="lecture_files/Lecture11.html#term-importance-sampling"><strong>importance sampling</strong></a>
 </li>
       <li><a href="lecture_files/Lecture3.html#term-indistinguishable"><strong>indistinguishable</strong></a>
 </li>
       <li><a href="lecture_files/Lecture1B.html#term-Intensive"><strong>Intensive</strong></a>
 </li>
-      <li><a href="lecture_files/Lecture16.html#term-interaction"><strong>interaction</strong></a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="lecture_files/Lecture16.html#term-interaction"><strong>interaction</strong></a>
+</li>
       <li><a href="lecture_files/Lecture21.html#term-Inversion-of-derivatives"><strong>Inversion of derivatives</strong></a>
 </li>
       <li><a href="lecture_files/Lecture8A.html#term-Ising-model"><strong>Ising model</strong></a>
@@ -639,6 +666,8 @@ document.write(`
 </li>
       <li><a href="lecture_files/Lecture9B.html#term-pairwise-interaction"><strong>pairwise interaction</strong></a>
 </li>
+      <li><a href="lecture_files/Lecture25.html#term-partial-molar-property"><strong>partial molar property</strong></a>
+</li>
       <li><a href="appendices/notation.html#term-partial-molar-property"><strong>partial molar property,</strong></a>
 </li>
       <li><a href="lecture_files/Lecture10.html#term-periodic-boundary-conditions"><strong>periodic boundary conditions</strong></a>
@@ -670,6 +699,8 @@ document.write(`
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="lecture_files/Lecture13.html#term-radial-distribution-function"><strong>radial distribution function</strong></a>
+</li>
+      <li><a href="lecture_files/Lecture26.html#term-Raoult-s-Law"><strong>Raoult&#39;s Law</strong></a>
 </li>
       <li><a href="lecture_files/Lecture14A.html#term-reaction-corrdinate"><strong>reaction corrdinate</strong></a>
 </li>
@@ -750,6 +781,8 @@ document.write(`
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="lecture_files/Lecture22.html#term-vapor-pressure"><strong>vapor pressure</strong></a>
+</li>
+      <li><a href="lecture_files/Lecture26.html#term-vapor-liquid-equilibrium"><strong>vapor-liquid equilibrium</strong></a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>

@@ -25,14 +25,22 @@ d\mu &= - SdT + VdP \\
 \therefore \mu &= f_1(T,P)
 \end{aligned}$$
 
-We now want to calculate values of $\mu$ at phase equilibrium, and will
-consider vapor-liquid equilibrium in a single-component system as a
-representative example. To calculate $\mu$ in either the liquid or vapor
+Therefore, in order to understand phase equilibrium, we need a procedure
+for calculating $\mu$. We'll start with vapor-liquid equilibrium in a
+single-component system, as this serves as the most straightfoward example.
+
+To calculate $\mu$ in either the liquid or vapor
 phase, we can integrate the {term}`Gibbs-Duhem equation` from a reference state
-to the chemical potential of interest. As in our discussion of departure
-functions, a common choice of reference state is an ideal gas state at
-the same temperature, $T$, as the system at phase equilibrium. This
-reference state is convenient because we can obtain the value of the
+to the chemical potential of interest.
+
+```{admonition} What would be a good choice for our reference state?
+<details><summary>Click for answer</summary>
+Just as in our discussion of departure functions, we can use the ideal
+gas state at the same temperature $T$.
+</details>
+```
+
+This reference state is convenient because we can obtain the value of the
 chemical potential for any given temperature at constant pressure for an
 ideal gas if we know the temperature dependence of $C_P^0$ (with the
 $^0$ indicating the ideal gas state as above); this follows from the
@@ -47,12 +55,12 @@ This integral is straightforward if we know the $PVT$ behavior of the
 system either through tabulated compressibility factors or equations of
 state. Again, note that we only have the $dP$ term because we are
 assuming a isothermal path between a reference state at the same
-temperature. However, there is an issue associated with this calculation
-when using an ideal gas reference state that may not be obvious. For
-example, consider the pressure variation of the chemical potential over
-a range of pressures in which the system acts like an ideal gas, so that
-we can substitute in the ideal gas equation of state for the molar
-volume to obtain:
+temperature.
+
+```{admonition} What happens to $\mu(T, P) - \mu(T, P^{\textrm{ref}})$ as $P^{\textrm{ref}}\to 0$?
+<details><summary>Click for answer</summary>
+
+Given that our reference state is an ideal gas, we can write
 
 $$\begin{aligned}
 \mu^0(T, P) - \mu^0(T, P^{\textrm{ref}})  &= \int_{P^{\textrm{ref}}}^{P} \frac{RT}{P} dP \\
@@ -60,31 +68,81 @@ $$\begin{aligned}
 &= RT \ln\left(\frac{P}{P^{\textrm{ref}}}\right)
 \end{aligned}$$
 
-This last expression illustrates the issue - the system will behave like
+This shows the system will behave like
 an ideal gas as $P^\textrm{ref} \rightarrow 0$, but the chemical
-potential will approach negative infinity in the same limit. This issue,
+potential will approach negative infinity in the same limit.
+
+</details>
+```
+
+This issue,
 which also appeared in our treatment of departure functions, motivates
-the definition of a new quantity, the **fugacity**, which is better
+the definition of a new quantity, the {term}`fugacity`, which is better
 behaved.
 
-We define the fugacity in terms of the isothermal departure function of
+We define the fugacity $f$ in terms of the isothermal {term}`departure function` of
 the molar Gibbs free energy (or, equivalently, chemical potential):
 
+```{glossary}
+fugacity
+    $$\begin{aligned}
+    f = P\exp^{\frac{G(T,P) - G^0(T,P)}{RT}} = P\exp^{\frac{\mu(T,P) - \mu^0(T,P)}{RT}}
+    \end{aligned}$$
+```
+
+such that
+
 $$\begin{aligned}
-G(T,P) - G^0(T,P) = \mu(T,P) - \mu^0(T,P) \equiv RT \ln \frac{f}{P}
+RT \ln \frac{f}{P} \equiv G(T,P) - G^0(T,P) = \mu(T,P) - \mu^0(T,P)
 \end{aligned}$$
 
 Here, $f$ is the fugacity and is a function of temperature and pressure.
 $G^0$ is the molar Gibbs free energy of the ideal gas reference state.
 The fugacity has units of pressure, and by inspection of this definition
-we see that $f=P$ if the system is an ideal gas, $f>P$ if the system has
-repulsive interactions between its molecules that would lead to an
-increase in the chemical potential, and $f<P$ if the system has
-attractive interactions that would lead to a decrease in the chemical
-potential. Because $f=P$ and therefore $\mu(T,P) = \mu^0(T,P)$ for an
-ideal gas, we can also think of the fugacity as **the pressure of an
-ideal gas that has the same chemical potential as the real fluid of
-interest at the same temperature**. Thus, the fugacity effectively
+we see that
+
+```{admonition} If the system is an ideal gas...
+<details><summary> f is less than P.</summary>
+Try again!
+</details>
+<details><summary> f is equal to P. </summary>
+
+Correct! Because $f=P$ and therefore $\mu(T,P) = \mu^0(T,P)$ for an
+ideal gas, we can also think of the fugacity as the pressure of an
+ideal gas that has the same chemical potential as
+the real fluid of interest at the same temperature.
+
+</details>
+<details><summary> f is greater than P. </summary>
+Try again!
+</details>
+```
+
+```{admonition} If the system has repulsive interactions that increase the chemical potential...
+<details><summary> f is less than P.</summary>
+Try again!
+</details>
+<details><summary> f is equal to P. </summary>
+Try again!
+</details>
+<details><summary> f is greater than P. </summary>
+Correct!
+</details>
+```
+
+```{admonition} If the system has attractive interactions that decrease the chemical potential...
+<details><summary> f is less than P.</summary>
+Correct!
+</details>
+<details><summary> f is equal to P. </summary>
+Try again!
+</details>
+<details><summary> f is greater than P. </summary>
+Try again!
+</details>
+```
+
+Thus, the fugacity effectively
 captures departures of the pressure from ideality. We can also write the
 fugacity in differential form as:
 
@@ -92,12 +150,15 @@ $$\begin{aligned}
 d \ln(f) = \frac{d\mu}{RT}
 \end{aligned}$$
 
-Finally, we can also define a related, unitless quantity, the **fugacity
-coefficient**, as:
+Finally, we can also define a related, unitless quantity, the
 
-$$\begin{aligned}
-\phi \equiv \frac{f}{P}
-\end{aligned}$$
+```{glossary}
+fugacity coefficient
+
+    $$\begin{aligned}
+    \phi \equiv \frac{f}{P}
+    \end{aligned}$$
+```
 
 Returning to the condition of phase equilibrium, if two phases (e.g.,
 the liquid and vapor phases of a pure component) are in equilibrium,
@@ -117,20 +178,24 @@ reference state chemical potentials ,$\mu^0(T,P$), can be subtracted
 from each phase's chemical potential and we find that fugacities are
 equal between two phases at equilibrium. We also establish the
 equivalence of fugacity coefficients since pressures are equal at
-equilibrium. Summarizing, the fugacity has the following properties:
+equilibrium.
 
--   For an ideal gas, $f = P$.
+Concept check:
+```{admonition} The phase with the _____ fugacity will be present at equilibrium.
+<details><summary>lower</summary>
+Correct! </details>
+<details><summary>higher</summary>
+Try again! </details>
+```
 
--   For a gas with repulsive intermolecular interactions, $f > P$.
-
--   For a gas with attractive intermolecular interactions, $f < P$.
-
--   Since the fugacity is monotonically related to the chemical
-    potential, at constant $T$ and $P$ the phase with a lower fugacity
-    will be present at equilibrium.
-
--   At phase equilibrium, $f^{(1)} = f^{(2)}$ and
-    $\phi^{(1)} = \phi^{(2)}$.
+```{admonition} At phase equilibrium, the ______ of the two phases must be equal.
+<details><summary>fugacities</summary>
+Try again! </details>
+<details><summary>fugacity coefficients</summary>
+Try again! </details>
+<details><summary>fugacities and fugacity coefficients</summary>
+Correct! </details>
+```
 
 ## Calculating the fugacity
 
@@ -151,8 +216,12 @@ $$\begin{aligned}
 d\mu &= -S dT + V dP \\
 \therefore \left ( \frac{\partial \mu}{\partial P} \right )_{T} &= V \\
 \left ( \frac{\partial \ln f}{\partial P} \right )_{T, N} &=  \frac{V}{RT} \\
-\ln \left [ \frac{f(P)}{f(P^{\textrm{ref}})} \right ] &= \frac{1}{RT} \int_{P^{\textrm{ref}}}^P V dP
 \end{aligned}$$
+
+and thus
+
+$$\ln \left [ \frac{f(P)}{f(P^{\textrm{ref}})} \right ] = \frac{1}{RT} \int_{P^{\textrm{ref}}}^P V dP$$
+
 
 Note that this integral is performed at constant $T$ and $N$. We thus
 obtain a similar expression as was originally developed for the chemical
@@ -170,7 +239,8 @@ $$\begin{aligned}
 f^{\textrm{liq}}(P) = f^{\textrm{sat}}(P^{\textrm{sat}}) \exp\left [ \frac{V^{\textrm{liq}}(P-P^{\textrm{sat}})}{RT} \right ]
 \end{aligned}$$
 
-The exponential term is called the **Poynting correction** and accounts
+The exponential term is called the [Poynting correction](https://en.wikipedia.org/wiki/Poynting_effect)
+and accounts
 for the change in the fugacity associated with pressures that are higher
 than the saturation pressure. Recall that compressibility factors for
 liquids are often quite small ($Z\approx 0.01 - 0.3$) and the term in
@@ -181,14 +251,18 @@ $\approx 0$ and the Poynting correction is typically close to 1 unless
 the pressure is significantly larger than the saturation pressure,
 allowing the correct to be safely neglected.
 
-![image](figs/fig_24_1.png){width="86%"}
-
 The prior framework is useful for computing liquid-phase fugacities, but
 is not particularly helpful in determining conditions of phase
 equilibrium because it presupposes that we know the saturation pressure,
-which is exactly the quantity that we seek to determine. Moreover, we
-cannot use the Poynting approach for vapor phases because in general the
-vapor-phase volume will be a strong function of pressure. Instead, we
+which is exactly the quantity that we seek to determine.
+
+```{admonition} Why can't we use the Poynting approach for vapor phases?
+<details><summary>Click for answer</summary>
+In vapor phases, vapor-phase volume will be a strong function of pressure.
+</details>
+```
+
+Instead, we
 can return to our definition of the fugacity coefficient as equal to the
 isothermal Gibbs departure function and use this to calculate fugacities
 directly from tabulated or analytical compressibility factors (or
@@ -196,7 +270,8 @@ equations of state). First, recall the expression for the isothermal
 Gibbs departure function:
 
 $$\begin{aligned}
-G(T,P) - G^0(T,P) &= RT \ln \phi = RT \int_0^P (Z-1)\frac{dP}{P} \\ 
+G(T,P) - G^0(T,P) &= RT \ln \phi \\
+&= RT \int_0^P (Z-1)\frac{dP}{P} \\ 
 \therefore \ln \phi &= \int_0^P (Z-1)\frac{dP}{P}
 \end{aligned}$$
 
@@ -204,22 +279,31 @@ In principle we can integrate this expression directly. A problem,
 however, is that $Z(P)$ is generally a poorly behaved function for real
 gases at phase coexistence, since many gas equations of state are cubic
 with respect to volume and thus would be multivalued for a given value
-of $P$ corresponding to volumes of different phases. For example, the
-van der Waals equation of state is:
+of $P$ corresponding to volumes of different phases.
+
+For example, the van der Waals equation of state is:
 
 $$P = \frac{RT}{V-b} - \frac{a}{V^2}$$
 
-$b$ represents excluded molecular volume and $a$ measures the attraction
-between molecules. This expression is cubic in $V$ and when plotted
-would have pressures that correspond to multiple different volumes as
-expected for any equation of state that can describe phase equilibrium.
+where
+- $b$ represents excluded molecular volume
+- $a$ measures the attraction between molecules
+
+```{admonition} Why would this formulation cause Z(P) to be poorly-defined?
+<details><summary> Click for answer</summary>
+
+This expression is cubic in $V$ and when plotted
+would have pressures that correspond to multiple different volumes.
 This equation of state is the simplest that properly captures two
 different molecular volumes corresponding to a vapor and liquid phase if
 plotted at constant temperature; the smaller volume corresponds to the
 liquid phase ($V^L$), while the larger corresponds to the vapor phase
 ($V^V$) in a two-phase region. Thus, $Z(P)$ is not a well-defined
-function because it is multivalued for a given value of $P$, so we can
-instead use $Z(V)$ to calculate the fugacity coefficient. From the
+function because it is multivalued for a given value of $P$.
+</details>
+```
+
+Thus we can instead use $Z(V)$ to calculate the fugacity coefficient. From the
 definition of $Z$, we can write a total differential for $Z$ at constant
 $T$ as:
 
@@ -258,75 +342,3 @@ pressure is found such that the fugacity corresponding to each volume is
 identical. This pressure would be the saturation pressure. A similar
 procedure could be performed using tabulated compressibility factor data
 by interpolating between known data points as needed.
-
-## Introduction to mixtures: partial molar properties
-
-So far, we have only calculated the fugacity of a single-component
-system at phase equilibrium. Now, we will extend our framework to
-consider mixtures. First, let's consider some simple definitions when
-dealing with mixtures. We define $x_i$ as the mole fraction of component
-$i$, such that:
-
-$$\begin{aligned}
-x_i &\equiv \frac{N_i}{\sum_{i=1}^n N_i} \\
-&= \frac{N_i}{N} \\
-\sum_{i=1}^n x_i &= 1
-\end{aligned}$$
-
-Each of the $N_i$ is given in moles, and $N$ is the total number of
-moles in the mixture. Note that by convention $x_i$ refers to mole
-fractions in a liquid or solid phase and $y_i$ refers to mole fractions
-in a vapor phase. Using $x_i$ (or $y_i$) in place of $N_i$ allows us to
-write an intensive form of some potential $B$; for example, the
-intensive Gibbs free energy of a multicomponent mixture is then:
-
-$$\begin{aligned}
-G(T,P,x_1, x_2, \dots x_n)
-\end{aligned}$$
-
-We could also write two equivalent expressions for the extensive value
-of the Gibbs free energy:
-
-$$\begin{aligned}
-\underline{G}(T,P, N_1, N_2,\dots N_n) = \underline{G}(T, P, x_1, x_2, \dots x_{n-1}, N)
-\end{aligned}$$
-
-We can determine $x_n$ from the other mole fractions by the constraint
-above. Now, let us consider what happens to system properties during the
-process of mixing relative to the properties of the independent pure
-components of that mixture. In other words, the process we consider is
-taking separate single-component systems and mixing their constituents
-into a single-phase mixture with a given composition, as illustrated
-below:
-
-![image](figs/fig_24_2.png){width="86%"}
-
-For example, consider the volume of a two-component mixture relative to
-the volume of the two initially separate pure phases. Intuitively, we
-might guess that the molar volume of a mixture would be the weighted
-average of the molar volumes of the two components. However, in general
-this will not hold for a real mixture, or in other words:
-
-$$V\ne x_1 V_1 + x_2 V_2$$
-
-The difference in volume will emerge from the interactions between the
-two components, which will likely differ in their attraction or
-repulsion from interactions of a given component with other molecules of
-the same type. To account for interactions between components, we can
-instead define the increment in the value of some parameter $B$ for the
-entire system upon addition of a single component, $i$, which we refer
-to as a **partial molar property of component i**:
-
-$$\begin{aligned}
-\overline{B}_i &\equiv \left(\frac{\partial \underline{B}}{\partial N_i}\right)_{T,P,N_j \ne N_i}
-\end{aligned}$$
-
-Here, the overline indicates a partial molar property of component $i$
-and the partial derivative indicates the change in the (extensive) value
-of $\underline{B}$ for the mixture upon increment of component $i$, with
-the amount of each other component $j$ held fixed. By definition,
-partial molar properties are defined with the temperature and pressure
-also held constant, as these are the two independent variables commonly
-associated with phase behavior. Note that all partial molar properties
-are intensive since derivative is performed with respect to the number
-of moles of a single component.

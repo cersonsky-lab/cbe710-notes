@@ -66,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'lecture_files/Lecture24';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Problem Set 4 (Due Monday, November 20, 2023)" href="../problems/ps_4/problem_set_4.html" />
+    <link rel="next" title="Ideal mixtures" href="Lecture25.html" />
     <link rel="prev" title="Phase diagrams" href="Lecture23.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
@@ -203,11 +203,14 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Lecture22.html">Equilibrium in single-component systems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Lecture23.html">Phase diagrams</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Fugacity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture25.html">Ideal mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture26.html">Non-ideal mixtures</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics Problem Sets</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../problems/ps_4/problem_set_4.html">Problem Set 4 (Due Monday, November 20, 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/ps_4/problem_set_4.html">Problem Set 4 (Due Wednesday, November 22, 2023)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../problems/ps_5/problem_set_5.html">Problem Set 5 (Due Wednesday, November 29, 2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/ps_6/problem_set_6.html">Problem Set 6 (Due Wednesday, December 6, 2023)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="nav bd-sidenav">
@@ -365,7 +368,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-readings-for-the-enthusiast">Additional Readings for the Enthusiast</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#single-component-phase-equilibrium-defining-fugacity">Single-component phase equilibrium: defining fugacity</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-the-fugacity">Calculating the fugacity</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-mixtures-partial-molar-properties">Introduction to mixtures: partial molar properties</a></li>
 </ul>
             </nav>
         </div>
@@ -402,14 +404,20 @@ pressure via the <a class="reference internal" href="Lecture21.html#term-Gibbs-D
 d\mu &amp;= - SdT + VdP \\
 \therefore \mu &amp;= f_1(T,P)
 \end{aligned}\end{split}\]</div>
-<p>We now want to calculate values of <span class="math notranslate nohighlight">\(\mu\)</span> at phase equilibrium, and will
-consider vapor-liquid equilibrium in a single-component system as a
-representative example. To calculate <span class="math notranslate nohighlight">\(\mu\)</span> in either the liquid or vapor
+<p>Therefore, in order to understand phase equilibrium, we need a procedure
+for calculating <span class="math notranslate nohighlight">\(\mu\)</span>. We’ll start with vapor-liquid equilibrium in a
+single-component system, as this serves as the most straightfoward example.</p>
+<p>To calculate <span class="math notranslate nohighlight">\(\mu\)</span> in either the liquid or vapor
 phase, we can integrate the <a class="reference internal" href="Lecture21.html#term-Gibbs-Duhem-equation"><span class="xref std std-term">Gibbs-Duhem equation</span></a> from a reference state
-to the chemical potential of interest. As in our discussion of departure
-functions, a common choice of reference state is an ideal gas state at
-the same temperature, <span class="math notranslate nohighlight">\(T\)</span>, as the system at phase equilibrium. This
-reference state is convenient because we can obtain the value of the
+to the chemical potential of interest.</p>
+<div class="admonition-what-would-be-a-good-choice-for-our-reference-state admonition">
+<p class="admonition-title">What would be a good choice for our reference state?</p>
+<details><summary>Click for answer</summary>
+Just as in our discussion of departure functions, we can use the ideal
+gas state at the same temperature $T$.
+</details>
+</div>
+<p>This reference state is convenient because we can obtain the value of the
 chemical potential for any given temperature at constant pressure for an
 ideal gas if we know the temperature dependence of <span class="math notranslate nohighlight">\(C_P^0\)</span> (with the
 <span class="math notranslate nohighlight">\(^0\)</span> indicating the ideal gas state as above); this follows from the
@@ -423,53 +431,98 @@ temperature <span class="math notranslate nohighlight">\(T\)</span> from <span c
 system either through tabulated compressibility factors or equations of
 state. Again, note that we only have the <span class="math notranslate nohighlight">\(dP\)</span> term because we are
 assuming a isothermal path between a reference state at the same
-temperature. However, there is an issue associated with this calculation
-when using an ideal gas reference state that may not be obvious. For
-example, consider the pressure variation of the chemical potential over
-a range of pressures in which the system acts like an ideal gas, so that
-we can substitute in the ideal gas equation of state for the molar
-volume to obtain:</p>
+temperature.</p>
+<div class="admonition-what-happens-to-mu-t-p-mu-t-p-textrm-ref-as-p-textrm-ref-to-0 admonition">
+<p class="admonition-title">What happens to <span class="math notranslate nohighlight">\(\mu(T, P) - \mu(T, P^{\textrm{ref}})\)</span> as <span class="math notranslate nohighlight">\(P^{\textrm{ref}}\to 0\)</span>?</p>
+<details><summary>Click for answer</summary>
+<p>Given that our reference state is an ideal gas, we can write</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
 \mu^0(T, P) - \mu^0(T, P^{\textrm{ref}})  &amp;= \int_{P^{\textrm{ref}}}^{P} \frac{RT}{P} dP \\
 &amp;= RT \int_{P^{\textrm{ref}}}^{P} \frac{1}{P} dP \\
 &amp;= RT \ln\left(\frac{P}{P^{\textrm{ref}}}\right)
 \end{aligned}\end{split}\]</div>
-<p>This last expression illustrates the issue - the system will behave like
+<p>This shows the system will behave like
 an ideal gas as <span class="math notranslate nohighlight">\(P^\textrm{ref} \rightarrow 0\)</span>, but the chemical
-potential will approach negative infinity in the same limit. This issue,
+potential will approach negative infinity in the same limit.</p>
+</details>
+</div>
+<p>This issue,
 which also appeared in our treatment of departure functions, motivates
-the definition of a new quantity, the <strong>fugacity</strong>, which is better
+the definition of a new quantity, the <a class="reference internal" href="#term-fugacity"><span class="xref std std-term">fugacity</span></a>, which is better
 behaved.</p>
-<p>We define the fugacity in terms of the isothermal departure function of
+<p>We define the fugacity <span class="math notranslate nohighlight">\(f\)</span> in terms of the isothermal <a class="reference internal" href="Lecture23.html#term-departure-function"><span class="xref std std-term">departure function</span></a> of
 the molar Gibbs free energy (or, equivalently, chemical potential):</p>
+<dl class="glossary">
+<dt id="term-fugacity">fugacity<a class="headerlink" href="#term-fugacity" title="Permalink to this term">#</a></dt><dd><div class="math notranslate nohighlight">
+\[\begin{aligned}
+f = P\exp^{\frac{G(T,P) - G^0(T,P)}{RT}} = P\exp^{\frac{\mu(T,P) - \mu^0(T,P)}{RT}}
+\end{aligned}\]</div>
+</dd>
+</dl>
+<p>such that</p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
-G(T,P) - G^0(T,P) = \mu(T,P) - \mu^0(T,P) \equiv RT \ln \frac{f}{P}
+RT \ln \frac{f}{P} \equiv G(T,P) - G^0(T,P) = \mu(T,P) - \mu^0(T,P)
 \end{aligned}\]</div>
 <p>Here, <span class="math notranslate nohighlight">\(f\)</span> is the fugacity and is a function of temperature and pressure.
 <span class="math notranslate nohighlight">\(G^0\)</span> is the molar Gibbs free energy of the ideal gas reference state.
 The fugacity has units of pressure, and by inspection of this definition
-we see that <span class="math notranslate nohighlight">\(f=P\)</span> if the system is an ideal gas, <span class="math notranslate nohighlight">\(f&gt;P\)</span> if the system has
-repulsive interactions between its molecules that would lead to an
-increase in the chemical potential, and <span class="math notranslate nohighlight">\(f&lt;P\)</span> if the system has
-attractive interactions that would lead to a decrease in the chemical
-potential. Because <span class="math notranslate nohighlight">\(f=P\)</span> and therefore <span class="math notranslate nohighlight">\(\mu(T,P) = \mu^0(T,P)\)</span> for an
-ideal gas, we can also think of the fugacity as <strong>the pressure of an
-ideal gas that has the same chemical potential as the real fluid of
-interest at the same temperature</strong>. Thus, the fugacity effectively
+we see that</p>
+<div class="admonition-if-the-system-is-an-ideal-gas admonition">
+<p class="admonition-title">If the system is an ideal gas…</p>
+<details><summary> f is less than P.</summary>
+Try again!
+</details>
+<details><summary> f is equal to P. </summary>
+<p>Correct! Because <span class="math notranslate nohighlight">\(f=P\)</span> and therefore <span class="math notranslate nohighlight">\(\mu(T,P) = \mu^0(T,P)\)</span> for an
+ideal gas, we can also think of the fugacity as the pressure of an
+ideal gas that has the same chemical potential as
+the real fluid of interest at the same temperature.</p>
+</details>
+<details><summary> f is greater than P. </summary>
+Try again!
+</details>
+</div>
+<div class="admonition-if-the-system-has-repulsive-interactions-that-increase-the-chemical-potential admonition">
+<p class="admonition-title">If the system has repulsive interactions that increase the chemical potential…</p>
+<details><summary> f is less than P.</summary>
+Try again!
+</details>
+<details><summary> f is equal to P. </summary>
+Try again!
+</details>
+<details><summary> f is greater than P. </summary>
+Correct!
+</details>
+</div>
+<div class="admonition-if-the-system-has-attractive-interactions-that-decrease-the-chemical-potential admonition">
+<p class="admonition-title">If the system has attractive interactions that decrease the chemical potential…</p>
+<details><summary> f is less than P.</summary>
+Correct!
+</details>
+<details><summary> f is equal to P. </summary>
+Try again!
+</details>
+<details><summary> f is greater than P. </summary>
+Try again!
+</details>
+</div>
+<p>Thus, the fugacity effectively
 captures departures of the pressure from ideality. We can also write the
 fugacity in differential form as:</p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
 d \ln(f) = \frac{d\mu}{RT}
 \end{aligned}\]</div>
-<p>Finally, we can also define a related, unitless quantity, the <strong>fugacity
-coefficient</strong>, as:</p>
-<div class="math notranslate nohighlight">
+<p>Finally, we can also define a related, unitless quantity, the</p>
+<dl class="glossary">
+<dt id="term-fugacity-coefficient">fugacity coefficient<a class="headerlink" href="#term-fugacity-coefficient" title="Permalink to this term">#</a></dt><dd><div class="math notranslate nohighlight">
 \[\begin{aligned}
 \phi \equiv \frac{f}{P}
 \end{aligned}\]</div>
+</dd>
+</dl>
 <p>Returning to the condition of phase equilibrium, if two phases (e.g.,
 the liquid and vapor phases of a pure component) are in equilibrium,
 then the chemical potentials are equal, leading to:</p>
@@ -487,17 +540,24 @@ reference state chemical potentials ,<span class="math notranslate nohighlight">
 from each phase’s chemical potential and we find that fugacities are
 equal between two phases at equilibrium. We also establish the
 equivalence of fugacity coefficients since pressures are equal at
-equilibrium. Summarizing, the fugacity has the following properties:</p>
-<ul class="simple">
-<li><p>For an ideal gas, <span class="math notranslate nohighlight">\(f = P\)</span>.</p></li>
-<li><p>For a gas with repulsive intermolecular interactions, <span class="math notranslate nohighlight">\(f &gt; P\)</span>.</p></li>
-<li><p>For a gas with attractive intermolecular interactions, <span class="math notranslate nohighlight">\(f &lt; P\)</span>.</p></li>
-<li><p>Since the fugacity is monotonically related to the chemical
-potential, at constant <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(P\)</span> the phase with a lower fugacity
-will be present at equilibrium.</p></li>
-<li><p>At phase equilibrium, <span class="math notranslate nohighlight">\(f^{(1)} = f^{(2)}\)</span> and
-<span class="math notranslate nohighlight">\(\phi^{(1)} = \phi^{(2)}\)</span>.</p></li>
-</ul>
+equilibrium.</p>
+<p>Concept check:</p>
+<div class="admonition-the-phase-with-the-fugacity-will-be-present-at-equilibrium admonition">
+<p class="admonition-title">The phase with the _____ fugacity will be present at equilibrium.</p>
+<details><summary>lower</summary>
+Correct! </details>
+<details><summary>higher</summary>
+Try again! </details>
+</div>
+<div class="admonition-at-phase-equilibrium-the-of-the-two-phases-must-be-equal admonition">
+<p class="admonition-title">At phase equilibrium, the ______ of the two phases must be equal.</p>
+<details><summary>fugacities</summary>
+Try again! </details>
+<details><summary>fugacity coefficients</summary>
+Try again! </details>
+<details><summary>fugacities and fugacity coefficients</summary>
+Correct! </details>
+</div>
 </section>
 <section id="calculating-the-fugacity">
 <h2>Calculating the fugacity<a class="headerlink" href="#calculating-the-fugacity" title="Permalink to this headline">#</a></h2>
@@ -517,8 +577,10 @@ condition of phase equilibrium. First, we can write from the definition:</p>
 d\mu &amp;= -S dT + V dP \\
 \therefore \left ( \frac{\partial \mu}{\partial P} \right )_{T} &amp;= V \\
 \left ( \frac{\partial \ln f}{\partial P} \right )_{T, N} &amp;=  \frac{V}{RT} \\
-\ln \left [ \frac{f(P)}{f(P^{\textrm{ref}})} \right ] &amp;= \frac{1}{RT} \int_{P^{\textrm{ref}}}^P V dP
 \end{aligned}\end{split}\]</div>
+<p>and thus</p>
+<div class="math notranslate nohighlight">
+\[\ln \left [ \frac{f(P)}{f(P^{\textrm{ref}})} \right ] = \frac{1}{RT} \int_{P^{\textrm{ref}}}^P V dP\]</div>
 <p>Note that this integral is performed at constant <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(N\)</span>. We thus
 obtain a similar expression as was originally developed for the chemical
 potential in terms of an ideal gas. If our reference state is defined
@@ -534,7 +596,8 @@ the pressure of interest at constant volume and temperature:</p>
 \[\begin{aligned}
 f^{\textrm{liq}}(P) = f^{\textrm{sat}}(P^{\textrm{sat}}) \exp\left [ \frac{V^{\textrm{liq}}(P-P^{\textrm{sat}})}{RT} \right ]
 \end{aligned}\]</div>
-<p>The exponential term is called the <strong>Poynting correction</strong> and accounts
+<p>The exponential term is called the <a class="reference external" href="https://en.wikipedia.org/wiki/Poynting_effect">Poynting correction</a>
+and accounts
 for the change in the fugacity associated with pressures that are higher
 than the saturation pressure. Recall that compressibility factors for
 liquids are often quite small (<span class="math notranslate nohighlight">\(Z\approx 0.01 - 0.3\)</span>) and the term in
@@ -544,13 +607,17 @@ pressure. Therefore, the term in the exponential is also typically
 <span class="math notranslate nohighlight">\(\approx 0\)</span> and the Poynting correction is typically close to 1 unless
 the pressure is significantly larger than the saturation pressure,
 allowing the correct to be safely neglected.</p>
-<p><img alt="image" src="../_images/fig_24_1.png" />{width=”86%”}</p>
 <p>The prior framework is useful for computing liquid-phase fugacities, but
 is not particularly helpful in determining conditions of phase
 equilibrium because it presupposes that we know the saturation pressure,
-which is exactly the quantity that we seek to determine. Moreover, we
-cannot use the Poynting approach for vapor phases because in general the
-vapor-phase volume will be a strong function of pressure. Instead, we
+which is exactly the quantity that we seek to determine.</p>
+<div class="admonition-why-can-t-we-use-the-poynting-approach-for-vapor-phases admonition">
+<p class="admonition-title">Why can’t we use the Poynting approach for vapor phases?</p>
+<details><summary>Click for answer</summary>
+In vapor phases, vapor-phase volume will be a strong function of pressure.
+</details>
+</div>
+<p>Instead, we
 can return to our definition of the fugacity coefficient as equal to the
 isothermal Gibbs departure function and use this to calculate fugacities
 directly from tabulated or analytical compressibility factors (or
@@ -558,28 +625,37 @@ equations of state). First, recall the expression for the isothermal
 Gibbs departure function:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
-G(T,P) - G^0(T,P) &amp;= RT \ln \phi = RT \int_0^P (Z-1)\frac{dP}{P} \\ 
+G(T,P) - G^0(T,P) &amp;= RT \ln \phi \\
+&amp;= RT \int_0^P (Z-1)\frac{dP}{P} \\ 
 \therefore \ln \phi &amp;= \int_0^P (Z-1)\frac{dP}{P}
 \end{aligned}\end{split}\]</div>
 <p>In principle we can integrate this expression directly. A problem,
 however, is that <span class="math notranslate nohighlight">\(Z(P)\)</span> is generally a poorly behaved function for real
 gases at phase coexistence, since many gas equations of state are cubic
 with respect to volume and thus would be multivalued for a given value
-of <span class="math notranslate nohighlight">\(P\)</span> corresponding to volumes of different phases. For example, the
-van der Waals equation of state is:</p>
+of <span class="math notranslate nohighlight">\(P\)</span> corresponding to volumes of different phases.</p>
+<p>For example, the van der Waals equation of state is:</p>
 <div class="math notranslate nohighlight">
 \[P = \frac{RT}{V-b} - \frac{a}{V^2}\]</div>
-<p><span class="math notranslate nohighlight">\(b\)</span> represents excluded molecular volume and <span class="math notranslate nohighlight">\(a\)</span> measures the attraction
-between molecules. This expression is cubic in <span class="math notranslate nohighlight">\(V\)</span> and when plotted
-would have pressures that correspond to multiple different volumes as
-expected for any equation of state that can describe phase equilibrium.
+<p>where</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(b\)</span> represents excluded molecular volume</p></li>
+<li><p><span class="math notranslate nohighlight">\(a\)</span> measures the attraction between molecules</p></li>
+</ul>
+<div class="admonition-why-would-this-formulation-cause-z-p-to-be-poorly-defined admonition">
+<p class="admonition-title">Why would this formulation cause Z(P) to be poorly-defined?</p>
+<details><summary> Click for answer</summary>
+<p>This expression is cubic in <span class="math notranslate nohighlight">\(V\)</span> and when plotted
+would have pressures that correspond to multiple different volumes.
 This equation of state is the simplest that properly captures two
 different molecular volumes corresponding to a vapor and liquid phase if
 plotted at constant temperature; the smaller volume corresponds to the
 liquid phase (<span class="math notranslate nohighlight">\(V^L\)</span>), while the larger corresponds to the vapor phase
 (<span class="math notranslate nohighlight">\(V^V\)</span>) in a two-phase region. Thus, <span class="math notranslate nohighlight">\(Z(P)\)</span> is not a well-defined
-function because it is multivalued for a given value of <span class="math notranslate nohighlight">\(P\)</span>, so we can
-instead use <span class="math notranslate nohighlight">\(Z(V)\)</span> to calculate the fugacity coefficient. From the
+function because it is multivalued for a given value of <span class="math notranslate nohighlight">\(P\)</span>.</p>
+</details>
+</div>
+<p>Thus we can instead use <span class="math notranslate nohighlight">\(Z(V)\)</span> to calculate the fugacity coefficient. From the
 definition of <span class="math notranslate nohighlight">\(Z\)</span>, we can write a total differential for <span class="math notranslate nohighlight">\(Z\)</span> at constant
 <span class="math notranslate nohighlight">\(T\)</span> as:</p>
 <div class="math notranslate nohighlight">
@@ -616,71 +692,6 @@ pressure is found such that the fugacity corresponding to each volume is
 identical. This pressure would be the saturation pressure. A similar
 procedure could be performed using tabulated compressibility factor data
 by interpolating between known data points as needed.</p>
-</section>
-<section id="introduction-to-mixtures-partial-molar-properties">
-<h2>Introduction to mixtures: partial molar properties<a class="headerlink" href="#introduction-to-mixtures-partial-molar-properties" title="Permalink to this headline">#</a></h2>
-<p>So far, we have only calculated the fugacity of a single-component
-system at phase equilibrium. Now, we will extend our framework to
-consider mixtures. First, let’s consider some simple definitions when
-dealing with mixtures. We define <span class="math notranslate nohighlight">\(x_i\)</span> as the mole fraction of component
-<span class="math notranslate nohighlight">\(i\)</span>, such that:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-x_i &amp;\equiv \frac{N_i}{\sum_{i=1}^n N_i} \\
-&amp;= \frac{N_i}{N} \\
-\sum_{i=1}^n x_i &amp;= 1
-\end{aligned}\end{split}\]</div>
-<p>Each of the <span class="math notranslate nohighlight">\(N_i\)</span> is given in moles, and <span class="math notranslate nohighlight">\(N\)</span> is the total number of
-moles in the mixture. Note that by convention <span class="math notranslate nohighlight">\(x_i\)</span> refers to mole
-fractions in a liquid or solid phase and <span class="math notranslate nohighlight">\(y_i\)</span> refers to mole fractions
-in a vapor phase. Using <span class="math notranslate nohighlight">\(x_i\)</span> (or <span class="math notranslate nohighlight">\(y_i\)</span>) in place of <span class="math notranslate nohighlight">\(N_i\)</span> allows us to
-write an intensive form of some potential <span class="math notranslate nohighlight">\(B\)</span>; for example, the
-intensive Gibbs free energy of a multicomponent mixture is then:</p>
-<div class="math notranslate nohighlight">
-\[\begin{aligned}
-G(T,P,x_1, x_2, \dots x_n)
-\end{aligned}\]</div>
-<p>We could also write two equivalent expressions for the extensive value
-of the Gibbs free energy:</p>
-<div class="math notranslate nohighlight">
-\[\begin{aligned}
-\underline{G}(T,P, N_1, N_2,\dots N_n) = \underline{G}(T, P, x_1, x_2, \dots x_{n-1}, N)
-\end{aligned}\]</div>
-<p>We can determine <span class="math notranslate nohighlight">\(x_n\)</span> from the other mole fractions by the constraint
-above. Now, let us consider what happens to system properties during the
-process of mixing relative to the properties of the independent pure
-components of that mixture. In other words, the process we consider is
-taking separate single-component systems and mixing their constituents
-into a single-phase mixture with a given composition, as illustrated
-below:</p>
-<p><img alt="image" src="../_images/fig_24_2.png" />{width=”86%”}</p>
-<p>For example, consider the volume of a two-component mixture relative to
-the volume of the two initially separate pure phases. Intuitively, we
-might guess that the molar volume of a mixture would be the weighted
-average of the molar volumes of the two components. However, in general
-this will not hold for a real mixture, or in other words:</p>
-<div class="math notranslate nohighlight">
-\[V\ne x_1 V_1 + x_2 V_2\]</div>
-<p>The difference in volume will emerge from the interactions between the
-two components, which will likely differ in their attraction or
-repulsion from interactions of a given component with other molecules of
-the same type. To account for interactions between components, we can
-instead define the increment in the value of some parameter <span class="math notranslate nohighlight">\(B\)</span> for the
-entire system upon addition of a single component, <span class="math notranslate nohighlight">\(i\)</span>, which we refer
-to as a <strong>partial molar property of component i</strong>:</p>
-<div class="math notranslate nohighlight">
-\[\begin{aligned}
-\overline{B}_i &amp;\equiv \left(\frac{\partial \underline{B}}{\partial N_i}\right)_{T,P,N_j \ne N_i}
-\end{aligned}\]</div>
-<p>Here, the overline indicates a partial molar property of component <span class="math notranslate nohighlight">\(i\)</span>
-and the partial derivative indicates the change in the (extensive) value
-of <span class="math notranslate nohighlight">\(\underline{B}\)</span> for the mixture upon increment of component <span class="math notranslate nohighlight">\(i\)</span>, with
-the amount of each other component <span class="math notranslate nohighlight">\(j\)</span> held fixed. By definition,
-partial molar properties are defined with the temperature and pressure
-also held constant, as these are the two independent variables commonly
-associated with phase behavior. Note that all partial molar properties
-are intensive since derivative is performed with respect to the number
-of moles of a single component.</p>
 </section>
 </section>
 
@@ -725,11 +736,11 @@ of moles of a single component.</p>
       </div>
     </a>
     <a class="right-next"
-       href="../problems/ps_4/problem_set_4.html"
+       href="Lecture25.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Problem Set 4 (Due Monday, November 20, 2023)</p>
+        <p class="prev-next-title">Ideal mixtures</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -754,7 +765,6 @@ of moles of a single component.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-readings-for-the-enthusiast">Additional Readings for the Enthusiast</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#single-component-phase-equilibrium-defining-fugacity">Single-component phase equilibrium: defining fugacity</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-the-fugacity">Calculating the fugacity</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-mixtures-partial-molar-properties">Introduction to mixtures: partial molar properties</a></li>
 </ul>
   </nav></div>
 
