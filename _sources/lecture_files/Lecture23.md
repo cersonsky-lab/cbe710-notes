@@ -154,10 +154,10 @@ phase envelope
     points within the phase envelope correspond to vapor-liquid
     coexistence
 
-binodal
+[binodal](https://en.wikipedia.org/wiki/Binodal)
     the curve denoting the phase envelope
 
-spinodal
+[spinodal](https://en.wikipedia.org/wiki/Spinodal)
     the locus of points definining limits of stability;
     the region within the spinodal is unstable, and will
     also lead to the observation of two phases, while the

@@ -161,6 +161,7 @@ diathermal ($\delta \underline{U}^{(1)} \ne 0$), movable
 
 ```{admonition} How would these conditions change if the wall was rigid?
 <details><summary>Click for answer</summary>
+
 If the wall is rigid, then
 $\delta \underline{V}^{(1)} = \delta \underline{V}^{(2)} = 0$, so
 substituting this expression into the above logic indicates that there
