@@ -561,17 +561,8 @@ limits of stability
 ```
 
 If we gather up all equilibrium compositions and all limits of stability
-across a range of temperatures, we yield both the
+across a range of temperatures, we yield both the {term}`binodal` and {term}`spinodal` curves.
 
-```{glossary}
-[binodal](https://en.wikipedia.org/wiki/Binodal)
-    curve on a temperature-composition plot that denotes the
-    limits of phase coexistence; also known as the coexistence curve
-
-[spinodal](https://en.wikipedia.org/wiki/Spinodal)
-    curve on a temperature-composition plot that denotes the
-    limits of phase stability
-```
 
 ![image](figs/fig_26-6-01.png)
 Image from [COSMO-RS documentation](https://www.scm.com/doc/COSMO-RS/advanced_scripts/BinodalSpinodal.html)
