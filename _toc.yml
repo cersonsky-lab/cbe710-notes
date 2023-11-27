@@ -47,13 +47,13 @@ parts:
         - file: lecture_files/Lecture22
         - file: lecture_files/Lecture23
         - file: lecture_files/Lecture24
-#         - file: lecture_files/Lecture25
-#         - file: lecture_files/Lecture26
+        - file: lecture_files/Lecture25
+        - file: lecture_files/Lecture26
   - caption: Thermodynamics Problem Sets 
     chapters:
         - file: problems/ps_4/problem_set_4
         - file: problems/ps_5/problem_set_5
-#        - file: problems/ps_6/problem_set_6
+        - file: problems/ps_6/problem_set_6
   - caption: Appendices
     chapters:
       - file: appendices/notation

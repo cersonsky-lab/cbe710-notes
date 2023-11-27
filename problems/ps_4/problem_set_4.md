@@ -1,4 +1,4 @@
-# Problem Set 4 (Due Monday, November 20, 2023)
+# Problem Set 4 (Due Wednesday, November 22, 2023)
 
 ## Question 1: Carnot cycle
 
