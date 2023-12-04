@@ -54,6 +54,7 @@ parts:
         - file: problems/ps_4/problem_set_4
         - file: problems/ps_5/problem_set_5
         - file: problems/ps_6/problem_set_6
+        - file: problems/exam_2_practice
   - caption: Appendices
     chapters:
       - file: appendices/notation

@@ -41,7 +41,7 @@ Stable equilibrium
     $\delta \underline{S} = 0$ and $\delta^2 \underline{S} < 0$ with
     respect to any perturbation.
 
- Unstable
+Unstable
     any perturbation, large or small, will result in the system reaching a different equilibrium
     state than its initial state. Unstable states have
     $\delta^2 \underline{S} > 0$. Note that it is possible for
