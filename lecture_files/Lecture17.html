@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Heat engines and possible processes &#8212; Advanced Thermodynamics for Chemical Engineers</title>
   
@@ -19,48 +18,46 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
     <link rel="stylesheet" type="text/css" href="../_static/defs.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'lecture_files/Lecture17';</script>
@@ -69,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="The Carnot Cycle and the Theorem of Clausius" href="Lecture18.html" />
     <link rel="prev" title="Postulates of thermodynamics" href="Lecture16.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -77,7 +74,15 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -112,11 +117,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -131,6 +139,7 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../intro.html">
@@ -139,10 +148,22 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+  
     <p class="title logo__title">Advanced Thermodynamics for Chemical Engineers</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -326,20 +347,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -383,16 +406,16 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="heat-engines-and-possible-processes">
-<h1>Heat engines and possible processes<a class="headerlink" href="#heat-engines-and-possible-processes" title="Permalink to this headline">#</a></h1>
+<h1>Heat engines and possible processes<a class="headerlink" href="#heat-engines-and-possible-processes" title="Link to this heading">#</a></h1>
 <section id="additional-readings-for-the-enthusiast">
-<h2>Additional Readings for the Enthusiast<a class="headerlink" href="#additional-readings-for-the-enthusiast" title="Permalink to this headline">#</a></h2>
+<h2>Additional Readings for the Enthusiast<a class="headerlink" href="#additional-readings-for-the-enthusiast" title="Link to this heading">#</a></h2>
 <p><span id="id1">Tester and Modell [<a class="reference internal" href="../appendices/references.html#id4" title="Jefferson W. Tester and Michael Modell. Thermodynamics and its applications. Prentice-Hall international series in the physical and chemical engineering sciences. Prentice Hall PTR, Upper Saddle River, N.J, 3rd ed edition, 1997. ISBN 978-0-13-915356-3. URL: https://www.eng.uc.edu/~beaucag/Classes/ChEThermoBeaucage/Books/Jefferson%20W.%20Tester,%20Michael%20Modell%20-%20Thermodynamics%20and%20Its%20Applications-Prentice%20Hall%20(1997).pdf.">4</a>]</span>, Ch. 3.8, 4.1 - 4.3.</p>
 </section>
 <section id="goals-for-today-s-lecture">
-<h2>Goals for Today’s Lecture<a class="headerlink" href="#goals-for-today-s-lecture" title="Permalink to this headline">#</a></h2>
+<h2>Goals for Today’s Lecture<a class="headerlink" href="#goals-for-today-s-lecture" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>What is a heat engine?</p></li>
 <li><p>How can we use the four postulates to understand what heat engines are physically possible?</p></li>
@@ -401,7 +424,7 @@ document.write(`
 </ul>
 </section>
 <section id="recap-of-the-four-postulates">
-<h2>Recap of the four postulates<a class="headerlink" href="#recap-of-the-four-postulates" title="Permalink to this headline">#</a></h2>
+<h2>Recap of the four postulates<a class="headerlink" href="#recap-of-the-four-postulates" title="Link to this heading">#</a></h2>
 <p>In the previous lecture, we introduced the four postulates that will
 guide our study of thermodynamics, and furthermore discussed the first
 law of thermodynamics as derived from Postulate 3. Having defined the
@@ -428,7 +451,7 @@ same temperature.</p></li>
 </ul>
 </section>
 <section id="direction-of-heat-transfer">
-<h2>Direction of heat transfer<a class="headerlink" href="#direction-of-heat-transfer" title="Permalink to this headline">#</a></h2>
+<h2>Direction of heat transfer<a class="headerlink" href="#direction-of-heat-transfer" title="Link to this heading">#</a></h2>
 <p>Let us first show that we can use <a class="reference internal" href="Lecture16.html#term-Postulate-4"><span class="xref std std-term">Postulate 4</span></a> to understand the
 directionality of heat transfer. Assume we have 3 systems, labeled
 <span class="math notranslate nohighlight">\(A, B, C\)</span>, with <span class="math notranslate nohighlight">\(A\)</span> connected to <span class="math notranslate nohighlight">\(B\)</span> and <span class="math notranslate nohighlight">\(B\)</span> connected to <span class="math notranslate nohighlight">\(C\)</span> as defined
@@ -484,7 +507,7 @@ similar logic below.</p>
 </div>
 </section>
 <section id="the-first-law-for-open-systems">
-<h2>The First Law for Open Systems<a class="headerlink" href="#the-first-law-for-open-systems" title="Permalink to this headline">#</a></h2>
+<h2>The First Law for Open Systems<a class="headerlink" href="#the-first-law-for-open-systems" title="Link to this heading">#</a></h2>
 <p>Before moving on, let us consider an application of the <a class="reference internal" href="Lecture1B.html#term-first-law-of-thermodynamics"><span class="xref std std-term">first law of thermodynamics</span></a> to an open system that is able to exchange energy and
 particles with the surroundings. First, we can recall the first law for
 a closed system:</p>
@@ -525,8 +548,8 @@ energy of the gas enclosed within the region bounded by the <span class="math no
 surface at the start of the process, while
 <span class="math notranslate nohighlight">\(U_\textrm{in}\delta N_\textrm{in}\)</span> is the energy of the incoming gas.
 This expression leads to the definition of a new quantity, the</p>
-<dl class="glossary simple">
-<dt id="term-enthalpy">enthalpy<a class="headerlink" href="#term-enthalpy" title="Permalink to this term">#</a></dt><dd><p>a thermodynamic quantity equivalent to the total heat content of a system</p>
+<dl class="simple glossary">
+<dt id="term-enthalpy">enthalpy<a class="headerlink" href="#term-enthalpy" title="Link to this term">#</a></dt><dd><p>a thermodynamic quantity equivalent to the total heat content of a system</p>
 </dd>
 </dl>
 <p>which, for the gas being pumped in, is defined as</p>
@@ -552,20 +575,20 @@ form (we will not derive this, but it is straightforward to do so):</p>
 multicomponent open system.</p>
 </section>
 <section id="case-studies-of-postulates">
-<h2>Case studies of postulates<a class="headerlink" href="#case-studies-of-postulates" title="Permalink to this headline">#</a></h2>
+<h2>Case studies of postulates<a class="headerlink" href="#case-studies-of-postulates" title="Link to this heading">#</a></h2>
 <p>Let us now consider a series of possible processes and, following
 similar logic used to determine the directionality of heat transfer,
 determine whether each process is possible according to the four
 postulates. This approach will lead to a discussion of the Second Law of
 Thermodynamics. In some cases, we will discuss the behavior of a</p>
-<dl class="glossary simple">
-<dt id="term-heat-engine">heat engine<a class="headerlink" href="#term-heat-engine" title="Permalink to this term">#</a></dt><dd><p>a closed device that contains heat interactions with one
+<dl class="simple glossary">
+<dt id="term-heat-engine">heat engine<a class="headerlink" href="#term-heat-engine" title="Link to this term">#</a></dt><dd><p>a closed device that contains heat interactions with one
 or more systems and work interactions with a <a class="reference internal" href="#term-work-reservoir"><span class="xref std std-term">work reservoir</span></a>
 but is always returned to the same state as it
 was prior to the interactions - that is, it only performs <strong>cyclic</strong>
 processes.</p>
 </dd>
-<dt id="term-work-reservoir">work reservoir<a class="headerlink" href="#term-work-reservoir" title="Permalink to this term">#</a></dt><dd><p>a system that only exchanges work with other systems</p>
+<dt id="term-work-reservoir">work reservoir<a class="headerlink" href="#term-work-reservoir" title="Link to this term">#</a></dt><dd><p>a system that only exchanges work with other systems</p>
 </dd>
 </dl>
 <p>In this case, our work reservoir operates adiabatically
@@ -667,10 +690,10 @@ placed on the engine which mediates the heat and work interactions,
 which we will now discuss.</p>
 </section>
 <section id="heat-engine-efficiency">
-<h2>Heat engine efficiency<a class="headerlink" href="#heat-engine-efficiency" title="Permalink to this headline">#</a></h2>
+<h2>Heat engine efficiency<a class="headerlink" href="#heat-engine-efficiency" title="Link to this heading">#</a></h2>
 <p>We can now define the</p>
-<dl class="glossary simple">
-<dt id="term-efficiency">efficiency<a class="headerlink" href="#term-efficiency" title="Permalink to this term">#</a></dt><dd><p><span class="math notranslate nohighlight">\(\eta \equiv -\frac{\delta W}{\delta Q}\)</span>;
+<dl class="simple glossary">
+<dt id="term-efficiency">efficiency<a class="headerlink" href="#term-efficiency" title="Link to this term">#</a></dt><dd><p><span class="math notranslate nohighlight">\(\eta \equiv -\frac{\delta W}{\delta Q}\)</span>;
 the proportion of work done by the engine
 to the amount of heat added by a hot system</p>
 </dd>
@@ -733,8 +756,8 @@ it reduces to Case 2.</p>
 </div>
 <p>If <span class="math notranslate nohighlight">\(\eta_5 = \eta_6\)</span>, then the system and its environment both return to
 their initial states. The latter case is referred to as a</p>
-<dl class="glossary simple">
-<dt id="term-reversible-cycle">reversible cycle<a class="headerlink" href="#term-reversible-cycle" title="Permalink to this term">#</a></dt><dd><p>a cycle where the action of
+<dl class="simple glossary">
+<dt id="term-reversible-cycle">reversible cycle<a class="headerlink" href="#term-reversible-cycle" title="Link to this term">#</a></dt><dd><p>a cycle where the action of
 both processes leaves no net effect on the
 system or environment</p>
 </dd>
@@ -742,8 +765,8 @@ system or environment</p>
 <p>Reversible cycles can only occur if there is no
 heat lost due to friction or other processes not considered explicitly
 in the two Cases. We will also define a</p>
-<dl class="glossary simple">
-<dt id="term-reversible-heat-engine">reversible heat engine<a class="headerlink" href="#term-reversible-heat-engine" title="Permalink to this term">#</a></dt><dd><p>any heat engine capable of performing reversible cycles;
+<dl class="simple glossary">
+<dt id="term-reversible-heat-engine">reversible heat engine<a class="headerlink" href="#term-reversible-heat-engine" title="Link to this term">#</a></dt><dd><p>any heat engine capable of performing reversible cycles;
 immune from heat lost due to friction or other processes</p>
 </dd>
 </dl>
@@ -787,7 +810,7 @@ processes only pass through equilibrium states along a quasi-static
 path</em>.</p>
 </section>
 <section id="link-to-shared-notes">
-<h2><a class="reference external" href="https://docs.google.com/document/d/1SGyyFd29AH_ci2_E_XQ9ZcGvshGt3fLK/edit?usp=share_link&amp;ouid=113272049620170441297&amp;rtpof=true&amp;sd=true">Link to Shared Notes</a><a class="headerlink" href="#link-to-shared-notes" title="Permalink to this headline">#</a></h2>
+<h2><a class="reference external" href="https://docs.google.com/document/d/1SGyyFd29AH_ci2_E_XQ9ZcGvshGt3fLK/edit?usp=share_link&amp;amp;ouid=113272049620170441297&amp;amp;rtpof=true&amp;amp;sd=true">Link to Shared Notes</a><a class="headerlink" href="#link-to-shared-notes" title="Link to this heading">#</a></h2>
 </section>
 </section>
 
@@ -816,11 +839,10 @@ path</em>.</p>
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="Lecture16.html"
@@ -840,10 +862,7 @@ path</em>.</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -851,6 +870,7 @@ path</em>.</p>
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -887,9 +907,10 @@ By Reid van Lehn, Matt Gebbie, Rose K. Cersonsky
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -913,8 +934,8 @@ By Reid van Lehn, Matt Gebbie, Rose K. Cersonsky
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

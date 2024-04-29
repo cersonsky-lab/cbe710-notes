@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Conditions of equilibrium &#8212; Advanced Thermodynamics for Chemical Engineers</title>
   
@@ -19,48 +18,46 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
     <link rel="stylesheet" type="text/css" href="../_static/defs.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'lecture_files/Lecture21';</script>
@@ -69,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Equilibrium in single-component systems" href="Lecture22.html" />
     <link rel="prev" title="Legendre transforms" href="Lecture20.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -77,7 +74,15 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -112,11 +117,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -131,6 +139,7 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../intro.html">
@@ -139,10 +148,22 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+  
     <p class="title logo__title">Advanced Thermodynamics for Chemical Engineers</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -326,20 +347,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -386,16 +409,16 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="conditions-of-equilibrium">
-<h1>Conditions of equilibrium<a class="headerlink" href="#conditions-of-equilibrium" title="Permalink to this headline">#</a></h1>
+<h1>Conditions of equilibrium<a class="headerlink" href="#conditions-of-equilibrium" title="Link to this heading">#</a></h1>
 <section id="additional-readings-for-the-enthusiast">
-<h2>Additional Readings for the Enthusiast<a class="headerlink" href="#additional-readings-for-the-enthusiast" title="Permalink to this headline">#</a></h2>
+<h2>Additional Readings for the Enthusiast<a class="headerlink" href="#additional-readings-for-the-enthusiast" title="Link to this heading">#</a></h2>
 <p><span id="id1">Tester and Modell [<a class="reference internal" href="../appendices/references.html#id4" title="Jefferson W. Tester and Michael Modell. Thermodynamics and its applications. Prentice-Hall international series in the physical and chemical engineering sciences. Prentice Hall PTR, Upper Saddle River, N.J, 3rd ed edition, 1997. ISBN 978-0-13-915356-3. URL: https://www.eng.uc.edu/~beaucag/Classes/ChEThermoBeaucage/Books/Jefferson%20W.%20Tester,%20Michael%20Modell%20-%20Thermodynamics%20and%20Its%20Applications-Prentice%20Hall%20(1997).pdf.">4</a>]</span>, Ch. 5.3, 5.5, 6.2-6.4, Appendix A, Appendix C</p>
 </section>
 <section id="goals-for-today-s-lecture">
-<h2>Goals for Today’s Lecture<a class="headerlink" href="#goals-for-today-s-lecture" title="Permalink to this headline">#</a></h2>
+<h2>Goals for Today’s Lecture<a class="headerlink" href="#goals-for-today-s-lecture" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Understand the behavior of arbitrary thermodynamic potentials at equilibrium</p></li>
 <li><p>Define the path of a state variable between two states given an arbitrary set of variables</p></li>
@@ -404,7 +427,7 @@ document.write(`
 </ul>
 </section>
 <section id="behavior-of-new-thermodynamic-potentials-at-equilibrium">
-<h2>Behavior of new thermodynamic potentials at equilibrium<a class="headerlink" href="#behavior-of-new-thermodynamic-potentials-at-equilibrium" title="Permalink to this headline">#</a></h2>
+<h2>Behavior of new thermodynamic potentials at equilibrium<a class="headerlink" href="#behavior-of-new-thermodynamic-potentials-at-equilibrium" title="Link to this heading">#</a></h2>
 <p>In the last lecture, we introduced the Legendre transform which
 expresses a function in terms of its tangent lines and their intercepts.
 The Legendre transform of a function in which <span class="math notranslate nohighlight">\(k\)</span> variables are
@@ -570,7 +593,7 @@ at equilibrium.</em></p>
 </div>
 </section>
 <section id="relationship-between-partial-derivatives">
-<h2>Relationship between partial derivatives<a class="headerlink" href="#relationship-between-partial-derivatives" title="Permalink to this headline">#</a></h2>
+<h2>Relationship between partial derivatives<a class="headerlink" href="#relationship-between-partial-derivatives" title="Link to this heading">#</a></h2>
 <p>The introduction of new thermodynamic potentials gives rise to a series
 of new partial derivatives that tend to appear in thermodynamic
 relationships.</p>
@@ -585,28 +608,28 @@ several rules for helping simplify partial derivatives, as this will be
 an important aspect of solving problems when confronted with derivatives
 that are not easily measurable experimentally.</p>
 <dl class="glossary">
-<dt id="term-Inversion-of-derivatives"><a class="reference external" href="https://en.wikipedia.org/wiki/Inverse_function_rule">Inversion of derivatives</a><a class="headerlink" href="#term-Inversion-of-derivatives" title="Permalink to this term">#</a></dt><dd><div class="math notranslate nohighlight">
+<dt id="term-Inversion-of-derivatives"><a class="reference external" href="https://en.wikipedia.org/wiki/Inverse_function_rule">Inversion of derivatives</a><a class="headerlink" href="#term-Inversion-of-derivatives" title="Link to this term">#</a></dt><dd><div class="math notranslate nohighlight">
 \[\left ( \frac{\partial f}{\partial y}\right )_x = \left ( \frac{\partial y}{\partial f}\right )_x^{-1}\]</div>
 <p>For example:
 <span class="math notranslate nohighlight">\(\left ( \frac{\partial S}{\partial P}\right )_T = \left ( \frac{\partial P}{\partial S}\right )_T^{-1}\)</span></p>
 </dd>
 </dl>
 <dl class="glossary">
-<dt id="term-Triple-product-rule"><a class="reference external" href="https://en.wikipedia.org/wiki/Triple_product_rule">Triple product rule</a><a class="headerlink" href="#term-Triple-product-rule" title="Permalink to this term">#</a></dt><dd><div class="math notranslate nohighlight">
+<dt id="term-Triple-product-rule"><a class="reference external" href="https://en.wikipedia.org/wiki/Triple_product_rule">Triple product rule</a><a class="headerlink" href="#term-Triple-product-rule" title="Link to this term">#</a></dt><dd><div class="math notranslate nohighlight">
 \[\left ( \frac{\partial f}{\partial x}\right )_y \left ( \frac{\partial x}{\partial y}\right )_f  \left ( \frac{\partial y}{\partial f}\right )_x  = -1\]</div>
 <p>For example:
 <span class="math notranslate nohighlight">\(\left ( \frac{\partial H}{\partial T}\right )_P \left ( \frac{\partial T}{\partial P}\right )_H  \left ( \frac{\partial P}{\partial H}\right )_T  = -1\)</span></p>
 </dd>
 </dl>
 <dl class="glossary">
-<dt id="term-Chain-rule-to-add-another-variable"><a class="reference external" href="https://en.wikipedia.org/wiki/Chain_rule">Chain rule</a> to add another variable<a class="headerlink" href="#term-Chain-rule-to-add-another-variable" title="Permalink to this term">#</a></dt><dd><div class="math notranslate nohighlight">
+<dt id="term-Chain-rule-to-add-another-variable"><a class="reference external" href="https://en.wikipedia.org/wiki/Chain_rule">Chain rule</a> to add another variable<a class="headerlink" href="#term-Chain-rule-to-add-another-variable" title="Link to this term">#</a></dt><dd><div class="math notranslate nohighlight">
 \[\left ( \frac{\partial f}{\partial y}\right )_x = \frac{(\partial f / \partial z )_x}{(\partial y / \partial z )_x} = \left ( \frac{\partial f}{\partial z}\right )_x \left ( \frac{\partial z}{\partial y}\right )_x\]</div>
 <p>For example:
 <span class="math notranslate nohighlight">\(\left ( \frac{\partial S}{\partial H}\right )_P = \frac{(\partial S / \partial T )_P}{(\partial H / \partial T )_P} = \frac{C_P/T}{C_P} = \frac{1}{T}\)</span></p>
 </dd>
 </dl>
 <dl class="glossary">
-<dt id="term-The-expansion-rule">The expansion rule<a class="headerlink" href="#term-The-expansion-rule" title="Permalink to this term">#</a></dt><dd><p>This rule is a bit less obvious than the others. We
+<dt id="term-The-expansion-rule">The expansion rule<a class="headerlink" href="#term-The-expansion-rule" title="Link to this term">#</a></dt><dd><p>This rule is a bit less obvious than the others. We
 will provide an example here, and proof of this rule is provided in
 <a class="reference internal" href="../appendices/expansion.html"><span class="doc std std-doc">the appendices</span></a>:</p>
 <div class="math notranslate nohighlight">
@@ -629,7 +652,7 @@ the expansion rule with <span class="math notranslate nohighlight">\(f=S\)</span
 </dd>
 </dl>
 <dl class="glossary">
-<dt id="term-Maxwell-reciprocity">Maxwell reciprocity<a class="headerlink" href="#term-Maxwell-reciprocity" title="Permalink to this term">#</a></dt><dd><div class="math notranslate nohighlight">
+<dt id="term-Maxwell-reciprocity">Maxwell reciprocity<a class="headerlink" href="#term-Maxwell-reciprocity" title="Link to this term">#</a></dt><dd><div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
 \left ( \frac{\partial(\partial f / \partial y )_x}{\partial x} \right )_y &amp;= \left ( \frac{\partial(\partial f / \partial x )_y}{\partial y} \right )_x \\
 f_{yx} &amp;= f_{xy}
@@ -641,13 +664,13 @@ occasion; the key point is that mixed second derivatives are equivalent
 regardless of the order of differentiation.</p>
 </section>
 <section id="partial-derivatives-in-thermodynamics">
-<h2>Partial derivatives in thermodynamics<a class="headerlink" href="#partial-derivatives-in-thermodynamics" title="Permalink to this headline">#</a></h2>
+<h2>Partial derivatives in thermodynamics<a class="headerlink" href="#partial-derivatives-in-thermodynamics" title="Link to this heading">#</a></h2>
 <section id="maxwell-relations">
-<h3>Maxwell relations<a class="headerlink" href="#maxwell-relations" title="Permalink to this headline">#</a></h3>
+<h3>Maxwell relations<a class="headerlink" href="#maxwell-relations" title="Link to this heading">#</a></h3>
 <p>This last relation - <a class="reference internal" href="#term-Maxwell-reciprocity"><span class="xref std std-term">Maxwell reciprocity</span></a> - will pop up repeatedly by
 establishing the notion of a</p>
-<dl class="glossary simple">
-<dt id="term-Maxwell-relation">Maxwell relation<a class="headerlink" href="#term-Maxwell-relation" title="Permalink to this term">#</a></dt><dd><p>equivalence in thermodynamic second derivatives established by <a class="reference internal" href="#term-Maxwell-reciprocity"><span class="xref std std-term">Maxwell reciprocity</span></a></p>
+<dl class="simple glossary">
+<dt id="term-Maxwell-relation">Maxwell relation<a class="headerlink" href="#term-Maxwell-relation" title="Link to this term">#</a></dt><dd><p>equivalence in thermodynamic second derivatives established by <a class="reference internal" href="#term-Maxwell-reciprocity"><span class="xref std std-term">Maxwell reciprocity</span></a></p>
 </dd>
 </dl>
 <p>We will present an example of a <a class="reference internal" href="#term-Maxwell-relation"><span class="xref std std-term">Maxwell relation</span></a> now, and later show how this
@@ -676,7 +699,7 @@ demonstrated in <a class="reference internal" href="../problems/ps_5/problem_set
 Prof. Cersonsky’s <a class="reference external" href="https://www.doi.org/10.1073/pnas.1720139115">first paper</a>.</p>
 </section>
 <section id="behavior-of-state-functions">
-<h3>Behavior of state functions<a class="headerlink" href="#behavior-of-state-functions" title="Permalink to this headline">#</a></h3>
+<h3>Behavior of state functions<a class="headerlink" href="#behavior-of-state-functions" title="Link to this heading">#</a></h3>
 <p>Finally, let’s remind ourselves of relationships assocated with state
 functions, although we have already been performing these manipulations.
 We define <span class="math notranslate nohighlight">\(B\)</span> as a state function (<em>i.e.</em>, a derived or primative
@@ -722,16 +745,16 @@ derivatives is evaluated.</p>
 </section>
 </section>
 <section id="euler-s-theorem">
-<h2>Euler’s Theorem<a class="headerlink" href="#euler-s-theorem" title="Permalink to this headline">#</a></h2>
+<h2>Euler’s Theorem<a class="headerlink" href="#euler-s-theorem" title="Link to this heading">#</a></h2>
 <p>We will now introduce Euler’s Theorem, which will be useful for
 interpreting the fundamental relation.</p>
 <dl class="glossary">
-<dt id="term-Euler-s-theorem">Euler’s theorem<a class="headerlink" href="#term-Euler-s-theorem" title="Permalink to this term">#</a></dt><dd><p>if a function <span class="math notranslate nohighlight">\(f(a,b,x,y)\)</span> obeys the relation:</p>
+<dt id="term-Euler-s-theorem">Euler’s theorem<a class="headerlink" href="#term-Euler-s-theorem" title="Link to this term">#</a></dt><dd><p>if a function <span class="math notranslate nohighlight">\(f(a,b,x,y)\)</span> obeys the relation:</p>
 <div class="math notranslate nohighlight">
 \[f(a, b, Kx, Ky) = K^hf(a, b, x, y),\]</div>
 <p>where <span class="math notranslate nohighlight">\(K\)</span> and <span class="math notranslate nohighlight">\(h\)</span> are constants, then</p>
 <div class="math notranslate nohighlight" id="equation-eq22-17">
-<span class="eqno">(33)<a class="headerlink" href="#equation-eq22-17" title="Permalink to this equation">#</a></span>\[x \frac{\partial}{\partial x}[ f(a, b, x, y)] + y \frac{\partial}{\partial y} [f(a, b, x, y) ] = h f(a, b, x, y)\]</div>
+<span class="eqno">(33)<a class="headerlink" href="#equation-eq22-17" title="Link to this equation">#</a></span>\[x \frac{\partial}{\partial x}[ f(a, b, x, y)] + y \frac{\partial}{\partial y} [f(a, b, x, y) ] = h f(a, b, x, y)\]</div>
 </dd>
 </dl>
 <p>We describe <span class="math notranslate nohighlight">\(f(a,b,x,y)\)</span> as homogeneous to degree <span class="math notranslate nohighlight">\(h\)</span> in <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>. We
@@ -754,7 +777,7 @@ by <span class="math notranslate nohighlight">\(K\)</span>. Comparing to <a clas
 and a third extensive variable <span class="math notranslate nohighlight">\(z = N\)</span>. We can write a generalized
 version of <a class="reference internal" href="#equation-eq22-17">(33)</a> for this system:</p>
 <div class="math notranslate nohighlight" id="equation-eq3-28">
-<span class="eqno">(34)<a class="headerlink" href="#equation-eq3-28" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{aligned}
+<span class="eqno">(34)<a class="headerlink" href="#equation-eq3-28" title="Link to this equation">#</a></span>\[\begin{split}\begin{aligned}
 &amp;x \frac{\partial}{\partial x}[ f(x,y,z)] + y \frac{\partial}{\partial y} [f(x,y,z) ] + z \frac{\partial}{\partial z} [f(x,y,z) ] = \nonumber \\ 
 &amp; \underline{S} \left ( \frac{\partial \underline{U}(\underline{S}, \underline{V}, N)}{\partial \underline{S}} \right )_{\underline{V}, N} +  \underline{V} \left ( \frac{\partial \underline{U}(\underline{S}, \underline{V}, N)}{\partial \underline{V}} \right )_{\underline{S}, N} +  N \left ( \frac{\partial \underline{U}(\underline{S}, \underline{V}, N)}{\partial N} \right )_{\underline{S}, \underline{V}} \\ 
 &amp;= \underline{S}T - \underline{V} P + N \mu = hf(x, y, z)  \\
@@ -774,7 +797,7 @@ d\underline{U} = Td\underline{S} - Pd\underline{V} + \mu dN
 \end{aligned}\]</div>
 <p>Equating these expressions leads to the</p>
 <dl class="glossary">
-<dt id="term-Gibbs-Duhem-equation"><a class="reference external" href="https://en.wikipedia.org/wiki/Gibbs%E2%80%93Duhem_equation">Gibbs-Duhem equation</a><a class="headerlink" href="#term-Gibbs-Duhem-equation" title="Permalink to this term">#</a></dt><dd><div class="math notranslate nohighlight">
+<dt id="term-Gibbs-Duhem-equation"><a class="reference external" href="https://en.wikipedia.org/wiki/Gibbs%E2%80%93Duhem_equation">Gibbs-Duhem equation</a><a class="headerlink" href="#term-Gibbs-Duhem-equation" title="Link to this term">#</a></dt><dd><div class="math notranslate nohighlight">
 \[\underline{S}dT - \underline{V}dP + Nd\mu = 0\]</div>
 </dd>
 </dl>
@@ -836,7 +859,7 @@ be generalized for other combinations of intensive and extensive
 variables accordingly.</p>
 </section>
 <section id="link-to-shared-notes">
-<h2><a class="reference external" href="https://docs.google.com/document/d/11xY8-7LTLMbCZU4rzvCepOqwdzWhxohc/edit?usp=share_link&amp;ouid=113272049620170441297&amp;rtpof=true&amp;sd=true">Link to Shared Notes</a><a class="headerlink" href="#link-to-shared-notes" title="Permalink to this headline">#</a></h2>
+<h2><a class="reference external" href="https://docs.google.com/document/d/11xY8-7LTLMbCZU4rzvCepOqwdzWhxohc/edit?usp=share_link&amp;amp;ouid=113272049620170441297&amp;amp;rtpof=true&amp;amp;sd=true">Link to Shared Notes</a><a class="headerlink" href="#link-to-shared-notes" title="Link to this heading">#</a></h2>
 </section>
 </section>
 
@@ -865,11 +888,10 @@ variables accordingly.</p>
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="Lecture20.html"
@@ -889,10 +911,7 @@ variables accordingly.</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -900,6 +919,7 @@ variables accordingly.</p>
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -939,9 +959,10 @@ By Reid van Lehn, Matt Gebbie, Rose K. Cersonsky
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -965,8 +986,8 @@ By Reid van Lehn, Matt Gebbie, Rose K. Cersonsky
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Free energy perturbation and thermodynamic integration &#8212; Advanced Thermodynamics for Chemical Engineers</title>
   
@@ -19,48 +18,46 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
     <link rel="stylesheet" type="text/css" href="../_static/defs.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'lecture_files/Lecture15';</script>
@@ -69,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Simulation Project (Due Monday, November 6, 2023)" href="../problems/simulation_project.html" />
     <link rel="prev" title="Umbrella Sampling" href="Lecture14B.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -77,7 +74,15 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -112,11 +117,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -131,6 +139,7 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../intro.html">
@@ -139,10 +148,22 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+  
     <p class="title logo__title">Advanced Thermodynamics for Chemical Engineers</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -326,20 +347,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -384,24 +407,24 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="free-energy-perturbation-and-thermodynamic-integration">
-<h1>Free energy perturbation and thermodynamic integration<a class="headerlink" href="#free-energy-perturbation-and-thermodynamic-integration" title="Permalink to this headline">#</a></h1>
+<h1>Free energy perturbation and thermodynamic integration<a class="headerlink" href="#free-energy-perturbation-and-thermodynamic-integration" title="Link to this heading">#</a></h1>
 <section id="additional-readings-for-the-enthusiast">
-<h2>Additional Readings for the Enthusiast<a class="headerlink" href="#additional-readings-for-the-enthusiast" title="Permalink to this headline">#</a></h2>
+<h2>Additional Readings for the Enthusiast<a class="headerlink" href="#additional-readings-for-the-enthusiast" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><span id="id1">Frenkel and Smit [<a class="reference internal" href="../appendices/references.html#id5" title="Daan Frenkel and Berend Smit. Understanding molecular simulation: from algorithms to applications. Number 1 in Computational science series. Academic Press, San Diego, 2nd ed edition, 2002. ISBN 978-0-12-267351-1. URL: https://www.eng.uc.edu/~beaucag/Classes/AdvancedMaterialsThermodynamics/Books/%5BComputational%20science%20(San%20Diego,%20Calif.)%5D%20Daan%20Frenkel_%20Berend%20Smit%20-%20Understanding%20molecular%20simulation%20_%20from%20algorithms%20to%20applications%20(2002,%20Academic%20Press%20)%20-%20libgen.lc.pdf.">2</a>]</span> Ch. 7.1</p></li>
 </ul>
 </section>
 <section id="goals-for-today-s-lecture">
-<h2>Goals for Today’s Lecture<a class="headerlink" href="#goals-for-today-s-lecture" title="Permalink to this headline">#</a></h2>
+<h2>Goals for Today’s Lecture<a class="headerlink" href="#goals-for-today-s-lecture" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Determine the free energy difference for two systems with different potential energy functions</p></li>
 </ul>
 </section>
 <section id="free-energy-perturbation">
-<h2>Free energy perturbation<a class="headerlink" href="#free-energy-perturbation" title="Permalink to this headline">#</a></h2>
+<h2>Free energy perturbation<a class="headerlink" href="#free-energy-perturbation" title="Link to this heading">#</a></h2>
 <p>So far, we have defined the potential of mean force as the change in the
 free energy of a system during a process in which particle coordinates
 follow some predefined reaction coordinate, and hence the overall system
@@ -414,8 +437,8 @@ entirely. Finding an algorithm to accomplish this would also be useful
 in applications other than calculating a PMF along a reaction
 coordinate, such as calculating the free energy change associated with
 mutating the chemical identities of molecules in a simulation. This leads to</p>
-<dl class="glossary simple">
-<dt id="term-free-energy-perturbation"><a class="reference external" href="https://en.wikipedia.org/wiki/Free_energy_perturbation#:~:text=Free%20energy%20perturbation%20(FEP)%20is,Zwanzig%20in%201954.">free energy perturbation</a><a class="headerlink" href="#term-free-energy-perturbation" title="Permalink to this term">#</a></dt><dd><p>a method to compute the free energy difference between two systems with different
+<dl class="simple glossary">
+<dt id="term-free-energy-perturbation"><a class="reference external" href="https://en.wikipedia.org/wiki/Free_energy_perturbation#:~:text=Free%20energy%20perturbation%20(FEP)%20is,Zwanzig%20in%201954.">free energy perturbation</a><a class="headerlink" href="#term-free-energy-perturbation" title="Link to this term">#</a></dt><dd><p>a method to compute the free energy difference between two systems with different
 partition functions</p>
 </dd>
 </dl>
@@ -438,7 +461,7 @@ system 0 to 1 is then:</p>
 \end{aligned}\end{split}\]</div>
 <p>How do we compute this?</p>
 <section id="determining-the-probabilities-of-energy-differences-between-systems">
-<h3>Determining the probabilities of energy differences between systems<a class="headerlink" href="#determining-the-probabilities-of-energy-differences-between-systems" title="Permalink to this headline">#</a></h3>
+<h3>Determining the probabilities of energy differences between systems<a class="headerlink" href="#determining-the-probabilities-of-energy-differences-between-systems" title="Link to this heading">#</a></h3>
 <p>We then define <span class="math notranslate nohighlight">\(p_1(\Delta E')\)</span> as the probability distribution for the
 energy difference
 <span class="math notranslate nohighlight">\(\Delta E(\textbf{r}^N) = E_1(\mathbf{r}^N) - E_0(\mathbf{r}^N)\)</span> with
@@ -480,7 +503,7 @@ densities from simulations in both ensembles would allow for the
 calculation of the free energy change <span class="math notranslate nohighlight">\(\Delta F\)</span>.</p>
 </section>
 <section id="computing-the-free-energy-difference">
-<h3>Computing the free energy difference<a class="headerlink" href="#computing-the-free-energy-difference" title="Permalink to this headline">#</a></h3>
+<h3>Computing the free energy difference<a class="headerlink" href="#computing-the-free-energy-difference" title="Link to this heading">#</a></h3>
 <p>We can take the log of both sides to estimate the free energy difference
 using <span class="math notranslate nohighlight">\(\Delta F = -kT \ln Z_1/Z_0\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -497,7 +520,7 @@ p_1(\Delta E')&amp;= p_0 (\Delta E') \exp \left [\beta \left ( \Delta F - \Delta
 integrate both sides over all possible values of <span class="math notranslate nohighlight">\(\Delta E'\)</span> to yield a
 more concise expression:</p>
 <div class="math notranslate nohighlight" id="equation-app-a-fep-eq">
-<span class="eqno">(28)<a class="headerlink" href="#equation-app-a-fep-eq" title="Permalink to this equation">#</a></span>\[\begin{split}\int_{-\infty}^{\infty} d\Delta E' p_1(\Delta E') &amp;= \exp (\beta \Delta F)\int_{-\infty}^{\infty} d\Delta E' p_0(\Delta E') \exp (-\beta \Delta E')\\
+<span class="eqno">(28)<a class="headerlink" href="#equation-app-a-fep-eq" title="Link to this equation">#</a></span>\[\begin{split}\int_{-\infty}^{\infty} d\Delta E' p_1(\Delta E') &amp;= \exp (\beta \Delta F)\int_{-\infty}^{\infty} d\Delta E' p_0(\Delta E') \exp (-\beta \Delta E')\\
 1 &amp;= \exp (\beta \Delta F) \langle \exp \left [ - \beta \Delta E \right ] \rangle_0\\
 \exp \left [ -\beta \Delta F \right ]  &amp;= \langle \exp \left [ - \beta \Delta E \right ] \rangle_0\end{split}\]</div>
 <p>Here, we integrate the probability distribution for <span class="math notranslate nohighlight">\(\Delta E'\)</span> over all
@@ -536,7 +559,7 @@ between the bound drug molecule and a drug molecule free in solution.</p>
 </section>
 </section>
 <section id="thermodynamic-integration">
-<h2>Thermodynamic integration<a class="headerlink" href="#thermodynamic-integration" title="Permalink to this headline">#</a></h2>
+<h2>Thermodynamic integration<a class="headerlink" href="#thermodynamic-integration" title="Link to this heading">#</a></h2>
 <p>We will discuss one final
 method to close our discussion of molecular simulations. The final
 technique we will discuss is similar in spirit to free energy
@@ -598,7 +621,7 @@ of a coupling parameter (as opposed to biasing their potential
 energies).</p>
 </section>
 <section id="link-to-shared-notes">
-<h2><a class="reference external" href="https://docs.google.com/document/d/1Tsa3jGWZJTySrWt0IZWdYpyh-ILLOko_/edit?usp=drive_link">Link to Shared Notes</a><a class="headerlink" href="#link-to-shared-notes" title="Permalink to this headline">#</a></h2>
+<h2><a class="reference external" href="https://docs.google.com/document/d/1Tsa3jGWZJTySrWt0IZWdYpyh-ILLOko_/edit?usp=drive_link">Link to Shared Notes</a><a class="headerlink" href="#link-to-shared-notes" title="Link to this heading">#</a></h2>
 </section>
 </section>
 
@@ -627,11 +650,10 @@ energies).</p>
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="Lecture14B.html"
@@ -651,10 +673,7 @@ energies).</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -662,6 +681,7 @@ energies).</p>
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -699,9 +719,10 @@ By Reid van Lehn, Matt Gebbie, Rose K. Cersonsky
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -725,8 +746,8 @@ By Reid van Lehn, Matt Gebbie, Rose K. Cersonsky
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>
