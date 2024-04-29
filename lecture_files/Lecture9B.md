@@ -39,7 +39,7 @@ the two methods differ in their approach. The two methods can be
 compared by recalling the ergodic hypothesis, which states that the
 time-average value of a system property $Y$ over a sufficiently long
 timescale $\tau$ is equivalent to the ensemble-average value of that
-same property (from [Lecture 2](Lecture 2)):
+same property (from [Lecture 2](Lecture2)):
 
 $$\begin{aligned}
     \frac{1}{\tau} \int_0^{\tau} Y(t) dt &= \sum p_i Y_i 
