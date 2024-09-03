@@ -172,7 +172,7 @@ ensemble (with $NVT$ fixed) is given as:
 ```{math}
 :label: app_a_ensemble_average
 
-$\langle Y \rangle = \frac{\int d \mathbf{r}^N \exp \left [ -\beta E(\mathbf{r}^N) \right ] Y(\mathbf{r}^N) }{\int d \mathbf{r}^N \exp \left [ -\beta E(\mathbf{r}^N) \right ]}$
+\langle Y \rangle = \frac{\int d \mathbf{r}^N \exp \left [ -\beta E(\mathbf{r}^N) \right ] Y(\mathbf{r}^N) }{\int d \mathbf{r}^N \exp \left [ -\beta E(\mathbf{r}^N) \right ]}
 
 ```
 
